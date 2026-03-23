@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAM TEST</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- INICIO -->
+<div id="pantalla-inicio" class="pantalla">
+  <div class="card">
+    <h1 class="titulo">Elige una asignatura</h1>
+    <p class="texto texto-intro">Practíca por materia, ajusta el test a tu ritmo y estudia de la manera mas comoda.</p>
+
+    <div class="botones-asignaturas">
+      <button class="btn-principal" onclick="seleccionarAsignatura('sistemas')">Sistemas Informáticos</button>
+      <button class="btn-principal" onclick="seleccionarAsignatura('bases')">Bases de Datos</button>
+      <button class="btn-principal" onclick="seleccionarAsignatura('entornos')">Entornos de Desarrollo</button>
+      <button class="btn-principal" onclick="seleccionarAsignatura('programacion')">Programacion</button>
+      <button class="btn-principal" onclick="seleccionarAsignatura('empleabilidad')">Itinerario para la Empleabilidad</button>
+      <button class="btn-principal" onclick="seleccionarAsignatura('lenguajeMarcas')">Lenguaje de Marcas</button>
+    </div>
+
+    <div id="selector-modo" class="oculto" style="margin-top:16px;">
+      <p class="texto" style="margin-bottom:10px;">Elige modo:</p>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn-principal" onclick="abrirModalConfig('estudio')">Modo estudio</button>
+        <button class="btn-secundario" onclick="abrirModalConfig('examen')">Modo examen</button>
+        <button class="btn-principal" style="background: linear-gradient(135deg, #a450ff 0%, #d49eff 100%);" onclick="abrirResumenAsignatura()">Explicación</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEST -->
+<div id="pantalla-test" class="pantalla oculto">
+  <div class="card">
+
+    <div class="barra-superior">
+      <div class="nav-left">
+        <button id="btn-atras" class="btn-link" onclick="preguntaAnterior()">← Atrás</button>
+        <button class="btn-link" onclick="volverAHome()">⌂ Home</button>
+      </div>
+
+      <div class="nav-right">
+        <span id="contador-pregunta">Pregunta 1/1</span>
+        <span id="puntuacion">Aciertos: 0</span>
+      </div>
+    </div>
+
+    <div class="progreso">
+      <div class="progreso-bar">
+        <div id="progreso-fill" class="progreso-fill" style="width:0%"></div>
+      </div>
+      <div id="progreso-texto" class="progreso-texto">0%</div>
+    </div>
+
+    <h2 id="texto-pregunta" class="pregunta"></h2>
+    <div id="imagen-pregunta" class="imagen-pregunta"></div>
+
+    <div id="opciones-container" class="opciones"></div>
+
+    <p id="feedback" class="feedback"></p>
+
+    <div class="acciones-test">
+      <button id="btn-explicacion" class="btn-secundario oculto" onclick="toggleExplicacion()">
+        💡 Ver explicación
+      </button>
+
+      <button id="btn-siguiente" class="btn-principal" onclick="siguientePregunta()" disabled>
+        Siguiente
+      </button>
+    </div>
+
+    <div id="explicacion-box" class="explicacion-popup-overlay oculto" aria-hidden="true">
+      <div class="explicacion-popup" role="dialog" aria-modal="false" aria-labelledby="explicacion-titulo">
+        <div class="explicacion-popup-header">
+          <h3 id="explicacion-titulo">Explicacion</h3>
+          <button
+            type="button"
+            class="explicacion-popup-close"
+            aria-label="Cerrar explicacion"
+            onclick="cerrarPopupExplicacion()"
+          >
+            ×
+          </button>
+        </div>
+        <p id="explicacion-texto"></p>
+      </div>
+    </div>
+
+    <div id="nav-grid-bottom" class="nav-grid-bottom">
+      <button class="btn-grid" title="Ir a una pregunta anterior" onclick="abrirNavegadorPreguntas()">▦</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FINAL -->
+<div id="pantalla-final" class="pantalla oculto">
+  <div class="card">
+    <h1 class="titulo" id="titulo-final">¡Test finalizado!</h1>
+
+    <p class="texto">
+      Resultado: <span id="nota-final"></span>
+    </p>
+
+    <p class="texto" id="resumen-final" style="margin-top:8px;"></p>
+
+    <div class="botonera-final" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+      <button id="btn-repasar-fallos" class="btn-secundario oculto" onclick="repasarFallos()">Repasar fallos</button>
+      <button class="btn-principal" onclick="volverAHome()">Ir a Home</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL GRID -->
+<div id="grid-overlay" class="modal-overlay oculto">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Preguntas</h3>
+      <button class="modal-close" onclick="cerrarNavegadorPreguntas()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="grid-container" class="grid-container"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-principal" onclick="cerrarNavegadorPreguntas()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONFIG -->
+<div id="config-overlay" class="modal-overlay oculto">
+  <div class="modal modal-config">
+    <div class="modal-header">
+      <h3 class="modal-title" id="config-titulo">Configura tu test</h3>
+      <button class="modal-close" onclick="cerrarModalConfig()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="config-resumen">
+        <div class="config-card-mini">
+          <span id="base-label" class="config-label">Base</span>
+          <strong id="base-preview" class="config-valor">0</strong>
+        </div>
+
+        <div class="config-card-mini">
+          <label for="input-extras" id="extras-label" class="config-label">Extra</label>
+          <div class="stepper-extras">
+            <button type="button" class="stepper-btn" onclick="cambiarExtras(-1)">−</button>
+            <input id="input-extras" type="number" value="0" min="0" step="1" inputmode="numeric" />
+            <button type="button" class="stepper-btn" onclick="cambiarExtras(1)">+</button>
+          </div>
+        </div>
+
+        <div class="config-card-mini">
+          <span class="config-label">Total</span>
+          <strong id="total-preview" class="config-valor">0</strong>
+        </div>
+      </div>
+
+      <div class="config-opciones-inline">
+        <label class="check-pill">
+          <input id="toggle-mezclar-preguntas" type="checkbox" checked />
+          <span>Mezclar preguntas</span>
+        </label>
+
+        <label class="check-pill">
+          <input id="toggle-mezclar-respuestas" type="checkbox" checked />
+          <span>Mezclar respuestas</span>
+        </label>
+      </div>
+
+      <div id="config-rango" class="config-rango oculto">
+        <label class="check-pill check-pill-block">
+          <input id="toggle-usar-rango" type="checkbox" />
+          <span>Elegir rango correlativo</span>
+        </label>
+
+        <div class="config-rango-inputs">
+          <div class="config-rango-field">
+            <label for="input-rango-desde" class="config-label">Desde</label>
+            <input id="input-rango-desde" type="number" value="1" min="1" step="1" inputmode="numeric" />
+          </div>
+
+          <div class="config-rango-field">
+            <label for="input-rango-hasta" class="config-label">Hasta</label>
+            <input id="input-rango-hasta" type="number" value="40" min="1" step="1" inputmode="numeric" />
+          </div>
+        </div>
+
+        <p id="rango-ayuda" class="config-ayuda">
+          Activa este rango para estudiar un tramo correlativo de preguntas.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-principal" onclick="empezarDesdeModal()">Empezar test</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RESUMEN -->
+<div id="resumen-overlay" class="modal-overlay oculto">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title" id="resumen-titulo">Resumen de la asignatura</h3>
+      <button class="modal-close" onclick="cerrarResumenAsignatura()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="resumen-contenido" class="resumen-lectura"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-principal" onclick="cerrarResumenAsignatura()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- PREGUNTAS -->
+<script src="preguntas/preguntas-sistemas.js"></script>
+<script src="preguntas/preguntas-bases.js"></script>
+<script src="preguntas/preguntas-entornos.js"></script>
+<script src="preguntas/preguntas-programacion.js"></script>
+<script src="preguntas/preguntas-empleabilidad.js"></script>
+<script src="preguntas/preguntas-lenguaje-marcas.js"></script>
+<script src="preguntas/preguntas.js"></script>
+
+<!-- RESUMENES -->
+<script src="resumenes/resumen-sistemas.js"></script>
+<script src="resumenes/resumen-bases.js"></script>
+<script src="resumenes/resumen-entornos.js"></script>
+<script src="resumenes/resumen-programacion.js"></script>
+<script src="resumenes/resumen-empleabilidad.js"></script>
+<script src="resumenes/resumen-lenguaje-marcas.js"></script>
+<script src="resumenes.js"></script>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+</body>
+</html>
