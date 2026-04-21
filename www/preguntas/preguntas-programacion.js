@@ -1,5 +1,485 @@
 const preguntasProgramacion = [
     {
+        "id": 1,
+        "pregunta": "¿Como podemos cerrar una conexión de la base de datos?",
+        "opciones": [
+            "A. No hay mecanismos para cerrar la conexión.",
+            "B. Haciendo uso del método .close() sobre el objeto Connection",
+            "C. Estableciendo en la conexión que se autocierre cuando no se use.",
+            "D. Todas las anteriores son incorrectas."
+        ],
+        "respuesta_correcta": "B. Haciendo uso del método .close() sobre el objeto Connection",
+        "explicacion": "Explicación fácil:\nLa conexión con la base de datos es como una puerta que abres para entrar a hablar con ella. Cuando terminas, tienes que cerrar la puerta para no dejarla abierta.\nEn programación, esa puerta se cierra con .close().\n\nEjemplo:\nSi tienes una conexión guardada en una variable llamada conexion, se cerraría así:\nconexion.close();\n\nPor qué esa es la buena:\nPorque en Java, cuando trabajas con bases de datos, el objeto Connection tiene precisamente ese método para cerrar la conexión de forma correcta.\n\nPor qué las otras no:\n- A es falsa, porque sí hay mecanismo para cerrarla.\n- C no es la forma normal ni correcta de responder a esta pregunta tipo test.\n- D es falsa, porque B sí es correcta."
+    },
+    {
+        "id": 2,
+        "pregunta": "¿Como podemos comprobar si un fichero o directorio existe?",
+        "opciones": [
+            "A. Usando isFile()",
+            "B. Usando isDirectory()",
+            "C. Usando exists()",
+            "D. Usando getPath()"
+        ],
+        "respuesta_correcta": "C. Usando exists()",
+        "explicacion": "Explicación fácil:\nSi quieres saber si algo está ahí de verdad en el ordenador, usas exists().\nEs como mirar si una caja existe antes de abrirla.\n\nEjemplo:\nImagina que tienes un fichero llamado foto.txt. Puedes preguntar:\nFile f = new File(\"foto.txt\");\nf.exists();\n\nSi devuelve true, es que sí existe.\nSi devuelve false, es que no está.\n\nPor qué las otras no:\n- A. isFile(): sirve para saber si es un fichero, pero no es la forma general de comprobar existencia.\n- B. isDirectory(): sirve para saber si es un directorio.\n- D. getPath(): solo te da la ruta, no comprueba si existe."
+    },
+    {
+        "id": 3,
+        "pregunta": "¿Cuál es la palabra reservada que convierte a un campo en común entre todos los objetos de una clase?",
+        "opciones": [
+            "A. Static.",
+            "B. getter.",
+            "C. setter.",
+            "D. Todas las anteriores son incorrectas."
+        ],
+        "respuesta_correcta": "A. Static.",
+        "explicacion": "Ojo: en Java se escribe static en minúsculas, no Static. La idea correcta es la de la opción A, aunque está escrita con ese fallo.\n\nExplicación fácil:\nUn campo normal es como un juguete que tiene cada niño por separado.\nUn campo static es como un juguete único en clase que comparten todos.\n\nEso significa que ese dato no pertenece a un objeto concreto, sino a la clase entera.\n\nEjemplo:\nImagina una clase Coche.\n\n- Si color es normal, cada coche puede tener un color distinto.\n- Si ruedas fuera static, sería un dato común para todos los coches de esa clase.\n\nclass Coche {\n    static int ruedas = 4;\n}\n\nAquí no hace falta crear un coche para saber que tienen 4 ruedas, porque ese dato es común a todos.\n\nPor qué las otras no:\n- B. getter: no es una palabra reservada; es un método para leer un valor.\n- C. setter: tampoco es una palabra reservada; es un método para cambiar un valor.\n- D es falsa, porque la idea correcta sí está en la A."
+    },
+    {
+        "id": 4,
+        "pregunta": "¿Es posible cambiar el tamaño de un array durante su ejecución?",
+        "opciones": [
+            "A. Sí.",
+            "B. Sí, solo cuando tenga un primer valor asignado.",
+            "C. Sí, en cualquier momento.",
+            "D. No, solo se puede indicar su tamaño en la declaración inicial."
+        ],
+        "respuesta_correcta": "D. No, solo se puede indicar su tamaño en la declaración inicial.",
+        "explicacion": "Explicación fácil:\nUn array es como una caja con huecos fijos.\n\nSi haces una caja para 5 juguetes, esa caja ya nace con 5 huecos.\nLuego puedes cambiar qué metes dentro, pero no puedes hacer que la misma caja pase a tener 8 huecos.\n\nPor eso, el tamaño de un array no se cambia durante la ejecución. Si necesitas más espacio, normalmente creas otro array nuevo más grande.\n\nEjemplo:\nint[] numeros = new int[3];\n\nAquí el array tiene 3 huecos.\nPuedes guardar números dentro, por ejemplo:\nnumeros[0] = 10;\nnumeros[1] = 20;\nnumeros[2] = 30;\n\nPero no puedes convertir ese mismo array en uno de 5 posiciones.\nTendrías que crear otro nuevo.\n\nPor qué las otras no:\n- A. Sí -> falso, porque un array no cambia de tamaño.\n- B. Sí, solo cuando tenga un primer valor asignado -> falso, eso no tiene nada que ver.\n- C. Sí, en cualquier momento -> falso, todavía peor: no se puede en ningún momento."
+    },
+    {
+        "id": 5,
+        "pregunta": "¿Qué es una colección?",
+        "opciones": [
+            "A. Una estructura estática que almacena elementos de forma secuencial con un tamaño ilimitado de valores.",
+            "B. Una estructura estática que almacena elementos con un tamaño limitado de valores.",
+            "C. Una estructura dinámica que almacena un grupo de elementos limitado.",
+            "D. Una estructura dinámica que almacena un grupo de elementos ilimitado."
+        ],
+        "respuesta_correcta": "D. Una estructura dinámica que almacena un grupo de elementos ilimitado.",
+        "explicacion": "Ojo: esto está mal expresado técnicamente. No es ilimitado de verdad, porque en un programa siempre hay límites de memoria. Pero en un test como este, la opción que quieren marcar es la D, porque una colección puede crecer y cambiar de tamaño, a diferencia de un array.\n\nExplicación fácil:\nUna colección es como una caja flexible.\n\n- Un array es una caja con huecos fijos.\n- Una colección es una caja a la que le puedes ir metiendo más cosas según las necesites.\n\nPor eso se dice que es dinámica.\n\nEjemplo:\nImagina una lista de nombres:\nArrayList<String> nombres = new ArrayList<>();\nnombres.add(\"Ana\");\nnombres.add(\"Luis\");\nnombres.add(\"Marta\");\n\nAquí vas metiendo nombres y la colección va creciendo.\n\nPor qué las otras no:\n- A: dice estática, y eso no encaja con colección.\n- B: también dice estática, así que también está mal.\n- C: dice dinámica, eso va bien, pero dice elementos limitado, y normalmente en estos tests quieren destacar que no tiene tamaño fijo.\n\nQuédate con esta idea:\n- Array = tamaño fijo\n- Colección = tamaño variable"
+    },
+    {
+        "id": 6,
+        "pregunta": "¿Qué es una excepción?",
+        "opciones": [
+            "A. Un error producido en tiempo de ejecución y que altera el flujo normal del programa.",
+            "B. Un evento producido en tiempo de compilación y que altera el flujo normal del programa.",
+            "C. Un código excepcional que se usa cuando se produce un evento.",
+            "D. Un código excepcional que se usa en casos especiales."
+        ],
+        "respuesta_correcta": "A. Un error producido en tiempo de ejecución y que altera el flujo normal del programa.",
+        "explicacion": "Explicación fácil:\nUna excepción es como cuando estás haciendo algo tranquilamente y pasa un problema inesperado.\n\nPor ejemplo, imagina que quieres abrir una puerta con una llave, pero la llave no entra. Entonces algo falla y no puedes seguir como tenías pensado.\n\nEn programación pasa igual: el programa va funcionando normal, pero ocurre un problema durante la ejecución y el camino normal se rompe. A eso se le llama excepción.\n\nEjemplo:\nSi un programa quiere dividir un número entre 0:\nint x = 10 / 0;\n\nEso da un error en ejecución, porque no se puede dividir entre 0.\nEl programa esperaba seguir normal, pero aparece un problema y salta una excepción.\n\nPor qué las otras no:\n- B es incorrecta porque habla de tiempo de compilación, y una excepción normalmente se refiere a problemas que aparecen cuando el programa ya está corriendo.\n- C es incorrecta porque una excepción no es un código especial, sino un problema o situación anómala.\n- D también es incorrecta porque lo explica de forma muy vaga y poco técnica.\n\nIdea fácil para recordar:\n- Excepción = problema inesperado mientras el programa está funcionando."
+    },
+    {
+        "id": 7,
+        "pregunta": "¿Qué tipo de colección hace uso de una clave como identificador?",
+        "opciones": [
+            "A. HashMap.",
+            "B. ArrayList.",
+            "C. HashSet.",
+            "D. ArrayDeque."
+        ],
+        "respuesta_correcta": "A. HashMap.",
+        "explicacion": "Explicación fácil:\nUn HashMap guarda la información en forma de parejas:\n\n- una clave\n- y un valor\n\nLa clave sirve como si fuera una etiqueta o un nombre único para encontrar lo que buscas.\n\nEs como un armario con cajones: en cada cajón pones una pegatina, y luego buscas por esa pegatina.\n\nEjemplo:\nImagina que guardas teléfonos por nombre:\nHashMap<String, String> telefonos = new HashMap<>();\ntelefonos.put(\"Ana\", \"600111222\");\ntelefonos.put(\"Luis\", \"600333444\");\n\nAquí:\n- \"Ana\" es la clave\n- \"600111222\" es el valor\n\nSi quieres el teléfono de Ana, la buscas por su clave.\n\nPor qué las otras no:\n- B. ArrayList: guarda elementos por posición (0, 1, 2...), no por clave.\n- C. HashSet: guarda elementos sin repetir, pero no usa clave y valor.\n- D. ArrayDeque: sirve para colas o pilas, no para identificar por clave.\n\nMatiz importante:\nTécnicamente, en Java HashMap pertenece a la familia de los Map, no a la interfaz Collection. Pero en un test como este, la respuesta que buscan claramente es A."
+    },
+    {
+        "id": 8,
+        "pregunta": "Al capturar una excepción que realiza este método printStackTrace()",
+        "opciones": [
+            "A. Imprime la causa del error.",
+            "B. Obtiene el código de error de la excepción",
+            "C. Obtiene el mensaje de la excepción",
+            "D. Imprime el flujo de llamadas donde ocurrió el error."
+        ],
+        "respuesta_correcta": "D. Imprime el flujo de llamadas donde ocurrió el error.",
+        "explicacion": "Explicación fácil:\nprintStackTrace() sirve para enseñar el camino que ha seguido el programa hasta chocar con el error.\n\nEs como si te caes por una escalera y alguien te dice:\nPrimero estabas aquí, luego subiste aquí, luego pasaste por aquí... y aquí fue donde te caíste.\n\nEso ayuda a ver en qué método y en qué línea pasó el problema.\n\nEjemplo:\nSi tienes esto:\ntry {\n    int x = 10 / 0;\n} catch (Exception e) {\n    e.printStackTrace();\n}\n\nEl programa imprimirá información parecida a:\n- qué error fue,\n- en qué línea ocurrió,\n- y qué métodos se llamaron antes.\n\nPor qué las otras no:\n- A. Imprime la causa del error -> no exactamente. Puede mostrar información relacionada, pero su función principal es enseñar la traza de llamadas.\n- B. Obtiene el código de error de la excepción -> no, printStackTrace() no saca ningún código de error.\n- C. Obtiene el mensaje de la excepción -> eso se parece más a getMessage(), no a printStackTrace().\n\nIdea fácil para recordar:\n- getMessage() = te dice qué pasó\n- printStackTrace() = te enseña dónde y cómo pasó"
+    },
+    {
+        "id": 9,
+        "pregunta": "Código traducido para que pueda ser interpretado por el microprocesador:",
+        "opciones": [
+            "A. Código fuente.",
+            "B. Código máquina.",
+            "C. Código intermedio.",
+            "D. Todas las anteriores son incorrectas."
+        ],
+        "respuesta_correcta": "B. Código máquina.",
+        "explicacion": "Explicación fácil:\nEl microprocesador no entiende palabras como las escribimos nosotros en Java o en otros lenguajes.\nÉl entiende un lenguaje muy básico, como si solo supiera leer órdenes muy simples. Ese lenguaje es el código máquina.\n\nEs como esto:\n- Tú hablas idioma humano -> código fuente\n- El ordenador habla idioma máquina -> código máquina\n\nPor eso el programa tiene que traducirse para que el microprocesador lo pueda entender.\n\nEjemplo:\nTú escribes algo así:\nint suma = 2 + 3;\n\nEso lo entiende una persona que programa.\nPero el procesador no lee eso directamente: necesita que se convierta en instrucciones de máquina.\n\nPor qué las otras no:\n- A. Código fuente -> es el que escribes tú, no el que entiende directamente el microprocesador.\n- C. Código intermedio -> en algunos lenguajes existe, pero sigue sin ser lo que entiende directamente el procesador.\n- D. Todas las anteriores son incorrectas -> falso, porque la B sí es correcta.\n\nIdea fácil para recordar:\n- Código fuente = lo escribe el programador\n- Código máquina = lo entiende el ordenador"
+    },
+    {
+        "id": 10,
+        "pregunta": "Coloca cada componente horizontalmente de izquierda a derecha. Si sobrepasa la fila comienza en la siguiente.:",
+        "opciones": [
+            "A. BorderLayout.",
+            "B. CardLayout.",
+            "C. FlowLayout.",
+            "D. GridLayout."
+        ],
+        "respuesta_correcta": "C. FlowLayout.",
+        "explicacion": "Explicación fácil:\nFlowLayout coloca los componentes en fila, de izquierda a derecha.\nY si ya no caben más en esa fila, baja y sigue en la siguiente línea.\n\nEs como cuando pones cromos en una mesa:\n- los vas poniendo uno al lado del otro,\n- y cuando no cabe otro más,\n- empiezas una fila nueva.\n\nEjemplo:\nSi tienes varios botones:\n- Botón 1\n- Botón 2\n- Botón 3\n- Botón 4\n\nFlowLayout los pone seguidos. Si la ventana es pequeña y no caben todos, algunos pasan abajo a otra fila.\n\nPor qué las otras no:\n- A. BorderLayout: divide la ventana en zonas como norte, sur, este, oeste y centro.\n- B. CardLayout: muestra una carta o panel cada vez, como si cambiaras de pantalla.\n- D. GridLayout: coloca todo en una cuadrícula fija de filas y columnas.\n\nIdea fácil para recordar:\n- Flow = fluye de izquierda a derecha y salta a otra línea si hace falta."
+    },
+    {
+        "id": 11,
+        "pregunta": "Como podemos capturar una excepción",
+        "opciones": [
+            "A. Incluir el código que puede provocar una excepción dentro del bloque try.",
+            "B. Incluir el código que puede provocar una excepción dentro del bloque catch.",
+            "C. Incluir el código que puede provocar una excepción dentro del bloque finally.",
+            "D. Incluir el código que puede provocar una excepción dentro de un método exclusivo."
+        ],
+        "respuesta_correcta": "A. Incluir el código que puede provocar una excepción dentro del bloque try.",
+        "explicacion": "Explicación fácil:\nSi crees que una parte del programa puede fallar, esa parte la metes dentro de try.\n\nEs como si fueras a coger un vaso que puede caerse. Entonces dices:\nVoy a hacerlo con cuidado, y si pasa algo, lo controlo.\n\n- try = aquí metes el código que puede dar problema\n- catch = aquí dices qué hacer si falla\n\nEjemplo:\ntry {\n    int x = 10 / 0;\n} catch (Exception e) {\n    System.out.println(\"Ha ocurrido un error\");\n}\n\nAquí:\n- en try va la operación peligrosa,\n- y en catch se controla el error.\n\nPor qué las otras no:\n- B es incorrecta porque el código que puede fallar no va en catch; catch sirve para capturar y tratar la excepción.\n- C es incorrecta porque finally se usa normalmente para ejecutar algo siempre, haya error o no, como cerrar archivos o conexiones.\n- D es incorrecta porque no existe eso de método exclusivo para capturar excepciones.\n\nIdea fácil para recordar:\n- try = esto puede fallar\n- catch = si falla, hago esto\n- finally = esto se hace siempre"
+    },
+    {
+        "id": 12,
+        "pregunta": "El código fuente en java se identifica por:",
+        "opciones": [
+            "A. Usar la extensión .class",
+            "B. Usar la extensión .doc",
+            "C. Usar la extensión .ear",
+            "D. Usar la extensión .java"
+        ],
+        "respuesta_correcta": "D. Usar la extensión .java",
+        "explicacion": "Explicación fácil:\nEl código fuente es el archivo donde tú escribes el programa.\nEn Java, ese archivo se guarda con la extensión .java.\n\nEs como si un dibujo se guardara como .png o una canción como .mp3.\nPues el programa escrito en Java se guarda como .java.\n\nEjemplo:\nSi haces una clase llamada Hola, el archivo normal sería:\nHola.java\n\nDentro de ese archivo escribes el código del programa.\n\nPor qué las otras no:\n- A. .class -> no es el código fuente; es el archivo ya compilado.\n- B. .doc -> es un documento, no un archivo de Java.\n- C. .ear -> es otro tipo de archivo usado en despliegues Java EE, no para el código fuente.\n\nIdea fácil para recordar:\n- .java = lo escribe el programador\n- .class = lo genera el compilador"
+    },
+    {
+        "id": 13,
+        "pregunta": "El código intermedio compilado en java se identifica por:",
+        "opciones": [
+            "A. Usar la extensión .class",
+            "B. Usar la extensión .doc",
+            "C. Usar la extensión .ear",
+            "D. Usar la extensión .java"
+        ],
+        "respuesta_correcta": "A. Usar la extensión .class",
+        "explicacion": "Explicación fácil:\nEn Java, tú escribes el programa en un archivo .java.\nDespués, el compilador lo transforma en otro archivo que ya está más preparado para ejecutarse. Ese archivo es .class.\n\nEse .class es el código intermedio compilado de Java, también llamado bytecode.\n\nEjemplo:\nTú escribes esto en:\nHola.java\n\nCuando lo compilas, se crea:\nHola.class\n\nAsí que:\n- .java = lo escribes tú\n- .class = lo genera Java al compilar\n\nPor qué las otras no:\n- B. .doc -> eso es un documento, no un archivo de Java compilado.\n- C. .ear -> es un paquete de aplicaciones Java EE, no el código intermedio normal.\n- D. .java -> eso es código fuente, no código compilado.\n\nIdea fácil para recordar:\n- .java = antes de compilar\n- .class = después de compilar"
+    },
+    {
+        "id": 14,
+        "pregunta": "El Pseudocódigo es",
+        "opciones": [
+            "A. Un lenguaje de programación",
+            "B. Un lenguaje descriptivo para desarrollar algoritmos.",
+            "C. Código binario o hexadecimal.",
+            "D. Una estructura de control."
+        ],
+        "respuesta_correcta": "B. Un lenguaje descriptivo para desarrollar algoritmos.",
+        "explicacion": "Explicación fácil:\nEl pseudocódigo sirve para escribir los pasos de un programa de forma simple, sin usar todavía un lenguaje real como Java.\n\nEs como explicar una receta antes de cocinar:\n\n1. coge los ingredientes\n2. mézclalos\n3. mételos al horno\n\nNo estás cocinando aún, pero ya estás diciendo qué hay que hacer.\n\nEn programación pasa igual: el pseudocódigo te ayuda a pensar el algoritmo antes de escribir el código de verdad.\n\nEjemplo:\nLeer número\nSi número es mayor que 10\n   Mostrar \"Es mayor que 10\"\nSi no\n   Mostrar \"Es 10 o menor\"\n\nEso no es Java exacto, pero sirve para entender la lógica.\n\nPor qué las otras no:\n- A. Un lenguaje de programación -> no exactamente. El pseudocódigo no es un lenguaje formal que el ordenador ejecute.\n- C. Código binario o hexadecimal -> no tiene nada que ver.\n- D. Una estructura de control -> tampoco. Una estructura de control puede ser un if o un while, pero el pseudocódigo es algo más general.\n\nIdea fácil para recordar:\n- Pseudocódigo = explicar el programa con palabras parecidas a código, pero sin ser código real."
+    },
+    {
+        "id": 15,
+        "pregunta": "En la utilización de los sistemas de ficheros, ¿Qué hace el método listFiles()?",
+        "opciones": [
+            "A. Comprueba si la ruta existe.",
+            "B. Comprueba si es un directorio",
+            "C. Obtiene un listado de ficheros que hay en la ruta.",
+            "D. Obtiene el directorio padre."
+        ],
+        "respuesta_correcta": "C. Obtiene un listado de ficheros que hay en la ruta.",
+        "explicacion": "Explicación fácil:\nlistFiles() sirve para mirar qué cosas hay dentro de una carpeta.\nEs como abrir un cajón y ver todo lo que tiene dentro:\n- un archivo\n- otro archivo\n- una carpeta\n- otra carpeta\n\nTe devuelve la lista de elementos que hay en ese directorio.\n\nEjemplo:\nSi tienes una carpeta llamada documentos, puedes hacer algo así:\nFile carpeta = new File(\"documentos\");\nFile[] lista = carpeta.listFiles();\n\nAquí lista tendrá los archivos y carpetas que hay dentro de documentos.\n\nPor qué las otras no:\n- A. Comprueba si la ruta existe -> eso lo hace más bien exists().\n- B. Comprueba si es un directorio -> eso lo hace isDirectory().\n- D. Obtiene el directorio padre -> eso se hace con métodos como getParent() o parecidos, no con listFiles().\n\nIdea fácil para recordar:\n- listFiles() = enséñame lo que hay dentro de la carpeta."
+    },
+    {
+        "id": 16,
+        "pregunta": "En una aplicación en java:",
+        "opciones": [
+            "A. Tiene que haber una clase denominada .x",
+            "B. Es obligatorio usar paquetes.",
+            "C. Tiene que haber un método main.",
+            "D. Puede no haber ninguna clase."
+        ],
+        "respuesta_correcta": "C. Tiene que haber un método main.",
+        "explicacion": "Explicación fácil:\nEn una aplicación Java normal, el programa necesita un punto de entrada, es decir, un sitio por donde empezar.\n\nEse punto de entrada es el método main.\n\nEs como una carrera:\n- todos están preparados,\n- pero alguien tiene que decir ya para empezar.\n\nEn Java, ese ya es main.\n\nEjemplo:\npublic class Hola {\n    public static void main(String[] args) {\n        System.out.println(\"Hola\");\n    }\n}\n\nAquí el programa empieza en main.\n\nPor qué las otras no:\n- A. Tiene que haber una clase denominada .x -> eso no existe. No hay ninguna obligación de que una clase se llame así.\n- B. Es obligatorio usar paquetes -> no, puedes hacer programas Java sin definir paquetes.\n- D. Puede no haber ninguna clase -> falso, en Java el código va dentro de clases.\n\nMatiz importante:\nSi el test habla de una aplicación Java ejecutable normal, la respuesta correcta es C.\nAdemás, en Java clásico el main suele tener esta forma:\npublic static void main(String[] args)"
+    },
+    {
+        "id": 17,
+        "pregunta": "Es habitual trabajar directamente con ficheros de tipo de datos",
+        "opciones": [
+            "A. De bytes o caracteres.",
+            "B. De enteros.",
+            "C. De cadena de caracteres.",
+            "D. De hexadecimal."
+        ],
+        "respuesta_correcta": "A. De bytes o caracteres.",
+        "explicacion": "Explicación fácil:\nCuando un programa trabaja con ficheros, normalmente lo que maneja directamente son:\n\n- bytes -> para datos más básicos o binarios\n- caracteres -> para texto\n\nEs como leer una carta:\n- si la lees como texto, trabajas con caracteres\n- si abres un archivo más por dentro, trabajas con bytes\n\nEjemplo:\n- Un archivo .txt suele trabajarse con caracteres\n- Una imagen o un archivo binario suele trabajarse con bytes\n\nEn Java esto se ve mucho con:\n- InputStream y OutputStream -> bytes\n- Reader y Writer -> caracteres\n\nPor qué las otras no:\n- B. De enteros -> no es la forma habitual de clasificar los ficheros.\n- C. De cadena de caracteres -> suena parecido al texto, pero la clasificación normal en Java es bytes o caracteres, no cadenas.\n- D. De hexadecimal -> hexadecimal es una forma de representar datos, no un tipo habitual de fichero en este contexto.\n\nIdea fácil para recordar:\n- Ficheros en Java = bytes o caracteres"
+    },
+    {
+        "id": 18,
+        "pregunta": "Estos, char, int, boolean y double, son:",
+        "opciones": [
+            "A. Constantes.",
+            "B. Tipos de datos primitivos.",
+            "C. Operadores.",
+            "D. Ninguna de las anteriores."
+        ],
+        "respuesta_correcta": "B. Tipos de datos primitivos.",
+        "explicacion": "Explicación fácil:\nchar, int, boolean y double son como los bloques básicos que trae Java para guardar información.\n\nSirven para guardar cosas simples:\n- char -> un carácter, como 'A'\n- int -> un número entero, como 7\n- boolean -> true o false\n- double -> números con decimales, como 3.14\n\nSe llaman primitivos porque son los tipos más básicos, los que ya vienen incorporados en el lenguaje.\n\nEjemplo:\nchar letra = 'A';\nint edad = 20;\nboolean encendido = true;\ndouble precio = 9.99;\n\nAquí cada variable guarda un tipo de dato distinto.\n\nPor qué las otras no:\n- A. Constantes -> no, una constante es un valor que no cambia, pero char, int, boolean y double son tipos, no constantes.\n- C. Operadores -> tampoco; operadores son símbolos como +, -, *, &&.\n- D. Ninguna de las anteriores -> falso, porque la B sí es correcta.\n\nIdea fácil para recordar:\n- Los tipos primitivos son los recipientes básicos para guardar datos simples."
+    },
+    {
+        "id": 19,
+        "pregunta": "Indica que controlador permite introducir texto en un campo",
+        "opciones": [
+            "A. Button.",
+            "B. Label.",
+            "C. Checkbox.",
+            "D. TextField."
+        ],
+        "respuesta_correcta": "D. TextField.",
+        "explicacion": "Explicación fácil:\nSi quieres que una persona escriba texto en una ventana o formulario, usas un TextField.\n\nEs como una cajita en blanco donde puedes poner tu nombre, tu edad o cualquier palabra.\n\nEjemplo:\nImagina un formulario que pone:\n\nNombre: [          ]\n\nEsa parte vacía donde escribes sería un TextField.\n\nEn Java sería algo así:\nTextField campo = new TextField();\n\no en Swing, más habitual:\nJTextField campo = new JTextField();\n\nPor qué las otras no:\n- A. Button -> es un botón para pulsar, no para escribir.\n- B. Label -> solo muestra texto, no deja escribir.\n- C. Checkbox -> sirve para marcar o desmarcar una opción.\n\nIdea fácil para recordar:\n- TextField = cajita para escribir texto"
+    },
+    {
+        "id": 20,
+        "pregunta": "La estructura basada en bucles es:",
+        "opciones": [
+            "A. Secuencial.",
+            "B. Alternativa.",
+            "C. Iterativa.",
+            "D. Ninguna de las anteriores."
+        ],
+        "respuesta_correcta": "C. Iterativa.",
+        "explicacion": "Explicación fácil:\nUn bucle sirve para repetir algo varias veces.\n\nY cuando una estructura repite una acción, se llama iterativa.\n\nEs como cuando te dicen:\nDa 5 palmadas.\n\nNo te lo dicen 5 veces una por una. Te dan una instrucción que se repite.\nEso hace un bucle.\n\nEjemplo:\nfor (int i = 0; i < 3; i++) {\n    System.out.println(\"Hola\");\n}\n\nAquí el programa escribe Hola 3 veces.\nComo está repitiendo una acción, es una estructura iterativa.\n\nPor qué las otras no:\n- A. Secuencial -> es cuando las instrucciones van una detrás de otra, sin decidir ni repetir.\n- B. Alternativa -> es cuando el programa elige entre opciones, como con if o else.\n- D. Ninguna de las anteriores -> falso, porque iterativa sí es correcta.\n\nIdea fácil para recordar:\n- Secuencial = hacer pasos seguidos\n- Alternativa = elegir\n- Iterativa = repetir"
+    },
+    {
+        "id": 21,
+        "pregunta": "La estructura de una clase está compuesta por:",
+        "opciones": [
+            "A. Solo variables",
+            "B. Solo métodos",
+            "C. Campos y métodos.",
+            "D. Métodos y funciones."
+        ],
+        "respuesta_correcta": "C. Campos y métodos.",
+        "explicacion": "Explicación fácil:\nUna clase es como una ficha de un personaje o de una cosa.\n\nTiene dos partes importantes:\n- campos -> lo que tiene\n- métodos -> lo que puede hacer\n\nPor eso una clase se compone de campos y métodos.\n\nEjemplo:\nImagina una clase Perro.\n\n- Campos: nombre, edad, color\n- Métodos: ladrar, correr, comer\n\nclass Perro {\n    String nombre;\n    int edad;\n\n    void ladrar() {\n        System.out.println(\"Guau\");\n    }\n}\n\nAquí:\n- nombre y edad son campos\n- ladrar() es un método\n\nPor qué las otras no:\n- A. Solo variables -> no, porque una clase no tiene solo datos; también tiene comportamiento.\n- B. Solo métodos -> tampoco, porque también guarda información.\n- D. Métodos y funciones -> en Java, dentro de una clase normalmente hablamos de métodos. Esa opción está mal planteada.\n\nIdea fácil para recordar:\n- Campos = datos\n- Métodos = acciones"
+    },
+    {
+        "id": 22,
+        "pregunta": "La estructura if",
+        "opciones": [
+            "A. Permite hacer saltos incondicionales",
+            "B. Permite ejecutar una parte de código según una condición.",
+            "C. Permite ejecutar varias veces una parte de código.",
+            "D. Solo se ejecuta una vez."
+        ],
+        "respuesta_correcta": "B. Permite ejecutar una parte de código según una condición.",
+        "explicacion": "Explicación fácil:\nLa estructura if sirve para tomar una decisión.\n\nEs como decir:\n- si llueve, cojo paraguas\n- si no llueve, no lo cojo\n\nEn programación hace lo mismo: si se cumple una condición, ejecuta una parte del código.\n\nEjemplo:\nint edad = 18;\n\nif (edad >= 18) {\n    System.out.println(\"Eres mayor de edad\");\n}\n\nAquí el programa piensa:\n- si la edad es 18 o más, muestra el mensaje\n- si no, no lo muestra\n\nPor qué las otras no:\n- A. Permite hacer saltos incondicionales -> no, if no hace saltos porque sí; necesita una condición.\n- C. Permite ejecutar varias veces una parte de código -> eso sería más propio de un bucle, como for o while.\n- D. Solo se ejecuta una vez -> está mal planteada. Un if no se define por ejecutarse una vez, sino por decidir según una condición.\n\nIdea fácil para recordar:\n- if = si pasa esto, haz esto"
+    },
+    {
+        "id": 23,
+        "pregunta": "La notación Big-0",
+        "opciones": [
+            "A. Es un tipo de dato",
+            "B. Permite medir la complejidad algorítmica.",
+            "C. Es una herramienta para calcular los usuarios que puede soportar una aplicación",
+            "D. Es una estructura de programación"
+        ],
+        "respuesta_correcta": "B. Permite medir la complejidad algorítmica.",
+        "explicacion": "Explicación fácil:\nLa notación Big-O se usa para decir cuánto trabajo le cuesta a un programa hacer algo cuando la cantidad de datos crece.\n\nEs como preguntar:\n- si tengo 10 cajas, ¿tardo poco?\n- si tengo 1.000 cajas, ¿tardo mucho más?\n\nBig-O ayuda a medir cómo de rápido o lento crece ese esfuerzo.\n\nEjemplo:\nImagina que buscas un nombre en una lista:\n- si miras uno por uno, cuanto más grande sea la lista, más tardas\n- eso sería una complejidad como O(n)\n\nSi siempre haces una sola operación, aunque haya muchos datos, sería algo como O(1).\n\nIdea muy simple:\n- O(1) = tarda casi lo mismo siempre\n- O(n) = tarda más cuanto más cosas hay\n- O(n²) = tarda muchísimo más cuando crecen los datos\n\nPor qué las otras no:\n- A. Es un tipo de dato -> no, no guarda valores como int o boolean.\n- C. Es una herramienta para calcular los usuarios que puede soportar una aplicación -> no exactamente; eso sería una aplicación indirecta, pero no es lo que Big-O significa.\n- D. Es una estructura de programación -> no, no es como un if o un for.\n\nIdea fácil para recordar:\n- Big-O = forma de medir lo eficiente que es un algoritmo."
+    },
+    {
+        "id": 24,
+        "pregunta": "Las clases abstractas:",
+        "opciones": [
+            "A. Pueden ser instanciadas normalmente.",
+            "B. Pueden ser instanciadas per requieren de la palabra reservada abstract.",
+            "C. No puede ser instanciada ni empleada de otro modo.",
+            "D. No puede ser instanciada, pero sí empleada para la herencia."
+        ],
+        "respuesta_correcta": "D. No puede ser instanciada, pero sí empleada para la herencia.",
+        "explicacion": "Explicación fácil:\nUna clase abstracta es como un molde incompleto.\n\nNo puedes crear un objeto directamente a partir de ella, porque le faltan cosas por concretar.\nPero sí sirve como base para que otras clases la hereden y la terminen.\n\nEs como dibujar una plantilla de Animal:\n- no existe un animal genérico real que uses tal cual,\n- pero sí puedes crear Perro, Gato, Pájaro a partir de esa idea.\n\nEjemplo:\nabstract class Animal {\n    abstract void hacerSonido();\n}\n\nclass Perro extends Animal {\n    void hacerSonido() {\n        System.out.println(\"Guau\");\n    }\n}\n\nAquí:\n- Animal es abstracta, así que no haces new Animal()\n- pero Perro la hereda y sí puedes crear un new Perro()\n\nPor qué las otras no:\n- A es falsa, porque una clase abstracta no se puede instanciar normalmente.\n- B es falsa, aunque menciona abstract, porque sigue diciendo que pueden instanciarse.\n- C es falsa, porque sí puede usarse: sirve para herencia.\n\nIdea fácil para recordar:\n- Clase abstracta = base para otras clases, no objeto directo."
+    },
+    {
+        "id": 25,
+        "pregunta": "No es una forma de polimorfismo:",
+        "opciones": [
+            "A. Asignación polimorfa.",
+            "B. Ejecución polimorfa.",
+            "C. Herencia polimorfa.",
+            "D. Todas las anteriores son incorrectas."
+        ],
+        "respuesta_correcta": "C. Herencia polimorfa.",
+        "explicacion": "Explicación fácil:\nEl polimorfismo es cuando una cosa puede comportarse de formas distintas según el objeto real que haya detrás.\n\nPero la herencia no es una forma de polimorfismo.\nLa herencia es más bien la base o el camino que muchas veces permite que el polimorfismo exista.\n\nEs como esto:\n- Herencia = un hijo se parece a su padre y hereda cosas\n- Polimorfismo = aunque tú lo llames animal, luego puede comportarse como perro, gato, etc.\n\nO sea, la herencia ayuda, pero no es el polimorfismo en sí.\n\nEjemplo:\nAnimal a = new Perro();\na.hacerSonido();\n\nAquí:\n- Perro hereda de Animal -> eso es herencia\n- pero cuando llamas a hacerSonido() y se ejecuta lo del Perro, eso es polimorfismo\n\nPor qué las otras no:\n- A. Asignación polimorfa -> sí se usa para hablar de cuando una variable de un tipo padre guarda un objeto hijo.\n- B. Ejecución polimorfa -> sí encaja con la idea de que se ejecute un método distinto según el objeto real.\n- D. Todas las anteriores son incorrectas -> falso, porque la que no encaja es la C.\n\nIdea fácil para recordar:\n- Herencia = una clase nace de otra\n- Polimorfismo = un mismo nombre general puede comportarse distinto"
+    },
+    {
+        "id": 26,
+        "pregunta": "Para establecer cualquier conexión a una base de datos desde Java, es necesario:",
+        "opciones": [
+            "A. Emplear un driver específico.",
+            "B. Emplear el objeto statement.",
+            "C. Emplear una librería con ficheros .iso.",
+            "D. Todas las anteriores son incorrectas."
+        ],
+        "respuesta_correcta": "A. Emplear un driver específico.",
+        "explicacion": "Explicación fácil:\nPara que Java pueda hablar con una base de datos, necesita como un traductor.\n\nEse traductor es el driver.\n\nCada base de datos habla su manera, así que Java necesita el driver adecuado para entenderse con ella.\n\nEs como si quisieras hablar con alguien que habla otro idioma:\n- tú hablas español,\n- la base de datos habla su idioma,\n- el driver hace de intérprete.\n\nEjemplo:\nSi vas a conectarte a MySQL, necesitas su driver JDBC.\nSi vas a PostgreSQL, necesitas el suyo.\n\nLuego ya puedes hacer cosas como abrir la conexión.\n\nPor qué las otras no:\n- B. Emplear el objeto statement -> no. Statement se usa después, cuando ya estás conectado, para lanzar consultas.\n- C. Emplear una librería con ficheros .iso -> no tiene sentido aquí; .iso no es lo que se usa para esto.\n- D. Todas las anteriores son incorrectas -> falso, porque la A sí es correcta.\n\nIdea fácil para recordar:\n- Driver = traductor entre Java y la base de datos\n- Statement = herramienta para hacer consultas una vez ya hay conexión"
+    },
+    {
+        "id": 27,
+        "pregunta": "Para indicar a una clase que se almacene a una base de datos orientada a objetos, usaremos la etiqueta.",
+        "opciones": [
+            "A. @Entity",
+            "B. @Embedded",
+            "C. @Transient",
+            "D. @Id"
+        ],
+        "respuesta_correcta": "A. @Entity",
+        "explicacion": "Explicación fácil:\n@Entity es una etiqueta que le dice a Java algo como:\nOye, esta clase la quiero guardar en la base de datos.\n\nEs como ponerle una pegatina a una caja que diga:\nGuardar\n\nEntonces el sistema sabe que esa clase representa un objeto que debe persistirse.\n\nEjemplo:\n@Entity\npublic class Persona {\n    @Id\n    private int id;\n    private String nombre;\n}\n\nAquí:\n- @Entity dice que Persona se guarda en la base de datos\n- @Id marca cuál es su identificador\n\nPor qué las otras no:\n- B. @Embedded -> se usa para un objeto que va metido dentro de otro, no para marcar la clase principal como almacenable.\n- C. @Transient -> indica justo lo contrario en un campo: que no se guarde.\n- D. @Id -> solo marca el identificador, pero no convierte por sí sola a la clase en entidad.\n\nIdea fácil para recordar:\n- @Entity = esta clase se guarda\n- @Id = este campo la identifica"
+    },
+    {
+        "id": 28,
+        "pregunta": "Para montar la cadena de conexión ¿Que datos necesitamos?",
+        "opciones": [
+            "A. Solo el nombre de la base de datos.",
+            "B. La URL de la base de datos, el usuario y la contraseña.",
+            "C. El nombre de la base de datos y la tabla que queremos consultar.",
+            "D. No hace falta ningún dato, el driver ya dispone de los datos para conectarse."
+        ],
+        "respuesta_correcta": "B. La URL de la base de datos, el usuario y la contraseña.",
+        "explicacion": "Explicación fácil:\nPara conectarte a una base de datos, Java necesita saber dónde está y con qué permiso entra.\n\nEs como entrar en una casa:\n- URL = la dirección de la casa\n- usuario = quién eres\n- contraseña = la llave para entrar\n\nSin esos datos, no sabe a qué base de datos conectarse ni si tiene permiso.\n\nEjemplo:\nUna conexión típica puede tener algo así:\nString url = \"jdbc:mysql://localhost:3306/tienda\";\nString usuario = \"root\";\nString contrasena = \"1234\";\n\nY luego se usa para conectar.\n\nPor qué las otras no:\n- A. Solo el nombre de la base de datos -> no basta, porque falta saber dónde está y con qué credenciales entrar.\n- C. El nombre de la base de datos y la tabla que queremos consultar -> la tabla se usa después, cuando haces consultas, no para abrir la conexión.\n- D. No hace falta ningún dato... -> falso, el driver no adivina esos datos.\n\nIdea fácil para recordar:\nPara conectarte necesitas, como mínimo:\n- dirección\n- usuario\n- contraseña"
+    },
+    {
+        "id": 29,
+        "pregunta": "Podemos decir de la herencia:",
+        "opciones": [
+            "A. Es una relación jerárquica entre una clase padre y una clase hija.",
+            "B. En java solo se puede heredar de una superclase o clase padre.",
+            "C. Las clases hijas o subclases heredan toda la funcionalidad de la clase padre.",
+            "D. Todas las anteriores son correctas"
+        ],
+        "respuesta_correcta": "D. Todas las anteriores son correctas",
+        "explicacion": "Explicación fácil:\nLa herencia es como cuando una clase nueva aprende y recibe cosas de otra clase más general.\n\nPor ejemplo:\n- clase padre: Animal\n- clase hija: Perro\n\nPerro puede heredar cosas de Animal.\n\nEn este test, la correcta es Todas las anteriores son correctas porque las tres frases A, B y C se están entendiendo de forma general y básica:\n- A dice que hay una relación entre clase padre e hija\n- B dice que en Java una clase hereda de una sola clase padre\n- C dice que la clase hija recibe la funcionalidad de la clase padre\n\nEjemplo:\nclass Animal {\n    void respirar() {\n        System.out.println(\"Respirando\");\n    }\n}\n\nclass Perro extends Animal {\n}\n\nAquí Perro hereda de Animal y puede usar lo que aprende de la clase padre.\n\nIdea fácil para recordar:\n- Herencia = una clase hija aprende de una clase padre\n- En este examen, las tres afirmaciones se dan por válidas, por eso la correcta es la D."
+    },
+    {
+        "id": 30,
+        "pregunta": "Que campos de una clase no se guardaran en una base de datos orientada a objetos",
+        "opciones": [
+            "A. Todos los campos se guardan siempre.",
+            "B. Los campos que se declaren como final, static, transient o lleve la etiqueta @Transient",
+            "C. Los que tengan visibilidad privada.",
+            "D. Los que lleven la etiqueta @FieldNotIncluded."
+        ],
+        "respuesta_correcta": "B. Los campos que se declaren como final, static, transient o lleve la etiqueta @Transient",
+        "explicacion": "Explicación fácil:\nCuando guardas un objeto en una base de datos, no siempre se guardan todas sus cajitas de información.\n\nHay campos que se usan solo mientras el programa está funcionando y no se meten en la base de datos.\n\nLos más típicos son:\n- static -> porque pertenece a la clase, no al objeto\n- transient o @Transient -> porque estás diciendo esto no lo guardes\n\nEjemplo:\nclass Persona {\n    String nombre;\n    transient String claveSecreta;\n    static int contador;\n}\n\nAquí:\n- nombre sí se guardaría\n- claveSecreta no se guardaría\n- contador tampoco, porque es static\n\nPor qué la B es la que más encaja:\n- A es falsa, porque no siempre se guardan todos los campos.\n- C es falsa, porque que un campo sea private no significa que no se guarde.\n- D parece inventada o incorrecta: @FieldNotIncluded no es la anotación estándar que se suele usar aquí.\n\nMatiz importante:\nLo más correcto técnicamente sería decir sobre todo:\n- static no se persiste\n- transient no se persiste\n- @Transient no se persiste\n\nLo de final depende del sistema y está mal meterlo tan alegremente como regla universal.\nAun así, para este test, la opción que seguramente esperan es la B."
+    },
+    {
+        "id": 31,
+        "pregunta": "Que tipos de recursividad existen:",
+        "opciones": [
+            "A. Simple, multiple, cruzada o anidada.",
+            "B. Simple, multiple, cruzada o anillada.",
+            "C. Doble, unificada, indirecta o anillada.",
+            "D. Doble, anillada, simple o cruzada."
+        ],
+        "respuesta_correcta": "A. Simple, multiple, cruzada o anidada.",
+        "explicacion": "Explicación fácil:\nLa recursividad es cuando una función se llama a sí misma para resolver un problema.\n\nEs como si para hacer una tarea tú dijeras:\nPara hacer esto, primero tengo que hacer una versión más pequeña de esto mismo.\n\nY así varias veces, hasta llegar a un caso pequeñito que ya sí sabes resolver.\n\nLos tipos que suelen enseñarse son:\n- simple -> una función se llama a sí misma una vez\n- múltiple -> se llama a sí misma varias veces\n- cruzada -> una función llama a otra y esa otra vuelve a llamar a la primera\n- anidada -> una llamada recursiva va metida dentro de otra\n\nEjemplo fácil:\nImagina una muñeca rusa:\n- abres una\n- dentro hay otra igual\n- dentro otra\n- dentro otra\n\nEso se parece a la recursividad: una cosa contiene otra del mismo tipo.\n\nPor qué las otras no:\n- B falla por anillada, que no es la denominación habitual aquí.\n- C mete términos que no encajan bien, como unificada o doble.\n- D también usa doble y anillada, que no son la clasificación normal.\n\nIdea fácil para recordar:\n- Recursividad = una función que se llama a sí misma\n- La opción más correcta de las que te dan es la A."
+    },
+    {
+        "id": 32,
+        "pregunta": "Queremos realizar las acciones de un semáforo, Verde para continuar, Amarillo y Rojo para parar. ¿Cómo se puede hacer?",
+        "opciones": [
+            "A. Con una estructura switch",
+            "B. Con una estructura if-else",
+            "C. Con una estructura if-else if",
+            "D. Todas las anteriores son correctas."
+        ],
+        "respuesta_correcta": "D. Todas las anteriores son correctas.",
+        "explicacion": "Explicación fácil:\nAquí el programa tiene que decidir qué hacer según el color del semáforo:\n- Verde -> continuar\n- Amarillo o Rojo -> parar\n\nEso se puede hacer de varias maneras porque todas sirven para tomar decisiones.\n\nEs como si mamá te dijera:\n- si está verde, andas\n- si no, te paras\n\nEso puede escribirse con if-else, con if-else if o con switch.\n\nEjemplo con if-else:\nif (color.equals(\"Verde\")) {\n    System.out.println(\"Continuar\");\n} else {\n    System.out.println(\"Parar\");\n}\n\nAquí funciona porque solo hay dos acciones finales:\n- seguir\n- o parar\n\nEjemplo con if-else if:\nif (color.equals(\"Verde\")) {\n    System.out.println(\"Continuar\");\n} else if (color.equals(\"Amarillo\")) {\n    System.out.println(\"Parar\");\n} else if (color.equals(\"Rojo\")) {\n    System.out.println(\"Parar\");\n}\n\nEjemplo con switch:\nswitch (color) {\n    case \"Verde\":\n        System.out.println(\"Continuar\");\n        break;\n    case \"Amarillo\":\n    case \"Rojo\":\n        System.out.println(\"Parar\");\n        break;\n}\n\nPor qué:\n- A sirve\n- B también sirve\n- C también sirve\n\nPor eso la correcta es D."
+    },
+    {
+        "id": 33,
+        "pregunta": "Queremos sumar los 10 primeros números para que dé como resultado 55 ¿Qué código es correcto?",
+        "opciones": [
+            "A. for (int i = 1; i <= 10; i++) { resultado += i; }",
+            "B. int i=1; while(i<10) { resultado += i; }",
+            "C. int i=1;do { i++; resultado +=i; } while(i<=10);",
+            "D. Todas las anteriores son correctas."
+        ],
+        "respuesta_correcta": "A. for (int i = 1; i <= 10; i++) { resultado += i; }",
+        "explicacion": "Explicación fácil:\nQueremos sumar:\n1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55\n\nLa opción A hace justo eso:\n- empieza en 1\n- sigue mientras i <= 10\n- va subiendo de uno en uno\n- y va sumando cada número a resultado\n\nEs como meter en una hucha los números del 1 al 10, uno a uno.\n\nEjemplo:\nSi antes pones:\nint resultado = 0;\n\ny luego:\nfor (int i = 1; i <= 10; i++) {\n    resultado += i;\n}\n\nal final resultado vale 55.\n\nPor qué las otras no:\n- B está mal porque no incrementa i dentro del while, así que se quedaría repitiendo siempre con el mismo valor. Además pone i < 10, así que ni siquiera llegaría al 10.\n- C está mal porque primero hace i++ y luego suma, así que empieza sumando 2. Y además acaba sumando 11 también.\n- D es falsa porque no son todas correctas.\n\nOjo importante:\nLa A es correcta si resultado ya estaba inicializado a 0 antes. En este tipo de test eso normalmente se da por hecho."
+    },
+    {
+        "id": 34,
+        "pregunta": "Se considera la plantilla o estructura del elemento principal de POO:",
+        "opciones": [
+            "A. Clase.",
+            "B. Campo.",
+            "C. Objeto.",
+            "D. Ninguna de las anteriores es correcta."
+        ],
+        "respuesta_correcta": "A. Clase.",
+        "explicacion": "Explicación fácil:\nEn POO, la clase es como el molde o el plano.\n\nPrimero tienes el molde, y después a partir de ese molde creas los objetos.\n\nEs como cuando tienes un molde de galletas:\n- el molde sería la clase\n- cada galleta hecha con ese molde sería un objeto\n\nPor eso, si preguntan por la plantilla o estructura principal, la respuesta es clase.\n\nEjemplo:\nSi tienes una clase Coche, esa clase dice:\n- qué datos tendrá el coche\n- qué acciones podrá hacer\n\nclass Coche {\n    String color;\n    void arrancar() {\n        System.out.println(\"Arrancando\");\n    }\n}\n\nLuego, cuando creas un coche concreto, eso ya es un objeto.\n\nPor qué las otras no:\n- B. Campo -> un campo es solo una parte de la clase, como color o edad.\n- C. Objeto -> el objeto no es la plantilla; es la copia creada a partir de la clase.\n- D es falsa, porque A sí es correcta.\n\nIdea fácil para recordar:\n- Clase = molde\n- Objeto = cosa creada con ese molde"
+    },
+    {
+        "id": 35,
+        "pregunta": "Se puede decir de un constructor que...",
+        "opciones": [
+            "A. Se encarga de crear instancias de objetos.",
+            "B. Se encarga de destruir instancias de objetos.",
+            "C. Un método personalizado que realizar una función concreta, por ejemplo, una suma.",
+            "D. Es un atributo de una clase."
+        ],
+        "respuesta_correcta": "A. Se encarga de crear instancias de objetos.",
+        "explicacion": "Explicación fácil:\nUn constructor sirve para crear un objeto cuando nace.\n\nEs como cuando montas un muñeco nuevo:\n- primero lo creas,\n- luego le pones su nombre, color o edad.\n\nEl constructor ayuda a que ese objeto empiece ya preparado.\n\nEjemplo:\nclass Persona {\n    String nombre;\n\n    Persona(String nombre) {\n        this.nombre = nombre;\n    }\n}\n\ny luego:\nPersona p = new Persona(\"Ana\");\n\nAquí, new Persona(\"Ana\") usa el constructor para crear el objeto p.\n\nPor qué las otras no:\n- B. Se encarga de destruir instancias de objetos -> no. En Java eso no lo hace un constructor.\n- C. Un método personalizado... -> no. Un constructor no es un método cualquiera para hacer tareas como sumar.\n- D. Es un atributo de una clase -> tampoco. Un constructor no es un dato, sino algo especial que se usa al crear el objeto.\n\nIdea fácil para recordar:\n- Clase = molde\n- Objeto = copia creada\n- Constructor = lo que ayuda a crear esa copia"
+    },
+    {
+        "id": 36,
+        "pregunta": "Si queremos acceder al primer elemento de un array, usaremos...",
+        "opciones": [
+            "A. array[1]",
+            "B. array[array.length]",
+            "C. array[0]",
+            "D. array[1][1]"
+        ],
+        "respuesta_correcta": "C. array[0]",
+        "explicacion": "Explicación fácil:\nEn Java, los arrays empiezan a contar desde 0, no desde 1.\n\nEs como si la primera casilla tuviera el número 0:\n- primera posición -> 0\n- segunda posición -> 1\n- tercera posición -> 2\n\nPor eso, si quieres coger el primer elemento, usas array[0].\n\nEjemplo:\nint[] array = {10, 20, 30};\nSystem.out.println(array[0]);\n\nEso mostraría 10, porque 10 es el primer elemento.\n\nPor qué las otras no:\n- A. array[1] -> eso sería el segundo elemento.\n- B. array[array.length] -> eso está mal, porque se sale del array. La última posición es length - 1.\n- D. array[1][1] -> eso sería para un array de dos dimensiones, y además no sería el primer elemento general.\n\nIdea fácil para recordar:\n- En arrays, el primero siempre empieza en 0."
+    },
+    {
+        "id": 37,
+        "pregunta": "Todas las excepciones deben de heredar de:",
+        "opciones": [
+            "A. La clase que contiene el método main o cualquier subclase.",
+            "B. La clase Throwable o cualquier subclase.",
+            "C. La clase System o cualquier subclase.",
+            "D. Ninguna de las anteriores."
+        ],
+        "respuesta_correcta": "B. La clase Throwable o cualquier subclase.",
+        "explicacion": "Explicación fácil:\nEn Java, todos los errores y excepciones importantes vienen de una clase grande llamada Throwable.\n\nEs como un árbol:\n- arriba del todo está Throwable\n- debajo están ramas como Exception y Error\n- y debajo de esas ya salen excepciones más concretas\n\nPor eso, si una excepción existe en Java, tiene que venir de Throwable.\n\nEjemplo:\nUna excepción típica como esta:\nArithmeticException\n\nviene de una familia así:\nThrowable\n └── Exception\n      └── RuntimeException\n           └── ArithmeticException\n\nAsí que sí, hereda de Throwable.\n\nPor qué las otras no:\n- A. La clase que contiene el método main... -> no tiene nada que ver con las excepciones.\n- C. La clase System... -> tampoco. System es otra clase de Java, pero no es la base de las excepciones.\n- D. Ninguna de las anteriores -> falso, porque la B sí es correcta.\n\nIdea fácil para recordar:\n- Throwable = la gran familia de errores y excepciones en Java."
+    },
+    {
+        "id": 38,
+        "pregunta": "TreeSet",
+        "opciones": [
+            "A. No existe este tipo de colección",
+            "B. Es una colección que permite tener elementos duplicados",
+            "C. Los datos se organizan en forma de árbol jerárquico",
+            "D. Usa la interfaz map."
+        ],
+        "respuesta_correcta": "C. Los datos se organizan en forma de árbol jerárquico",
+        "explicacion": "Explicación fácil:\nTreeSet sí existe en Java y sirve para guardar elementos ordenados y sin repetir.\n\nSe llama TreeSet porque por dentro organiza los datos como si fuera un árbol.\n\nEs como colocar números en una estantería en orden, no amontonados.\n\nEjemplo:\nTreeSet<Integer> numeros = new TreeSet<>();\nnumeros.add(5);\nnumeros.add(2);\nnumeros.add(8);\nnumeros.add(2);\n\nAl final quedaría algo así:\n[2, 5, 8]\n\n¿Por qué?\n- los ordena\n- y no guarda el 2 dos veces\n\nPor qué las otras no:\n- A. No existe este tipo de colección -> falso, sí existe.\n- B. Permite tener elementos duplicados -> falso, un TreeSet no admite duplicados.\n- D. Usa la interfaz map -> falso, TreeSet pertenece a la familia Set, no a Map.\n\nIdea fácil para recordar:\n- TreeSet = conjunto ordenado, sin repetidos, organizado como árbol"
+    },
+    {
+        "id": 39,
+        "pregunta": "Un caso base es",
+        "opciones": [
+            "A. Una plantilla para hacer recursividad",
+            "B. Una condición de terminación de la recursividad.",
+            "C. Un ejemplo de recursividad.",
+            "D. Ninguna de las anteriores"
+        ],
+        "respuesta_correcta": "B. Una condición de terminación de la recursividad.",
+        "explicacion": "Explicación fácil:\nCuando una función se llama a sí misma muchas veces, necesita un momento para parar.\nEse momento en el que dice ya no sigo más es el caso base.\n\nEs como bajar escalones:\n- bajas uno,\n- bajas otro,\n- bajas otro,\n- y cuando llegas al suelo, paras.\n\nEse suelo es el caso base.\n\nEjemplo:\nvoid contar(int n) {\n    if (n == 0) {\n        return;\n    }\n    contar(n - 1);\n}\n\nAquí el caso base es:\nif (n == 0)\n\nPorque cuando n vale 0, la función deja de llamarse a sí misma.\n\nPor qué las otras no:\n- A. Una plantilla para hacer recursividad -> no, no es una plantilla; es la condición para detenerla.\n- C. Un ejemplo de recursividad -> no, no es un ejemplo, sino una parte clave de ella.\n- D. Ninguna de las anteriores -> falso, porque la B sí es correcta.\n\nIdea fácil para recordar:\n- Caso base = la señal de STOP de la recursividad"
+    },
+    {
+        "id": 40,
+        "pregunta": "Una aplicación...",
+        "opciones": [
+            "A. No necesita manejar información.",
+            "B. Necesita el manejo de información dependiendo de la funcionalidad.",
+            "C. Necesita el manejo de información existiendo solo una entrada de datos.",
+            "D. Necesita el manejo de información existiendo una entrada y salida de datos."
+        ],
+        "respuesta_correcta": "D. Necesita el manejo de información existiendo una entrada y salida de datos.",
+        "explicacion": "Explicación fácil:\nUna aplicación normalmente recibe información y luego devuelve un resultado.\n\nEs como una máquina:\n- tú metes algo -> entrada\n- la máquina lo procesa\n- te da algo -> salida\n\nPor eso, una aplicación suele trabajar con entrada y salida de datos.\n\nEjemplo:\nUna calculadora:\n- entrada: escribes 2 + 3\n- salida: te muestra 5\n\nOtro ejemplo:\n- una app de notas recibe el texto que escribes\n- luego lo guarda o te lo enseña en pantalla\n\nPor qué las otras no:\n- A. No necesita manejar información -> falso, una aplicación precisamente trabaja con información.\n- B. Necesita el manejo de información dependiendo de la funcionalidad -> suena razonable, pero es demasiado vaga y no define bien el funcionamiento básico.\n- C. Necesita el manejo de información existiendo solo una entrada de datos -> incompleta, porque normalmente también hay salida.\n\nIdea fácil para recordar:\n- Aplicación = entra información, se procesa, sale un resultado"
+    },
+    {
       "id": 41,
       "pregunta": "Acoplamiento patológico:",
       "opciones": [
@@ -9,7 +489,7 @@ const preguntasProgramacion = [
         "D. Todas las anteriores son correctas."
       ],
       "respuesta_correcta": "C. Se produce siempre que un módulo acceda a otro para leer o modificar los datos internos del último.",
-      "explicacion": "Según la teoría de diseño modular, el acoplamiento patológico o por contenido ocurre exactamente cuando un módulo accede a los datos internos de otro para leerlos o modificarlos[cite: 438], lo cual es una mala práctica porque dificulta el mantenimiento."
+      "explicacion": "Según la teoría de diseño modular, el acoplamiento patológico o por contenido ocurre exactamente cuando un módulo accede a los datos internos de otro para leerlos o modificarlos, lo cual es una mala práctica porque dificulta el mantenimiento."
     },
     {
       "id": 42,
@@ -21,7 +501,7 @@ const preguntasProgramacion = [
         "D. Cada uno de los diagramas de flujo comienzan y terminan con terminal que se representa con un óvalo o elipse."
       ],
       "respuesta_correcta": "C. Las operaciones de cálculo interno del programa se describen con una bandera.",
-      "explicacion": "Esta afirmación es falsa porque, según la simbología estándar (ANSI) estudiada, las operaciones de cálculo interno del programa se describen gráficamente con un rectángulo[cite: 707], no con una bandera."
+      "explicacion": "Esta afirmación es falsa porque, según la simbología estándar (ANSI) estudiada, las operaciones de cálculo interno del programa se describen gráficamente con un rectángulo, no con una bandera."
     },
     {
       "id": 43,
@@ -33,7 +513,7 @@ const preguntasProgramacion = [
         "D. Ninguna de las anteriores."
       ],
       "respuesta_correcta": "D. Ninguna de las anteriores.",
-      "explicacion": "La opción correcta es 'Ninguna de las anteriores'. Un valor booleano no es numérico, ni secuencial, ni modular; es un tipo de dato primitivo que únicamente representa valores lógicos, es decir, verdadero o falso[cite: 510]."
+      "explicacion": "La opción correcta es 'Ninguna de las anteriores'. Un valor booleano no es numérico, ni secuencial, ni modular; es un tipo de dato primitivo que únicamente representa valores lógicos, es decir, verdadero o falso."
     },
     {
       "id": 44,
@@ -45,7 +525,7 @@ const preguntasProgramacion = [
         "D. Ninguna de las anteriores es correcta."
       ],
       "respuesta_correcta": "C. Conviven varias actividades paralelas que no siguen un orden específico y que comparten los mismos datos de entrada y salida.",
-      "explicacion": "La cohesión comunicacional se da en un módulo cuando conviven en él varias actividades que, aunque no siguen un orden o secuencia estricta, tienen en común que utilizan y comparten los mismos datos de entrada y salida[cite: 354]."
+      "explicacion": "La cohesión comunicacional se da en un módulo cuando conviven en él varias actividades que, aunque no siguen un orden o secuencia estricta, tienen en común que utilizan y comparten los mismos datos de entrada y salida."
     },
     {
       "id": 45,
@@ -57,7 +537,7 @@ const preguntasProgramacion = [
         "D. Ninguna de las anteriores es correcta."
       ],
       "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
-      "explicacion": "Ninguna de las opciones A, B o C describe la cohesión lógica. La cohesión lógica se define como aquella donde los elementos realizan actividades de la misma categoría general, pero la selección de la actividad específica que se va a ejecutar se decide y se envía desde fuera del módulo[cite: 360]."
+      "explicacion": "Ninguna de las opciones A, B o C describe la cohesión lógica. La cohesión lógica se define como aquella donde los elementos realizan actividades de la misma categoría general, pero la selección de la actividad específica que se va a ejecutar se decide y se envía desde fuera del módulo."
     },
     {
       "id": 46,
@@ -69,7 +549,7 @@ const preguntasProgramacion = [
         "D. Todas las anteriores son incorrectas."
       ],
       "respuesta_correcta": "B. Diagrama.",
-      "explicacion": "Un diagrama (como por ejemplo un diagrama de flujo) se define conceptualmente como una representación gráfica que muestra visualmente un algoritmo, un proceso o un conjunto de elementos y cómo se relacionan entre sí[cite: 690]."
+      "explicacion": "Un diagrama (como por ejemplo un diagrama de flujo) se define conceptualmente como una representación gráfica que muestra visualmente un algoritmo, un proceso o un conjunto de elementos y cómo se relacionan entre sí."
     },
     {
       "id": 47,
@@ -81,7 +561,7 @@ const preguntasProgramacion = [
         "D. Ninguna de las anteriores."
       ],
       "respuesta_correcta": "D. Ninguna de las anteriores.",
-      "explicacion": "La cohesión (al igual que el acoplamiento) es un criterio o cualidad que se utiliza para evaluar el diseño de la programación modular[cite: 342], no es una característica de las estructuras de control básicas (las cuales son la secuencial, la alternativa y la iterativa)."
+      "explicacion": "La cohesión (al igual que el acoplamiento) es un criterio o cualidad que se utiliza para evaluar el diseño de la programación modular, no es una característica de las estructuras de control básicas (las cuales son la secuencial, la alternativa y la iterativa)."
     },
     {
       "id": 48,
@@ -105,7 +585,7 @@ const preguntasProgramacion = [
         "D. Ninguna de las anteriores."
       ],
       "respuesta_correcta": "C. Iterativa.",
-      "explicacion": "La estructura iterativa es la encargada de crear un bucle en el que se repite la ejecución de un conjunto de instrucciones de forma cíclica mientras se siga cumpliendo una condición dada[cite: 598]."
+      "explicacion": "La estructura iterativa es la encargada de crear un bucle en el que se repite la ejecución de un conjunto de instrucciones de forma cíclica mientras se siga cumpliendo una condición dada."
     },
     {
       "id": 50,
@@ -117,7 +597,7 @@ const preguntasProgramacion = [
         "D. Ninguno de los anteriores."
       ],
       "respuesta_correcta": "A. Automatizar procesos.",
-      "explicacion": "Según la historia de la programación vista en la primera unidad, esta disciplina surgió con la finalidad principal de automatizar y llevar a cabo mediante máquinas tareas que, de hacerse de forma manual, resultaban tediosas y consumían muchísimo tiempo[cite: 161]."
+      "explicacion": "Según la historia de la programación vista en la primera unidad, esta disciplina surgió con la finalidad principal de automatizar y llevar a cabo mediante máquinas tareas que, de hacerse de forma manual, resultaban tediosas y consumían muchísimo tiempo."
     },
     {
         "id": 51,
@@ -129,7 +609,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores."
         ],
         "respuesta_correcta": "A. Instancias.",
-        "explicacion": "El documento señala que la clase funciona como un modelo y que cada una de las instancias son los resultados específicos extraídos a partir de él[cite: 3442]."
+        "explicacion": "El documento señala que la clase funciona como un modelo y que cada una de las instancias son los resultados específicos extraídos a partir de él."
     },
     {
         "id": 52,
@@ -141,7 +621,7 @@ const preguntasProgramacion = [
           "D. Ninguno de los anteriores, las clases no se instancian."
         ],
         "respuesta_correcta": "A. Es cierto.",
-        "explicacion": "El temario afirma claramente que de una clase podemos obtener la cantidad de objetos instanciados que se requieran, ya que la clase es considerada una plantilla para crear y definir objetos[cite: 3217]."
+        "explicacion": "El temario afirma claramente que de una clase podemos obtener la cantidad de objetos instanciados que se requieran, ya que la clase es considerada una plantilla para crear y definir objetos."
     },
     {
         "id": 53,
@@ -153,7 +633,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores."
         ],
         "respuesta_correcta": "A. Agrupación en un mismo elemento de los datos y las operaciones relacionadas con estos.",
-        "explicacion": "La encapsulación (o encapsulamiento) se define teóricamente como la agrupación en un mismo elemento de los datos y las operaciones relacionadas con estos, con el objetivo de ocultarlos y permitir el acceso solo mediante interfaces bien definidas[cite: 3298, 3299]."
+        "explicacion": "La encapsulación (o encapsulamiento) se define teóricamente como la agrupación en un mismo elemento de los datos y las operaciones relacionadas con estos, con el objetivo de ocultarlos y permitir el acceso solo mediante interfaces bien definidas."
     },
     {
         "id": 54,
@@ -165,7 +645,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores."
         ],
         "respuesta_correcta": "D. Ninguna de las anteriores.",
-        "explicacion": "La opción correcta es la D porque el concepto descrito en el enunciado corresponde a los 'campos'[cite: 3229, 3230], un término que no se encuentra entre las opciones A, B o C."
+        "explicacion": "La opción correcta es la D porque el concepto descrito en el enunciado corresponde a los 'campos', un término que no se encuentra entre las opciones A, B o C."
     },
     {
         "id": 55,
@@ -177,7 +657,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores."
         ],
         "respuesta_correcta": "B. Se encuentran los campos de la clase.",
-        "explicacion": "Según la representación de diagramas de clase (UML), la caja se divide en tres partes: el área superior contiene el nombre de la clase, el área intermedia contiene los campos de la clase y el área inferior contiene los métodos[cite: 3219, 3220, 3221]."
+        "explicacion": "Según la representación de diagramas de clase (UML), la caja se divide en tres partes: el área superior contiene el nombre de la clase, el área intermedia contiene los campos de la clase y el área inferior contiene los métodos."
     },
     {
         "id": 56,
@@ -189,7 +669,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores es correcta."
         ],
         "respuesta_correcta": "A. Clase.",
-        "explicacion": "El texto especifica expresamente que la clase es el elemento principal de la Programación Orientada a Objetos (POO)[cite: 3215]."
+        "explicacion": "El texto especifica expresamente que la clase es el elemento principal de la Programación Orientada a Objetos (POO)."
     },
     {
         "id": 57,
@@ -201,7 +681,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores es correcta."
         ],
         "respuesta_correcta": "C. Objetos simples y compuestos.",
-        "explicacion": "El documento detalla que los objetos simples están formados únicamente por datos primitivos, mientras que los objetos compuestos están formados por datos primitivos y, adicionalmente, por otros objetos pertenecientes a otras clases[cite: 3278]. Por lo tanto, ambos tipos contienen datos primitivos."
+        "explicacion": "El documento detalla que los objetos simples están formados únicamente por datos primitivos, mientras que los objetos compuestos están formados por datos primitivos y, adicionalmente, por otros objetos pertenecientes a otras clases. Por lo tanto, ambos tipos contienen datos primitivos."
     },
     {
         "id": 58,
@@ -213,7 +693,7 @@ const preguntasProgramacion = [
           "D. Todas las anteriores son incorrectas, Java no ofrece mecanismos para declararlas."
         ],
         "respuesta_correcta": "D. Todas las anteriores son incorrectas, Java no ofrece mecanismos para declararlas.",
-        "explicacion": "A diferencia de otros lenguajes de programación en los que la declaración de propiedades varía, el documento menciona que Java no ofrece ningún mecanismo específico para su implementación[cite: 3247, 3248]."
+        "explicacion": "A diferencia de otros lenguajes de programación en los que la declaración de propiedades varía, el documento menciona que Java no ofrece ningún mecanismo específico para su implementación."
     },
     {
         "id": 59,
@@ -225,7 +705,7 @@ const preguntasProgramacion = [
           "D. &."
         ],
         "respuesta_correcta": "A. +.",
-        "explicacion": "En el contexto de la visibilidad de los miembros de una clase, la visibilidad pública se representa utilizando el signo de suma (+)[cite: 3315]."
+        "explicacion": "En el contexto de la visibilidad de los miembros de una clase, la visibilidad pública se representa utilizando el signo de suma (+)."
     },
     {
         "id": 60,
@@ -237,7 +717,7 @@ const preguntasProgramacion = [
           "D. Todas las anteriores son incorrectas."
         ],
         "respuesta_correcta": "C. Herencia polimorfa.",
-        "explicacion": "Las formas de polimorfismo que reconoce la teoría descrita son la asignación polimorfa y la ejecución polimorfa[cite: 3379, 3381]. La 'herencia polimorfa' es un término inventado en este contexto y no es correcto."
+        "explicacion": "Las formas de polimorfismo que reconoce la teoría descrita son la asignación polimorfa y la ejecución polimorfa. La 'herencia polimorfa' es un término inventado en este contexto y no es correcto."
     },
     {
         "id": 61,
