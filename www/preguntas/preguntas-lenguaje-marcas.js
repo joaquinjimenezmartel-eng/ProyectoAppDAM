@@ -1089,7 +1089,7 @@ const preguntasLenguajeMarcas = [
                 "C. Marcar una disyunción entre uno o más nodos entre los que elegir.",
                 "D. Ninguna de las anteriores es correcta ese símbolo no se emplea."
               ],
-              "respuesta_correcta": "C. Marcar una disyunción entre uno o más nodos entre los que elegir.",
+              "respuesta_correcta": "A. Computar dos nodos simultáneos.",
               "explicacion": "En el lenguaje XPath, el operador tubería o 'pipe' (|) funciona como un operador de unión lógica o disyunción. Permite seleccionar un conjunto de nodos evaluando múltiples rutas a la vez (por ejemplo, seleccionar nodos A o nodos B simultáneamente)."
             },
             {
@@ -1113,7 +1113,7 @@ const preguntasLenguajeMarcas = [
                 "C. Un tipo de analizador sintáctico.",
                 "D. Todos los anteriores son incorrectos."
               ],
-              "respuesta_correcta": "D. Todos los anteriores son incorrectos.",
+              "respuesta_correcta": "B. Un tipo de nodo.",
               "explicacion": "En el modelo de datos de XPath/XQuery, un elemento puede ser un nodo o un valor atómico. Un valor atómico es un dato simple (como un número entero o una cadena de texto) que no posee jerarquía (ni nodos hijos ni padre), por lo que se diferencia explícitamente de los nodos y de las otras opciones."
             },
             {
@@ -1366,7 +1366,7 @@ const preguntasLenguajeMarcas = [
                     "D. Todas los anteriores son correctas."
                   ],
                   "respuesta_correcta": "D. Todas los anteriores son correctas.",
-                  "explicacion": "Dado el contexto de la asignatura (Lenguajes de Marcas), la forma más estandarizada, estructurada y universal para que los sistemas de gestión empresarial (ERP) intercambien, integren y almacenen información con otros sistemas externos es mediante ficheros XML."
+                  "explicacion": "Los ERP pueden intercambiar y almacenar datos usando distintos formatos, como ficheros CSV, ficheros XML y documentos ofimáticos, según el sistema y la necesidad. Por eso, según el criterio del test, la opción correcta es D: todas las anteriores son correctas."
                 },
                 {
                   "id": 115,

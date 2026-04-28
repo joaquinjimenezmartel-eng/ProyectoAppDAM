@@ -348,6 +348,18 @@ const preguntasEmpleabilidad = [
     "explicacion": "Explicación fácil:\nLa organización informal aparece sola, sin que la dirección la diseñe. Nace de la amistad, la confianza, la afinidad o las relaciones personales entre quienes trabajan en la empresa.\n\nEjemplo:\nAunque en el organigrama dos personas no estén en el mismo nivel, puede ocurrir que una ayude mucho a otra o que se creen grupos de apoyo entre compañeros. Eso forma parte de la organización informal.\n\nPor qué esa es la buena:\nPorque la organización informal se basa en las relaciones personales que surgen de forma natural entre los trabajadores.\n\nPor qué las otras no:\n- A no es correcta porque esa definición corresponde a la organización formal.\n- C no es correcta porque se refiere más a una idea de planificación o cobertura de personal.\n- D no es correcta porque describe una orientación tecnológica, no la organización informal."
   },
   {
+    "id": 30,
+    "pregunta": "La planificación para establecer el personal de una organización se realiza en dos direcciones:",
+    "opciones": [
+      "A. Expansión laboral y fusión de centros.",
+      "B. Aumento de personal y reducción de personal.",
+      "C. Renovación de puestos y reciclaje de puestos actuales.",
+      "D. Ninguna empresa realiza ya planificaciones de los recursos humanos."
+    ],
+    "respuesta_correcta": "B. Aumento de personal y reducción de personal.",
+    "explicacion": "Explicación fácil:\nPlanificar el personal significa pensar cuántas personas necesita una empresa y si tendrá que contratar más o reducir plantilla según su situación.\n\nEjemplo:\nSi una empresa va a crecer, quizá necesite más trabajadores. Si baja la actividad, quizá necesite menos. Esas dos direcciones básicas son aumentar o reducir personal.\n\nPor qué esa es la buena:\nPorque la planificación del personal se orienta a prever tanto el aumento como la reducción de personal según las necesidades de la organización.\n\nPor qué las otras no:\n- A no es correcta porque esos conceptos no son las dos direcciones básicas de la planificación de personal.\n- C no es correcta porque puede haber cambios y formación en los puestos, pero esa no es la clasificación principal que pide la pregunta.\n- D no es correcta porque las empresas sí realizan planificación de recursos humanos."
+  },
+  {
     "id": 31,
     "pregunta": "La T.A.E. (Tasa Anual Equivalente) es la suma de:",
     "opciones": [
@@ -466,18 +478,6 @@ const preguntasEmpleabilidad = [
     ],
     "respuesta_correcta": "D. Ahorro.",
     "explicacion": "Explicación fácil:\nAhorrar significa guardar una parte del dinero en lugar de gastarlo ahora, para poder usarlo más adelante cuando convenga o para alcanzar un objetivo futuro.\n\nEjemplo:\nSi una persona decide no gastarse hoy 50 euros para poder juntar dinero y comprar algo más importante dentro de unos meses, está ahorrando.\n\nPor qué esa es la buena:\nPorque renunciar a consumir hoy para poder consumir más en el futuro define el concepto de ahorro.\n\nPor qué las otras no:\n- A no es correcta porque consumo es precisamente gastar o usar bienes y servicios en el presente.\n- B no es correcta porque financiación consiste en obtener recursos económicos, normalmente mediante préstamo u otras vías, no en guardar dinero propio.\n- C no es correcta porque la planificación puede ayudar a ahorrar, pero no es el concepto exacto que describe la frase."
-  },
-  {
-    "id": 30,
-    "pregunta": "La planificación para establecer el personal de una organización se realiza en dos direcciones:",
-    "opciones": [
-      "A. Expansión laboral y fusión de centros.",
-      "B. Aumento de personal y reducción de personal.",
-      "C. Renovación de puestos y reciclaje de puestos actuales.",
-      "D. Ninguna empresa realiza ya planificaciones de los recursos humanos."
-    ],
-    "respuesta_correcta": "B. Aumento de personal y reducción de personal.",
-    "explicacion": "Explicación fácil:\nPlanificar el personal significa pensar cuántas personas necesita una empresa y si tendrá que contratar más o reducir plantilla según su situación.\n\nEjemplo:\nSi una empresa va a crecer, quizá necesite más trabajadores. Si baja la actividad, quizá necesite menos. Esas dos direcciones básicas son aumentar o reducir personal.\n\nPor qué esa es la buena:\nPorque la planificación del personal se orienta a prever tanto el aumento como la reducción de personal según las necesidades de la organización.\n\nPor qué las otras no:\n- A no es correcta porque esos conceptos no son las dos direcciones básicas de la planificación de personal.\n- C no es correcta porque puede haber cambios y formación en los puestos, pero esa no es la clasificación principal que pide la pregunta.\n- D no es correcta porque las empresas sí realizan planificación de recursos humanos."
   },
 {
     "id": 41,

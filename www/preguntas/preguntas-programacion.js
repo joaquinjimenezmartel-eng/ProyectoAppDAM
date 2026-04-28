@@ -27,13 +27,13 @@ const preguntasProgramacion = [
         "id": 3,
         "pregunta": "¿Cuál es la palabra reservada que convierte a un campo en común entre todos los objetos de una clase?",
         "opciones": [
-            "A. Static.",
+            "A. static.",
             "B. getter.",
             "C. setter.",
             "D. Todas las anteriores son incorrectas."
         ],
         "respuesta_correcta": "A. Static.",
-        "explicacion": "Ojo: en Java se escribe static en minúsculas, no Static. La idea correcta es la de la opción A, aunque está escrita con ese fallo.\n\nExplicación fácil:\nUn campo normal es como un juguete que tiene cada niño por separado.\nUn campo static es como un juguete único en clase que comparten todos.\n\nEso significa que ese dato no pertenece a un objeto concreto, sino a la clase entera.\n\nEjemplo:\nImagina una clase Coche.\n\n- Si color es normal, cada coche puede tener un color distinto.\n- Si ruedas fuera static, sería un dato común para todos los coches de esa clase.\n\nclass Coche {\n    static int ruedas = 4;\n}\n\nAquí no hace falta crear un coche para saber que tienen 4 ruedas, porque ese dato es común a todos.\n\nPor qué las otras no:\n- B. getter: no es una palabra reservada; es un método para leer un valor.\n- C. setter: tampoco es una palabra reservada; es un método para cambiar un valor.\n- D es falsa, porque la idea correcta sí está en la A."
+        "explicacion":"Explicación fácil:\nUn campo normal es como un juguete que tiene cada niño por separado.\nUn campo static es como un juguete único en clase que comparten todos.\n\nEso significa que ese dato no pertenece a un objeto concreto, sino a la clase entera.\n\nEjemplo:\nImagina una clase Coche.\n\n- Si color es normal, cada coche puede tener un color distinto.\n- Si ruedas fuera static, sería un dato común para todos los coches de esa clase.\n\nclass Coche {\n    static int ruedas = 4;\n}\n\nAquí no hace falta crear un coche para saber que tienen 4 ruedas, porque ese dato es común a todos.\n\nPor qué las otras no:\n- B. getter: no es una palabra reservada; es un método para leer un valor.\n- C. setter: tampoco es una palabra reservada; es un método para cambiar un valor.\n- D es falsa, porque la idea correcta sí está en la A."
     },
     {
         "id": 4,
@@ -729,7 +729,7 @@ const preguntasProgramacion = [
           "D. Ninguna de las anteriores es correcta."
         ],
         "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
-        "explicacion": "Según la teoría de la Unidad 3, los archivos con extensión .jar, .war y .ear que se utilizan en Java para empaquetar aplicaciones no son más que archivos empaquetados y comprimidos utilizando el formato estándar ZIP."
+        "explicacion": "Un archivo .war no almacena texto plano ni bytecode directamente como finalidad principal. Es una extensión utilizada en Java para empaquetar aplicaciones web, normalmente con recursos como clases compiladas, librerías, páginas JSP, HTML, archivos de configuración y otros elementos necesarios para desplegar una aplicación web. Aunque internamente pueda estar empaquetado de forma comprimida, en este test no se considera correcta la opción 'Es un archivo comprimido con ZIP', por lo que debe marcarse la opción D.."
       },
       {
         "id": 62,
@@ -970,7 +970,7 @@ const preguntasProgramacion = [
           "D. Todas las anteriores son correctas."
         ],
         "respuesta_correcta": "D. Todas las anteriores son correctas.",
-        "explicacion": "La depuración (o debugging) es el proceso mediante el cual los desarrolladores ejecutan paso a paso y analizan el código de una aplicación para identificar, aislar y corregir posibles fallos lógicos o errores de ejecución."
+        "explicacion": "Explicación fácil:\\nLa depuración sirve para revisar un programa y comprobar si funciona como debería.\\n\\nCuando depuras, puedes ir mirando el código paso a paso para encontrar errores, comprobar qué valores tienen las variables y ver si el resultado que obtiene la aplicación coincide con lo esperado según los datos de entrada.\\n\\nPor eso, según el test, todas las opciones son correctas:\\n- Puede relacionarse con pruebas para comprobar el funcionamiento del código.\\n- Permite inspeccionar el código para eliminar posibles errores.\\n- Ayuda a determinar si el resultado de la aplicación es correcto según la entrada de datos.\\n\\nEjemplo:\\nImagina que haces una calculadora y al sumar 2 + 3 te devuelve 8. Con la depuración puedes ir paso a paso para ver dónde se está haciendo mal la operación.\\n\\nIdea fácil para recordar:\\nDepurar = revisar el programa por dentro para encontrar y corregir fallos.\."
       },
       {
         "id": 82,
@@ -1735,7 +1735,7 @@ const preguntasProgramacion = [
     "pregunta": "Que orden de complejidad es la peor.",
     "opciones": [
       "A. O(1)",
-      "B. O(log n)",
+      "B. O(n log n)",
       "C. O(n2)",
       "D. O(log n)"
     ],
@@ -1807,7 +1807,7 @@ const preguntasProgramacion = [
       "pregunta": "¿Como podemos comprobar si un fichero o directorio existe?",
       "opciones": [
         "A. Usando isFile()",
-        "B. Usando is Directory()",
+        "B. Usando isDirectory()",
         "C. Usando exists()",
         "D. Usando getPath()"
       ],
@@ -2220,7 +2220,7 @@ const preguntasProgramacion = [
               "D. Aparece en ambos."
             ],
             "respuesta_correcta": "C. Es de Swing.",
-            "explicacion": "GridBagLayout es uno de los administradores de diseño más flexibles de Java. Técnicamente, forma parte de la librería original AWT (java.awt.GridBagLayout), aunque es extensamente utilizado para organizar componentes modernos en interfaces Swing."
+            "explicacion": "Según el criterio del test, GridBagLayout se considera asociado a Swing. Es un gestor de diseño que permite colocar componentes en una cuadrícula flexible, controlando con bastante precisión la posición, el tamaño y la expansión de cada elemento dentro de una interfaz gráfica. Aunque su nombre pueda aparecer relacionado con gestores de diseño usados en Java, en esta pregunta debe marcarse la opción C porque la respuesta oficial del examen es 'Es de Swing'."
           },
           {
             "id": 186,
@@ -2264,7 +2264,7 @@ const preguntasProgramacion = [
             "opciones": [
               "A. MenuBar.",
               "B. ShortMenuCut.",
-              "C. Menultem.",
+              "C. MenuItem.",
               "D. PopupMenu."
             ],
             "respuesta_correcta": "B. ShortMenuCut.",

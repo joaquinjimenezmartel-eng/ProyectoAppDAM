@@ -1,0 +1,8 @@
+node_modules/
+.idea/
+.vscode/
+dist/
+build/
+android/.gradle/
+android/**/build/
+.gradle/
