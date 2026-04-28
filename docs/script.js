@@ -210,11 +210,6 @@ function empezarDesdeModal() {
   config.rangoDesde = rango.desde;
   config.rangoHasta = rango.hasta;
 
-  if (!esModoExamen(modoPendiente) && config.usarRango && config.mezclarPreguntas) {
-    alert("No puedes usar un rango correlativo si activas 'Mezclar preguntas'.");
-    return;
-  }
-
   if (!esModoExamen(modoPendiente) && config.usarRango && rango.cantidad <= 0) {
     alert("El rango seleccionado no es valido. Revisa los campos 'Desde' y 'Hasta'.");
     return;
@@ -425,14 +420,14 @@ function sincronizarConfigRango() {
     return;
   }
 
-  const toggleMezclarPreguntas = document.getElementById("toggle-mezclar-preguntas");
-  if (toggleMezclarPreguntas && toggleMezclarPreguntas.checked) {
-    ayuda.innerText = "Este rango solo funciona sin mezclar preguntas.";
+  if (rango.cantidad <= 0) {
+    ayuda.innerText = "El rango no es valido. 'Desde' debe ser menor o igual que 'Hasta'.";
     return;
   }
 
-  if (rango.cantidad <= 0) {
-    ayuda.innerText = "El rango no es valido. 'Desde' debe ser menor o igual que 'Hasta'.";
+  const toggleMezclarPreguntas = document.getElementById("toggle-mezclar-preguntas");
+  if (toggleMezclarPreguntas && toggleMezclarPreguntas.checked) {
+    ayuda.innerText = `Se elegiran ${rango.cantidad} preguntas aleatorias de ${rango.total} disponibles.`;
     return;
   }
 
@@ -648,11 +643,6 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
   enRepasoFallos = false;
 
   if (!esModoExamen(modoElegido) && config.usarRango) {
-    if (config.mezclarPreguntas) {
-      alert("No puedes usar un rango correlativo si activas 'Mezclar preguntas'.");
-      return;
-    }
-
     const preguntasOrdenadas = obtenerPreguntasAsignaturaOrdenadas(asignatura);
     const rango = normalizarRangoPosicional(
       preguntasOrdenadas.length,
@@ -665,7 +655,9 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
       return;
     }
 
-    preguntasActuales = filtrarPorPosicion(preguntasOrdenadas, rango.desde, rango.hasta);
+    preguntasActuales = config.mezclarPreguntas
+      ? mezclarArray(preguntasOrdenadas).slice(0, rango.cantidad)
+      : filtrarPorPosicion(preguntasOrdenadas, rango.desde, rango.hasta);
     if (preguntasActuales.length === 0) {
       alert("No hay preguntas dentro del rango seleccionado.");
       return;
