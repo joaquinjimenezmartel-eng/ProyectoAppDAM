@@ -43,6 +43,21 @@ assert.equal(guardado.preguntas["1"].respuestas, 2);
 assert.equal(guardado.preguntas["1"].fallos, 1);
 assert.equal(guardado.preguntas["2"].aciertos, 1);
 
+progreso.guardarExamenActivo({
+  asignaturaId: "programacion",
+  indice: 4,
+  preguntas: [{ id: 8, ordenOpciones: [2, 0, 1] }],
+  selecciones: [1],
+  correctas: [true],
+  config: { mezclarPreguntas: true }
+});
+const examen = crearGestorProgreso(storage).obtenerExamenActivo("programacion");
+assert.equal(examen.indice, 4);
+assert.deepEqual(examen.preguntas[0].ordenOpciones, [2, 0, 1]);
+assert.equal(examen.selecciones[0], 1);
+progreso.eliminarExamenActivo("programacion");
+assert.equal(progreso.obtenerExamenActivo("programacion"), null);
+
 storage.setItem(STORAGE_KEY, "contenido no válido");
 assert.equal(crearGestorProgreso(storage).obtenerAsignatura("bases").respuestas, 0);
 

@@ -140,6 +140,7 @@ function abrirModalConfig(modoElegido) {
 
   const overlay = document.getElementById("config-overlay");
   if (overlay) overlay.classList.remove("oculto");
+  mostrarExamenPendienteSiExiste();
 }
 
 function cerrarModalConfig() {
@@ -483,14 +484,16 @@ function mezclarArray(arr) {
 function barajarOpcionesPregunta(p) {
   const pares = p.opciones.map((texto, idx) => ({
     texto,
+    indiceOriginal: idx,
     esCorrecta: idx === p.correcta
   }));
 
   const mezclados = mezclarArray(pares);
   const nuevasOpciones = mezclados.map(x => x.texto);
   const nuevaCorrecta = mezclados.findIndex(x => x.esCorrecta);
+  const ordenOpciones = mezclados.map(x => x.indiceOriginal);
 
-  return { ...p, opciones: nuevasOpciones, correcta: nuevaCorrecta, __barajadas: true };
+  return { ...p, opciones: nuevasOpciones, correcta: nuevaCorrecta, __barajadas: true, __ordenOpciones: ordenOpciones };
 }
 
 function filtrarPorRangoId(lista, desde, hasta) {
@@ -661,6 +664,7 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
     falladasExamen = [];
 
     registrarInicioProgreso(asignatura, modoElegido, preguntasActuales.length);
+    guardarExamenActivo();
 
     document.getElementById("pantalla-inicio").classList.add("oculto");
     document.getElementById("pantalla-final").classList.add("oculto");
@@ -711,6 +715,7 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
   falladasExamen = [];
 
   registrarInicioProgreso(asignatura, modoElegido, preguntasActuales.length);
+  guardarExamenActivo();
 
   document.getElementById("pantalla-inicio").classList.add("oculto");
   document.getElementById("pantalla-final").classList.add("oculto");
@@ -831,6 +836,7 @@ function activarSiguiente(habilitar) {
 ========================= */
 function seleccionarOpcionExamen(idx) {
   seleccionExamen[indicePregunta] = idx;
+  guardarExamenActivo();
   pintarSeleccionExamen();
   activarSiguiente(true);
 }
@@ -910,6 +916,7 @@ function siguientePregunta() {
     correctasExamen[indicePregunta] = esCorrecta;
 
     if (!yaRegistrada) registrarRespuestaProgreso(p, esCorrecta);
+    guardarExamenActivo();
 
     if (esCorrecta) {
       aciertos = correctasExamen.filter(v => v === true).length;
@@ -949,6 +956,9 @@ function mostrarResultadoFinal() {
   const fallos = total - aciertos;
 
   registrarFinalProgreso(total, aciertos, fallos);
+  if (esModoExamen(modo) && typeof ProgresoEstudio !== "undefined") {
+    ProgresoEstudio.eliminarExamenActivo(asignaturaSeleccionada);
+  }
 
   document.getElementById("nota-final").innerText = `${aciertos} de ${total}`;
 
@@ -1005,6 +1015,9 @@ function repasarFallos() {
    Home + Progreso
 ========================= */
 function volverAHome() {
+  if (esModoExamen(modo) && preguntasActuales.length > 0 && !sesionFinalizadaRegistrada) {
+    guardarExamenActivo();
+  }
   document.getElementById("pantalla-test").classList.add("oculto");
   document.getElementById("pantalla-final").classList.add("oculto");
   document.getElementById("pantalla-inicio").classList.remove("oculto");
@@ -1074,6 +1087,103 @@ function registrarFinalProgreso(total, totalAciertos, totalFallos) {
     fallos: totalFallos
   });
   sesionFinalizadaRegistrada = true;
+}
+
+function guardarExamenActivo() {
+  if (
+    !esModoExamen(modo) ||
+    typeof ProgresoEstudio === "undefined" ||
+    !asignaturaSeleccionada ||
+    preguntasActuales.length === 0
+  ) return;
+
+  ProgresoEstudio.guardarExamenActivo({
+    asignaturaId: asignaturaSeleccionada,
+    indice: indicePregunta,
+    preguntas: preguntasActuales.map((pregunta) => ({
+      id: pregunta.id,
+      ordenOpciones: pregunta.__ordenOpciones || null
+    })),
+    selecciones: seleccionExamen,
+    correctas: correctasExamen,
+    config
+  });
+}
+
+function mostrarExamenPendienteSiExiste() {
+  const modal = document.querySelector("#config-overlay .modal-config");
+  const bloque = document.getElementById("examen-pendiente");
+  if (!modal || !bloque) return;
+
+  const sesion = modoPendiente === "examen" && typeof ProgresoEstudio !== "undefined"
+    ? ProgresoEstudio.obtenerExamenActivo(asignaturaSeleccionada)
+    : null;
+  modal.classList.toggle("tiene-examen-pendiente", !!sesion);
+  bloque.classList.toggle("oculto", !sesion);
+
+  if (!sesion) return;
+  const asignatura = obtenerAsignatura(asignaturaSeleccionada);
+  const titulo = document.getElementById("examen-pendiente-titulo");
+  const detalle = document.getElementById("examen-pendiente-detalle");
+  if (titulo) titulo.innerText = asignatura ? asignatura.nombre : "Examen pendiente";
+  if (detalle) detalle.innerText = `Vas por la pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}.`;
+}
+
+function configurarExamenNuevo() {
+  const modal = document.querySelector("#config-overlay .modal-config");
+  const bloque = document.getElementById("examen-pendiente");
+  if (modal) modal.classList.remove("tiene-examen-pendiente");
+  if (bloque) bloque.classList.add("oculto");
+}
+
+function reconstruirPreguntaExamen(original, ordenOpciones) {
+  if (!Array.isArray(ordenOpciones) || ordenOpciones.length !== original.opciones.length) return original;
+  const indicesValidos = ordenOpciones.every((indice) => Number.isInteger(indice) && indice >= 0 && indice < original.opciones.length);
+  if (!indicesValidos || new Set(ordenOpciones).size !== original.opciones.length) return original;
+  return {
+    ...original,
+    opciones: ordenOpciones.map((indice) => original.opciones[indice]),
+    correcta: ordenOpciones.indexOf(original.correcta),
+    __barajadas: true,
+    __ordenOpciones: [...ordenOpciones]
+  };
+}
+
+function continuarExamenGuardado() {
+  if (typeof ProgresoEstudio === "undefined") return;
+  const sesion = ProgresoEstudio.obtenerExamenActivo(asignaturaSeleccionada);
+  const banco = obtenerPreguntasAsignatura(asignaturaSeleccionada);
+  if (!sesion || banco.length === 0) return;
+
+  const restauradas = sesion.preguntas.map((guardada) => {
+    const original = banco.find((pregunta) => String(pregunta.id) === String(guardada.id));
+    return original ? reconstruirPreguntaExamen(original, guardada.ordenOpciones) : null;
+  });
+
+  if (restauradas.some((pregunta) => !pregunta)) {
+    ProgresoEstudio.eliminarExamenActivo(asignaturaSeleccionada);
+    configurarExamenNuevo();
+    alert("El contenido de la asignatura ha cambiado. Configura un examen nuevo.");
+    return;
+  }
+
+  preguntasActuales = restauradas;
+  indicePregunta = Math.min(Number(sesion.indice) || 0, preguntasActuales.length - 1);
+  seleccionExamen = preguntasActuales.map((_, indice) => sesion.selecciones[indice] ?? null);
+  correctasExamen = preguntasActuales.map((_, indice) => sesion.correctas[indice] ?? null);
+  aciertos = correctasExamen.filter((valor) => valor === true).length;
+  estadoPreguntas = new Array(preguntasActuales.length).fill(false);
+  config = { ...config, ...(sesion.config || {}) };
+  modo = "examen";
+  enRepasoFallos = false;
+  sesionFinalizadaRegistrada = false;
+
+  cerrarModalConfig();
+  document.getElementById("pantalla-inicio").classList.add("oculto");
+  document.getElementById("pantalla-final").classList.add("oculto");
+  document.getElementById("pantalla-test").classList.remove("oculto");
+  aplicarUIsegunModo();
+  cargarPregunta();
 }
 
 function actualizarProgreso() {

@@ -2,6 +2,7 @@
   "use strict";
 
   const STORAGE_KEY = "dam-test:progreso:v1";
+  const SESSION_STORAGE_KEY = "dam-test:examenes-activos:v1";
 
   function numeroSeguro(valor) {
     const numero = Number(valor);
@@ -58,6 +59,26 @@
   }
 
   function crearGestorProgreso(storage) {
+    function leerSesiones() {
+      if (!storage || typeof storage.getItem !== "function") return {};
+      try {
+        const sesiones = JSON.parse(storage.getItem(SESSION_STORAGE_KEY) || "{}");
+        return sesiones && typeof sesiones === "object" ? sesiones : {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function guardarSesiones(sesiones) {
+      if (!storage || typeof storage.setItem !== "function") return false;
+      try {
+        storage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sesiones));
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
     function leerEstado() {
       if (!storage || typeof storage.getItem !== "function") {
         return { version: 1, asignaturas: {} };
@@ -178,11 +199,49 @@
       }));
     }
 
+    function guardarExamenActivo(sesion) {
+      if (!sesion || !sesion.asignaturaId || !Array.isArray(sesion.preguntas)) return false;
+      const sesiones = leerSesiones();
+      sesiones[sesion.asignaturaId] = {
+        version: 1,
+        asignaturaId: String(sesion.asignaturaId),
+        fecha: new Date().toISOString(),
+        indice: numeroSeguro(sesion.indice),
+        preguntas: sesion.preguntas.map((pregunta) => ({
+          id: String(pregunta.id),
+          ordenOpciones: Array.isArray(pregunta.ordenOpciones)
+            ? pregunta.ordenOpciones.map(numeroSeguro)
+            : null
+        })),
+        selecciones: Array.isArray(sesion.selecciones) ? sesion.selecciones : [],
+        correctas: Array.isArray(sesion.correctas) ? sesion.correctas : [],
+        config: sesion.config && typeof sesion.config === "object" ? sesion.config : {}
+      };
+      return guardarSesiones(sesiones);
+    }
+
+    function obtenerExamenActivo(asignaturaId) {
+      if (!asignaturaId) return null;
+      const sesion = leerSesiones()[asignaturaId];
+      if (!sesion || !Array.isArray(sesion.preguntas) || sesion.preguntas.length === 0) return null;
+      return sesion;
+    }
+
+    function eliminarExamenActivo(asignaturaId) {
+      const sesiones = leerSesiones();
+      if (!Object.prototype.hasOwnProperty.call(sesiones, asignaturaId)) return true;
+      delete sesiones[asignaturaId];
+      return guardarSesiones(sesiones);
+    }
+
     return {
       obtenerAsignatura,
       registrarInicio,
       registrarRespuesta,
-      registrarFinal
+      registrarFinal,
+      guardarExamenActivo,
+      obtenerExamenActivo,
+      eliminarExamenActivo
     };
   }
 
@@ -197,6 +256,6 @@
   global.ProgresoEstudio = crearGestorProgreso(storage);
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { crearGestorProgreso, STORAGE_KEY };
+    module.exports = { crearGestorProgreso, STORAGE_KEY, SESSION_STORAGE_KEY };
   }
 })(typeof window !== "undefined" ? window : globalThis);

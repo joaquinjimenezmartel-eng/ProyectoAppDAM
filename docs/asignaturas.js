@@ -101,6 +101,14 @@ function renderizarSelectorAsignaturas() {
       } else {
         contenido.append(nombre, detalle);
       }
+
+      const examenPendiente = ProgresoEstudio.obtenerExamenActivo(asignatura.id);
+      if (examenPendiente) {
+        const avisoExamen = document.createElement("span");
+        avisoExamen.className = "asignatura-examen-pendiente";
+        avisoExamen.textContent = `Examen pendiente · ${Math.min(examenPendiente.indice + 1, examenPendiente.preguntas.length)}/${examenPendiente.preguntas.length}`;
+        contenido.appendChild(avisoExamen);
+      }
     } else {
       contenido.append(nombre, detalle);
     }

@@ -166,6 +166,16 @@
     </div>
 
     <div class="modal-body">
+      <section id="examen-pendiente" class="examen-pendiente oculto" aria-live="polite">
+        <span class="examen-pendiente-kicker">Examen en curso</span>
+        <h4 id="examen-pendiente-titulo">Puedes continuar donde lo dejaste</h4>
+        <p id="examen-pendiente-detalle"></p>
+        <div class="examen-pendiente-acciones">
+          <button type="button" class="btn-principal" onclick="continuarExamenGuardado()">Continuar examen</button>
+          <button type="button" class="btn-secundario" onclick="configurarExamenNuevo()">Empezar uno nuevo</button>
+        </div>
+      </section>
+
       <div class="config-resumen">
         <div class="config-card-mini">
           <span id="base-label" class="config-label">Base</span>

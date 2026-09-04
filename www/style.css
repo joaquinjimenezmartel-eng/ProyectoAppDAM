@@ -401,6 +401,62 @@ body::after{
   box-shadow:0 0 10px rgba(var(--subject-accent), 0.45);
 }
 
+.asignatura-examen-pendiente{
+  color:rgb(var(--subject-accent));
+  font-size:0.76rem;
+  font-weight:800;
+}
+
+.examen-pendiente{
+  padding:clamp(8px, 2vw, 20px) 0;
+  text-align:center;
+}
+
+.examen-pendiente-kicker{
+  color:var(--brand-strong);
+  font-size:0.78rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+.examen-pendiente h4{
+  margin:10px 0 8px;
+  color:var(--text-strong);
+  font-size:clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing:-0.045em;
+}
+
+.examen-pendiente p{
+  margin:0;
+  color:var(--muted);
+}
+
+.examen-pendiente-acciones{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:24px;
+  flex-wrap:wrap;
+}
+
+.modal-config.tiene-examen-pendiente .config-resumen,
+.modal-config.tiene-examen-pendiente .config-opciones-inline,
+.modal-config.tiene-examen-pendiente .config-rango,
+.modal-config.tiene-examen-pendiente .modal-footer{
+  display:none;
+}
+
+@media (max-width: 540px){
+  .examen-pendiente-acciones{
+    flex-direction:column;
+  }
+
+  .examen-pendiente-acciones button{
+    width:100%;
+  }
+}
+
 .asignatura-flecha{
   display:grid;
   place-items:center;
