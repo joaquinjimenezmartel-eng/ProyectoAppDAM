@@ -11,6 +11,7 @@
   function crearAsignaturaVacia() {
     return {
       preguntasPracticadas: [],
+      preguntas: {},
       respuestas: 0,
       aciertos: 0,
       fallos: 0,
@@ -26,9 +27,24 @@
     const ids = Array.isArray(origen.preguntasPracticadas)
       ? [...new Set(origen.preguntasPracticadas.map(String))]
       : [];
+    const preguntasOrigen = origen.preguntas && typeof origen.preguntas === "object"
+      ? origen.preguntas
+      : {};
+    const preguntas = {};
+
+    Object.entries(preguntasOrigen).forEach(([id, datosPregunta]) => {
+      const datos = datosPregunta && typeof datosPregunta === "object" ? datosPregunta : {};
+      preguntas[String(id)] = {
+        respuestas: numeroSeguro(datos.respuestas),
+        aciertos: numeroSeguro(datos.aciertos),
+        fallos: numeroSeguro(datos.fallos),
+        ultimaActividad: typeof datos.ultimaActividad === "string" ? datos.ultimaActividad : null
+      };
+    });
 
     return {
       preguntasPracticadas: ids,
+      preguntas,
       respuestas: numeroSeguro(origen.respuestas),
       aciertos: numeroSeguro(origen.aciertos),
       fallos: numeroSeguro(origen.fallos),
@@ -118,10 +134,25 @@
         const preguntasPracticadas = [...datos.preguntasPracticadas];
         const id = String(preguntaId);
         if (!preguntasPracticadas.includes(id)) preguntasPracticadas.push(id);
+        const preguntaAnterior = datos.preguntas[id] || {
+          respuestas: 0,
+          aciertos: 0,
+          fallos: 0,
+          ultimaActividad: null
+        };
 
         return {
           ...datos,
           preguntasPracticadas,
+          preguntas: {
+            ...datos.preguntas,
+            [id]: {
+              respuestas: preguntaAnterior.respuestas + 1,
+              aciertos: preguntaAnterior.aciertos + (correcta ? 1 : 0),
+              fallos: preguntaAnterior.fallos + (correcta ? 0 : 1),
+              ultimaActividad: fecha
+            }
+          },
           respuestas: datos.respuestas + 1,
           aciertos: datos.aciertos + (correcta ? 1 : 0),
           fallos: datos.fallos + (correcta ? 0 : 1),

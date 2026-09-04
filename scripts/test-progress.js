@@ -39,6 +39,9 @@ assert.equal(guardado.porcentajeAciertos, 67);
 assert.equal(guardado.sesionesIniciadas, 1);
 assert.equal(guardado.sesionesCompletadas, 1);
 assert.equal(guardado.ultimaSesion.completada, true);
+assert.equal(guardado.preguntas["1"].respuestas, 2);
+assert.equal(guardado.preguntas["1"].fallos, 1);
+assert.equal(guardado.preguntas["2"].aciertos, 1);
 
 storage.setItem(STORAGE_KEY, "contenido no válido");
 assert.equal(crearGestorProgreso(storage).obtenerAsignatura("bases").respuestas, 0);
