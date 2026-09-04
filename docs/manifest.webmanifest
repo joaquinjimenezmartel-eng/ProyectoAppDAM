@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "DAM Test",
+  "short_name": "DAM Test",
+  "description": "Aplicación de estudio y práctica para las asignaturas de DAM.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080d18",
+  "theme_color": "#080d18"
+}

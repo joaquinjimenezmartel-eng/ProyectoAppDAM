@@ -6,6 +6,7 @@ const vm = require("vm");
 const PROJECT_ROOT = path.resolve(__dirname, "..");
 const WEB_ROOT = path.join(PROJECT_ROOT, "www");
 const INDEX_PATH = path.join(WEB_ROOT, "index.html");
+const MANIFEST_PATH = path.join(WEB_ROOT, "manifest.webmanifest");
 // Actualizar únicamente cuando se autorice expresamente un cambio en el banco de test.
 const HUELLA_CONTENIDO_EVALUABLE = "339c3bcc2e35d4fad7909677446f215ccbd170151184424668498d091c933ba1";
 
@@ -88,8 +89,20 @@ function cargarContenido() {
 function validar() {
   const errores = [];
   const { catalogo, bancoDePreguntas, bancoDeResumenes } = cargarContenido();
+  const html = fs.readFileSync(INDEX_PATH, "utf8");
+  const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"));
   const idsAsignaturas = new Set();
   let totalPreguntas = 0;
+
+  if (!/viewport-fit=cover/i.test(html)) {
+    errores.push("La ventana móvil no permite cubrir las zonas seguras del dispositivo.");
+  }
+  if (!/apple-mobile-web-app-status-bar-style[\s\S]*black-translucent/i.test(html)) {
+    errores.push("La web-app de iOS no tiene configurada la barra de estado translúcida.");
+  }
+  if (manifest.display !== "standalone" || !manifest.start_url || !manifest.scope) {
+    errores.push("El manifiesto de la web-app no contiene una configuración standalone completa.");
+  }
 
   const huellaActual = calcularHuellaContenidoEvaluable(catalogo);
   if (huellaActual !== HUELLA_CONTENIDO_EVALUABLE) {
