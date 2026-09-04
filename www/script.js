@@ -11,6 +11,7 @@ let correctasExamen = [];
 
 let falladasExamen = [];
 let enRepasoFallos = false;
+let sesionFinalizadaRegistrada = false;
 
 let config = {
   mezclarPreguntas: true,
@@ -628,6 +629,7 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
 
   modo = modoElegido;
   enRepasoFallos = false;
+  sesionFinalizadaRegistrada = false;
 
   if (!esModoExamen(modoElegido) && config.usarRango) {
     const preguntasOrdenadas = obtenerPreguntasAsignaturaOrdenadas(asignatura);
@@ -657,6 +659,8 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
     seleccionExamen = new Array(preguntasActuales.length).fill(null);
     correctasExamen = new Array(preguntasActuales.length).fill(null);
     falladasExamen = [];
+
+    registrarInicioProgreso(asignatura, modoElegido, preguntasActuales.length);
 
     document.getElementById("pantalla-inicio").classList.add("oculto");
     document.getElementById("pantalla-final").classList.add("oculto");
@@ -705,6 +709,8 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
   seleccionExamen = new Array(preguntasActuales.length).fill(null);
   correctasExamen = new Array(preguntasActuales.length).fill(null);
   falladasExamen = [];
+
+  registrarInicioProgreso(asignatura, modoElegido, preguntasActuales.length);
 
   document.getElementById("pantalla-inicio").classList.add("oculto");
   document.getElementById("pantalla-final").classList.add("oculto");
@@ -874,6 +880,7 @@ function verificarRespuestaEstudio(idxElegido, btnPulsado) {
     if (!estadoPreguntas[indicePregunta]) {
       estadoPreguntas[indicePregunta] = true;
       aciertos++;
+      registrarRespuestaProgreso(p, true);
     }
 
     document.getElementById("puntuacion").innerText = `Aciertos: ${aciertos}`;
@@ -883,6 +890,7 @@ function verificarRespuestaEstudio(idxElegido, btnPulsado) {
   } else {
     btnPulsado.classList.add("incorrecta");
     btnPulsado.disabled = true;
+    registrarRespuestaProgreso(p, false);
     mostrarBotonExplicacion();
     if (feedback) feedback.innerText = "Fallaste ❌ Sigue intentándolo";
   }
@@ -898,7 +906,10 @@ function siguientePregunta() {
     if (sel === null) return;
 
     const esCorrecta = sel === p.correcta;
+    const yaRegistrada = correctasExamen[indicePregunta] !== null;
     correctasExamen[indicePregunta] = esCorrecta;
+
+    if (!yaRegistrada) registrarRespuestaProgreso(p, esCorrecta);
 
     if (esCorrecta) {
       aciertos = correctasExamen.filter(v => v === true).length;
@@ -936,6 +947,8 @@ function mostrarResultadoFinal() {
 
   const total = preguntasActuales.length;
   const fallos = total - aciertos;
+
+  registrarFinalProgreso(total, aciertos, fallos);
 
   document.getElementById("nota-final").innerText = `${aciertos} de ${total}`;
 
@@ -977,6 +990,9 @@ function repasarFallos() {
   indicePregunta = 0;
   aciertos = 0;
   estadoPreguntas = new Array(preguntasActuales.length).fill(false);
+  sesionFinalizadaRegistrada = false;
+
+  registrarInicioProgreso(asignaturaSeleccionada, "repaso", preguntasActuales.length);
 
   document.getElementById("pantalla-final").classList.add("oculto");
   document.getElementById("pantalla-test").classList.remove("oculto");
@@ -1005,6 +1021,7 @@ function volverAHome() {
   asignaturaSeleccionada = null;
   modo = "estudio";
   enRepasoFallos = false;
+  sesionFinalizadaRegistrada = false;
 
   const btnAtras = document.getElementById("btn-atras");
   const navGrid = document.getElementById("nav-grid-bottom");
@@ -1025,6 +1042,38 @@ function volverAHome() {
   if (sel) sel.classList.add("oculto");
 
   resaltarAsignaturaSeleccionada(null);
+  renderizarSelectorAsignaturas();
+}
+
+function registrarInicioProgreso(asignaturaId, modoSesion, total) {
+  if (typeof ProgresoEstudio === "undefined") return;
+  ProgresoEstudio.registrarInicio({ asignaturaId, modo: modoSesion, total });
+}
+
+function registrarRespuestaProgreso(pregunta, correcta) {
+  if (typeof ProgresoEstudio === "undefined" || !asignaturaSeleccionada || !pregunta) return;
+  ProgresoEstudio.registrarRespuesta({
+    asignaturaId: asignaturaSeleccionada,
+    preguntaId: pregunta.id,
+    correcta
+  });
+}
+
+function registrarFinalProgreso(total, totalAciertos, totalFallos) {
+  if (
+    sesionFinalizadaRegistrada ||
+    typeof ProgresoEstudio === "undefined" ||
+    !asignaturaSeleccionada
+  ) return;
+
+  ProgresoEstudio.registrarFinal({
+    asignaturaId: asignaturaSeleccionada,
+    modo: enRepasoFallos ? "repaso" : modo,
+    total,
+    aciertos: totalAciertos,
+    fallos: totalFallos
+  });
+  sesionFinalizadaRegistrada = true;
 }
 
 function actualizarProgreso() {

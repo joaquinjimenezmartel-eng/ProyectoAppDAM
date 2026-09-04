@@ -8,7 +8,7 @@
     "sync:web": "node scripts/sync-web.js",
     "sync:android": "npm run validate && npx cap copy android",
     "sync": "npm run validate && npm run sync:web && npx cap copy android",
-    "test": "npm run validate"
+    "test": "npm run validate && node scripts/test-progress.js"
   },
   "keywords": [],
   "author": "",

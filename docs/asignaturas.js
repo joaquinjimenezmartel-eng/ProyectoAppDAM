@@ -81,12 +81,35 @@ function renderizarSelectorAsignaturas() {
     const detalle = document.createElement("small");
     detalle.textContent = `${asignatura.preguntas.length} preguntas`;
 
+    if (typeof ProgresoEstudio !== "undefined") {
+      const progreso = ProgresoEstudio.obtenerAsignatura(asignatura.id);
+
+      if (progreso.respuestas > 0) {
+        const resumenProgreso = document.createElement("span");
+        resumenProgreso.className = "asignatura-progreso";
+        resumenProgreso.textContent = `${progreso.totalPracticadas} practicadas · ${progreso.porcentajeAciertos}% de aciertos`;
+
+        const barra = document.createElement("span");
+        barra.className = "asignatura-progreso-barra";
+        barra.setAttribute("aria-hidden", "true");
+
+        const avance = document.createElement("span");
+        avance.style.width = `${Math.min(100, Math.round((progreso.totalPracticadas / Math.max(asignatura.preguntas.length, 1)) * 100))}%`;
+        barra.appendChild(avance);
+
+        contenido.append(nombre, detalle, resumenProgreso, barra);
+      } else {
+        contenido.append(nombre, detalle);
+      }
+    } else {
+      contenido.append(nombre, detalle);
+    }
+
     const flecha = document.createElement("span");
     flecha.className = "asignatura-flecha";
     flecha.setAttribute("aria-hidden", "true");
     flecha.textContent = "›";
 
-    contenido.append(nombre, detalle);
     boton.append(icono, contenido, flecha);
     boton.addEventListener("click", () => seleccionarAsignatura(asignatura.id));
     contenedor.appendChild(boton);
