@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260904-4" />
+  <link rel="stylesheet" href="style.css?v=20260904-5" />
 </head>
 <body>
 
@@ -64,8 +64,12 @@
 
     <div class="barra-superior">
       <div class="nav-left">
-        <button id="btn-atras" class="btn-link" onclick="preguntaAnterior()">‹ Atrás</button>
-        <button class="btn-link" onclick="volverAHome()">Inicio</button>
+        <button id="btn-atras" class="btn-link" onclick="preguntaAnterior()" aria-label="Volver a la pregunta anterior" title="Atrás">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <button class="btn-link" onclick="volverAHome()" aria-label="Volver al inicio" title="Inicio">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10.5V20h13v-9.5" /><path d="M9.5 20v-5.5h5V20" /></svg>
+        </button>
       </div>
 
       <div class="nav-right">
@@ -270,12 +274,12 @@
 <script src="resumenes/resumen-programacion.js"></script>
 <script src="resumenes/resumen-empleabilidad.js"></script>
 <script src="resumenes/resumen-lenguaje-marcas.js"></script>
-<script src="progreso.js?v=20260904-4"></script>
-<script src="asignaturas.js?v=20260904-4"></script>
+<script src="progreso.js?v=20260904-5"></script>
+<script src="asignaturas.js?v=20260904-5"></script>
 <script src="preguntas/preguntas.js"></script>
 <script src="resumenes.js"></script>
 
 <!-- SCRIPT -->
-<script src="script.js?v=20260904-4"></script>
+<script src="script.js?v=20260904-5"></script>
 </body>
 </html>

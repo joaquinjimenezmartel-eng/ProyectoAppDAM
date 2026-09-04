@@ -87,17 +87,8 @@ function renderizarSelectorAsignaturas() {
       if (progreso.respuestas > 0) {
         const resumenProgreso = document.createElement("span");
         resumenProgreso.className = "asignatura-progreso";
-        resumenProgreso.textContent = `${progreso.totalPracticadas} practicadas · ${progreso.porcentajeAciertos}% de aciertos`;
-
-        const barra = document.createElement("span");
-        barra.className = "asignatura-progreso-barra";
-        barra.setAttribute("aria-hidden", "true");
-
-        const avance = document.createElement("span");
-        avance.style.width = `${Math.min(100, Math.round((progreso.totalPracticadas / Math.max(asignatura.preguntas.length, 1)) * 100))}%`;
-        barra.appendChild(avance);
-
-        contenido.append(nombre, detalle, resumenProgreso, barra);
+        resumenProgreso.textContent = `${progreso.porcentajeAciertos}% de aciertos`;
+        contenido.append(nombre, detalle, resumenProgreso);
       } else {
         contenido.append(nombre, detalle);
       }

@@ -383,24 +383,6 @@ body::after{
   line-height:1.2;
 }
 
-.asignatura-progreso-barra{
-  display:block;
-  width:min(190px, 100%);
-  height:3px;
-  margin-top:2px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.14);
-  overflow:hidden;
-}
-
-.asignatura-progreso-barra > span{
-  display:block;
-  height:100%;
-  border-radius:inherit;
-  background:rgb(var(--subject-accent));
-  box-shadow:0 0 10px rgba(var(--subject-accent), 0.45);
-}
-
 .asignatura-examen-pendiente{
   color:rgb(var(--subject-accent));
   font-size:0.76rem;
@@ -2716,14 +2698,30 @@ button:disabled{
 
 #btn-atras,
 .nav-left .btn-link:not(#btn-atras){
-  width:auto;
+  width:42px;
+  height:42px;
   min-width:0;
   min-height:42px;
-  padding:0 9px;
+  padding:0;
   border:0;
-  border-radius:0;
+  border-radius:50%;
   background:transparent;
   box-shadow:none;
+}
+
+.nav-left .btn-link svg{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+#btn-atras:hover,
+.nav-left .btn-link:not(#btn-atras):hover{
+  background:rgba(255,255,255,0.10);
 }
 
 .nav-left{
@@ -2748,12 +2746,13 @@ button:disabled{
 
   #btn-atras,
   .nav-left .btn-link:not(#btn-atras){
-    width:auto;
+    width:40px;
+    height:40px;
     min-width:0;
     min-height:40px;
-    padding:0 7px;
+    padding:0;
     border:0;
-    border-radius:0;
+    border-radius:50%;
     background:transparent;
     box-shadow:none;
     font-size:0.84rem;
