@@ -16,14 +16,14 @@ const resumenEmpleabilidad = `
 
     <section class="study-summary__section">
       <h4>1. Economía, necesidades y toma de decisiones</h4>
-      <p>En la economía actúan cuatro grandes agentes: <strong>familias, empresas, Estado y sector bancario</strong>. Como los recursos son limitados y las necesidades no lo son, decidir bien es esencial. El temario lo resume afirmando que decidir es <strong>"una elección racional basada en una comparativa"</strong>, es decir, en un análisis coste-beneficio.</p>
+      <p>En la economía actúan cuatro grandes agentes: <strong>familias, empresas, Estado y sector bancario</strong>. Como los recursos son limitados y las necesidades no lo son, decidir bien es esencial. Decidir implica realizar <strong>una elección racional basada en una comparativa</strong>, es decir, en un análisis coste-beneficio.</p>
       <p>En ese proceso aparece el <strong>coste irrecuperable</strong>, definido como <strong>"los costes del pasado que no deben influir en la decisión futura, porque ya se han producido y no se pueden modificar"</strong>. Saber reconocerlo evita persistir en decisiones malas por el simple hecho de haber invertido ya recursos en ellas.</p>
       <p>El <strong>presupuesto familiar</strong> es la herramienta básica de control y previsión, y se compone de <strong>gastos fijos, gastos corrientes y gastos ocasionales</strong>. En ese marco, ahorrar no es solo guardar dinero, sino aceptar que <strong>"ahorrar es renunciar a consumir hoy para consumir más en el futuro"</strong>.</p>
     </section>
 
     <section class="study-summary__section">
       <h4>2. Ahorro, endeudamiento y financiación personal</h4>
-      <p>El temario diferencia dos umbrales para no caer en el sobreendeudamiento. La <strong>capacidad de endeudamiento</strong> será como máximo del <strong>35% de los ingresos netos</strong>, mientras que el <strong>límite de endeudamiento</strong> se sitúa en el <strong>40%</strong>. Además, se recomienda un <strong>fondo de emergencia</strong> que permita cubrir todos los gastos durante <strong>6 meses</strong>.</p>
+      <p>Conviene diferenciar dos umbrales para evitar el sobreendeudamiento. La <strong>capacidad de endeudamiento</strong> será como máximo del <strong>35% de los ingresos netos</strong>, mientras que el <strong>límite de endeudamiento</strong> se sitúa en el <strong>40%</strong>. Además, se recomienda un <strong>fondo de emergencia</strong> que permita cubrir todos los gastos durante <strong>6 meses</strong>.</p>
       <div class="study-summary__formula">Coste total del préstamo = Nominal + Intereses + Comisiones + Gastos</div>
       <p>Dentro de los productos bancarios, el <strong>préstamo hipotecario</strong> suele utilizarse para comprar bienes inmuebles, su cuantía depende del valor de la vivienda y normalmente no supera el <strong>80% del valor de tasación</strong>. Lo que no le corresponde es un plazo máximo de ocho años, rasgo más propio de los préstamos personales o al consumo.</p>
       <p>Las <strong>tarjetas revolving</strong> se consideran una <strong>"deuda eterna"</strong> porque el capital pendiente crece al ir sumando intereses elevados, lo que dificulta la cancelación real de la deuda.</p>
@@ -57,7 +57,7 @@ const resumenEmpleabilidad = `
 
     <section class="study-summary__section">
       <h4>5. Marketing: concepto, enfoques y herramientas</h4>
-      <p>La definición más completa del temario señala que el marketing es <strong>"la planificación y ejecución de la concepción del producto, fijación de precios, promoción y distribución de ideas, bienes y servicios para crear relaciones de intercambio que satisfagan objetivos individuales y organizacionales"</strong>. Esta formulación integra producto, precio, promoción y distribución.</p>
+      <p>En sentido amplio, el marketing comprende la <strong>planificación y ejecución de la concepción del producto, la fijación de precios, la promoción y la distribución de ideas, bienes y servicios para crear relaciones de intercambio que satisfagan objetivos individuales y organizacionales</strong>. Esta formulación integra producto, precio, promoción y distribución.</p>
       <p>Existen cinco orientaciones de la actividad comercial: hacia el <strong>producto</strong>, hacia las <strong>ventas</strong>, hacia el <strong>cliente o consumidor</strong>, hacia la <strong>competencia</strong> y hacia el <strong>mercado</strong>. La orientación hacia el mercado es la más proactiva, porque busca anticiparse a problemas y necesidades futuras.</p>
       <div class="study-summary__grid">
         <article class="study-summary__card">

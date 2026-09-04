@@ -207,7 +207,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 1,
-  explicacion: "Es como pasar a limpio unos apuntes con mejor letra y subrayando lo importante; la historia que cuentas no cambia, pero es más fácil leerla. Refactorizar implica aplicar técnicas estructuradas para optimizar la calidad interna del código (eliminando 'code smells', reduciendo el acoplamiento y mejorando la cohesión) garantizando mediante pruebas de regresión que los outputs o la semántica externa del sistema permanecen completamente inmutables."},
+  explicacion: "La refactorización reorganiza la estructura interna del código sin cambiar su comportamiento observable. Permite eliminar duplicaciones y otros indicadores de diseño mejorable, reducir el acoplamiento y aumentar la cohesión. Las pruebas de regresión sirven para comprobar que el sistema sigue produciendo los mismos resultados después de los cambios."},
 
 { id: 20,
   pregunta: "La relación de agregación se marca con:",
@@ -361,7 +361,7 @@ const preguntasEntornos = [
     "Centralizados o distribuidos"
   ],
   correcta: 3,
-  explicacion: "Como cuando tienes los apuntes para el examen: o el profesor tiene la única copia original en su mesa y vais a mirarlos allí (centralizado), o cada alumno tiene una copia idéntica y completa de todos los apuntes en su mochila (distribuido). A nivel de arquitectura, los Sistemas de Control de Versiones se dividen en Centralizados (CVCS como SVN, un único repositorio maestro) y Distribuidos (DVCS como Git, donde cada nodo o desarrollador clona el historial completo del repositorio de manera local)."},
+  explicacion: "Los sistemas de control de versiones se clasifican en centralizados y distribuidos. En un sistema centralizado, como SVN, existe un repositorio principal compartido. En uno distribuido, como Git, cada desarrollador puede disponer de una copia completa del repositorio y de su historial."},
 
 { id: 34,
   pregunta: "Los tipos de diagramas que pueden desarrollarse por UML se dividen en:",
@@ -931,7 +931,7 @@ const preguntasEntornos = [
     "Centralizados o distribuidos."
   ],
   correcta: 3,
-  explicacion: "O la profesora tiene la única copia del examen original en su gran cajón cerrado, o mágicamente cada niño tiene una copia entera y perfecta del examen guardada en su propia mochila. Los Sistemas de Control de Versiones dividen su topología fundamentalmente en dos familias: Centralizados (arquitectura de un solo repositorio remoto maestro como SVN) o Distribuidos (topología de nodos donde cada cliente aloja un clon completo y autónomo del repositorio como Git)."
+  explicacion: "Un sistema de control de versiones centralizado mantiene un repositorio principal al que acceden los miembros del equipo. Un sistema distribuido permite que cada persona trabaje con una copia completa del repositorio y su historial. SVN y Git son ejemplos habituales de ambos modelos, respectivamente."
 },
 
 {

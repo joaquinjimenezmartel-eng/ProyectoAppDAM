@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "validate": "node scripts/validate-content.js",
+    "sync:web": "node scripts/sync-web.js",
+    "sync:android": "npm run validate && npx cap copy android",
+    "sync": "npm run validate && npm run sync:web && npx cap copy android",
+    "test": "npm run validate"
   },
   "keywords": [],
   "author": "",

@@ -9,7 +9,7 @@ const preguntasLenguajeMarcas = [
       "D. <xsl:choose>"
     ],
     "respuesta_correcta": "C. <xsl:boolean>",
-    "explicacion": "Explicación fácil:\nXSLT tiene unas etiquetas propias para trabajar con documentos XML, como si fueran herramientas de una caja. Algunas sirven para recorrer datos, otras para sacar valores y otras para elegir entre varias opciones.\nLa opción <xsl:boolean> parece que podría existir, pero en realidad no es una etiqueta de XSLT.\n\nEjemplo:\n<xsl:value-of> sí se usa para mostrar el valor de un dato.\n<xsl:for-each> sí se usa para recorrer varios nodos.\n<xsl:choose> sí se usa para elegir entre varias posibilidades.\n\nPor qué esa es la buena:\nPorque <xsl:boolean> no forma parte de las etiquetas propias de XSLT.\n\nPor qué las otras no:\n- A no es correcta porque <xsl:value-of> sí existe en XSLT.\n- B no es correcta porque <xsl:for-each> sí existe en XSLT.\n- D no es correcta porque <xsl:choose> sí existe en XSLT."
+    "explicacion": "XSLT tiene unas etiquetas propias para trabajar con documentos XML, como si fueran herramientas de una caja. Algunas sirven para recorrer datos, otras para sacar valores y otras para elegir entre varias opciones.\nLa opción <xsl:boolean> parece que podría existir, pero en realidad no es una etiqueta de XSLT.\n\nEjemplo:\n<xsl:value-of> sí se usa para mostrar el valor de un dato.\n<xsl:for-each> sí se usa para recorrer varios nodos.\n<xsl:choose> sí se usa para elegir entre varias posibilidades.\n\nPor qué es correcta:\nPorque <xsl:boolean> no forma parte de las etiquetas propias de XSLT.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque <xsl:value-of> sí existe en XSLT.\n- B no es correcta porque <xsl:for-each> sí existe en XSLT.\n- D no es correcta porque <xsl:choose> sí existe en XSLT."
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@ const preguntasLenguajeMarcas = [
       "D. .xml."
     ],
     "respuesta_correcta": "A. .css.",
-    "explicacion": "Explicación fácil:\nUn lenguaje de marcas se usa para estructurar o marcar contenido, como pasa con HTML o XML. CSS no hace eso. CSS se usa para decir cómo se ve una página: colores, tamaños, márgenes y cosas así.\n\nEjemplo:\nHTML dice que algo es un título.\nCSS dice si ese título va en azul, grande o centrado.\n\nPor qué esa es la buena:\nPorque .css no corresponde a un archivo de lenguaje de marcas, sino a una hoja de estilos.\n\nPor qué las otras no:\n- B no es correcta porque .sgml sí pertenece al ámbito de los lenguajes de marcas.\n- C no es correcta porque .html sí es un lenguaje de marcas.\n- D no es correcta porque .xml sí es un lenguaje de marcas."
+    "explicacion": "Un lenguaje de marcas se usa para estructurar o marcar contenido, como pasa con HTML o XML. CSS no hace eso. CSS se usa para decir cómo se ve una página: colores, tamaños, márgenes y cosas así.\n\nEjemplo:\nHTML dice que algo es un título.\nCSS dice si ese título va en azul, grande o centrado.\n\nPor qué es correcta:\nPorque .css no corresponde a un archivo de lenguaje de marcas, sino a una hoja de estilos.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque .sgml sí pertenece al ámbito de los lenguajes de marcas.\n- C no es correcta porque .html sí es un lenguaje de marcas.\n- D no es correcta porque .xml sí es un lenguaje de marcas."
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@ const preguntasLenguajeMarcas = [
       "D. Fichero TEMP."
     ],
     "respuesta_correcta": "D. Fichero TEMP.",
-    "explicacion": "Explicación fácil:\nCSV, JSON y XML sí son formatos pensados para guardar o intercambiar información entre programas. En cambio, TEMP hace referencia a un archivo temporal, no a un formato estándar de datos.\n\nEjemplo:\nUn programa puede guardar una lista de usuarios en CSV, JSON o XML para luego abrirla en otro sitio.\nUn archivo TEMP normalmente se crea solo para uso momentáneo del sistema o de una aplicación.\n\nPor qué esa es la buena:\nPorque Fichero TEMP no es un formato de intercambio y almacenamiento de datos como los otros.\n\nPor qué las otras no:\n- A no es correcta porque CSV sí se usa para guardar e intercambiar datos.\n- B no es correcta porque JSON sí se usa para guardar e intercambiar datos.\n- C no es correcta porque XML sí se usa para guardar e intercambiar datos."
+    "explicacion": "CSV, JSON y XML sí son formatos pensados para guardar o intercambiar información entre programas. En cambio, TEMP hace referencia a un archivo temporal, no a un formato estándar de datos.\n\nEjemplo:\nUn programa puede guardar una lista de usuarios en CSV, JSON o XML para luego abrirla en otro sitio.\nUn archivo TEMP normalmente se crea solo para uso momentáneo del sistema o de una aplicación.\n\nPor qué es correcta:\nPorque Fichero TEMP no es un formato de intercambio y almacenamiento de datos como los otros.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque CSV sí se usa para guardar e intercambiar datos.\n- B no es correcta porque JSON sí se usa para guardar e intercambiar datos.\n- C no es correcta porque XML sí se usa para guardar e intercambiar datos."
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna es correcta."
     ],
     "respuesta_correcta": "B. Versión.",
-    "explicacion": "Explicación fácil:\nEl prólogo de un documento XML es la parte del principio, como la cabecera. Ahí se indica información básica del documento, y una de las más importantes es la versión de XML.\n\nEjemplo:\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\nAquí aparece claramente la versión.\n\nPor qué esa es la buena:\nPorque en el prólogo del XML se indica la versión del documento.\n\nPor qué las otras no:\n- A no es correcta porque la presentación no forma parte del prólogo XML.\n- C no es correcta porque la estructura del documento va en el contenido del XML, no como dato básico del prólogo.\n- D no es correcta porque B sí es correcta."
+    "explicacion": "El prólogo de un documento XML es la parte del principio, como la cabecera. Ahí se indica información básica del documento, y una de las más importantes es la versión de XML.\n\nEjemplo:\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\nAquí aparece claramente la versión.\n\nPor qué es correcta:\nPorque en el prólogo del XML se indica la versión del documento.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque la presentación no forma parte del prólogo XML.\n- C no es correcta porque la estructura del documento va en el contenido del XML, no como dato básico del prólogo.\n- D no es correcta porque B sí es correcta."
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrecta."
     ],
     "respuesta_correcta": "A. Lenguaje de consultas especializado en datos XML.",
-    "explicacion": "Explicación fácil:\nXQuery sirve para buscar y sacar información de documentos XML. Es como hacer preguntas dentro de un archivo XML para encontrar justo lo que necesitas.\n\nEjemplo:\nSi tienes un XML con libros, XQuery te puede ayudar a obtener solo los títulos o solo los autores.\n\nPor qué esa es la buena:\nPorque XQuery es un lenguaje pensado específicamente para hacer consultas sobre datos XML.\n\nPor qué las otras no:\n- B no es correcta porque esa descripción encaja mejor con otras tecnologías usadas para procesar o transformar XML.\n- C no es correcta porque DTD no usa XQuery como lenguaje de verificación.\n- D no es correcta porque A sí es correcta."
+    "explicacion": "XQuery sirve para buscar y sacar información de documentos XML. Es como hacer preguntas dentro de un archivo XML para encontrar justo lo que necesitas.\n\nEjemplo:\nSi tienes un XML con libros, XQuery te puede ayudar a obtener solo los títulos o solo los autores.\n\nPor qué es correcta:\nPorque XQuery es un lenguaje pensado específicamente para hacer consultas sobre datos XML.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque esa descripción encaja mejor con otras tecnologías usadas para procesar o transformar XML.\n- C no es correcta porque DTD no usa XQuery como lenguaje de verificación.\n- D no es correcta porque A sí es correcta."
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna de las anteriores es correcta."
     ],
     "respuesta_correcta": "C. Estructura descendente arbórea.",
-    "explicacion": "Explicación fácil:\nUn documento XML se organiza como un árbol. Arriba está la raíz y debajo van colgando los elementos hijos, y de esos pueden salir más hijos. Por eso se dice que es una estructura arbórea y descendente.\n\nEjemplo:\n<libro>\n  <titulo>XML</titulo>\n  <autor>Ana</autor>\n</libro>\nAquí libro es el nodo principal y debajo están titulo y autor.\n\nPor qué esa es la buena:\nPorque XML tiene una estructura en forma de árbol que va desde un elemento principal hacia elementos inferiores.\n\nPor qué las otras no:\n- A no es correcta porque no se describe como ascendente.\n- B no es correcta porque canórea no es la denominación correcta aquí.\n- D no es correcta porque C sí es correcta."
+    "explicacion": "Un documento XML se organiza como un árbol. Arriba está la raíz y debajo van colgando los elementos hijos, y de esos pueden salir más hijos. Por eso se dice que es una estructura arbórea y descendente.\n\nEjemplo:\n<libro>\n  <titulo>XML</titulo>\n  <autor>Ana</autor>\n</libro>\nAquí libro es el nodo principal y debajo están titulo y autor.\n\nPor qué es correcta:\nPorque XML tiene una estructura en forma de árbol que va desde un elemento principal hacia elementos inferiores.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque no se describe como ascendente.\n- B no es correcta porque canórea no es la denominación correcta aquí.\n- D no es correcta porque C sí es correcta."
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@ const preguntasLenguajeMarcas = [
       "D. Atributo."
     ],
     "respuesta_correcta": "D. Atributo.",
-    "explicacion": "Explicación fácil:\nUn atributo es un dato extra que se mete dentro de una etiqueta para completar su información. Es como ponerle una pegatina con detalles a una caja.\n\nEjemplo:\n<libro tipo=\"novela\">\nLa etiqueta es libro y el atributo es tipo=\"novela\".\n\nPor qué esa es la buena:\nPorque el atributo sirve precisamente para modificar o añadir información a una etiqueta.\n\nPor qué las otras no:\n- A no es correcta porque un elemento es algo más completo que puede incluir etiquetas y contenido.\n- B no es correcta porque gramática no es el nombre de esa parte.\n- C no es correcta porque la etiqueta es la propia marca, no la información adicional."
+    "explicacion": "Un atributo es un dato extra que se mete dentro de una etiqueta para completar su información. Es como ponerle una pegatina con detalles a una caja.\n\nEjemplo:\n<libro tipo=\"novela\">\nLa etiqueta es libro y el atributo es tipo=\"novela\".\n\nPor qué es correcta:\nPorque el atributo sirve precisamente para modificar o añadir información a una etiqueta.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque un elemento es algo más completo que puede incluir etiquetas y contenido.\n- B no es correcta porque gramática no es el nombre de esa parte.\n- C no es correcta porque la etiqueta es la propia marca, no la información adicional."
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son correctas."
     ],
     "respuesta_correcta": "D. Todas las anteriores son correctas.",
-    "explicacion": "Explicación fácil:\nPara crear un documento HTML no necesitas obligatoriamente un programa especial. Puedes usar un editor visual, un editor de texto sencillo o incluso una herramienta online.\n\nEjemplo:\nPuedes escribir una página HTML en Bloc de Notas, guardarla con extensión .html y abrirla en el navegador.\nTambién puedes hacerla con Kompozer o con un editor online.\n\nPor qué esa es la buena:\nPorque todas las opciones anteriores sirven para crear un documento HTML.\n\nPor qué las otras no:\n- A por sí sola no es la única correcta, porque hay más programas que también sirven.\n- B por sí sola no es la única correcta, porque no solo se puede hacer con Bloc de Notas.\n- C por sí sola no es la única correcta, porque tampoco es la única opción válida."
+    "explicacion": "Para crear un documento HTML no necesitas obligatoriamente un programa especial. Puedes usar un editor visual, un editor de texto sencillo o incluso una herramienta online.\n\nEjemplo:\nPuedes escribir una página HTML en Bloc de Notas, guardarla con extensión .html y abrirla en el navegador.\nTambién puedes hacerla con Kompozer o con un editor online.\n\nPor qué es correcta:\nPorque todas las opciones anteriores sirven para crear un documento HTML.\n\nPor qué se descartan las demás opciones:\n- A por sí sola no es la única correcta, porque hay más programas que también sirven.\n- B por sí sola no es la única correcta, porque no solo se puede hacer con Bloc de Notas.\n- C por sí sola no es la única correcta, porque tampoco es la única opción válida."
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@ const preguntasLenguajeMarcas = [
       "D. Cascading Sheets Style."
     ],
     "respuesta_correcta": "C. Cascading Style Sheets.",
-    "explicacion": "Explicación fácil:\nCSS es el lenguaje que se usa para dar estilo a una página web. Sus siglas en inglés significan Cascading Style Sheets.\n\nEjemplo:\nCon CSS puedes decir que un título sea rojo, que un texto esté centrado o que un bloque tenga un borde.\n\nPor qué esa es la buena:\nPorque el significado correcto de las siglas CSS es Cascading Style Sheets.\n\nPor qué las otras no:\n- A no es correcta porque ese desarrollo de siglas no existe.\n- B no es correcta porque ese desarrollo de siglas tampoco es el correcto.\n- D no es correcta porque el orden de las palabras no es el válido."
+    "explicacion": "CSS es el lenguaje que se usa para dar estilo a una página web. Sus siglas en inglés significan Cascading Style Sheets.\n\nEjemplo:\nCon CSS puedes decir que un título sea rojo, que un texto esté centrado o que un bloque tenga un borde.\n\nPor qué es correcta:\nPorque el significado correcto de las siglas CSS es Cascading Style Sheets.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque ese desarrollo de siglas no existe.\n- B no es correcta porque ese desarrollo de siglas tampoco es el correcto.\n- D no es correcta porque el orden de las palabras no es el válido."
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@ const preguntasLenguajeMarcas = [
       "D. :, Dos punto."
     ],
     "respuesta_correcta": "D. :, Dos punto.",
-    "explicacion": "Explicación fácil:\nEn XSLT, muchas etiquetas usan un prefijo y luego el nombre separado por dos puntos. Es como si llevaran nombre y apellido unidos por ese símbolo.\n\nEjemplo:\n<xsl:value-of>\nAquí xsl es el prefijo y value-of es el nombre de la instrucción. Entre los dos va :\n\nPor qué esa es la buena:\nPorque la forma correcta de esa etiqueta es <xsl:value-of> y el símbolo que falta es :\n\nPor qué las otras no:\n- A no es correcta porque el signo igual no se usa para separar el prefijo del nombre de la etiqueta.\n- B no es correcta porque la interrogación no corresponde a esa etiqueta.\n- C no es correcta porque la barra baja tampoco es el separador correcto."
+    "explicacion": "En XSLT, muchas etiquetas usan un prefijo y luego el nombre separado por dos puntos. Es como si llevaran nombre y apellido unidos por ese símbolo.\n\nEjemplo:\n<xsl:value-of>\nAquí xsl es el prefijo y value-of es el nombre de la instrucción. Entre los dos va :\n\nPor qué es correcta:\nPorque la forma correcta de esa etiqueta es <xsl:value-of> y el símbolo que falta es :\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque el signo igual no se usa para separar el prefijo del nombre de la etiqueta.\n- B no es correcta porque la interrogación no corresponde a esa etiqueta.\n- C no es correcta porque la barra baja tampoco es el separador correcto."
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna de las anteriores es correcta."
     ],
     "respuesta_correcta": "A. DTD.",
-    "explicacion": "Explicación fácil:\nUna DTD es como una plantilla de reglas que le dice a un documento XML cómo debe estar hecho. Sirve para comprobar si ese XML está bien construido según unas normas.\n\nEjemplo:\nSi una DTD dice que un libro debe tener titulo y autor, el XML se revisa para ver si realmente tiene esas partes.\n\nPor qué esa es la buena:\nPorque la DTD se usa para validar un documento XML.\n\nPor qué las otras no:\n- B no es correcta porque OS/2 es un sistema operativo, no un sistema de validación de XML.\n- C no es correcta porque SASS es una herramienta relacionada con hojas de estilo, no con validación XML.\n- D no es correcta porque A sí es correcta."
+    "explicacion": "Una DTD es como una plantilla de reglas que le dice a un documento XML cómo debe estar hecho. Sirve para comprobar si ese XML está bien construido según unas normas.\n\nEjemplo:\nSi una DTD dice que un libro debe tener titulo y autor, el XML se revisa para ver si realmente tiene esas partes.\n\nPor qué es correcta:\nPorque la DTD se usa para validar un documento XML.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque OS/2 es un sistema operativo, no un sistema de validación de XML.\n- C no es correcta porque SASS es una herramienta relacionada con hojas de estilo, no con validación XML.\n- D no es correcta porque A sí es correcta."
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@ const preguntasLenguajeMarcas = [
       "D. Un tipo de etiqueta."
     ],
     "respuesta_correcta": "C. Un documento de verificación.",
-    "explicacion": "Explicación fácil:\nDTD es un documento que contiene reglas para comprobar si un XML cumple la estructura que debería tener. Es como una hoja con instrucciones para revisar si todo está bien colocado.\n\nEjemplo:\nSi una DTD dice que un alumno debe tener nombre y edad, se puede revisar el XML para ver si esos datos aparecen correctamente.\n\nPor qué esa es la buena:\nPorque una DTD sirve para verificar o validar la estructura de un documento XML.\n\nPor qué las otras no:\n- A no es correcta porque una DTD no es un sistema numérico.\n- B no es correcta porque no es un tipo de atributo.\n- D no es correcta porque tampoco es un tipo de etiqueta."
+    "explicacion": "DTD es un documento que contiene reglas para comprobar si un XML cumple la estructura que debería tener. Es como una hoja con instrucciones para revisar si todo está bien colocado.\n\nEjemplo:\nSi una DTD dice que un alumno debe tener nombre y edad, se puede revisar el XML para ver si esos datos aparecen correctamente.\n\nPor qué es correcta:\nPorque una DTD sirve para verificar o validar la estructura de un documento XML.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque una DTD no es un sistema numérico.\n- B no es correcta porque no es un tipo de atributo.\n- D no es correcta porque tampoco es un tipo de etiqueta."
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna de las anteriores es correcta."
     ],
     "respuesta_correcta": "C. Es alfanumérico.",
-    "explicacion": "Explicación fácil:\nCDATA indica que el valor de ese atributo se trata como texto. En este tipo de examen lo simplifican diciendo que es alfanumérico, o sea, que puede contener caracteres de texto.\n\nEjemplo:\nSi un atributo pone color=\"azul\" o codigo=\"A123\", eso se entiende como un valor de texto.\n\nPor qué esa es la buena:\nPorque en este test CDATA se identifica con un valor alfanumérico.\n\nPor qué las otras no:\n- A no es correcta porque eso encaja más con un identificador único.\n- B no es correcta porque referirse a otro elemento se asocia más a otros tipos como IDREF.\n- D no es correcta porque C es la opción que da por válida el examen."
+    "explicacion": "En una DTD, CDATA declara que el valor de un atributo se interpreta como datos de caracteres, es decir, como texto. Valores como `azul` o `A123` son ejemplos válidos. Los tipos ID e IDREF se reservan para identificadores únicos y referencias entre elementos."
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@ const preguntasLenguajeMarcas = [
       "D. Módulo de gestión de almacenes."
     ],
     "respuesta_correcta": "A. Módulo de TPV.",
-    "explicacion": "Explicación fácil:\nCuando una tienda vende por internet y alguien paga con tarjeta o con un sistema de cobro electrónico, hace falta un módulo que se encargue de gestionar ese pago. Ese módulo es el TPV.\n\nEjemplo:\nEn una tienda online, cuando pulsas pagar y metes la tarjeta, normalmente estás usando un TPV virtual.\n\nPor qué esa es la buena:\nPorque el módulo de TPV es el que permite gestionar el pago electrónico en la venta online.\n\nPor qué las otras no:\n- B no es correcta porque marketing sirve para promocionar o atraer clientes, no para cobrar.\n- C no es correcta porque proyectos no gestiona pagos online.\n- D no es correcta porque la gestión de almacenes controla stock, no el cobro electrónico."
+    "explicacion": "Cuando una tienda vende por internet y alguien paga con tarjeta o con un sistema de cobro electrónico, hace falta un módulo que se encargue de gestionar ese pago. Ese módulo es el TPV.\n\nEjemplo:\nEn una tienda online, cuando pulsas pagar y metes la tarjeta, normalmente estás usando un TPV virtual.\n\nPor qué es correcta:\nPorque el módulo de TPV es el que permite gestionar el pago electrónico en la venta online.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque marketing sirve para promocionar o atraer clientes, no para cobrar.\n- C no es correcta porque proyectos no gestiona pagos online.\n- D no es correcta porque la gestión de almacenes controla stock, no el cobro electrónico."
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@ const preguntasLenguajeMarcas = [
       "D. Title, link y description."
     ],
     "respuesta_correcta": "D. Title, link y description.",
-    "explicacion": "Explicación fácil:\nEn un feed RSS, la parte channel necesita unos datos básicos para identificar de qué trata ese canal. Los más importantes son el título, el enlace y una descripción.\n\nEjemplo:\nUn canal de noticias puede tener un title con el nombre del sitio, un link con su web y un description explicando de qué informa.\n\nPor qué esa es la buena:\nPorque los elementos básicos que se suelen poner en channel son title, link y description.\n\nPor qué las otras no:\n- A no es correcta porque en este contexto se usa link, no URL como elemento básico del canal.\n- B no es correcta porque imagen puede aparecer, pero no es uno de los básicos que pide la pregunta.\n- C no es correcta porque vuelve a usar URL en lugar de link."
+    "explicacion": "En un feed RSS, la parte channel necesita unos datos básicos para identificar de qué trata ese canal. Los más importantes son el título, el enlace y una descripción.\n\nEjemplo:\nUn canal de noticias puede tener un title con el nombre del sitio, un link con su web y un description explicando de qué informa.\n\nPor qué es correcta:\nPorque los elementos básicos que se suelen poner en channel son title, link y description.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque en este contexto se usa link, no URL como elemento básico del canal.\n- B no es correcta porque imagen puede aparecer, pero no es uno de los básicos que pide la pregunta.\n- C no es correcta porque vuelve a usar URL en lugar de link."
   },
   {
     "id": 16,
@@ -189,7 +189,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrectas."
     ],
     "respuesta_correcta": "B. El nodo raíz.",
-    "explicacion": "Explicación fácil:\nEn XPath, la barra / sola representa el punto de inicio del documento, es decir, la raíz. Es como empezar a mirar un árbol desde su parte principal.\n\nEjemplo:\nSi escribes /libros/libro, empiezas desde la raíz y luego bajas hasta libros y libro.\n\nPor qué esa es la buena:\nPorque la expresión / se usa para señalar el nodo raíz del documento.\n\nPor qué las otras no:\n- A no es correcta porque un nodo con nombre específico sería algo como libro o autor.\n- C no es correcta porque el nodo actual se representa de otra forma.\n- D no es correcta porque B sí es correcta."
+    "explicacion": "En XPath, la barra / sola representa el punto de inicio del documento, es decir, la raíz. Es como empezar a mirar un árbol desde su parte principal.\n\nEjemplo:\nSi escribes /libros/libro, empiezas desde la raíz y luego bajas hasta libros y libro.\n\nPor qué es correcta:\nPorque la expresión / se usa para señalar el nodo raíz del documento.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque un nodo con nombre específico sería algo como libro o autor.\n- C no es correcta porque el nodo actual se representa de otra forma.\n- D no es correcta porque B sí es correcta."
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@ const preguntasLenguajeMarcas = [
       "D. Valor"
     ],
     "respuesta_correcta": "C. Propiedad.",
-    "explicacion": "Explicación fácil:\nEn CSS, una regla tiene varias partes. El selector dice a qué elemento afecta, la propiedad dice qué aspecto quieres cambiar y el valor dice con qué lo quieres cambiar.\n\nEjemplo:\nEn h2 { color: #B6E1F9; }\nh2 es el selector, color es la propiedad y #B6E1F9 es el valor.\n\nPor qué esa es la buena:\nPorque color es el nombre de la característica que se quiere modificar.\n\nPor qué las otras no:\n- A no es correcta porque el selector es h2.\n- B no es correcta porque la declaración completa es color: #B6E1F9;.\n- D no es correcta porque el valor es #B6E1F9."
+    "explicacion": "En CSS, una regla tiene varias partes. El selector dice a qué elemento afecta, la propiedad dice qué aspecto quieres cambiar y el valor dice con qué lo quieres cambiar.\n\nEjemplo:\nEn h2 { color: #B6E1F9; }\nh2 es el selector, color es la propiedad y #B6E1F9 es el valor.\n\nPor qué es correcta:\nPorque color es el nombre de la característica que se quiere modificar.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque el selector es h2.\n- B no es correcta porque la declaración completa es color: #B6E1F9;.\n- D no es correcta porque el valor es #B6E1F9."
   },
   {
     "id": 18,
@@ -213,7 +213,7 @@ const preguntasLenguajeMarcas = [
       "D. Estilos empleados."
     ],
     "respuesta_correcta": "C. Recursos externos, hojas de estilo.",
-    "explicacion": "Explicación fácil:\nLa etiqueta <link> sirve para conectar el documento HTML con recursos que están fuera, sobre todo archivos CSS. Es como decirle a la página dónde está la ropa que se va a poner.\n\nEjemplo:\n<link rel=\"stylesheet\" href=\"estilos.css\">\nCon eso el HTML carga una hoja de estilo externa.\n\nPor qué esa es la buena:\nPorque la etiqueta <link> se usa para enlazar recursos externos, especialmente hojas de estilo.\n\nPor qué las otras no:\n- A no es correcta porque la versión del documento no la define esta etiqueta.\n- B no es correcta porque tampoco indica el estándar empleado.\n- D no es correcta porque no escribe los estilos dentro del HTML, sino que enlaza recursos externos."
+    "explicacion": "La etiqueta <link> sirve para conectar el documento HTML con recursos que están fuera, sobre todo archivos CSS. Es como decirle a la página dónde está la ropa que se va a poner.\n\nEjemplo:\n<link rel=\"stylesheet\" href=\"estilos.css\">\nCon eso el HTML carga una hoja de estilo externa.\n\nPor qué es correcta:\nPorque la etiqueta <link> se usa para enlazar recursos externos, especialmente hojas de estilo.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque la versión del documento no la define esta etiqueta.\n- B no es correcta porque tampoco indica el estándar empleado.\n- D no es correcta porque no escribe los estilos dentro del HTML, sino que enlaza recursos externos."
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@ const preguntasLenguajeMarcas = [
       "D. Todos los anteriores son correctos."
     ],
     "respuesta_correcta": "C. Un valor.",
-    "explicacion": "Explicación fácil:\nEn este examen, cuando aparece el símbolo / solo dentro de una expresión de XSL, lo están tratando como el valor que se pone en un atributo como match o select.\n\nEjemplo:\nEn una instrucción como match=\"/\", la barra va dentro del valor del atributo.\n\nPor qué esa es la buena:\nPorque según el criterio del test, / en solitario se considera un valor.\n\nPor qué las otras no:\n- A no es correcta porque / no marca un comentario en XSL.\n- B no es correcta porque / no es un atributo.\n- D no es correcta porque las anteriores no son todas válidas."
+    "explicacion": "En XSLT, `/` puede aparecer como valor de atributos como `match` o `select`. Dentro de la expresión XPath, la barra selecciona la raíz del documento XML. No representa un comentario ni es por sí misma un atributo."
   },
   {
     "id": 20,
@@ -237,7 +237,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna de las anteriores es correcta."
     ],
     "respuesta_correcta": "B. Es opcional.",
-    "explicacion": "Explicación fácil:\nCuando en una DTD un atributo aparece con #IMPLIED, significa que no es obligatorio ponerlo. Puede estar o no estar, y el documento sigue siendo válido.\n\nEjemplo:\nSi un atributo telefono está marcado como #IMPLIED, una persona puede tener telefono en el XML o no tenerlo.\n\nPor qué esa es la buena:\nPorque #IMPLIED indica que el atributo es opcional.\n\nPor qué las otras no:\n- A no es correcta porque obligatorio sería otra indicación distinta.\n- C no es correcta porque fijo corresponde a otro caso.\n- D no es correcta porque B sí es correcta."
+    "explicacion": "Cuando en una DTD un atributo aparece con #IMPLIED, significa que no es obligatorio ponerlo. Puede estar o no estar, y el documento sigue siendo válido.\n\nEjemplo:\nSi un atributo telefono está marcado como #IMPLIED, una persona puede tener telefono en el XML o no tenerlo.\n\nPor qué es correcta:\nPorque #IMPLIED indica que el atributo es opcional.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque obligatorio sería otra indicación distinta.\n- C no es correcta porque fijo corresponde a otro caso.\n- D no es correcta porque B sí es correcta."
   },
   {
     "id": 21,
@@ -249,7 +249,7 @@ const preguntasLenguajeMarcas = [
       "D. Acotarse con los símbolos \"<\" y \">\"."
     ],
     "respuesta_correcta": "B. Entrecomillarse.",
-    "explicacion": "Explicación fácil:\nEn XML, cuando escribes un valor en un atributo, ese valor tiene que ir entre comillas. Es como poner una palabra dentro de una cajita para que el ordenador sepa exactamente dónde empieza y dónde termina.\n\nEjemplo:\n<persona nombre=\"Ana\">\nAquí el valor Ana va entre comillas.\n\nPor qué esa es la buena:\nPorque en XML los valores de los atributos deben escribirse entrecomillados.\n\nPor qué las otras no:\n- A no es correcta porque los valores no tienen por qué ser numéricos.\n- C no es correcta porque no van entre símbolos de igual, sino junto a un igual y entre comillas.\n- D no es correcta porque los símbolos < y > se usan para las etiquetas, no para los valores."
+    "explicacion": "En XML, cuando escribes un valor en un atributo, ese valor tiene que ir entre comillas. Es como poner una palabra dentro de una cajita para que el ordenador sepa exactamente dónde empieza y dónde termina.\n\nEjemplo:\n<persona nombre=\"Ana\">\nAquí el valor Ana va entre comillas.\n\nPor qué es correcta:\nPorque en XML los valores de los atributos deben escribirse entrecomillados.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque los valores no tienen por qué ser numéricos.\n- C no es correcta porque no van entre símbolos de igual, sino junto a un igual y entre comillas.\n- D no es correcta porque los símbolos < y > se usan para las etiquetas, no para los valores."
   },
   {
     "id": 22,
@@ -261,7 +261,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna de las anteriores es correcta ese símbolo no se emplea."
     ],
     "respuesta_correcta": "A. Computar dos nodos simultáneos.",
-    "explicacion": "Explicación fácil:\nEn este examen, el símbolo | se entiende como una forma de trabajar con dos caminos o nodos a la vez dentro de una expresión XPath. Es como decirle al programa que tenga en cuenta dos sitios al mismo tiempo.\n\nEjemplo:\nSi quieres señalar dos partes distintas de un documento, el símbolo | permite unir esas dos selecciones en una misma expresión.\n\nPor qué esa es la buena:\nPorque en el criterio de corrección de este test, | se interpreta como que permite computar dos nodos simultáneos.\n\nPor qué las otras no:\n- B no es correcta porque | no se usa para dividir valores.\n- C no es la opción que da por válida este examen.\n- D no es correcta porque ese símbolo sí se emplea en XPath."
+    "explicacion": "En XPath, el operador `|` combina los conjuntos de nodos obtenidos por dos expresiones. Así se pueden seleccionar, en una única expresión, nodos que cumplan cualquiera de los dos recorridos indicados."
   },
   {
     "id": 23,
@@ -273,7 +273,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrectas."
     ],
     "respuesta_correcta": "C. Marca el tiempo de actualización en el caché.",
-    "explicacion": "Explicación fácil:\nEl elemento ttl en un canal RSS sirve para indicar cuánto tiempo puede pasar antes de volver a comprobar si hay contenido nuevo. Es como decir cada cuánto rato conviene mirar si algo ha cambiado.\n\nEjemplo:\nSi un feed tiene un ttl de cierto tiempo, el lector no va a estar preguntando cada segundo, sino cuando toque volver a actualizar.\n\nPor qué esa es la buena:\nPorque ttl está relacionado con el tiempo de vida en caché y la actualización del canal.\n\nPor qué las otras no:\n- A no es correcta porque no marca la fecha de publicación.\n- B no es correcta porque no indica el tipo de licencia.\n- D no es correcta porque C sí es correcta."
+    "explicacion": "El elemento ttl en un canal RSS sirve para indicar cuánto tiempo puede pasar antes de volver a comprobar si hay contenido nuevo. Es como decir cada cuánto rato conviene mirar si algo ha cambiado.\n\nEjemplo:\nSi un feed tiene un ttl de cierto tiempo, el lector no va a estar preguntando cada segundo, sino cuando toque volver a actualizar.\n\nPor qué es correcta:\nPorque ttl está relacionado con el tiempo de vida en caché y la actualización del canal.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque no marca la fecha de publicación.\n- B no es correcta porque no indica el tipo de licencia.\n- D no es correcta porque C sí es correcta."
   },
   {
     "id": 24,
@@ -285,7 +285,7 @@ const preguntasLenguajeMarcas = [
       "D. Hiperlink Mask Line"
     ],
     "respuesta_correcta": "A. Hypertext Markup Language",
-    "explicacion": "Explicación fácil:\nHTML es el lenguaje básico con el que se construyen las páginas web. Sus siglas significan Hypertext Markup Language.\n\nEjemplo:\nCon HTML puedes poner títulos, párrafos, enlaces, imágenes y muchas otras partes de una página.\n\nPor qué esa es la buena:\nPorque ese es el significado correcto de las siglas HTML.\n\nPor qué las otras no:\n- B no es correcta porque ese desarrollo no existe.\n- C no es correcta porque no corresponde al significado real de HTML.\n- D no es correcta porque también es una formulación incorrecta."
+    "explicacion": "HTML es el lenguaje básico con el que se construyen las páginas web. Sus siglas significan Hypertext Markup Language.\n\nEjemplo:\nCon HTML puedes poner títulos, párrafos, enlaces, imágenes y muchas otras partes de una página.\n\nPor qué es correcta:\nPorque ese es el significado correcto de las siglas HTML.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque ese desarrollo no existe.\n- C no es correcta porque no corresponde al significado real de HTML.\n- D no es correcta porque también es una formulación incorrecta."
   },
   {
     "id": 25,
@@ -297,7 +297,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrectas"
     ],
     "respuesta_correcta": "C. Prólogo y cuerpo.",
-    "explicacion": "Explicación fácil:\nUn documento XML se divide de forma básica en dos grandes partes. Primero va el prólogo, que es la parte inicial con datos como la versión, y luego va el cuerpo, que contiene la información del documento.\n\nEjemplo:\nLa línea <?xml version=\"1.0\" encoding=\"UTF-8\"?> sería parte del prólogo, y las etiquetas con los datos formarían el cuerpo.\n\nPor qué esa es la buena:\nPorque la estructura básica de XML se compone de prólogo y cuerpo.\n\nPor qué las otras no:\n- A no es correcta porque directorio no es la parte que se usa en esta estructura.\n- B no es correcta porque índice no es la denominación habitual en XML.\n- D no es correcta porque C sí es correcta."
+    "explicacion": "Un documento XML se divide de forma básica en dos grandes partes. Primero va el prólogo, que es la parte inicial con datos como la versión, y luego va el cuerpo, que contiene la información del documento.\n\nEjemplo:\nLa línea <?xml version=\"1.0\" encoding=\"UTF-8\"?> sería parte del prólogo, y las etiquetas con los datos formarían el cuerpo.\n\nPor qué es correcta:\nPorque la estructura básica de XML se compone de prólogo y cuerpo.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque directorio no es la parte que se usa en esta estructura.\n- B no es correcta porque índice no es la denominación habitual en XML.\n- D no es correcta porque C sí es correcta."
   },
   {
     "id": 26,
@@ -309,7 +309,7 @@ const preguntasLenguajeMarcas = [
       "D. Bases de en MySQL"
     ],
     "respuesta_correcta": "B. Ficheros",
-    "explicacion": "Explicación fácil:\nLo más normal es guardar la información XML en archivos, es decir, en ficheros. Es como guardar un documento en una carpeta del ordenador para abrirlo cuando quieras.\n\nEjemplo:\nUn archivo llamado datos.xml es un fichero que guarda información en formato XML.\n\nPor qué esa es la buena:\nPorque la forma básica y típica de almacenar información XML es en ficheros.\n\nPor qué las otras no:\n- A no es correcta porque un archivo javascript no es la forma que busca la pregunta para guardar XML.\n- C no es correcta porque JSON es otro formato distinto.\n- D no es correcta porque aunque en otros contextos puede haber almacenamiento en bases de datos, la respuesta que da por válida el examen es ficheros."
+    "explicacion": "La información XML se almacena habitualmente en ficheros con extensión `.xml`. Estos archivos conservan tanto los datos como las etiquetas que describen su estructura. JSON es un formato diferente y un archivo JavaScript no es el contenedor propio de un documento XML."
   },
   {
     "id": 27,
@@ -321,7 +321,7 @@ const preguntasLenguajeMarcas = [
       "D. Es muy alta, pero, además, se recomienda que la empresa tome sus propias medidas de seguridad adicional"
     ],
     "respuesta_correcta": "D. Es muy alta, pero, además, se recomienda que la empresa tome sus propias medidas de seguridad adicional",
-    "explicacion": "Explicación fácil:\nUn ERP suele tener buenas medidas de seguridad, pero eso no significa que la empresa pueda olvidarse del tema. Es como tener una puerta fuerte en casa: sigue siendo buena idea cerrar con llave y poner alarma si hace falta.\n\nEjemplo:\nAunque el ERP tenga seguridad, la empresa debe controlar usuarios, contraseñas, permisos y copias de seguridad.\n\nPor qué esa es la buena:\nPorque reconoce dos cosas a la vez: que el ERP puede ser seguro y que la empresa debe añadir medidas propias.\n\nPor qué las otras no:\n- A no es correcta porque parte de que la seguridad del ERP no es muy alta.\n- B no es correcta porque además de decir que no es muy alta, minimiza demasiado la protección necesaria.\n- C no es correcta porque nunca es buena idea pensar que no hacen falta más medidas."
+    "explicacion": "Un ERP suele tener buenas medidas de seguridad, pero eso no significa que la empresa pueda olvidarse del tema. Es como tener una puerta fuerte en casa: sigue siendo buena idea cerrar con llave y poner alarma si hace falta.\n\nEjemplo:\nAunque el ERP tenga seguridad, la empresa debe controlar usuarios, contraseñas, permisos y copias de seguridad.\n\nPor qué es correcta:\nPorque reconoce dos cosas a la vez: que el ERP puede ser seguro y que la empresa debe añadir medidas propias.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque parte de que la seguridad del ERP no es muy alta.\n- B no es correcta porque además de decir que no es muy alta, minimiza demasiado la protección necesaria.\n- C no es correcta porque nunca es buena idea pensar que no hacen falta más medidas."
   },
   {
     "id": 28,
@@ -333,7 +333,7 @@ const preguntasLenguajeMarcas = [
       "D. Remove."
     ],
     "respuesta_correcta": "C. Return.",
-    "explicacion": "Explicación fácil:\nFLOWR es una forma de escribir consultas en XQuery. Cada letra representa una palabra. La última letra, la R, corresponde a Return, que es la parte donde dices qué quieres devolver como resultado.\n\nEjemplo:\nPrimero buscas datos con for, luego puedes filtrar, ordenar y al final con return indicas qué se muestra.\n\nPor qué esa es la buena:\nPorque en el acrónimo FLOWR, la R significa Return.\n\nPor qué las otras no:\n- A no es correcta porque Rearrange no forma parte de FLOWR.\n- B no es correcta porque React tampoco forma parte de FLOWR.\n- D no es correcta porque Remove no es la palabra usada en este acrónimo."
+    "explicacion": "FLOWR es una forma de escribir consultas en XQuery. Cada letra representa una palabra. La última letra, la R, corresponde a Return, que es la parte donde dices qué quieres devolver como resultado.\n\nEjemplo:\nPrimero buscas datos con for, luego puedes filtrar, ordenar y al final con return indicas qué se muestra.\n\nPor qué es correcta:\nPorque en el acrónimo FLOWR, la R significa Return.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque Rearrange no forma parte de FLOWR.\n- B no es correcta porque React tampoco forma parte de FLOWR.\n- D no es correcta porque Remove no es la palabra usada en este acrónimo."
   },
   {
     "id": 29,
@@ -345,7 +345,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son correctas."
     ],
     "respuesta_correcta": "D. Todas las anteriores son correctas.",
-    "explicacion": "Explicación fácil:\nUna base de datos XML enabled no está hecha desde cero solo para XML, pero sí está preparada para trabajar con ese tipo de datos. Normalmente se apoya en bases de datos que ya existen, como las relacionales, y les añade esa capacidad.\n\nEjemplo:\nUna base de datos tradicional puede guardar y manejar documentos XML aunque no sea una base nativa XML.\n\nPor qué esa es la buena:\nPorque en este contexto se consideran correctas las tres ideas: que son no nativas, que pueden ser relacionales y que trabajan con XML.\n\nPor qué las otras no:\n- A por sí sola no es la única correcta, porque la pregunta admite más características.\n- B por sí sola no es la única correcta, porque también importa que trabajen con XML.\n- C por sí sola no es la única correcta, porque el test da por válidas las tres anteriores."
+    "explicacion": "Una base de datos habilitada para XML no es necesariamente nativa XML: puede utilizar un modelo relacional y añadir funciones para almacenar, consultar o intercambiar documentos XML. Por eso puede reunir las tres características descritas."
   },
   {
     "id": 30,
@@ -357,7 +357,7 @@ const preguntasLenguajeMarcas = [
       "D. Se marcan con /."
     ],
     "respuesta_correcta": "D. Se marcan con /.",
-    "explicacion": "Explicación fácil:\nCuando una etiqueta se cierra, se añade una barra para indicar que ya termina. Es como poner una señal de fin.\n\nEjemplo:\n<titulo>Hola</titulo>\nLa primera etiqueta abre y la segunda cierra porque lleva /.\n\nPor qué esa es la buena:\nPorque las marcas de cierre se identifican con la barra /.\n\nPor qué las otras no:\n- A no es correcta porque las de cierre no son iguales a las de apertura: llevan /.\n- B no es correcta porque ? no marca el cierre de una etiqueta normal.\n- C no es correcta porque = tampoco se usa para cerrar etiquetas."
+    "explicacion": "Cuando una etiqueta se cierra, se añade una barra para indicar que ya termina. Es como poner una señal de fin.\n\nEjemplo:\n<titulo>Hola</titulo>\nLa primera etiqueta abre y la segunda cierra porque lleva /.\n\nPor qué es correcta:\nPorque las marcas de cierre se identifican con la barra /.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque las de cierre no son iguales a las de apertura: llevan /.\n- B no es correcta porque ? no marca el cierre de una etiqueta normal.\n- C no es correcta porque = tampoco se usa para cerrar etiquetas."
   },
   {
     "id": 31,
@@ -369,7 +369,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son correctas."
     ],
     "respuesta_correcta": "D. Todas las anteriores son correctas.",
-    "explicacion": "Explicación fácil:\nUn agregador es una herramienta que recoge noticias o novedades de varios sitios. Eso se puede hacer desde una web, desde un programa instalado en el ordenador o incluso desde algunos correos y navegadores.\n\nEjemplo:\nPuedes leer novedades de varias páginas desde un lector online, desde una aplicación en tu equipo o desde herramientas integradas en otros programas.\n\nPor qué esa es la buena:\nPorque los agregadores pueden existir en todas esas formas.\n\nPor qué las otras no:\n- A por sí sola no es la única correcta, porque no solo pueden ser online.\n- B por sí sola no es la única correcta, porque también pueden ser de otros tipos.\n- C por sí sola no es la única correcta, porque no es la única forma posible."
+    "explicacion": "Un agregador es una herramienta que recoge noticias o novedades de varios sitios. Eso se puede hacer desde una web, desde un programa instalado en el ordenador o incluso desde algunos correos y navegadores.\n\nEjemplo:\nPuedes leer novedades de varias páginas desde un lector online, desde una aplicación en tu equipo o desde herramientas integradas en otros programas.\n\nPor qué es correcta:\nPorque los agregadores pueden existir en todas esas formas.\n\nPor qué se descartan las demás opciones:\n- A por sí sola no es la única correcta, porque no solo pueden ser online.\n- B por sí sola no es la única correcta, porque también pueden ser de otros tipos.\n- C por sí sola no es la única correcta, porque no es la única forma posible."
   },
   {
     "id": 32,
@@ -381,7 +381,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas son correctas."
     ],
     "respuesta_correcta": "D. Todas son correctas.",
-    "explicacion": "Explicación fácil:\nLos lenguajes de marcas sirven para estructurar información, y eso se puede aprovechar en muchos sitios distintos. No se usan solo en páginas web.\n\nEjemplo:\nHTML se usa en páginas web, XML puede aparecer en mensajería y también en sistemas de sindicación como RSS o Atom.\n\nPor qué esa es la buena:\nPorque los lenguajes de marcas pueden utilizarse en todos esos ámbitos.\n\nPor qué las otras no:\n- A por sí sola no es la única correcta, porque también se usan en otros contextos.\n- B por sí sola no es la única correcta, porque no es el único uso posible.\n- C por sí sola no es la única correcta, porque tampoco es el único caso."
+    "explicacion": "Los lenguajes de marcas sirven para estructurar información, y eso se puede aprovechar en muchos sitios distintos. No se usan solo en páginas web.\n\nEjemplo:\nHTML se usa en páginas web, XML puede aparecer en mensajería y también en sistemas de sindicación como RSS o Atom.\n\nPor qué es correcta:\nPorque los lenguajes de marcas pueden utilizarse en todos esos ámbitos.\n\nPor qué se descartan las demás opciones:\n- A por sí sola no es la única correcta, porque también se usan en otros contextos.\n- B por sí sola no es la única correcta, porque no es el único uso posible.\n- C por sí sola no es la única correcta, porque tampoco es el único caso."
   },
   {
     "id": 33,
@@ -393,7 +393,7 @@ const preguntasLenguajeMarcas = [
       "D. Lo sistemas de gestión empresarial deben hacer uso de una única herramienta."
     ],
     "respuesta_correcta": "C. Se recomienda emplear un único sistema con diversas herramientas incorporadas, para evitar problemas de incompatibilidad.",
-    "explicacion": "Explicación fácil:\nCuando una empresa usa muchas partes distintas, lo mejor es que estén integradas en un mismo sistema. Así evitas que unas herramientas choquen con otras o que haya datos repetidos o mal pasados.\n\nEjemplo:\nEs mejor tener ventas, almacén y facturación dentro de un sistema conectado que usar muchos programas separados que no se entienden bien entre sí.\n\nPor qué esa es la buena:\nPorque un único sistema con varias herramientas incorporadas ayuda a evitar incompatibilidades y mejora la gestión.\n\nPor qué las otras no:\n- A no es correcta porque usar muchas herramientas separadas suele generar más problemas de coordinación.\n- B no es correcta porque está mal enfocada y además dice que no es lo ideal.\n- D no es correcta porque no se trata de una sola herramienta simple, sino de un sistema integrado con varias funciones."
+    "explicacion": "Cuando una empresa usa muchas partes distintas, lo mejor es que estén integradas en un mismo sistema. Así evitas que unas herramientas choquen con otras o que haya datos repetidos o mal pasados.\n\nEjemplo:\nEs mejor tener ventas, almacén y facturación dentro de un sistema conectado que usar muchos programas separados que no se entienden bien entre sí.\n\nPor qué es correcta:\nPorque un único sistema con varias herramientas incorporadas ayuda a evitar incompatibilidades y mejora la gestión.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque usar muchas herramientas separadas suele generar más problemas de coordinación.\n- B no es correcta porque está mal enfocada y además dice que no es lo ideal.\n- D no es correcta porque no se trata de una sola herramienta simple, sino de un sistema integrado con varias funciones."
   },
   {
     "id": 34,
@@ -405,7 +405,7 @@ const preguntasLenguajeMarcas = [
       "D. Marketing, compra y análisis."
     ],
     "respuesta_correcta": "A. Marketing, venta y servicio postventa.",
-    "explicacion": "Explicación fácil:\nUn CRM está pensado para gestionar la relación con los clientes. Esa relación empieza al atraerlos, sigue al venderles y continúa después para atenderlos.\n\nEjemplo:\nPrimero una empresa hace campañas de marketing, luego vende un producto y después resuelve dudas o incidencias del cliente.\n\nPor qué esa es la buena:\nPorque los tres pilares básicos de un CRM son marketing, venta y servicio postventa.\n\nPor qué las otras no:\n- B no es correcta porque compra no forma parte de esos tres pilares básicos.\n- C no es correcta porque análisis puede existir, pero no sustituye al servicio postventa como pilar principal aquí.\n- D no es correcta porque mezcla compra y análisis, que no son la combinación correcta en esta pregunta."
+    "explicacion": "Un CRM está pensado para gestionar la relación con los clientes. Esa relación empieza al atraerlos, sigue al venderles y continúa después para atenderlos.\n\nEjemplo:\nPrimero una empresa hace campañas de marketing, luego vende un producto y después resuelve dudas o incidencias del cliente.\n\nPor qué es correcta:\nPorque los tres pilares básicos de un CRM son marketing, venta y servicio postventa.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque compra no forma parte de esos tres pilares básicos.\n- C no es correcta porque análisis puede existir, pero no sustituye al servicio postventa como pilar principal aquí.\n- D no es correcta porque mezcla compra y análisis, que no son la combinación correcta en esta pregunta."
   },
   {
     "id": 35,
@@ -418,7 +418,7 @@ const preguntasLenguajeMarcas = [
       "D. Todos los anteriores son incorrectos."
     ],
     "respuesta_correcta": "C. ATOM.",
-    "explicacion": "Explicación fácil:\nCuando un documento XML pertenece a Atom, suele verse por detalles típicos de ese formato, como la etiqueta feed y otras etiquetas propias de ese tipo de sindicación.\n\nEjemplo:\nSi en el documento aparece algo como <feed> y una referencia al espacio de nombres de Atom, eso indica que se trata de ATOM.\n\nPor qué esa es la buena:\nPorque el documento del examen corresponde a una sindicación de tipo ATOM.\n\nPor qué las otras no:\n- A no es correcta porque FeedTe no es la opción válida del documento mostrado.\n- B no es correcta porque en este caso no corresponde a RSS.\n- D no es correcta porque sí hay una opción correcta, que es C."
+    "explicacion": "Un documento Atom se reconoce por el elemento raíz `<feed>` y por el espacio de nombres propio de Atom. Estos elementos lo diferencian de formatos de sindicación como RSS."
   },
   {
     "id": 36,
@@ -430,7 +430,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrectas."
     ],
     "respuesta_correcta": "A. Really Simple Syndication.",
-    "explicacion": "Explicación fácil:\nRSS es el nombre que se usa para un sistema de sindicación de contenidos. Sus siglas significan Really Simple Syndication.\n\nEjemplo:\nCuando una web publica noticias y permite suscribirse a sus novedades, muchas veces lo hace mediante RSS.\n\nPor qué esa es la buena:\nPorque ese es el desarrollo correcto de las siglas RSS.\n\nPor qué las otras no:\n- B no es correcta porque las palabras están mal formuladas.\n- C no es correcta porque tampoco corresponde al significado real.\n- D no es correcta porque A sí es correcta."
+    "explicacion": "RSS es el nombre que se usa para un sistema de sindicación de contenidos. Sus siglas significan Really Simple Syndication.\n\nEjemplo:\nCuando una web publica noticias y permite suscribirse a sus novedades, muchas veces lo hace mediante RSS.\n\nPor qué es correcta:\nPorque ese es el desarrollo correcto de las siglas RSS.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque las palabras están mal formuladas.\n- C no es correcta porque tampoco corresponde al significado real.\n- D no es correcta porque A sí es correcta."
   },
   {
     "id": 37,
@@ -442,7 +442,7 @@ const preguntasLenguajeMarcas = [
       "D. Atributo."
     ],
     "respuesta_correcta": "C. Etiqueta.",
-    "explicacion": "Explicación fácil:\nCuando ves algo escrito entre los símbolos < y >, eso es una etiqueta. Es la marca que se usa para indicar qué tipo de dato o parte del documento estás escribiendo.\n\nEjemplo:\n<titulo> es una etiqueta.\n</titulo> también es una etiqueta.\n\nPor qué esa es la buena:\nPorque el texto que va entre < y > recibe el nombre de etiqueta.\n\nPor qué las otras no:\n- A no es correcta porque un elemento suele incluir más cosas, no solo la marca.\n- B no es correcta porque gramática no es el nombre de esa parte.\n- D no es correcta porque un atributo va dentro de una etiqueta, pero no es la propia etiqueta."
+    "explicacion": "Cuando ves algo escrito entre los símbolos < y >, eso es una etiqueta. Es la marca que se usa para indicar qué tipo de dato o parte del documento estás escribiendo.\n\nEjemplo:\n<titulo> es una etiqueta.\n</titulo> también es una etiqueta.\n\nPor qué es correcta:\nPorque el texto que va entre < y > recibe el nombre de etiqueta.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque un elemento suele incluir más cosas, no solo la marca.\n- B no es correcta porque gramática no es el nombre de esa parte.\n- D no es correcta porque un atributo va dentro de una etiqueta, pero no es la propia etiqueta."
   },
   {
     "id": 38,
@@ -454,7 +454,7 @@ const preguntasLenguajeMarcas = [
       "D. En todos los anteriores."
     ],
     "respuesta_correcta": "C. Tipo 3 o descriptivos o semánticos.",
-    "explicacion": "Explicación fácil:\nXML no está pensado para decir cómo se ve algo, sino para describir qué es cada dato y cómo se organiza. Por eso se considera un lenguaje descriptivo o semántico.\n\nEjemplo:\nSi pones <autor> o <precio> en XML, estás describiendo el significado del dato, no su color ni su tamaño en pantalla.\n\nPor qué esa es la buena:\nPorque XML pertenece al grupo de lenguajes de marcas descriptivos o semánticos.\n\nPor qué las otras no:\n- A no es correcta porque XML no es un lenguaje de procedimiento.\n- B no es correcta porque no es un lenguaje de presentación.\n- D no es correcta porque no pertenece a todos los tipos anteriores."
+    "explicacion": "XML no está pensado para decir cómo se ve algo, sino para describir qué es cada dato y cómo se organiza. Por eso se considera un lenguaje descriptivo o semántico.\n\nEjemplo:\nSi pones <autor> o <precio> en XML, estás describiendo el significado del dato, no su color ni su tamaño en pantalla.\n\nPor qué es correcta:\nPorque XML pertenece al grupo de lenguajes de marcas descriptivos o semánticos.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque XML no es un lenguaje de procedimiento.\n- B no es correcta porque no es un lenguaje de presentación.\n- D no es correcta porque no pertenece a todos los tipos anteriores."
   },
   {
     "id": 39,
@@ -466,7 +466,7 @@ const preguntasLenguajeMarcas = [
       "D. XSL-FOR no existe."
     ],
     "respuesta_correcta": "D. XSL-FOR no existe.",
-    "explicacion": "Explicación fácil:\nLa trampa de esta pregunta está en el nombre. XSL-FOR no es una sigla real en este tema. Se parece a otros nombres de XSL, pero escrito así no existe.\n\nEjemplo:\nEn estos contenidos sí aparecen nombres como XSLT o XSL-FO, pero XSL-FOR no es una denominación correcta.\n\nPor qué esa es la buena:\nPorque XSL-FOR, tal como está escrito en la pregunta, no existe.\n\nPor qué las otras no:\n- A no es correcta porque no corresponde a una sigla válida con ese nombre.\n- B no es correcta porque añade palabras que no forman una denominación real.\n- C no es correcta porque esa descripción corresponde a otra cosa distinta."
+    "explicacion": "XSL-FO y XSLT forman parte de la familia XSL. `XSL-FOR` no es el nombre de un lenguaje o especificación de esta familia, por lo que es el elemento que no pertenece al grupo."
   },
   {
     "id": 40,
@@ -478,7 +478,7 @@ const preguntasLenguajeMarcas = [
       "D. Dos documentos XML."
     ],
     "respuesta_correcta": "C. Una hoja de estilo y un documento XML.",
-    "explicacion": "Explicación fácil:\nXSLT se usa para transformar un documento XML siguiendo unas reglas. Para hacer eso necesita dos cosas: el documento XML que quieres transformar y la hoja de estilo que dice cómo hacerlo.\n\nEjemplo:\nTienes un XML con datos de libros y una hoja XSLT que indica cómo convertir esos datos en otra salida, por ejemplo HTML.\n\nPor qué esa es la buena:\nPorque XSLT necesita un documento XML de entrada y una hoja de estilo con las instrucciones de transformación.\n\nPor qué las otras no:\n- A no es correcta porque solo con la hoja de estilo no hay nada que transformar.\n- B no es correcta porque no hacen falta dos hojas de estilo.\n- D no es correcta porque no se necesitan dos documentos XML, sino un XML y una hoja XSLT."
+    "explicacion": "XSLT se usa para transformar un documento XML siguiendo unas reglas. Para hacer eso necesita dos cosas: el documento XML que quieres transformar y la hoja de estilo que dice cómo hacerlo.\n\nEjemplo:\nTienes un XML con datos de libros y una hoja XSLT que indica cómo convertir esos datos en otra salida, por ejemplo HTML.\n\nPor qué es correcta:\nPorque XSLT necesita un documento XML de entrada y una hoja de estilo con las instrucciones de transformación.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque solo con la hoja de estilo no hay nada que transformar.\n- B no es correcta porque no hacen falta dos hojas de estilo.\n- D no es correcta porque no se necesitan dos documentos XML, sino un XML y una hoja XSLT."
   },
 {
     "id": 41,
@@ -490,7 +490,7 @@ const preguntasLenguajeMarcas = [
       "D. Windows."
     ],
     "respuesta_correcta": "A. Los lenguajes de marcado.",
-    "explicacion": "El temario especifica que el ámbito de aplicación de los lenguajes de marcas es muy diverso, ya que permite el intercambio de datos entre distintas aplicaciones, independientemente de la plataforma y la tecnología utilizada."
+    "explicacion": "Los lenguajes de marcas permiten representar información estructurada de forma independiente de la plataforma. Esta característica facilita que aplicaciones y tecnologías diferentes intercambien e interpreten los mismos datos."
   },
   {
     "id": 42,
@@ -538,7 +538,7 @@ const preguntasLenguajeMarcas = [
       "D. W3C y DTD."
     ],
     "respuesta_correcta": "B. ISO y W3C.",
-    "explicacion": "El temario destaca a dos grandes organizaciones responsables del desarrollo de estos lenguajes: la Organización Internacional para la Estandarización (ISO) y el World Wide Web Consortium (W3C)."
+    "explicacion": "ISO y W3C son dos de las principales organizaciones de estandarización relacionadas con los lenguajes de marcas y las tecnologías web. Sus especificaciones favorecen la interoperabilidad entre herramientas y plataformas."
   },
   {
     "id": 46,
@@ -634,7 +634,7 @@ const preguntasLenguajeMarcas = [
         "D. Ninguna de las anteriores es correcta."
       ],
       "respuesta_correcta": "A. DTD.",
-      "explicacion": "Como vimos desde la primera unidad, una DTD (Document Type Definition) es la gramática que define la estructura, los elementos permitidos y los atributos de un documento XML, sirviendo para validarlo."
+      "explicacion": "Una DTD define la estructura permitida de un documento XML: qué elementos y atributos pueden aparecer, en qué orden y con qué relaciones. Gracias a esas reglas se puede comprobar si el documento es válido."
     },
     {
       "id": 54,
@@ -814,7 +814,7 @@ const preguntasLenguajeMarcas = [
           "D. Todas las anteriores son correctas."
         ],
         "respuesta_correcta": "D. Todas las anteriores son correctas.",
-        "explicacion": "Como se vio en la Unidad 1, los lenguajes de marcas se clasifican en tres tipos principales: de procedimiento (Tipo 1), de presentación (Tipo 2) y descriptivos o semánticos (Tipo 3)."
+        "explicacion": "Los lenguajes de marcas pueden clasificarse según su finalidad en procedimentales, de presentación y descriptivos o semánticos. Cada grupo indica si el marcado define acciones, aspecto visual o significado y estructura de la información."
       },
       {
         "id": 69,
@@ -994,7 +994,7 @@ const preguntasLenguajeMarcas = [
               "D. Todos los anteriores son correctos."
             ],
             "respuesta_correcta": "C. Un valor.",
-            "explicacion": "Nota didáctica: En el estándar XPath/XSLT real, el símbolo '/' en solitario representa el 'nodo raíz' del documento XML. Sin embargo, en el contexto de este test específico, la opción esperada suele agrupar respuestas anteriores por error de formulación del examen. Técnicamente, ninguna de las opciones A, B o C es correcta, por lo que un examen sin erratas debería marcar 'Ninguna de las anteriores'."
+            "explicacion": "Cuando `/` aparece en un atributo como `match=\"/\"` o `select=\"/\"`, constituye el valor de ese atributo. A la vez, como expresión XPath, selecciona la raíz del documento XML."
           },
           {
             "id": 84,
@@ -1282,7 +1282,7 @@ const preguntasLenguajeMarcas = [
                   "D. Permite todas las anteriores."
                 ],
                 "respuesta_correcta": "D. Permite todas las anteriores.",
-                "explicacion": "Es una pregunta trampa. La sindicación de contenidos (RSS) ofrece múltiples ventajas: permite la suscripción cómoda a sitios web, evita el spam (ya que no necesitas dar tu correo electrónico para suscribirte) y facilita el acceso a actualizaciones casi en tiempo real desde un único lugar."
+                "explicacion": "La sindicación de contenidos mediante RSS ofrece varias ventajas: permite suscribirse cómodamente a sitios web, consultar actualizaciones desde un único lector y evitar la entrega del correo electrónico al sitio de origen, lo que reduce la exposición al spam. Por ello, las tres ventajas indicadas son compatibles."
               },
               {
                 "id": 108,
@@ -1366,7 +1366,7 @@ const preguntasLenguajeMarcas = [
                     "D. Todas los anteriores son correctas."
                   ],
                   "respuesta_correcta": "D. Todas los anteriores son correctas.",
-                  "explicacion": "Los ERP pueden intercambiar y almacenar datos usando distintos formatos, como ficheros CSV, ficheros XML y documentos ofimáticos, según el sistema y la necesidad. Por eso, según el criterio del test, la opción correcta es D: todas las anteriores son correctas."
+                  "explicacion": "Un ERP puede importar, exportar o almacenar información en distintos formatos, entre ellos CSV, XML y documentos ofimáticos. El formato utilizado depende del sistema y del proceso de integración, por lo que todas las posibilidades indicadas son compatibles."
                 },
                 {
                   "id": 115,

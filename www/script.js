@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  inicializarBotonesAsignatura();
+  renderizarSelectorAsignaturas();
   actualizarPreviewTotal();
 });
 
@@ -542,19 +542,6 @@ function mostrarBotonExplicacion() {
     btn.classList.remove("oculto");
     btn.style.display = "inline-flex";
   }
-}
-
-function inicializarBotonesAsignatura() {
-  const botones = document.querySelectorAll(".botones-asignaturas .btn-principal");
-
-  botones.forEach((boton) => {
-    const accion = boton.getAttribute("onclick") || "";
-    const match = accion.match(/seleccionarAsignatura\('([^']+)'\)/);
-    if (!match) return;
-
-    boton.dataset.asignatura = match[1];
-    boton.setAttribute("aria-pressed", "false");
-  });
 }
 
 function resaltarAsignaturaSeleccionada(asig) {

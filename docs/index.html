@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eaf2ff" />
   <title>DAM TEST</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,24 +15,33 @@
 <!-- INICIO -->
 <div id="pantalla-inicio" class="pantalla">
   <div class="card">
-    <h1 class="titulo">Elige una asignatura</h1>
-    <p class="texto texto-intro">Practíca por materia, ajusta el test a tu ritmo y estudia de la manera mas comoda.</p>
+    <header class="home-header">
+      <div class="brand-lockup" aria-label="DAM Test">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-name">DAM TEST</span>
+      </div>
+      <p class="brand-kicker">Tu espacio de estudio</p>
+      <h1 class="titulo">¿Qué quieres practicar hoy?</h1>
+      <p class="texto texto-intro">Elige una asignatura, configura tu sesión y avanza a tu ritmo.</p>
+    </header>
 
-    <div class="botones-asignaturas">
-      <button class="btn-principal" onclick="seleccionarAsignatura('sistemas')">Sistemas Informáticos</button>
-      <button class="btn-principal" onclick="seleccionarAsignatura('bases')">Bases de Datos</button>
-      <button class="btn-principal" onclick="seleccionarAsignatura('entornos')">Entornos de Desarrollo</button>
-      <button class="btn-principal" onclick="seleccionarAsignatura('programacion')">Programacion</button>
-      <button class="btn-principal" onclick="seleccionarAsignatura('empleabilidad')">Itinerario para la Empleabilidad</button>
-      <button class="btn-principal" onclick="seleccionarAsignatura('lenguajeMarcas')">Lenguaje de Marcas</button>
-    </div>
+    <div id="botones-asignaturas" class="botones-asignaturas"></div>
 
     <div id="selector-modo" class="oculto" style="margin-top:16px;">
-      <p class="texto" style="margin-bottom:10px;">Elige modo:</p>
-      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-        <button class="btn-principal" onclick="abrirModalConfig('estudio')">Modo estudio</button>
-        <button class="btn-secundario" onclick="abrirModalConfig('examen')">Modo examen</button>
-        <button class="btn-principal" style="background: linear-gradient(135deg, #a450ff 0%, #d49eff 100%);" onclick="abrirResumenAsignatura()">Explicación</button>
+      <p class="selector-modo-titulo">¿Cómo quieres continuar?</p>
+      <div class="selector-modo-acciones">
+        <button class="btn-principal btn-modo" onclick="abrirModalConfig('estudio')">
+          <span class="btn-modo-icono" aria-hidden="true">✓</span>
+          <span>Modo estudio</span>
+        </button>
+        <button class="btn-secundario btn-modo" onclick="abrirModalConfig('examen')">
+          <span class="btn-modo-icono" aria-hidden="true">◎</span>
+          <span>Modo examen</span>
+        </button>
+        <button class="btn-secundario btn-modo btn-modo-resumen" onclick="abrirResumenAsignatura()">
+          <span class="btn-modo-icono" aria-hidden="true">✦</span>
+          <span>Ver resumen</span>
+        </button>
       </div>
     </div>
   </div>
@@ -60,9 +70,13 @@
       <div id="progreso-texto" class="progreso-texto">0%</div>
     </div>
 
-    <h2 id="texto-pregunta" class="pregunta"></h2>
-    <div id="imagen-pregunta" class="imagen-pregunta"></div>
+    <section class="pregunta-panel" aria-labelledby="texto-pregunta">
+      <span class="pregunta-kicker">Pregunta actual</span>
+      <h2 id="texto-pregunta" class="pregunta"></h2>
+      <div id="imagen-pregunta" class="imagen-pregunta"></div>
+    </section>
 
+    <p class="opciones-label">Elige una respuesta</p>
     <div id="opciones-container" class="opciones"></div>
 
     <p id="feedback" class="feedback"></p>
@@ -104,11 +118,13 @@
 <!-- FINAL -->
 <div id="pantalla-final" class="pantalla oculto">
   <div class="card">
+    <div class="resultado-sello" aria-hidden="true">✓</div>
     <h1 class="titulo" id="titulo-final">¡Test finalizado!</h1>
 
-    <p class="texto">
-      Resultado: <span id="nota-final"></span>
-    </p>
+    <div class="resultado-nota">
+      <span>Resultado</span>
+      <strong id="nota-final"></strong>
+    </div>
 
     <p class="texto" id="resumen-final" style="margin-top:8px;"></p>
 
@@ -223,22 +239,21 @@
   </div>
 </div>
 
-<!-- PREGUNTAS -->
+<!-- CONTENIDO DE ASIGNATURAS -->
 <script src="preguntas/preguntas-sistemas.js"></script>
 <script src="preguntas/preguntas-bases.js"></script>
 <script src="preguntas/preguntas-entornos.js"></script>
 <script src="preguntas/preguntas-programacion.js"></script>
 <script src="preguntas/preguntas-empleabilidad.js"></script>
 <script src="preguntas/preguntas-lenguaje-marcas.js"></script>
-<script src="preguntas/preguntas.js"></script>
-
-<!-- RESUMENES -->
 <script src="resumenes/resumen-sistemas.js"></script>
 <script src="resumenes/resumen-bases.js"></script>
 <script src="resumenes/resumen-entornos.js"></script>
 <script src="resumenes/resumen-programacion.js"></script>
 <script src="resumenes/resumen-empleabilidad.js"></script>
 <script src="resumenes/resumen-lenguaje-marcas.js"></script>
+<script src="asignaturas.js"></script>
+<script src="preguntas/preguntas.js"></script>
 <script src="resumenes.js"></script>
 
 <!-- SCRIPT -->

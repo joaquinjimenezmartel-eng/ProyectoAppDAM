@@ -1,6 +1,6 @@
 function normalizarTextoRespuesta(texto) {
   if (typeof texto !== "string") return "";
-  return texto.trim().replace(/\s+/g, " ");
+  return texto.trim().replace(/\s+/g, " ").toLocaleLowerCase("es");
 }
 
 function resolverIndiceCorrecto(pregunta) {
@@ -37,11 +37,9 @@ function normalizarListaPreguntas(lista) {
   }));
 }
 
-const bancoDePreguntas = {
-  sistemas: typeof preguntasSistemas !== 'undefined' ? normalizarListaPreguntas(preguntasSistemas) : [],
-  bases: typeof preguntasBases !== 'undefined' ? normalizarListaPreguntas(preguntasBases) : [],
-  entornos: typeof preguntasEntornos !== 'undefined' ? normalizarListaPreguntas(preguntasEntornos) : [],
-  programacion: typeof preguntasProgramacion !== 'undefined' ? normalizarListaPreguntas(preguntasProgramacion) : [],
-  empleabilidad: typeof preguntasEmpleabilidad !== 'undefined' ? normalizarListaPreguntas(preguntasEmpleabilidad) : [],
-  lenguajeMarcas: typeof preguntasLenguajeMarcas !== 'undefined' ? normalizarListaPreguntas(preguntasLenguajeMarcas) : []
-};
+const bancoDePreguntas = Object.fromEntries(
+  catalogoAsignaturas.map((asignatura) => [
+    asignatura.id,
+    normalizarListaPreguntas(asignatura.preguntas)
+  ])
+);

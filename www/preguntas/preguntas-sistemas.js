@@ -1086,7 +1086,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 3,
-  explicacion: "¡Cuidado, es una pregunta trampa! Ethernet, UDP y TCP/IP son todos idiomas principales y súper famosos que usan los ordenadores para hablar por la red. Por eso decir que 'no son principales' es incorrecto."
+  explicacion: "Ethernet, UDP y TCP/IP son tecnologías y protocolos fundamentales de las redes informáticas. Ethernet opera principalmente en las capas física y de enlace, UDP es un protocolo de transporte y TCP/IP designa la familia de protocolos utilizada en Internet. Como los tres pertenecen al ámbito principal de las comunicaciones de red, ninguna de las opciones A, B o C cumple la condición planteada."
 },
 
 {
