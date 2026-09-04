@@ -924,6 +924,7 @@ button:disabled{
 
 #resumen-overlay .modal-body{
   padding:clamp(18px, 3.6vw, 36px);
+  max-height:calc(100svh - 130px - var(--safe-area-top) - var(--safe-area-bottom));
   background:
     radial-gradient(circle at top right, rgba(115, 182, 255, 0.16), rgba(115, 182, 255, 0) 28%),
     linear-gradient(180deg, rgba(248,251,255,0.92), rgba(239,245,255,0.96));
