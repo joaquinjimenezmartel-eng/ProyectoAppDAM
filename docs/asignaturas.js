@@ -102,11 +102,13 @@ function renderizarSelectorAsignaturas() {
         contenido.append(nombre, detalle);
       }
 
-      const examenPendiente = ProgresoEstudio.obtenerExamenActivo(asignatura.id);
-      if (examenPendiente) {
+      const sesionesPendientes = ["estudio", "examen"]
+        .map((modo) => ProgresoEstudio.obtenerSesionActiva(asignatura.id, modo))
+        .filter(Boolean);
+      if (sesionesPendientes.length > 0) {
         const avisoExamen = document.createElement("span");
         avisoExamen.className = "asignatura-examen-pendiente";
-        avisoExamen.textContent = `Examen pendiente · ${Math.min(examenPendiente.indice + 1, examenPendiente.preguntas.length)}/${examenPendiente.preguntas.length}`;
+        avisoExamen.textContent = `${sesionesPendientes.length} sesión${sesionesPendientes.length > 1 ? "es" : ""} pendiente${sesionesPendientes.length > 1 ? "s" : ""}`;
         contenido.appendChild(avisoExamen);
       }
     } else {
@@ -121,5 +123,33 @@ function renderizarSelectorAsignaturas() {
     boton.append(icono, contenido, flecha);
     boton.addEventListener("click", () => seleccionarAsignatura(asignatura.id));
     contenedor.appendChild(boton);
+  });
+
+  renderizarSesionesPendientes();
+}
+
+function renderizarSesionesPendientes() {
+  const seccion = document.getElementById("sesiones-pendientes");
+  const lista = document.getElementById("lista-sesiones-pendientes");
+  if (!seccion || !lista || typeof ProgresoEstudio === "undefined") return;
+  lista.replaceChildren();
+
+  const pendientes = [];
+  catalogoAsignaturas.forEach((asignatura) => {
+    ["estudio", "examen"].forEach((modo) => {
+      const sesion = ProgresoEstudio.obtenerSesionActiva(asignatura.id, modo);
+      if (sesion) pendientes.push({ asignatura, modo, sesion });
+    });
+  });
+
+  seccion.classList.toggle("oculto", pendientes.length === 0);
+  pendientes.forEach(({ asignatura, modo, sesion }) => {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "sesion-pendiente-directa";
+    boton.style.setProperty("--subject-accent", asignatura.color);
+    boton.innerHTML = `<span><strong>${modo === "examen" ? "Examen" : "Estudio"} · ${asignatura.nombre}</strong><small>Pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}</small></span><span>Continuar ›</span>`;
+    boton.addEventListener("click", () => continuarSesionDeAsignatura(asignatura.id, modo));
+    lista.appendChild(boton);
   });
 }

@@ -2661,6 +2661,122 @@ button:disabled{
   }
 }
 
+.sesiones-pendientes{
+  margin:0 0 18px;
+  padding:14px 0;
+  border-block:1px solid rgba(255,255,255,0.18);
+}
+
+.sesiones-pendientes-kicker{
+  margin:0 0 4px;
+  color:var(--brand-strong);
+  font-size:0.78rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+.sesion-pendiente-directa{
+  appearance:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  width:100%;
+  padding:12px 2px;
+  border:0;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  color:var(--text);
+  background:transparent;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+}
+
+.sesion-pendiente-directa:last-child{
+  border-bottom:0;
+}
+
+.sesion-pendiente-directa > span:first-child{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.sesion-pendiente-directa small{
+  color:var(--muted);
+  font-size:0.82rem;
+}
+
+.sesion-pendiente-directa > span:last-child{
+  color:rgb(var(--subject-accent));
+  font-weight:800;
+  white-space:nowrap;
+}
+
+#btn-atras,
+.nav-left .btn-link:not(#btn-atras){
+  width:auto;
+  min-width:0;
+  min-height:42px;
+  padding:0 9px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+
+.nav-left{
+  display:flex;
+  width:auto;
+  gap:6px;
+}
+
+@media (max-width: 720px){
+  .barra-superior{
+    display:grid;
+    grid-template-columns:auto minmax(0, 1fr);
+    align-items:center;
+    gap:10px;
+  }
+
+  .nav-left{
+    display:flex;
+    width:auto;
+    gap:4px;
+  }
+
+  #btn-atras,
+  .nav-left .btn-link:not(#btn-atras){
+    width:auto;
+    min-width:0;
+    min-height:40px;
+    padding:0 7px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+    font-size:0.84rem;
+  }
+
+  .nav-left .btn-link:not(#btn-atras){
+    justify-content:flex-start;
+  }
+
+  .nav-right{
+    justify-content:flex-end;
+    gap:10px;
+  }
+
+  .nav-right span{
+    font-size:0.78rem;
+  }
+
+  .sesiones-pendientes{
+    margin-bottom:10px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   *,
   *::before,

@@ -60,6 +60,7 @@ function cargarContenido() {
   const html = fs.readFileSync(INDEX_PATH, "utf8");
   const scripts = [...html.matchAll(/<script\s+src=["']([^"']+)["'][^>]*><\/script>/g)]
     .map((coincidencia) => coincidencia[1])
+    .map((src) => src.split(/[?#]/, 1)[0])
     .filter((src) => src !== "script.js");
 
   const codigo = scripts

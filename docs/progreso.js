@@ -2,7 +2,8 @@
   "use strict";
 
   const STORAGE_KEY = "dam-test:progreso:v1";
-  const SESSION_STORAGE_KEY = "dam-test:examenes-activos:v1";
+  const SESSION_STORAGE_KEY = "dam-test:sesiones-activas:v2";
+  const LEGACY_SESSION_STORAGE_KEY = "dam-test:examenes-activos:v1";
 
   function numeroSeguro(valor) {
     const numero = Number(valor);
@@ -62,8 +63,20 @@
     function leerSesiones() {
       if (!storage || typeof storage.getItem !== "function") return {};
       try {
-        const sesiones = JSON.parse(storage.getItem(SESSION_STORAGE_KEY) || "{}");
-        return sesiones && typeof sesiones === "object" ? sesiones : {};
+        const sesionesGuardadas = storage.getItem(SESSION_STORAGE_KEY);
+        if (sesionesGuardadas !== null) {
+          const sesiones = JSON.parse(sesionesGuardadas || "{}");
+          return sesiones && typeof sesiones === "object" ? sesiones : {};
+        }
+
+        const anteriores = JSON.parse(storage.getItem(LEGACY_SESSION_STORAGE_KEY) || "{}");
+        if (!anteriores || typeof anteriores !== "object") return {};
+        return Object.fromEntries(
+          Object.entries(anteriores).map(([asignaturaId, sesion]) => [
+            asignaturaId,
+            { examen: { ...sesion, modo: "examen", version: 2 } }
+          ])
+        );
       } catch (error) {
         return {};
       }
@@ -199,12 +212,17 @@
       }));
     }
 
-    function guardarExamenActivo(sesion) {
+    function guardarSesionActiva(sesion) {
       if (!sesion || !sesion.asignaturaId || !Array.isArray(sesion.preguntas)) return false;
       const sesiones = leerSesiones();
-      sesiones[sesion.asignaturaId] = {
-        version: 1,
+      const modoSesion = sesion.modo === "examen" ? "examen" : "estudio";
+      const sesionesAsignatura = sesiones[sesion.asignaturaId] && typeof sesiones[sesion.asignaturaId] === "object"
+        ? sesiones[sesion.asignaturaId]
+        : {};
+      sesionesAsignatura[modoSesion] = {
+        version: 2,
         asignaturaId: String(sesion.asignaturaId),
+        modo: modoSesion,
         fecha: new Date().toISOString(),
         indice: numeroSeguro(sesion.indice),
         preguntas: sesion.preguntas.map((pregunta) => ({
@@ -215,22 +233,28 @@
         })),
         selecciones: Array.isArray(sesion.selecciones) ? sesion.selecciones : [],
         correctas: Array.isArray(sesion.correctas) ? sesion.correctas : [],
+        completadas: Array.isArray(sesion.completadas) ? sesion.completadas : [],
+        erroresEstudio: Array.isArray(sesion.erroresEstudio) ? sesion.erroresEstudio : [],
         config: sesion.config && typeof sesion.config === "object" ? sesion.config : {}
       };
+      sesiones[sesion.asignaturaId] = sesionesAsignatura;
       return guardarSesiones(sesiones);
     }
 
-    function obtenerExamenActivo(asignaturaId) {
+    function obtenerSesionActiva(asignaturaId, modo = "estudio") {
       if (!asignaturaId) return null;
-      const sesion = leerSesiones()[asignaturaId];
+      const grupo = leerSesiones()[asignaturaId];
+      const sesion = grupo && grupo[modo === "examen" ? "examen" : "estudio"];
       if (!sesion || !Array.isArray(sesion.preguntas) || sesion.preguntas.length === 0) return null;
       return sesion;
     }
 
-    function eliminarExamenActivo(asignaturaId) {
+    function eliminarSesionActiva(asignaturaId, modo = "estudio") {
       const sesiones = leerSesiones();
-      if (!Object.prototype.hasOwnProperty.call(sesiones, asignaturaId)) return true;
-      delete sesiones[asignaturaId];
+      const grupo = sesiones[asignaturaId];
+      if (!grupo || typeof grupo !== "object") return true;
+      delete grupo[modo === "examen" ? "examen" : "estudio"];
+      if (Object.keys(grupo).length === 0) delete sesiones[asignaturaId];
       return guardarSesiones(sesiones);
     }
 
@@ -239,9 +263,9 @@
       registrarInicio,
       registrarRespuesta,
       registrarFinal,
-      guardarExamenActivo,
-      obtenerExamenActivo,
-      eliminarExamenActivo
+      guardarSesionActiva,
+      obtenerSesionActiva,
+      eliminarSesionActiva
     };
   }
 

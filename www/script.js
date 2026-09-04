@@ -3,6 +3,7 @@ let indicePregunta = 0;
 let aciertos = 0;
 
 let estadoPreguntas = [];
+let erroresEstudio = [];
 let modo = "estudio";
 let asignaturaSeleccionada = null;
 
@@ -140,7 +141,7 @@ function abrirModalConfig(modoElegido) {
 
   const overlay = document.getElementById("config-overlay");
   if (overlay) overlay.classList.remove("oculto");
-  mostrarExamenPendienteSiExiste();
+  mostrarSesionPendienteSiExiste();
 }
 
 function cerrarModalConfig() {
@@ -658,13 +659,14 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
     indicePregunta = 0;
     aciertos = 0;
     estadoPreguntas = new Array(preguntasActuales.length).fill(false);
+    erroresEstudio = preguntasActuales.map(() => []);
 
     seleccionExamen = new Array(preguntasActuales.length).fill(null);
     correctasExamen = new Array(preguntasActuales.length).fill(null);
     falladasExamen = [];
 
     registrarInicioProgreso(asignatura, modoElegido, preguntasActuales.length);
-    guardarExamenActivo();
+    guardarSesionActiva();
 
     document.getElementById("pantalla-inicio").classList.add("oculto");
     document.getElementById("pantalla-final").classList.add("oculto");
@@ -709,13 +711,14 @@ function iniciarTest(asignatura, modoElegido = "estudio") {
   indicePregunta = 0;
   aciertos = 0;
   estadoPreguntas = new Array(preguntasActuales.length).fill(false);
+  erroresEstudio = preguntasActuales.map(() => []);
 
   seleccionExamen = new Array(preguntasActuales.length).fill(null);
   correctasExamen = new Array(preguntasActuales.length).fill(null);
   falladasExamen = [];
 
   registrarInicioProgreso(asignatura, modoElegido, preguntasActuales.length);
-  guardarExamenActivo();
+  guardarSesionActiva();
 
   document.getElementById("pantalla-inicio").classList.add("oculto");
   document.getElementById("pantalla-final").classList.add("oculto");
@@ -816,6 +819,16 @@ function cargarPregunta() {
     contenedor.appendChild(btn);
   });
 
+  if (!esModoExamen(modo) && Array.isArray(erroresEstudio[indicePregunta])) {
+    erroresEstudio[indicePregunta].forEach((indice) => {
+      const boton = contenedor.children[indice];
+      if (boton) {
+        boton.classList.add("incorrecta");
+        boton.disabled = true;
+      }
+    });
+  }
+
   if (esModoExamen(modo)) {
     pintarSeleccionExamen();
     activarSiguiente(seleccionExamen[indicePregunta] !== null);
@@ -836,7 +849,7 @@ function activarSiguiente(habilitar) {
 ========================= */
 function seleccionarOpcionExamen(idx) {
   seleccionExamen[indicePregunta] = idx;
-  guardarExamenActivo();
+  guardarSesionActiva();
   pintarSeleccionExamen();
   activarSiguiente(true);
 }
@@ -887,6 +900,7 @@ function verificarRespuestaEstudio(idxElegido, btnPulsado) {
       estadoPreguntas[indicePregunta] = true;
       aciertos++;
       registrarRespuestaProgreso(p, true);
+      guardarSesionActiva();
     }
 
     document.getElementById("puntuacion").innerText = `Aciertos: ${aciertos}`;
@@ -896,7 +910,11 @@ function verificarRespuestaEstudio(idxElegido, btnPulsado) {
   } else {
     btnPulsado.classList.add("incorrecta");
     btnPulsado.disabled = true;
+    if (!erroresEstudio[indicePregunta].includes(idxElegido)) {
+      erroresEstudio[indicePregunta].push(idxElegido);
+    }
     registrarRespuestaProgreso(p, false);
+    guardarSesionActiva();
     mostrarBotonExplicacion();
     if (feedback) feedback.innerText = "Fallaste ❌ Sigue intentándolo";
   }
@@ -916,7 +934,7 @@ function siguientePregunta() {
     correctasExamen[indicePregunta] = esCorrecta;
 
     if (!yaRegistrada) registrarRespuestaProgreso(p, esCorrecta);
-    guardarExamenActivo();
+    guardarSesionActiva();
 
     if (esCorrecta) {
       aciertos = correctasExamen.filter(v => v === true).length;
@@ -928,6 +946,7 @@ function siguientePregunta() {
   if (indicePregunta < preguntasActuales.length - 1) {
     indicePregunta++;
     cargarPregunta();
+    guardarSesionActiva();
   } else {
     mostrarResultadoFinal();
   }
@@ -956,8 +975,8 @@ function mostrarResultadoFinal() {
   const fallos = total - aciertos;
 
   registrarFinalProgreso(total, aciertos, fallos);
-  if (esModoExamen(modo) && typeof ProgresoEstudio !== "undefined") {
-    ProgresoEstudio.eliminarExamenActivo(asignaturaSeleccionada);
+  if (typeof ProgresoEstudio !== "undefined") {
+    ProgresoEstudio.eliminarSesionActiva(asignaturaSeleccionada, modo);
   }
 
   document.getElementById("nota-final").innerText = `${aciertos} de ${total}`;
@@ -1000,6 +1019,7 @@ function repasarFallos() {
   indicePregunta = 0;
   aciertos = 0;
   estadoPreguntas = new Array(preguntasActuales.length).fill(false);
+  erroresEstudio = preguntasActuales.map(() => []);
   sesionFinalizadaRegistrada = false;
 
   registrarInicioProgreso(asignaturaSeleccionada, "repaso", preguntasActuales.length);
@@ -1015,8 +1035,8 @@ function repasarFallos() {
    Home + Progreso
 ========================= */
 function volverAHome() {
-  if (esModoExamen(modo) && preguntasActuales.length > 0 && !sesionFinalizadaRegistrada) {
-    guardarExamenActivo();
+  if (preguntasActuales.length > 0 && !sesionFinalizadaRegistrada) {
+    guardarSesionActiva();
   }
   document.getElementById("pantalla-test").classList.add("oculto");
   document.getElementById("pantalla-final").classList.add("oculto");
@@ -1026,6 +1046,7 @@ function volverAHome() {
   indicePregunta = 0;
   aciertos = 0;
   estadoPreguntas = [];
+  erroresEstudio = [];
 
   seleccionExamen = [];
   correctasExamen = [];
@@ -1089,16 +1110,16 @@ function registrarFinalProgreso(total, totalAciertos, totalFallos) {
   sesionFinalizadaRegistrada = true;
 }
 
-function guardarExamenActivo() {
+function guardarSesionActiva() {
   if (
-    !esModoExamen(modo) ||
     typeof ProgresoEstudio === "undefined" ||
     !asignaturaSeleccionada ||
     preguntasActuales.length === 0
   ) return;
 
-  ProgresoEstudio.guardarExamenActivo({
+  ProgresoEstudio.guardarSesionActiva({
     asignaturaId: asignaturaSeleccionada,
+    modo,
     indice: indicePregunta,
     preguntas: preguntasActuales.map((pregunta) => ({
       id: pregunta.id,
@@ -1106,17 +1127,19 @@ function guardarExamenActivo() {
     })),
     selecciones: seleccionExamen,
     correctas: correctasExamen,
+    completadas: estadoPreguntas,
+    erroresEstudio,
     config
   });
 }
 
-function mostrarExamenPendienteSiExiste() {
+function mostrarSesionPendienteSiExiste() {
   const modal = document.querySelector("#config-overlay .modal-config");
   const bloque = document.getElementById("examen-pendiente");
   if (!modal || !bloque) return;
 
-  const sesion = modoPendiente === "examen" && typeof ProgresoEstudio !== "undefined"
-    ? ProgresoEstudio.obtenerExamenActivo(asignaturaSeleccionada)
+  const sesion = typeof ProgresoEstudio !== "undefined"
+    ? ProgresoEstudio.obtenerSesionActiva(asignaturaSeleccionada, modoPendiente)
     : null;
   modal.classList.toggle("tiene-examen-pendiente", !!sesion);
   bloque.classList.toggle("oculto", !sesion);
@@ -1125,18 +1148,20 @@ function mostrarExamenPendienteSiExiste() {
   const asignatura = obtenerAsignatura(asignaturaSeleccionada);
   const titulo = document.getElementById("examen-pendiente-titulo");
   const detalle = document.getElementById("examen-pendiente-detalle");
-  if (titulo) titulo.innerText = asignatura ? asignatura.nombre : "Examen pendiente";
+  const botonContinuar = document.getElementById("btn-continuar-sesion");
+  if (titulo) titulo.innerText = asignatura ? asignatura.nombre : "Sesión pendiente";
   if (detalle) detalle.innerText = `Vas por la pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}.`;
+  if (botonContinuar) botonContinuar.innerText = modoPendiente === "examen" ? "Continuar examen" : "Continuar estudio";
 }
 
-function configurarExamenNuevo() {
+function configurarSesionNueva() {
   const modal = document.querySelector("#config-overlay .modal-config");
   const bloque = document.getElementById("examen-pendiente");
   if (modal) modal.classList.remove("tiene-examen-pendiente");
   if (bloque) bloque.classList.add("oculto");
 }
 
-function reconstruirPreguntaExamen(original, ordenOpciones) {
+function reconstruirPreguntaSesion(original, ordenOpciones) {
   if (!Array.isArray(ordenOpciones) || ordenOpciones.length !== original.opciones.length) return original;
   const indicesValidos = ordenOpciones.every((indice) => Number.isInteger(indice) && indice >= 0 && indice < original.opciones.length);
   if (!indicesValidos || new Set(ordenOpciones).size !== original.opciones.length) return original;
@@ -1149,21 +1174,21 @@ function reconstruirPreguntaExamen(original, ordenOpciones) {
   };
 }
 
-function continuarExamenGuardado() {
+function continuarSesionGuardada() {
   if (typeof ProgresoEstudio === "undefined") return;
-  const sesion = ProgresoEstudio.obtenerExamenActivo(asignaturaSeleccionada);
+  const sesion = ProgresoEstudio.obtenerSesionActiva(asignaturaSeleccionada, modoPendiente);
   const banco = obtenerPreguntasAsignatura(asignaturaSeleccionada);
   if (!sesion || banco.length === 0) return;
 
   const restauradas = sesion.preguntas.map((guardada) => {
     const original = banco.find((pregunta) => String(pregunta.id) === String(guardada.id));
-    return original ? reconstruirPreguntaExamen(original, guardada.ordenOpciones) : null;
+    return original ? reconstruirPreguntaSesion(original, guardada.ordenOpciones) : null;
   });
 
   if (restauradas.some((pregunta) => !pregunta)) {
-    ProgresoEstudio.eliminarExamenActivo(asignaturaSeleccionada);
-    configurarExamenNuevo();
-    alert("El contenido de la asignatura ha cambiado. Configura un examen nuevo.");
+    ProgresoEstudio.eliminarSesionActiva(asignaturaSeleccionada, modoPendiente);
+    configurarSesionNueva();
+    alert("El contenido de la asignatura ha cambiado. Configura una sesión nueva.");
     return;
   }
 
@@ -1171,10 +1196,13 @@ function continuarExamenGuardado() {
   indicePregunta = Math.min(Number(sesion.indice) || 0, preguntasActuales.length - 1);
   seleccionExamen = preguntasActuales.map((_, indice) => sesion.selecciones[indice] ?? null);
   correctasExamen = preguntasActuales.map((_, indice) => sesion.correctas[indice] ?? null);
-  aciertos = correctasExamen.filter((valor) => valor === true).length;
-  estadoPreguntas = new Array(preguntasActuales.length).fill(false);
+  estadoPreguntas = preguntasActuales.map((_, indice) => !!sesion.completadas?.[indice]);
+  erroresEstudio = preguntasActuales.map((_, indice) => Array.isArray(sesion.erroresEstudio?.[indice]) ? sesion.erroresEstudio[indice] : []);
+  aciertos = modoPendiente === "examen"
+    ? correctasExamen.filter((valor) => valor === true).length
+    : estadoPreguntas.filter(Boolean).length;
   config = { ...config, ...(sesion.config || {}) };
-  modo = "examen";
+  modo = modoPendiente === "examen" ? "examen" : "estudio";
   enRepasoFallos = false;
   sesionFinalizadaRegistrada = false;
 
@@ -1184,6 +1212,12 @@ function continuarExamenGuardado() {
   document.getElementById("pantalla-test").classList.remove("oculto");
   aplicarUIsegunModo();
   cargarPregunta();
+}
+
+function continuarSesionDeAsignatura(asignaturaId, modoSesion) {
+  asignaturaSeleccionada = asignaturaId;
+  modoPendiente = modoSesion;
+  continuarSesionGuardada();
 }
 
 function actualizarProgreso() {
