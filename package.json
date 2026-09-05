@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "validate": "node scripts/validate-content.js",
-    "sync:web": "node scripts/sync-web.js",
+    "sync:web": "node scripts/build-offline.js && node scripts/sync-web.js",
     "sync:android": "npm run validate && npx cap copy android",
     "sync": "npm run validate && npm run sync:web && npx cap copy android",
-    "test": "npm run validate && node scripts/test-progress.js"
+    "test": "npm run validate && node scripts/test-progress.js && node scripts/build-offline.js && node scripts/test-review-offline.js"
   },
   "keywords": [],
   "author": "",

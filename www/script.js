@@ -609,6 +609,7 @@ function toggleExplicacion() {
    Selección asignatura + modo
 ========================= */
 function seleccionarAsignatura(asig) {
+  document.getElementById("repaso-detalle").textContent = "Hasta 20 preguntas que necesitan refuerzo. Los aciertos sin ayuda se espacian en el tiempo.";
   asignaturaSeleccionada = asig;
   resaltarAsignaturaSeleccionada(asig);
   sincronizarConfigRango();
@@ -1004,13 +1005,19 @@ function mostrarResultadoFinal() {
   }
 }
 
-function repasarFallos() {
+function repasarFallos(listaInteligente = null) {
   if (!falladasExamen || falladasExamen.length === 0) return;
+  if (ProgresoEstudio.obtenerSesionActiva(asignaturaSeleccionada, "repaso")) {
+    continuarSesionDeAsignatura(asignaturaSeleccionada, "repaso");
+    return;
+  }
 
-  modo = "estudio";
+  modo = "repaso";
   enRepasoFallos = true;
 
-  if (config.mezclarPreguntas) {
+  if (listaInteligente) {
+    preguntasActuales = listaInteligente;
+  } else if (config.mezclarPreguntas) {
     preguntasActuales = mezclarArray(falladasExamen);
   } else {
     preguntasActuales = ordenarPorIdAsc(falladasExamen);
@@ -1023,17 +1030,36 @@ function repasarFallos() {
   sesionFinalizadaRegistrada = false;
 
   registrarInicioProgreso(asignaturaSeleccionada, "repaso", preguntasActuales.length);
+  seleccionExamen = preguntasActuales.map(() => null);
+  correctasExamen = preguntasActuales.map(() => null);
+  document.getElementById("pantalla-inicio").classList.add("oculto");
 
   document.getElementById("pantalla-final").classList.add("oculto");
   document.getElementById("pantalla-test").classList.remove("oculto");
 
   aplicarUIsegunModo();
   cargarPregunta();
+  guardarSesionActiva();
 }
 
 /* =========================
    Home + Progreso
 ========================= */
+function iniciarRepasoInteligente() {
+  if (!asignaturaSeleccionada) return;
+  if (ProgresoEstudio.obtenerSesionActiva(asignaturaSeleccionada, "repaso")) {
+    continuarSesionDeAsignatura(asignaturaSeleccionada, "repaso");
+    return;
+  }
+  const pendientes = ProgresoEstudio.obtenerRepaso(asignaturaSeleccionada, obtenerPreguntasAsignatura(asignaturaSeleccionada));
+  if (!pendientes.length) {
+    document.getElementById("repaso-detalle").textContent = "No tienes repasos pendientes ahora. Practica en estudio o examen; tus respuestas prepararán los próximos repasos.";
+    return;
+  }
+  falladasExamen = pendientes;
+  repasarFallos(pendientes);
+}
+
 function volverAHome() {
   if (preguntasActuales.length > 0 && !sesionFinalizadaRegistrada) {
     guardarSesionActiva();
@@ -1089,7 +1115,8 @@ function registrarRespuestaProgreso(pregunta, correcta) {
   ProgresoEstudio.registrarRespuesta({
     asignaturaId: asignaturaSeleccionada,
     preguntaId: pregunta.id,
-    correcta
+    correcta,
+    sinAyuda: esModoExamen(modo) || !(erroresEstudio[indicePregunta] || []).length
   });
 }
 
@@ -1202,8 +1229,8 @@ function continuarSesionGuardada() {
     ? correctasExamen.filter((valor) => valor === true).length
     : estadoPreguntas.filter(Boolean).length;
   config = { ...config, ...(sesion.config || {}) };
-  modo = modoPendiente === "examen" ? "examen" : "estudio";
-  enRepasoFallos = false;
+  modo = ["examen", "repaso"].includes(modoPendiente) ? modoPendiente : "estudio";
+  enRepasoFallos = modo === "repaso";
   sesionFinalizadaRegistrada = false;
 
   cerrarModalConfig();

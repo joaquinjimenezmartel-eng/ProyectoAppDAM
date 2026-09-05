@@ -2776,6 +2776,23 @@ button:disabled{
   }
 }
 
+.offline-status, .repaso-detalle {
+  font-size: .85rem;
+  line-height: 1.6;
+  opacity: .85;
+  margin: 12px 0;
+}
+.offline-status button {
+  margin-left: 12px;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+  min-height: 44px;
+  cursor: pointer;
+}
+#selector-modo > button { margin-top: 16px; }
+
 @media (prefers-reduced-motion: reduce){
   *,
   *::before,

@@ -40,6 +40,8 @@
         respuestas: numeroSeguro(datos.respuestas),
         aciertos: numeroSeguro(datos.aciertos),
         fallos: numeroSeguro(datos.fallos),
+        racha: numeroSeguro(datos.racha),
+        proximoRepaso: typeof datos.proximoRepaso === "string" ? datos.proximoRepaso : null,
         ultimaActividad: typeof datos.ultimaActividad === "string" ? datos.ultimaActividad : null
       };
     });
@@ -162,7 +164,7 @@
       }));
     }
 
-    function registrarRespuesta({ asignaturaId, preguntaId, correcta }) {
+    function registrarRespuesta({ asignaturaId, preguntaId, correcta, sinAyuda = true }) {
       const fecha = new Date().toISOString();
       return actualizarAsignatura(asignaturaId, (datos) => {
         const preguntasPracticadas = [...datos.preguntasPracticadas];
@@ -184,6 +186,8 @@
               respuestas: preguntaAnterior.respuestas + 1,
               aciertos: preguntaAnterior.aciertos + (correcta ? 1 : 0),
               fallos: preguntaAnterior.fallos + (correcta ? 0 : 1),
+              racha: correcta && sinAyuda ? numeroSeguro(preguntaAnterior.racha) + 1 : 0,
+              proximoRepaso: new Date(Date.parse(fecha) + 86400000 * (correcta ? (sinAyuda ? [1, 3, 7, 14, 30][Math.min(numeroSeguro(preguntaAnterior.racha), 4)] : 1) : 0)).toISOString(),
               ultimaActividad: fecha
             }
           },
@@ -215,7 +219,7 @@
     function guardarSesionActiva(sesion) {
       if (!sesion || !sesion.asignaturaId || !Array.isArray(sesion.preguntas)) return false;
       const sesiones = leerSesiones();
-      const modoSesion = sesion.modo === "examen" ? "examen" : "estudio";
+      const modoSesion = ["examen", "repaso"].includes(sesion.modo) ? sesion.modo : "estudio";
       const sesionesAsignatura = sesiones[sesion.asignaturaId] && typeof sesiones[sesion.asignaturaId] === "object"
         ? sesiones[sesion.asignaturaId]
         : {};
@@ -244,7 +248,7 @@
     function obtenerSesionActiva(asignaturaId, modo = "estudio") {
       if (!asignaturaId) return null;
       const grupo = leerSesiones()[asignaturaId];
-      const sesion = grupo && grupo[modo === "examen" ? "examen" : "estudio"];
+      const sesion = grupo && grupo[["examen", "repaso"].includes(modo) ? modo : "estudio"];
       if (!sesion || !Array.isArray(sesion.preguntas) || sesion.preguntas.length === 0) return null;
       return sesion;
     }
@@ -253,12 +257,25 @@
       const sesiones = leerSesiones();
       const grupo = sesiones[asignaturaId];
       if (!grupo || typeof grupo !== "object") return true;
-      delete grupo[modo === "examen" ? "examen" : "estudio"];
+      delete grupo[["examen", "repaso"].includes(modo) ? modo : "estudio"];
       if (Object.keys(grupo).length === 0) delete sesiones[asignaturaId];
       return guardarSesiones(sesiones);
     }
 
+    function obtenerRepaso(asignaturaId, banco, ahora = Date.now(), limite = 20) {
+      const datos = obtenerAsignatura(asignaturaId).preguntas;
+      return banco.filter((pregunta) => {
+        const dato = datos[String(pregunta.id)];
+        return dato && dato.respuestas > 0 && (!dato.proximoRepaso || Date.parse(dato.proximoRepaso) <= ahora);
+      }).sort((a, b) => {
+        const da = datos[String(a.id)], db = datos[String(b.id)];
+        return da.racha - db.racha || (db.fallos / db.respuestas) - (da.fallos / da.respuestas) ||
+          (Date.parse(da.proximoRepaso || da.ultimaActividad) || 0) - (Date.parse(db.proximoRepaso || db.ultimaActividad) || 0);
+      }).slice(0, limite);
+    }
+
     return {
+      obtenerRepaso,
       obtenerAsignatura,
       registrarInicio,
       registrarRespuesta,

@@ -93,7 +93,7 @@ function renderizarSelectorAsignaturas() {
         contenido.append(nombre, detalle);
       }
 
-      const sesionesPendientes = ["estudio", "examen"]
+      const sesionesPendientes = ["estudio", "examen", "repaso"]
         .map((modo) => ProgresoEstudio.obtenerSesionActiva(asignatura.id, modo))
         .filter(Boolean);
       if (sesionesPendientes.length > 0) {
@@ -127,7 +127,7 @@ function renderizarSesionesPendientes() {
 
   const pendientes = [];
   catalogoAsignaturas.forEach((asignatura) => {
-    ["estudio", "examen"].forEach((modo) => {
+    ["estudio", "examen", "repaso"].forEach((modo) => {
       const sesion = ProgresoEstudio.obtenerSesionActiva(asignatura.id, modo);
       if (sesion) pendientes.push({ asignatura, modo, sesion });
     });
@@ -139,7 +139,7 @@ function renderizarSesionesPendientes() {
     boton.type = "button";
     boton.className = "sesion-pendiente-directa";
     boton.style.setProperty("--subject-accent", asignatura.color);
-    boton.innerHTML = `<span><strong>${modo === "examen" ? "Examen" : "Estudio"} · ${asignatura.nombre}</strong><small>Pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}</small></span><span>Continuar ›</span>`;
+    boton.innerHTML = `<span><strong>${modo === "repaso" ? "Repaso" : modo === "examen" ? "Examen" : "Estudio"} · ${asignatura.nombre}</strong><small>Pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}</small></span><span>Continuar ›</span>`;
     boton.addEventListener("click", () => continuarSesionDeAsignatura(asignatura.id, modo));
     lista.appendChild(boton);
   });
