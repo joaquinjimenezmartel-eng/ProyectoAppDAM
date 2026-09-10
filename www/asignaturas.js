@@ -46,11 +46,29 @@ const catalogoAsignaturas = [
     color: "255, 132, 31",
     preguntas: typeof preguntasLenguajeMarcas !== "undefined" ? preguntasLenguajeMarcas : [],
     resumen: typeof resumenLenguajeMarcas !== "undefined" ? resumenLenguajeMarcas : ""
+  },
+  {
+    id: "multimediaMoviles",
+    nombre: "Programación multimedia y dispositivos móviles",
+    sigla: "PM",
+    color: "0, 157, 255",
+    // Se habilitará automáticamente al incorporar los 40 IDs de examen autorizados.
+    requiereBloqueExamenCompleto: true,
+    preguntas: typeof preguntasMultimediaMoviles !== "undefined" ? preguntasMultimediaMoviles : [],
+    resumen: typeof resumenMultimediaMoviles !== "undefined" ? resumenMultimediaMoviles : ""
   }
 ];
 
 function obtenerAsignatura(asignaturaId) {
   return catalogoAsignaturas.find((asignatura) => asignatura.id === asignaturaId) || null;
+}
+
+function estaExamenDisponible(asignaturaId) {
+  const asignatura = obtenerAsignatura(asignaturaId);
+  if (!asignatura) return false;
+  if (!asignatura.requiereBloqueExamenCompleto) return true;
+  const ids = new Set(asignatura.preguntas.map(pregunta => Number(pregunta.id)));
+  return Array.from({ length: 40 }, (_, i) => i + 1).every(id => ids.has(id));
 }
 
 function renderizarSelectorAsignaturas() {

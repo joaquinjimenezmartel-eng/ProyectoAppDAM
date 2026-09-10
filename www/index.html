@@ -46,7 +46,7 @@
           <span class="btn-modo-icono" aria-hidden="true">✓</span>
           <span>Modo estudio</span>
         </button>
-        <button class="btn-secundario btn-modo" onclick="abrirModalConfig('examen')">
+        <button id="btn-modo-examen" class="btn-secundario btn-modo" onclick="abrirModalConfig('examen')" aria-describedby="examen-disponibilidad">
           <span class="btn-modo-icono" aria-hidden="true">◎</span>
           <span>Modo examen</span>
         </button>
@@ -55,6 +55,7 @@
           <span>Ver resumen</span>
         </button>
       </div>
+      <p id="examen-disponibilidad" class="repaso-detalle oculto">Examen disponible cuando se incorporen las preguntas del examen final. Ya puedes practicar en modo estudio.</p>
       <button class="btn-secundario" onclick="iniciarRepasoInteligente()">↻ Repaso inteligente</button>
       <p id="repaso-detalle" class="repaso-detalle" role="status">Hasta 20 preguntas que necesitan refuerzo. Los aciertos sin ayuda se espacian en el tiempo.</p>
     </div>
@@ -271,19 +272,21 @@
 <script src="preguntas/preguntas-programacion.js"></script>
 <script src="preguntas/preguntas-empleabilidad.js"></script>
 <script src="preguntas/preguntas-lenguaje-marcas.js"></script>
+<script src="preguntas/preguntas-multimedia-moviles.js"></script>
 <script src="resumenes/resumen-sistemas.js"></script>
 <script src="resumenes/resumen-bases.js"></script>
 <script src="resumenes/resumen-entornos.js"></script>
 <script src="resumenes/resumen-programacion.js"></script>
 <script src="resumenes/resumen-empleabilidad.js"></script>
 <script src="resumenes/resumen-lenguaje-marcas.js"></script>
+<script src="resumenes/resumen-multimedia-moviles.js"></script>
 <script src="progreso.js?v=20260905-1"></script>
-<script src="asignaturas.js?v=20260905-1"></script>
+<script src="asignaturas.js?v=20260910-1"></script>
 <script src="preguntas/preguntas.js"></script>
 <script src="resumenes.js"></script>
 
 <!-- SCRIPT -->
-<script src="script.js?v=20260905-1"></script>
+<script src="script.js?v=20260910-1"></script>
 <script src="offline.js"></script>
 </body>
 </html>

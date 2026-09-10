@@ -8,7 +8,9 @@ const WEB_ROOT = path.join(PROJECT_ROOT, "www");
 const INDEX_PATH = path.join(WEB_ROOT, "index.html");
 const MANIFEST_PATH = path.join(WEB_ROOT, "manifest.webmanifest");
 // Actualizar únicamente cuando se autorice expresamente un cambio en el banco de test.
-const HUELLA_CONTENIDO_EVALUABLE = "339c3bcc2e35d4fad7909677446f215ccbd170151184424668498d091c933ba1";
+// 2026-09-10: alta autorizada de multimediaMoviles, U1 TEST1, IDs 41–50.
+// test-new-subject.js conserva además la huella original de las seis asignaturas anteriores.
+const HUELLA_CONTENIDO_EVALUABLE = "71b75def7dc4a448f6c3a5572b9fcd95cd2fe2acce862d9ff61cc0c310c65e52";
 
 function normalizarTexto(texto) {
   return typeof texto === "string" ? texto.trim().replace(/\s+/g, " ") : "";
@@ -238,9 +240,12 @@ function validar() {
   console.log(`Contenido válido: ${catalogo.length} asignaturas y ${totalPreguntas} preguntas.`);
 }
 
-try {
-  validar();
-} catch (error) {
-  console.error(`No se pudo validar el contenido: ${error.message}`);
-  process.exitCode = 1;
+if (require.main === module) {
+  try {
+    validar();
+  } catch (error) {
+    console.error(`No se pudo validar el contenido: ${error.message}`);
+    process.exitCode = 1;
+  }
 }
+module.exports = { cargarContenido, calcularHuellaContenidoEvaluable };

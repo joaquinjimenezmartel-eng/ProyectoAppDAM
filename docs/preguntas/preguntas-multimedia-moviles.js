@@ -1,0 +1,123 @@
+// Generado desde contenido/tests/multimediaMoviles/*.json. Ejecutar npm run build:content.
+const preguntasMultimediaMoviles = [
+  {
+    "id": 41,
+    "pregunta": "¿Cómo se llama la capa para el desarrollo de aplicaciones iOS?",
+    "opciones": [
+      "A. Runtime.",
+      "B. Core OS",
+      "C. Cocoa Touch.",
+      "D. ED iOS."
+    ],
+    "respuesta_correcta": "C. Cocoa Touch.",
+    "explicacion": "Cocoa Touch es la capa de frameworks de la arquitectura clásica de iOS destinada a construir aplicaciones. Incluye UIKit, que proporciona elementos para crear pantallas y gestionar la interacción táctil. Piensa en ella como una caja de herramientas para montar la parte de la app con la que interactúas. Core OS se ocupa de servicios de nivel más bajo; runtime significa entorno de ejecución y no es el nombre de esta capa."
+  },
+  {
+    "id": 42,
+    "pregunta": "Cuál de estas características es fundamentales en un dispositivo móvil.",
+    "opciones": [
+      "A. Capacidad de procesado",
+      "B. Tamaño y movilidad",
+      "C. Conectividad.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "D. Todas son correctas.",
+    "explicacion": "Las tres características influyen en lo que puede hacer un dispositivo móvil. La capacidad de procesado permite ejecutar aplicaciones; el tamaño y la movilidad facilitan transportarlo y usarlo en diferentes lugares; la conectividad permite intercambiar datos mediante redes o enlaces como Wi-Fi y Bluetooth. Por ejemplo, una app de mapas necesita procesar la ruta, mostrarla en una pantalla pequeña y puede usar internet para actualizar el tráfico. Ninguna de esas características sustituye a las demás."
+  },
+  {
+    "id": 43,
+    "pregunta": "Cuál de las siguiente limitaciones debes tener en cuenta a la hora de elegir un lenguaje para el desarrollo de una aplicación:",
+    "opciones": [
+      "A. Velocidad de procesado.",
+      "B. Sistema operativo.",
+      "C. Tamaño de pantalla.",
+      "D. Conectividad a la red."
+    ],
+    "respuesta_correcta": "B. Sistema operativo.",
+    "explicacion": "El sistema operativo condiciona qué lenguajes, herramientas y bibliotecas puedes utilizar para crear y ejecutar una aplicación. Por ejemplo, Android ofrece soporte para Kotlin y Java, mientras que el desarrollo de iOS utiliza habitualmente Swift. La pantalla, la conexión y la potencia también importan para diseñar la app, pero no determinan por sí solas que un lenguaje sea compatible con la plataforma. Primero comprueba dónde debe funcionar la aplicación y qué herramientas admite ese entorno."
+  },
+  {
+    "id": 44,
+    "pregunta": "Cuál es el dispositivo que se caracteriza por tener un tamaño medio y está de camino entre el móvil y el portátil tiene pantalla táctil gran autonomía y poco peso:",
+    "opciones": [
+      "A. PDA.",
+      "B. Tablet.",
+      "C. Smartphone.",
+      "D. Netbook"
+    ],
+    "respuesta_correcta": "B. Tablet.",
+    "explicacion": "Una tablet combina una pantalla táctil amplia con un formato portátil y ligero. Se sitúa habitualmente entre un teléfono y un ordenador portátil: resulta cómoda para leer, ver vídeos o tomar notas sin necesitar un teclado físico integrado. Un smartphone suele ser más pequeño; un netbook es un portátil pequeño con teclado; una PDA es un tipo de asistente digital personal. La autonomía y el peso concretos dependen del modelo, no son valores iguales en todas las tablets."
+  },
+  {
+    "id": 45,
+    "pregunta": "Dentro de los sistemas operativos móviles qué elemento facilita la relación entre el software y el usuario mediante la presentación visual de la información a través de elementos gráficos:",
+    "opciones": [
+      "A. Entorno de ejecución de aplicaciones",
+      "B. Middleware.",
+      "C. Interfaces de usuario (UI).",
+      "D. Aplicaciones nativas."
+    ],
+    "respuesta_correcta": "C. Interfaces de usuario (UI).",
+    "explicacion": "La interfaz de usuario, o UI, es la parte que permite a una persona interactuar con el programa. En una interfaz gráfica incluye botones, iconos, menús, textos y otros elementos visibles. Por ejemplo, al pulsar el botón de reproducción de un vídeo estás utilizando su UI. El entorno de ejecución hace funcionar el código; el middleware conecta componentes o servicios; y una aplicación nativa es un tipo de aplicación, no el nombre de su interfaz."
+  },
+  {
+    "id": 46,
+    "pregunta": "Indica cuál de las siguientes afirmaciones es verdadera:",
+    "opciones": [
+      "A. Con el 3G se alcanzan velocidades de transmisión de 1Gbps .",
+      "B. Podemos clasificar los disp.móviles en Limited Data Mobile Device y Enhanced Data Mobile Device",
+      "C. Las distintas generaciones han ido mejorando la comunicación móvil.",
+      "D. Los dispositivos móviles cada vez han ido aumentando su tamaño."
+    ],
+    "respuesta_correcta": "C. Las distintas generaciones han ido mejorando la comunicación móvil.",
+    "explicacion": "Las generaciones de redes móviles han ampliado las posibilidades de comunicación: además de llamadas, han permitido transmitir más datos y ofrecer mejores servicios. Una mejora puede consistir en mayor velocidad, más capacidad para atender dispositivos o menor tiempo de respuesta. Esto no significa que cualquier conexión de una generación más reciente sea siempre más rápida: también influyen la cobertura y la congestión. El tamaño físico de los dispositivos no sigue una regla de crecimiento continuo, y 1 Gbps no es una velocidad propia del 3G."
+  },
+  {
+    "id": 47,
+    "pregunta": "La principal desventaja de programar en lenguaje nativo es:",
+    "opciones": [
+      "A. Utilización de lenguajes y paradigmas de programación distintos.",
+      "B. No se encuentran disponibles todas la librerías ni herramientas de desarrollo",
+      "C. Bajo rendimiento debido a la poca flexibilidad.",
+      "D. Necesidad de conocer varios lenguajes para la compatibilidad."
+    ],
+    "respuesta_correcta": "D. Necesidad de conocer varios lenguajes para la compatibilidad.",
+    "explicacion": "Al crear versiones nativas para plataformas diferentes, normalmente necesitas conocer sus respectivos lenguajes y herramientas. Por ejemplo, puedes desarrollar una versión para Android con Kotlin y otra para iOS con Swift. El esfuerzo no termina al escribirlas: también debes mantener y probar ambas versiones. Esa es la dificultad de dar soporte a varias plataformas; no significa que toda app nativa necesite varios lenguajes si solo se dirige a un sistema operativo. El desarrollo nativo no se caracteriza por un bajo rendimiento."
+  },
+  {
+    "id": 48,
+    "pregunta": "Qué elemento relaciona el hardware con el software:",
+    "opciones": [
+      "A. Kernel.",
+      "B. UI.",
+      "C. API.",
+      "D. HTML5."
+    ],
+    "respuesta_correcta": "A. Kernel.",
+    "explicacion": "El kernel es el núcleo del sistema operativo. Gestiona recursos como el procesador y la memoria y coordina el acceso al hardware mediante controladores. Cuando una app necesita leer un archivo, el sistema tramita esa petición para que no tenga que controlar directamente el dispositivo de almacenamiento. La UI conecta al usuario con la aplicación; una API define cómo solicitar funciones a un componente; HTML5 es una tecnología web. No deben confundirse esas funciones con la del núcleo del sistema."
+  },
+  {
+    "id": 49,
+    "pregunta": "Qué generación de comunicación móvil está basado en el UMTS (Universal Mobile Telecommunications System):",
+    "opciones": [
+      "A. Primera generación.",
+      "B. Segunda generación.",
+      "C. Tercera generación",
+      "D. Cuarta generación."
+    ],
+    "respuesta_correcta": "C. Tercera generación",
+    "explicacion": "UMTS significa Universal Mobile Telecommunications System y es una tecnología de tercera generación, o 3G. Permitió ampliar los servicios de datos móviles respecto a las redes anteriores, facilitando actividades como navegar por internet desde el teléfono. Una asociación útil para recordar es UMTS → 3G. No hay que confundirlo con LTE, asociado a la evolución hacia 4G, ni interpretar que todas las redes 3G del mundo utilizan exclusivamente UMTS."
+  },
+  {
+    "id": 50,
+    "pregunta": "Si queremos que nuestra aplicación saque el máximo rendimiento con una gran flexibilidad optaremos por el desarrollo en:",
+    "opciones": [
+      "A. Lenguaje nativo",
+      "B. Lenguaje multiplataforma",
+      "C. Lenguaje multiplataforma basado en HTML5",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "A. Lenguaje nativo",
+    "explicacion": "El desarrollo nativo permite aprovechar las herramientas y las API específicas del sistema operativo para ajustar el comportamiento y el rendimiento de la app. Por ejemplo, puedes integrar funciones de cámara o gráficos usando directamente las capacidades que ofrece la plataforma. Aquí la flexibilidad se refiere al control dentro de ese sistema, no a reutilizar el mismo código en todos los dispositivos. Una app nativa no es automáticamente más rápida: el resultado también depende de su diseño y optimización."
+  }
+];

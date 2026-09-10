@@ -24,6 +24,11 @@ let config = {
 };
 
 let modoPendiente = "estudio";
+// Regla de contenido: IDs 1–40 = posibles preguntas del examen final de cada asignatura.
+// IDs > 40 = repaso y apoyo; pueden repetir enunciados del bloque de examen.
+// No renumerar ni eliminar repeticiones: los IDs también vinculan progreso y sesiones.
+// El examen usa este bloque como base y añade apoyo solo si se configuran extras.
+// Procedimiento de incorporación de test: ver CONTENIDO.md en la raíz del proyecto.
 const IDS_RESERVADOS = 40;
 
 /* Los resúmenes se cargan ahora desde resumenes.js en la variable global bancoDeResumenes */
@@ -114,6 +119,7 @@ document.addEventListener("keydown", (event) => {
    Modal Config
 ========================= */
 function abrirModalConfig(modoElegido) {
+  if (modoElegido === "examen" && !estaExamenDisponible(asignaturaSeleccionada)) return;
   modoPendiente = modoElegido;
 
   const titulo = document.getElementById("config-titulo");
@@ -609,6 +615,9 @@ function toggleExplicacion() {
    Selección asignatura + modo
 ========================= */
 function seleccionarAsignatura(asig) {
+  const examenDisponible = estaExamenDisponible(asig);
+  document.getElementById("btn-modo-examen").disabled = !examenDisponible;
+  document.getElementById("examen-disponibilidad").classList.toggle("oculto", examenDisponible);
   document.getElementById("repaso-detalle").textContent = "Hasta 20 preguntas que necesitan refuerzo. Los aciertos sin ayuda se espacian en el tiempo.";
   asignaturaSeleccionada = asig;
   resaltarAsignaturaSeleccionada(asig);
@@ -620,6 +629,7 @@ function seleccionarAsignatura(asig) {
 
 function iniciarTest(asignatura, modoElegido = "estudio") {
   if (!asignatura) return;
+  if (modoElegido === "examen" && !estaExamenDisponible(asignatura)) return;
 
   if (typeof bancoDePreguntas === "undefined") {
     alert("No se está cargando preguntas.js (bancoDePreguntas no existe).");
@@ -1202,6 +1212,7 @@ function reconstruirPreguntaSesion(original, ordenOpciones) {
 }
 
 function continuarSesionGuardada() {
+  if (modoPendiente === "examen" && !estaExamenDisponible(asignaturaSeleccionada)) return;
   if (typeof ProgresoEstudio === "undefined") return;
   const sesion = ProgresoEstudio.obtenerSesionActiva(asignaturaSeleccionada, modoPendiente);
   const banco = obtenerPreguntasAsignatura(asignaturaSeleccionada);
