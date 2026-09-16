@@ -56,6 +56,15 @@ const catalogoAsignaturas = [
     requiereBloqueExamenCompleto: true,
     preguntas: typeof preguntasMultimediaMoviles !== "undefined" ? preguntasMultimediaMoviles : [],
     resumen: typeof resumenMultimediaMoviles !== "undefined" ? resumenMultimediaMoviles : ""
+  },
+  {
+    id: "serviciosProcesos",
+    nombre: "Programación de servicios y procesos",
+    sigla: "PSP",
+    color: "0, 168, 138",
+    requiereBloqueExamenCompleto: true,
+    preguntas: typeof preguntasServiciosProcesos !== "undefined" ? preguntasServiciosProcesos : [],
+    resumen: typeof resumenServiciosProcesos !== "undefined" ? resumenServiciosProcesos : ""
   }
 ];
 

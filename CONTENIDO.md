@@ -55,3 +55,13 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Los próximos test de apoyo de esta asignatura empezarán en el siguiente ID libre (actualmente 51), previa confirmación de su clasificación. Conservar repeticiones con IDs distintos.
 - Las seis asignaturas anteriores permanecen intactas; `test-new-subject.js` verifica su huella original de forma independiente.
 - Antes de cualquier decisión nueva sobre contenido, clasificación, IDs o comportamiento, consultar al propietario. No inferir autorización para corregir más enunciados a partir de la excepción UMTS.
+
+## Incorporación del 16 de septiembre de 2026
+
+- Nueva asignatura: **Programación de servicios y procesos**, ID técnico `serviciosProcesos`.
+- U1 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 41–50. JSON en `contenido/tests/serviciosProcesos/u1-test1.json`. Las siguientes preguntas de apoyo empezarán en el siguiente ID libre, actualmente 51, previa confirmación del material.
+- Correcciones textuales autorizadas: pregunta 1 (ID 41), «a la secundario» → «a la secundaria» en opciones A/B/C y texto de la solución A; pregunta 8 (ID 48), «a media que» → «a medida que» en la opción A. No cambia cuál es la opción correcta de ninguna pregunta.
+- Cada pregunta incorpora explicación didáctica. El resumen de U1 cubre únicamente los fundamentos presentes, no el conjunto de la asignatura.
+- Examen desactivado por `requiereBloqueExamenCompleto: true`; se habilita automáticamente al incorporar los IDs 1–40. No ocupar esos IDs con preguntas de apoyo.
+- `npm run build:content` genera los bancos de multimediaMoviles y serviciosProcesos desde sus JSON. No modifica los otros seis bancos.
+- Las 760 preguntas de las siete asignaturas anteriores mantienen su huella. Las pruebas verifican además que las respuestas se conservan al mezclar las opciones y que la nueva asignatura forma parte de los recursos offline.

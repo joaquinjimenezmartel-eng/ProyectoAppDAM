@@ -5,6 +5,16 @@ const vm = require("node:vm");
 const { cargarContenido, calcularHuellaContenidoEvaluable } = require("./validate-content.js");
 const root = path.resolve(__dirname, "..");
 const { catalogo, bancoDePreguntas } = cargarContenido();
+// Protege también la incorporación anterior de Multimedia (760 preguntas).
+assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => a.id !== "serviciosProcesos")),
+  "71b75def7dc4a448f6c3a5572b9fcd95cd2fe2acce862d9ff61cc0c310c65e52");
+const testServicios = JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/serviciosProcesos/u1-test1.json"), "utf8"));
+const servicios = catalogo.find(a => a.id === "serviciosProcesos");
+assert.deepEqual(servicios.preguntas, testServicios.preguntas.map(({ numeroOriginal, ...p }) => p));
+assert.deepEqual(servicios.preguntas.map(p => p.id), Array.from({ length: 10 }, (_, i) => 41 + i));
+assert.deepEqual(bancoDePreguntas.serviciosProcesos.map(p => p.correcta), [0, 0, 0, 2, 3, 1, 1, 1, 3, 0]);
+assert.ok(servicios.preguntas[0].opciones.slice(0, 3).every(opcion => opcion.includes("a la secundaria")));
+assert.ok(servicios.preguntas[7].opciones[0].includes("a medida que"));
 // La incorporación de una asignatura NO permite actualizar las 750 preguntas anteriores.
 const anteriores = ["sistemas", "bases", "entornos", "programacion", "empleabilidad", "lenguajeMarcas"];
 assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => anteriores.includes(a.id))),
@@ -24,6 +34,7 @@ function element(id) {
 const context = {
   console,
   preguntasMultimediaMoviles: nueva.preguntas,
+  preguntasServiciosProcesos: servicios.preguntas,
   bancoDePreguntas,
   document: { addEventListener() {}, getElementById: element },
   alert: message => { throw new Error(message); }
@@ -73,3 +84,32 @@ assert.equal(context.estaExamenDisponible("multimediaMoviles"), false);
 vm.runInContext('asignaturaPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("multimediaMoviles"), true);
 console.log("Nueva asignatura: JSON, IDs, respuestas, estudio y bloqueo/reactivación del examen verificados. Bancos anteriores intactos.");
+
+vm.runInContext(`
+  preguntasActuales = [];
+  seleccionarAsignatura("serviciosProcesos");
+  modoPendiente = "estudio";
+`, context);
+assert.equal(element("btn-modo-examen").disabled, true);
+assert.equal(context.estaExamenDisponible("serviciosProcesos"), false);
+context.abrirModalConfig("examen");
+context.iniciarTest("serviciosProcesos", "examen");
+assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
+vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
+assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
+context.iniciarTest("serviciosProcesos", "estudio");
+assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
+vm.runInContext('config.usarRango = false; iniciarTest("serviciosProcesos", "estudio");', context);
+assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
+for (const p of servicios.preguntas) {
+  const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.serviciosProcesos.find(q => q.id === p.id));
+  assert.equal(shuffled.opciones[shuffled.correcta], p.respuesta_correcta);
+}
+vm.runInContext(`
+  const serviciosPrueba = obtenerAsignatura("serviciosProcesos");
+  serviciosPrueba.preguntas = [...serviciosPrueba.preguntas, ...Array.from({length:39}, (_, i) => ({id: i + 1}))];
+`, context);
+assert.equal(context.estaExamenDisponible("serviciosProcesos"), false);
+vm.runInContext('serviciosPrueba.preguntas.push({id: 40});', context);
+assert.equal(context.estaExamenDisponible("serviciosProcesos"), true);
+console.log("Servicios y procesos: 10 preguntas, soluciones, estudio y examen condicionado verificados.");
