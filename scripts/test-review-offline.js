@@ -86,6 +86,7 @@ async function testOffline() {
   context.importScripts = name => vm.runInContext(fs.readFileSync(path.join(root, name), "utf8"), context);
   vm.runInContext(fs.readFileSync(path.join(root, "sw.js"), "utf8"), context);
   for (const name of context.self.OFFLINE_ASSETS) assert.ok(fs.existsSync(path.join(root, name)), name);
+  assert.ok(context.self.OFFLINE_ASSETS.every(name => name.split("/").every(part => !part.startsWith("."))), "El manifiesto no debe descargar archivos ocultos que GitHub Pages omite");
   for (const name of ["index.html", "script.js", "progreso.js", "style.css", "images/programacion/pregunta88.png"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));
   for (const name of ["preguntas/preguntas-multimedia-moviles.js", "resumenes/resumen-multimedia-moviles.js"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));
   for (const name of ["preguntas/preguntas-servicios-procesos.js", "resumenes/resumen-servicios-procesos.js"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));

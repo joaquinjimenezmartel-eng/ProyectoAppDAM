@@ -5,6 +5,7 @@ const resourceURL = name => new URL(name, self.registration.scope).href;
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
+    // Solo recursos públicos del manifiesto (sin .placeholder ni archivos ocultos).
     // No se activa una versión incompleta. La versión anterior sigue disponible.
     await cache.addAll(self.OFFLINE_ASSETS.map(name => new Request(resourceURL(name), { cache: "reload" })));
   })());

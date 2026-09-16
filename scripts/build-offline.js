@@ -4,6 +4,8 @@ const crypto = require("node:crypto");
 const root = path.resolve(__dirname, "../www");
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    // GitHub Pages omite archivos ocultos como .placeholder; no son recursos de la app.
+    if (entry.name.startsWith(".")) return [];
     const name = path.join(dir, entry.name);
     return entry.isDirectory() ? walk(name) : [path.relative(root, name).split(path.sep).join("/")];
   });

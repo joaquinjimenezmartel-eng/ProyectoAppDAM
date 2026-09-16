@@ -9,7 +9,7 @@
     "sync:web": "node scripts/build-offline.js && node scripts/sync-web.js",
     "sync:android": "npm run validate && npx cap copy android",
     "sync": "npm run validate && npm run sync:web && npx cap copy android",
-    "test": "npm run validate && node scripts/test-progress.js && node scripts/test-new-subject.js && node scripts/build-offline.js && node scripts/test-review-offline.js"
+    "test": "npm run validate && node scripts/test-progress.js && node scripts/test-new-subject.js && node scripts/build-offline.js && node scripts/test-review-offline.js && node scripts/test-offline-status.js"
   },
   "keywords": [],
   "author": "",
