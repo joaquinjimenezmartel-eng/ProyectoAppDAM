@@ -5,7 +5,8 @@ const root = path.resolve(__dirname, "..");
 const bancos = [
   ["multimediaMoviles", "multimedia-moviles", "preguntasMultimediaMoviles"],
   ["serviciosProcesos", "servicios-procesos", "preguntasServiciosProcesos"],
-  ["desarrolloInterfaces", "desarrollo-interfaces", "preguntasDesarrolloInterfaces"]
+  ["desarrolloInterfaces", "desarrollo-interfaces", "preguntasDesarrolloInterfaces"],
+  ["accesoDatos", "acceso-datos", "preguntasAccesoDatos"]
 ];
 for (const [asignaturaId, archivo, variable] of bancos) {
 const dir = path.join(root, "contenido/tests", asignaturaId);

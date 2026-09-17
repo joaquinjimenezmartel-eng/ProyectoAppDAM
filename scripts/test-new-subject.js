@@ -6,11 +6,14 @@ const { cargarContenido, calcularHuellaContenidoEvaluable } = require("./validat
 const root = path.resolve(__dirname, "..");
 const { catalogo, bancoDePreguntas } = cargarContenido();
 // Protege también la incorporación anterior de Multimedia (760 preguntas).
-assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => !["serviciosProcesos", "desarrolloInterfaces"].includes(a.id))),
+assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => !["serviciosProcesos", "desarrolloInterfaces", "accesoDatos"].includes(a.id))),
   "71b75def7dc4a448f6c3a5572b9fcd95cd2fe2acce862d9ff61cc0c310c65e52");
 // La nueva asignatura no permite modificar las 770 preguntas ya incorporadas.
-assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => a.id !== "desarrolloInterfaces")),
+assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => !["desarrolloInterfaces", "accesoDatos"].includes(a.id))),
   "31d2e6c9049e08a585cfaa66544ed97a6d52c6c53da60b2533554b20b5f00211");
+// Acceso a datos no permite modificar las 780 preguntas incorporadas previamente.
+assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => a.id !== "accesoDatos")),
+  "3506ac008a7f41f7c56b1d608bbf31602b49eaf6c3b85a1b2d33eaa23c7e571a");
 const testServicios = JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/serviciosProcesos/u1-test1.json"), "utf8"));
 const servicios = catalogo.find(a => a.id === "serviciosProcesos");
 assert.deepEqual(servicios.preguntas, testServicios.preguntas.map(({ numeroOriginal, ...p }) => p));
@@ -35,6 +38,13 @@ assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 10 },
 assert.deepEqual(bancoDePreguntas.desarrolloInterfaces.map(p => p.correcta), [1, 2, 3, 1, 0, 2, 3, 3, 1, 0]);
 assert.equal(interfaces.preguntas[3].respuesta_correcta, interfaces.preguntas[3].opciones[1]);
 assert.equal(interfaces.preguntas[9].respuesta_correcta, "A. El prototipo");
+const testAccesoDatos = JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/accesoDatos/u1-test1.json"), "utf8"));
+const accesoDatos = catalogo.find(a => a.id === "accesoDatos");
+assert.deepEqual(accesoDatos.preguntas, testAccesoDatos.preguntas.map(({ numeroOriginal, ...p }) => p));
+assert.deepEqual(accesoDatos.preguntas.map(p => p.id), Array.from({ length: 10 }, (_, i) => 41 + i));
+assert.deepEqual(bancoDePreguntas.accesoDatos.map(p => p.correcta), [3, 0, 1, 3, 0, 3, 1, 3, 2, 3]);
+assert.equal(accesoDatos.preguntas[4].respuesta_correcta, "A. Atomic.");
+assert.equal(accesoDatos.preguntas[8].respuesta_correcta, "C. Bases de datos NoSQL.");
 
 const elements = new Map();
 function element(id) {
@@ -46,6 +56,7 @@ const context = {
   preguntasMultimediaMoviles: nueva.preguntas,
   preguntasServiciosProcesos: servicios.preguntas,
   preguntasDesarrolloInterfaces: interfaces.preguntas,
+  preguntasAccesoDatos: accesoDatos.preguntas,
   bancoDePreguntas,
   document: { addEventListener() {}, getElementById: element },
   alert: message => { throw new Error(message); }
@@ -152,3 +163,31 @@ assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), false);
 vm.runInContext('interfacesPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), true);
 console.log("Desarrollo de interfaces: 10 preguntas, soluciones, estudio y examen condicionado verificados.");
+
+vm.runInContext(`
+  preguntasActuales = [];
+  seleccionarAsignatura("accesoDatos");
+  modoPendiente = "estudio";
+`, context);
+assert.equal(element("btn-modo-examen").disabled, true);
+assert.equal(context.estaExamenDisponible("accesoDatos"), false);
+context.abrirModalConfig("examen");
+context.iniciarTest("accesoDatos", "examen");
+assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
+vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
+assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
+context.iniciarTest("accesoDatos", "estudio");
+assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41)", context));
+for (const p of accesoDatos.preguntas) {
+  const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.accesoDatos.find(q => q.id === p.id));
+  assert.equal(shuffled.opciones[shuffled.correcta], p.respuesta_correcta);
+}
+vm.runInContext(`
+  const accesoDatosPrueba = obtenerAsignatura("accesoDatos");
+  accesoDatosPrueba.preguntas = [...accesoDatosPrueba.preguntas, ...Array.from({length:39}, (_, i) => ({id: i + 1}))];
+`, context);
+assert.equal(context.estaExamenDisponible("accesoDatos"), false);
+vm.runInContext('accesoDatosPrueba.preguntas.push({id: 40});', context);
+assert.equal(context.estaExamenDisponible("accesoDatos"), true);
+console.log("Acceso a datos: 10 preguntas, soluciones, estudio y examen condicionado verificados.");

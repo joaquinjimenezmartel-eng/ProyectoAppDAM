@@ -74,6 +74,15 @@ const catalogoAsignaturas = [
     requiereBloqueExamenCompleto: true,
     preguntas: typeof preguntasDesarrolloInterfaces !== "undefined" ? preguntasDesarrolloInterfaces : [],
     resumen: typeof resumenDesarrolloInterfaces !== "undefined" ? resumenDesarrolloInterfaces : ""
+  },
+  {
+    id: "accesoDatos",
+    nombre: "Acceso a datos",
+    sigla: "AD",
+    color: "52, 199, 89",
+    requiereBloqueExamenCompleto: true,
+    preguntas: typeof preguntasAccesoDatos !== "undefined" ? preguntasAccesoDatos : [],
+    resumen: typeof resumenAccesoDatos !== "undefined" ? resumenAccesoDatos : ""
   }
 ];
 
