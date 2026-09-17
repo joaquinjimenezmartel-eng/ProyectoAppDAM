@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "asignaturaId": "multimediaMoviles",
+  "testId": "u2-test1",
+  "fuente": "U2/U2 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "numeroOriginal": 1,
+      "id": 51,
+      "campos": ["pregunta", "opciones.B", "opciones.C", "respuesta_correcta"],
+      "original": "?: / Lollipop / Marshmellow",
+      "corregido": "? / Lollipop. / Marshmallow.",
+      "autorizacion": "Correcciones ortográficas y de puntuación autorizadas expresamente por el propietario el 2026-09-17."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 52,
+      "campos": ["opciones.B", "opciones.C", "respuesta_correcta"],
+      "original": "Carpeta res/mipmap / Carpeta res/Grandle.",
+      "corregido": "Carpeta res/mipmap. / Carpeta res/Gradle.",
+      "autorizacion": "Correcciones ortográficas y de puntuación autorizadas expresamente por el propietario el 2026-09-17."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 54,
+      "campo": "opciones.D",
+      "original": "Broadcast Receiver..",
+      "corregido": "Broadcast Receiver.",
+      "autorizacion": "Corrección de puntuación autorizada expresamente por el propietario el 2026-09-17."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 60,
+      "campos": ["opciones.B", "opciones.C", "respuesta_correcta"],
+      "original": "clase r / identificador (id)",
+      "corregido": "clase R / identificador (ID)",
+      "autorizacion": "Correcciones ortográficas de mayúsculas autorizadas expresamente por el propietario el 2026-09-17."
+    },
+    {
+      "preguntasOriginales": [3, 5, 6, 7, 8],
+      "ids": [53, 55, 56, 57, 58],
+      "campo": "puntuacion",
+      "original": "Opciones sin punto final y signo de interrogación seguido de dos puntos.",
+      "corregido": "Puntuación final normalizada.",
+      "autorizacion": "Correcciones de puntuación autorizadas expresamente por el propietario el 2026-09-17."
+    }
+  ],
+  "referenciasExplicaciones": [
+    "https://developer.android.com/about/versions/marshmallow/android-6.0-changes",
+    "https://developer.android.com/training/permissions/requesting",
+    "https://developer.android.com/guide/components/fundamentals",
+    "https://developer.android.com/guide/topics/resources/providing-resources",
+    "https://developer.android.com/tools/adb"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 51,
+      "pregunta": "¿Con qué versión de Android se produce un importante cambio en la gestión de permisos?",
+      "opciones": [
+        "A. Jelly Bean.",
+        "B. Lollipop.",
+        "C. Marshmallow.",
+        "D. Oreo."
+      ],
+      "respuesta_correcta": "C. Marshmallow.",
+      "explicacion": "Android 6.0 Marshmallow, correspondiente al nivel de API 23, introdujo el modelo de permisos en tiempo de ejecución. Desde esta versión, las aplicaciones que solicitan permisos peligrosos deben comprobarlos y pedirlos cuando necesitan acceder a la función protegida, y el usuario puede aceptarlos o rechazarlos. Antes, esos permisos se concedían principalmente durante la instalación de la aplicación."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 52,
+      "pregunta": "¿Cuál de estas carpetas no está incluida en los recursos de un proyecto?",
+      "opciones": [
+        "A. Carpeta res/layout.",
+        "B. Carpeta res/mipmap.",
+        "C. Carpeta res/Gradle.",
+        "D. Carpeta res/values."
+      ],
+      "respuesta_correcta": "C. Carpeta res/Gradle.",
+      "explicacion": "La carpeta res contiene recursos que la aplicación utiliza sin incluirlos directamente en el código. En res/layout se guardan diseños XML, res/mipmap se utiliza habitualmente para iconos de lanzamiento y res/values contiene valores como cadenas, colores o estilos. Gradle es el sistema de construcción del proyecto y utiliza archivos y directorios propios, pero no existe una carpeta de recursos res/Gradle."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 53,
+      "pregunta": "¿Cuál de estas frases sobre el archivo Manifest es verdadera?",
+      "opciones": [
+        "A. El archivo Manifest es necesario para que se pueda ejecutar el código de la aplicación.",
+        "B. El archivo Manifest contiene las variables estáticas en las que se identifica el tipo de recurso.",
+        "C. El archivo Manifest es un archivo de tipo .html.",
+        "D. Ninguna de las anteriores es correcta."
+      ],
+      "respuesta_correcta": "A. El archivo Manifest es necesario para que se pueda ejecutar el código de la aplicación.",
+      "explicacion": "AndroidManifest.xml describe información esencial que el sistema necesita antes de iniciar componentes de la aplicación. Declara actividades, servicios, receptores, proveedores, permisos y características necesarias del dispositivo. No es un archivo HTML ni contiene los identificadores generados de los recursos. Si un componente que debe ser conocido por Android no está declarado correctamente, el sistema no podrá utilizarlo como se espera."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 54,
+      "pregunta": "¿Cuál de estos puede ser considerado como el componente principal de una aplicación?",
+      "opciones": [
+        "A. Activity.",
+        "B. Service.",
+        "C. Content Provider.",
+        "D. Broadcast Receiver."
+      ],
+      "respuesta_correcta": "A. Activity.",
+      "explicacion": "Una Activity representa normalmente una pantalla con la que el usuario puede interactuar, por lo que suele actuar como punto de entrada principal de muchas aplicaciones. Android también define Services, Broadcast Receivers y Content Providers, cada uno con una finalidad y un ciclo de vida distintos. Una aplicación puede funcionar sin una interfaz visible, pero en una app interactiva la Activity es el componente central de la experiencia en pantalla."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 55,
+      "pregunta": "¿Cuál es la función principal de la Clase R en Android en relación con los recursos?",
+      "opciones": [
+        "A. Almacena directamente valores de recursos como \"Hola mundo\".",
+        "B. Mantiene referencias de recursos en memoria con direcciones específicas.",
+        "C. Se encarga solo de la lectura de archivos XML.",
+        "D. No tiene ninguna función en la gestión de recursos."
+      ],
+      "respuesta_correcta": "B. Mantiene referencias de recursos en memoria con direcciones específicas.",
+      "explicacion": "Las herramientas de compilación generan la clase R con identificadores enteros para los recursos incluidos en res. El código puede referirse a ellos mediante expresiones como R.string.titulo o R.drawable.icono. La clase R no almacena directamente el texto ni la imagen y tampoco se limita a leer XML: proporciona referencias que permiten al sistema localizar el recurso correspondiente. Técnicamente son identificadores, no direcciones de memoria que el programador deba administrar."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 56,
+      "pregunta": "¿Mediante qué herramienta se comunica Android Studio con el dispositivo móvil?",
+      "opciones": [
+        "A. AVD.",
+        "B. ADB.",
+        "C. APK.",
+        "D. APP."
+      ],
+      "respuesta_correcta": "B. ADB.",
+      "explicacion": "ADB significa Android Debug Bridge. Es una herramienta cliente-servidor que permite comunicarse con un dispositivo o emulador para instalar aplicaciones, ejecutar comandos, consultar registros y realizar tareas de depuración. AVD define la configuración de un dispositivo virtual y APK es un formato de paquete instalable; ninguno de ellos sustituye el canal de comunicación que proporciona ADB."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 57,
+      "pregunta": "Android es un sistema que está basado en:",
+      "opciones": [
+        "A. Windows.",
+        "B. Linux.",
+        "C. Macintosh.",
+        "D. MIUI."
+      ],
+      "respuesta_correcta": "B. Linux.",
+      "explicacion": "Android utiliza el kernel de Linux como base para gestionar procesos, memoria, seguridad, red y controladores de hardware. Sobre ese núcleo incorpora sus propias bibliotecas, entorno de ejecución, framework y aplicaciones. MIUI es una capa y distribución de Android utilizada en determinados dispositivos; Windows y macOS son familias de sistemas diferentes."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 58,
+      "pregunta": "Cuando pongas un nombre a una aplicación:",
+      "opciones": [
+        "A. Es conveniente que todo sea en mayúsculas.",
+        "B. Es conveniente que todo sea en minúsculas.",
+        "C. Por motivos de seguridad, debe tener letras, números y signos de puntuación.",
+        "D. Es conveniente que tan solo sea mayúscula la primera letra."
+      ],
+      "respuesta_correcta": "D. Es conveniente que tan solo sea mayúscula la primera letra.",
+      "explicacion": "El nombre visible de una aplicación debe ser breve, legible y mantener una capitalización coherente, como ocurre normalmente al escribir un nombre propio o un título. No necesita incorporar números ni signos por seguridad y escribirlo completamente en mayúsculas puede dificultar la lectura. Esta recomendación se refiere a la etiqueta que ve el usuario; el identificador técnico del paquete sigue reglas distintas."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 59,
+      "pregunta": "Di cuál de las siguientes afirmaciones es verdadera:",
+      "opciones": [
+        "A. Android es un sistema operativo obsoleto.",
+        "B. Los componentes de una aplicación tienen el mismo ciclo de vida.",
+        "C. Los componentes de Android son Activity, Content, Intent y Broadcast Receiver.",
+        "D. En Android a cada aplicación se le asigna de forma automática un identificador."
+      ],
+      "respuesta_correcta": "D. En Android a cada aplicación se le asigna de forma automática un identificador.",
+      "explicacion": "Android ejecuta cada aplicación dentro de un entorno aislado y le asigna por defecto un identificador de usuario de Linux único. Los permisos de sus archivos se apoyan en ese identificador para limitar el acceso desde otras aplicaciones. Los cuatro tipos principales de componentes son Activity, Service, Broadcast Receiver y Content Provider; no comparten un único ciclo de vida, e Intent es un mecanismo de comunicación, no uno de esos cuatro componentes."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 60,
+      "pregunta": "Di cuál de las siguientes afirmaciones es verdadera:",
+      "opciones": [
+        "A. Entre los recursos de una aplicación encontramos código que se ejecuta.",
+        "B. La estructura de un proyecto viene dada por la clase R.",
+        "C. Los recursos se gestionan a través de ficheros XML y tienen un identificador (ID).",
+        "D. Los recursos se encuentran en la carpeta Manifest."
+      ],
+      "respuesta_correcta": "C. Los recursos se gestionan a través de ficheros XML y tienen un identificador (ID).",
+      "explicacion": "Los recursos separan del código elementos como textos, colores, estilos, diseños, imágenes o animaciones. Muchos se definen mediante XML y las herramientas generan identificadores accesibles desde la clase R. El código ejecutable no es un recurso de res, el Manifest es un archivo de configuración y la clase R refleja los identificadores generados, pero no determina por sí sola toda la estructura del proyecto."
+    }
+  ]
+}

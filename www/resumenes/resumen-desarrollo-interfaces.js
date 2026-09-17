@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1 · Diseño e interacción</span>
+    <span class="study-summary__eyebrow">U1–U2 · Diseño e interfaces Java</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -24,5 +24,25 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Personas y límites del proyecto</h4>
     <p>El cliente define objetivos, el usuario aporta necesidades reales y el presupuesto condiciona el alcance, el equipo y el tiempo disponibles. Diseñar consiste en equilibrar esos factores y validar las decisiones con prototipos antes de asumir el coste de la implementación final.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>AWT y Swing</h4>
+    <p>AWT aporta la infraestructura gráfica básica de Java y Swing amplía esa base con componentes como <code>JLabel</code>, <code>JButton</code>, <code>JComboBox</code>, <code>JFrame</code> y <code>JDialog</code>. Una etiqueta presenta texto o imágenes; un diálogo crea una ventana secundaria que puede ser modal o no modal.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Gestores de disposición</h4>
+    <p>Un layout manager calcula cómo se colocan los componentes dentro de un contenedor. <code>GridLayout</code> crea una rejilla de celdas del mismo tamaño; <code>GridBagLayout</code> permite una distribución más flexible mediante restricciones; y <code>BorderLayout</code> divide el espacio en zonas. Las propiedades <code>hgap</code> y <code>vgap</code> controlan la separación horizontal y vertical.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Eventos y listeners</h4>
+    <p>Los eventos describen acciones o cambios que la aplicación puede detectar. Para reaccionar, se registra un listener en el componente adecuado. El listener recibe un objeto con información sobre el evento y ejecuta una respuesta breve; las tareas costosas no deben bloquear el hilo de eventos de Swing.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Ventanas modales</h4>
+    <p>Un diálogo modal bloquea la interacción con otras ventanas incluidas en su ámbito hasta que se cierra. Es útil para decisiones que deben resolverse antes de continuar. Un diálogo no modal permanece abierto sin impedir el uso del resto de la aplicación.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Orientación a objetos</h4>
+    <p>La POO permite organizar la interfaz en objetos con responsabilidades concretas, encapsular su estado y reutilizar componentes. Separar la presentación, los datos y la lógica de interacción ayuda a mantener el código y facilita las pruebas.</p>
   </section>
 </article>`;

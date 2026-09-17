@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1 · Sistemas y gestión empresarial</span>
+    <span class="study-summary__eyebrow">U1–U2 · Sistemas, ERP y gestión empresarial</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -24,5 +24,25 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Soluciones y pilares de la gestión</h4>
     <p>Las soluciones verticales responden a necesidades concretas de un sector. Una gestión eficaz integra procesos de negocio, flujos de datos e información: define cómo se trabaja, cómo circulan los registros y cómo se convierten en conocimiento para decidir.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>ERP modular e integrado</h4>
+    <p>Un ERP reúne módulos de finanzas, ventas, compras, recursos humanos, almacén, producción y proyectos. La modularidad permite implantar áreas funcionales; la integración conecta sus datos y procesos para evitar duplicidades y mantener una visión común de la empresa.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Arquitectura cliente-servidor</h4>
+    <p>El cliente muestra la interfaz y recoge las acciones del usuario. El servidor ejecuta la lógica de negocio, aplica permisos y coordina el acceso a la base de datos. La infraestructura de comunicaciones conecta ambas partes y permite distribuir el sistema.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Datos para analizar</h4>
+    <p>Un data warehouse integra grandes volúmenes de datos históricos y estructurados para informes y análisis. OLAP permite explorar esos datos desde distintas dimensiones; data mining descubre patrones; y los KPI convierten objetivos empresariales en medidas concretas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Odoo y tecnologías</h4>
+    <p>Odoo utiliza Python en su servidor, PostgreSQL como base de datos, XML en numerosos archivos de datos y vistas, y JavaScript en el cliente web. Sus módulos amplían el sistema sin perder el acceso a los datos y servicios compartidos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Licencias y contratación</h4>
+    <p>El modelo SaaS suele contratarse mediante suscripción periódica. Una licencia perpetua concede el uso de una versión mediante un pago inicial. Open source describe libertades sobre el código, no necesariamente precio cero: un producto abierto puede venderse y complementarse con servicios profesionales o módulos comerciales.</p>
   </section>
 </article>`;

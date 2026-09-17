@@ -119,5 +119,125 @@ const preguntasAccesoDatos = [
     ],
     "respuesta_correcta": "D. Todas las anteriores son correctas.",
     "explicacion": "Un documento XML organiza elementos anidados formando una jerarquía que puede representarse como un árbol con un único elemento raíz. Los motores que almacenan o consultan XML pueden crear índices sobre nombres, rutas, texto o valores para acelerar determinadas búsquedas. El índice no forma parte obligatoria del archivo XML: es una estructura adicional que administra la herramienta o la base de datos."
+  },
+  {
+    "id": 51,
+    "pregunta": "La clase File de Java permite:",
+    "opciones": [
+      "A. Obtener información sobre un fichero.",
+      "B. Crear un fichero.",
+      "C. Abrir un fichero.",
+      "D. Esa clase no es de Java."
+    ],
+    "respuesta_correcta": "A. Obtener información sobre un fichero.",
+    "explicacion": "java.io.File representa una ruta abstracta a un archivo o directorio. Permite consultar información como su existencia, tamaño, permisos, nombre o ubicación, pero no abre el contenido para leerlo o escribirlo; para eso se utilizan flujos, lectores o canales. File también incluye operaciones sobre el sistema de archivos, como createNewFile(), mkdir() y delete(). Por tanto, su función principal es describir y consultar una ruta, aunque su API no se limita exclusivamente a obtener información."
+  },
+  {
+    "id": 52,
+    "pregunta": "La función seek() permite:",
+    "opciones": [
+      "A. Buscar metainformación de un fichero.",
+      "B. Situar el cursor en la posición deseada.",
+      "C. Introducir información en ficheros.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "B. Situar el cursor en la posición deseada.",
+    "explicacion": "En RandomAccessFile, seek(posición) desplaza el puntero del archivo al desplazamiento indicado en bytes desde el inicio. La siguiente lectura o escritura comienza en esa posición. Esto permite acceder directamente a una parte concreta sin recorrer todo lo anterior. seek() no busca metadatos ni escribe por sí mismo: únicamente cambia la posición desde la que actuará la operación posterior."
+  },
+  {
+    "id": 53,
+    "pregunta": "Las bases de datos de ficheros:",
+    "opciones": [
+      "A. Ya no se usan.",
+      "B. Siguen usándose ampliamente.",
+      "C. Su uso se ha reducido a ciertos sectores específicos.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Su uso se ha reducido a ciertos sectores específicos.",
+    "explicacion": "Los sistemas basados directamente en ficheros almacenan la información en archivos cuya estructura y acceso controla la aplicación. Siguen siendo útiles en escenarios concretos, pero para datos relacionados y compartidos suelen sustituirse por gestores de bases de datos que ofrecen consultas, concurrencia, integridad, seguridad y recuperación. Un archivo puede ser suficiente para una configuración o un intercambio sencillo; no siempre resulta adecuado como base de un sistema multiusuario."
+  },
+  {
+    "id": 54,
+    "pregunta": "Las clases FileReader y FileWriter pertenecen a:",
+    "opciones": [
+      "A. El modo de acceso secuencial.",
+      "B. El modo de acceso aleatorio.",
+      "C. El modo de acceso buffering.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "A. El modo de acceso secuencial.",
+    "explicacion": "FileReader y FileWriter trabajan con flujos de caracteres que se consumen o producen siguiendo una secuencia. No ofrecen una operación como seek() para saltar directamente a una posición arbitraria. El buffering tampoco es un modo de acceso independiente: BufferedReader y BufferedWriter envuelven otros flujos para reducir operaciones físicas y mejorar la eficiencia. Cuando importa la codificación, conviene indicarla explícitamente mediante los constructores adecuados."
+  },
+  {
+    "id": 55,
+    "pregunta": "Los ficheros de texto almacenan:",
+    "opciones": [
+      "A. bytes.",
+      "B. bits.",
+      "C. Cadenas de caracteres.",
+      "D. Las dos primeras son correctas."
+    ],
+    "respuesta_correcta": "C. Cadenas de caracteres.",
+    "explicacion": "Un fichero de texto representa una secuencia de caracteres organizada según una codificación, como UTF-8. Físicamente el almacenamiento siempre utiliza bytes y, en último término, bits; la diferencia está en cómo se interpretan esos bytes. En un archivo de texto se decodifican como caracteres, mientras que en uno binario se interpretan según el formato concreto de imágenes, audio, objetos u otros datos."
+  },
+  {
+    "id": 56,
+    "pregunta": "Los modos de acceso son aleatorio y:",
+    "opciones": [
+      "A. De cierre.",
+      "B. buffering.",
+      "C. Secuencial.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "C. Secuencial.",
+    "explicacion": "En el acceso secuencial, los datos se recorren en orden desde la posición actual; para llegar a un elemento posterior se procesan los anteriores. En el acceso aleatorio se puede colocar el puntero directamente en una posición concreta, como permite RandomAccessFile. El cierre libera recursos y el buffering agrupa operaciones para mejorar el rendimiento, pero ninguno de ellos constituye uno de estos dos modos de acceso."
+  },
+  {
+    "id": 57,
+    "pregunta": "Para resolver excepciones podemos:",
+    "opciones": [
+      "A. Dar una única solución para todo.",
+      "B. Dar soluciones individuales para cada una de las excepciones.",
+      "C. Las dos anteriores son válidas.",
+      "D. Las excepciones no se pueden resolver."
+    ],
+    "respuesta_correcta": "C. Las dos anteriores son válidas.",
+    "explicacion": "Java permite agrupar varios tipos de excepción que comparten el mismo tratamiento o utilizar bloques catch separados para aplicar respuestas diferentes. Un manejador general puede ser útil si todas las situaciones requieren la misma acción, mientras que los manejadores específicos permiten recuperar el programa o informar al usuario con mayor precisión. Debe evitarse capturar excepciones demasiado generales si eso oculta errores que necesitan un tratamiento distinto."
+  },
+  {
+    "id": 58,
+    "pregunta": "RandomAccessFile es una clase para:",
+    "opciones": [
+      "A. El acceso aleatorio.",
+      "B. El cierre del buffer.",
+      "C. La búsqueda dentro de un fichero.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. El acceso aleatorio.",
+    "explicacion": "RandomAccessFile permite leer y, según el modo de apertura, escribir en posiciones arbitrarias de un archivo. Mantiene un puntero que puede consultarse con getFilePointer() y desplazarse con seek(). Resulta útil cuando los registros tienen posiciones conocidas o se necesita actualizar una parte concreta sin procesar el archivo completo. No representa un buffer ni realiza por sí sola búsquedas por contenido."
+  },
+  {
+    "id": 59,
+    "pregunta": "Try, catch y finally se emplean para:",
+    "opciones": [
+      "A. La codificación.",
+      "B. La descodificación.",
+      "C. La lectura de ficheros.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "try, catch y finally forman parte del mecanismo de tratamiento de excepciones. try delimita el código que puede fallar, catch recibe y trata una excepción compatible y finally contiene tareas que deben ejecutarse al finalizar el bloque, haya ocurrido o no una excepción. Pueden aparecer al leer archivos porque esas operaciones pueden fallar, pero no son instrucciones específicas de lectura, codificación o descodificación. Para cerrar recursos, suele preferirse try-with-resources."
+  },
+  {
+    "id": 60,
+    "pregunta": "UTF-8:",
+    "opciones": [
+      "A. Está desapareciendo.",
+      "B. Es compatible con ASCII.",
+      "C. Es un tipo de fichero no muy usado.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "B. Es compatible con ASCII.",
+    "explicacion": "UTF-8 es una codificación de longitud variable para representar Unicode mediante unidades de 8 bits. Los caracteres del repertorio ASCII conservan en UTF-8 los mismos valores de byte, lo que facilita la compatibilidad con protocolos y archivos existentes. Los demás caracteres se representan con secuencias de varios bytes. UTF-8 no es un tipo de fichero: es la codificación utilizada para convertir caracteres en bytes y recuperarlos después."
   }
 ];
