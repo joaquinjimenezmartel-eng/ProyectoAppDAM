@@ -1,0 +1,123 @@
+// Generado desde contenido/tests/desarrolloInterfaces/*.json. Ejecutar npm run build:content.
+const preguntasDesarrolloInterfaces = [
+  {
+    "id": 41,
+    "pregunta": "El diseño gráfico:",
+    "opciones": [
+      "A. Cumple una función puramente estética.",
+      "B. Puede poseer funcionalidad dentro de la interfaz si se usa bien.",
+      "C. Es innecesario y debe evitarse.",
+      "D. Todas son incorrectas."
+    ],
+    "respuesta_correcta": "B. Puede poseer funcionalidad dentro de la interfaz si se usa bien.",
+    "explicacion": "El diseño gráfico no solo decora una interfaz: también organiza la información, establece jerarquías y ayuda a reconocer acciones y estados. El color, el contraste, la tipografía, los iconos y el espaciado pueden guiar la atención y hacer que una tarea resulte más clara. Para que sea funcional, cada recurso visual debe tener un propósito y mantener coherencia; un efecto atractivo que dificulta leer o utilizar la interfaz deja de ser útil."
+  },
+  {
+    "id": 42,
+    "pregunta": "El hexadecimal es:",
+    "opciones": [
+      "A. Un sistema lingüístico que tan solo emplea como cifras “0” y “1”",
+      "B. Sistema de numeración con base en el número 6",
+      "C. Sistema de numeración con base en el número 16",
+      "D. Sistema de numeración con base en el número 60"
+    ],
+    "respuesta_correcta": "C. Sistema de numeración con base en el número 16",
+    "explicacion": "El sistema hexadecimal utiliza dieciséis símbolos: del 0 al 9 y de la A a la F. Cada cifra hexadecimal representa cuatro bits, por lo que resulta práctico para expresar valores binarios de forma compacta. En diseño web, un color como #2A7FFF representa sus componentes rojo, verde y azul mediante tres pares hexadecimales. El sistema que solo utiliza 0 y 1 es el binario, de base 2."
+  },
+  {
+    "id": 43,
+    "pregunta": "El sketching:",
+    "opciones": [
+      "A. Es un diseño completo que se realiza tras el prototipo a ordenador.",
+      "B. Es un diseño, en papel u ordenador, que ya incluye los elementos que el prototipo contendrá.",
+      "C. Es un diseño inicial a ordenador que incluye los elementos y se realiza tras el wireframing.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "El sketching consiste en realizar bocetos rápidos para explorar y comunicar ideas antes de desarrollar una solución con más detalle. Puede hacerse en papel o con una herramienta digital y admite cambios con muy poco coste. No es un diseño completo ni tiene que contener todos los elementos del futuro prototipo; tampoco ocupa una posición rígida después del wireframe, porque puede utilizarse de forma temprana y repetirse durante el proceso."
+  },
+  {
+    "id": 44,
+    "pregunta": "El tiempo de respuesta:",
+    "opciones": [
+      "A. Debe ser breve para no ralentizar la página",
+      "B. Debe ser medio, ni corto ni largo, para que los usuarios se puedan adaptar a él y sin provocar esperas pesadas",
+      "C. Debe ser largo pensando en los usuarios que requieren más tiempo, aunque ello produzca esperas",
+      "D. No debe haber tiempos de espera en una interfaz"
+    ],
+    "respuesta_correcta": "B. Debe ser medio, ni corto ni largo, para que los usuarios se puedan adaptar a él y sin provocar esperas pesadas",
+    "explicacion": "Una interacción debe responder con un ritmo que el usuario pueda comprender sin convertir la espera en una carga. Las acciones sencillas deben ofrecer reacción inmediata o muy rápida; si una operación necesita más tiempo, la interfaz debe mostrar su estado mediante una animación, un indicador de progreso o un mensaje claro. Adaptar el ritmo no significa ralentizar el sistema de forma artificial, sino equilibrar rapidez, comprensión y retroalimentación para que el usuario conserve el control."
+  },
+  {
+    "id": 45,
+    "pregunta": "En el sistema RGB:",
+    "opciones": [
+      "A. Los tonos de los colores aditivos se numeran de 0 a 255.",
+      "B. Los tonos de los colores no aditivos se numeran de 0 a 255",
+      "C. Los tonos de los colores aditivos se numeran de 1 a 256.",
+      "D. Los tonos de los colores no aditivos se numeran de 1 a 256"
+    ],
+    "respuesta_correcta": "A. Los tonos de los colores aditivos se numeran de 0 a 255.",
+    "explicacion": "RGB es un modelo aditivo de luz basado en rojo, verde y azul. En la representación habitual de 8 bits por canal, cada componente toma un valor entre 0 y 255: 0 significa ausencia de ese componente y 255, su intensidad máxima. Así, RGB(0, 0, 0) produce negro y RGB(255, 255, 255) produce blanco. El intervalo contiene 256 valores porque también se cuenta el cero."
+  },
+  {
+    "id": 46,
+    "pregunta": "La interacción persona-ordenador también puede ser nombrada como:",
+    "opciones": [
+      "A. Interacción cibernética.",
+      "B. IPO o IPC.",
+      "C. IPO o HCI.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "C. IPO o HCI.",
+    "explicacion": "IPO son las siglas de interacción persona-ordenador y HCI procede del inglés Human–Computer Interaction. Ambas denominaciones se refieren al campo que estudia cómo las personas utilizan sistemas interactivos y cómo diseñarlos para que resulten útiles, comprensibles, eficientes y accesibles. Incluye aspectos técnicos, visuales y humanos, como la percepción, el contexto de uso y la facilidad de aprendizaje."
+  },
+  {
+    "id": 47,
+    "pregunta": "Las clases de prototipo son:",
+    "opciones": [
+      "A. Ascendente, descendente y estacionario",
+      "B. Evolutivo, elemental y hemisférico",
+      "C. Lineal, oblicuo y circular",
+      "D. Horizontal, vertical y diagonal"
+    ],
+    "respuesta_correcta": "D. Horizontal, vertical y diagonal",
+    "explicacion": "Un prototipo horizontal muestra muchas áreas o funciones con poca profundidad; sirve para observar la amplitud y la organización general. Un prototipo vertical desarrolla con detalle una parte concreta y permite estudiar su funcionamiento. El diagonal combina ambas ideas: presenta una visión amplia hasta cierto nivel y profundiza en algunos recorridos o funciones. La elección depende de lo que se quiera comprobar con los usuarios."
+  },
+  {
+    "id": 48,
+    "pregunta": "Los agentes que participan en la producción de una interfaz son:",
+    "opciones": [
+      "A. Cliente",
+      "B. Usuario",
+      "C. Presupuesto",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "El cliente aporta los objetivos y las necesidades del proyecto, mientras que el usuario representa a quien utilizará la interfaz y permite valorar si la solución es comprensible y útil. El presupuesto no es una persona, pero sí un condicionante directo de la producción: limita el tiempo, las herramientas, el equipo y el alcance que pueden dedicarse al diseño y a las pruebas. Una buena solución equilibra estos tres elementos."
+  },
+  {
+    "id": 49,
+    "pregunta": "Los colores complementarios son los opuestos en un círculo cromático por su:",
+    "opciones": [
+      "A. Saturación",
+      "B. Matiz",
+      "C. Brillo",
+      "D. Saturación, pero no son opuestos en el círculo sino contiguos"
+    ],
+    "respuesta_correcta": "B. Matiz",
+    "explicacion": "El matiz identifica la familia del color y determina su posición angular en el círculo cromático. Dos colores complementarios ocupan posiciones opuestas por su matiz, por lo que generan un contraste marcado cuando se colocan juntos. La saturación indica la intensidad o pureza del color y el brillo describe su luminosidad; modificar estos atributos no convierte por sí solo un color en el complementario de otro."
+  },
+  {
+    "id": 50,
+    "pregunta": "Una de las herramientas más empleadas para la creación de interfaces es:",
+    "opciones": [
+      "A. El prototipo",
+      "B. El diseño gráfico",
+      "C. El empleo de computadoras de alta gama",
+      "D. Todas las anteriores son incorrectas"
+    ],
+    "respuesta_correcta": "A. El prototipo",
+    "explicacion": "El prototipo representa una interfaz antes de construir el producto definitivo. Puede mostrar desde la estructura básica hasta interacciones y recorridos cercanos al resultado final. Sirve para comunicar ideas, comprobar si las tareas se entienden y detectar problemas cuando todavía es sencillo corregirlos. No exige equipos de alta gama: lo importante es que tenga el nivel de fidelidad adecuado para responder a la pregunta de diseño que se desea evaluar."
+  }
+];

@@ -65,6 +65,15 @@ const catalogoAsignaturas = [
     requiereBloqueExamenCompleto: true,
     preguntas: typeof preguntasServiciosProcesos !== "undefined" ? preguntasServiciosProcesos : [],
     resumen: typeof resumenServiciosProcesos !== "undefined" ? resumenServiciosProcesos : ""
+  },
+  {
+    id: "desarrolloInterfaces",
+    nombre: "Desarrollo de interfaces",
+    sigla: "DI",
+    color: "255, 69, 134",
+    requiereBloqueExamenCompleto: true,
+    preguntas: typeof preguntasDesarrolloInterfaces !== "undefined" ? preguntasDesarrolloInterfaces : [],
+    resumen: typeof resumenDesarrolloInterfaces !== "undefined" ? resumenDesarrolloInterfaces : ""
   }
 ];
 

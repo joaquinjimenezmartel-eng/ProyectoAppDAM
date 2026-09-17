@@ -90,6 +90,7 @@ async function testOffline() {
   for (const name of ["index.html", "script.js", "progreso.js", "style.css", "images/programacion/pregunta88.png"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));
   for (const name of ["preguntas/preguntas-multimedia-moviles.js", "resumenes/resumen-multimedia-moviles.js"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));
   for (const name of ["preguntas/preguntas-servicios-procesos.js", "resumenes/resumen-servicios-procesos.js"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));
+  for (const name of ["preguntas/preguntas-desarrollo-interfaces.js", "resumenes/resumen-desarrollo-interfaces.js"]) assert.ok(context.self.OFFLINE_ASSETS.includes(name));
   let work;
   fail = true;
   events.install({ waitUntil: promise => work = promise });

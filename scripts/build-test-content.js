@@ -4,7 +4,8 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const bancos = [
   ["multimediaMoviles", "multimedia-moviles", "preguntasMultimediaMoviles"],
-  ["serviciosProcesos", "servicios-procesos", "preguntasServiciosProcesos"]
+  ["serviciosProcesos", "servicios-procesos", "preguntasServiciosProcesos"],
+  ["desarrolloInterfaces", "desarrollo-interfaces", "preguntasDesarrolloInterfaces"]
 ];
 for (const [asignaturaId, archivo, variable] of bancos) {
 const dir = path.join(root, "contenido/tests", asignaturaId);
