@@ -6,7 +6,8 @@ const bancos = [
   ["multimediaMoviles", "multimedia-moviles", "preguntasMultimediaMoviles"],
   ["serviciosProcesos", "servicios-procesos", "preguntasServiciosProcesos"],
   ["desarrolloInterfaces", "desarrollo-interfaces", "preguntasDesarrolloInterfaces"],
-  ["accesoDatos", "acceso-datos", "preguntasAccesoDatos"]
+  ["accesoDatos", "acceso-datos", "preguntasAccesoDatos"],
+  ["sistemasGestionEmpresarial", "sistemas-gestion-empresarial", "preguntasSistemasGestionEmpresarial"]
 ];
 for (const [asignaturaId, archivo, variable] of bancos) {
 const dir = path.join(root, "contenido/tests", asignaturaId);

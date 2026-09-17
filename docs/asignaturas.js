@@ -83,6 +83,15 @@ const catalogoAsignaturas = [
     requiereBloqueExamenCompleto: true,
     preguntas: typeof preguntasAccesoDatos !== "undefined" ? preguntasAccesoDatos : [],
     resumen: typeof resumenAccesoDatos !== "undefined" ? resumenAccesoDatos : ""
+  },
+  {
+    id: "sistemasGestionEmpresarial",
+    nombre: "Sistemas de gestión empresarial",
+    sigla: "SGE",
+    color: "94, 92, 230",
+    requiereBloqueExamenCompleto: true,
+    preguntas: typeof preguntasSistemasGestionEmpresarial !== "undefined" ? preguntasSistemasGestionEmpresarial : [],
+    resumen: typeof resumenSistemasGestionEmpresarial !== "undefined" ? resumenSistemasGestionEmpresarial : ""
   }
 ];
 
