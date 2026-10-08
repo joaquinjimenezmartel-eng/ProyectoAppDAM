@@ -239,5 +239,125 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "C. Los recursos se gestionan a través de ficheros XML y tienen un identificador (ID).",
     "explicacion": "Los recursos separan del código elementos como textos, colores, estilos, diseños, imágenes o animaciones. Muchos se definen mediante XML y las herramientas generan identificadores accesibles desde la clase R. El código ejecutable no es un recurso de res, el Manifest es un archivo de configuración y la clase R refleja los identificadores generados, pero no determina por sí sola toda la estructura del proyecto."
+  },
+  {
+    "id": 61,
+    "pregunta": "¿Cuál de los siguientes elementos no pertenece a un Intent?",
+    "opciones": [
+      "A. Dirección.",
+      "B. Flags.",
+      "C. Acción.",
+      "D. Datos."
+    ],
+    "respuesta_correcta": "A. Dirección.",
+    "explicacion": "Un Intent puede incluir el componente de destino, una acción, datos, categorías, información adicional y flags que indican al sistema cómo debe ejecutarlo. «Dirección» no es uno de sus elementos definidos. No debe confundirse con la URI que puede aparecer en el campo de datos de un Intent."
+  },
+  {
+    "id": 62,
+    "pregunta": "¿Cuál de los siguientes no es un uso habitual de un Intent?",
+    "opciones": [
+      "A. Comenzar una actividad.",
+      "B. Comenzar un servicio.",
+      "C. Almacenar un dato.",
+      "D. Entregar un mensaje."
+    ],
+    "respuesta_correcta": "C. Almacenar un dato.",
+    "explicacion": "Los Intents sirven para solicitar acciones a componentes de Android: pueden iniciar una Activity, poner en marcha un Service o enviar un mensaje mediante un broadcast. También pueden transportar pequeños datos como extras, pero ese transporte no equivale a almacenarlos de forma persistente. Para guardar información se utilizan mecanismos como preferencias, archivos o bases de datos."
+  },
+  {
+    "id": 63,
+    "pregunta": "¿De qué forma podemos nombrar un método?",
+    "opciones": [
+      "A. Con setComponent().",
+      "B. Con setClass().",
+      "C. Con setClassName().",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "D. Todas son correctas.",
+    "explicacion": "Al construir un Intent explícito se puede indicar su componente de destino con setComponent(), setClass() o setClassName(). Cada método recibe la información de una forma distinta: un ComponentName, una clase o el nombre del paquete y de la clase. Los tres permiten concretar qué componente debe recibir el Intent."
+  },
+  {
+    "id": 64,
+    "pregunta": "¿En qué estado del proceso de una actividad el usuario puede interactuar con él?",
+    "opciones": [
+      "A. Foreground Process.",
+      "B. Visible Process.",
+      "C. Service Process.",
+      "D. Background Process."
+    ],
+    "respuesta_correcta": "A. Foreground Process.",
+    "explicacion": "Un proceso está en primer plano cuando contiene la Activity situada en la parte superior de la pantalla y el usuario está interactuando con ella. Android considera estos procesos prioritarios porque son necesarios para la tarea actual. Un proceso visible puede mostrar contenido, pero no tiene por qué ser el que recibe la interacción directa."
+  },
+  {
+    "id": 65,
+    "pregunta": "¿En qué tipo de recurso se almacenan las instancias del método onSaveInstanceState?",
+    "opciones": [
+      "A. En un recurso XML.",
+      "B. En un Bundle de memoria.",
+      "C. En un fichero SQLite.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. En un Bundle de memoria.",
+    "explicacion": "onSaveInstanceState() recibe un Bundle en el que se guardan pares clave-valor con el estado temporal de la Activity. Ese Bundle permite restaurar datos de interfaz si la Activity se recrea, por ejemplo, después de girar el dispositivo. No sustituye a una base de datos ni debe utilizarse para guardar grandes cantidades de información."
+  },
+  {
+    "id": 66,
+    "pregunta": "¿Qué método no se incluye en el ciclo de vida visible?",
+    "opciones": [
+      "A. onCreate().",
+      "B. onStart().",
+      "C. onResume().",
+      "D. onPause()."
+    ],
+    "respuesta_correcta": "A. onCreate().",
+    "explicacion": "La vida visible de una Activity se sitúa entre onStart() y onStop(): durante ese intervalo la interfaz puede verse total o parcialmente. onResume() y onPause() marcan la etapa en primer plano dentro de ese periodo. onCreate() pertenece a la creación inicial de la Activity y prepara su estado y su interfaz antes de que pase a ser visible."
+  },
+  {
+    "id": 67,
+    "pregunta": "¿Cómo denominamos a los Intents en los que declaramos la acción que queremos realizar?",
+    "opciones": [
+      "A. ActionIntent.",
+      "B. PendingIntent.",
+      "C. Explícito.",
+      "D. Implícito."
+    ],
+    "respuesta_correcta": "D. Implícito.",
+    "explicacion": "Un Intent implícito expresa la acción que se desea realizar y, cuando corresponde, los datos sobre los que debe actuar, pero no identifica directamente el componente receptor. Android compara esa información con los filtros disponibles y elige una aplicación compatible o permite que el usuario la seleccione. En un Intent explícito sí se especifica el componente de destino."
+  },
+  {
+    "id": 68,
+    "pregunta": "El método onSaveInstanceState se utiliza...",
+    "opciones": [
+      "A. Cuando queremos hacer visible una actividad.",
+      "B. Cuando queremos crear una actividad.",
+      "C. Cuando queremos guardar el estado de una actividad antes de cerrarla.",
+      "D. Cuando queremos destruir una aplicación."
+    ],
+    "respuesta_correcta": "C. Cuando queremos guardar el estado de una actividad antes de cerrarla.",
+    "explicacion": "onSaveInstanceState() permite conservar información temporal necesaria para reconstruir una Activity si el sistema la destruye y después debe crearla de nuevo. Por ejemplo, puede guardar una selección o la posición actual de una pantalla. La creación y la visibilidad se gestionan mediante otros callbacks del ciclo de vida, y los datos permanentes requieren almacenamiento persistente."
+  },
+  {
+    "id": 69,
+    "pregunta": "En un sistema de pila de tipo LIFO:",
+    "opciones": [
+      "A. Los elementos que entran salen en el mismo orden que entraron.",
+      "B. Los últimos elementos en entrar son los primeros en salir.",
+      "C. Los primeros elementos en entrar son los primeros en salir.",
+      "D. Los últimos elementos en salir son los últimos que han entrado."
+    ],
+    "respuesta_correcta": "B. Los últimos elementos en entrar son los primeros en salir.",
+    "explicacion": "LIFO significa Last In, First Out: el último elemento añadido es el primero que se retira. La pila de actividades de Android sigue esta idea; una nueva Activity se coloca encima y, al volver atrás, se elimina primero la Activity superior para mostrar la anterior."
+  },
+  {
+    "id": 70,
+    "pregunta": "¿Qué no podemos hacer con un PendingIntent?",
+    "opciones": [
+      "A. Podemos realizar acciones diferidas.",
+      "B. Podemos construir notificaciones.",
+      "C. Podemos iniciar aplicaciones que esperen resultados.",
+      "D. Podemos realizar acciones sin necesidad de que la actividad creadora esté activa."
+    ],
+    "respuesta_correcta": "C. Podemos iniciar aplicaciones que esperen resultados.",
+    "explicacion": "Un PendingIntent es un permiso encapsulado para que otro componente ejecute más tarde una acción definida por la aplicación creadora, incluso si esta ya no está activa. Se usa habitualmente en notificaciones y puede iniciar una Activity, enviar un broadcast o iniciar un Service. No representa el flujo de iniciar una Activity esperando que devuelva un resultado a la Activity creadora."
   }
 ];

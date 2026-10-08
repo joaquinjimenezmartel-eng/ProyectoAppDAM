@@ -1186,9 +1186,12 @@ function mostrarSesionPendienteSiExiste() {
   const titulo = document.getElementById("examen-pendiente-titulo");
   const detalle = document.getElementById("examen-pendiente-detalle");
   const botonContinuar = document.getElementById("btn-continuar-sesion");
+  const kicker = document.getElementById("sesion-pendiente-kicker");
+  const etiquetaModo = obtenerEtiquetaModoSesion(modoPendiente);
+  if (kicker) kicker.innerText = `${etiquetaModo} en curso`;
   if (titulo) titulo.innerText = asignatura ? asignatura.nombre : "Sesión pendiente";
   if (detalle) detalle.innerText = `Vas por la pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}.`;
-  if (botonContinuar) botonContinuar.innerText = modoPendiente === "examen" ? "Continuar examen" : "Continuar estudio";
+  if (botonContinuar) botonContinuar.innerText = `Continuar ${etiquetaModo.toLowerCase()}`;
 }
 
 function configurarSesionNueva() {
@@ -1196,6 +1199,41 @@ function configurarSesionNueva() {
   const bloque = document.getElementById("examen-pendiente");
   if (modal) modal.classList.remove("tiene-examen-pendiente");
   if (bloque) bloque.classList.add("oculto");
+}
+
+function obtenerEtiquetaModoSesion(modoSesion) {
+  if (modoSesion === "examen") return "Examen";
+  if (modoSesion === "repaso") return "Repaso";
+  return "Estudio";
+}
+
+function descartarSesionGuardada(asignaturaId = asignaturaSeleccionada, modoSesion = modoPendiente) {
+  if (typeof ProgresoEstudio === "undefined" || !asignaturaId) return false;
+  const modoNormalizado = ["examen", "repaso"].includes(modoSesion) ? modoSesion : "estudio";
+  const sesion = ProgresoEstudio.obtenerSesionActiva(asignaturaId, modoNormalizado);
+  if (!sesion) return false;
+
+  const asignatura = typeof obtenerAsignatura === "function" ? obtenerAsignatura(asignaturaId) : null;
+  const nombreAsignatura = asignatura ? asignatura.nombre : "esta asignatura";
+  const etiquetaModo = obtenerEtiquetaModoSesion(modoNormalizado).toLowerCase();
+  const mensaje = `¿Descartar el ${etiquetaModo} pendiente de ${nombreAsignatura}?\n\nSe eliminará únicamente esta sesión. Tu porcentaje de aciertos y tus estadísticas se conservarán.`;
+  if (typeof confirm !== "function" || !confirm(mensaje)) return false;
+
+  if (!ProgresoEstudio.eliminarSesionActiva(asignaturaId, modoNormalizado)) {
+    if (typeof alert === "function") alert("No se ha podido descartar la sesión. Inténtalo de nuevo.");
+    return false;
+  }
+
+  if (asignaturaId === asignaturaSeleccionada && modoNormalizado === modoPendiente) {
+    configurarSesionNueva();
+  }
+  if (typeof renderizarSelectorAsignaturas === "function") {
+    renderizarSelectorAsignaturas();
+    if (asignaturaSeleccionada && typeof resaltarAsignaturaSeleccionada === "function") {
+      resaltarAsignaturaSeleccionada(asignaturaSeleccionada);
+    }
+  }
+  return true;
 }
 
 function reconstruirPreguntaSesion(original, ordenOpciones) {

@@ -189,12 +189,25 @@ function renderizarSesionesPendientes() {
 
   seccion.classList.toggle("oculto", pendientes.length === 0);
   pendientes.forEach(({ asignatura, modo, sesion }) => {
-    const boton = document.createElement("button");
-    boton.type = "button";
-    boton.className = "sesion-pendiente-directa";
-    boton.style.setProperty("--subject-accent", asignatura.color);
-    boton.innerHTML = `<span><strong>${modo === "repaso" ? "Repaso" : modo === "examen" ? "Examen" : "Estudio"} · ${asignatura.nombre}</strong><small>Pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}</small></span><span>Continuar ›</span>`;
-    boton.addEventListener("click", () => continuarSesionDeAsignatura(asignatura.id, modo));
-    lista.appendChild(boton);
+    const item = document.createElement("div");
+    item.className = "sesion-pendiente-item";
+    item.style.setProperty("--subject-accent", asignatura.color);
+
+    const botonContinuar = document.createElement("button");
+    botonContinuar.type = "button";
+    botonContinuar.className = "sesion-pendiente-directa";
+    botonContinuar.innerHTML = `<span><strong>${modo === "repaso" ? "Repaso" : modo === "examen" ? "Examen" : "Estudio"} · ${asignatura.nombre}</strong><small>Pregunta ${Math.min(sesion.indice + 1, sesion.preguntas.length)} de ${sesion.preguntas.length}</small></span><span>Continuar ›</span>`;
+    botonContinuar.addEventListener("click", () => continuarSesionDeAsignatura(asignatura.id, modo));
+
+    const botonDescartar = document.createElement("button");
+    botonDescartar.type = "button";
+    botonDescartar.className = "sesion-pendiente-descartar";
+    botonDescartar.setAttribute("aria-label", `Descartar sesión de ${modo === "repaso" ? "repaso" : modo} de ${asignatura.nombre}`);
+    botonDescartar.title = "Descartar sesión";
+    botonDescartar.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="m6.5 7 .8 13h9.4l.8-13"/><path d="M10 11v5M14 11v5"/></svg>';
+    botonDescartar.addEventListener("click", () => descartarSesionGuardada(asignatura.id, modo));
+
+    item.append(botonContinuar, botonDescartar);
+    lista.appendChild(item);
   });
 }

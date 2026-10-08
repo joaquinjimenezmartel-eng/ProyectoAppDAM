@@ -65,3 +65,51 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Examen desactivado por `requiereBloqueExamenCompleto: true`; se habilita automáticamente al incorporar los IDs 1–40. No ocupar esos IDs con preguntas de apoyo.
 - `npm run build:content` genera los bancos de multimediaMoviles y serviciosProcesos desde sus JSON. No modifica los otros seis bancos.
 - Las 760 preguntas de las siete asignaturas anteriores mantienen su huella. Las pruebas verifican además que las respuestas se conservan al mezclar las opciones y que la nueva asignatura forma parte de los recursos offline.
+
+## Incorporación del 8 de octubre de 2026
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U3 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 61–70. JSON `contenido/tests/multimediaMoviles/u3-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 71.
+- Se conserva la respuesta correcta mostrada por la plataforma en las diez preguntas. Las únicas modificaciones son correcciones ortográficas, gramaticales y de puntuación documentadas en el JSON; no alteran el sentido ni la solución.
+- Cada pregunta incorpora una explicación didáctica sobre Intents, procesos, ciclo de vida, estado de una Activity, pila LIFO y PendingIntent. El resumen de la asignatura se amplía de U1–U2 a U1–U3.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 850 preguntas existentes antes de U3 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 8 de octubre de 2026 — Servicios y procesos U3
+
+- Asignatura ampliada: **Programación de servicios y procesos**, ID técnico `serviciosProcesos`.
+- U3 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 61–70. JSON `contenido/tests/serviciosProcesos/u3-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 71.
+- Se conserva la respuesta correcta mostrada por la plataforma en las diez preguntas. La única modificación del contenido evaluable es la corrección ortográfica «indica que afirmación» → «indica qué afirmación» en la pregunta original 5; no cambia su solución.
+- Cada pregunta incorpora una explicación didáctica sobre TCP, UDP, IP, sockets, puertos y protocolos de aplicación. El resumen de la asignatura se amplía de U1–U2 a U1–U3.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 860 preguntas existentes antes de esta U3 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 8 de octubre de 2026 — Desarrollo de interfaces U3
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U3 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 61–70. JSON `contenido/tests/desarrolloInterfaces/u3-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 71.
+- En la pregunta original 6, la opción seleccionada en el intento es incorrecta. Se conserva como solución la corrección explícita del documento: opción A, «Permiten modificar funcionalidades estáticas en Java».
+- Las únicas modificaciones textuales son correcciones ortográficas y de puntuación documentadas en el JSON: «en que» → «en qué», retirada de dos puntos sobrantes después del cierre de interrogación y normalización del nombre «GIMP». Ninguna cambia la solución.
+- Cada pregunta incorpora una explicación didáctica sobre ámbito, componentes, constructores, métodos, eventos, listeners, propiedades JavaBeans, reflexión e introspección. El resumen se amplía de U1–U2 a U1–U3.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 870 preguntas existentes antes de esta U3 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 8 de octubre de 2026 — Acceso a datos U3
+
+- Asignatura ampliada: **Acceso a datos**, ID técnico `accesoDatos`.
+- U3 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 61–70. JSON `contenido/tests/accesoDatos/u3-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 71.
+- En la pregunta original 4 se conserva la corrección explícita del documento, opción A («Son un fichero»), en lugar de la opción C seleccionada en el intento. En la pregunta original 6 se conserva la opción D («Todas las anteriores son incorrectas»), en lugar de la opción C seleccionada.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de puntuación documentadas en el JSON: «El placeholders» → «El placeholder», «OBDC» → «ODBC» y retirada de un punto duplicado. Ninguna cambia la solución.
+- Cada pregunta incorpora una explicación didáctica sobre JDBC, SQL, PreparedStatement, transacciones, índices, conectores, procedimientos almacenados, Statement, búferes y drivers. El resumen se amplía de U1–U2 a U1–U3.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 880 preguntas existentes antes de esta U3 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 8 de octubre de 2026 — Sistemas de gestión empresarial U3
+
+- Asignatura ampliada: **Sistemas de gestión empresarial**, ID técnico `sistemasGestionEmpresarial`.
+- U3 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 61–70. JSON `contenido/tests/sistemasGestionEmpresarial/u3-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 71.
+- En la pregunta original 4 se conserva la corrección explícita del documento, opción D («Todas son correctas»), en lugar de la opción A seleccionada en el intento. En la pregunta original 10 se conserva la opción C («Controlador»), en lugar de la opción A seleccionada.
+- Las únicas modificaciones textuales son correcciones gramaticales y ortotipográficas documentadas en el JSON: concordancia singular de «Módulo» en dos opciones y «instalación de solución Cloud» → «instalación de una solución cloud». Ninguna cambia la solución.
+- Cada pregunta incorpora una explicación didáctica sobre Odoo, MVC, módulos empresariales, instalaciones, modo desarrollador y PostgreSQL. El resumen se amplía de U1–U2 a U1–U3.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 890 preguntas existentes antes de esta U3 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

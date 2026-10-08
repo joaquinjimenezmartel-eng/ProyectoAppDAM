@@ -239,5 +239,125 @@ const preguntasSistemasGestionEmpresarial = [
     ],
     "respuesta_correcta": "D. A y B son correctas.",
     "explicacion": "Una comunidad puede desarrollar un ERP cuyo código esté disponible con una licencia open source y ofrecer una edición sin coste de licencia, mientras empresas del ecosistema venden implantación, soporte, alojamiento o módulos adicionales. Open source y gratuito no significan exactamente lo mismo: una licencia abierta concede derechos para usar, estudiar, modificar y redistribuir el código, y el software abierto también puede comercializarse. El precio y las libertades de la licencia deben evaluarse por separado."
+  },
+  {
+    "id": 61,
+    "pregunta": "El archivo XML corresponde, dentro del Modelo Vista Controlador, al:",
+    "opciones": [
+      "A. Modelo.",
+      "B. Vista.",
+      "C. Controlador.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "B. Vista.",
+    "explicacion": "En Odoo, los archivos XML se utilizan para declarar la estructura visual de vistas como formularios, listas, búsquedas o menús. Esa definición indica qué campos se muestran y cómo se organizan en la interfaz. El modelo representa los datos y sus reglas, mientras que el controlador coordina las peticiones y la lógica de interacción."
+  },
+  {
+    "id": 62,
+    "pregunta": "El lenguaje de programación de Odoo es:",
+    "opciones": [
+      "A. Visual Basic.",
+      "B. Python.",
+      "C. Java.",
+      "D. C++."
+    ],
+    "respuesta_correcta": "B. Python.",
+    "explicacion": "Python es el lenguaje principal del servidor de Odoo y se utiliza para desarrollar modelos, lógica empresarial, controladores y extensiones. La plataforma también combina otras tecnologías: XML para datos y vistas, JavaScript para el cliente web y PostgreSQL para la persistencia. Por tanto, Python es la respuesta adecuada aunque el sistema completo utilice varios lenguajes y herramientas."
+  },
+  {
+    "id": 63,
+    "pregunta": "El módulo esencial para cualquier empresa es:",
+    "opciones": [
+      "A. Módulo de gestión de recursos humanos.",
+      "B. Módulo de gestión de compra y venta.",
+      "C. Módulo de gestión de marketing y publicidad.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "B. Módulo de gestión de compra y venta.",
+    "explicacion": "La compra y la venta conectan la entrada de productos o servicios con su comercialización y generan información que utilizan inventario, facturación y contabilidad. Por eso constituyen un flujo básico en la gestión empresarial. Recursos humanos y marketing pueden ser muy importantes, pero su necesidad y alcance dependen más del tamaño y la actividad de cada organización."
+  },
+  {
+    "id": 64,
+    "pregunta": "El proceso de instalación monopuesto es:",
+    "opciones": [
+      "A. Simple.",
+      "B. Obsoleto.",
+      "C. Multiusuario.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "D. Todas son correctas.",
+    "explicacion": "Una instalación monopuesto concentra los componentes en un único equipo, por lo que su puesta en marcha suele ser sencilla. Frente a despliegues cliente-servidor o cloud, se considera un modelo cada vez menos adecuado para organizaciones modernas. Aunque la instalación esté centralizada en una sola máquina, la aplicación de gestión puede admitir el acceso de varios usuarios según su configuración. Por ello se reúnen las tres características indicadas."
+  },
+  {
+    "id": 65,
+    "pregunta": "El tipo de módulo que controla la legalidad tributaria es:",
+    "opciones": [
+      "A. Módulo de gestión de procesos de fabricación.",
+      "B. Módulo para la gestión de procesos de ventas y marketing.",
+      "C. Módulo de gestión de procesos de recursos humanos.",
+      "D. Módulo para la gestión de procesos financieros y contables."
+    ],
+    "respuesta_correcta": "D. Módulo para la gestión de procesos financieros y contables.",
+    "explicacion": "El módulo financiero y contable registra facturas, cobros, pagos, asientos e impuestos, y aplica las reglas fiscales configuradas para la empresa. También genera informes y declaraciones a partir de esas operaciones. Los módulos de fabricación, marketing o recursos humanos gestionan otros procesos y pueden aportar datos, pero el control tributario se concentra en contabilidad y finanzas."
+  },
+  {
+    "id": 66,
+    "pregunta": "El tipo de módulo que controla la planificación de la producción es:",
+    "opciones": [
+      "A. Módulo de gestión de procesos de fabricación.",
+      "B. Módulo para la gestión de procesos de ventas y marketing.",
+      "C. Módulo de gestión de procesos de recursos humanos.",
+      "D. Módulo para la gestión de procesos financieros y contables."
+    ],
+    "respuesta_correcta": "A. Módulo de gestión de procesos de fabricación.",
+    "explicacion": "El módulo de fabricación organiza órdenes de producción, listas de materiales, recursos, centros de trabajo y fechas previstas. Con esa información puede planificar qué se fabrica, en qué cantidad y cuándo debe realizarse cada operación. Ventas puede originar la demanda e inventario aporta existencias, pero la planificación productiva corresponde al área de fabricación."
+  },
+  {
+    "id": 67,
+    "pregunta": "En el apartado de aplicaciones:",
+    "opciones": [
+      "A. Todos los módulos están descargados inicialmente.",
+      "B. Todos los módulos se descargan poco a poco por decisión del usuario.",
+      "C. Algunos módulos están descargados inicialmente, pero no todos.",
+      "D. El usuario no puede acceder al control de descarga de módulos."
+    ],
+    "respuesta_correcta": "C. Algunos módulos están descargados inicialmente, pero no todos.",
+    "explicacion": "Odoo incorpora una base de módulos disponibles desde la instalación, mientras que otras aplicaciones pueden instalarse después según las necesidades de la organización. El apartado Apps permite localizar, instalar, actualizar o desinstalar módulos cuando el usuario dispone de permisos suficientes. Además, una aplicación puede instalar dependencias necesarias para funcionar."
+  },
+  {
+    "id": 68,
+    "pregunta": "En la instalación de una solución cloud, si activamos el modo desarrollador en el menú de configuración:",
+    "opciones": [
+      "A. Activamos las herramientas de desarrollo indicadas para administradores.",
+      "B. Activamos las herramientas de desarrollo indicadas para desarrolladores.",
+      "C. Activamos las herramientas de desarrollo indicadas para administradores y desarrolladores.",
+      "D. Ninguna es correcta."
+    ],
+    "respuesta_correcta": "C. Activamos las herramientas de desarrollo indicadas para administradores y desarrolladores.",
+    "explicacion": "El modo desarrollador desbloquea herramientas técnicas para inspeccionar vistas, acciones, campos, filtros y otros elementos internos. Los desarrolladores las utilizan para crear o depurar personalizaciones, y los administradores para acceder a configuraciones avanzadas de la base de datos. Deben emplearse con cuidado porque permiten modificar aspectos que afectan al funcionamiento del sistema."
+  },
+  {
+    "id": 69,
+    "pregunta": "La base de datos que utiliza Odoo es:",
+    "opciones": [
+      "A. PostgreSQL.",
+      "B. MongoDB.",
+      "C. SQLite.",
+      "D. Redis."
+    ],
+    "respuesta_correcta": "A. PostgreSQL.",
+    "explicacion": "Odoo utiliza PostgreSQL como sistema de gestión de bases de datos relacional. Allí almacena registros empresariales, configuración, usuarios y metadatos de los módulos. El framework de Odoo incorpora un ORM que permite trabajar con modelos Python y transforma sus operaciones en consultas sobre PostgreSQL, manteniendo la lógica del programa separada del acceso SQL directo."
+  },
+  {
+    "id": 70,
+    "pregunta": "Los objetos Python corresponden, dentro del Modelo Vista Controlador, al:",
+    "opciones": [
+      "A. Modelo.",
+      "B. Vista.",
+      "C. Controlador.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "C. Controlador.",
+    "explicacion": "El controlador coordina la interacción: recibe una petición o acción, ejecuta la lógica necesaria y prepara la respuesta que se mostrará mediante una vista. En Odoo esta parte se implementa con objetos y métodos Python, mientras que las vistas se declaran principalmente en XML. Así se separa la presentación visual de la lógica que dirige el flujo de la aplicación."
   }
 ];

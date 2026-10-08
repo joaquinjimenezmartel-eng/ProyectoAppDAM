@@ -1,9 +1,9 @@
 const resumenServiciosProcesos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U2 · Procesos, hilos y concurrencia</span>
+    <span class="study-summary__eyebrow">U1–U3 · Procesos, concurrencia y comunicación en red</span>
     <h3 class="study-summary__title">Programación de servicios y procesos</h3>
-    <p class="study-summary__lead">Un programa contiene instrucciones; un proceso las ejecuta. Comprender cómo se reparte la CPU y cómo se coordinan las tareas es el primer paso para crear aplicaciones concurrentes.</p>
+    <p class="study-summary__lead">Un programa contiene instrucciones; un proceso las ejecuta. Comprender cómo se reparte la CPU, cómo se coordinan las tareas y cómo se comunican por red permite construir aplicaciones concurrentes y servicios conectados.</p>
   </header>
   <section class="study-summary__section">
     <h4>Programa, proceso e hilo</h4>
@@ -40,5 +40,21 @@ const resumenServiciosProcesos = `
   <section class="study-summary__section">
     <h4>Evitar interbloqueos</h4>
     <p>Un interbloqueo aparece cuando varios hilos esperan de forma circular recursos que permanecen retenidos entre ellos. Adquirir los bloqueos siempre en el mismo orden, mantener pequeñas las secciones críticas y evitar esperas innecesarias mientras se posee un bloqueo reduce este riesgo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>TCP, UDP e IP</h4>
+    <p>IP identifica los equipos y encamina los paquetes en la capa de red. Sobre él trabajan TCP y UDP en la capa de transporte. TCP establece una conexión y ofrece un flujo fiable, ordenado y bidireccional. UDP envía datagramas sin conexión ni garantía de entrega, con menos control y sobrecarga.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Sockets y extremos de comunicación</h4>
+    <p>Un socket representa un extremo de comunicación. La dirección IP identifica el equipo y el puerto identifica la aplicación o servicio dentro de ese equipo. En una conexión TCP los dos extremos pueden enviar y recibir simultáneamente. Al recibir un datagrama UDP también se obtiene la dirección y el puerto del emisor para poder responder.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Puertos de servidor y cliente</h4>
+    <p>Un servidor suele escuchar en un puerto del sistema o registrado, conocido por sus clientes. El cliente utiliza normalmente un puerto efímero asignado de forma temporal. La combinación de IP y puerto permite que el sistema operativo entregue cada mensaje al proceso adecuado y distinga comunicaciones simultáneas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Protocolos de aplicación</h4>
+    <p>La capa de aplicación define el formato y las reglas de los mensajes que intercambian los programas. Un protocolo puede estar basado en texto o utilizar una representación binaria; también puede mantener estado o tratar cada petición de forma independiente. «Booleano» es un tipo de dato, no una categoría de protocolo.</p>
   </section>
 </article>`;

@@ -180,12 +180,15 @@
 
     <div class="modal-body">
       <section id="examen-pendiente" class="examen-pendiente oculto" aria-live="polite">
-        <span class="examen-pendiente-kicker">Examen en curso</span>
+        <span id="sesion-pendiente-kicker" class="examen-pendiente-kicker">Sesión en curso</span>
         <h4 id="examen-pendiente-titulo">Puedes continuar donde lo dejaste</h4>
         <p id="examen-pendiente-detalle"></p>
         <div class="examen-pendiente-acciones">
           <button id="btn-continuar-sesion" type="button" class="btn-principal" onclick="continuarSesionGuardada()">Continuar</button>
           <button type="button" class="btn-secundario" onclick="configurarSesionNueva()">Empezar una nueva</button>
+          <button type="button" class="btn-descartar-sesion" onclick="descartarSesionGuardada()" aria-label="Descartar la sesión guardada" title="Descartar sesión">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="m6.5 7 .8 13h9.4l.8-13"/><path d="M10 11v5M14 11v5"/></svg>
+          </button>
         </div>
       </section>
 

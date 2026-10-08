@@ -1,7 +1,7 @@
 const resumenAccesoDatos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U2 · Persistencia, bases de datos y ficheros</span>
+    <span class="study-summary__eyebrow">U1–U3 · Persistencia, ficheros y acceso con JDBC</span>
     <h3 class="study-summary__title">Acceso a datos</h3>
     <p class="study-summary__lead">Acceder a datos implica decidir cómo se representan, dónde se conservan y qué garantías debe ofrecer el sistema cuando los consulta o modifica.</p>
   </header>
@@ -40,5 +40,25 @@ const resumenAccesoDatos = `
   <section class="study-summary__section">
     <h4>Tratamiento de excepciones</h4>
     <p><code>try</code> delimita operaciones que pueden fallar, <code>catch</code> aplica el tratamiento apropiado y <code>finally</code> ejecuta tareas finales. Se pueden agrupar excepciones con el mismo tratamiento o utilizar manejadores específicos. Para recursos cerrables, <code>try-with-resources</code> simplifica el cierre seguro.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>JDBC, API y drivers</h4>
+    <p>JDBC ofrece a las aplicaciones Java una API común para acceder a bases de datos. El driver implementa la comunicación con un gestor concreto y traduce las operaciones de JDBC a su protocolo. Algunas arquitecturas añaden una segunda traducción mediante un puente, aunque un driver directo suele reducir complejidad y sobrecarga.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Sentencias SQL desde Java</h4>
+    <p><code>Statement</code> ejecuta SQL sin parámetros; <code>PreparedStatement</code> prepara una sentencia con marcadores <code>?</code> cuyos valores se asignan antes de ejecutarla; y <code>CallableStatement</code> permite llamar a procedimientos almacenados. <code>executeQuery()</code> se usa para consultas con resultados y <code>executeUpdate()</code> para modificaciones como INSERT, UPDATE o DELETE.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Transacciones en JDBC</h4>
+    <p>Al desactivar el modo auto-commit, varias sentencias pueden formar una sola transacción. <code>commit()</code> confirma todos sus cambios y <code>rollback()</code> los deshace si una operación falla. Esta unidad de trabajo evita que una actualización relacionada quede aplicada solo a medias.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Índices y conectores</h4>
+    <p>Un índice mantiene claves y referencias para localizar registros sin recorrer todos los datos; en sistemas de ficheros puede almacenarse separadamente. Un conector permite abrir la comunicación con la fuente, enviar consultas y recuperar resultados. El índice acelera el acceso; el conector hace posible la comunicación.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Búferes</h4>
+    <p>Un búfer es una región de memoria temporal que acumula datos durante una transferencia. Al trabajar por bloques reduce el número de accesos físicos y ayuda a coordinar componentes con velocidades diferentes. Debe vaciarse o cerrarse correctamente para garantizar que los datos pendientes lleguen a su destino.</p>
   </section>
 </article>`;

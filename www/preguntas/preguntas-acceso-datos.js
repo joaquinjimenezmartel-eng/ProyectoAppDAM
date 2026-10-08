@@ -239,5 +239,125 @@ const preguntasAccesoDatos = [
     ],
     "respuesta_correcta": "B. Es compatible con ASCII.",
     "explicacion": "UTF-8 es una codificación de longitud variable para representar Unicode mediante unidades de 8 bits. Los caracteres del repertorio ASCII conservan en UTF-8 los mismos valores de byte, lo que facilita la compatibilidad con protocolos y archivos existentes. Los demás caracteres se representan con secuencias de varios bytes. UTF-8 no es un tipo de fichero: es la codificación utilizada para convertir caracteres en bytes y recuperarlos después."
+  },
+  {
+    "id": 61,
+    "pregunta": "El placeholder más empleado es:",
+    "opciones": [
+      "A. next.",
+      "B. Replay.",
+      "C. ?.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "C. ?.",
+    "explicacion": "En un PreparedStatement de JDBC, el signo de interrogación actúa como marcador de posición para cada parámetro de entrada. Antes de ejecutar la sentencia se asigna un valor a cada marcador mediante métodos como setString(), setInt() o setDate(), numerándolos desde 1. Así los datos se transmiten como valores y no se concatenan directamente dentro del código SQL."
+  },
+  {
+    "id": 62,
+    "pregunta": "JDBC puede ejecutar SELECT, UPDATE, DELETE, etc. aunque son parte de:",
+    "opciones": [
+      "A. executeQuery().",
+      "B. SQL.",
+      "C. CSV.",
+      "D. ODBC."
+    ],
+    "respuesta_correcta": "B. SQL.",
+    "explicacion": "SELECT, UPDATE y DELETE son sentencias del lenguaje SQL. JDBC es la API de Java que permite enviar esas sentencias a una base de datos mediante un driver. executeQuery() es uno de los métodos de ejecución —se utiliza normalmente con consultas que devuelven un ResultSet—, pero no es el lenguaje al que pertenecen las sentencias."
+  },
+  {
+    "id": 63,
+    "pregunta": "Las transacciones permiten:",
+    "opciones": [
+      "A. Ejecutar diversas acciones predefinidas simultáneamente.",
+      "B. Eliminar los resultados de diversas acciones predefinidas simultáneamente.",
+      "C. Las dos primeras son correctas.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "C. Las dos primeras son correctas.",
+    "explicacion": "Una transacción agrupa varias operaciones para tratarlas como una unidad. Si todo termina correctamente, commit hace permanentes sus resultados; si aparece un error, rollback permite deshacer los cambios del grupo. De esta forma, varias acciones relacionadas se confirman juntas o se eliminan sus efectos para evitar que los datos queden en un estado parcial."
+  },
+  {
+    "id": 64,
+    "pregunta": "Los índices:",
+    "opciones": [
+      "A. Son un fichero.",
+      "B. Son un apartado del fichero.",
+      "C. Son un tipo especial de fichero.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "A. Son un fichero.",
+    "explicacion": "Un índice mantiene una estructura auxiliar con claves y referencias a la ubicación de los registros para acelerar las búsquedas. En sistemas basados en ficheros puede almacenarse como un fichero de índice separado del fichero principal de datos. En un gestor de bases de datos moderno su almacenamiento físico lo administra el propio motor, pero su función continúa siendo localizar información sin recorrer todos los registros."
+  },
+  {
+    "id": 65,
+    "pregunta": "Los conectores:",
+    "opciones": [
+      "A. Permiten enlazar diversos drivers.",
+      "B. Permiten realizar consultas.",
+      "C. Permiten indexar ficheros.",
+      "D. No existen en las bases de datos."
+    ],
+    "respuesta_correcta": "B. Permiten realizar consultas.",
+    "explicacion": "Un conector proporciona a la aplicación el acceso necesario para comunicarse con una base de datos. A través de él se abre la conexión, se envían sentencias SQL y se reciben resultados. En Java, JDBC define la API común y el driver implementa la comunicación concreta con el gestor; el conector no crea índices por sí mismo ni enlaza varios drivers entre sí."
+  },
+  {
+    "id": 66,
+    "pregunta": "Los procedimientos pueden introducirse con:",
+    "opciones": [
+      "A. Las sentencias UPDATE, DELETE e INSERT.",
+      "B. Las cláusulas WHERE con UPDATE y DELETE.",
+      "C. Las dos primeras son correctas.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son incorrectas.",
+    "explicacion": "Un procedimiento almacenado se define en la base de datos y se invoca mediante la sintaxis prevista por el gestor, habitualmente CALL. En JDBC se utiliza CallableStatement para preparar la llamada y gestionar sus parámetros de entrada o salida. UPDATE, DELETE e INSERT modifican datos, mientras que WHERE filtra filas; ninguno de esos elementos es por sí mismo el mecanismo para introducir o invocar un procedimiento."
+  },
+  {
+    "id": 67,
+    "pregunta": "SQL:",
+    "opciones": [
+      "A. Solo se emplea con API.",
+      "B. Solo se emplea con drivers.",
+      "C. Se emplea con ambos, incluso de manera simultánea.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Se emplea con ambos, incluso de manera simultánea.",
+    "explicacion": "La aplicación utiliza una API como JDBC para construir y ejecutar operaciones, y el driver traduce esas llamadas al protocolo que entiende la base de datos. Las sentencias SQL atraviesan ambos niveles durante la misma comunicación: la API ofrece la interfaz al programa y el driver realiza la conexión concreta con el gestor. No son mecanismos excluyentes, sino partes complementarias del acceso a datos."
+  },
+  {
+    "id": 68,
+    "pregunta": "Statement nos permite trabajar con:",
+    "opciones": [
+      "A. SQL.",
+      "B. XML.",
+      "C. CSV.",
+      "D. HTML."
+    ],
+    "respuesta_correcta": "A. SQL.",
+    "explicacion": "Statement representa una sentencia SQL que se envía a la base de datos a través de una conexión JDBC. Puede ejecutar una consulta con executeQuery(), una modificación con executeUpdate() o una sentencia cuyo resultado no se conoce de antemano con execute(). XML, CSV y HTML son formatos de datos o marcado, no los lenguajes de ejecución de un Statement."
+  },
+  {
+    "id": 69,
+    "pregunta": "Un búfer es:",
+    "opciones": [
+      "A. Un tipo de aplicación.",
+      "B. Un tipo de invocación.",
+      "C. Un tipo de memoria.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Un tipo de memoria.",
+    "explicacion": "Un búfer es una zona de memoria temporal utilizada mientras los datos se transfieren entre componentes que trabajan a velocidades o con tamaños de bloque diferentes. Permite acumular información y procesarla en grupos, reduciendo el número de accesos físicos o llamadas. Por ejemplo, un flujo con búfer puede leer varios bytes de una vez y entregarlos a la aplicación cuando los necesita."
+  },
+  {
+    "id": 70,
+    "pregunta": "Una arquitectura que entrelaza API y drivers en un sistema de traducción doble:",
+    "opciones": [
+      "A. Es posible.",
+      "B. Es imposible.",
+      "C. Posible, pero solo si se emplea CSV.",
+      "D. Posible, pero solo con dos API, no API y drivers."
+    ],
+    "respuesta_correcta": "A. Es posible.",
+    "explicacion": "Es posible encadenar una API con un driver puente y otra capa de acceso, de modo que cada nivel traduzca las llamadas antes de llegar al sistema de datos. Un ejemplo histórico es un puente entre JDBC y ODBC. La doble traducción añade dependencias y sobrecarga, por lo que suele preferirse un driver que se comunique directamente con la base de datos cuando está disponible."
   }
 ];

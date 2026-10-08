@@ -68,9 +68,15 @@ assert.equal(examen.selecciones[0], 1);
 const estudio = progreso.obtenerSesionActiva("programacion", "estudio");
 assert.equal(estudio.indice, 2);
 assert.deepEqual(estudio.erroresEstudio[0], [1]);
+const estadisticasAntesDeDescartar = progreso.obtenerAsignatura("programacion");
 progreso.eliminarSesionActiva("programacion", "examen");
 assert.equal(progreso.obtenerSesionActiva("programacion", "examen"), null);
 assert.ok(progreso.obtenerSesionActiva("programacion", "estudio"));
+assert.deepEqual(progreso.obtenerAsignatura("programacion"), estadisticasAntesDeDescartar);
+
+progreso.eliminarSesionActiva("programacion", "estudio");
+assert.equal(progreso.obtenerSesionActiva("programacion", "estudio"), null);
+assert.deepEqual(progreso.obtenerAsignatura("programacion"), estadisticasAntesDeDescartar);
 
 storage.setItem(STORAGE_KEY, "contenido no válido");
 assert.equal(crearGestorProgreso(storage).obtenerAsignatura("bases").respuestas, 0);

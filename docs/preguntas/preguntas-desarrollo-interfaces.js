@@ -239,5 +239,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "C. Se recomienda emplear la OO.",
     "explicacion": "La orientación a objetos ayuda a representar ventanas, componentes, modelos y controladores como objetos con responsabilidades definidas. La encapsulación mantiene juntos el estado y el comportamiento de cada elemento; la composición permite construir interfaces a partir de componentes reutilizables; y el polimorfismo facilita tratar de forma común objetos relacionados. Aplicar estos principios con una buena separación de responsabilidades mejora el mantenimiento y las pruebas de la interfaz."
+  },
+  {
+    "id": 61,
+    "pregunta": "Ámbito:",
+    "opciones": [
+      "A. Atributo que permite la modificación de valores.",
+      "B. Determina en qué parte de un programa un componente puede ser usado.",
+      "C. Almacenan valores internos para el uso de la clase u objeto mismo.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. Determina en qué parte de un programa un componente puede ser usado.",
+    "explicacion": "El ámbito define la zona del programa desde la que un elemento puede utilizarse. Por ejemplo, una variable local solo está disponible dentro del bloque o método donde se declara, mientras que la visibilidad de un miembro de una clase depende de modificadores como public, protected o private. El ámbito no almacena valores ni describe por sí mismo la capacidad de modificarlos."
+  },
+  {
+    "id": 62,
+    "pregunta": "¿Cuál de estas características es común a Paint y Photoshop?",
+    "opciones": [
+      "A. Empleo de múltiples capas.",
+      "B. Inclusión de filtros, efectos, etc.",
+      "C. Permite la creación de una imagen desde cero.",
+      "D. Ninguna es correcta."
+    ],
+    "respuesta_correcta": "C. Permite la creación de una imagen desde cero.",
+    "explicacion": "Tanto Paint como Photoshop permiten crear un lienzo nuevo y dibujar una imagen desde cero. Las capas, los filtros y los efectos avanzados son funciones características de editores más completos, pero no constituyen la coincidencia básica que plantea la pregunta. La creación de una imagen nueva sí está disponible en ambos programas."
+  },
+  {
+    "id": 63,
+    "pregunta": "¿Cuál de los siguientes no es un listener?",
+    "opciones": [
+      "A. KeyListener.",
+      "B. MotionKeyListener.",
+      "C. ActionListener.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. MotionKeyListener.",
+    "explicacion": "KeyListener es una interfaz para recibir eventos de teclado y ActionListener atiende acciones como la pulsación de un botón. MotionKeyListener no es una interfaz listener estándar de Java. Para detectar movimiento del ratón existe MouseMotionListener, cuyo nombre puede ayudar a distinguirlo de los listeners relacionados con el teclado."
+  },
+  {
+    "id": 64,
+    "pregunta": "Constructores:",
+    "opciones": [
+      "A. Definen las características de los objetos tanto en su comportamiento como en su apariencia, como puede ser su color, tipo de letra, etc.",
+      "B. Almacenan valores internos para el uso de la clase u objeto mismo.",
+      "C. Definen las acciones que un objeto puede llevar a cabo.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Un constructor se ejecuta al crear una instancia y establece su estado inicial. La opción A describe propiedades o características, la B se aproxima a los atributos que almacenan estado y la C describe métodos que representan acciones. Como ninguna opción explica la función de inicializar un objeto, la respuesta correcta es que ninguna de las anteriores lo define."
+  },
+  {
+    "id": 65,
+    "pregunta": "GIMP es un editor de imágenes:",
+    "opciones": [
+      "A. Gratuito, sencillo y con buena calidad de imagen.",
+      "B. Gratuito, sencillo y con baja calidad de imagen.",
+      "C. Propietario, complejo y con buena calidad de imagen.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. Gratuito, sencillo y con buena calidad de imagen.",
+    "explicacion": "GIMP es software libre y gratuito para crear, retocar y transformar imágenes digitales. Permite trabajar con herramientas de selección, pintura, capas, máscaras, filtros y ajustes sin reducir por definición la calidad de la imagen. No es un programa propietario, por lo que la primera opción reúne las características indicadas."
+  },
+  {
+    "id": 66,
+    "pregunta": "La reflexión y la introspección:",
+    "opciones": [
+      "A. Permiten modificar funcionalidades estáticas en Java.",
+      "B. La anterior, pero solo reflexión, la introspección no existe en informática.",
+      "C. La primera, pero solo introspección, la reflexión no existe en informática.",
+      "D. Ninguna es correcta."
+    ],
+    "respuesta_correcta": "A. Permiten modificar funcionalidades estáticas en Java.",
+    "explicacion": "La reflexión permite examinar en tiempo de ejecución las clases, sus campos, métodos y constructores, y operar sobre ellos dentro de las restricciones de acceso. La introspección utiliza esa información y convenciones conocidas para descubrir propiedades, métodos y eventos de un componente, como ocurre con JavaBeans. Ambos mecanismos existen en Java y permiten que herramientas y aplicaciones adapten dinámicamente el uso de componentes ya definidos."
+  },
+  {
+    "id": 67,
+    "pregunta": "Las propiedades pueden ser de dos tipos:",
+    "opciones": [
+      "A. Simples o complejas.",
+      "B. Individuales o múltiples.",
+      "C. Públicas o privadas.",
+      "D. Simples o indexadas."
+    ],
+    "respuesta_correcta": "D. Simples o indexadas.",
+    "explicacion": "En JavaBeans, una propiedad simple representa un único valor y se accede normalmente mediante métodos getter y setter. Una propiedad indexada representa una colección ordenada, habitualmente un array, y permite leer o modificar tanto el conjunto completo como un elemento concreto mediante su índice. Público y privado son niveles de acceso, no estos dos tipos de propiedad."
+  },
+  {
+    "id": 68,
+    "pregunta": "Los eventos pueden ser, según su origen, de dos tipos:",
+    "opciones": [
+      "A. Simples o complejos.",
+      "B. Nativos o extranjeros.",
+      "C. Externos e internos.",
+      "D. Ascendentes o descendentes."
+    ],
+    "respuesta_correcta": "C. Externos e internos.",
+    "explicacion": "Los eventos externos proceden de la interacción del usuario o del entorno, como pulsar una tecla, mover el ratón o cerrar una ventana. Los internos se originan dentro de la aplicación o de sus componentes, por ejemplo, cuando cambia una propiedad o finaliza una operación. En ambos casos, el sistema de eventos permite notificar el cambio y ejecutar la respuesta asociada."
+  },
+  {
+    "id": 69,
+    "pregunta": "Los métodos:",
+    "opciones": [
+      "A. Definen las características de los objetos tanto en su comportamiento como en su apariencia, como puede ser su color, tipo de letra, etc.",
+      "B. Almacenan valores internos para el uso de la clase u objeto mismo.",
+      "C. Definen las acciones que un objeto puede llevar a cabo.",
+      "D. No forman parte del componente como tal, pero se unen a este para convertirlo en un elemento interactivo."
+    ],
+    "respuesta_correcta": "C. Definen las acciones que un objeto puede llevar a cabo.",
+    "explicacion": "Un método reúne instrucciones que expresan una operación o comportamiento de un objeto, como mostrar una ventana, validar un dato o actualizar un componente. Los atributos almacenan el estado y las propiedades describen características observables. Los listeners de la última opción se asocian al componente para reaccionar ante eventos, pero no definen qué es un método."
+  },
+  {
+    "id": 70,
+    "pregunta": "Un evento es:",
+    "opciones": [
+      "A. Definen las características de los objetos tanto en su comportamiento como en su apariencia, como puede ser su color, tipo de letra, etc.",
+      "B. Almacenan valores internos para el uso de la clase u objeto mismo.",
+      "C. Definen las acciones que un objeto puede llevar a cabo.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Un evento es una notificación de que ha ocurrido una acción o un cambio relevante en el sistema. Las tres primeras opciones describen propiedades, atributos o métodos, pero ninguna define esa notificación. Un listener recibe el objeto del evento y ejecuta el código preparado para responder, por ejemplo, al pulsar un botón o modificar una propiedad."
   }
 ];

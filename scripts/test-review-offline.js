@@ -27,9 +27,14 @@ assert.ok(reload.obtenerSesionActiva("a", "examen"));
 
 // Integración del motor: crear repaso, salir y recuperar el orden de respuestas.
 const engine = {
-  document: { addEventListener() {}, getElementById: () => ({ classList: { add() {}, remove() {} }, style: {} }) },
+  document: {
+    addEventListener() {},
+    getElementById: () => ({ classList: { add() {}, remove() {} }, style: {} }),
+    querySelector: () => ({ classList: { add() {}, remove() {} } })
+  },
   ProgresoEstudio: reload,
-  bancoDePreguntas: { a: [{ id: 1, pregunta: "Fixture", opciones: ["A", "B", "C"], correcta: 1 }] }
+  bancoDePreguntas: { a: [{ id: 1, pregunta: "Fixture", opciones: ["A", "B", "C"], correcta: 1 }] },
+  confirm: () => true
 };
 vm.createContext(engine);
 vm.runInContext(fs.readFileSync(path.resolve(__dirname, "../www/script.js"), "utf8"), engine);
@@ -55,6 +60,16 @@ assert.equal(vm.runInContext("modo", engine), "repaso");
 assert.equal(engine.bancoDePreguntas.a[0].correcta, 1);
 assert.ok(reload.obtenerSesionActiva("a", "estudio"));
 assert.ok(reload.obtenerSesionActiva("a", "examen"));
+
+const estadisticasAntesDeDescartar = reload.obtenerAsignatura("a");
+engine.confirm = () => false;
+assert.equal(engine.descartarSesionGuardada("a", "estudio"), false);
+assert.ok(reload.obtenerSesionActiva("a", "estudio"));
+engine.confirm = () => true;
+assert.equal(engine.descartarSesionGuardada("a", "estudio"), true);
+assert.equal(reload.obtenerSesionActiva("a", "estudio"), null);
+assert.ok(reload.obtenerSesionActiva("a", "examen"));
+assert.deepEqual(reload.obtenerAsignatura("a"), estadisticasAntesDeDescartar);
 
 async function testOffline() {
   const root = path.resolve(__dirname, "../www");

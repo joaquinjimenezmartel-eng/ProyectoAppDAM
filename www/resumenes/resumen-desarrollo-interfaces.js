@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U2 · Diseño e interfaces Java</span>
+    <span class="study-summary__eyebrow">U1–U3 · Diseño, componentes e interfaces Java</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -44,5 +44,25 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Orientación a objetos</h4>
     <p>La POO permite organizar la interfaz en objetos con responsabilidades concretas, encapsular su estado y reutilizar componentes. Separar la presentación, los datos y la lógica de interacción ayuda a mantener el código y facilita las pruebas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Componentes: estado y comportamiento</h4>
+    <p>Los atributos almacenan el estado de un objeto, las propiedades exponen características como el color o la tipografía y los métodos definen las acciones que puede realizar. El constructor establece el estado inicial cuando se crea una instancia. El ámbito determina desde qué parte del programa puede utilizarse cada elemento.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Propiedades JavaBeans</h4>
+    <p>Una propiedad simple representa un único valor y suele utilizar métodos de lectura y escritura. Una propiedad indexada representa una colección y permite acceder al conjunto completo o a una posición concreta. Las propiedades enlazadas pueden avisar de sus cambios mediante eventos y listeners.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Reflexión e introspección</h4>
+    <p>La reflexión permite examinar y utilizar clases, campos, métodos y constructores durante la ejecución. La introspección aplica convenciones para descubrir las propiedades, los métodos y los eventos de un componente JavaBean. Estas técnicas permiten que herramientas visuales y frameworks trabajen con componentes sin conocer previamente todos sus detalles.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Origen de los eventos</h4>
+    <p>Un evento externo nace de la interacción o del entorno, como una pulsación o el movimiento del ratón. Un evento interno refleja un cambio producido dentro de la aplicación o de un componente. Interfaces como <code>KeyListener</code> y <code>ActionListener</code> permiten recibir eventos concretos; <code>MotionKeyListener</code> no es un listener estándar.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Herramientas de edición gráfica</h4>
+    <p>Aplicaciones como Paint, Photoshop y GIMP permiten crear imágenes desde cero, aunque ofrecen distintos niveles de edición. GIMP es una herramienta libre y gratuita que incorpora capas, selecciones, filtros y recursos de retoque. La herramienta adecuada depende de la complejidad del resultado y del flujo de trabajo.</p>
   </section>
 </article>`;

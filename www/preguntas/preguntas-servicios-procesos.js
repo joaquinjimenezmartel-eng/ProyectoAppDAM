@@ -239,5 +239,125 @@ const preguntasServiciosProcesos = [
     ],
     "respuesta_correcta": "D. Existen mecanismos de sincronización para el uso concurrente de objetos implementados en los métodos de la clase.",
     "explicacion": "Una clase es thread-safe si mantiene sus reglas y produce resultados correctos cuando varios hilos la utilizan a la vez. Proteger sus métodos o secciones críticas con sincronización es una forma de conseguirlo. También pueden emplearse inmutabilidad, variables atómicas, bloqueos explícitos o confinamiento de datos. La clave es que quien usa la clase pueda hacerlo concurrentemente sin tener que corregir estados intermedios incoherentes."
+  },
+  {
+    "id": 61,
+    "pregunta": "¿Cuál puede ser el tamaño máximo de un datagrama UDP?",
+    "opciones": [
+      "A. 2^8",
+      "B. 2^32",
+      "C. 2^16",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "C. 2^16",
+    "explicacion": "La cabecera UDP reserva 16 bits para indicar la longitud total del datagrama, incluida su propia cabecera. Por eso el test expresa el límite con 2^16; el mayor valor que puede codificarse en esos 16 bits es 65.535 bytes. En la práctica, el tamaño útil de los datos es menor porque hay que descontar las cabeceras y pueden existir límites adicionales en la red."
+  },
+  {
+    "id": 62,
+    "pregunta": "¿Cuáles son los dos protocolos principales a nivel de transporte?",
+    "opciones": [
+      "A. UDP y TCP",
+      "B. UDP e IP",
+      "C. IP y TCP",
+      "D. Son tres: IP, UDP y TCP"
+    ],
+    "respuesta_correcta": "A. UDP y TCP",
+    "explicacion": "TCP y UDP son los dos protocolos de transporte más utilizados en la arquitectura de Internet. TCP ofrece una comunicación orientada a conexión, fiable y ordenada; UDP envía datagramas sin establecer una conexión y con menos control. IP pertenece a la capa de red: se ocupa de identificar los equipos y encaminar los paquetes entre redes."
+  },
+  {
+    "id": 63,
+    "pregunta": "¿Qué comunicación es posible gracias a los sockets de comunicación?",
+    "opciones": [
+      "A. La comunicación dúplex",
+      "B. La comunicación semidúplex",
+      "C. La comunicación full dúplex",
+      "D. A y B son correctas"
+    ],
+    "respuesta_correcta": "C. La comunicación full dúplex",
+    "explicacion": "Una conexión mediante sockets puede permitir que los dos extremos envíen y reciban información al mismo tiempo, lo que se denomina comunicación full dúplex. En TCP, cada sentido del flujo funciona de manera independiente dentro de la misma conexión. No debe confundirse con el semidúplex, donde ambos extremos pueden transmitir, pero no simultáneamente."
+  },
+  {
+    "id": 64,
+    "pregunta": "A la hora de recibir un datagrama de UDP, ¿cómo puede un programa saber la dirección IP y el puerto del emisor?",
+    "opciones": [
+      "A. Antes de recibir el datagrama ya sabe la dirección IP y el puerto",
+      "B. Usando el método connect",
+      "C. El datagrama contiene dicha información",
+      "D. Usando el objeto DatagramSocket"
+    ],
+    "respuesta_correcta": "C. El datagrama contiene dicha información",
+    "explicacion": "Al recibir un datagrama, el sistema entrega también los datos del origen. En Java, el DatagramPacket recibido permite consultar la dirección mediante getAddress() y el puerto mediante getPort(). No es necesario conocerlos previamente ni conectar el DatagramSocket: cada paquete aporta la información necesaria para identificar a su emisor y responderle."
+  },
+  {
+    "id": 65,
+    "pregunta": "Con respecto al protocolo TCP, indica qué afirmación es verdadera:",
+    "opciones": [
+      "A. Permite garantizar que los segmentos de datos se han entregado en el orden correcto",
+      "B. Es orientado a la conexión",
+      "C. Permite garantizar que todos los segmentos de datos han llegado correctamente",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "TCP establece una conexión antes de intercambiar el flujo de datos y utiliza números de secuencia, confirmaciones y retransmisiones para detectar pérdidas y reconstruir la información en orden. Estas funciones proporcionan a la aplicación una entrega fiable y ordenada mientras la conexión pueda mantenerse. Por tanto, las tres afirmaciones describen propiedades esenciales de TCP."
+  },
+  {
+    "id": 66,
+    "pregunta": "El protocolo UDP...",
+    "opciones": [
+      "A. Pertenece a la capa de transporte",
+      "B. No se encuentra orientado a la conexión",
+      "C. No permite garantizar la entrega de los paquetes",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "UDP es un protocolo de la capa de transporte y funciona sin establecer previamente una conexión. Envía datagramas con poco control, por lo que no confirma su recepción ni garantiza que lleguen, que lo hagan una sola vez o que mantengan el orden. Esa simplicidad reduce la sobrecarga y resulta útil cuando importa más la rapidez que la recuperación automática de pérdidas."
+  },
+  {
+    "id": 67,
+    "pregunta": "Indica cuál de las siguientes afirmaciones es verdadera con respecto a las peticiones de conexión TCP:",
+    "opciones": [
+      "A. Se suelen enviar al servidor procedentes de un puerto del sistema del cliente",
+      "B. Se reciben normalmente en un puerto del sistema o registrado en el servidor",
+      "C. A y B son correctas",
+      "D. Todas son incorrectas"
+    ],
+    "respuesta_correcta": "B. Se reciben normalmente en un puerto del sistema o registrado en el servidor",
+    "explicacion": "Un servidor suele escuchar en un puerto asociado a su servicio, dentro del rango de puertos del sistema o de puertos registrados. El cliente inicia la conexión desde un puerto efímero asignado temporalmente por su sistema operativo, no normalmente desde un puerto del sistema. La combinación de direcciones IP y puertos permite distinguir cada conexión TCP."
+  },
+  {
+    "id": 68,
+    "pregunta": "Indica cuál no es un tipo de protocolo de aplicación:",
+    "opciones": [
+      "A. Booleano",
+      "B. Binario",
+      "C. Sin estado",
+      "D. Basado en texto"
+    ],
+    "respuesta_correcta": "A. Booleano",
+    "explicacion": "Un protocolo de aplicación puede clasificarse por cómo representa sus mensajes —por ejemplo, basado en texto o binario— y por cómo gestiona la conversación, como ocurre con los protocolos sin estado. «Booleano» describe un tipo de dato con dos valores posibles, no una categoría habitual de protocolo de aplicación."
+  },
+  {
+    "id": 69,
+    "pregunta": "Las siglas IP, ¿a qué hacen referencia?",
+    "opciones": [
+      "A. Internet Protocol",
+      "B. Internet Premise",
+      "C. Impresive Protocol",
+      "D. Inoperative Protocol"
+    ],
+    "respuesta_correcta": "A. Internet Protocol",
+    "explicacion": "IP significa Internet Protocol. Es el protocolo de la capa de red que proporciona direccionamiento y permite encaminar datagramas desde un origen hasta un destino a través de una o varias redes. TCP y UDP utilizan IP por debajo para transportar sus segmentos o datagramas entre equipos."
+  },
+  {
+    "id": 70,
+    "pregunta": "Los datagramas UDP suelen ser enviados...",
+    "opciones": [
+      "A. Entre un puerto del sistema en el servidor y un puerto registrado en el cliente",
+      "B. Entre puertos efímeros, tanto en el servidor como en el cliente",
+      "C. Entre puertos registrados, tanto en el servidor como el cliente",
+      "D. Entre un puerto del sistema o registrado en el servidor y en el cliente un puerto efímero"
+    ],
+    "respuesta_correcta": "D. Entre un puerto del sistema o registrado en el servidor y en el cliente un puerto efímero",
+    "explicacion": "En el modelo cliente-servidor, el servidor suele permanecer asociado a un puerto conocido o registrado para que los clientes sepan dónde enviar sus datagramas. El cliente utiliza normalmente un puerto efímero asignado durante la comunicación. El servidor obtiene ese puerto de origen al recibir el datagrama y puede usarlo para dirigir la respuesta al cliente correcto."
   }
 ];

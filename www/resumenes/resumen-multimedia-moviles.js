@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U2 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U3 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -33,5 +33,17 @@ const resumenMultimediaMoviles = `
   <section class="study-summary__section">
     <h4>7. Permisos, aislamiento y ADB</h4>
     <p>Android 6.0 Marshmallow introdujo la solicitud de permisos peligrosos durante la ejecución. Cada aplicación funciona normalmente con un identificador de usuario de Linux propio, que contribuye a aislar sus archivos y procesos. <strong>ADB</strong> comunica el equipo de desarrollo con dispositivos o emuladores para instalar, ejecutar comandos y depurar aplicaciones.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>8. Intents explícitos e implícitos</h4>
+    <p>Un <strong>Intent</strong> describe una acción que Android debe realizar. Puede incluir componente, acción, datos, categorías, extras y flags. Un Intent <strong>explícito</strong> señala directamente el componente de destino mediante recursos como <code>setComponent()</code>, <code>setClass()</code> o <code>setClassName()</code>. Un Intent <strong>implícito</strong> declara la acción y deja que el sistema encuentre una aplicación compatible.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>9. Ciclo de vida y estado de una Activity</h4>
+    <p>La etapa visible se desarrolla entre <code>onStart()</code> y <code>onStop()</code>, mientras que <code>onResume()</code> y <code>onPause()</code> delimitan la interacción en primer plano. <code>onSaveInstanceState()</code> permite guardar en un <strong>Bundle</strong> información temporal que ayudará a reconstruir la pantalla si la Activity se recrea. Los datos permanentes deben almacenarse mediante otro mecanismo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>10. Pila de actividades y PendingIntent</h4>
+    <p>La pila de actividades sigue el principio <strong>LIFO</strong>: la última Activity que entra es la primera que sale al retroceder. Un <strong>PendingIntent</strong> permite que otro componente ejecute más adelante una acción con la identidad y los permisos de la aplicación creadora. Es habitual en notificaciones y puede funcionar aunque la Activity que lo creó ya no esté activa.</p>
   </section>
 </article>`;

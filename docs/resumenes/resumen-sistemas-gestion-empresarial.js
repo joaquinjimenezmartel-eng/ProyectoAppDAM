@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U2 · Sistemas, ERP y gestión empresarial</span>
+    <span class="study-summary__eyebrow">U1–U3 · Sistemas, ERP y plataforma Odoo</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -44,5 +44,21 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Licencias y contratación</h4>
     <p>El modelo SaaS suele contratarse mediante suscripción periódica. Una licencia perpetua concede el uso de una versión mediante un pago inicial. Open source describe libertades sobre el código, no necesariamente precio cero: un producto abierto puede venderse y complementarse con servicios profesionales o módulos comerciales.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Modelo, vista y controlador en Odoo</h4>
+    <p>Las vistas se declaran principalmente mediante XML y determinan cómo se presenta la información. El código Python implementa la lógica del servidor y los controladores que coordinan peticiones y respuestas. Los modelos organizan los datos y se relacionan con PostgreSQL mediante el ORM de Odoo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Aplicaciones y módulos</h4>
+    <p>Odoo parte de un conjunto inicial de módulos y permite instalar otros desde el apartado Apps. Las dependencias conectan funciones relacionadas. Compra y venta sostienen el flujo comercial; contabilidad aplica las reglas financieras y tributarias; y fabricación planifica órdenes, materiales, recursos y fechas de producción.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Modo desarrollador</h4>
+    <p>El modo desarrollador activa herramientas avanzadas para consultar o editar vistas, acciones, campos, filtros y configuraciones técnicas. Resulta útil tanto para desarrollar personalizaciones como para administrar la base de datos. Su capacidad para cambiar elementos internos exige utilizarlo con precaución.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Formas de instalación</h4>
+    <p>Una instalación monopuesto concentra los componentes en un equipo y simplifica el despliegue inicial, pero ofrece menos flexibilidad que una arquitectura distribuida o cloud. Las soluciones alojadas facilitan el acceso remoto, las actualizaciones y el crecimiento, mientras que una instalación local concede mayor control sobre la infraestructura.</p>
   </section>
 </article>`;
