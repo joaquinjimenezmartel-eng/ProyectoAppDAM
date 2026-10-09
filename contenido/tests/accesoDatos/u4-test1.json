@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "asignaturaId": "accesoDatos",
+  "testId": "u4-test1",
+  "fuente": "U4/U4 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "numeroOriginal": 1,
+      "id": 71,
+      "campo": "pregunta",
+      "original": "¿Qué es un ORM?:",
+      "corregido": "¿Qué es un ORM?",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 72,
+      "campo": "opciones.C",
+      "original": "funcionalidad de java",
+      "corregido": "funcionalidad de Java",
+      "autorizacion": "Corrección ortográfica del nombre propio autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 75,
+      "campos": ["pregunta", "opciones.B", "respuesta_correcta"],
+      "original": "Los POJOs / clases de java",
+      "corregido": "Los POJOs: / clases de Java",
+      "autorizacion": "Correcciones ortográficas y de puntuación autorizadas por el propietario; se mantiene la opción B como solución."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 77,
+      "campos": ["pregunta", "opciones.A", "opciones.D", "respuesta_correcta"],
+      "original": "Podemos afirmar que / En hibernate / Ninguna de las respuestas anteriores son correctas",
+      "corregido": "Podemos afirmar que: / En Hibernate / Ninguna de las respuestas anteriores es correcta",
+      "autorizacion": "Correcciones ortográficas, gramaticales y de puntuación autorizadas por el propietario; se mantiene la opción D como solución."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 78,
+      "campo": "pregunta",
+      "original": "Si queremos configurar hibernate tenemos que modificar el fichero",
+      "corregido": "Si queremos configurar Hibernate, tenemos que modificar el fichero:",
+      "autorizacion": "Correcciones ortográficas y de puntuación autorizadas por el propietario; no modifican la solución."
+    },
+    {
+      "preguntasOriginales": [6, 9, 10],
+      "ids": [76, 79, 80],
+      "campo": "pregunta",
+      "original": "Enunciados sin signo de puntuación final.",
+      "corregido": "Enunciados finalizados con dos puntos.",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; no modifica las soluciones."
+    }
+  ],
+  "notasRevision": [
+    "Las diez respuestas seleccionadas en el intento coinciden con las soluciones indicadas en el documento."
+  ],
+  "referenciasExplicaciones": [
+    "https://docs.hibernate.org/orm/6.1/userguide/html_single/",
+    "https://docs.hibernate.org/orm/5.6/javadocs/org/hibernate/Session.html",
+    "https://docs.hibernate.org/orm/5.2/javadocs/org/hibernate/query/QueryProducer.html",
+    "https://docs.hibernate.org/orm/3.2/reference/en/pdf/hibernate_reference.pdf"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 71,
+      "pregunta": "¿Qué es un ORM?",
+      "opciones": [
+        "A. Técnicas y herramientas para destruir un objeto según una correspondencia entre un objeto y una tabla de una base de datos relacional.",
+        "B. Técnicas y herramientas para persistir un objeto según una correspondencia entre un objeto y una tabla de una base de datos relacional.",
+        "C. Técnicas y herramientas para persistir una tabla según una correspondencia entre un fichero y una tabla de una base de datos relacional.",
+        "D. Es un organismo regional de mapeo."
+      ],
+      "respuesta_correcta": "B. Técnicas y herramientas para persistir un objeto según una correspondencia entre un objeto y una tabla de una base de datos relacional.",
+      "explicacion": "ORM significa mapeo objeto-relacional. Relaciona clases y objetos de la aplicación con tablas y filas de una base de datos, y convierte las operaciones realizadas sobre esos objetos en operaciones de persistencia. Así se trabaja con el modelo orientado a objetos sin escribir manualmente todo el código de transformación."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 72,
+      "pregunta": "Hibernate es...",
+      "opciones": [
+        "A. Un estado de hibernación",
+        "B. Un framework para aplicar ORM.",
+        "C. Un framework para ampliar la funcionalidad de Java.",
+        "D. Ninguna de las respuestas anteriores es correcta"
+      ],
+      "respuesta_correcta": "B. Un framework para aplicar ORM.",
+      "explicacion": "Hibernate ORM es un framework de persistencia para aplicaciones Java. Se sitúa entre la capa de acceso a datos y la base de datos relacional, gestiona la correspondencia entre entidades y tablas y permite guardar, recuperar, modificar o eliminar objetos mediante una Session o las APIs de persistencia compatibles."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 73,
+      "pregunta": "La diferencia entre el método get() y load() es:",
+      "opciones": [
+        "A. No hay diferencias, ambos hacen lo mismo.",
+        "B. Si el objeto a obtener no existe, get() devuelve null y load() una excepción",
+        "C. Si el objeto a obtener no existe, get() devuelve una excepción y load() devuelve null",
+        "D. Si el objeto a obtener no existe, get() lo busca en la base de datos y load() lo busca en memoria."
+      ],
+      "respuesta_correcta": "B. Si el objeto a obtener no existe, get() devuelve null y load() una excepción",
+      "explicacion": "En la API tradicional de Hibernate, get() intenta obtener la entidad y devuelve null si no existe. load() puede devolver primero una referencia o proxy y presupone que el identificador corresponde a una entidad válida; cuando se necesita inicializarla y no existe, se produce una excepción."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 74,
+      "pregunta": "Los objetos según su uso pueden tener los siguientes estados:",
+      "opciones": [
+        "A. Transitorio, Persistente, Separado o Corrupto",
+        "B. Transitorio, Guardo, Separado o Eliminado",
+        "C. Transitorio, Persistente, Insertado o Eliminado",
+        "D. Transitorio, Persistente, Separado o Eliminado"
+      ],
+      "respuesta_correcta": "D. Transitorio, Persistente, Separado o Eliminado",
+      "explicacion": "Una entidad es transitoria cuando todavía no está asociada a un contexto de persistencia; persistente cuando la Session la gestiona; separada cuando conserva su identidad pero dejó de estar asociada a ese contexto; y eliminada cuando está programada para borrarse de la base de datos."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 75,
+      "pregunta": "Los POJOs:",
+      "opciones": [
+        "A. Son ficheros de texto que representan una correspondencia entre un objeto y una tabla de la base de datos",
+        "B. Son clases de Java que representan una correspondencia entre un objeto y una tabla de la base de datos",
+        "C. Son un atributo que representan una correspondencia entre un objeto y una tabla de la base de datos",
+        "D. Son grupos de tablas que representan una correspondencia entre un objeto."
+      ],
+      "respuesta_correcta": "B. Son clases de Java que representan una correspondencia entre un objeto y una tabla de la base de datos",
+      "explicacion": "Un POJO es una clase Java sencilla que no necesita heredar de una clase especial del framework. En Hibernate, una clase de entidad puede actuar como POJO y sus atributos se corresponden con los datos persistentes de una tabla mediante anotaciones o archivos de mapeo."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 76,
+      "pregunta": "Para buscar un objeto podemos usar:",
+      "opciones": [
+        "A. El método get o load de sesión",
+        "B. Uso de sentencias HQL con el método .createQuery",
+        "C. Uso de sentencias SQL con el método .createNativeQuery",
+        "D. Todas las respuestas anteriores son correctas"
+      ],
+      "respuesta_correcta": "D. Todas las respuestas anteriores son correctas",
+      "explicacion": "Hibernate permite recuperar una entidad por su identificador mediante operaciones de Session como get() o load(). También puede buscar datos con HQL y createQuery(), trabajando con entidades y atributos, o ejecutar SQL nativo mediante createNativeQuery() cuando se necesita utilizar directamente el lenguaje de la base de datos."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 77,
+      "pregunta": "Podemos afirmar que:",
+      "opciones": [
+        "A. En Hibernate no hay herramientas para aplicar la correspondencia cuando existe herencia de objetos",
+        "B. Las bases de datos relacionales tienen un modelo de datos para representar la herencia.",
+        "C. La correspondencia de herencia solo se puede aplicar si se elimina la jerarquía.",
+        "D. Ninguna de las respuestas anteriores es correcta"
+      ],
+      "respuesta_correcta": "D. Ninguna de las respuestas anteriores es correcta",
+      "explicacion": "Hibernate sí permite mapear jerarquías mediante estrategias como una tabla por jerarquía, una tabla por subclase o una tabla por clase concreta. El modelo relacional no incorpora la herencia de objetos como concepto propio, pero el ORM puede representarla con distintas estructuras de tablas sin eliminar la jerarquía del modelo Java."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 78,
+      "pregunta": "Si queremos configurar Hibernate, tenemos que modificar el fichero:",
+      "opciones": [
+        "A. Los ficheros .hbm.xml",
+        "B. Hibernate.cfg.xml",
+        "C. Hibernate.reveng.xml",
+        "D. HibernateUtils"
+      ],
+      "respuesta_correcta": "B. Hibernate.cfg.xml",
+      "explicacion": "El archivo hibernate.cfg.xml centraliza la configuración clásica de Hibernate, como la conexión, el dialecto SQL, propiedades de la SessionFactory y referencias a los mapeos. Los archivos .hbm.xml describen la correspondencia de entidades concretas, mientras que reveng.xml se utiliza en procesos de ingeniería inversa."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 79,
+      "pregunta": "Si queremos consultar la correspondencia o mapeo que hay entre una clase y una tabla de la base de datos consultaremos:",
+      "opciones": [
+        "A. Los ficheros .hbm.xml",
+        "B. Hibernate.cfg.xml",
+        "C. Hibernate.reveng.xml",
+        "D. HibernateUtils"
+      ],
+      "respuesta_correcta": "A. Los ficheros .hbm.xml",
+      "explicacion": "En la configuración XML clásica, un archivo .hbm.xml declara cómo se relacionan una clase, sus propiedades y asociaciones con tablas y columnas de la base de datos. El archivo hibernate.cfg.xml reúne la configuración global y puede indicar qué documentos de mapeo deben cargarse."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 80,
+      "pregunta": "Si queremos hacer una consulta con el lenguaje HQL usaremos:",
+      "opciones": [
+        "A. La interfaz Query con el método .createQuery",
+        "B. La interfaz Query con el método .createNativeQuery",
+        "C. La interfaz SubQuery con el método .createQuery",
+        "D. La interfaz SubQuery con el método .createNativeQuery"
+      ],
+      "respuesta_correcta": "A. La interfaz Query con el método .createQuery",
+      "explicacion": "HQL expresa consultas utilizando entidades y atributos del modelo, y se prepara mediante createQuery(). createNativeQuery() se reserva para SQL nativo. La consulta resultante se representa mediante Query y puede ejecutarse para obtener una lista, un único resultado o realizar una operación de modificación."
+    }
+  ]
+}

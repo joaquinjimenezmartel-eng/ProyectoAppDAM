@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U3 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U4 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -45,5 +45,13 @@ const resumenMultimediaMoviles = `
   <section class="study-summary__section">
     <h4>10. Pila de actividades y PendingIntent</h4>
     <p>La pila de actividades sigue el principio <strong>LIFO</strong>: la última Activity que entra es la primera que sale al retroceder. Un <strong>PendingIntent</strong> permite que otro componente ejecute más adelante una acción con la identidad y los permisos de la aplicación creadora. Es habitual en notificaciones y puede funcionar aunque la Activity que lo creó ya no esté activa.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>11. Contenedores y distribución de la interfaz</h4>
+    <p>Los layouts organizan las vistas de una pantalla. <strong>GridLayout</strong> utiliza una cuadrícula y permite que una vista abarque varias filas con <code>layout_rowSpan</code>. <strong>TableLayout</strong> distribuye el contenido en filas y columnas; dentro de una fila, <code>layout_span</code> hace que una celda ocupe varias columnas. <strong>FrameLayout</strong> sitúa sus hijos en una misma superficie, por lo que pueden quedar superpuestos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>12. Posición, alineación y tamaño</h4>
+    <p><strong>RelativeLayout</strong> coloca una vista respecto a otra o respecto al contenedor padre. Reglas como <code>layout_alignTop</code> alinean bordes entre controles. Los atributos <code>layout_width</code> y <code>layout_height</code> determinan el espacio que ocupa cada vista, mientras que <code>android:orientation</code> establece una dirección vertical u horizontal en los contenedores que admiten este atributo.</p>
   </section>
 </article>`;

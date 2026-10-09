@@ -359,5 +359,125 @@ const preguntasSistemasGestionEmpresarial = [
     ],
     "respuesta_correcta": "C. Controlador.",
     "explicacion": "El controlador coordina la interacción: recibe una petición o acción, ejecuta la lógica necesaria y prepara la respuesta que se mostrará mediante una vista. En Odoo esta parte se implementa con objetos y métodos Python, mientras que las vistas se declaran principalmente en XML. Así se separa la presentación visual de la lógica que dirige el flujo de la aplicación."
+  },
+  {
+    "id": 71,
+    "pregunta": "Dentro de los servicios profesionales de las empresas, indica la respuesta correcta:",
+    "opciones": [
+      "A. La heterogeneidad nunca está estandarizada, ya que el cliente nunca la valora",
+      "B. La inseparabilidad sí se puede separar",
+      "C. La fiabilidad no se puede tocar ni manipular",
+      "D. Los perecederos sí se pueden almacenar y aprovisionar"
+    ],
+    "respuesta_correcta": "C. La fiabilidad no se puede tocar ni manipular",
+    "explicacion": "Un servicio profesional no es un objeto físico que pueda tocarse, examinarse o almacenarse antes de contratarlo. El cliente evalúa elementos como la experiencia, la reputación y los resultados obtenidos. Las demás afirmaciones contradicen características habituales de los servicios: varían según quién los presta, producción y consumo están relacionados y la capacidad no utilizada no se almacena."
+  },
+  {
+    "id": 72,
+    "pregunta": "En la aplicación de contactos, se pueden crear los grupos:",
+    "opciones": [
+      "A. Rango de cliente y rango de proveedor",
+      "B. Es un cliente y es un proveedor",
+      "C. Rango de empleado y rango de cliente",
+      "D. Es un empleado y es un cliente"
+    ],
+    "respuesta_correcta": "A. Rango de cliente y rango de proveedor",
+    "explicacion": "La ficha de contacto puede reflejar la relación comercial de una empresa o persona con la organización. Los rangos de cliente y proveedor permiten clasificar esa relación según las operaciones realizadas y facilitan localizar contactos, completar documentos y aplicar los flujos comerciales adecuados."
+  },
+  {
+    "id": 73,
+    "pregunta": "La aplicación de análisis de planificación y parte de horas permite:",
+    "opciones": [
+      "A. Automatizar el proceso de compra y confirmar los documentos recibidos",
+      "B. Gestionar en tiempo real el personal de una empresa",
+      "C. Registrar el tiempo y una descripción de las acciones realizadas",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "C. Registrar el tiempo y una descripción de las acciones realizadas",
+    "explicacion": "Los partes de horas registran cuánto tiempo se dedica a una tarea, proyecto o cliente y permiten añadir una descripción del trabajo realizado. Esa información sirve para comparar planificación y ejecución, analizar costes, justificar el trabajo y facturar servicios basados en tiempo."
+  },
+  {
+    "id": 74,
+    "pregunta": "La aplicación de contabilidad permite controlar:",
+    "opciones": [
+      "A. Liquidación de impuestos",
+      "B. Planificación anticipada de inversiones y pagos",
+      "C. Conocer la situación económica y financiera en tiempo real",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "La contabilidad reúne facturas, cobros, pagos, impuestos y movimientos bancarios. Con esos datos permite preparar obligaciones fiscales, prever necesidades de tesorería y consultar informes actualizados sobre resultados, saldos y situación financiera. Por tanto, las tres funciones forman parte del control contable."
+  },
+  {
+    "id": 75,
+    "pregunta": "La configuración de los iconos de las aplicaciones es:",
+    "opciones": [
+      "A. Automática",
+      "B. Individualizada",
+      "C. General",
+      "D. Externa"
+    ],
+    "respuesta_correcta": "B. Individualizada",
+    "explicacion": "Cada aplicación o módulo dispone de su propia identidad visual y configuración, incluido el icono con el que se presenta en el menú. La configuración individualizada permite reconocer cada área funcional y distinguir rápidamente contactos, ventas, contabilidad, proyectos u otras aplicaciones."
+  },
+  {
+    "id": 76,
+    "pregunta": "La herramienta que factura las horas trabajadas, los contratos y permite realizar seguimientos y pagos online es:",
+    "opciones": [
+      "A. Aplicación de ventas",
+      "B. Aplicación de facturación",
+      "C. Aplicación de contabilidad",
+      "D. Aplicación de empleados"
+    ],
+    "respuesta_correcta": "B. Aplicación de facturación",
+    "explicacion": "La aplicación de facturación transforma servicios, horas registradas o condiciones de un contrato en facturas para el cliente. También permite controlar su estado y, cuando se habilitan proveedores de pago, ofrecer el abono online desde el portal del cliente."
+  },
+  {
+    "id": 77,
+    "pregunta": "La herramienta que ofrece todas las funciones que una empresa frente al público necesita es:",
+    "opciones": [
+      "A. Aplicación de punto de venta",
+      "B. Aplicación de proyectos",
+      "C. Aplicación de contactos",
+      "D. Aplicación de ventas"
+    ],
+    "respuesta_correcta": "A. Aplicación de punto de venta",
+    "explicacion": "El punto de venta está diseñado para la atención directa al público. Permite registrar productos o servicios, calcular el importe, aplicar impuestos y descuentos, aceptar distintos medios de pago y emitir el comprobante, manteniendo la operación integrada con inventario y contabilidad."
+  },
+  {
+    "id": 78,
+    "pregunta": "Las características de los servicios profesionales que ofrecen las empresas son:",
+    "opciones": [
+      "A. Fiabilidad",
+      "B. Inseparabilidad y heterogeneidad",
+      "C. Perecederos",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "Los servicios profesionales se valoran por la confianza o fiabilidad, suelen producirse en estrecha relación con quien los presta, pueden variar según las personas y las circunstancias y no permiten almacenar para más adelante la capacidad que no se utilizó. Estas características condicionan su calidad, planificación y comercialización."
+  },
+  {
+    "id": 79,
+    "pregunta": "Las empresas de desarrolladores de software son descritas como:",
+    "opciones": [
+      "A. Sostenibles",
+      "B. Basadas en proyectos",
+      "C. Homogéneas",
+      "D. Heterogéneas"
+    ],
+    "respuesta_correcta": "B. Basadas en proyectos",
+    "explicacion": "El desarrollo de software suele organizarse mediante proyectos con objetivos, alcance, presupuesto, equipo y calendario propios. La gestión por proyectos permite planificar tareas, registrar horas, controlar entregas y costes y coordinar a las personas que intervienen hasta completar el producto o servicio contratado."
+  },
+  {
+    "id": 80,
+    "pregunta": "Las siglas CMR hacen referencia a la aplicación de:",
+    "opciones": [
+      "A. Contactos",
+      "B. Planificación de actividades",
+      "C. Conversaciones",
+      "D. Proyectos"
+    ],
+    "respuesta_correcta": "B. Planificación de actividades",
+    "explicacion": "La planificación de actividades organiza tareas de seguimiento vinculadas a registros empresariales. Permite programar llamadas, correos, reuniones y acciones pendientes, asignar responsables y fechas y encadenar próximos pasos para que ninguna gestión importante quede olvidada."
   }
 ];

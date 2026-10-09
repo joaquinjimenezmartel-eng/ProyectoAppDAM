@@ -113,3 +113,54 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre Odoo, MVC, módulos empresariales, instalaciones, modo desarrollador y PostgreSQL. El resumen se amplía de U1–U2 a U1–U3.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 890 preguntas existentes antes de esta U3 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 9 de octubre de 2026 — Multimedia U4
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U4 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 71–80. JSON `contenido/tests/multimediaMoviles/u4-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 81.
+- En las preguntas originales 2, 4, 5 y 7, la opción seleccionada en el intento es incorrecta. Se conservan las soluciones explícitas de la corrección: D («Ninguna de las anteriores»), C («TableLayout»), B («TableLayout») y A («De posición»), respectivamente.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de puntuación documentadas en el JSON. Incluyen los nombres técnicos `ConstraintLayout`, `android:layout_alignTop`, `android:layout_span` y `layout_height`; ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre GridLayout, TableLayout, FrameLayout, RelativeLayout y atributos de disposición. El resumen se amplía de U1–U3 a U1–U4.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 900 preguntas existentes antes de esta U4 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 9 de octubre de 2026 — Servicios y procesos U4
+
+- Asignatura ampliada: **Programación de servicios y procesos**, ID técnico `serviciosProcesos`.
+- U4 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 71–80. JSON `contenido/tests/serviciosProcesos/u4-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 81.
+- En las preguntas originales 1, 4 y 7, la opción seleccionada en el intento es incorrecta. Se conservan las soluciones explícitas de la corrección: D («Todas son incorrectas»), C («Un protocolo del nivel de aplicación para la encriptación de los datos») y B («Permite enviar un mensaje de correo como resultado de varios mensajes agrupados»), respectivamente.
+- Las únicas modificaciones textuales son dos correcciones ortográficas documentadas en el JSON: «que afirmación» → «qué afirmación» y «especifico» → «específico». Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre Apache Commons Net, TLS, SSH, protocolos de correo, HTTP POST y la clase URL de Java. El resumen se amplía de U1–U3 a U1–U4.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 910 preguntas existentes antes de esta U4 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 9 de octubre de 2026 — Desarrollo de interfaces U4
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U4 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 71–80. JSON `contenido/tests/desarrolloInterfaces/u4-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 81.
+- En la pregunta original 5, la opción seleccionada en el intento es incorrecta. Se conserva la solución explícita de la corrección: opción B, «Un creador de asistentes de instalación».
+- Las únicas modificaciones textuales son correcciones ortográficas y gramaticales documentadas en el JSON: «Acabo» → «Acabó», «acceso acciones» → «acceso a acciones» y la concordancia «Paquetes» → «Paquete» en las definiciones de TAR. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre distribución de aplicaciones, claves y firma digital, Launch4j, formatos de Windows, asistentes de instalación, ejecutables y archivos TAR. El resumen se amplía de U1–U3 a U1–U4.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 920 preguntas existentes antes de esta U4 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 9 de octubre de 2026 — Acceso a datos U4
+
+- Asignatura ampliada: **Acceso a datos**, ID técnico `accesoDatos`.
+- U4 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 71–80. JSON `contenido/tests/accesoDatos/u4-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 81.
+- Las diez respuestas seleccionadas en el intento coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de puntuación documentadas en el JSON. Incluyen la normalización de «Java» y «Hibernate» como nombres propios, la concordancia de «Ninguna ... es correcta» y signos finales en varios enunciados. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre ORM, Hibernate, estados de entidades, POJOs, recuperación de objetos, HQL, SQL nativo, configuración XML y mapeo de herencia. El resumen se amplía de U1–U3 a U1–U4.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 930 preguntas existentes antes de esta U4 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 9 de octubre de 2026 — Sistemas de gestión empresarial U4
+
+- Asignatura ampliada: **Sistemas de gestión empresarial**, ID técnico `sistemasGestionEmpresarial`.
+- U4 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 71–80. JSON `contenido/tests/sistemasGestionEmpresarial/u4-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 81.
+- En la pregunta original 10, la opción A («Contactos») fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: opción B, «Planificación de actividades».
+- Las siglas «CMR» se mantienen exactamente como aparecen en el documento para no alterar el contenido evaluable sin autorización expresa.
+- Las únicas modificaciones textuales son correcciones ortográficas y gramaticales de la pregunta original 1, documentadas en el JSON. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre servicios profesionales, contactos, partes de horas, contabilidad, facturación, punto de venta, proyectos y planificación de actividades. El resumen se amplía de U1–U3 a U1–U4.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 940 preguntas existentes antes de esta U4 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U3 · Diseño, componentes e interfaces Java</span>
+    <span class="study-summary__eyebrow">U1–U4 · Diseño, componentes y distribución</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -64,5 +64,21 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Herramientas de edición gráfica</h4>
     <p>Aplicaciones como Paint, Photoshop y GIMP permiten crear imágenes desde cero, aunque ofrecen distintos niveles de edición. GIMP es una herramienta libre y gratuita que incorpora capas, selecciones, filtros y recursos de retoque. La herramienta adecuada depende de la complejidad del resultado y del flujo de trabajo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Distribución e instalación</h4>
+    <p>Una aplicación puede reunir ejecutables, librerías y recursos multimedia. Internet permite distribuir estos elementos sin depender de soportes físicos. En Windows son habituales los archivos <strong>EXE</strong> y los paquetes <strong>MSI</strong>; un asistente de instalación guía al usuario mediante pasos controlados y reduce la complejidad del proceso.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Aplicaciones Java y Launch4j</h4>
+    <p><strong>Launch4j</strong> envuelve una aplicación Java empaquetada como JAR en un ejecutable ligero para Windows. El lanzador puede añadir icono, pantalla inicial y comprobación del entorno Java, y se integra en el proceso de preparación de la aplicación para su distribución.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Paquetes TAR y compresión</h4>
+    <p>Un archivo <strong>TAR</strong> agrupa varios archivos y sus metadatos siguiendo una secuencia de bloques, pero no los comprime por sí mismo. Para reducir el tamaño puede combinarse con gzip, bzip2 o xz. Por eso <code>.tar</code> identifica el archivo y extensiones como <code>.tar.gz</code> indican además la compresión aplicada.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Firma digital y almacenes de claves</h4>
+    <p>La firma digital utiliza una clave privada para firmar y la clave pública correspondiente para verificar la autoría y la integridad. En un almacén de claves, un alias identifica la entrada que contiene el material criptográfico. El alias no sustituye a la contraseña que protege el almacén o la clave.</p>
   </section>
 </article>`;

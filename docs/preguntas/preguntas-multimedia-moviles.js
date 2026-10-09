@@ -359,5 +359,125 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "C. Podemos iniciar aplicaciones que esperen resultados.",
     "explicacion": "Un PendingIntent es un permiso encapsulado para que otro componente ejecute más tarde una acción definida por la aplicación creadora, incluso si esta ya no está activa. Se usa habitualmente en notificaciones y puede iniciar una Activity, enviar un broadcast o iniciar un Service. No representa el flujo de iniciar una Activity esperando que devuelva un resultado a la Activity creadora."
+  },
+  {
+    "id": 71,
+    "pregunta": "android:layout_rowSpan pertenece a:",
+    "opciones": [
+      "A. RelativeLayout.",
+      "B. ConstraintLayout.",
+      "C. GridLayout.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "C. GridLayout.",
+    "explicacion": "En un GridLayout, layout_rowSpan indica cuántas filas ocupa un elemento hijo. Si su valor es mayor que uno, el elemento se extiende verticalmente por varias celdas de la cuadrícula."
+  },
+  {
+    "id": 72,
+    "pregunta": "android:orientation nos permite:",
+    "opciones": [
+      "A. Redimensionar la pantalla cuando esta gira.",
+      "B. Girar un elemento cuando la pantalla ha rotado.",
+      "C. Apilar elementos, tanto en vertical como horizontal.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "El atributo android:orientation no redimensiona la pantalla ni gira por sí mismo un elemento. En los contenedores que lo admiten, como LinearLayout, establece una única dirección de colocación para sus hijos: vertical u horizontal. Ninguna de las descripciones propuestas expresa con precisión ese comportamiento."
+  },
+  {
+    "id": 73,
+    "pregunta": "android:layout_alignTop determina la posición relativa con respecto a:",
+    "opciones": [
+      "A. Posición relativa al control.",
+      "B. Alineación con respecto al control.",
+      "C. Posición relativa al layout padre.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "B. Alineación con respecto al control.",
+    "explicacion": "En un RelativeLayout, layout_alignTop alinea el borde superior de una vista con el borde superior de otra vista identificada como referencia. Por tanto, expresa una regla de alineación respecto a otro control."
+  },
+  {
+    "id": 74,
+    "pregunta": "El parámetro android:layout_span pertenece a:",
+    "opciones": [
+      "A. RelativeLayout.",
+      "B. ConstraintLayout.",
+      "C. TableLayout.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "C. TableLayout.",
+    "explicacion": "Dentro de una tabla, layout_span permite que una celda de un TableRow ocupe varias columnas consecutivas. Se utiliza en la estructura formada por TableLayout y sus filas."
+  },
+  {
+    "id": 75,
+    "pregunta": "Es una fusión de LinearLayout y TableRow:",
+    "opciones": [
+      "A. RelativeLayout.",
+      "B. TableLayout.",
+      "C. GridLayout.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. TableLayout.",
+    "explicacion": "TableLayout organiza la interfaz en filas y columnas. Sus filas suelen representarse mediante TableRow: el contenedor dispone las filas verticalmente y cada fila distribuye sus celdas horizontalmente, combinando así ambos patrones de organización."
+  },
+  {
+    "id": 76,
+    "pregunta": "FrameLayout:",
+    "opciones": [
+      "A. Permite apilar elementos hijos uno detrás de otro de manera vertical o horizontal.",
+      "B. Permite asignar coordenadas absolutas a los elementos que contiene.",
+      "C. Permite controlar a todos los demás hijos de forma alineada con la esquina superior izquierda.",
+      "D. Permite distribuir los elementos en forma de tabla."
+    ],
+    "respuesta_correcta": "C. Permite controlar a todos los demás hijos de forma alineada con la esquina superior izquierda.",
+    "explicacion": "FrameLayout coloca sus vistas hijas dentro de una misma superficie y, si no se indica otra gravedad, toma como referencia la esquina superior izquierda. Cuando contiene varias vistas, estas pueden quedar superpuestas, por lo que suele reservarse para mostrar un elemento principal o capas controladas."
+  },
+  {
+    "id": 77,
+    "pregunta": "layout_height es un tipo de atributo:",
+    "opciones": [
+      "A. De posición.",
+      "B. Para los márgenes.",
+      "C. Para el espaciado.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. De posición.",
+    "explicacion": "layout_height forma parte de los parámetros de disposición de una vista y define la altura que debe ocupar dentro de su contenedor. Puede expresarse con una medida concreta o mediante valores como match_parent y wrap_content."
+  },
+  {
+    "id": 78,
+    "pregunta": "Permite asignar coordenadas absolutas a los elementos que contiene:",
+    "opciones": [
+      "A. RelativeLayout.",
+      "B. TableLayout.",
+      "C. GridLayout.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "RelativeLayout, TableLayout y GridLayout colocan sus hijos mediante reglas, filas o cuadrículas, no mediante coordenadas absolutas. El antiguo AbsoluteLayout sí permitía indicar posiciones x e y, pero quedó obsoleto porque no se adapta bien a distintos tamaños de pantalla."
+  },
+  {
+    "id": 79,
+    "pregunta": "Permite colocar los diferentes layouts en referencia a otros contenedores, especificando la posición de un objeto en referencia al elemento padre:",
+    "opciones": [
+      "A. RelativeLayout.",
+      "B. TableLayout.",
+      "C. GridLayout.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. RelativeLayout.",
+    "explicacion": "RelativeLayout permite situar una vista en relación con otras vistas o con el propio contenedor padre. Por ejemplo, puede alinearla con un borde del padre, centrarla o colocarla encima, debajo o al lado de otro control."
+  },
+  {
+    "id": 80,
+    "pregunta": "RelativeLayout puede estructurarse con la:",
+    "opciones": [
+      "A. Posición relativa al control.",
+      "B. Alineación con respecto al control.",
+      "C. Posición relativa al layout padre.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "Las reglas de RelativeLayout permiten colocar una vista respecto a otro control, alinear bordes entre controles y posicionarla respecto al contenedor padre. Estas posibilidades pueden combinarse para construir la distribución de la pantalla."
   }
 ];

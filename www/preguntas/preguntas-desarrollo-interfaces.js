@@ -359,5 +359,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
     "explicacion": "Un evento es una notificación de que ha ocurrido una acción o un cambio relevante en el sistema. Las tres primeras opciones describen propiedades, atributos o métodos, pero ninguna define esa notificación. Un listener recibe el objeto del evento y ejecuta el código preparado para responder, por ejemplo, al pulsar un botón o modificar una propiedad."
+  },
+  {
+    "id": 71,
+    "pregunta": "Internet y su evolución han permitido:",
+    "opciones": [
+      "A. Eliminó el empleo de ejecutables.",
+      "B. Acabó con el uso de los CD y USB como medio de transporte para aplicaciones.",
+      "C. Eliminó la necesidad de los asistentes de ejecución.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. Acabó con el uso de los CD y USB como medio de transporte para aplicaciones.",
+    "explicacion": "La distribución por Internet permite descargar aplicaciones y actualizaciones directamente, por lo que los soportes físicos como CD y memorias USB dejaron de ser el medio habitual para transportarlas. Los ejecutables y los asistentes de instalación siguen utilizándose, aunque ahora se obtengan normalmente desde la red."
+  },
+  {
+    "id": 72,
+    "pregunta": "La clave o alias es un código que:",
+    "opciones": [
+      "A. Une la firma y su contraseña.",
+      "B. Sirve como contraseña.",
+      "C. Une el par de firmas única y privada",
+      "D. Ninguna es correcta."
+    ],
+    "respuesta_correcta": "C. Une el par de firmas única y privada",
+    "explicacion": "Un alias identifica una entrada concreta dentro de un almacén de claves. Esa entrada permite localizar el material criptográfico relacionado, como la clave privada usada para firmar y el certificado que contiene la clave pública correspondiente. El alias es un identificador; no sustituye a la contraseña que protege el almacén o la clave."
+  },
+  {
+    "id": 73,
+    "pregunta": "La firma digital se divide en dos partes:",
+    "opciones": [
+      "A. Pública y restringida.",
+      "B. Accesible y restringida.",
+      "C. Visible y privada.",
+      "D. Pública y privada."
+    ],
+    "respuesta_correcta": "D. Pública y privada.",
+    "explicacion": "La firma digital se apoya en criptografía asimétrica. La clave privada permanece bajo el control de quien firma y se utiliza para generar la firma; la clave pública permite verificarla. De este modo se puede comprobar la autoría y detectar si el contenido firmado ha sido modificado."
+  },
+  {
+    "id": 74,
+    "pregunta": "Las aplicaciones pueden poseer:",
+    "opciones": [
+      "A. Librerías.",
+      "B. Ejecutables.",
+      "C. Elementos multimedia.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "D. Todas son correctas.",
+    "explicacion": "Una aplicación distribuida puede incluir el ejecutable principal, bibliotecas necesarias para aportar funcionalidades y recursos multimedia como imágenes, sonidos o vídeos. El proceso de empaquetado reúne estos elementos con la estructura necesaria para instalarlos y ejecutarlos correctamente."
+  },
+  {
+    "id": 75,
+    "pregunta": "Launch4j es:",
+    "opciones": [
+      "A. Un asistente de instalación.",
+      "B. Un creador de asistentes de instalación.",
+      "C. Un asistente de empaquetado.",
+      "D. Ninguna es correcta."
+    ],
+    "respuesta_correcta": "B. Un creador de asistentes de instalación.",
+    "explicacion": "Launch4j permite envolver una aplicación Java distribuida como JAR en un ejecutable nativo ligero para Windows. Ese lanzador puede incorporar icono, pantalla inicial y comprobación de la versión de Java, y formar parte del proceso con el que se prepara la aplicación para su distribución e instalación."
+  },
+  {
+    "id": 76,
+    "pregunta": "Los formatos de paquetes más empleados en Windows son:",
+    "opciones": [
+      "A. EXE y deb.",
+      "B. RPM y TGZ.",
+      "C. RPM y deb.",
+      "D. EXE y MSI."
+    ],
+    "respuesta_correcta": "D. EXE y MSI.",
+    "explicacion": "En Windows es habitual distribuir programas mediante ejecutables EXE o paquetes MSI gestionados por Windows Installer. Los formatos DEB y RPM pertenecen principalmente a distribuciones GNU/Linux, mientras que TGZ es un archivo comprimido y no el formato de instalación característico de Windows."
+  },
+  {
+    "id": 77,
+    "pregunta": "Un asistente de instalación:",
+    "opciones": [
+      "A. Da una mayor libertad dándonos más opciones para que los usuarios elijan.",
+      "B. Permite una instalación rápida y sencilla, pero limitando el acceso a acciones para usuarios novatos.",
+      "C. Permite el empaquetado de archivos.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. Permite una instalación rápida y sencilla, pero limitando el acceso a acciones para usuarios novatos.",
+    "explicacion": "Un asistente guía la instalación mediante una secuencia controlada de pantallas y decisiones. Facilita la tarea a personas sin conocimientos técnicos y reduce errores, aunque normalmente ofrece menos libertad que una configuración manual para mantener el proceso claro y seguro."
+  },
+  {
+    "id": 78,
+    "pregunta": "Un ejecutable:",
+    "opciones": [
+      "A. Archivo binario que es interpretado como un programa por el ordenador.",
+      "B. Paquete usado en sistemas basados en Debian, como Ubuntu o Kubuntu.",
+      "C. Paquetes sin compresión destinados a una lectura lineal e indivisible.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. Archivo binario que es interpretado como un programa por el ordenador.",
+    "explicacion": "Un archivo ejecutable contiene instrucciones o información de arranque que el sistema operativo reconoce para poner en marcha un programa. Un paquete DEB se utiliza para instalar software en sistemas basados en Debian, mientras que la tercera descripción corresponde a un archivo TAR."
+  },
+  {
+    "id": 79,
+    "pregunta": "Un TAR es:",
+    "opciones": [
+      "A. Archivo binario que es interpretado como un programa por el ordenador.",
+      "B. Paquete usado en sistemas basados en Debian, como Ubuntu o Kubuntu.",
+      "C. Paquete sin compresión destinado a una lectura lineal e indivisible.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Paquete sin compresión destinado a una lectura lineal e indivisible.",
+    "explicacion": "TAR agrupa varios archivos y sus metadatos en un único archivo siguiendo una secuencia de bloques. El formato TAR no aplica compresión por sí mismo; para reducir su tamaño suele combinarse con herramientas como gzip, bzip2 o xz, dando lugar a extensiones como .tar.gz."
+  },
+  {
+    "id": 80,
+    "pregunta": "Una firma digital es:",
+    "opciones": [
+      "A. Archivo binario que es interpretado como un programa por el ordenador.",
+      "B. Paquete usado en sistemas basados en Debian, como Ubuntu o Kubuntu.",
+      "C. Paquete sin compresión destinado a una lectura lineal e indivisible.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Una firma digital es un valor criptográfico asociado a unos datos. Se genera con una clave privada y se verifica con la clave pública correspondiente para confirmar el origen y la integridad del contenido. No es un ejecutable, un paquete de instalación ni un archivo TAR."
   }
 ];

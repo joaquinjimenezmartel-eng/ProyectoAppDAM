@@ -5,7 +5,22 @@ const vm = require("node:vm");
 const { cargarContenido, calcularHuellaContenidoEvaluable } = require("./validate-content.js");
 const root = path.resolve(__dirname, "..");
 const { catalogo, bancoDePreguntas } = cargarContenido();
-const catalogoAntesGestionU3 = catalogo.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
+const catalogoAntesGestionU4 = catalogo.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 70) }
+  : asignatura);
+const catalogoAntesAccesoU4 = catalogoAntesGestionU4.map((asignatura) => asignatura.id === "accesoDatos"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 70) }
+  : asignatura);
+const catalogoAntesInterfacesU4 = catalogoAntesAccesoU4.map((asignatura) => asignatura.id === "desarrolloInterfaces"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 70) }
+  : asignatura);
+const catalogoAntesServiciosU4 = catalogoAntesInterfacesU4.map((asignatura) => asignatura.id === "serviciosProcesos"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 70) }
+  : asignatura);
+const catalogoAntesMultimediaU4 = catalogoAntesServiciosU4.map((asignatura) => asignatura.id === "multimediaMoviles"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 70) }
+  : asignatura);
+const catalogoAntesGestionU3 = catalogoAntesMultimediaU4.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
   ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 60) }
   : asignatura);
 const catalogoAntesAccesoU3 = catalogoAntesGestionU3.map((asignatura) => asignatura.id === "accesoDatos"
@@ -39,6 +54,21 @@ const catalogoAntesAccesoU2 = catalogoAntesMultimediaU3.map((asignatura) =>
 const catalogoAntesGestionU2 = catalogoAntesMultimediaU3.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
   ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 50) }
   : asignatura);
+// La U4 de Sistemas de gestión empresarial no puede modificar las 940 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesGestionU4),
+  "839c72796c6f5789c64efcbcab1006eb89286f8c5b12cbe9cbc5a840cabb5227");
+// La U4 de Acceso a datos no puede modificar las 930 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesAccesoU4),
+  "b15ce9fddb09827beffd0ec57d452b3bef825eb7fda7e90c8786a87ecf3dcef0");
+// La U4 de Desarrollo de interfaces no puede modificar las 920 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesInterfacesU4),
+  "e28ead196a1186652e7f71793ce070f14211e3fd69d3ab359bdb1435c834bab5");
+// La U4 de Servicios y procesos no puede modificar las 910 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesServiciosU4),
+  "66857db3ac63b07dfd8b1f3a59939d752e75056af65603db029760ada58ed96d");
+// La U4 de Multimedia no puede modificar las 900 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesMultimediaU4),
+  "ab4ae42dc81fad119ce4082eb46b38a808394cae9beffae029966dbc5f6524ab");
 // La U3 de Sistemas de gestión empresarial no puede modificar las 890 preguntas ya existentes.
 assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesGestionU3),
   "2f6eca915e106cac6525d5e7faa142ca75802889708c0fe33080011162b35063");
@@ -81,13 +111,13 @@ assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesAccesoU2),
 // La U2 de Sistemas de gestión empresarial no puede alterar las 840 preguntas ya existentes.
 assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesGestionU2),
   "4476aa403fb0bfa6d2f2d437b9ef1908941d33d82d7d4084569d35c05032d238");
-const testsServicios = ["u1-test1.json", "u2-test1.json", "u3-test1.json"].flatMap((nombre) =>
+const testsServicios = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/serviciosProcesos", nombre), "utf8")).preguntas);
 const servicios = catalogo.find(a => a.id === "serviciosProcesos");
 assert.deepEqual(servicios.preguntas, testsServicios.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(servicios.preguntas.map(p => p.id), Array.from({ length: 30 }, (_, i) => 41 + i));
+assert.deepEqual(servicios.preguntas.map(p => p.id), Array.from({ length: 40 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.serviciosProcesos.map(p => p.correcta),
-  [0, 0, 0, 2, 3, 1, 1, 1, 3, 0, 1, 3, 3, 3, 1, 0, 1, 0, 2, 3, 2, 0, 2, 2, 3, 3, 1, 0, 0, 3]);
+  [0, 0, 0, 2, 3, 1, 1, 1, 3, 0, 1, 3, 3, 3, 1, 0, 1, 0, 2, 3, 2, 0, 2, 2, 3, 3, 1, 0, 0, 3, 3, 1, 1, 2, 1, 3, 1, 2, 0, 3]);
 assert.ok(servicios.preguntas[0].opciones.slice(0, 3).every(opcion => opcion.includes("a la secundaria")));
 assert.ok(servicios.preguntas[7].opciones[0].includes("a medida que"));
 assert.equal(servicios.preguntas.find(p => p.id === 53).respuesta_correcta, "D. Todas las opciones anteriores son correctas.");
@@ -99,17 +129,22 @@ assert.equal(servicios.preguntas.find(p => p.id === 64).respuesta_correcta, "C. 
 assert.equal(servicios.preguntas.find(p => p.id === 65).pregunta, "Con respecto al protocolo TCP, indica qué afirmación es verdadera:");
 assert.equal(servicios.preguntas.find(p => p.id === 67).respuesta_correcta, "B. Se reciben normalmente en un puerto del sistema o registrado en el servidor");
 assert.equal(servicios.preguntas.find(p => p.id === 70).respuesta_correcta, "D. Entre un puerto del sistema o registrado en el servidor y en el cliente un puerto efímero");
+assert.equal(servicios.preguntas.find(p => p.id === 71).respuesta_correcta, "D. Todas son incorrectas.");
+assert.equal(servicios.preguntas.find(p => p.id === 74).respuesta_correcta, "C. Un protocolo del nivel de aplicación para la encriptación de los datos");
+assert.equal(servicios.preguntas.find(p => p.id === 77).pregunta, "Indica qué afirmación es correcta con respecto al protocolo SMTP:");
+assert.equal(servicios.preguntas.find(p => p.id === 77).respuesta_correcta, "B. Permite enviar un mensaje de correo como resultado de varios mensajes agrupados");
+assert.ok(servicios.preguntas.find(p => p.id === 78).opciones[0].includes("específico"));
 // La incorporación de una asignatura NO permite actualizar las 750 preguntas anteriores.
 const anteriores = ["sistemas", "bases", "entornos", "programacion", "empleabilidad", "lenguajeMarcas"];
 assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => anteriores.includes(a.id))),
   "339c3bcc2e35d4fad7909677446f215ccbd170151184424668498d091c933ba1");
-const testsMultimedia = ["u1-test1.json", "u2-test1.json", "u3-test1.json"].flatMap((nombre) =>
+const testsMultimedia = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/multimediaMoviles", nombre), "utf8")).preguntas);
 const nueva = catalogo.find(a => a.id === "multimediaMoviles");
 assert.deepEqual(nueva.preguntas, testsMultimedia.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(nueva.preguntas.map(p => p.id), Array.from({ length: 30 }, (_, i) => 41 + i));
+assert.deepEqual(nueva.preguntas.map(p => p.id), Array.from({ length: 40 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.multimediaMoviles.map(p => p.correcta),
-  [2, 3, 1, 1, 2, 2, 3, 0, 2, 0, 2, 2, 0, 0, 1, 1, 1, 3, 3, 2, 0, 2, 3, 0, 1, 0, 3, 2, 1, 2]);
+  [2, 3, 1, 1, 2, 2, 3, 0, 2, 0, 2, 2, 0, 0, 1, 1, 1, 3, 3, 2, 0, 2, 3, 0, 1, 0, 3, 2, 1, 2, 2, 3, 1, 2, 1, 2, 0, 3, 0, 3]);
 assert.ok(nueva.preguntas.find(p => p.id === 49).pregunta.includes("UMTS"));
 assert.equal(nueva.preguntas.find(p => p.id === 51).respuesta_correcta, "C. Marshmallow.");
 assert.equal(nueva.preguntas.find(p => p.id === 52).respuesta_correcta, "C. Carpeta res/Gradle.");
@@ -118,13 +153,20 @@ assert.equal(nueva.preguntas.find(p => p.id === 63).respuesta_correcta, "D. Toda
 assert.equal(nueva.preguntas.find(p => p.id === 65).opciones[2], "C. En un fichero SQLite.");
 assert.equal(nueva.preguntas.find(p => p.id === 67).respuesta_correcta, "D. Implícito.");
 assert.equal(nueva.preguntas.find(p => p.id === 70).respuesta_correcta, "C. Podemos iniciar aplicaciones que esperen resultados.");
-const testsInterfaces = ["u1-test1.json", "u2-test1.json", "u3-test1.json"].flatMap((nombre) =>
+assert.equal(nueva.preguntas.find(p => p.id === 71).opciones[1], "B. ConstraintLayout.");
+assert.equal(nueva.preguntas.find(p => p.id === 72).respuesta_correcta, "D. Ninguna de las anteriores.");
+assert.equal(nueva.preguntas.find(p => p.id === 73).pregunta, "android:layout_alignTop determina la posición relativa con respecto a:");
+assert.equal(nueva.preguntas.find(p => p.id === 74).respuesta_correcta, "C. TableLayout.");
+assert.equal(nueva.preguntas.find(p => p.id === 75).respuesta_correcta, "B. TableLayout.");
+assert.equal(nueva.preguntas.find(p => p.id === 77).respuesta_correcta, "A. De posición.");
+assert.equal(nueva.preguntas.find(p => p.id === 79).pregunta, "Permite colocar los diferentes layouts en referencia a otros contenedores, especificando la posición de un objeto en referencia al elemento padre:");
+const testsInterfaces = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/desarrolloInterfaces", nombre), "utf8")).preguntas);
 const interfaces = catalogo.find(a => a.id === "desarrolloInterfaces");
 assert.deepEqual(interfaces.preguntas, testsInterfaces.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 30 }, (_, i) => 41 + i));
+assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 40 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.desarrolloInterfaces.map(p => p.correcta),
-  [1, 2, 3, 1, 0, 2, 3, 3, 1, 0, 2, 1, 1, 3, 3, 2, 0, 2, 0, 2, 1, 2, 1, 3, 0, 0, 3, 2, 2, 3]);
+  [1, 2, 3, 1, 0, 2, 3, 3, 1, 0, 2, 1, 1, 3, 3, 2, 0, 2, 0, 2, 1, 2, 1, 3, 0, 0, 3, 2, 2, 3, 1, 2, 3, 3, 1, 3, 1, 0, 2, 3]);
 assert.equal(interfaces.preguntas[3].respuesta_correcta, interfaces.preguntas[3].opciones[1]);
 assert.equal(interfaces.preguntas[9].respuesta_correcta, "A. El prototipo");
 assert.equal(interfaces.preguntas.find(p => p.id === 58).respuesta_correcta, "C. Son elementos contenedores.");
@@ -136,13 +178,17 @@ assert.equal(interfaces.preguntas.find(p => p.id === 63).respuesta_correcta, "B.
 assert.equal(interfaces.preguntas.find(p => p.id === 65).pregunta, "GIMP es un editor de imágenes:");
 assert.equal(interfaces.preguntas.find(p => p.id === 66).respuesta_correcta, "A. Permiten modificar funcionalidades estáticas en Java.");
 assert.equal(interfaces.preguntas.find(p => p.id === 70).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
-const testsAccesoDatos = ["u1-test1.json", "u2-test1.json", "u3-test1.json"].flatMap((nombre) =>
+assert.ok(interfaces.preguntas.find(p => p.id === 71).respuesta_correcta.includes("Acabó"));
+assert.equal(interfaces.preguntas.find(p => p.id === 75).respuesta_correcta, "B. Un creador de asistentes de instalación.");
+assert.ok(interfaces.preguntas.find(p => p.id === 77).respuesta_correcta.includes("acceso a acciones"));
+assert.equal(interfaces.preguntas.find(p => p.id === 79).respuesta_correcta, "C. Paquete sin compresión destinado a una lectura lineal e indivisible.");
+const testsAccesoDatos = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/accesoDatos", nombre), "utf8")).preguntas);
 const accesoDatos = catalogo.find(a => a.id === "accesoDatos");
 assert.deepEqual(accesoDatos.preguntas, testsAccesoDatos.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(accesoDatos.preguntas.map(p => p.id), Array.from({ length: 30 }, (_, i) => 41 + i));
+assert.deepEqual(accesoDatos.preguntas.map(p => p.id), Array.from({ length: 40 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.accesoDatos.map(p => p.correcta),
-  [3, 0, 1, 3, 0, 3, 1, 3, 2, 3, 0, 1, 2, 0, 2, 2, 2, 0, 3, 1, 2, 1, 2, 0, 1, 3, 2, 0, 2, 0]);
+  [3, 0, 1, 3, 0, 3, 1, 3, 2, 3, 0, 1, 2, 0, 2, 2, 2, 0, 3, 1, 2, 1, 2, 0, 1, 3, 2, 0, 2, 0, 1, 1, 1, 3, 1, 3, 3, 1, 0, 0]);
 assert.equal(accesoDatos.preguntas[4].respuesta_correcta, "A. Atomic.");
 assert.equal(accesoDatos.preguntas[8].respuesta_correcta, "C. Bases de datos NoSQL.");
 assert.equal(accesoDatos.preguntas.find(p => p.id === 57).respuesta_correcta, "C. Las dos anteriores son válidas.");
@@ -153,13 +199,19 @@ assert.equal(accesoDatos.preguntas.find(p => p.id === 62).opciones[3], "D. ODBC.
 assert.equal(accesoDatos.preguntas.find(p => p.id === 64).respuesta_correcta, "A. Son un fichero.");
 assert.equal(accesoDatos.preguntas.find(p => p.id === 66).respuesta_correcta, "D. Todas las anteriores son incorrectas.");
 assert.equal(accesoDatos.preguntas.find(p => p.id === 70).respuesta_correcta, "A. Es posible.");
-const testsGestion = ["u1-test1.json", "u2-test1.json", "u3-test1.json"].flatMap((nombre) =>
+assert.equal(accesoDatos.preguntas.find(p => p.id === 71).pregunta, "¿Qué es un ORM?");
+assert.equal(accesoDatos.preguntas.find(p => p.id === 72).respuesta_correcta, "B. Un framework para aplicar ORM.");
+assert.ok(accesoDatos.preguntas.find(p => p.id === 75).respuesta_correcta.includes("clases de Java"));
+assert.equal(accesoDatos.preguntas.find(p => p.id === 77).respuesta_correcta, "D. Ninguna de las respuestas anteriores es correcta");
+assert.equal(accesoDatos.preguntas.find(p => p.id === 78).respuesta_correcta, "B. Hibernate.cfg.xml");
+assert.equal(accesoDatos.preguntas.find(p => p.id === 80).respuesta_correcta, "A. La interfaz Query con el método .createQuery");
+const testsGestion = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/sistemasGestionEmpresarial", nombre), "utf8")).preguntas);
 const gestion = catalogo.find(a => a.id === "sistemasGestionEmpresarial");
 assert.deepEqual(gestion.preguntas, testsGestion.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(gestion.preguntas.map(p => p.id), Array.from({ length: 30 }, (_, i) => 41 + i));
+assert.deepEqual(gestion.preguntas.map(p => p.id), Array.from({ length: 40 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.sistemasGestionEmpresarial.map(p => p.correcta),
-  [3, 1, 0, 2, 0, 2, 3, 1, 1, 3, 3, 3, 1, 1, 0, 2, 2, 0, 3, 3, 1, 1, 1, 3, 3, 0, 2, 2, 0, 2]);
+  [3, 1, 0, 2, 0, 2, 3, 1, 1, 3, 3, 3, 1, 1, 0, 2, 2, 0, 3, 3, 1, 1, 1, 3, 3, 0, 2, 2, 0, 2, 2, 0, 2, 3, 1, 1, 0, 3, 1, 1]);
 assert.equal(gestion.preguntas[7].pregunta, "Las siglas ERP corresponden con:");
 assert.equal(gestion.preguntas[7].respuesta_correcta, "B. Sistemas de colaboración empresarial.");
 assert.equal(gestion.preguntas.find(p => p.id === 53).respuesta_correcta, "B. Data Warehouse.");
@@ -170,6 +222,12 @@ assert.equal(gestion.preguntas.find(p => p.id === 64).respuesta_correcta, "D. To
 assert.equal(gestion.preguntas.find(p => p.id === 68).pregunta, "En la instalación de una solución cloud, si activamos el modo desarrollador en el menú de configuración:");
 assert.equal(gestion.preguntas.find(p => p.id === 69).respuesta_correcta, "A. PostgreSQL.");
 assert.equal(gestion.preguntas.find(p => p.id === 70).respuesta_correcta, "C. Controlador.");
+assert.equal(gestion.preguntas.find(p => p.id === 71).respuesta_correcta, "C. La fiabilidad no se puede tocar ni manipular");
+assert.ok(gestion.preguntas.find(p => p.id === 71).opciones[0].includes("heterogeneidad nunca está estandarizada"));
+assert.equal(gestion.preguntas.find(p => p.id === 73).respuesta_correcta, "C. Registrar el tiempo y una descripción de las acciones realizadas");
+assert.equal(gestion.preguntas.find(p => p.id === 77).respuesta_correcta, "A. Aplicación de punto de venta");
+assert.equal(gestion.preguntas.find(p => p.id === 80).pregunta, "Las siglas CMR hacen referencia a la aplicación de:");
+assert.equal(gestion.preguntas.find(p => p.id === 80).respuesta_correcta, "B. Planificación de actividades");
 
 const elements = new Map();
 function element(id) {
@@ -207,16 +265,17 @@ context.abrirModalConfig("examen");
 context.iniciarTest("multimediaMoviles", "examen");
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 context.iniciarTest("multimediaMoviles", "estudio");
-assert.equal(vm.runInContext("preguntasActuales.length", context), 30);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 70)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 40);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 80)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 1;
-  config.rangoHasta = 10;
+  config.rangoDesde = 31;
+  config.rangoHasta = 40;
   config.mezclarPreguntas = false;
   iniciarTest("multimediaMoviles", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 71 && p.id <= 80)", context));
 vm.runInContext(`
   modoPendiente = "examen";
   continuarSesionGuardada();
@@ -246,16 +305,17 @@ assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('config.usarRango = false; iniciarTest("serviciosProcesos", "estudio");', context);
-assert.equal(vm.runInContext("preguntasActuales.length", context), 30);
+assert.equal(vm.runInContext("preguntasActuales.length", context), 40);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 80)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 21;
-  config.rangoHasta = 30;
+  config.rangoDesde = 31;
+  config.rangoHasta = 40;
   config.mezclarPreguntas = false;
   iniciarTest("serviciosProcesos", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 61 && p.id <= 70)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 71 && p.id <= 80)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of servicios.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.serviciosProcesos.find(q => q.id === p.id));
@@ -268,7 +328,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("serviciosProcesos"), false);
 vm.runInContext('serviciosPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("serviciosProcesos"), true);
-console.log("Servicios y procesos: 30 preguntas, soluciones, estudio y examen condicionado verificados.");
+console.log("Servicios y procesos: 40 preguntas, soluciones, estudio y examen condicionado verificados.");
 
 vm.runInContext(`
   preguntasActuales = [];
@@ -283,17 +343,17 @@ assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('config.usarRango = false; iniciarTest("desarrolloInterfaces", "estudio");', context);
-assert.equal(vm.runInContext("preguntasActuales.length", context), 30);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 70)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 40);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 80)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 21;
-  config.rangoHasta = 30;
+  config.rangoDesde = 31;
+  config.rangoHasta = 40;
   config.mezclarPreguntas = false;
   iniciarTest("desarrolloInterfaces", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 61 && p.id <= 70)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 71 && p.id <= 80)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of interfaces.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.desarrolloInterfaces.find(q => q.id === p.id));
@@ -306,7 +366,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), false);
 vm.runInContext('interfacesPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), true);
-console.log("Desarrollo de interfaces: 30 preguntas, soluciones, estudio y examen condicionado verificados.");
+console.log("Desarrollo de interfaces: 40 preguntas, soluciones, estudio y examen condicionado verificados.");
 
 vm.runInContext(`
   preguntasActuales = [];
@@ -321,17 +381,17 @@ assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('config.usarRango = false; iniciarTest("accesoDatos", "estudio");', context);
-assert.equal(vm.runInContext("preguntasActuales.length", context), 30);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 70)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 40);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 80)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 21;
-  config.rangoHasta = 30;
+  config.rangoDesde = 31;
+  config.rangoHasta = 40;
   config.mezclarPreguntas = false;
   iniciarTest("accesoDatos", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 61 && p.id <= 70)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 71 && p.id <= 80)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of accesoDatos.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.accesoDatos.find(q => q.id === p.id));
@@ -344,7 +404,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("accesoDatos"), false);
 vm.runInContext('accesoDatosPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("accesoDatos"), true);
-console.log("Acceso a datos: 30 preguntas, soluciones, estudio y examen condicionado verificados.");
+console.log("Acceso a datos: 40 preguntas, soluciones, estudio y examen condicionado verificados.");
 
 vm.runInContext(`
   preguntasActuales = [];
@@ -359,17 +419,17 @@ assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('config.usarRango = false; iniciarTest("sistemasGestionEmpresarial", "estudio");', context);
-assert.equal(vm.runInContext("preguntasActuales.length", context), 30);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 70)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 40);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 80)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 21;
-  config.rangoHasta = 30;
+  config.rangoDesde = 31;
+  config.rangoHasta = 40;
   config.mezclarPreguntas = false;
   iniciarTest("sistemasGestionEmpresarial", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 61 && p.id <= 70)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 71 && p.id <= 80)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of gestion.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.sistemasGestionEmpresarial.find(q => q.id === p.id));
@@ -382,4 +442,4 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("sistemasGestionEmpresarial"), false);
 vm.runInContext('gestionPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("sistemasGestionEmpresarial"), true);
-console.log("Sistemas de gestión empresarial: 30 preguntas, soluciones, estudio y examen condicionado verificados.");
+console.log("Sistemas de gestión empresarial: 40 preguntas, soluciones, estudio y examen condicionado verificados.");

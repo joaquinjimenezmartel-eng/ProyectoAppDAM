@@ -1,7 +1,7 @@
 const resumenServiciosProcesos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U3 · Procesos, concurrencia y comunicación en red</span>
+    <span class="study-summary__eyebrow">U1–U4 · Procesos, concurrencia y comunicación en red</span>
     <h3 class="study-summary__title">Programación de servicios y procesos</h3>
     <p class="study-summary__lead">Un programa contiene instrucciones; un proceso las ejecuta. Comprender cómo se reparte la CPU, cómo se coordinan las tareas y cómo se comunican por red permite construir aplicaciones concurrentes y servicios conectados.</p>
   </header>
@@ -56,5 +56,17 @@ const resumenServiciosProcesos = `
   <section class="study-summary__section">
     <h4>Protocolos de aplicación</h4>
     <p>La capa de aplicación define el formato y las reglas de los mensajes que intercambian los programas. Un protocolo puede estar basado en texto o utilizar una representación binaria; también puede mantener estado o tratar cada petición de forma independiente. «Booleano» es un tipo de dato, no una categoría de protocolo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Comunicación segura y acceso remoto</h4>
+    <p><strong>TLS</strong> protege los datos de aplicación mediante cifrado, autenticación e integridad. Sus parámetros se acuerdan durante el handshake antes de intercambiar datos protegidos. Para abrir una shell remota se utiliza <strong>SSH</strong>, que crea un canal seguro y evita transmitir credenciales y órdenes en texto claro como haría Telnet.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Protocolos de correo</h4>
+    <p>Un <strong>MUA</strong> es la aplicación de correo utilizada por la persona. <strong>SMTP</strong> se encarga del envío y la transferencia; <strong>POP3</strong> permite acceder a un buzón y descargar mensajes; e <strong>IMAP</strong> facilita la gestión de mensajes y carpetas en el servidor. Estos protocolos clásicos funcionan sobre TCP y mantienen un estado durante la sesión.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>HTTP y recursos en Java</h4>
+    <p>Una petición HTTP <strong>POST</strong> incluye normalmente en su cuerpo los datos que el servidor debe procesar. En Java, <code>java.net.URL</code> representa la dirección de un recurso y permite abrir una conexión para acceder a él. <strong>Apache Commons Net</strong> añade clases cliente para numerosos protocolos de Internet, como FTP, SMTP, POP3, IMAP y Telnet.</p>
   </section>
 </article>`;

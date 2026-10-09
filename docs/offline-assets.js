@@ -1,5 +1,5 @@
 // Generado por scripts/build-offline.js
-self.OFFLINE_VERSION = "026af546eed21505";
+self.OFFLINE_VERSION = "20dcc6df289f8d0b";
 self.OFFLINE_ASSETS = [
   "asignaturas.js",
   "images/lenguaje-marcas/pregunta35.png",

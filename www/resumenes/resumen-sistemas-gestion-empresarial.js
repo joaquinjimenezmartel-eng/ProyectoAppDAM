@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U3 · Sistemas, ERP y plataforma Odoo</span>
+    <span class="study-summary__eyebrow">U1–U4 · Sistemas, ERP y plataforma Odoo</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -60,5 +60,21 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Formas de instalación</h4>
     <p>Una instalación monopuesto concentra los componentes en un equipo y simplifica el despliegue inicial, pero ofrece menos flexibilidad que una arquitectura distribuida o cloud. Las soluciones alojadas facilitan el acceso remoto, las actualizaciones y el crecimiento, mientras que una instalación local concede mayor control sobre la infraestructura.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Servicios profesionales</h4>
+    <p>Los servicios no son objetos físicos que puedan examinarse o almacenarse antes de utilizarlos. Su prestación está vinculada a las personas, puede variar según el profesional y las circunstancias y pierde capacidad cuando el tiempo disponible no se aprovecha. La confianza, la experiencia y los resultados ayudan al cliente a valorar su calidad.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Contactos, proyectos y partes de horas</h4>
+    <p>La aplicación de contactos clasifica las relaciones con clientes y proveedores. Los proyectos organizan objetivos, tareas, responsables y entregas. Los partes de horas registran el tiempo y la descripción del trabajo, lo que permite comparar planificación y ejecución, analizar costes y facturar servicios basados en tiempo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Contabilidad y facturación</h4>
+    <p>Contabilidad controla impuestos, pagos, cobros e información financiera. Facturación genera documentos a partir de ventas, contratos o tiempo trabajado, permite seguir su estado y puede ofrecer pagos online desde el portal del cliente. Ambas aplicaciones comparten datos, pero cumplen responsabilidades diferentes.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Punto de venta y actividades</h4>
+    <p>El punto de venta reúne las funciones necesarias para atender al público, registrar operaciones y cobrar mediante distintos métodos. La planificación de actividades organiza llamadas, correos, reuniones y tareas de seguimiento con responsables y fechas, y permite encadenar los siguientes pasos de cada gestión.</p>
   </section>
 </article>`;

@@ -359,5 +359,125 @@ const preguntasServiciosProcesos = [
     ],
     "respuesta_correcta": "D. Entre un puerto del sistema o registrado en el servidor y en el cliente un puerto efímero",
     "explicacion": "En el modelo cliente-servidor, el servidor suele permanecer asociado a un puerto conocido o registrado para que los clientes sepan dónde enviar sus datagramas. El cliente utiliza normalmente un puerto efímero asignado durante la comunicación. El servidor obtiene ese puerto de origen al recibir el datagrama y puede usarlo para dirigir la respuesta al cliente correcto."
+  },
+  {
+    "id": 71,
+    "pregunta": "¿Cómo se llama la biblioteca de clases que indica las clases clientes que los protocolos de aplicación pueden usar?",
+    "opciones": [
+      "A. Apache Comment Net",
+      "B. Apache Commons Networking",
+      "C. Apache2 Commons Net",
+      "D. Todas son incorrectas."
+    ],
+    "respuesta_correcta": "D. Todas son incorrectas.",
+    "explicacion": "La biblioteca se denomina Apache Commons Net. Proporciona implementaciones de cliente para protocolos como FTP, SMTP, POP3, IMAP y Telnet. Ninguna opción reproduce correctamente ese nombre: las tres primeras lo modifican o le añaden términos que no forman parte de la denominación oficial."
+  },
+  {
+    "id": 72,
+    "pregunta": "¿Dónde se decide el tipo de encriptado en las conexiones TCP?",
+    "opciones": [
+      "A. Al principio de la conexión",
+      "B. En la fase de negociación",
+      "C. En la fase de previsión",
+      "D. No se pueden encriptar"
+    ],
+    "respuesta_correcta": "B. En la fase de negociación",
+    "explicacion": "TCP transporta los datos, pero no los cifra por sí mismo. Cuando se utiliza TLS, cliente y servidor realizan un proceso de negociación o handshake en el que acuerdan la versión y los parámetros criptográficos, autentican al servidor y generan las claves que protegerán la comunicación."
+  },
+  {
+    "id": 73,
+    "pregunta": "¿Qué es lo mejor para ejecutar sesiones remotas de Shell?",
+    "opciones": [
+      "A. TELNET",
+      "B. SSH",
+      "C. TCP",
+      "D. FTP"
+    ],
+    "respuesta_correcta": "B. SSH",
+    "explicacion": "SSH está diseñado para iniciar sesiones remotas seguras sobre redes que no son de confianza. Protege la confidencialidad e integridad de la comunicación y autentica el servidor y, normalmente, al usuario. Telnet también permite acceso remoto, pero transmite la información sin la protección criptográfica de SSH."
+  },
+  {
+    "id": 74,
+    "pregunta": "¿Qué es TLS/SSL?",
+    "opciones": [
+      "A. Un protocolo que puede funcionar con UDP y TCP",
+      "B. Un protocolo que requiere que se hagan cambios sobre los protocolos de aplicación para poder trabajar sobre estos",
+      "C. Un protocolo del nivel de aplicación para la encriptación de los datos",
+      "D. Un protocolo de transporte seguro"
+    ],
+    "respuesta_correcta": "C. Un protocolo del nivel de aplicación para la encriptación de los datos",
+    "explicacion": "TLS protege los datos intercambiados por las aplicaciones mediante cifrado, autenticación e integridad. Habitualmente se sitúa sobre TCP y por debajo del protocolo de aplicación, permitiendo versiones seguras como HTTPS, SMTPS o IMAPS. SSL es su antecesor y ya no debe utilizarse en sistemas actuales."
+  },
+  {
+    "id": 75,
+    "pregunta": "¿Qué es un MUA?",
+    "opciones": [
+      "A. La consulta de un cliente a sus mensajes alojados en un servidor de correo",
+      "B. El agente de usuario de correo",
+      "C. Simple Mail Transfer Protocol",
+      "D. Una norma de ámbito informático"
+    ],
+    "respuesta_correcta": "B. El agente de usuario de correo",
+    "explicacion": "MUA significa Mail User Agent o agente de usuario de correo. Es el programa con el que una persona redacta, envía, recibe y organiza mensajes, como una aplicación de correo de escritorio, móvil o web. Para comunicarse con los servidores utiliza protocolos como SMTP, IMAP o POP3."
+  },
+  {
+    "id": 76,
+    "pregunta": "El protocolo POP3 se caracteriza por...",
+    "opciones": [
+      "A. Llevar filtros antispam incrustados",
+      "B. Servir para transferencias de mensajes entre servidores de correo",
+      "C. Permitir la creación de carpetas en el servidor",
+      "D. Ninguna es correcta"
+    ],
+    "respuesta_correcta": "D. Ninguna es correcta",
+    "explicacion": "POP3 permite que un cliente acceda a un buzón y descargue sus mensajes. No incorpora por definición filtros antispam, no se encarga de transferir correo entre servidores —función propia de SMTP— y tampoco ofrece la gestión de varias carpetas remotas característica de IMAP."
+  },
+  {
+    "id": 77,
+    "pregunta": "Indica qué afirmación es correcta con respecto al protocolo SMTP:",
+    "opciones": [
+      "A. No permite que el usuario se pueda autenticar",
+      "B. Permite enviar un mensaje de correo como resultado de varios mensajes agrupados",
+      "C. Permite encriptar los mensajes",
+      "D. Es un protocolo binario"
+    ],
+    "respuesta_correcta": "B. Permite enviar un mensaje de correo como resultado de varios mensajes agrupados",
+    "explicacion": "SMTP organiza el envío mediante sesiones y transacciones de correo. Una misma sesión puede contener varias transacciones, y una transacción puede agrupar varios destinatarios antes de transmitir una única copia del contenido. SMTP es un protocolo textual; la autenticación y el cifrado se incorporan mediante extensiones y TLS, no forman parte del envío básico por sí solos."
+  },
+  {
+    "id": 78,
+    "pregunta": "Las peticiones de HTTP tipo POST se caracterizan por...",
+    "opciones": [
+      "A. Que los parámetros de la petición son enviados a través de cabeceras de un tipo en específico",
+      "B. Que devuelve siempre en primera instancia un código de error con 1 como primer dígito",
+      "C. Que los parámetros de la petición se encuentran en el cuerpo de la petición",
+      "D. Que se redirigen a otra URL que esté asociada"
+    ],
+    "respuesta_correcta": "C. Que los parámetros de la petición se encuentran en el cuerpo de la petición",
+    "explicacion": "POST envía al recurso de destino una representación para que sea procesada. En los formularios y APIs, los datos se incluyen normalmente en el cuerpo de la petición y su formato se describe mediante cabeceras como Content-Type. POST no implica automáticamente un error ni una redirección."
+  },
+  {
+    "id": 79,
+    "pregunta": "Para conseguir los recursos de un sitio a partir de una URL, ¿qué clase usa Java?",
+    "opciones": [
+      "A. URL",
+      "B. URL_class",
+      "C. GET",
+      "D. POST"
+    ],
+    "respuesta_correcta": "A. URL",
+    "explicacion": "La clase java.net.URL representa una dirección de un recurso y permite abrir una conexión con él mediante openConnection() o acceder a su contenido. GET y POST son métodos de HTTP, no clases de Java, y URL_class no es una clase estándar."
+  },
+  {
+    "id": 80,
+    "pregunta": "Todos los protocolos de correo electrónico son:",
+    "opciones": [
+      "A. Protocolos funcionales sobre TCP",
+      "B. De texto",
+      "C. Con estado",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "Los protocolos clásicos de correo estudiados —SMTP, POP3 e IMAP— funcionan sobre TCP, intercambian comandos y respuestas textuales y mantienen un estado durante cada sesión. El estado permite saber, por ejemplo, si el usuario ya se ha autenticado o en qué fase de la transacción se encuentra la comunicación."
   }
 ];

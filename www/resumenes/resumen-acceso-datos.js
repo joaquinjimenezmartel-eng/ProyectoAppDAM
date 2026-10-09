@@ -1,7 +1,7 @@
 const resumenAccesoDatos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U3 · Persistencia, ficheros y acceso con JDBC</span>
+    <span class="study-summary__eyebrow">U1–U4 · Persistencia, JDBC y ORM</span>
     <h3 class="study-summary__title">Acceso a datos</h3>
     <p class="study-summary__lead">Acceder a datos implica decidir cómo se representan, dónde se conservan y qué garantías debe ofrecer el sistema cuando los consulta o modifica.</p>
   </header>
@@ -60,5 +60,21 @@ const resumenAccesoDatos = `
   <section class="study-summary__section">
     <h4>Búferes</h4>
     <p>Un búfer es una región de memoria temporal que acumula datos durante una transferencia. Al trabajar por bloques reduce el número de accesos físicos y ayuda a coordinar componentes con velocidades diferentes. Debe vaciarse o cerrarse correctamente para garantizar que los datos pendientes lleguen a su destino.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Mapeo objeto-relacional</h4>
+    <p>Un <strong>ORM</strong> relaciona las clases y objetos de una aplicación con tablas y filas de una base de datos relacional. <strong>Hibernate</strong> aplica este modelo en Java y gestiona gran parte de la conversión entre ambos mundos. Las entidades pueden implementarse como POJOs sencillos y describir su mapeo mediante anotaciones o archivos XML.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Estados de una entidad</h4>
+    <p>Una entidad es <strong>transitoria</strong> antes de asociarse a un contexto de persistencia; <strong>persistente</strong> mientras la Session la gestiona; <strong>separada</strong> cuando conserva su identidad pero ya no está asociada a ese contexto; y <strong>eliminada</strong> cuando está programada para borrarse. Comprender el estado permite prever qué cambios se sincronizarán con la base de datos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Recuperación y consultas en Hibernate</h4>
+    <p>Las operaciones <code>get()</code> y <code>load()</code> recuperan entidades por su identificador en la API tradicional. Para consultas más amplias, <strong>HQL</strong> trabaja con entidades y atributos mediante <code>createQuery()</code>; <code>createNativeQuery()</code> ejecuta SQL directamente sobre el gestor.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Configuración, mapeo y herencia</h4>
+    <p><code>hibernate.cfg.xml</code> reúne la configuración clásica del framework y los archivos <code>.hbm.xml</code> describen el mapeo entre clases y tablas. Hibernate también permite representar jerarquías mediante estrategias como una tabla por jerarquía, una tabla por subclase o una tabla por clase concreta.</p>
   </section>
 </article>`;
