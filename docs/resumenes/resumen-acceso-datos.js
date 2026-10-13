@@ -1,7 +1,7 @@
 const resumenAccesoDatos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U4 · Persistencia, JDBC y ORM</span>
+    <span class="study-summary__eyebrow">U1–U5 · Persistencia, JDBC y modelos de objetos</span>
     <h3 class="study-summary__title">Acceso a datos</h3>
     <p class="study-summary__lead">Acceder a datos implica decidir cómo se representan, dónde se conservan y qué garantías debe ofrecer el sistema cuando los consulta o modifica.</p>
   </header>
@@ -76,5 +76,21 @@ const resumenAccesoDatos = `
   <section class="study-summary__section">
     <h4>Configuración, mapeo y herencia</h4>
     <p><code>hibernate.cfg.xml</code> reúne la configuración clásica del framework y los archivos <code>.hbm.xml</code> describen el mapeo entre clases y tablas. Hibernate también permite representar jerarquías mediante estrategias como una tabla por jerarquía, una tabla por subclase o una tabla por clase concreta.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Bases de datos de objetos y objeto-relacionales</h4>
+    <p>Una base de datos de objetos conserva directamente identidad, estado y relaciones de los objetos. Un sistema <strong>objeto-relacional</strong>, como Oracle, mantiene las tablas del modelo relacional y añade tipos de objeto, referencias y colecciones. SQL:1999 incorporó varias de estas extensiones al estándar.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>OQL y ODL</h4>
+    <p><strong>ODL</strong> describe clases, atributos, relaciones y operaciones del esquema de objetos. <strong>OQL</strong> consulta esos objetos con una sintaxis declarativa similar a SELECT-FROM-WHERE. Una clase de ODL desempeña un papel estructural comparable al de una tabla definida mediante DDL relacional.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Referencias y colecciones de objetos</h4>
+    <p>Una referencia <code>REF</code> identifica un objeto almacenado y <code>DEREF</code> permite acceder al objeto señalado. Las tablas anidadas representan colecciones dentro de una columna y pueden contener referencias a otros objetos mediante un tipo de colección apropiado.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Resultados únicos con DISTINCT</h4>
+    <p><code>SELECT DISTINCT</code> elimina duplicados del resultado y devuelve combinaciones únicas de los valores seleccionados. No debe confundirse con <code>ORDER BY</code>, que ordena las filas pero no elimina las repeticiones.</p>
   </section>
 </article>`;

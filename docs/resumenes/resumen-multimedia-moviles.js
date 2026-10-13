@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U4 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U5 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -53,5 +53,14 @@ const resumenMultimediaMoviles = `
   <section class="study-summary__section">
     <h4>12. Posición, alineación y tamaño</h4>
     <p><strong>RelativeLayout</strong> coloca una vista respecto a otra o respecto al contenedor padre. Reglas como <code>layout_alignTop</code> alinean bordes entre controles. Los atributos <code>layout_width</code> y <code>layout_height</code> determinan el espacio que ocupa cada vista, mientras que <code>android:orientation</code> establece una dirección vertical u horizontal en los contenedores que admiten este atributo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>13. Controles de selección y progreso</h4>
+    <p><strong>CheckBox</strong> permite combinar varias opciones independientes; <strong>Spinner</strong> presenta una lista desplegable para elegir un elemento; y <strong>SeekBar</strong> selecciona un valor numérico dentro de un intervalo mediante un indicador deslizable. <strong>ProgressBar</strong> comunica el avance de una tarea con una representación lineal o circular.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>14. Apariencia, color y entrada de texto</h4>
+    <p><code>android:background</code> establece el fondo de una vista y <code>android:thumb</code> personaliza el indicador de un SeekBar. Un color <strong>ARGB</strong> combina alfa, rojo, verde y azul; el canal alfa determina la opacidad. En un EditText, <code>textCapSentences</code> solicita que cada frase comience con mayúscula.</p>
+    <p>Como cualquier View, un TextView puede animarse mediante propiedades como traslación, rotación y transparencia. Estas animaciones modifican su presentación sin cambiar el contenido del texto.</p>
   </section>
 </article>`;

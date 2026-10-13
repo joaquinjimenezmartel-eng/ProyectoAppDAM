@@ -479,5 +479,125 @@ const preguntasAccesoDatos = [
     ],
     "respuesta_correcta": "A. La interfaz Query con el método .createQuery",
     "explicacion": "HQL expresa consultas utilizando entidades y atributos del modelo, y se prepara mediante createQuery(). createNativeQuery() se reserva para SQL nativo. La consulta resultante se representa mediante Query y puede ejecutarse para obtener una lista, un único resultado o realizar una operación de modificación."
+  },
+  {
+    "id": 81,
+    "pregunta": "¿Qué tipo de base de datos permite trabajar con objetos?",
+    "opciones": [
+      "A. Base de datos de objetos",
+      "B. Base de datos relacionales",
+      "C. Base de datos objeto-relacional",
+      "D. La opción A y C son correctas."
+    ],
+    "respuesta_correcta": "D. La opción A y C son correctas.",
+    "explicacion": "Una base de datos de objetos almacena directamente objetos con identidad, estado y relaciones. Una base de datos objeto-relacional amplía el modelo relacional con tipos y estructuras de objetos. Ambos modelos permiten trabajar con objetos, aunque los representan de forma diferente."
+  },
+  {
+    "id": 82,
+    "pregunta": "Indica la afirmación correcta respecto a las bases de datos de objetos",
+    "opciones": [
+      "A. No existe ninguna comunidad que realice los estándares.",
+      "B. Es una base de datos relacional que permite trabajar con objetos.",
+      "C. Permite guardar objetos directamente en la base de datos.",
+      "D. Usa el lenguaje SQL"
+    ],
+    "respuesta_correcta": "C. Permite guardar objetos directamente en la base de datos.",
+    "explicacion": "Una base de datos orientada a objetos persiste los objetos del programa manteniendo propiedades como su identidad, clase, atributos y relaciones. Así reduce la transformación necesaria entre el modelo de objetos de la aplicación y el almacenamiento."
+  },
+  {
+    "id": 83,
+    "pregunta": "OQL:",
+    "opciones": [
+      "A. Es un lenguaje de consulta similar a SQL",
+      "B. Su estructura básica es SELECT .... FROM .... WHERE",
+      "C. No se puede hacer sentencias INSERT, UPDATE o DELETE.",
+      "D. Todas las anteriores son ciertas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son ciertas.",
+    "explicacion": "OQL es un lenguaje declarativo de consulta para bases de datos de objetos y utiliza una forma SELECT-FROM-WHERE semejante a SQL. Su función principal es consultar objetos; la modificación se realiza mediante las operaciones del lenguaje de programación o de la API de objetos."
+  },
+  {
+    "id": 84,
+    "pregunta": "Para anidar una tabla en una columna:",
+    "opciones": [
+      "A. Indicaremos el nombre de la columna seguido del nombre de la tabla.",
+      "B. Crearemos un tipo usando la sentencia AS TABLE OF REF y objeto de la tabla.",
+      "C. Se tendrá que crear una vista (VIEW) como tabla de anidamiento",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. Crearemos un tipo usando la sentencia AS TABLE OF REF y objeto de la tabla.",
+    "explicacion": "Una tabla anidada necesita un tipo de colección que describa los elementos que contendrá. Cuando los elementos son referencias a objetos, puede declararse una colección AS TABLE OF REF del tipo de objeto y utilizarla después como tipo de una columna."
+  },
+  {
+    "id": 85,
+    "pregunta": "Para obtener las referencias de los objetos, los OID, tendremos que usar:",
+    "opciones": [
+      "A. La función REF(tabla)",
+      "B. La función REFERENCE(tabla)",
+      "C. La función OID(tabla)",
+      "D. La función DEREF(tabla)"
+    ],
+    "respuesta_correcta": "A. La función REF(tabla)",
+    "explicacion": "REF obtiene una referencia a un objeto almacenado en una tabla de objetos. Esa referencia identifica el objeto y puede guardarse en una columna REF. DEREF realiza la operación inversa: sigue la referencia para recuperar el objeto señalado."
+  },
+  {
+    "id": 86,
+    "pregunta": "Para obtener un conjunto set de objetos en una consulta se usará:",
+    "opciones": [
+      "A. SELECT DISTINCT",
+      "B. SELECT",
+      "C. SELECT * FROM punto de entrada ORDER BY campo",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. SELECT DISTINCT",
+    "explicacion": "SELECT DISTINCT elimina las filas duplicadas del resultado y devuelve combinaciones únicas de los valores seleccionados. SELECT sin DISTINCT puede conservar repeticiones, mientras que ORDER BY únicamente ordena el resultado."
+  },
+  {
+    "id": 87,
+    "pregunta": "¿Qué versión de SQL permite definir estructuras de objetos?",
+    "opciones": [
+      "A. SQL:99 o SQL3",
+      "B. SQL:92 o SQL2",
+      "C. SQL:66",
+      "D. SQL1"
+    ],
+    "respuesta_correcta": "A. SQL:99 o SQL3",
+    "explicacion": "SQL:1999, también conocido durante su desarrollo como SQL3, incorporó características objeto-relacionales como tipos definidos por el usuario, métodos, referencias y colecciones. Estas extensiones permiten representar estructuras más cercanas al modelo de objetos."
+  },
+  {
+    "id": 88,
+    "pregunta": "¿Qué base de datos es del tipo objeto-relacional?",
+    "opciones": [
+      "A. Microsoft Access",
+      "B. MySQL",
+      "C. SQLite",
+      "D. Oracle"
+    ],
+    "respuesta_correcta": "D. Oracle",
+    "explicacion": "Oracle Database combina el modelo relacional con características de objetos, como tipos de objeto, referencias, herencia y colecciones. Por eso se clasifica como un sistema objeto-relacional además de admitir el uso tradicional de tablas relacionales."
+  },
+  {
+    "id": 89,
+    "pregunta": "¿Qué es ODL?",
+    "opciones": [
+      "A. Lenguaje de consulta",
+      "B. Lenguaje de definición de objetos",
+      "C. Lenguaje de manipulación de datos",
+      "D. Lenguaje de programación"
+    ],
+    "respuesta_correcta": "B. Lenguaje de definición de objetos",
+    "explicacion": "ODL significa Object Definition Language o lenguaje de definición de objetos. Se utiliza para describir tipos, atributos, relaciones y operaciones del esquema de una base de datos de objetos, mientras que OQL se orienta a las consultas."
+  },
+  {
+    "id": 90,
+    "pregunta": "Una tabla del lenguaje de definición de datos relacional (DDL) equivale a:",
+    "opciones": [
+      "A. Un objeto en ODL.",
+      "B. Una clase en ODL",
+      "C. Una instancia de un objeto en ODL",
+      "D. No tiene equivalencia en ODL"
+    ],
+    "respuesta_correcta": "B. Una clase en ODL",
+    "explicacion": "Una tabla definida mediante DDL describe la estructura común de sus filas. En el modelo de objetos, una clase definida con ODL cumple un papel equivalente al describir la estructura y el comportamiento comunes de sus instancias."
   }
 ];

@@ -479,5 +479,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
     "explicacion": "Una firma digital es un valor criptográfico asociado a unos datos. Se genera con una clave privada y se verifica con la clave pública correspondiente para confirmar el origen y la integridad del contenido. No es un ejecutable, un paquete de instalación ni un archivo TAR."
+  },
+  {
+    "id": 81,
+    "pregunta": "¿Qué actividad ha hecho destacar el lenguaje XML?",
+    "opciones": [
+      "A. La representación de metadatos.",
+      "B. Medios de intercambio de contenidos.",
+      "C. Almacenamiento de contenidos.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "XML permite describir información mediante etiquetas con significado, por lo que resulta útil para representar metadatos, intercambiar datos entre sistemas y almacenar contenido estructurado. Su sintaxis extensible facilita que aplicaciones diferentes interpreten una estructura común."
+  },
+  {
+    "id": 82,
+    "pregunta": "Atributo:",
+    "opciones": [
+      "A. En informática es la acción detectada por un programa en función de la cual es posible ejecutar una respuesta.",
+      "B. Componente del lenguaje XML que agrega posibles características a las etiquetas.",
+      "C. Componente del lenguaje XML, se emplean como contenedores de elementos y permiten la jerarquización de estos.",
+      "D. Componente del lenguaje XML que instancia mediante un valor particular, un atributo, el cual es de carácter general."
+    ],
+    "respuesta_correcta": "B. Componente del lenguaje XML que agrega posibles características a las etiquetas.",
+    "explicacion": "Un atributo añade información a un elemento XML dentro de su etiqueta de apertura. Se expresa mediante un nombre y un valor entre comillas, como idioma=\"es\", y permite describir características del elemento sin crear un nuevo nodo hijo."
+  },
+  {
+    "id": 83,
+    "pregunta": "El lenguaje que permite la creación de figuras e imágenes es:",
+    "opciones": [
+      "A. RSS.",
+      "B. XHTML.",
+      "C. GML.",
+      "D. SVG."
+    ],
+    "respuesta_correcta": "D. SVG.",
+    "explicacion": "SVG es un lenguaje basado en XML para describir gráficos vectoriales mediante formas, rutas, texto y estilos. Al ser vectorial, una imagen puede escalarse sin perder nitidez y sus elementos pueden modificarse o animarse desde la aplicación."
+  },
+  {
+    "id": 84,
+    "pregunta": "Evento:",
+    "opciones": [
+      "A. En informática es la acción detectada por un programa en función de la cual es posible ejecutar una respuesta.",
+      "B. Componente del lenguaje XML que agrega posibles características a las etiquetas.",
+      "C. Componente del lenguaje XML, se emplean como contenedores de elementos y permiten la jerarquización de estos.",
+      "D. Componente del lenguaje XML que instancia mediante un valor particular, un atributo, el cual es de carácter general."
+    ],
+    "respuesta_correcta": "A. En informática es la acción detectada por un programa en función de la cual es posible ejecutar una respuesta.",
+    "explicacion": "Un evento representa una acción o cambio que el programa puede detectar, como pulsar un botón, mover el ratón o terminar una carga. Un manejador o listener recibe el evento y ejecuta la respuesta asociada."
+  },
+  {
+    "id": 85,
+    "pregunta": "La construcción de los atributos y valores es la siguiente:",
+    "opciones": [
+      "A. Atributo:\"Valor\"",
+      "B. Atributo:/Valor/",
+      "C. Atributo=\"Valor\"",
+      "D. Atributo= Valor/"
+    ],
+    "respuesta_correcta": "C. Atributo=\"Valor\"",
+    "explicacion": "En XML, un atributo se escribe con su nombre, el signo igual y un valor delimitado por comillas: nombre=\"valor\". Las comillas son obligatorias y el atributo se sitúa dentro de la etiqueta de apertura o de elemento vacío."
+  },
+  {
+    "id": 86,
+    "pregunta": "La sindicación de contenidos usa el lenguaje:",
+    "opciones": [
+      "A. XHTML.",
+      "B. XSLT.",
+      "C. SVG.",
+      "D. RSS."
+    ],
+    "respuesta_correcta": "D. RSS.",
+    "explicacion": "RSS es un formato XML de sindicación que publica una secuencia de novedades, como noticias o entradas de un sitio. Un lector de feeds puede consultar el canal y mostrar los elementos nuevos sin que la persona tenga que visitar cada página por separado."
+  },
+  {
+    "id": 87,
+    "pregunta": "Los editores que destacan por su trabajo colaborativo en tiempo real son:",
+    "opciones": [
+      "A. Atom y Notepad++.",
+      "B. Atom y Visual Studio Code.",
+      "C. Atom y Adobe Dreamweaver CC.",
+      "D. Adobe Dreamweaver CC y Visual Studio Code."
+    ],
+    "respuesta_correcta": "B. Atom y Visual Studio Code.",
+    "explicacion": "Atom incorporó colaboración mediante Teletype y Visual Studio Code ofrece sesiones compartidas mediante Live Share. Estas herramientas permiten que varias personas trabajen sobre el mismo código y vean los cambios en tiempo real."
+  },
+  {
+    "id": 88,
+    "pregunta": "MathML se usa por:",
+    "opciones": [
+      "A. Programas de geografía.",
+      "B. Programas de cálculo.",
+      "C. Programas de edición de imagen.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "B. Programas de cálculo.",
+    "explicacion": "MathML representa notación y estructura matemática mediante elementos de marcado. Los programas de cálculo y otras herramientas científicas pueden utilizarlo para intercambiar, procesar y mostrar expresiones matemáticas de forma estructurada."
+  },
+  {
+    "id": 89,
+    "pregunta": "MouseDown es un evento que sucede cuando:",
+    "opciones": [
+      "A. Este evento se produce al colocar el puntero sobre un elemento.",
+      "B. Este evento se produce al pulsar los botones del ratón.",
+      "C. Este evento se produce al hacer clic con el botón izquierdo del ratón sobre el control.",
+      "D. Ninguna es correcta."
+    ],
+    "respuesta_correcta": "B. Este evento se produce al pulsar los botones del ratón.",
+    "explicacion": "MouseDown se dispara en el momento en que se presiona un botón del ratón sobre un elemento. Ocurre antes de soltarlo y se diferencia de click, que normalmente representa una pulsación y liberación completas."
+  },
+  {
+    "id": 90,
+    "pregunta": "¿Qué tipos de etiquetas usa XML?",
+    "opciones": [
+      "A. De entrada, cierre y corte.",
+      "B. De apertura, cierre y limitadas.",
+      "C. De apertura, corte y vacías.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son incorrectas.",
+    "explicacion": "XML utiliza etiquetas de apertura, etiquetas de cierre y etiquetas de elemento vacío. Las tres primeras opciones sustituyen alguno de esos nombres por términos que no corresponden a la sintaxis XML, como entrada, corte o limitadas."
   }
 ];

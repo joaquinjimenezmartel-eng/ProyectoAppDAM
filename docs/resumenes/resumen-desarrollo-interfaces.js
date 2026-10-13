@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U4 · Diseño, componentes y distribución</span>
+    <span class="study-summary__eyebrow">U1–U5 · Diseño, componentes y lenguajes de interfaz</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -80,5 +80,21 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Firma digital y almacenes de claves</h4>
     <p>La firma digital utiliza una clave privada para firmar y la clave pública correspondiente para verificar la autoría y la integridad. En un almacén de claves, un alias identifica la entrada que contiene el material criptográfico. El alias no sustituye a la contraseña que protege el almacén o la clave.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>XML: elementos y atributos</h4>
+    <p><strong>XML</strong> estructura información mediante elementos anidados y puede utilizarse para metadatos, intercambio y almacenamiento de contenidos. Un atributo añade una característica a la etiqueta de apertura y se escribe como <code>nombre="valor"</code>. La sintaxis distingue etiquetas de apertura, de cierre y de elemento vacío.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>SVG, RSS y MathML</h4>
+    <p><strong>SVG</strong> describe gráficos vectoriales; <strong>RSS</strong> distribuye novedades mediante canales de sindicación; y <strong>MathML</strong> representa expresiones matemáticas para que puedan mostrarse y procesarse. Los tres formatos emplean estructuras de marcado especializadas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Eventos del ratón</h4>
+    <p><code>mousedown</code> se produce cuando se presiona un botón del ratón sobre un elemento. No debe confundirse con situar el puntero encima ni con <code>click</code>, que normalmente requiere completar la pulsación y la liberación. Un listener permite responder a cada evento en el momento adecuado.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Edición colaborativa</h4>
+    <p>La colaboración en tiempo real permite que varias personas compartan una sesión de código, observen cambios y trabajen juntas sobre el proyecto. Atom ofreció esta posibilidad mediante Teletype y Visual Studio Code la proporciona mediante Live Share.</p>
   </section>
 </article>`;

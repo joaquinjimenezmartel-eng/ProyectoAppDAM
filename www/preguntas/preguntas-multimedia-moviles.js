@@ -479,5 +479,125 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "D. Todas las anteriores son correctas.",
     "explicacion": "Las reglas de RelativeLayout permiten colocar una vista respecto a otro control, alinear bordes entre controles y posicionarla respecto al contenedor padre. Estas posibilidades pueden combinarse para construir la distribución de la pantalla."
+  },
+  {
+    "id": 81,
+    "pregunta": "android:background en TextView permite:",
+    "opciones": [
+      "A. Establecer el fondo.",
+      "B. Definir el estilo de texto.",
+      "C. Establecer el tipo de letra.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. Establecer el fondo.",
+    "explicacion": "El atributo android:background establece el recurso que se dibuja detrás del contenido de una vista. En un TextView puede utilizar un color, una imagen o un drawable sin modificar el estilo ni el tipo de letra del texto."
+  },
+  {
+    "id": 82,
+    "pregunta": "En SeekBar, android:thumb permite:",
+    "opciones": [
+      "A. Personalizar el aspecto de la barra de desplazamiento.",
+      "B. Definir la orientación del deslizable (vertical u horizontal).",
+      "C. Personalizar la imagen del elemento deslizable.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "C. Personalizar la imagen del elemento deslizable.",
+    "explicacion": "En un SeekBar, el thumb es el indicador que la persona arrastra para elegir un valor. El atributo android:thumb permite asignarle un drawable y personalizar su apariencia, mientras que el aspecto de la pista se configura mediante otros atributos."
+  },
+  {
+    "id": 83,
+    "pregunta": "Equivale a ComboBox en otros lenguajes de programación:",
+    "opciones": [
+      "A. CheckBox.",
+      "B. Spinner.",
+      "C. RadioButton.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. Spinner.",
+    "explicacion": "Spinner presenta una lista desplegable y permite escoger uno de sus elementos. Su función es equivalente a la de un ComboBox de selección en otros entornos de programación."
+  },
+  {
+    "id": 84,
+    "pregunta": "Es una animación de texto de TextView:",
+    "opciones": [
+      "A. Traslación.",
+      "B. Rotación.",
+      "C. Aparición.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "Un TextView hereda las capacidades de animación de View. Por eso puede desplazarse mediante una traslación, girar con una rotación o aparecer gradualmente modificando su transparencia."
+  },
+  {
+    "id": 85,
+    "pregunta": "Este formato de color \"255, 120, 0, 250\" pertenece al código:",
+    "opciones": [
+      "A. Hexadecimal.",
+      "B. ARGB.",
+      "C. RGB.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. ARGB.",
+    "explicacion": "ARGB expresa un color mediante cuatro componentes: alfa, rojo, verde y azul. El primer valor controla la opacidad y los tres siguientes determinan el color; cada componente suele utilizar un valor entre 0 y 255."
+  },
+  {
+    "id": 86,
+    "pregunta": "Objeto que permite la selección de un único valor numérico entre unos valores predefinidos en la aplicación:",
+    "opciones": [
+      "A. CheckBox.",
+      "B. Spinner.",
+      "C. RadioButton.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "El control descrito es SeekBar: permite seleccionar un valor numérico dentro de un intervalo moviendo un indicador. CheckBox representa una elección booleana, Spinner selecciona un elemento de una lista y RadioButton se utiliza para escoger una opción de un grupo; por eso ninguna de las tres primeras respuestas identifica el control descrito."
+  },
+  {
+    "id": 87,
+    "pregunta": "Permite seleccionar varias opciones de una lista:",
+    "opciones": [
+      "A. CheckBox.",
+      "B. Spinner.",
+      "C. RadioButton.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. CheckBox.",
+    "explicacion": "Cada CheckBox mantiene un estado marcado o desmarcado independiente. Al utilizar varios, la persona puede activar simultáneamente todas las opciones que necesite, a diferencia de un grupo de RadioButton, que normalmente limita la selección a una sola."
+  },
+  {
+    "id": 88,
+    "pregunta": "ProgressBar posee dos tipos diferentes de barras:",
+    "opciones": [
+      "A. Vertical y horizontal.",
+      "B. Vertical y lineal.",
+      "C. Lineal y circular.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Lineal y circular.",
+    "explicacion": "ProgressBar puede representarse con una barra lineal o con un indicador circular. Además, puede mostrar un progreso determinado cuando se conoce el avance o funcionar de forma indeterminada mientras la duración de la tarea es desconocida."
+  },
+  {
+    "id": 89,
+    "pregunta": "SeekBar permite:",
+    "opciones": [
+      "A. La selección de un único valor numérico entre unos valores predefinidos en la aplicación.",
+      "B. Poseer dos estados con una barra deslizante.",
+      "C. Añadir imágenes a un botón.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. La selección de un único valor numérico entre unos valores predefinidos en la aplicación.",
+    "explicacion": "SeekBar representa un intervalo numérico y permite elegir una posición concreta desplazando su indicador. Es apropiado para ajustes como el volumen o el brillo, donde el valor debe variar dentro de unos límites definidos."
+  },
+  {
+    "id": 90,
+    "pregunta": "textCapSentences de EditText permite:",
+    "opciones": [
+      "A. La introducción de múltiples líneas.",
+      "B. Desactivar la escritura predictiva.",
+      "C. Poner en mayúscula la primera letra de cada frase.",
+      "D. Introducir una contraseña, pero de modo visible."
+    ],
+    "respuesta_correcta": "C. Poner en mayúscula la primera letra de cada frase.",
+    "explicacion": "textCapSentences es una opción del tipo de entrada de texto que solicita al teclado poner en mayúscula el primer carácter de cada oración. No activa por sí misma el modo multilínea ni configura el campo como contraseña."
   }
 ];

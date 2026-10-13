@@ -479,5 +479,125 @@ const preguntasSistemasGestionEmpresarial = [
     ],
     "respuesta_correcta": "B. Planificación de actividades",
     "explicacion": "La planificación de actividades organiza tareas de seguimiento vinculadas a registros empresariales. Permite programar llamadas, correos, reuniones y acciones pendientes, asignar responsables y fechas y encadenar próximos pasos para que ninguna gestión importante quede olvidada."
+  },
+  {
+    "id": 81,
+    "pregunta": "¿A qué nos referimos con el performance dip?",
+    "opciones": [
+      "A. Caída de la satisfacción general",
+      "B. Aumento de la productividad",
+      "C. Caída de la eficacia general.",
+      "D. Caída de la calidad."
+    ],
+    "respuesta_correcta": "C. Caída de la eficacia general.",
+    "explicacion": "El performance dip es la caída temporal del rendimiento y de la eficacia que puede producirse durante la transición a un nuevo sistema. Las personas están aprendiendo nuevos procesos y herramientas, por lo que la productividad suele recuperarse progresivamente con formación, práctica y soporte."
+  },
+  {
+    "id": 82,
+    "pregunta": "¿Cuál de las siguientes tareas no forma parte del proceso de instalación e implantación de un sistema ERP/CRM?",
+    "opciones": [
+      "A. Formación de usuarios",
+      "B. Migración de datos",
+      "C. Corrección del software.",
+      "D. Configuración del sistema"
+    ],
+    "respuesta_correcta": "C. Corrección del software.",
+    "explicacion": "Una implantación incluye configurar el sistema, migrar los datos y formar a las personas que lo utilizarán. La corrección del producto base corresponde al mantenimiento o desarrollo del software, no a una tarea ordinaria del proceso de implantación en la empresa."
+  },
+  {
+    "id": 83,
+    "pregunta": "Durante los trabajos de adaptación de un ERP a una empresa se aborda:",
+    "opciones": [
+      "A. La modificación y creación de informes",
+      "B. La programación de módulos específicos",
+      "C. El estudio de viabilidad del sistema.",
+      "D. La eliminación de la redundancia de datos."
+    ],
+    "respuesta_correcta": "C. El estudio de viabilidad del sistema.",
+    "explicacion": "El estudio de viabilidad determina si la solución puede satisfacer las necesidades de la empresa dentro de sus restricciones técnicas, económicas y organizativas. Antes de personalizar informes o módulos conviene comprobar que la implantación es posible y aporta beneficios suficientes."
+  },
+  {
+    "id": 84,
+    "pregunta": "En la fase del diseño de la solución, ¿qué elementos determinan la elección de una u otra aplicación?",
+    "opciones": [
+      "A. Definición de los procesos de negocio, materiales clave y flujo de trabajo",
+      "B. Definición de los procesos de negocio clave y las estructuras de datos y flujo de trabajo.",
+      "C. Definición de los trabajos clave, infraestructura y recursos de empresa",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "B. Definición de los procesos de negocio clave y las estructuras de datos y flujo de trabajo.",
+    "explicacion": "El diseño debe reflejar cómo funciona el negocio, qué información necesita y cómo circulan las tareas entre personas y áreas. Comparar los procesos clave, las estructuras de datos y los flujos de trabajo permite elegir la aplicación que mejor encaja con la organización."
+  },
+  {
+    "id": 85,
+    "pregunta": "La prueba de rendimiento en paralelo consiste en:",
+    "opciones": [
+      "A. Probar el nuevo ERP junto con una simulación en paralelo.",
+      "B. Comprobar si existen disconformidades entre el ERP viejo y el nuevo",
+      "C. Bloquear el viejo ERP y empezar a funcionar con el nuevo sistema.",
+      "D. Las opciones anteriores son falsas"
+    ],
+    "respuesta_correcta": "B. Comprobar si existen disconformidades entre el ERP viejo y el nuevo",
+    "explicacion": "En una ejecución paralela, el sistema antiguo y el nuevo procesan durante un tiempo operaciones comparables. Contrastar sus resultados permite detectar diferencias, validar datos y procesos y reducir el riesgo antes de retirar definitivamente el ERP anterior."
+  },
+  {
+    "id": 86,
+    "pregunta": "La usabilidad de un ERP mide (señala la opción correcta):",
+    "opciones": [
+      "A. La facilidad y satisfacción subjetiva",
+      "B. La complejidad",
+      "C. La multifuncionalidad.",
+      "D. La organización del mismo"
+    ],
+    "respuesta_correcta": "A. La facilidad y satisfacción subjetiva",
+    "explicacion": "La usabilidad valora si las personas pueden aprender y utilizar el sistema con eficacia, eficiencia y satisfacción. En un ERP importa que las tareas sean comprensibles, que la interacción resulte manejable y que la experiencia percibida sea adecuada."
+  },
+  {
+    "id": 87,
+    "pregunta": "Los costes ocultos y errores de implantación de un ERP suelen venir por parte de una:",
+    "opciones": [
+      "A. Incorrecta selección de software.",
+      "B. Objetivos poco realistas",
+      "C. Poca participación de los usuarios",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "Elegir una solución que no encaja, fijar objetivos poco realistas y excluir a los usuarios generan retrabajo, personalizaciones, resistencia al cambio y retrasos. Todos estos factores pueden aumentar el coste real y reducir el valor obtenido de la implantación."
+  },
+  {
+    "id": 88,
+    "pregunta": "Los enfoques para definir los requisitos son:",
+    "opciones": [
+      "A. Dirigido al producto y dirigido al usuario.",
+      "B. Dirigido al desarrollo y dirigido a una solución existente",
+      "C. Funcionales y no funcionales.",
+      "D. Dirigido a objetivos y dirigido al desempeño"
+    ],
+    "respuesta_correcta": "A. Dirigido al producto y dirigido al usuario.",
+    "explicacion": "El enfoque dirigido al producto describe las capacidades y características que debe ofrecer la solución. El enfoque dirigido al usuario parte de las necesidades, tareas y contexto de quienes utilizarán el sistema. Combinar ambas perspectivas ayuda a definir requisitos útiles y verificables."
+  },
+  {
+    "id": 89,
+    "pregunta": "¿Qué punto es el resultado del trabajo inicial realizado por el equipo consultor?",
+    "opciones": [
+      "A. Análisis Inicial.",
+      "B. Alcance de la Función.",
+      "C. Selección del Sistema.",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "El trabajo inicial de consultoría analiza la situación de la empresa, delimita el alcance funcional necesario y aporta información para seleccionar el sistema. Los tres resultados están relacionados y sirven de base para planificar la implantación."
+  },
+  {
+    "id": 90,
+    "pregunta": "Respecto a los factores que se deben tener en cuenta a la hora de elegir un ERP, señala la respuesta correcta:",
+    "opciones": [
+      "A. Periodo de migración y adaptación sencillo.",
+      "B. Informes y análisis proporcionados",
+      "C. Características de uso.",
+      "D. Se deben tener en cuenta todos los mencionados"
+    ],
+    "respuesta_correcta": "D. Se deben tener en cuenta todos los mencionados",
+    "explicacion": "La elección debe valorar el esfuerzo de migración y adaptación, la información que ofrecerán los informes y las características de uso del sistema. Considerar conjuntamente estos factores permite estimar mejor el coste, la utilidad y la aceptación del ERP."
   }
 ];

@@ -1,7 +1,7 @@
 const resumenServiciosProcesos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U4 · Procesos, concurrencia y comunicación en red</span>
+    <span class="study-summary__eyebrow">U1–U5 · Procesos, redes y seguridad</span>
     <h3 class="study-summary__title">Programación de servicios y procesos</h3>
     <p class="study-summary__lead">Un programa contiene instrucciones; un proceso las ejecuta. Comprender cómo se reparte la CPU, cómo se coordinan las tareas y cómo se comunican por red permite construir aplicaciones concurrentes y servicios conectados.</p>
   </header>
@@ -68,5 +68,21 @@ const resumenServiciosProcesos = `
   <section class="study-summary__section">
     <h4>HTTP y recursos en Java</h4>
     <p>Una petición HTTP <strong>POST</strong> incluye normalmente en su cuerpo los datos que el servidor debe procesar. En Java, <code>java.net.URL</code> representa la dirección de un recurso y permite abrir una conexión para acceder a él. <strong>Apache Commons Net</strong> añade clases cliente para numerosos protocolos de Internet, como FTP, SMTP, POP3, IMAP y Telnet.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Claves criptográficas y AES</h4>
+    <p>Un generador de claves utiliza una fuente aleatoria segura para producir el material criptográfico. En cifrado simétrico, <code>SecretKey</code> representa una clave secreta compartida por las operaciones de cifrado y descifrado. <strong>AES</strong> es el estándar simétrico de uso general más extendido y admite claves de 128, 192 y 256 bits.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Hash, certificados y JCA</h4>
+    <p>Una función hash produce un resumen de longitud fija, debe ser eficiente y cambiar sustancialmente cuando cambia la entrada. <strong>X.509</strong> define la estructura habitual de los certificados digitales y una <strong>CA</strong> los emite y firma. En Java, <strong>JCA</strong> proporciona una arquitectura común para hash, claves, firmas y certificados mediante proveedores intercambiables.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Firma digital y DSA</h4>
+    <p>La firma digital permite verificar la autoría y detectar modificaciones del contenido. <strong>DSA</strong> significa <em>Digital Signature Algorithm</em>: la clave privada crea la firma y la pública la verifica. El DNIe puede utilizar certificados para firmar electrónicamente; los efectos jurídicos dependen de los requisitos que cumpla la firma.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Reconocimiento y escaneo</h4>
+    <p>En el análisis clásico de un ataque, el reconocimiento recopila información inicial y el escaneo identifica equipos, puertos, servicios y posibles vulnerabilidades. Conocer estas fases ayuda a detectar actividad sospechosa y a reducir la superficie de exposición antes de que se intente obtener acceso.</p>
   </section>
 </article>`;

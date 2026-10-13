@@ -1,10 +1,11 @@
 // Generado por scripts/build-offline.js
-self.OFFLINE_VERSION = "20dcc6df289f8d0b";
+self.OFFLINE_VERSION = "649f9fcf0dc49298";
 self.OFFLINE_ASSETS = [
   "asignaturas.js",
   "images/lenguaje-marcas/pregunta35.png",
   "images/programacion/pregunta87.png",
   "images/programacion/pregunta88.png",
+  "images/servicios-procesos/pregunta81.png",
   "index.html",
   "manifest.webmanifest",
   "offline.js",

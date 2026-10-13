@@ -479,5 +479,126 @@ const preguntasServiciosProcesos = [
     ],
     "respuesta_correcta": "D. Todas son correctas",
     "explicacion": "Los protocolos clásicos de correo estudiados —SMTP, POP3 e IMAP— funcionan sobre TCP, intercambian comandos y respuestas textuales y mantienen un estado durante cada sesión. El estado permite saber, por ejemplo, si el usuario ya se ha autenticado o en qué fase de la transacción se encuentra la comunicación."
+  },
+  {
+    "id": 81,
+    "pregunta": "En el siguiente ejemplo, ¿qué se está generando?",
+    "opciones": [
+      "A. Una clave pública",
+      "B. Un algoritmo de encriptación",
+      "C. Un certificado digital",
+      "D. Una clave privada"
+    ],
+    "respuesta_correcta": "D. Una clave privada",
+    "explicacion": "El código inicializa un generador de claves con una fuente SecureRandom y llama a generateKey(), que devuelve un objeto SecretKey. Se genera material criptográfico secreto que debe mantenerse reservado; entre las opciones propuestas corresponde a una clave privada, aunque en criptografía simétrica se denomina con mayor precisión clave secreta.",
+    "imagen": "images/servicios-procesos/pregunta81.png"
+  },
+  {
+    "id": 82,
+    "pregunta": "¿Cuál es el algoritmo simétrico de cifrado más usado actualmente?",
+    "opciones": [
+      "A. AES",
+      "B. Blowfish",
+      "C. DES",
+      "D. TDES"
+    ],
+    "respuesta_correcta": "A. AES",
+    "explicacion": "AES es el estándar de cifrado simétrico de uso general más extendido. Trabaja con bloques de 128 bits y admite claves de 128, 192 o 256 bits. DES ya no ofrece seguridad suficiente y TDES ha quedado desplazado por alternativas más modernas y eficientes."
+  },
+  {
+    "id": 83,
+    "pregunta": "¿Cuál es la fase dos de un ataque informático?",
+    "opciones": [
+      "A. Escaneo",
+      "B. Reconocimiento",
+      "C. Obtención de acceso",
+      "D. Borrado de huellas"
+    ],
+    "respuesta_correcta": "A. Escaneo",
+    "explicacion": "Después del reconocimiento inicial, el escaneo busca sistemas activos, puertos abiertos, servicios y posibles vulnerabilidades. Esta información permite identificar puntos de entrada antes de intentar obtener acceso al objetivo."
+  },
+  {
+    "id": 84,
+    "pregunta": "¿Qué es X.509?",
+    "opciones": [
+      "A. Una clase de Java",
+      "B. El DNI electrónico",
+      "C. Un estándar encargado de la definición de la estructura de los certificados digitales",
+      "D. La basura de la víctima de un ataque informático"
+    ],
+    "respuesta_correcta": "C. Un estándar encargado de la definición de la estructura de los certificados digitales",
+    "explicacion": "X.509 define la estructura de los certificados de clave pública. Un certificado vincula una identidad con una clave pública e incluye datos como el emisor, el titular, el periodo de validez, el algoritmo empleado y la firma de la autoridad certificadora."
+  },
+  {
+    "id": 85,
+    "pregunta": "Indica cuál de las siguientes no es una característica de las funciones hash:",
+    "opciones": [
+      "A. Gran coste computacional",
+      "B. Discontinuidad",
+      "C. Uniformidad",
+      "D. Bajo coste computacional"
+    ],
+    "respuesta_correcta": "A. Gran coste computacional",
+    "explicacion": "Una función hash criptográfica de propósito general debe calcularse de forma eficiente, distribuir los resultados uniformemente y cambiar de manera drástica ante una pequeña modificación de la entrada. Por ello, un gran coste computacional no es una propiedad general de estas funciones, aunque los algoritmos específicos para contraseñas sí elevan deliberadamente ese coste."
+  },
+  {
+    "id": 86,
+    "pregunta": "Indica cuál de los siguientes sistemas hace uso de TLS/SSL:",
+    "opciones": [
+      "A. JCA",
+      "B. SHS",
+      "C. SSH",
+      "D. Todas son incorrectas"
+    ],
+    "respuesta_correcta": "C. SSH",
+    "explicacion": "SSH establece un canal cifrado para acceder y administrar sistemas remotos. Su finalidad de protección es comparable a la de TLS/SSL, aunque técnicamente SSH utiliza su propia arquitectura criptográfica y no se ejecuta normalmente sobre TLS; conviene distinguir la función de seguridad de la familia concreta de protocolos."
+  },
+  {
+    "id": 87,
+    "pregunta": "La API de Java JCA, ¿para qué se usa?",
+    "opciones": [
+      "A. Para autenticación de usuarios",
+      "B. Para aplicar TLS/SSL",
+      "C. Para funciones hash, encriptación, firma y certificados digitales",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "C. Para funciones hash, encriptación, firma y certificados digitales",
+    "explicacion": "JCA reúne interfaces y proveedores criptográficos de Java. Permite trabajar con resúmenes hash, generación y gestión de claves, firmas digitales y certificados; junto con JCE también ofrece operaciones de cifrado y descifrado."
+  },
+  {
+    "id": 88,
+    "pregunta": "La firma digital es igual de válida que...",
+    "opciones": [
+      "A. Un certificado digital",
+      "B. DNIe",
+      "C. La firma manuscrita",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "La firma digital utiliza certificados para identificar al firmante y proteger la integridad del documento. El DNIe puede generar firmas electrónicas y, cuando una firma cumple los requisitos legales aplicables, puede producir efectos equivalentes a una firma manuscrita. La validez concreta depende del tipo de firma, del certificado y del contexto jurídico."
+  },
+  {
+    "id": 89,
+    "pregunta": "Las siglas CA hacen referencia a...",
+    "opciones": [
+      "A. La autorización de certificados",
+      "B. La autoridad certificadora",
+      "C. La certificadora de autoridad",
+      "D. Ninguna es correcta"
+    ],
+    "respuesta_correcta": "B. La autoridad certificadora",
+    "explicacion": "CA significa Certification Authority o autoridad certificadora. Esta entidad emite y firma certificados digitales después de verificar la identidad correspondiente, permitiendo que otras partes comprueben la autenticidad del certificado."
+  },
+  {
+    "id": 90,
+    "pregunta": "Las siglas DSA, ¿a qué hacen referencia?",
+    "opciones": [
+      "A. Digital Signature Algorithm",
+      "B. Relatively Slow Algorithm",
+      "C. Digital Slow Algorithm",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "A. Digital Signature Algorithm",
+    "explicacion": "DSA significa Digital Signature Algorithm. Es un algoritmo de clave pública destinado a crear y verificar firmas digitales: la clave privada genera la firma y la clave pública permite comprobar su autenticidad."
   }
 ];

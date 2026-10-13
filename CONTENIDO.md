@@ -164,3 +164,54 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre servicios profesionales, contactos, partes de horas, contabilidad, facturación, punto de venta, proyectos y planificación de actividades. El resumen se amplía de U1–U3 a U1–U4.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 940 preguntas existentes antes de esta U4 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 13 de octubre de 2026 — Multimedia U5
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U5 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 81–90. JSON `contenido/tests/multimediaMoviles/u5-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 91.
+- En la pregunta original 6, la opción B («Spinner») fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: opción D, «Ninguna de las anteriores».
+- Las únicas modificaciones textuales son correcciones ortográficas y ortotipográficas documentadas en el JSON: `Textview` → `TextView`, «Transilación» → «Traslación» y normalización del espaciado del valor ARGB. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre TextView, SeekBar, Spinner, animaciones, color ARGB, CheckBox, ProgressBar y EditText. El resumen se amplía de U1–U4 a U1–U5.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 950 preguntas existentes antes de esta U5 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 13 de octubre de 2026 — Servicios y procesos U5
+
+- Asignatura ampliada: **Programación de servicios y procesos**, ID técnico `serviciosProcesos`.
+- U5 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 81–90. JSON `contenido/tests/serviciosProcesos/u5-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 91.
+- La pregunta original 1 incorpora la imagen entregada por el propietario, guardada como `www/images/servicios-procesos/pregunta81.png` y referenciada desde el JSON. La sincronización web crea su copia en `docs` y el manifiesto offline la incluye automáticamente.
+- En las preguntas originales 6 y 8, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: C («SSH») y D («Todas son correctas»), respectivamente.
+- Se conserva literalmente la opción `SHS` de la pregunta original 6 para no convertirla en un segundo `SSH` ni alterar el contenido evaluable. Las únicas modificaciones textuales son la normalización `x.509` → `X.509` y la puntuación interrogativa de la pregunta original 7.
+- Cada pregunta incorpora una explicación didáctica sobre claves criptográficas, AES, fases de un ataque, X.509, funciones hash, SSH, JCA, firma digital, autoridades certificadoras y DSA. El resumen se amplía de U1–U4 a U1–U5.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 960 preguntas existentes antes de esta U5 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 13 de octubre de 2026 — Desarrollo de interfaces U5
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U5 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 81–90. JSON `contenido/tests/desarrolloInterfaces/u5-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 91.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas, léxicas y de puntuación documentadas en el JSON: retirada de dos puntos tras una interrogación, «sindicalización» → «sindicación», eliminación de una repetición accidental y corrección de `¿Qué tipos de etiquetas usa XML?`. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre XML, atributos, SVG, eventos, RSS, edición colaborativa, MathML y MouseDown. El resumen se amplía de U1–U4 a U1–U5.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 970 preguntas existentes antes de esta U5 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 13 de octubre de 2026 — Acceso a datos U5
+
+- Asignatura ampliada: **Acceso a datos**, ID técnico `accesoDatos`.
+- U5 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 81–90. JSON `contenido/tests/accesoDatos/u5-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 91.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones gramaticales, ortográficas y de puntuación documentadas en el JSON: retirada de dos puntos tras una interrogación, «bases de datos objeto» → «bases de datos de objetos» y normalización de signos finales. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre bases de datos de objetos y objeto-relacionales, OQL, tablas anidadas, REF, DISTINCT, SQL:1999, Oracle y ODL. El resumen se amplía de U1–U4 a U1–U5.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 980 preguntas existentes antes de esta U5 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 13 de octubre de 2026 — Sistemas de gestión empresarial U5
+
+- Asignatura ampliada: **Sistemas de gestión empresarial**, ID técnico `sistemasGestionEmpresarial`.
+- U5 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 81–90. JSON `contenido/tests/sistemasGestionEmpresarial/u5-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 91.
+- En las preguntas originales 3, 8 y 9, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: C («El estudio de viabilidad del sistema»), A («Dirigido al producto y dirigido al usuario») y D («Todas son correctas»), respectivamente.
+- Las únicas modificaciones textuales son correcciones ortográficas y de puntuación documentadas en el JSON. Incluyen la coma final de «Caída de la eficacia general» y la normalización de los enunciados interrogativos; ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre transición, viabilidad, diseño, pruebas en paralelo, usabilidad, requisitos, riesgos y selección de un ERP. El resumen se amplía de U1–U4 a U1–U5.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 990 preguntas existentes antes de esta U5 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U4 · Sistemas, ERP y plataforma Odoo</span>
+    <span class="study-summary__eyebrow">U1–U5 · Sistemas, ERP e implantación</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -76,5 +76,25 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Punto de venta y actividades</h4>
     <p>El punto de venta reúne las funciones necesarias para atender al público, registrar operaciones y cobrar mediante distintos métodos. La planificación de actividades organiza llamadas, correos, reuniones y tareas de seguimiento con responsables y fechas, y permite encadenar los siguientes pasos de cada gestión.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Viabilidad y diseño de la solución</h4>
+    <p>Antes de implantar un ERP se analiza su viabilidad técnica, económica y organizativa. El diseño compara los procesos de negocio clave, las estructuras de datos y los flujos de trabajo con las capacidades de cada solución para elegir la aplicación que mejor se adapta a la empresa.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Migración, configuración y formación</h4>
+    <p>La implantación prepara la configuración, migra los datos y forma a las personas usuarias. Corregir el producto base pertenece al mantenimiento o desarrollo del software. Durante la transición puede aparecer un <em>performance dip</em>: una caída temporal de la eficacia mientras se aprenden los nuevos procesos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Pruebas en paralelo</h4>
+    <p>Ejecutar temporalmente el ERP antiguo y el nuevo con operaciones comparables permite contrastar resultados y detectar disconformidades antes del cambio definitivo. Esta comprobación reduce el riesgo de migrar datos incorrectos o aceptar procesos que todavía no funcionan como se esperaba.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Requisitos y usabilidad</h4>
+    <p>Los requisitos pueden estudiarse desde las capacidades del producto y desde las necesidades de las personas usuarias. La usabilidad considera eficacia, eficiencia, facilidad de aprendizaje y satisfacción. La participación de los usuarios ayuda a descubrir necesidades reales y favorece la adopción.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Riesgos y selección del ERP</h4>
+    <p>Una selección inadecuada, objetivos poco realistas y una participación insuficiente generan costes ocultos, retrasos y retrabajo. Para elegir conviene valorar la migración, la adaptación, los informes disponibles, las características de uso y el alcance funcional definido durante el análisis inicial.</p>
   </section>
 </article>`;
