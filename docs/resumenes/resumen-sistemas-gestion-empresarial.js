@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U5 · Sistemas, ERP e implantación</span>
+    <span class="study-summary__eyebrow">U1–U6 · Sistemas, ERP, implantación y Odoo</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -96,5 +96,25 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Riesgos y selección del ERP</h4>
     <p>Una selección inadecuada, objetivos poco realistas y una participación insuficiente generan costes ocultos, retrasos y retrabajo. Para elegir conviene valorar la migración, la adaptación, los informes disponibles, las características de uso y el alcance funcional definido durante el análisis inicial.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Capas y ORM de Odoo</h4>
+    <p>La interfaz presenta la información, la capa lógica aplica las reglas de negocio y el ORM conecta los modelos de Python con PostgreSQL. Gracias a esta capa intermedia, el código trabaja con registros y campos mientras Odoo traduce las operaciones a consultas de base de datos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Modelos, vistas, menús y acciones</h4>
+    <p>Los modelos organizan los datos y su comportamiento; las vistas determinan cómo se muestran; los menús permiten navegar; y las acciones enlazan la interacción del usuario con modelos y vistas. El modelo <code>res.partner</code> reúne contactos, clientes y proveedores y se corresponde con la tabla <code>res_partner</code>.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Vistas XML e herencia con XPath</h4>
+    <p>Odoo describe sus vistas mediante XML. Una vista heredada usa expresiones XPath para localizar un nodo de la vista original y añadirlo, sustituirlo o modificarlo sin copiar toda su definición. Este mecanismo facilita personalizaciones modulares y mantenibles.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Secuencias e identificadores</h4>
+    <p>Las secuencias generan numeraciones automáticas y pueden combinar prefijo, sufijo, relleno, incremento y número siguiente. Cada registro persistente recibe además un identificador interno. Los identificadores externos permiten referenciar datos desde módulos con un formato habitual como <code>modulo.identificador</code>.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Tipos de modelo, QWeb y extensibilidad</h4>
+    <p>El ORM ofrece modelos persistentes, transitorios para información temporal y abstractos para compartir comportamiento. QWeb es el motor de plantillas XML utilizado para generar contenido HTML. La arquitectura modular y la herencia permiten añadir modelos o ampliar componentes existentes sin alterar directamente su definición original.</p>
   </section>
 </article>`;

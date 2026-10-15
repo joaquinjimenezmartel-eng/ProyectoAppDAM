@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U5 · Diseño, componentes y lenguajes de interfaz</span>
+    <span class="study-summary__eyebrow">U1–U6 · Diseño, componentes y lenguajes de interfaz</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -96,5 +96,21 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Edición colaborativa</h4>
     <p>La colaboración en tiempo real permite que varias personas compartan una sesión de código, observen cambios y trabajen juntas sobre el proyecto. Atom ofreció esta posibilidad mediante Teletype y Visual Studio Code la proporciona mediante Live Share.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Formatos y compresión de imágenes</h4>
+    <p><strong>GIF</strong> es un formato rasterizado que puede contener animación y resulta adecuado para gráficos sencillos. La compresión puede ser con pérdida, cuando elimina información para reducir el tamaño, o sin pérdida, cuando conserva los datos necesarios para reconstruir la imagen original.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Tamaño, profundidad y resolución</h4>
+    <p>El tamaño sin comprimir depende del número de píxeles y de la información almacenada en cada uno. Si las dimensiones físicas son L y A, la resolución es R y la profundidad es P, puede expresarse como <code>R²·L·A·P</code>. Una profundidad de 16 bits representa 65 536 valores y la resolución se expresa habitualmente en píxeles por pulgada (ppp).</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Imagen rasterizada y vectorial</h4>
+    <p>Una imagen <strong>rasterizada</strong> se compone de píxeles y es apropiada para fotografías, aunque puede perder nitidez al ampliarse. Una imagen <strong>vectorial</strong> utiliza formas matemáticas y puede escalarse sin perder calidad, por lo que funciona bien en logotipos e iconos. Photoshop se especializa principalmente en la edición de imágenes rasterizadas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Iconos y licencias Creative Commons</h4>
+    <p>Los iconos comunican acciones, objetos y estados dentro de una interfaz gráfica. Las licencias <strong>Creative Commons</strong> combinan atribución (BY), compartir igual (SA), uso no comercial (NC) y ausencia de obras derivadas (ND) para indicar de forma clara cómo puede reutilizarse una creación.</p>
   </section>
 </article>`;

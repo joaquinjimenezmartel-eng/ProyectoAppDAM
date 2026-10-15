@@ -1,7 +1,7 @@
 const resumenAccesoDatos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U5 · Persistencia, JDBC y modelos de objetos</span>
+    <span class="study-summary__eyebrow">U1–U6 · Persistencia, JDBC y modelos de objetos</span>
     <h3 class="study-summary__title">Acceso a datos</h3>
     <p class="study-summary__lead">Acceder a datos implica decidir cómo se representan, dónde se conservan y qué garantías debe ofrecer el sistema cuando los consulta o modifica.</p>
   </header>
@@ -92,5 +92,21 @@ const resumenAccesoDatos = `
   <section class="study-summary__section">
     <h4>Resultados únicos con DISTINCT</h4>
     <p><code>SELECT DISTINCT</code> elimina duplicados del resultado y devuelve combinaciones únicas de los valores seleccionados. No debe confundirse con <code>ORDER BY</code>, que ordena las filas pero no elimina las repeticiones.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>XML, DOM y estructura jerárquica</h4>
+    <p><strong>XML</strong> es un lenguaje de marcas que organiza información mediante elementos relacionados jerárquicamente. <strong>DOM</strong> representa el documento como un árbol de nodos para poder recorrerlo y modificarlo. En Java, <code>getChildNodes()</code> devuelve un <code>NodeList</code> con los hijos directos de un nodo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Validación mediante esquemas XML</h4>
+    <p>Un esquema define los elementos y atributos permitidos, su orden, sus tipos y otras restricciones. La validación comprueba que el documento respeta esas reglas, mientras que estar bien formado solo exige cumplir la sintaxis básica de XML.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Navegación con XPath</h4>
+    <p><strong>XPath</strong> es un lenguaje de expresiones para seleccionar partes de un documento XML. Una ruta absoluta comienza en la raíz: <code>/Departamento/Empleados</code> selecciona los elementos <code>Empleados</code> que son hijos de <code>Departamento</code>. También permite navegar por otros ejes y aplicar condiciones.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>JAXB y transformaciones XSL</h4>
+    <p>El compilador de binding de <strong>JAXB</strong> puede generar clases Java a partir de un esquema XML para convertir entre documentos y objetos. Una hoja <strong>XSLT</strong> aplica reglas y plantillas a un árbol XML para producir XML, HTML o texto; este último método permite crear salidas como CSV.</p>
   </section>
 </article>`;

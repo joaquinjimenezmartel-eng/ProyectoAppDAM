@@ -599,5 +599,125 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "C. Poner en mayúscula la primera letra de cada frase.",
     "explicacion": "textCapSentences es una opción del tipo de entrada de texto que solicita al teclado poner en mayúscula el primer carácter de cada oración. No activa por sí misma el modo multilínea ni configura el campo como contraseña."
+  },
+  {
+    "id": 91,
+    "pregunta": "android:gravity de GridView permite:",
+    "opciones": [
+      "A. La introducción de múltiples líneas en una fila.",
+      "B. Definir el modo en que se extenderán las columnas.",
+      "C. Definir la separación vertical entre las filas del GridView.",
+      "D. Definir el posicionamiento del contenido en cada celda."
+    ],
+    "respuesta_correcta": "D. Definir el posicionamiento del contenido en cada celda.",
+    "explicacion": "En un GridView, android:gravity establece cómo se alinea horizontalmente el contenido dentro de las celdas. No determina el número de columnas, su extensión ni la separación vertical entre las filas."
+  },
+  {
+    "id": 92,
+    "pregunta": "android:stretchMode de GridView permite:",
+    "opciones": [
+      "A. La introducción de múltiples líneas en una fila.",
+      "B. Definir el modo en que se extenderán las columnas.",
+      "C. Definir la separación vertical entre las filas del GridView.",
+      "D. Definir el posicionamiento del contenido en cada celda."
+    ],
+    "respuesta_correcta": "B. Definir el modo en que se extenderán las columnas.",
+    "explicacion": "android:stretchMode controla cómo se aprovecha el espacio horizontal sobrante de un GridView. Puede estirar el ancho de las columnas o el espacio entre ellas, o desactivar esa extensión."
+  },
+  {
+    "id": 93,
+    "pregunta": "El menú de opciones es el típico menú que nos podemos encontrar en cualquier aplicación:",
+    "opciones": [
+      "A. OptionsMenu.",
+      "B. SubMenu.",
+      "C. Menú contextual.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "A. OptionsMenu.",
+    "explicacion": "OptionsMenu reúne las acciones principales que afectan a la pantalla o a la aplicación, como buscar, crear contenido o abrir los ajustes. Sus elementos pueden mostrarse en la barra de la aplicación o dentro del menú de desbordamiento."
+  },
+  {
+    "id": 94,
+    "pregunta": "En ListView lo usaremos para cambiar el color de la línea divisoria:",
+    "opciones": [
+      "A. android:divider.",
+      "B. android:footerDividersEnabled.",
+      "C. android:headerDividerEnabled.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. android:divider.",
+    "explicacion": "android:divider asigna el drawable o el color que ListView dibuja entre sus elementos. Los atributos relacionados con header y footer controlan si se dibujan divisores junto a las cabeceras o los pies, pero no definen su color."
+  },
+  {
+    "id": 95,
+    "pregunta": "En ListView lo usaremos para cambiar el grosor de la línea divisoria:",
+    "opciones": [
+      "A. android:divider.",
+      "B. android:dividerHeight.",
+      "C. android:footerDividersEnabled.",
+      "D. android:headerDividerEnabled."
+    ],
+    "respuesta_correcta": "B. android:dividerHeight.",
+    "explicacion": "android:dividerHeight establece la altura del separador que aparece entre los elementos de un ListView. Si no se indica, el sistema puede utilizar la altura intrínseca del drawable configurado como divisor."
+  },
+  {
+    "id": 96,
+    "pregunta": "Es un tipo de menú:",
+    "opciones": [
+      "A. POJO.",
+      "B. Action Bar.",
+      "C. Dirty View.",
+      "D. ScrapViews."
+    ],
+    "respuesta_correcta": "B. Action Bar.",
+    "explicacion": "La Action Bar presenta acciones y opciones de navegación en la parte superior de la interfaz. Puede mostrar botones para las acciones más importantes y enviar las restantes al menú de desbordamiento."
+  },
+  {
+    "id": 97,
+    "pregunta": "Menú dentro de un menú:",
+    "opciones": [
+      "A. Menú contextual.",
+      "B. SubMenú.",
+      "C. IntraMenú.",
+      "D. Ninguno de los anteriores."
+    ],
+    "respuesta_correcta": "B. SubMenú.",
+    "explicacion": "Un SubMenú agrupa opciones relacionadas dentro de un elemento de otro menú. Esta organización permite presentar muchas acciones sin llenar de elementos el nivel principal."
+  },
+  {
+    "id": 98,
+    "pregunta": "Un adaptador sirve de enlace entre:",
+    "opciones": [
+      "A. El menú y la vista adaptada.",
+      "B. El menú y los elementos que lo componen.",
+      "C. La fuente de datos y la vista adaptada.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "C. La fuente de datos y la vista adaptada.",
+    "explicacion": "Un Adapter actúa como puente entre los datos y un AdapterView, como ListView o GridView. Obtiene cada elemento de la fuente de datos y crea o reutiliza la vista necesaria para representarlo en pantalla."
+  },
+  {
+    "id": 99,
+    "pregunta": "Un scroll es:",
+    "opciones": [
+      "A. Un adaptador.",
+      "B. Un tipo de ArrayAdapter.",
+      "C. Un tipo de BaseAdapter.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "El desplazamiento o scroll permite recorrer contenido que no cabe completo en el área visible. No es un adaptador ni una clase derivada de ArrayAdapter o BaseAdapter; controles como ScrollView proporcionan ese comportamiento."
+  },
+  {
+    "id": 100,
+    "pregunta": "Visión fuera de la pantalla que se prepara de antemano por el adaptador para ser mostrada:",
+    "opciones": [
+      "A. POJO.",
+      "B. Action Bar.",
+      "C. Dirty View.",
+      "D. ScrapViews."
+    ],
+    "respuesta_correcta": "C. Dirty View.",
+    "explicacion": "Una Dirty View es una vista que debe prepararse o actualizarse con los datos de la posición que va a mostrarse. Las ScrapViews, en cambio, son vistas retiradas de la pantalla que se conservan para poder reutilizarlas y evitar crear objetos nuevos innecesariamente."
   }
 ];

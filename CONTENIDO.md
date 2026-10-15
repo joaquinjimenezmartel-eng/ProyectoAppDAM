@@ -215,3 +215,44 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre transición, viabilidad, diseño, pruebas en paralelo, usabilidad, requisitos, riesgos y selección de un ERP. El resumen se amplía de U1–U4 a U1–U5.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 990 preguntas existentes antes de esta U5 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 15 de octubre de 2026 — Multimedia U6
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U6 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 91–100. JSON `contenido/tests/multimediaMoviles/u6-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 101.
+- En la pregunta original 10, la opción seleccionada en el intento es incorrecta. Se conserva la solución explícita de la revisión: C («Dirty View»).
+- La única modificación textual es la corrección ortográfica documentada «de ante mano» → «de antemano»; no altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre GridView, ListView, menús, Action Bar, adaptadores, desplazamiento y reutilización de vistas. El resumen se amplía de U1–U5 a U1–U6.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1000 preguntas existentes antes de esta U6 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 15 de octubre de 2026 — Desarrollo de interfaces U6
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U6 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 91–100. JSON `contenido/tests/desarrolloInterfaces/u6-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 101.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas y de concordancia documentadas en el JSON: normalización de la sigla «GIF» y corrección de dos opciones sobre iconos. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre GIF, compresión, tamaño y profundidad de imagen, resolución, Creative Commons, iconos, Photoshop e imágenes rasterizadas y vectoriales. El resumen se amplía de U1–U5 a U1–U6.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1010 preguntas existentes antes de esta U6 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 15 de octubre de 2026 — Acceso a datos U6
+
+- Asignatura ampliada: **Acceso a datos**, ID técnico `accesoDatos`.
+- U6 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 91–100. JSON `contenido/tests/accesoDatos/u6-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 101.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas y de puntuación documentadas en el JSON. El distractor «DTX» se conserva literalmente para no modificar ni volver ambigua la pregunta original.
+- Cada pregunta incorpora una explicación didáctica sobre XML, DOM, esquemas, XPath, nodos, JAXB y transformaciones XSLT. El resumen se amplía de U1–U5 a U1–U6.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1020 preguntas existentes antes de esta U6 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 15 de octubre de 2026 — Sistemas de gestión empresarial U6
+
+- Asignatura ampliada: **Sistemas de gestión empresarial**, ID técnico `sistemasGestionEmpresarial`.
+- U6 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 91–100. JSON `contenido/tests/sistemasGestionEmpresarial/u6-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 101.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas, técnicas y de puntuación documentadas en el JSON: signos de interrogación, `postgres` → `PostgreSQL`, `Qweb` → `QWeb`, `xPath` → `XPath`, `cual` → `cuál` y normalización de signos finales. Ninguna altera la solución.
+- La respuesta `B. Res_partner` de la pregunta original 2 se conserva literalmente, aunque la explicación muestra la convención técnica habitual `res.partner` → `res_partner`.
+- Cada pregunta incorpora una explicación didáctica sobre la arquitectura de Odoo, ORM, modelos, vistas, menús, acciones, secuencias, XML, XPath, identificadores, tipos de modelo y QWeb. El resumen se amplía de U1–U5 a U1–U6.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1030 preguntas existentes antes de esta U6 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

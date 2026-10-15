@@ -599,5 +599,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "D. Todas las anteriores son incorrectas.",
     "explicacion": "XML utiliza etiquetas de apertura, etiquetas de cierre y etiquetas de elemento vacío. Las tres primeras opciones sustituyen alguno de esos nombres por términos que no corresponden a la sintaxis XML, como entrada, corte o limitadas."
+  },
+  {
+    "id": 91,
+    "pregunta": "GIF:",
+    "opciones": [
+      "A. Es un formato de imagen que admite 24 bits de color.",
+      "B. Es un formato de imagen de gran tamaño.",
+      "C. Es un formato de imagen que admite animación.",
+      "D. GIF no es formato de imagen."
+    ],
+    "respuesta_correcta": "C. Es un formato de imagen que admite animación.",
+    "explicacion": "GIF es un formato de imagen rasterizada capaz de almacenar varios fotogramas en un mismo archivo y reproducirlos como una animación. Su paleta de color limitada lo hace apropiado para gráficos sencillos, pero no para fotografías con muchos matices."
+  },
+  {
+    "id": 92,
+    "pregunta": "La compresión de la imagen:",
+    "opciones": [
+      "A. Produce siempre una pérdida de calidad.",
+      "B. Puede producir pérdida de calidad o no según el medio empleado y el formato.",
+      "C. No produce pérdida de calidad.",
+      "D. Produce pérdida de calidad, pero se puede recuperar si se descomprime."
+    ],
+    "respuesta_correcta": "B. Puede producir pérdida de calidad o no según el medio empleado y el formato.",
+    "explicacion": "La compresión puede ser con pérdida, cuando elimina información para reducir más el archivo, o sin pérdida, cuando permite reconstruir los datos originales. El resultado depende del formato y del método de compresión utilizado."
+  },
+  {
+    "id": 93,
+    "pregunta": "La ecuación empleada para calcular el tamaño de una imagen es:",
+    "opciones": [
+      "A. Tamaño=R²·L·A·P",
+      "B. Tamaño=R·L·A·P²",
+      "C. Tamaño=R²·L+A·P",
+      "D. Tamaño=R·L²·A·P"
+    ],
+    "respuesta_correcta": "A. Tamaño=R²·L·A·P",
+    "explicacion": "En una imagen sin comprimir, el tamaño depende del número total de píxeles y de la profundidad de color. Si las dimensiones físicas L y A se convierten a píxeles aplicando una resolución R en ambos ejes, el número de píxeles es R²·L·A; al multiplicarlo por P se obtiene la cantidad de información."
+  },
+  {
+    "id": 94,
+    "pregunta": "La profundidad de color que posee 65 536 de estos es:",
+    "opciones": [
+      "A. 8 bits.",
+      "B. 16 bits.",
+      "C. 24 bits.",
+      "D. 32 bits."
+    ],
+    "respuesta_correcta": "B. 16 bits.",
+    "explicacion": "Con n bits pueden representarse 2ⁿ valores diferentes. Como 2¹⁶ equivale a 65 536, una profundidad de 16 bits permite representar esa cantidad de valores de color."
+  },
+  {
+    "id": 95,
+    "pregunta": "La resolución se determina por:",
+    "opciones": [
+      "A. Las ppp.",
+      "B. Las ppc.",
+      "C. Las pcr.",
+      "D. Las ppp divididas por el tamaño de la imagen."
+    ],
+    "respuesta_correcta": "A. Las ppp.",
+    "explicacion": "Las ppp indican cuántos píxeles contiene una imagen por cada pulgada de longitud. Cuanto mayor es esta densidad, más detalle puede representar la imagen en el mismo tamaño físico."
+  },
+  {
+    "id": 96,
+    "pregunta": "Las licencias Creative Commons se basan en estos fundamentos:",
+    "opciones": [
+      "A. Cuatro conceptos: autoría, compartir igual, no comercial y derivados",
+      "B. Tres conceptos: autoría, compartir igual y no comercial",
+      "C. Cuatro conceptos: autoría, distribución, no comercial y derivados",
+      "D. Cuatro conceptos: autoría, compartir igual, no comercial y no derivados"
+    ],
+    "respuesta_correcta": "D. Cuatro conceptos: autoría, compartir igual, no comercial y no derivados",
+    "explicacion": "Las licencias Creative Commons combinan cuatro elementos: atribución o autoría (BY), compartir igual (SA), uso no comercial (NC) y ausencia de obras derivadas (ND). Cada licencia selecciona una combinación concreta de estas condiciones."
+  },
+  {
+    "id": 97,
+    "pregunta": "Los iconos:",
+    "opciones": [
+      "A. Son empleados para representar marcas, personas, sociedades, etc.",
+      "B. Son imágenes rasterizadas de gran calidad por su tamaño",
+      "C. Se usan ampliamente en las interfaces gráficas",
+      "D. Ninguna es correcta"
+    ],
+    "respuesta_correcta": "C. Se usan ampliamente en las interfaces gráficas",
+    "explicacion": "Los iconos representan de forma visual acciones, objetos o estados y facilitan el reconocimiento rápido de las funciones de una interfaz. Deben ser claros, coherentes y, cuando pueda existir ambigüedad, acompañarse de una etiqueta accesible."
+  },
+  {
+    "id": 98,
+    "pregunta": "Photoshop es una aplicación especializada en:",
+    "opciones": [
+      "A. La visualización de imágenes.",
+      "B. La edición de imágenes.",
+      "C. La creación de imágenes.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. La edición de imágenes.",
+    "explicacion": "Photoshop está orientado principalmente a la edición de imágenes: permite retocar píxeles, ajustar color y luz, aplicar filtros y trabajar mediante capas. También admite elementos vectoriales, pero su núcleo de trabajo es la edición rasterizada."
+  },
+  {
+    "id": 99,
+    "pregunta": "Una imagen rasterizada:",
+    "opciones": [
+      "A. Imagen formada mediante figuras geométricas representadas por fórmulas numéricas.",
+      "B. Imagen que no perderá calidad al agrandarse o acercarse, manteniéndose siempre perfecta.",
+      "C. Recomendada para imágenes de gran complejidad como las fotografías.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Recomendada para imágenes de gran complejidad como las fotografías.",
+    "explicacion": "Una imagen rasterizada se compone de una cuadrícula de píxeles y puede representar numerosos colores y matices, por lo que resulta adecuada para fotografías. Al ampliarla por encima de su resolución original puede perder nitidez o mostrar pixelación."
+  },
+  {
+    "id": 100,
+    "pregunta": "Una imagen vectorizada:",
+    "opciones": [
+      "A. Está formada mediante un conjunto de puntos de color llamados píxeles.",
+      "B. Es recomendada para imágenes con muchos matices de color como son las fotografías.",
+      "C. Perderá calidad cuando su tamaño se agrande o se acerque la imagen.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "Una imagen vectorial se define mediante formas, líneas y curvas matemáticas, no mediante una cuadrícula fija de píxeles. Puede escalarse sin perder nitidez y es especialmente útil para logotipos, iconos e ilustraciones; por eso ninguna de las tres primeras opciones la describe correctamente."
   }
 ];

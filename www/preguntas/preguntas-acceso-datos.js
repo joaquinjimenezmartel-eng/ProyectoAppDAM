@@ -599,5 +599,125 @@ const preguntasAccesoDatos = [
     ],
     "respuesta_correcta": "B. Una clase en ODL",
     "explicacion": "Una tabla definida mediante DDL describe la estructura común de sus filas. En el modelo de objetos, una clase definida con ODL cumple un papel equivalente al describir la estructura y el comportamiento comunes de sus instancias."
+  },
+  {
+    "id": 91,
+    "pregunta": "¿Qué es el DOM?",
+    "opciones": [
+      "A. Es un dominio de XML.",
+      "B. Es la representación de un documento XML en forma arbórea.",
+      "C. Es un API para validar documentos XML.",
+      "D. Es una etiqueta de XML."
+    ],
+    "respuesta_correcta": "B. Es la representación de un documento XML en forma arbórea.",
+    "explicacion": "El DOM representa la estructura lógica de un documento XML como una jerarquía de nodos. Esta organización permite recorrer el árbol y consultar, añadir, modificar o eliminar elementos, atributos y contenido."
+  },
+  {
+    "id": 92,
+    "pregunta": "¿Cómo se puede validar un documento XML?",
+    "opciones": [
+      "A. Usando una herramienta de corrección",
+      "B. DTX",
+      "C. Por esquemas XML",
+      "D. No se puede validar un documento."
+    ],
+    "respuesta_correcta": "C. Por esquemas XML",
+    "explicacion": "Un esquema XML define qué elementos y atributos se permiten, su orden, sus tipos y otras restricciones. Validar consiste en comprobar que el documento cumple esas reglas, además de estar bien formado."
+  },
+  {
+    "id": 93,
+    "pregunta": "El XPath \"/Departamento/Empleados\":",
+    "opciones": [
+      "A. Selecciona los nodos padres “Empleados” del nodo padre “Departamento”.",
+      "B. Selecciona los nodos hijos “Empleados” del nodo padre “Departamento”.",
+      "C. Selecciona los departamentos.",
+      "D. Selecciona el nodo raíz."
+    ],
+    "respuesta_correcta": "B. Selecciona los nodos hijos “Empleados” del nodo padre “Departamento”.",
+    "explicacion": "La barra inicial indica una ruta absoluta desde la raíz del documento. Primero se selecciona el elemento Departamento y después sus elementos hijo Empleados, por lo que la expresión apunta a esos nodos dentro de Departamento."
+  },
+  {
+    "id": 94,
+    "pregunta": "La estructura de XML está formada por:",
+    "opciones": [
+      "A. Nodos representando un sistema jerárquico.",
+      "B. Por instrucciones.",
+      "C. Datos.",
+      "D. Ninguna de las respuestas anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. Nodos representando un sistema jerárquico.",
+    "explicacion": "Un documento XML organiza sus elementos mediante relaciones de padre e hijo. El elemento raíz contiene ramas formadas por otros elementos, texto, atributos y nodos adicionales, creando una estructura jerárquica."
+  },
+  {
+    "id": 95,
+    "pregunta": "¿Qué hace el método getChildNodes()?",
+    "opciones": [
+      "A. Obtiene una lista de nodos hijos.",
+      "B. Obtiene una lista de nodos padre.",
+      "C. Obtiene el valor de un nodo.",
+      "D. Obtiene los atributos de los nodos hijos."
+    ],
+    "respuesta_correcta": "A. Obtiene una lista de nodos hijos.",
+    "explicacion": "getChildNodes() devuelve un NodeList con todos los hijos directos del nodo. Si el nodo no tiene hijos, devuelve una lista vacía; no devuelve el padre, el valor ni los atributos."
+  },
+  {
+    "id": 96,
+    "pregunta": "Si queremos tener una parte de representación de un documento XML en forma arbórea usaremos:",
+    "opciones": [
+      "A. DOM",
+      "B. SAX",
+      "C. XPath",
+      "D. JAXB"
+    ],
+    "respuesta_correcta": "A. DOM",
+    "explicacion": "DOM carga y representa el documento mediante un árbol de nodos que puede recorrerse y modificarse. SAX procesa eventos durante una lectura secuencial, XPath selecciona partes del árbol y JAXB enlaza XML con objetos Java."
+  },
+  {
+    "id": 97,
+    "pregunta": "¿Qué es XML?",
+    "opciones": [
+      "A. Un lenguaje de programación orientado a objetos.",
+      "B. Es un proceso de lectura.",
+      "C. Un lenguaje de marcas.",
+      "D. Ninguna de las respuestas anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Un lenguaje de marcas.",
+    "explicacion": "XML es un lenguaje de marcas extensible utilizado para estructurar e intercambiar información. Permite definir etiquetas que describen el significado y la organización de los datos, pero no es un lenguaje de programación."
+  },
+  {
+    "id": 98,
+    "pregunta": "¿Qué es XPath?",
+    "opciones": [
+      "A. Un lenguaje de consulta y navegación para XML",
+      "B. Es un parser para obtener la estructura de un documento XML",
+      "C. Es una ruta relativa donde se encuentran los documentos XML",
+      "D. Ninguna de las respuestas anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. Un lenguaje de consulta y navegación para XML",
+    "explicacion": "XPath es un lenguaje de expresiones para localizar y seleccionar partes de un documento XML. Permite navegar por relaciones como padre, hijo o descendiente y aplicar condiciones sobre nodos y valores."
+  },
+  {
+    "id": 99,
+    "pregunta": "¿Qué hace un compilador de binding JAXB?",
+    "opciones": [
+      "A. Genera código ejecutable de un documento XML.",
+      "B. Traduce un XML a HTML.",
+      "C. Valida un documento XML.",
+      "D. Generar clases a partir de un schema XML"
+    ],
+    "respuesta_correcta": "D. Generar clases a partir de un schema XML",
+    "explicacion": "El compilador de binding de JAXB recibe un esquema XML y genera las clases Java correspondientes. Esas clases permiten convertir datos XML en objetos Java y volver a producir XML siguiendo la estructura definida por el esquema."
+  },
+  {
+    "id": 100,
+    "pregunta": "¿Qué podemos hacer con XSL?",
+    "opciones": [
+      "A. Validar un documento XML",
+      "B. Consultar y modificar un documento XML",
+      "C. Es una plantilla para crear documento XML, HTML, CSV, ...",
+      "D. Generar clases en java a partir de un documento XML."
+    ],
+    "respuesta_correcta": "C. Es una plantilla para crear documento XML, HTML, CSV, ...",
+    "explicacion": "Una hoja de estilo XSLT contiene reglas y plantillas que transforman un árbol XML en otro resultado. Puede generar XML, HTML o texto; una salida textual puede utilizarse para producir formatos como CSV."
   }
 ];

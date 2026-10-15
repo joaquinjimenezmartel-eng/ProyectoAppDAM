@@ -599,5 +599,125 @@ const preguntasSistemasGestionEmpresarial = [
     ],
     "respuesta_correcta": "D. Se deben tener en cuenta todos los mencionados",
     "explicacion": "La elección debe valorar el esfuerzo de migración y adaptación, la información que ofrecerán los informes y las características de uso del sistema. Considerar conjuntamente estos factores permite estimar mejor el coste, la utilidad y la aceptación del ERP."
+  },
+  {
+    "id": 91,
+    "pregunta": "¿Cómo se denomina la capa intermedia de Odoo y cuál es su función?",
+    "opciones": [
+      "A. Capa de datos, se encarga de gestionar el almacenamiento",
+      "B. Capa lógica o ORM, se encarga de las interacciones con los datos.",
+      "C. Capa de presentación, expone los datos y permite al usuario interactuar con ellos",
+      "D. Todas son falsas."
+    ],
+    "respuesta_correcta": "B. Capa lógica o ORM, se encarga de las interacciones con los datos.",
+    "explicacion": "La capa lógica aplica las reglas de negocio y utiliza el ORM para trabajar con modelos y registros sin escribir directamente cada operación SQL. El ORM traduce las acciones del código Python a consultas sobre PostgreSQL y devuelve los resultados como objetos de Odoo."
+  },
+  {
+    "id": 92,
+    "pregunta": "La tabla PostgreSQL de usuarios, contactos, clientes y proveedores es:",
+    "opciones": [
+      "A. Res.partner",
+      "B. Res_partner",
+      "C. Res.users",
+      "D. Res_users"
+    ],
+    "respuesta_correcta": "B. Res_partner",
+    "explicacion": "Odoo agrupa personas y organizaciones en el modelo res.partner, que sirve para representar contactos, clientes y proveedores. Al convertir el nombre del modelo en una tabla de PostgreSQL, el punto se sustituye por un guion bajo: res.partner pasa a res_partner."
+  },
+  {
+    "id": 93,
+    "pregunta": "Los objetos sobre los que se articula Odoo son:",
+    "opciones": [
+      "A. Modelos, Vistas, Menús y Elementos de menú",
+      "B. Vista árbol, Vista Formulario, Vista Kanban.",
+      "C. Modelo, Vistas, Menús y Acciones.",
+      "D. Modelos, Vistas, Herencia, QWeb."
+    ],
+    "respuesta_correcta": "C. Modelo, Vistas, Menús y Acciones.",
+    "explicacion": "El modelo organiza los datos y su comportamiento; las vistas determinan cómo se muestran; los menús permiten navegar; y las acciones conectan la interacción del usuario con una vista, un modelo o una operación. Juntos forman la estructura funcional habitual de una aplicación de Odoo."
+  },
+  {
+    "id": 94,
+    "pregunta": "Marca la opción falsa sobre las secuencias en Odoo:",
+    "opciones": [
+      "A. Una secuencia en Odoo es un contador secuencial",
+      "B. Los campos de secuencia permiten numerar cualquier entidad",
+      "C. Las secuencias en Odoo son automáticas",
+      "D. Las secuencias se componen únicamente de un prefijo y un elemento de relleno"
+    ],
+    "respuesta_correcta": "D. Las secuencias se componen únicamente de un prefijo y un elemento de relleno",
+    "explicacion": "Una secuencia genera identificadores consecutivos de forma automática, pero su configuración no se limita a un prefijo y al relleno. También puede incluir sufijo, número siguiente, incremento y, según la configuración, intervalos o componentes relacionados con la fecha."
+  },
+  {
+    "id": 95,
+    "pregunta": "Para crear vistas heredadas, en Odoo se utiliza:",
+    "opciones": [
+      "A. HTML",
+      "B. JavaScript",
+      "C. Python",
+      "D. XPath."
+    ],
+    "respuesta_correcta": "D. XPath.",
+    "explicacion": "Una vista heredada localiza elementos de la vista original mediante expresiones XPath y aplica cambios en posiciones como dentro, antes, después o en sustitución del nodo encontrado. Así se personaliza la interfaz sin copiar ni modificar directamente toda la vista base."
+  },
+  {
+    "id": 96,
+    "pregunta": "Para describir las vistas en Odoo se utiliza:",
+    "opciones": [
+      "A. Un lenguaje de consulta de datos como SQL.",
+      "B. Un lenguaje de consulta de datos como XML.",
+      "C. Un lenguaje de descripción de datos como XML.",
+      "D. Ninguna"
+    ],
+    "respuesta_correcta": "C. Un lenguaje de descripción de datos como XML.",
+    "explicacion": "Las vistas de Odoo se definen mediante estructuras XML que describen los componentes y campos que aparecerán en pantalla. XML no consulta la base de datos como SQL: organiza y declara la estructura de la interfaz que Odoo debe representar."
+  },
+  {
+    "id": 97,
+    "pregunta": "Señala cuál no es un objeto en Odoo:",
+    "opciones": [
+      "A. res.partner",
+      "B. res.grupos",
+      "C. res.partner.address",
+      "D. account.invoice"
+    ],
+    "respuesta_correcta": "B. res.grupos",
+    "explicacion": "Los nombres técnicos de los modelos siguen identificadores concretos y no se traducen libremente. El modelo de grupos de usuarios se denomina res.groups, en inglés y en plural; por eso res.grupos no identifica ese objeto de Odoo."
+  },
+  {
+    "id": 98,
+    "pregunta": "Señala la opción correcta sobre Odoo:",
+    "opciones": [
+      "A. Los registros tienen un identificador asignado secuencialmente cuando se crean",
+      "B. La etiqueta se compone del nombre del módulo y el del id separado por guiones",
+      "C. Los objetos no pueden ser serializables.",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "A. Los registros tienen un identificador asignado secuencialmente cuando se crean",
+    "explicacion": "Cuando se crea un registro persistente, Odoo le asigna un identificador interno en la base de datos. Los identificadores externos siguen otra finalidad: permiten referenciar registros desde módulos y suelen escribirse con el formato módulo.identificador, separados por un punto."
+  },
+  {
+    "id": 99,
+    "pregunta": "Señala la opción correcta:",
+    "opciones": [
+      "A. En Odoo, cualquier dato es accesible a través de modelos.",
+      "B. Cada modelo es un objeto que contiene información descriptiva en campos.",
+      "C. Existen tres tipos de modelos: Model, Transitorio y Abstracto.",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "Odoo organiza los datos mediante modelos cuyos campos describen la información de cada registro. Su ORM distingue modelos persistentes, modelos transitorios para datos temporales y modelos abstractos que sirven como base reutilizable; por ello las tres afirmaciones se complementan."
+  },
+  {
+    "id": 100,
+    "pregunta": "Señala la respuesta correcta sobre Odoo:",
+    "opciones": [
+      "A. Odoo es un ERP desarrollado en Python y utiliza la base de datos PostgreSQL.",
+      "B. Odoo utiliza XML y QWeb, motor de plantillas basado en XML que permite generar páginas HTML",
+      "C. Odoo tiene la capacidad de añadir objetos sin modificar los objetos de base",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "Odoo combina Python para la lógica del servidor con PostgreSQL para la persistencia. XML define numerosos datos y vistas, mientras que QWeb genera contenido HTML mediante plantillas XML. Su sistema modular y la herencia permiten ampliar modelos y vistas sin modificar directamente los componentes originales."
   }
 ];

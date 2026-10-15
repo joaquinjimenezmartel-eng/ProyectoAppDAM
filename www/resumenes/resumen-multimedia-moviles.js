@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U5 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U6 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -62,5 +62,17 @@ const resumenMultimediaMoviles = `
     <h4>14. Apariencia, color y entrada de texto</h4>
     <p><code>android:background</code> establece el fondo de una vista y <code>android:thumb</code> personaliza el indicador de un SeekBar. Un color <strong>ARGB</strong> combina alfa, rojo, verde y azul; el canal alfa determina la opacidad. En un EditText, <code>textCapSentences</code> solicita que cada frase comience con mayúscula.</p>
     <p>Como cualquier View, un TextView puede animarse mediante propiedades como traslación, rotación y transparencia. Estas animaciones modifican su presentación sin cambiar el contenido del texto.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>15. GridView y ListView</h4>
+    <p><strong>GridView</strong> muestra elementos en una cuadrícula. <code>android:gravity</code> alinea el contenido de sus celdas y <code>android:stretchMode</code> determina cómo se distribuye el espacio sobrante entre las columnas. En <strong>ListView</strong>, <code>android:divider</code> define el separador entre elementos y <code>android:dividerHeight</code> establece su grosor.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>16. Menús y barra de acciones</h4>
+    <p><strong>OptionsMenu</strong> reúne las acciones principales de una pantalla. Las más importantes pueden aparecer en la <strong>Action Bar</strong> y las demás en el menú de desbordamiento. Un <strong>SubMenú</strong> permite agrupar opciones relacionadas dentro de otra opción para mantener una navegación ordenada.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>17. Adaptadores, desplazamiento y reutilización</h4>
+    <p>Un <strong>Adapter</strong> conecta una fuente de datos con una vista adaptada, como ListView o GridView, y proporciona la representación de cada elemento. El scroll es el desplazamiento del contenido y no es un tipo de adaptador. Para mejorar el rendimiento, las listas pueden reutilizar vistas que han salido de la pantalla; una Dirty View necesita actualizarse antes de mostrarse y una ScrapView queda disponible para su reutilización.</p>
   </section>
 </article>`;
