@@ -719,5 +719,125 @@ const preguntasSistemasGestionEmpresarial = [
     ],
     "respuesta_correcta": "D. Todas son correctas",
     "explicacion": "Odoo combina Python para la lógica del servidor con PostgreSQL para la persistencia. XML define numerosos datos y vistas, mientras que QWeb genera contenido HTML mediante plantillas XML. Su sistema modular y la herencia permiten ampliar modelos y vistas sin modificar directamente los componentes originales."
+  },
+  {
+    "id": 101,
+    "pregunta": "¿Cómo se llaman las líneas que se añaden en los ficheros XML para los permisos de grupo?",
+    "opciones": [
+      "A. model",
+      "B. access",
+      "C. record",
+      "D. Ninguna es correcta"
+    ],
+    "respuesta_correcta": "C. record",
+    "explicacion": "En los archivos XML de Odoo, cada regla o elemento de configuración se declara como un registro mediante la etiqueta record. Dentro de ella se indica el modelo correspondiente y se asignan los valores de sus campos, incluidos los relacionados con grupos y permisos."
+  },
+  {
+    "id": 102,
+    "pregunta": "¿Cuál de los siguientes es un tipo de vista en Odoo?",
+    "opciones": [
+      "A. list",
+      "B. extensión",
+      "C. QWeb",
+      "D. Todos son tipos de vista en Odoo"
+    ],
+    "respuesta_correcta": "C. QWeb",
+    "explicacion": "QWeb es el sistema de plantillas XML de Odoo y permite definir vistas que generan contenido, especialmente para la interfaz web y los informes. La revisión identifica esta opción como la respuesta correcta."
+  },
+  {
+    "id": 103,
+    "pregunta": "¿Cuáles son los dos ficheros principales para el funcionamiento de un módulo?",
+    "opciones": [
+      "A. init.py y manifest.py",
+      "B. _init.py y _manifest.py",
+      "C. __init__.py y __manifest__.py",
+      "D. init_.py y manifest_.py"
+    ],
+    "respuesta_correcta": "C. __init__.py y __manifest__.py",
+    "explicacion": "__init__.py convierte la carpeta del módulo en un paquete Python e importa sus componentes. __manifest__.py identifica el módulo ante Odoo y declara datos como su nombre, dependencias y archivos que deben cargarse."
+  },
+  {
+    "id": 104,
+    "pregunta": "¿Cuáles son los modos de herencia de vista?",
+    "opciones": [
+      "A. Formulario, árbol y Kanban",
+      "B. Formulario y Kanban",
+      "C. Base y de extensión",
+      "D. Directa y jerárquica"
+    ],
+    "respuesta_correcta": "C. Base y de extensión",
+    "explicacion": "Una vista base proporciona la arquitectura principal que debe resolverse. Una vista de extensión hereda otra vista y aplica sobre ella modificaciones localizadas, normalmente mediante expresiones XPath, sin reemplazar toda su definición."
+  },
+  {
+    "id": 105,
+    "pregunta": "¿De qué modo podemos crear una estructura de un módulo en Odoo?",
+    "opciones": [
+      "A. Usando XML",
+      "B. Usando Python",
+      "C. Usando la interfaz gráfica",
+      "D. Todas son correctas"
+    ],
+    "respuesta_correcta": "D. Todas son correctas",
+    "explicacion": "La estructura funcional de un módulo puede combinar modelos y lógica en Python, datos y vistas en XML y elementos configurados desde las herramientas gráficas de Odoo. Cada vía interviene en una parte distinta de la construcción o personalización del módulo."
+  },
+  {
+    "id": 106,
+    "pregunta": "¿De qué tipo es, por lo general, el fichero que almacena los permisos de cada uno de los grupos?",
+    "opciones": [
+      "A. XML",
+      "B. .py",
+      "C. CSV",
+      "D. CVS"
+    ],
+    "respuesta_correcta": "C. CSV",
+    "explicacion": "Los permisos de acceso a los modelos suelen declararse en el archivo security/ir.model.access.csv. Cada fila relaciona un modelo y un grupo con los permisos de lectura, escritura, creación y eliminación que se le conceden."
+  },
+  {
+    "id": 107,
+    "pregunta": "¿En qué directorio se alojan normalmente los ficheros de informes?",
+    "opciones": [
+      "A. En el directorio security",
+      "B. En el directorio reports",
+      "C. En el directorio views",
+      "D. En el directorio raíz"
+    ],
+    "respuesta_correcta": "B. En el directorio reports",
+    "explicacion": "La carpeta reports agrupa normalmente las plantillas y definiciones relacionadas con los informes del módulo. Separarlas de security, views y otros componentes facilita mantener una estructura clara y localizar cada tipo de recurso."
+  },
+  {
+    "id": 108,
+    "pregunta": "¿Para qué se usa el comando scaffold?",
+    "opciones": [
+      "A. Para crear un IDE de Python",
+      "B. Para crear código característico de los sistemas UNIX",
+      "C. Para crear código característico de los sistemas Windows",
+      "D. Para crear módulos en Odoo"
+    ],
+    "respuesta_correcta": "D. Para crear módulos en Odoo",
+    "explicacion": "El subcomando scaffold genera una plantilla inicial de módulo con carpetas y archivos habituales. Sirve como punto de partida para el desarrollo y evita tener que crear manualmente toda la estructura básica."
+  },
+  {
+    "id": 109,
+    "pregunta": "Indica cuál de las siguientes afirmaciones acerca de los campos calculados es verdadera:",
+    "opciones": [
+      "A. Deben ser refrescados en las vistas",
+      "B. Se deben construir mediante métodos",
+      "C. Se deben construir mediante funciones",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "B. Se deben construir mediante métodos",
+    "explicacion": "Un campo calculado indica mediante el atributo compute el método del modelo que obtiene su valor. Ese método asigna el resultado al campo y puede declarar con depends qué otros campos deben provocar su recálculo."
+  },
+  {
+    "id": 110,
+    "pregunta": "Las vistas son, en Odoo, objetos de:",
+    "opciones": [
+      "A. ir.ui.menu",
+      "B. ir.ui.view",
+      "C. ui.ir.view",
+      "D. ir_ui_view"
+    ],
+    "respuesta_correcta": "B. ir.ui.view",
+    "explicacion": "Las definiciones de vista se almacenan como registros del modelo ir.ui.view. Cada registro asocia una arquitectura de interfaz con un modelo y un tipo de visualización, además de gestionar aspectos como la prioridad y la herencia."
   }
 ];

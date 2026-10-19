@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "asignaturaId": "desarrolloInterfaces",
+  "testId": "u7-test1",
+  "fuente": "U7/U7 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "numeroOriginal": 1,
+      "id": 101,
+      "campo": "pregunta",
+      "original": "A qué dos fases puede pasar un proyecto tras la etapa de diseño:",
+      "corregido": "¿A qué dos fases puede pasar un proyecto tras la etapa de diseño?",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 107,
+      "campo": "pregunta",
+      "original": "Qué organización crea estándares internacionales:",
+      "corregido": "¿Qué organización crea estándares internacionales?",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 108,
+      "campo": "pregunta",
+      "original": "Según el estándar W3C el código de una aplicación debe ser robusto:",
+      "corregido": "Según el estándar W3C, el código de una aplicación debe ser robusto:",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; no modifica la solución."
+    }
+  ],
+  "notasRevision": [],
+  "referenciasExplicaciones": [
+    "https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/",
+    "https://www.w3.org/WAI/fundamentals/accessibility-principles/",
+    "https://www.w3.org/WAI/WCAG20/versions/understanding/wcag20-understanding-20081211-a4.pdf",
+    "https://www.iso.org/about",
+    "https://www.iso.org/developing-standards.html"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 101,
+      "pregunta": "¿A qué dos fases puede pasar un proyecto tras la etapa de diseño?",
+      "opciones": [
+        "A. Diseño e implementación.",
+        "B. Puesta en producción y mantenimiento.",
+        "C. Implementación y evaluación",
+        "D. Planificación y diseño"
+      ],
+      "respuesta_correcta": "C. Implementación y evaluación",
+      "explicacion": "Tras definir la solución se implementa la interfaz y se evalúa su funcionamiento con criterios de usabilidad, accesibilidad y cumplimiento de objetivos. La evaluación permite detectar problemas y alimentar una nueva iteración de diseño y mejora."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 102,
+      "pregunta": "El uso de gráficas:",
+      "opciones": [
+        "A. Debe ser libre.",
+        "B. No debe ser más de uno.",
+        "C. Debe moderarse para no saturar.",
+        "D. B y C son correctas."
+      ],
+      "respuesta_correcta": "C. Debe moderarse para no saturar.",
+      "explicacion": "Las gráficas deben aportar información relevante y mantener una jerarquía clara. Una cantidad excesiva de elementos visuales aumenta la carga cognitiva y dificulta localizar lo importante, mientras que una selección moderada facilita la comprensión."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 103,
+      "pregunta": "La evaluación heurística:",
+      "opciones": [
+        "A. Es llevado a cabo por los propios usuarios.",
+        "B. Es llevado a cabo por profesionales.",
+        "C. Es llevado a cabo por usuarios beta tester.",
+        "D. No es un tipo de evaluación."
+      ],
+      "respuesta_correcta": "B. Es llevado a cabo por profesionales.",
+      "explicacion": "En una evaluación heurística, especialistas revisan la interfaz y comparan su diseño con principios de usabilidad reconocidos. Se diferencia de una prueba con usuarios, en la que personas representativas realizan tareas reales y muestran dificultades de uso."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 104,
+      "pregunta": "Los colores:",
+      "opciones": [
+        "A. No influyen en gran medida.",
+        "B. No conviene usar una única paleta de color.",
+        "C. Puede causar sensaciones y emociones según la paleta de color.",
+        "D. Todas las anteriores son incorrectas."
+      ],
+      "respuesta_correcta": "C. Puede causar sensaciones y emociones según la paleta de color.",
+      "explicacion": "El color influye en la percepción visual, la jerarquía y el tono emocional de una interfaz. Su interpretación depende del contexto y de factores culturales, por lo que la paleta debe elegirse de forma coherente con las personas usuarias y el propósito del producto."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 105,
+      "pregunta": "Los parámetros subjetivos de una interfaz:",
+      "opciones": [
+        "A. Elementos no contabilizables que mejoran o empeoran la experiencia del usuario como pueden ser las paletas de colores, la sobrecarga o ausencia de imagen, etc. La elección de estos parámetros dependerá en gran medida de los usuarios esperados y la temática de la interfaz.",
+        "B. Elementos contabilizables que mejoran o empeoran la experiencia del usuario como pueden ser las paletas de colores, la sobrecarga o ausencia de imagen, etc. La elección de estos parámetros dependerá en gran medida de los usuarios esperados y la temática de la interfaz.",
+        "C. Elementos no contabilizables que mejoran o empeoran la experiencia del usuario exceptuando las paletas de colores y la sobrecarga o ausencia de imagen.",
+        "D. Ninguna de las anteriores."
+      ],
+      "respuesta_correcta": "A. Elementos no contabilizables que mejoran o empeoran la experiencia del usuario como pueden ser las paletas de colores, la sobrecarga o ausencia de imagen, etc. La elección de estos parámetros dependerá en gran medida de los usuarios esperados y la temática de la interfaz.",
+      "explicacion": "Los parámetros subjetivos describen cualidades percibidas, como el equilibrio visual, la sensación que transmite una paleta o la impresión de saturación. No se reducen a una única medida objetiva y deben valorarse teniendo en cuenta el público, las tareas y el contexto de uso."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 106,
+      "pregunta": "Los principios de la W3C son:",
+      "opciones": [
+        "A. Tres entre ellos está la implementación.",
+        "B. Cuatro entre ellos está la evaluación.",
+        "C. Tres entre ellos está la perceptibilidad.",
+        "D. Cuatro entre ellos está la perceptibilidad."
+      ],
+      "respuesta_correcta": "D. Cuatro entre ellos está la perceptibilidad.",
+      "explicacion": "Las pautas WCAG se organizan en cuatro principios: perceptible, operable, comprensible y robusto. La perceptibilidad exige que la información y los componentes de la interfaz puedan presentarse de formas que las personas puedan percibir."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 107,
+      "pregunta": "¿Qué organización crea estándares internacionales?",
+      "opciones": [
+        "A. ISE.",
+        "B. ISO.",
+        "C. ESO.",
+        "D. ISOS."
+      ],
+      "respuesta_correcta": "B. ISO.",
+      "explicacion": "ISO es la Organización Internacional de Normalización. Reúne a organismos nacionales y a especialistas de numerosos sectores para desarrollar estándares internacionales mediante un proceso basado en la participación y el consenso."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 108,
+      "pregunta": "Según el estándar W3C, el código de una aplicación debe ser robusto:",
+      "opciones": [
+        "A. Mentira, debe ser ligero para que el tamaño del archivo sea menor.",
+        "B. Verdad, con el fin de que no se produzcan fallos de compatibilidad.",
+        "C. Verdad, para que sea fácilmente compatible.",
+        "D. Ninguna de las anteriores es correcta."
+      ],
+      "respuesta_correcta": "B. Verdad, con el fin de que no se produzcan fallos de compatibilidad.",
+      "explicacion": "El principio de robustez busca que el contenido pueda ser interpretado de manera fiable por distintos agentes de usuario, incluidas las tecnologías de apoyo. Un código correctamente estructurado y compatible reduce errores al utilizar navegadores, dispositivos y herramientas diferentes."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 109,
+      "pregunta": "Un usuario anónimo:",
+      "opciones": [
+        "A. No posee ninguna identificación.",
+        "B. Posee una sesión que puede abrir.",
+        "C. Posee un acceso básico.",
+        "D. Todas las anteriores son correctas."
+      ],
+      "respuesta_correcta": "D. Todas las anteriores son correctas.",
+      "explicacion": "Un usuario anónimo accede sin una identidad personal autenticada. La aplicación puede crear una sesión técnica para conservar temporalmente su estado y limitarla a permisos básicos, de modo que pueda navegar sin recibir privilegios reservados a cuentas identificadas."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 110,
+      "pregunta": "WCAG 2.0 establece como requisitos:",
+      "opciones": [
+        "A. Páginas completas: Los requisitos se deben incluir en la totalidad de la página, la exclusión de una parte anula completamente los requisitos.",
+        "B. Culturales: Interpretación de símbolos debido a elementos culturales.",
+        "C. Efectividad: Determina el grado de éxito de la aplicación para guiar al usuario, se basa en su facilidad de uso, su intuitividad y su facilidad de aprendizaje para el usuario.",
+        "D. Todas son correctas."
+      ],
+      "respuesta_correcta": "A. Páginas completas: Los requisitos se deben incluir en la totalidad de la página, la exclusión de una parte anula completamente los requisitos.",
+      "explicacion": "La conformidad con WCAG se aplica a páginas completas. Si una parte de la página incumple los criterios exigidos, no puede afirmarse que la página completa alcance ese nivel de conformidad, aunque el resto del contenido sí los cumpla."
+    }
+  ]
+}

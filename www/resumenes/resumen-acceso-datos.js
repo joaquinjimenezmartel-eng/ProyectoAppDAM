@@ -1,7 +1,7 @@
 const resumenAccesoDatos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U6 · Persistencia, JDBC y modelos de objetos</span>
+    <span class="study-summary__eyebrow">U1–U7 · Persistencia, JDBC y modelos de objetos</span>
     <h3 class="study-summary__title">Acceso a datos</h3>
     <p class="study-summary__lead">Acceder a datos implica decidir cómo se representan, dónde se conservan y qué garantías debe ofrecer el sistema cuando los consulta o modifica.</p>
   </header>
@@ -108,5 +108,21 @@ const resumenAccesoDatos = `
   <section class="study-summary__section">
     <h4>JAXB y transformaciones XSL</h4>
     <p>El compilador de binding de <strong>JAXB</strong> puede generar clases Java a partir de un esquema XML para convertir entre documentos y objetos. Una hoja <strong>XSLT</strong> aplica reglas y plantillas a un árbol XML para producir XML, HTML o texto; este último método permite crear salidas como CSV.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Persistencia con XML</h4>
+    <p>Los documentos XML pueden persistirse en el sistema de ficheros, en gestores que añaden soporte para tipos y consultas XML o en bases de datos nativas de XML. Estas últimas conservan la estructura jerárquica del documento y permiten trabajar directamente con nodos, colecciones e índices.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Consultas con XQuery</h4>
+    <p><strong>XQuery</strong> consulta y transforma información XML. En una expresión FLWOR, <code>for</code> vincula una variable de forma iterativa para cada elemento de una secuencia, <code>let</code> la asocia al resultado completo de una expresión, <code>where</code> filtra y <code>return</code> construye la salida.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Actualización de documentos XML</h4>
+    <p><strong>XQuery Update</strong> incorpora operaciones para modificar el árbol XML. Una inserción añade nuevos nodos en la posición indicada; otras operaciones permiten eliminar nodos, reemplazarlos o cambiar sus valores. Estas modificaciones deben distinguirse de una consulta, que solo obtiene información.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>APIs y bases de datos nativas de XML</h4>
+    <p><strong>XQJ</strong> ofrece una interfaz Java para ejecutar XQuery, mientras que <strong>XML:DB</strong> permite acceder a colecciones y recursos XML. Motores nativos como <strong>eXist-db</strong> proporcionan consulta, validación, indexación y APIs sin depender de SQL como lenguaje principal.</p>
   </section>
 </article>`;

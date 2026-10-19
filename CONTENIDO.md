@@ -256,3 +256,43 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre la arquitectura de Odoo, ORM, modelos, vistas, menús, acciones, secuencias, XML, XPath, identificadores, tipos de modelo y QWeb. El resumen se amplía de U1–U5 a U1–U6.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 1030 preguntas existentes antes de esta U6 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 19 de octubre de 2026 — Multimedia U7
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U7 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 101–110. JSON `contenido/tests/multimediaMoviles/u7-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 111.
+- En la pregunta original 8, la opción seleccionada en el intento es incorrecta. Se conserva la solución explícita de la revisión: D («Notificación»).
+- Las únicas modificaciones textuales son correcciones ortográficas y gramaticales documentadas en el JSON: `toast` → `Toast` y `tittle, summary key` → `title, summary y key`. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre DatePickerDialog, preferencias, Image Asset Studio, AlertDialog, Toast, PendingIntent y notificaciones. El resumen se amplía de U1–U6 a U1–U7.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1040 preguntas existentes antes de esta U7 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 19 de octubre de 2026 — Desarrollo de interfaces U7
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U7 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 101–110. JSON `contenido/tests/desarrolloInterfaces/u7-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 111.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas y de puntuación documentadas en el JSON: incorporación de signos de interrogación en las preguntas 1 y 7 y de una coma tras `W3C` en la pregunta 8. Ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre implementación, evaluación, moderación visual, color, parámetros subjetivos, evaluación heurística, principios WCAG, ISO, robustez, acceso anónimo y conformidad de páginas completas. El resumen se amplía de U1–U6 a U1–U7.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1050 preguntas existentes antes de esta U7 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 19 de octubre de 2026 — Acceso a datos U7
+
+- Asignatura ampliada: **Acceso a datos**, ID técnico `accesoDatos`.
+- U7 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 101–110. JSON `contenido/tests/accesoDatos/u7-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 111.
+- En la pregunta original 2, la opción A («Lenguaje de etiquetas para representar datos») fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: opción C, «Las respuestas A y B son correctas».
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de puntuación documentadas en el JSON. Incluyen signos de interrogación, la retirada de una palabra repetida y correcciones de concordancia; ninguna altera la solución.
+- Cada pregunta incorpora una explicación didáctica sobre persistencia XML, transacciones, XQuery, expresiones FLWOR, XQJ, XML:DB, bases de datos nativas de XML, XQuery Update y eXist-db. El resumen se amplía de U1–U6 a U1–U7.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1060 preguntas existentes antes de esta U7 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 19 de octubre de 2026 — Sistemas de gestión empresarial U7
+
+- Asignatura ampliada: **Sistemas de gestión empresarial**, ID técnico `sistemasGestionEmpresarial`.
+- U7 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 101–110. JSON `contenido/tests/sistemasGestionEmpresarial/u7-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 111.
+- En la pregunta original 2, la opción A (`list`) fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: opción C, `QWeb`.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de grafía técnica documentadas en el JSON: «tiupo» → «tipo», `qweb` → `QWeb`, `_init_.py` / `_manifest_.py` → `__init__.py` / `__manifest__.py` y retirada de la preposición innecesaria en «se deben de construir». Ninguna altera la opción correcta.
+- Cada pregunta incorpora una explicación didáctica sobre registros XML, QWeb, estructura de módulos, herencia de vistas, archivos de seguridad CSV, informes, scaffold, campos calculados e `ir.ui.view`. El resumen se amplía de U1–U6 a U1–U7.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1070 preguntas existentes antes de esta U7 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

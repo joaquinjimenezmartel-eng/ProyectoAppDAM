@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U6 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U7 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -74,5 +74,25 @@ const resumenMultimediaMoviles = `
   <section class="study-summary__section">
     <h4>17. Adaptadores, desplazamiento y reutilización</h4>
     <p>Un <strong>Adapter</strong> conecta una fuente de datos con una vista adaptada, como ListView o GridView, y proporciona la representación de cada elemento. El scroll es el desplazamiento del contenido y no es un tipo de adaptador. Para mejorar el rendimiento, las listas pueden reutilizar vistas que han salido de la pantalla; una Dirty View necesita actualizarse antes de mostrarse y una ScrapView queda disponible para su reutilización.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>18. Diálogos y selección de fechas</h4>
+    <p>Un diálogo solicita una decisión o información sin ocupar toda la pantalla. <strong>AlertDialog</strong> puede combinar un título opcional, un área de contenido y hasta tres botones de acción. <strong>DatePickerDialog</strong> es un diálogo especializado que incorpora los controles necesarios para seleccionar una fecha válida.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>19. Preferencias de la aplicación</h4>
+    <p>Las preferencias representan ajustes que pueden conservarse entre usos. <strong>CheckBoxPreference</strong> almacena un valor booleano con dos estados, mientras que EditTextPreference guarda texto y ListPreference permite elegir un valor de una lista. Atributos como <code>title</code>, <code>summary</code> y <code>key</code> definen su nombre, descripción e identificador persistente.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>20. Recursos con Image Asset Studio</h4>
+    <p><strong>Image Asset Studio</strong> genera iconos de inicio y de notificación a partir de imágenes, iconos de Material o texto. Crea los recursos con las resoluciones y carpetas adecuadas para las distintas densidades de pantalla; no programa por sí mismo notificaciones, mensajes Toast ni preferencias.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>21. Toast y notificaciones</h4>
+    <p>Un <strong>Toast</strong> es un aviso breve que desaparece automáticamente y no exige interacción. Una <strong>notificación</strong> es gestionada por el sistema, puede aparecer fuera de la interfaz habitual de la aplicación, conservar una referencia temporal y ofrecer acciones. Las notificaciones emergentes pueden mostrarse sobre otra aplicación activa.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>22. Acciones futuras con PendingIntent</h4>
+    <p>Un <strong>PendingIntent</strong> permite que otro componente ejecute más adelante una acción definida por la aplicación original. En una notificación se utiliza para abrir una Activity, iniciar un servicio o emitir un evento cuando la persona selecciona el aviso, incluso si la interfaz que lo creó ya no está visible.</p>
   </section>
 </article>`;

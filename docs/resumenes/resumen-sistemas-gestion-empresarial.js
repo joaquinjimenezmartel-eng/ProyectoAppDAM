@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U6 · Sistemas, ERP, implantación y Odoo</span>
+    <span class="study-summary__eyebrow">U1–U7 · Sistemas, ERP, implantación y Odoo</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -116,5 +116,21 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Tipos de modelo, QWeb y extensibilidad</h4>
     <p>El ORM ofrece modelos persistentes, transitorios para información temporal y abstractos para compartir comportamiento. QWeb es el motor de plantillas XML utilizado para generar contenido HTML. La arquitectura modular y la herencia permiten añadir modelos o ampliar componentes existentes sin alterar directamente su definición original.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Estructura de un módulo</h4>
+    <p>Un módulo de Odoo se organiza como un paquete Python. <code>__init__.py</code> importa sus componentes y <code>__manifest__.py</code> declara los metadatos, las dependencias y los archivos que deben cargarse. El comando <code>scaffold</code> genera una estructura inicial sobre la que empezar a desarrollar.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Seguridad y permisos</h4>
+    <p>Los permisos de acceso a modelos suelen definirse en <code>security/ir.model.access.csv</code>. Cada fila relaciona un modelo y un grupo con las operaciones permitidas: leer, escribir, crear y eliminar. Otras reglas y grupos pueden declararse como registros <code>record</code> dentro de archivos XML.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Vistas base y de extensión</h4>
+    <p>Las vistas son registros del modelo <code>ir.ui.view</code>. Una vista base aporta la arquitectura principal y una vista de extensión aplica modificaciones sobre otra definición, normalmente con XPath. QWeb completa este sistema mediante plantillas XML para generar contenido web e informes.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Informes y campos calculados</h4>
+    <p>Los recursos de informes se agrupan habitualmente en el directorio <code>reports</code>. Un campo calculado utiliza un método indicado mediante <code>compute</code> para obtener su valor y puede declarar sus dependencias para que Odoo sepa cuándo debe recalcularlo.</p>
   </section>
 </article>`;

@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U6 · Diseño, componentes y lenguajes de interfaz</span>
+    <span class="study-summary__eyebrow">U1–U7 · Diseño, componentes, usabilidad y accesibilidad</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -112,5 +112,33 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Iconos y licencias Creative Commons</h4>
     <p>Los iconos comunican acciones, objetos y estados dentro de una interfaz gráfica. Las licencias <strong>Creative Commons</strong> combinan atribución (BY), compartir igual (SA), uso no comercial (NC) y ausencia de obras derivadas (ND) para indicar de forma clara cómo puede reutilizarse una creación.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Implementación y evaluación</h4>
+    <p>Después del diseño se implementa la solución y se evalúa su comportamiento. La evaluación comprueba si la interfaz cumple sus objetivos, permite completar las tareas y evita problemas de comprensión o acceso. Los resultados sirven para corregir el producto y comenzar una nueva iteración de mejora.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Moderación visual y color</h4>
+    <p>Las gráficas deben aportar información sin saturar la pantalla. La cantidad de elementos, el espacio y la jerarquía influyen en la carga cognitiva. El color también comunica: una paleta coherente guía la atención y puede provocar sensaciones distintas según el contexto, la cultura, el público y la temática.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Parámetros subjetivos</h4>
+    <p>La percepción de equilibrio, claridad, saturación o atractivo no se resume siempre en una medida numérica. Estas cualidades deben valorarse según las personas usuarias y sus tareas. Una decisión visual puede funcionar bien en un contexto y resultar confusa o inadecuada en otro.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Evaluación heurística</h4>
+    <p>En una evaluación heurística, profesionales revisan la interfaz de manera sistemática y comparan el diseño con principios de usabilidad reconocidos. Este método permite localizar problemas antes o después de implementar el producto y complementa las pruebas realizadas con usuarios representativos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Accesibilidad y principios POUR</h4>
+    <p>WCAG organiza la accesibilidad en cuatro principios: contenido <strong>perceptible</strong>, interfaz <strong>operable</strong>, información <strong>comprensible</strong> y código <strong>robusto</strong>. La robustez facilita que navegadores y tecnologías de apoyo interpreten el contenido de manera fiable y compatible.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Conformidad de páginas completas</h4>
+    <p>La conformidad con WCAG se declara sobre páginas completas. No basta con que una parte aislada cumpla los criterios si otra sección impide el acceso. Todos los componentes que forman la experiencia deben alcanzar el nivel de conformidad declarado.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Estándares y acceso anónimo</h4>
+    <p><strong>ISO</strong> coordina la elaboración de estándares internacionales mediante especialistas y organismos nacionales. En una aplicación, un usuario anónimo accede sin identidad autenticada; puede disponer de una sesión técnica y permisos básicos, pero no de las funciones reservadas a una cuenta identificada.</p>
   </section>
 </article>`;

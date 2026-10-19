@@ -719,5 +719,125 @@ const preguntasAccesoDatos = [
     ],
     "respuesta_correcta": "C. Es una plantilla para crear documento XML, HTML, CSV, ...",
     "explicacion": "Una hoja de estilo XSLT contiene reglas y plantillas que transforman un árbol XML en otro resultado. Puede generar XML, HTML o texto; una salida textual puede utilizarse para producir formatos como CSV."
+  },
+  {
+    "id": 101,
+    "pregunta": "¿Cómo se puede dar persistencia de datos con XML?",
+    "opciones": [
+      "A. Mediante sistemas de ficheros.",
+      "B. Base de datos con soporte XML.",
+      "C. Bases de datos nativas de XML.",
+      "D. Todas las respuestas anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las respuestas anteriores son correctas.",
+    "explicacion": "Los datos XML pueden conservarse como documentos en un sistema de ficheros, dentro de una base de datos que incluya soporte para XML o en una base de datos nativa diseñada para almacenar y consultar directamente su estructura jerárquica. Por eso las tres alternativas describen formas válidas de persistencia."
+  },
+  {
+    "id": 102,
+    "pregunta": "El lenguaje XML solo se emplea como:",
+    "opciones": [
+      "A. Lenguaje de etiquetas para representar datos.",
+      "B. Base de datos.",
+      "C. Las respuestas A y B son correctas.",
+      "D. Ninguna de las respuestas anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Las respuestas A y B son correctas.",
+    "explicacion": "XML es un lenguaje de marcas para representar datos estructurados. Además, sus documentos pueden utilizarse como soporte persistente de información y gestionarse mediante sistemas de bases de datos XML; en ese sentido didáctico, la revisión considera correctas las afirmaciones A y B."
+  },
+  {
+    "id": 103,
+    "pregunta": "En una transacción, ¿cómo podemos revocar los cambios realizados?",
+    "opciones": [
+      "A. commit()",
+      "B. rollback()",
+      "C. delete()",
+      "D. back()"
+    ],
+    "respuesta_correcta": "B. rollback()",
+    "explicacion": "rollback() cancela los cambios de la transacción actual que todavía no se han confirmado y devuelve los datos al estado anterior a esa unidad de trabajo. commit(), en cambio, hace permanentes los cambios realizados."
+  },
+  {
+    "id": 104,
+    "pregunta": "En XQuery, ¿qué palabra reservada se utiliza para definir una variable?",
+    "opciones": [
+      "A. Variable",
+      "B. define",
+      "C. let",
+      "D. set"
+    ],
+    "respuesta_correcta": "C. let",
+    "explicacion": "En una expresión FLWOR de XQuery, let vincula una variable al resultado completo de una expresión. La variable se escribe con el prefijo $, puede reutilizarse en las cláusulas posteriores y no implica una iteración por cada elemento."
+  },
+  {
+    "id": 105,
+    "pregunta": "FOR en el lenguaje XQuery:",
+    "opciones": [
+      "A. Vincula variables de forma iterativa",
+      "B. Ordena los resultados",
+      "C. Indican una condición de filtrado",
+      "D. Evalúa una expresión y devuelve los resultados"
+    ],
+    "respuesta_correcta": "A. Vincula variables de forma iterativa",
+    "explicacion": "La cláusula for recorre una secuencia y crea una vinculación de la variable para cada elemento. order by se ocupa de ordenar, where filtra los resultados y return construye el resultado que se devuelve."
+  },
+  {
+    "id": 106,
+    "pregunta": "¿Qué API permite trabajar con bases de datos nativas de XML?",
+    "opciones": [
+      "A. XQJ",
+      "B. XML:DB",
+      "C. Las respuestas A y B son correctas.",
+      "D. Ninguna de las respuestas anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. Las respuestas A y B son correctas.",
+    "explicacion": "XQJ proporciona una interfaz Java para ejecutar XQuery sobre fuentes de datos XML. XML:DB define otra API para acceder a colecciones y recursos de bases de datos XML. Ambas permiten que una aplicación trabaje con sistemas nativos de XML."
+  },
+  {
+    "id": 107,
+    "pregunta": "¿Qué característica no tienen las bases de datos nativas de XML?",
+    "opciones": [
+      "A. Validación.",
+      "B. Indexación.",
+      "C. Soporte de APIs.",
+      "D. Uso de SQL."
+    ],
+    "respuesta_correcta": "D. Uso de SQL.",
+    "explicacion": "Una base de datos nativa de XML puede validar documentos, crear índices y ofrecer APIs de acceso. Su consulta se basa habitualmente en tecnologías propias del ecosistema XML, como XPath y XQuery, en lugar de utilizar SQL como lenguaje principal."
+  },
+  {
+    "id": 108,
+    "pregunta": "¿Qué hace Update insert?",
+    "opciones": [
+      "A. Sustituye el valor del elemento",
+      "B. Consulta los datos",
+      "C. Borra un elemento",
+      "D. Inserta los datos de un nuevo elemento"
+    ],
+    "respuesta_correcta": "D. Inserta los datos de un nuevo elemento",
+    "explicacion": "La operación de inserción de XQuery Update añade uno o varios nodos nuevos en la posición indicada del documento XML. No reemplaza ni elimina el elemento existente y tampoco se limita a consultar los datos."
+  },
+  {
+    "id": 109,
+    "pregunta": "¿Qué lenguaje se emplea para consultas en XML?",
+    "opciones": [
+      "A. SQL",
+      "B. HQL",
+      "C. XQuery",
+      "D. HTML"
+    ],
+    "respuesta_correcta": "C. XQuery",
+    "explicacion": "XQuery está diseñado para consultar y transformar información XML. Puede localizar nodos mediante expresiones XPath y organizar consultas más completas con cláusulas FLWOR."
+  },
+  {
+    "id": 110,
+    "pregunta": "Un ejemplo de base de datos nativa de XML es:",
+    "opciones": [
+      "A. eXist.",
+      "B. SQL Server.",
+      "C. MariaDB",
+      "D. Oracle"
+    ],
+    "respuesta_correcta": "A. eXist.",
+    "explicacion": "eXist-db es una base de datos nativa de XML: conserva los documentos XML en colecciones y permite consultarlos con XQuery, además de ofrecer indexación y APIs de acceso."
   }
 ];

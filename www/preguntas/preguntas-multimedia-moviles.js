@@ -719,5 +719,125 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "C. Dirty View.",
     "explicacion": "Una Dirty View es una vista que debe prepararse o actualizarse con los datos de la posición que va a mostrarse. Las ScrapViews, en cambio, son vistas retiradas de la pantalla que se conservan para poder reutilizarlas y evitar crear objetos nuevos innecesariamente."
+  },
+  {
+    "id": 101,
+    "pregunta": "DatePickerDialog es un tipo de:",
+    "opciones": [
+      "A. Mensaje Toast.",
+      "B. Notificación.",
+      "C. Preferencia.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son incorrectas.",
+    "explicacion": "DatePickerDialog es un diálogo especializado que presenta controles para seleccionar una fecha. No pertenece a los mensajes Toast, las notificaciones ni las preferencias: forma parte de los componentes de diálogo de Android."
+  },
+  {
+    "id": 102,
+    "pregunta": "Este tipo de opción solo tiene dos estados posibles, activado o desactivado:",
+    "opciones": [
+      "A. CheckBoxPreference.",
+      "B. EditTextPreference.",
+      "C. ListPreference.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. CheckBoxPreference.",
+    "explicacion": "CheckBoxPreference almacena un valor booleano, por lo que representa dos estados: marcado o desmarcado. EditTextPreference guarda texto y ListPreference permite escoger un valor de una lista."
+  },
+  {
+    "id": 103,
+    "pregunta": "Image Asset Studio nos permite:",
+    "opciones": [
+      "A. Crear notificaciones.",
+      "B. Crear Toast.",
+      "C. Crear preferencias.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "Image Asset Studio genera recursos gráficos para la aplicación, como iconos de inicio y de notificación adaptados a distintas densidades de pantalla. No crea el comportamiento de una notificación, un Toast ni una pantalla de preferencias."
+  },
+  {
+    "id": 104,
+    "pregunta": "Incluye los apartados de title, summary y key:",
+    "opciones": [
+      "A. CheckBoxPreference.",
+      "B. EditTextPreference.",
+      "C. ListPreference.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. CheckBoxPreference.",
+    "explicacion": "CheckBoxPreference puede definirse con title para el título visible, summary para una descripción y key para identificar y persistir su valor. Además, guarda un estado booleano que refleja si la casilla está activada o desactivada."
+  },
+  {
+    "id": 105,
+    "pregunta": "La subclase AlertDialog posee:",
+    "opciones": [
+      "A. Un área de título.",
+      "B. Un área de contenido.",
+      "C. Un área de botones.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "AlertDialog organiza su interfaz en un título opcional, un área de contenido para el mensaje, la lista o una vista personalizada y un área de acciones. Esta última puede incluir hasta tres botones para responder al diálogo."
+  },
+  {
+    "id": 106,
+    "pregunta": "No requiere que el usuario interactúe con ella:",
+    "opciones": [
+      "A. Diálogos.",
+      "B. Toast.",
+      "C. Preferencias.",
+      "D. Notificación."
+    ],
+    "respuesta_correcta": "B. Toast.",
+    "explicacion": "Un Toast muestra durante un tiempo breve un mensaje informativo y desaparece automáticamente. No bloquea la pantalla ni exige que la persona pulse un botón para cerrarlo o continuar."
+  },
+  {
+    "id": 107,
+    "pregunta": "Objeto que permite la programación de acciones en el futuro para su realización automática:",
+    "opciones": [
+      "A. PendingIntent.",
+      "B. Setting.",
+      "C. Item.",
+      "D. Ninguno de los anteriores."
+    ],
+    "respuesta_correcta": "A. PendingIntent.",
+    "explicacion": "PendingIntent entrega a otro componente permiso para ejecutar posteriormente una acción definida por la aplicación. Se utiliza, por ejemplo, para abrir una pantalla o iniciar una operación cuando el usuario interactúa con una notificación."
+  },
+  {
+    "id": 108,
+    "pregunta": "Puede superponerse a aplicaciones activas:",
+    "opciones": [
+      "A. Diálogos.",
+      "B. Toast.",
+      "C. Preferencias.",
+      "D. Notificación."
+    ],
+    "respuesta_correcta": "D. Notificación.",
+    "explicacion": "Una notificación puede presentarse fuera de la interfaz normal de la aplicación. Según su prioridad y la configuración del sistema, una notificación emergente puede mostrarse temporalmente sobre la aplicación que esté activa."
+  },
+  {
+    "id": 109,
+    "pregunta": "Son mensajes que se muestran en pantalla durante unos segundos y luego desaparecen de forma automática:",
+    "opciones": [
+      "A. Notificaciones.",
+      "B. Toast.",
+      "C. Diálogos.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. Toast.",
+    "explicacion": "Los Toast son avisos breves que aparecen sobre la interfaz durante un periodo limitado y se ocultan sin intervención. Son adecuados para confirmar de forma discreta una acción que acaba de realizarse."
+  },
+  {
+    "id": 110,
+    "pregunta": "Tipo de mensaje que siempre contiene una marca temporal:",
+    "opciones": [
+      "A. Diálogos.",
+      "B. Toast.",
+      "C. Preferencias.",
+      "D. Notificación."
+    ],
+    "respuesta_correcta": "D. Notificación.",
+    "explicacion": "Las notificaciones registran el momento asociado a su publicación para que el sistema pueda ordenar y presentar la información temporal. Un diálogo, un Toast o una preferencia no cumplen esa función de mensaje persistente gestionado por el sistema."
   }
 ];
