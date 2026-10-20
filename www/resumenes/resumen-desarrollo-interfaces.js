@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U7 · Diseño, componentes, usabilidad y accesibilidad</span>
+    <span class="study-summary__eyebrow">U1–U8 · Diseño, componentes, usabilidad y documentación</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -140,5 +140,21 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Estándares y acceso anónimo</h4>
     <p><strong>ISO</strong> coordina la elaboración de estándares internacionales mediante especialistas y organismos nacionales. En una aplicación, un usuario anónimo accede sin identidad autenticada; puede disponer de una sesión técnica y permisos básicos, pero no de las funciones reservadas a una cuenta identificada.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Sistemas y formatos de ayuda</h4>
+    <p>Los ficheros de ayuda organizan contenidos de asistencia para que puedan consultarse por temas, índices o búsquedas. <strong>HLP</strong> y <strong>CHM</strong> se asocian a sistemas de ayuda de Windows, mientras que <strong>IPF</strong> es un formato fuente utilizado para crear ayuda en línea. La herramienta de edición puede elegirse según el proyecto siempre que el resultado mantenga una estructura y unos criterios coherentes.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Estructura de JavaHelp</h4>
+    <p>JavaHelp reúne la ayuda de una aplicación en un <em>helpset</em>. El fichero <em>map</em> relaciona identificadores con las páginas de contenido y una base de datos de búsqueda permite localizar términos con rapidez. Estos elementos se complementan con los temas y navegadores, como el índice o la tabla de contenidos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Guías y ayuda contextual</h4>
+    <p>Una guía rápida presenta los pasos esenciales de un proceso concreto; una guía de referencia permite consultar información técnica y soluciones con mayor detalle. La ayuda genérica ofrece una visión global, mientras que la ayuda sensible al contenido muestra información relacionada con la pantalla, el control o la tarea activa.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Documentación del proyecto</h4>
+    <p>La documentación facilita la incorporación de nuevos miembros, conserva decisiones y aprendizajes y permite seguir la evolución del trabajo. La documentación técnica interna describe la arquitectura, los componentes, las interfaces, los datos, la configuración y las decisiones necesarias para desarrollar y mantener el sistema.</p>
   </section>
 </article>`;

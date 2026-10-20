@@ -296,3 +296,44 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre registros XML, QWeb, estructura de módulos, herencia de vistas, archivos de seguridad CSV, informes, scaffold, campos calculados e `ir.ui.view`. El resumen se amplía de U1–U6 a U1–U7.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 1070 preguntas existentes antes de esta U7 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 20 de octubre de 2026 — Multimedia U8
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U8 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 111–120. JSON `contenido/tests/multimediaMoviles/u8-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 121.
+- En la pregunta original 4, la opción A (`2`) fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: opción B, `3`.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales, técnicas y de puntuación documentadas en el JSON: `SnackBar` → `Snackbar`, `Floating ActionButton` → `FloatingActionButton`, incorporación del verbo que faltaba en la pregunta 4 y eliminación de un punto duplicado. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre CardView, navegación, ActionBar, FloatingActionButton, Palette, color, Snackbar, elevación, TextInputLayout y reciclado de vistas. El resumen se amplía de U1–U7 a U1–U8.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1080 preguntas existentes antes de esta U8 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 20 de octubre de 2026 — Desarrollo de interfaces U8
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U8 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 111–120. JSON `contenido/tests/desarrolloInterfaces/u8-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 121.
+- En las preguntas originales 5, 7 y 10, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: D («Ninguna de las anteriores es correcta»), B («Documentación sobre un problema o proceso concreto») y D («Todas las anteriores son incorrectas»), respectivamente.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de puntuación documentadas en el JSON: retirada de dos puntos tras una interrogación, incorporación de signos de interrogación, `esto` → `estos`, `video` → `vídeo`, incorporación del artículo que faltaba en una opción y normalización de mayúsculas. Ninguna altera las soluciones.
+- Se conservan literalmente los términos `Help Work World` e `IPJ` porque forman parte de las opciones del contenido evaluable.
+- Cada pregunta incorpora una explicación didáctica sobre sistemas y formatos de ayuda, estructura de JavaHelp, guías rápidas y de referencia, ayuda contextual y documentación técnica. El resumen se amplía de U1–U7 a U1–U8.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1090 preguntas existentes antes de esta U8 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 20 de octubre de 2026 — Acceso a datos U8
+
+- Asignatura ampliada: **Acceso a datos**, ID técnico `accesoDatos`.
+- U8 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 111–120. JSON `contenido/tests/accesoDatos/u8-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 121.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales, técnicas y de puntuación documentadas en el JSON. Incluyen `EjB` → `EJB`, `JavaBeans` → `JavaBean` cuando se refiere a una unidad, `serializable` → `Serializable`, `Manifest.mf` → `MANIFEST.MF`, `objecto` → `objeto`, signos de interrogación, concordancias y eliminación de una letra sobrante. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre componentes, JavaBeans, Enterprise JavaBeans, descriptores de despliegue, JSP, servlets y el patrón MVC. El resumen se amplía de U1–U7 a U1–U8.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1100 preguntas existentes antes de esta U8 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 20 de octubre de 2026 — Sistemas de gestión empresarial U8
+
+- Asignatura ampliada: **Sistemas de gestión empresarial**, ID técnico `sistemasGestionEmpresarial`.
+- U8 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 111–120. JSON `contenido/tests/sistemasGestionEmpresarial/u8-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 121.
+- Las diez opciones seleccionadas coinciden con las soluciones indicadas en la revisión; no ha sido necesario sustituir ninguna respuesta.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales y de grafía técnica documentadas en el JSON: `en referencia a` → `respecto a`, `pgAdmin4` → `pgAdmin 4`, incorporación de la preposición que faltaba en una opción, tilde en `qué`, espaciado de `System (OdooBot)` y normalización de una mayúscula. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre derechos de acceso, usuarios, `pg_dump`, workers, proxy inverso, configuración del servidor, superusuario, OdooBot y correo corporativo. El resumen se amplía de U1–U7 a U1–U8.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1110 preguntas existentes antes de esta U8 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

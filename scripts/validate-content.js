@@ -8,9 +8,9 @@ const WEB_ROOT = path.join(PROJECT_ROOT, "www");
 const INDEX_PATH = path.join(WEB_ROOT, "index.html");
 const MANIFEST_PATH = path.join(WEB_ROOT, "manifest.webmanifest");
 // Actualizar únicamente cuando se autorice expresamente un cambio en el banco de test.
-// 2026-10-19: alta autorizada de sistemasGestionEmpresarial, U7, IDs 101–110 y correcciones ortográficas aprobadas.
-// test-new-subject.js conserva además las huellas de las incorporaciones anteriores, incluidas las 1070 preguntas previas a esta U7.
-const HUELLA_CONTENIDO_EVALUABLE = "71abb37c0dcf107d4f64e71365b03afad49c2d04118c02ca884abdf94b2902a4";
+// 2026-10-20: alta autorizada de sistemasGestionEmpresarial, U8, IDs 111–120 y correcciones ortográficas aprobadas.
+// test-new-subject.js conserva además las huellas de las incorporaciones anteriores, incluidas las 1110 preguntas previas a esta U8.
+const HUELLA_CONTENIDO_EVALUABLE = "7c9066dd6d3a135f6f5938016309891d3b78f086bf1fddb8c3d8b4900a58235c";
 
 function normalizarTexto(texto) {
   return typeof texto === "string" ? texto.trim().replace(/\s+/g, " ") : "";

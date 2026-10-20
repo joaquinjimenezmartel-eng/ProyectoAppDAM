@@ -839,5 +839,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "A. Páginas completas: Los requisitos se deben incluir en la totalidad de la página, la exclusión de una parte anula completamente los requisitos.",
     "explicacion": "La conformidad con WCAG se aplica a páginas completas. Si una parte de la página incumple los criterios exigidos, no puede afirmarse que la página completa alcance ese nivel de conformidad, aunque el resto del contenido sí los cumpla."
+  },
+  {
+    "id": 111,
+    "pregunta": "¿Cuál de estos no es un generador de ficheros?",
+    "opciones": [
+      "A. Help Work World.",
+      "B. HELPMAKER.",
+      "C. JavaHelp.",
+      "D. SHALOM HELP MAKER."
+    ],
+    "respuesta_correcta": "A. Help Work World.",
+    "explicacion": "HELPMAKER, JavaHelp y SHALOM HELP MAKER son herramientas o sistemas relacionados con la creación de ayuda. Help Work World no se identifica como un generador de ficheros de ayuda, por lo que es el elemento que no pertenece al grupo."
+  },
+  {
+    "id": 112,
+    "pregunta": "¿Cuál de estos no es un formato empleado por los ficheros de ayuda?",
+    "opciones": [
+      "A. IPJ",
+      "B. HLP",
+      "C. IPF",
+      "D. CHM"
+    ],
+    "respuesta_correcta": "A. IPJ",
+    "explicacion": "HLP y CHM se asocian a sistemas de ayuda de Windows, mientras que IPF es un formato fuente utilizado para crear ayuda en línea. IPJ no corresponde a uno de los formatos de fichero de ayuda considerados en esta clasificación."
+  },
+  {
+    "id": 113,
+    "pregunta": "En el desarrollo de la documentación:",
+    "opciones": [
+      "A. No debemos restringirnos y emplear los editores que más nos convengan.",
+      "B. Debemos emplear un único procesador de texto para la estandarización.",
+      "C. Debemos emplear siempre generadores automáticos de documentación.",
+      "D. Debemos elaborarla siempre manualmente."
+    ],
+    "respuesta_correcta": "A. No debemos restringirnos y emplear los editores que más nos convengan.",
+    "explicacion": "La herramienta debe elegirse según el tipo de documento, el equipo y el resultado que se necesita obtener. La coherencia se consigue mediante criterios, formatos y plantillas compartidos, sin imponer que toda la documentación se produzca siempre con un único editor o mediante un solo método."
+  },
+  {
+    "id": 114,
+    "pregunta": "En el uso de JavaHelp se deben crear ficheros. ¿Cuál de estos no es uno de ellos?",
+    "opciones": [
+      "A. Map.",
+      "B. Helpset.",
+      "C. Base de datos de búsqueda.",
+      "D. Ninguna de las anteriores es falsa."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es falsa.",
+    "explicacion": "Un sistema JavaHelp utiliza un fichero helpset para definir el conjunto de ayuda, un map para relacionar identificadores con temas y una base de datos de búsqueda para localizar texto con rapidez. Los tres elementos indicados forman parte de su estructura, así que ninguna de las opciones A, B o C es falsa."
+  },
+  {
+    "id": 115,
+    "pregunta": "Fichero de ayuda:",
+    "opciones": [
+      "A. Documentación online sobre un problema o proceso concreto.",
+      "B. Documentación sobre un tema concreto en formato de vídeo.",
+      "C. Archivo en formato XML para la resolución genérica de problemas.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Un fichero de ayuda reúne contenidos de asistencia que una aplicación puede mostrar y enlazar, normalmente organizados en temas, índices o búsquedas. No tiene por qué estar disponible en línea, ser un vídeo ni utilizar XML, por lo que ninguna de las tres definiciones anteriores describe el concepto de forma correcta."
+  },
+  {
+    "id": 116,
+    "pregunta": "Guía de referencia:",
+    "opciones": [
+      "A. Documentación para usuarios sin conocimiento técnico con instrucciones sobre el uso de las aplicaciones.",
+      "B. Documentación sobre un problema o proceso concreto.",
+      "C. Documentación para usuarios con conocimiento técnico sobre diversos errores y sus soluciones.",
+      "D. Documento que contiene información sobre la resolución de un problema de la aplicación."
+    ],
+    "respuesta_correcta": "C. Documentación para usuarios con conocimiento técnico sobre diversos errores y sus soluciones.",
+    "explicacion": "Una guía de referencia permite consultar información técnica concreta sin seguir necesariamente un recorrido paso a paso. Puede reunir errores, causas y soluciones para que una persona con conocimientos del sistema encuentre con rapidez el dato que necesita."
+  },
+  {
+    "id": 117,
+    "pregunta": "Guía rápida:",
+    "opciones": [
+      "A. Documentación para usuarios sin conocimiento técnico con instrucciones sobre el uso de las aplicaciones.",
+      "B. Documentación sobre un problema o proceso concreto.",
+      "C. Documentación para usuarios con conocimiento técnico sobre diversos errores y sus soluciones.",
+      "D. Documento que contiene información sobre la resolución de un problema de la aplicación."
+    ],
+    "respuesta_correcta": "B. Documentación sobre un problema o proceso concreto.",
+    "explicacion": "Una guía rápida ofrece una explicación breve y directa para completar un proceso o resolver una necesidad concreta. Se centra en los pasos esenciales y evita el nivel de detalle propio de un manual completo o de una guía de referencia técnica."
+  },
+  {
+    "id": 118,
+    "pregunta": "La ayuda prestada por los ficheros de ayuda se puede clasificar en:",
+    "opciones": [
+      "A. Sensible al contenido o específica.",
+      "B. Determinada o indeterminada.",
+      "C. Genérica o sensible al contenido.",
+      "D. Completa o genérica."
+    ],
+    "respuesta_correcta": "C. Genérica o sensible al contenido.",
+    "explicacion": "La ayuda genérica se consulta de forma independiente y permite explorar el sistema completo. La ayuda sensible al contenido abre información relacionada con la pantalla, el control o la tarea que la persona está utilizando en ese momento."
+  },
+  {
+    "id": 119,
+    "pregunta": "La documentación posee las siguientes características:",
+    "opciones": [
+      "A. Ser una guía para los desarrolladores y otros agentes que se incorporan al proyecto.",
+      "B. Ser un registro para evitar errores en futuros proyectos.",
+      "C. Ser un elemento de control que permite saber los cambios realizados por cada uno de los agentes.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "Una documentación mantenida al día facilita que nuevas personas comprendan el proyecto, conserva decisiones y aprendizajes para no repetir errores y deja trazabilidad sobre los cambios. Por tanto, cumple las tres funciones descritas."
+  },
+  {
+    "id": 120,
+    "pregunta": "La documentación técnica interna hace referencia a:",
+    "opciones": [
+      "A. El análisis de los resultados de las pruebas de la aplicación.",
+      "B. El histórico de proyectos anteriores.",
+      "C. La documentación referente al presupuesto empleado.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son incorrectas.",
+    "explicacion": "La documentación técnica interna describe cómo está construido y mantenido el sistema: arquitectura, componentes, código, interfaces, datos, configuración y decisiones técnicas. Los resultados de pruebas, el histórico de otros proyectos y el presupuesto son documentos de gestión o control distintos, no la definición de esta documentación."
   }
 ];

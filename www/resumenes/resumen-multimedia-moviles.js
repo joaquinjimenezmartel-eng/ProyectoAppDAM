@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U7 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U8 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -94,5 +94,21 @@ const resumenMultimediaMoviles = `
   <section class="study-summary__section">
     <h4>22. Acciones futuras con PendingIntent</h4>
     <p>Un <strong>PendingIntent</strong> permite que otro componente ejecute más adelante una acción definida por la aplicación original. En una notificación se utiliza para abrir una Activity, iniciar un servicio o emitir un evento cuando la persona selecciona el aviso, incluso si la interfaz que lo creó ya no está visible.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>23. Tarjetas, esquinas y elevación</h4>
+    <p><strong>CardView</strong> presenta contenido dentro de una tarjeta. <code>cardCornerRadius</code> controla el redondeo de sus esquinas y la elevación determina la sombra proyectada. En Material Design, esa sombra comunica que un elemento está situado por encima de otro y refuerza su jerarquía visual.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>24. Botones flotantes y barras de acciones</h4>
+    <p><strong>FloatingActionButton</strong> representa una acción principal y admite los tamaños normal, mini y automático. La <strong>ActionBar</strong> o una Toolbar configurada como barra de acciones organiza la navegación y las acciones superiores; no debe confundirse con TabLayout, TextInputLayout ni FloatingActionButton.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>25. Color y avisos temporales</h4>
+    <p><strong>Palette</strong> extrae colores representativos de una imagen para construir una gama coherente. <strong>Snackbar</strong> muestra información breve de forma similar a un Toast, pero puede incorporar una acción. Utilizar una paleta preseleccionada mejora la consistencia y facilita controlar el contraste.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>26. Campos de texto y reciclado de vistas</h4>
+    <p><strong>TextInputLayout</strong> envuelve un campo de texto y aporta etiquetas flotantes animadas, ayuda, errores, contadores e iconos. En RecyclerView, una vista <em>scrapped</em> queda apartada temporalmente para poder retirarla o reutilizarla sin crear innecesariamente otra representación.</p>
   </section>
 </article>`;

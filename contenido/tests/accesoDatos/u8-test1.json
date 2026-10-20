@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "asignaturaId": "accesoDatos",
+  "testId": "u8-test1",
+  "fuente": "U8/U8 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "numeroOriginal": 1,
+      "id": 111,
+      "campo": "pregunta",
+      "original": "¿Qué característica no es correcta para los EjB?",
+      "corregido": "¿Qué característica no es correcta para los EJB?",
+      "autorizacion": "Corrección de grafía técnica autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 1,
+      "id": 111,
+      "campo": "opciones",
+      "original": "B. Es igual que un JavaBeans / C. Uso del API JPA para la persistencia de objetos. / D. Sistemas de mensajes con JMS",
+      "corregido": "B. Es igual que un JavaBean. / C. Uso de la API JPA para la persistencia de objetos. / D. Sistemas de mensajes con JMS.",
+      "autorizacion": "Correcciones gramaticales y de puntuación autorizadas por el propietario; no modifican la solución."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 112,
+      "campo": "pregunta",
+      "original": "¿Qué características tienen que cumplir un JavaBeans?",
+      "corregido": "¿Qué características debe cumplir un JavaBean?",
+      "autorizacion": "Corrección gramatical autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 112,
+      "campo": "opciones",
+      "original": "A. Implementar la interfaz serializable / B. Tener un constructor vacío",
+      "corregido": "A. Implementar la interfaz Serializable. / B. Tener un constructor vacío.",
+      "autorizacion": "Correcciones de grafía técnica y puntuación autorizadas por el propietario; no modifican la solución."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 114,
+      "campo": "pregunta",
+      "original": "¿Qué tipos de EjB hay?",
+      "corregido": "¿Qué tipos de EJB hay?",
+      "autorizacion": "Corrección de grafía técnica autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 115,
+      "campo": "pregunta",
+      "original": "En que fichero nos encontramos el descriptor de despliegue",
+      "corregido": "¿En qué fichero se encuentra el descriptor de despliegue?",
+      "autorizacion": "Corrección ortográfica, gramatical y de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 115,
+      "campo": "opciones[0]",
+      "original": "A. Manifest.mf",
+      "corregido": "A. MANIFEST.MF",
+      "autorizacion": "Corrección de grafía técnica autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 116,
+      "campo": "pregunta",
+      "original": "Indica que sintaxis de JSP no es correcta",
+      "corregido": "Indica qué sintaxis de JSP no es correcta:",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 117,
+      "campo": "pregunta",
+      "original": "JSP son ficheros de java que pueden...",
+      "corregido": "Los JSP son ficheros de Java que pueden...",
+      "autorizacion": "Corrección gramatical y de grafía técnica autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 117,
+      "campo": "opciones",
+      "original": "A. Tener etiquetas o / C. Código del lenguaje java",
+      "corregido": "A. Tener etiquetas / C. Código del lenguaje Java",
+      "autorizacion": "Eliminación de una letra sobrante y corrección de grafía técnica autorizadas por el propietario; no modifican la solución."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 118,
+      "campo": "opciones",
+      "original": "A. Es un modelo de componente para la versión de Java SE / B. Es un modelo de componente para la versión de Java EE / C. Son clases que encapsulan un objecto concreto del modelo de datos. / D. Las opciones A y C son correctas",
+      "corregido": "A. Son un modelo de componentes para la versión Java SE. / B. Son un modelo de componentes para la versión Java EE. / C. Son clases que encapsulan un objeto concreto del modelo de datos. / D. Las opciones A y C son correctas.",
+      "autorizacion": "Correcciones gramaticales, ortográficas y de puntuación autorizadas por el propietario; no modifican la solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 119,
+      "campo": "pregunta",
+      "original": "Podemos decir de los Servlets que....",
+      "corregido": "Podemos decir de los servlets que:",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 119,
+      "campo": "opciones",
+      "original": "A. Son programas contenidos en un módulo para ejecutarlo en el lado del servidor web. / C. Son programas contenido en un módulo que pueden ser invocados usando el protocolo FTP.",
+      "corregido": "A. Son programas contenidos en un módulo para ejecutarlos en el lado del servidor web. / C. Son programas contenidos en un módulo que pueden ser invocados usando el protocolo FTP.",
+      "autorizacion": "Correcciones de concordancia autorizadas por el propietario; no modifican la solución."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 120,
+      "campo": "pregunta",
+      "original": "Que específica el modelo de diseño MVC",
+      "corregido": "¿Qué especifica el modelo de diseño MVC?",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 120,
+      "campo": "opciones[1]",
+      "original": "B. El Mapa, la Vista y la Capa .",
+      "corregido": "B. El Mapa, la Vista y la Capa.",
+      "autorizacion": "Corrección de espaciado autorizada por el propietario; no modifica la solución."
+    }
+  ],
+  "notasRevision": [],
+  "referenciasExplicaciones": [
+    "https://jakarta.ee/specifications/enterprise-beans/4.0/jakarta-enterprise-beans-spec-core-4.0.html",
+    "https://jakarta.ee/learn/docs/jakartaee-tutorial/current/entbeans/ejb-intro/ejb-intro.html",
+    "https://docs.oracle.com/javase/tutorial/javabeans/advanced/persistence.html",
+    "https://docs.oracle.com/javase/8/docs/api/java/beans/package-summary.html",
+    "https://jakarta.ee/specifications/pages/3.1/jakarta-server-pages-spec-3.1",
+    "https://jakarta.ee/specifications/servlet/6.2/jakarta-servlet-spec-6.2-M1.html",
+    "https://jakarta.ee/specifications/mvc/2.0/jakarta-mvc-spec-2.0"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 111,
+      "pregunta": "¿Qué característica no es correcta para los EJB?",
+      "opciones": [
+        "A. Control de concurrencia.",
+        "B. Es igual que un JavaBean.",
+        "C. Uso de la API JPA para la persistencia de objetos.",
+        "D. Sistemas de mensajes con JMS."
+      ],
+      "respuesta_correcta": "B. Es igual que un JavaBean.",
+      "explicacion": "Un EJB es un componente empresarial gestionado por un contenedor, que puede proporcionar servicios como transacciones, concurrencia, persistencia mediante JPA e integración con mensajería. Un JavaBean es una clase Java reutilizable basada en convenciones de propiedades, por lo que ambos conceptos no son equivalentes."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 112,
+      "pregunta": "¿Qué características debe cumplir un JavaBean?",
+      "opciones": [
+        "A. Implementar la interfaz Serializable.",
+        "B. Tener un constructor vacío.",
+        "C. Las propiedades son de ámbito privado.",
+        "D. Todas las opciones son correctas."
+      ],
+      "respuesta_correcta": "D. Todas las opciones son correctas.",
+      "explicacion": "Un JavaBean convencional mantiene sus propiedades como estado privado, las expone mediante métodos de acceso y dispone de un constructor sin argumentos para que las herramientas puedan instanciarlo. Implementar Serializable permite guardar y recuperar su estado, de modo que las tres características forman el patrón esperado."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 113,
+      "pregunta": "¿Qué es un componente?",
+      "opciones": [
+        "A. Es un elemento gráfico, como un botón.",
+        "B. Es un módulo o parte de una aplicación que hace una función global.",
+        "C. Es un módulo o parte que realiza una función concreta.",
+        "D. Es un módulo o parte que realiza una función concreta y ofrece una interfaz para acceder."
+      ],
+      "respuesta_correcta": "D. Es un módulo o parte que realiza una función concreta y ofrece una interfaz para acceder.",
+      "explicacion": "Un componente encapsula una responsabilidad concreta y define una interfaz mediante la que otros elementos pueden utilizar sus servicios. Esa separación permite sustituir, reutilizar o mantener el componente sin que sus consumidores necesiten conocer todos los detalles internos."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 114,
+      "pregunta": "¿Qué tipos de EJB hay?",
+      "opciones": [
+        "A. Entidad, Sesión y Dirigidos por mensajes.",
+        "B. Entidad, Sesión y Relación.",
+        "C. Entidad, Relación y Dirigidos por mensajes.",
+        "D. Sesión, Relación y Dirigidos por mensajes."
+      ],
+      "respuesta_correcta": "A. Entidad, Sesión y Dirigidos por mensajes.",
+      "explicacion": "La clasificación tradicional de EJB distingue beans de sesión, beans dirigidos por mensajes y beans de entidad. En las versiones actuales, los beans de sesión y los dirigidos por mensajes forman el núcleo, mientras que los beans de entidad antiguos son opcionales y la persistencia se modela normalmente con entidades JPA."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 115,
+      "pregunta": "¿En qué fichero se encuentra el descriptor de despliegue?",
+      "opciones": [
+        "A. MANIFEST.MF",
+        "B. web.xml",
+        "C. config.xml",
+        "D. descriptor.xml"
+      ],
+      "respuesta_correcta": "B. web.xml",
+      "explicacion": "web.xml es el descriptor de despliegue tradicional de una aplicación web Java. Se ubica dentro de WEB-INF y permite declarar y configurar elementos como servlets, filtros, listeners, parámetros y reglas de seguridad, aunque muchas configuraciones modernas también pueden expresarse mediante anotaciones."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 116,
+      "pregunta": "Indica qué sintaxis de JSP no es correcta:",
+      "opciones": [
+        "A. <% String variable = null; %>",
+        "B. <%@ page import=\"java.util.Date\" %>",
+        "C. <%$ variable = 10 * 10; %>",
+        "D. <%= request.getParameter(\"nombre\") %>"
+      ],
+      "respuesta_correcta": "C. <%$ variable = 10 * 10; %>",
+      "explicacion": "En JSP, un scriptlet se delimita con <% y %>, una directiva comienza con <%@ y una expresión que escribe su resultado usa <%=. La construcción <%$ ... %> no corresponde a ninguno de esos elementos válidos, por lo que esa asignación tiene una sintaxis incorrecta."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 117,
+      "pregunta": "Los JSP son ficheros de Java que pueden...",
+      "opciones": [
+        "A. Tener etiquetas",
+        "B. Directivas",
+        "C. Código del lenguaje Java",
+        "D. Todas las opciones son correctas."
+      ],
+      "respuesta_correcta": "D. Todas las opciones son correctas.",
+      "explicacion": "Una página JSP puede combinar datos de plantilla y etiquetas con directivas que orientan al contenedor y elementos de scripting basados en Java. Aunque hoy se prefieren etiquetas y lenguaje de expresiones para separar la presentación de la lógica, las tres formas están contempladas por la tecnología JSP."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 118,
+      "pregunta": "Los JavaBeans:",
+      "opciones": [
+        "A. Son un modelo de componentes para la versión Java SE.",
+        "B. Son un modelo de componentes para la versión Java EE.",
+        "C. Son clases que encapsulan un objeto concreto del modelo de datos.",
+        "D. Las opciones A y C son correctas."
+      ],
+      "respuesta_correcta": "D. Las opciones A y C son correctas.",
+      "explicacion": "JavaBeans es un modelo de componentes de Java SE basado en clases reutilizables que exponen propiedades mediante convenciones. Un bean puede encapsular un objeto del modelo de datos; no debe confundirse con Enterprise Beans, que pertenece a la plataforma empresarial y se ejecuta bajo los servicios de un contenedor."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 119,
+      "pregunta": "Podemos decir de los servlets que:",
+      "opciones": [
+        "A. Son programas contenidos en un módulo para ejecutarlos en el lado del servidor web.",
+        "B. Son programas contenidos en un módulo para ejecutarlo en el lado del cliente.",
+        "C. Son programas contenidos en un módulo que pueden ser invocados usando el protocolo FTP.",
+        "D. Todas las opciones son correctas."
+      ],
+      "respuesta_correcta": "A. Son programas contenidos en un módulo para ejecutarlos en el lado del servidor web.",
+      "explicacion": "Un servlet es un componente Java que se ejecuta dentro de un contenedor en el servidor. Recibe peticiones, aplica la lógica correspondiente y genera respuestas, normalmente a través de HTTP; no se ejecuta en el cliente ni se define como un programa invocado mediante FTP."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 120,
+      "pregunta": "¿Qué especifica el modelo de diseño MVC?",
+      "opciones": [
+        "A. El Mapa, la Vista y el Controlador.",
+        "B. El Mapa, la Vista y la Capa.",
+        "C. El Modelo, la Vista y la Capa.",
+        "D. El Modelo, la Vista y el Controlador."
+      ],
+      "respuesta_correcta": "D. El Modelo, la Vista y el Controlador.",
+      "explicacion": "MVC separa la aplicación en tres responsabilidades: el modelo representa los datos y el estado, la vista presenta la información y el controlador recibe la entrada y coordina la actualización del modelo y la respuesta. Esta separación facilita el mantenimiento y las pruebas."
+    }
+  ]
+}

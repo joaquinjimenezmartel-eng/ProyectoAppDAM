@@ -1,7 +1,7 @@
 const resumenSistemasGestionEmpresarial = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U7 · Sistemas, ERP, implantación y Odoo</span>
+    <span class="study-summary__eyebrow">U1–U8 · Sistemas, ERP, implantación y administración de Odoo</span>
     <h3 class="study-summary__title">Sistemas de gestión empresarial</h3>
     <p class="study-summary__lead">La empresa convierte operaciones diarias en datos y los transforma en información útil para coordinar el trabajo, atender a los clientes y controlar sus objetivos.</p>
   </header>
@@ -132,5 +132,29 @@ const resumenSistemasGestionEmpresarial = `
   <section class="study-summary__section">
     <h4>Informes y campos calculados</h4>
     <p>Los recursos de informes se agrupan habitualmente en el directorio <code>reports</code>. Un campo calculado utiliza un método indicado mediante <code>compute</code> para obtener su valor y puede declarar sus dependencias para que Odoo sepa cuándo debe recalcularlo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Accesos y administración de usuarios</h4>
+    <p>Los permisos sobre modelos se almacenan como registros de <code>ir.model.access</code> y suelen declararse en <code>ir.model.access.csv</code>. Una cuenta interna no puede administrar a otros usuarios sin derechos específicos. El superusuario omite los derechos de acceso y las reglas de registro, por lo que debe utilizarse con especial precaución.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Copias de seguridad de Odoo</h4>
+    <p><code>pg_dump</code> crea una copia lógica de la base de datos PostgreSQL. Para poder recuperar una instalación completa también deben conservarse el <em>filestore</em>, donde se guardan los adjuntos, y los archivos de configuración o personalizaciones necesarios.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Workers y configuración del servidor</h4>
+    <p>El modo multiproceso crea varios <em>workers</em> para atender peticiones concurrentes y aprovechar varios núcleos. El fichero de configuración permite ajustar su número, los límites de memoria y tiempo, los procesos cron y otros parámetros según la carga y los recursos disponibles.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Proxy inverso</h4>
+    <p>Un proxy inverso recibe las solicitudes de los clientes y las reenvía a los procesos internos de Odoo. Puede encargarse de HTTPS, aplicar límites y cabeceras, distribuir tráfico y dirigir conexiones especiales al puerto correspondiente. Al utilizarlo, Odoo debe configurarse en modo proxy.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Usuarios internos, externos y del sistema</h4>
+    <p>Los empleados suelen utilizar cuentas internas; clientes y proveedores pueden recibir acceso externo o de portal. Los grupos determinan qué información y operaciones están disponibles. Desde la versión 13, la cuenta System mostrada como OdooBot representa la cuenta raíz interna o superusuario.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Correo corporativo</h4>
+    <p>Para integrar un correo corporativo se configuran los servidores salientes y, cuando corresponde, los entrantes. La conexión necesita host, puerto, cifrado y credenciales válidas; el dominio, los alias y los registros DNS deben prepararse para que los mensajes se entreguen correctamente.</p>
   </section>
 </article>`;

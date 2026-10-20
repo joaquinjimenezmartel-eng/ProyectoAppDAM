@@ -839,5 +839,125 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "D. Notificación.",
     "explicacion": "Las notificaciones registran el momento asociado a su publicación para que el sistema pueda ordenar y presentar la información temporal. Un diálogo, un Toast o una preferencia no cumplen esa función de mensaje persistente gestionado por el sistema."
+  },
+  {
+    "id": 111,
+    "pregunta": "cardCornerRadius determina:",
+    "opciones": [
+      "A. El color de fondo de la tarjeta.",
+      "B. El radio de la esquina de la card.",
+      "C. La elevación de la tarjeta.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. El radio de la esquina de la card.",
+    "explicacion": "El atributo cardCornerRadius establece el radio de las esquinas de un CardView. Cuanto mayor sea su valor, más redondeadas se mostrarán; el color de fondo y la elevación se configuran con atributos diferentes."
+  },
+  {
+    "id": 112,
+    "pregunta": "Con él podemos cambiar el orden establecido de apertura de pantallas de nuestra aplicación:",
+    "opciones": [
+      "A. Snackbar.",
+      "B. CardView.",
+      "C. RecyclerView.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "Snackbar muestra avisos breves, CardView presenta contenido dentro de una tarjeta y RecyclerView organiza colecciones de elementos. Ninguno de estos componentes controla el orden en que se abren las pantallas; esa navegación se gestiona con mecanismos como intents, la pila de actividades o un grafo de navegación."
+  },
+  {
+    "id": 113,
+    "pregunta": "Es también llamada ActionBar:",
+    "opciones": [
+      "A. TabLayout.",
+      "B. TextInputLayout.",
+      "C. FloatingActionButton.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores.",
+    "explicacion": "La ActionBar es la barra de acciones situada normalmente en la parte superior de una pantalla y puede implementarse mediante una Toolbar. TabLayout, TextInputLayout y FloatingActionButton cumplen funciones distintas, por lo que ninguna opción propuesta corresponde a la ActionBar."
+  },
+  {
+    "id": 114,
+    "pregunta": "Floating Action Button tiene un total de tipos distintos de:",
+    "opciones": [
+      "A. 2.",
+      "B. 3.",
+      "C. 4.",
+      "D. 5."
+    ],
+    "respuesta_correcta": "B. 3.",
+    "explicacion": "FloatingActionButton admite tres modos de tamaño predefinidos: normal, mini y automático. El modo automático elige entre los otros tamaños en función del espacio disponible en la pantalla."
+  },
+  {
+    "id": 115,
+    "pregunta": "Librería que nos permite, a partir de una imagen, extraer colores:",
+    "opciones": [
+      "A. CardView.",
+      "B. Palette.",
+      "C. Pattern.",
+      "D. Scrapped."
+    ],
+    "respuesta_correcta": "B. Palette.",
+    "explicacion": "La biblioteca Palette analiza una imagen y obtiene muestras de sus colores más representativos. Puede proporcionar tonos vibrantes, apagados, claros u oscuros para adaptar la interfaz al contenido visual."
+  },
+  {
+    "id": 116,
+    "pregunta": "Lo importante con los colores es:",
+    "opciones": [
+      "A. Que destaquen.",
+      "B. Que sean numerosos.",
+      "C. Que se use una gama preseleccionada.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "C. Que se use una gama preseleccionada.",
+    "explicacion": "Una gama definida de antemano mantiene la coherencia visual y ayuda a asignar funciones reconocibles a cada color. También facilita comprobar el contraste y evita que una cantidad excesiva de tonos distraiga o dificulte la lectura."
+  },
+  {
+    "id": 117,
+    "pregunta": "Muestra información de forma parecida a un Toast:",
+    "opciones": [
+      "A. Snackbar.",
+      "B. CardView.",
+      "C. RecyclerView.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "A. Snackbar.",
+    "explicacion": "Snackbar presenta un mensaje breve y temporal, normalmente en la parte inferior de la pantalla. Se parece a un Toast, pero puede incluir una acción para que la persona responda directamente al aviso."
+  },
+  {
+    "id": 118,
+    "pregunta": "Si un elemento posee sombra indica:",
+    "opciones": [
+      "A. Que está por encima y puede ser más importante en ese momento.",
+      "B. Que emplea una gama de colores.",
+      "C. Que emplea animaciones adecuadas.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "A. Que está por encima y puede ser más importante en ese momento.",
+    "explicacion": "En una interfaz basada en Material Design, la sombra comunica elevación: el elemento parece situado por encima de otros dentro del eje visual. Esta separación puede reforzar su jerarquía o destacar su relevancia en ese momento."
+  },
+  {
+    "id": 119,
+    "pregunta": "Su finalidad es estilizar los campos de texto con animaciones:",
+    "opciones": [
+      "A. TabLayout.",
+      "B. TextInputLayout.",
+      "C. Floating ActionButton.",
+      "D. Ninguna de las anteriores."
+    ],
+    "respuesta_correcta": "B. TextInputLayout.",
+    "explicacion": "TextInputLayout envuelve un campo de entrada y añade funciones visuales como una etiqueta flotante animada, mensajes de ayuda, errores, contador de caracteres e iconos. Así mejora la presentación y la información asociada al texto introducido."
+  },
+  {
+    "id": 120,
+    "pregunta": "Visualizaciones fuera de la pantalla a la espera de su eliminación o restauración:",
+    "opciones": [
+      "A. CardView.",
+      "B. Palette.",
+      "C. Pattern.",
+      "D. Scrapped."
+    ],
+    "respuesta_correcta": "D. Scrapped.",
+    "explicacion": "En RecyclerView, una vista scrapped está apartada temporalmente mientras el sistema decide si puede reutilizarla o debe retirarla. Conservar estas vistas durante el proceso permite reducir creaciones innecesarias y mejorar el rendimiento de la lista."
   }
 ];

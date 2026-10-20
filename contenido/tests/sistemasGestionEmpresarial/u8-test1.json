@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "asignaturaId": "sistemasGestionEmpresarial",
+  "testId": "u8-test1",
+  "fuente": "U8/U8 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "numeroOriginal": 2,
+      "id": 112,
+      "campo": "pregunta",
+      "original": "¿Qué acción puede realizar un usuario interno en referencia a los demás usuarios de Odoo?",
+      "corregido": "¿Qué acción puede realizar un usuario interno respecto a los demás usuarios de Odoo?",
+      "autorizacion": "Corrección gramatical autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 113,
+      "campo": "opciones[0]",
+      "original": "A. pgAdmin4",
+      "corregido": "A. pgAdmin 4",
+      "autorizacion": "Corrección de grafía técnica autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 115,
+      "campo": "opciones[1]",
+      "original": "B. Un servicio intermediario entre solicitudes cliente y servidores",
+      "corregido": "B. Un servicio intermediario entre solicitudes de clientes y servidores",
+      "autorizacion": "Corrección gramatical autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 119,
+      "campo": "pregunta",
+      "original": "Indica que afirmación es cierta acerca del usuario System(OdooBot) (a partir de la versión 13):",
+      "corregido": "Indica qué afirmación es cierta acerca del usuario System (OdooBot) a partir de la versión 13:",
+      "autorizacion": "Corrección ortográfica y de espaciado autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 119,
+      "campo": "opciones[3]",
+      "original": "D. Es el usuario Administrador",
+      "corregido": "D. Es el usuario administrador",
+      "autorizacion": "Corrección de mayúsculas autorizada por el propietario; no modifica la solución."
+    }
+  ],
+  "notasRevision": [],
+  "referenciasExplicaciones": [
+    "https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/04_securityintro.html",
+    "https://www.odoo.com/documentation/17.0/developer/reference/backend/security.html",
+    "https://www.odoo.com/documentation/17.0/administration/on_premise/deploy.html",
+    "https://www.odoo.com/documentation/13.0/applications/general/email_communication/email_servers.html",
+    "https://www.odoo.com/documentation/17.0/applications/general/users/access_rights.html",
+    "https://www.postgresql.org/docs/current/backup.html"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 111,
+      "pregunta": "¿En qué modelo se puede encontrar el control de acceso de usuarios?",
+      "opciones": [
+        "A. res.partner.access",
+        "B. ir.model.access",
+        "C. ir.model.security",
+        "D. models.py"
+      ],
+      "respuesta_correcta": "B. ir.model.access",
+      "explicacion": "En Odoo, cada permiso de acceso a un modelo es un registro de ir.model.access. Estos registros relacionan un modelo y, normalmente, un grupo con las operaciones permitidas de lectura, escritura, creación y eliminación; en los módulos suelen declararse mediante el archivo ir.model.access.csv."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 112,
+      "pregunta": "¿Qué acción puede realizar un usuario interno respecto a los demás usuarios de Odoo?",
+      "opciones": [
+        "A. Administrar al resto si entra en \"Modo desarrollador\"",
+        "B. Nada",
+        "C. Crearlos con permisos básicos, pero no modificarlos",
+        "D. Modificar usuarios, pero no crearlos"
+      ],
+      "respuesta_correcta": "B. Nada",
+      "explicacion": "Ser usuario interno permite acceder al entorno de trabajo, pero no concede por sí solo permisos para crear, modificar o administrar otras cuentas. La gestión de usuarios requiere derechos específicos de administración; activar el modo desarrollador tampoco amplía los permisos de seguridad."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 113,
+      "pregunta": "¿Qué comando podemos usar para realizar copias de seguridad de un ERP?",
+      "opciones": [
+        "A. pgAdmin 4",
+        "B. pg_dump",
+        "C. cron",
+        "D. dump_pg"
+      ],
+      "respuesta_correcta": "B. pg_dump",
+      "explicacion": "Odoo almacena su información estructurada en PostgreSQL. La utilidad pg_dump extrae una base de datos a un archivo de texto o de tipo archivo para poder restaurarla posteriormente; una copia completa de Odoo también debe proteger el filestore y la configuración necesarios."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 114,
+      "pregunta": "¿Qué consigue el uso de los workers?",
+      "opciones": [
+        "A. Obtener el mismo resultado que si lanzásemos varias instancias de la aplicación",
+        "B. Reducir el número de peticiones que va a recibir el servidor",
+        "C. Correr cierto peligro de que los tiempos de espera aumenten",
+        "D. Que la instancia de Odoo solo use un único core del procesador"
+      ],
+      "respuesta_correcta": "A. Obtener el mismo resultado que si lanzásemos varias instancias de la aplicación",
+      "explicacion": "El modo multiproceso inicia un conjunto de workers que atienden peticiones de forma concurrente. Se comporta como disponer de varios procesos de la aplicación coordinados y permite aprovechar mejor varios núcleos, siempre que el número de workers y los límites de memoria se ajusten al servidor."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 115,
+      "pregunta": "¿Qué es un proxy inverso?",
+      "opciones": [
+        "A. Una biblioteca para Python",
+        "B. Un servicio intermediario entre solicitudes de clientes y servidores",
+        "C. Un modelo de programación",
+        "D. Es un algoritmo de encriptación"
+      ],
+      "respuesta_correcta": "B. Un servicio intermediario entre solicitudes de clientes y servidores",
+      "explicacion": "Un proxy inverso recibe las conexiones de los clientes y las reenvía al servidor de Odoo adecuado. Puede terminar HTTPS, aplicar límites y cabeceras, repartir tráfico y dirigir conexiones especiales al worker correspondiente sin exponer directamente los procesos internos."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 116,
+      "pregunta": "¿Qué se busca con la modificación del fichero de configuración de Odoo?",
+      "opciones": [
+        "A. Optimizar el servidor al máximo",
+        "B. Cambiar el nombre de las variables",
+        "C. Crear nuevos módulos",
+        "D. Incluir parámetros de configuración de los módulos"
+      ],
+      "respuesta_correcta": "A. Optimizar el servidor al máximo",
+      "explicacion": "El fichero de configuración permite adaptar el funcionamiento del servidor mediante parámetros como workers, memoria, tiempos máximos, procesos cron, base de datos y modo proxy. Ajustarlos a la carga y al hardware mejora el aprovechamiento de recursos y la estabilidad del despliegue."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 117,
+      "pregunta": "¿Qué usuario no tiene ninguna restricción en Odoo?",
+      "opciones": [
+        "A. El usuario administrador",
+        "B. El usuario del jefe",
+        "C. El superusuario",
+        "D. Todas son incorrectas."
+      ],
+      "respuesta_correcta": "C. El superusuario",
+      "explicacion": "El modo superusuario omite los derechos de acceso y las reglas de registro, por lo que puede consultar o modificar información sin las restricciones ordinarias. Debe utilizarse con especial cuidado porque una operación incorrecta puede afectar a cualquier parte de la base de datos."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 118,
+      "pregunta": "Indica cuál de los siguientes podría ser un usuario en Odoo:",
+      "opciones": [
+        "A. Un empleado",
+        "B. Un proveedor de la empresa",
+        "C. Un cliente de la empresa",
+        "D. Todos pueden ser usuarios"
+      ],
+      "respuesta_correcta": "D. Todos pueden ser usuarios",
+      "explicacion": "Un empleado puede disponer de una cuenta interna y un cliente o proveedor puede recibir acceso externo o de portal cuando la organización lo necesite. El tipo de cuenta y los grupos asignados determinan qué aplicaciones, registros y operaciones quedan disponibles."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 119,
+      "pregunta": "Indica qué afirmación es cierta acerca del usuario System (OdooBot) a partir de la versión 13:",
+      "opciones": [
+        "A. Es el usuario Master",
+        "B. Es el usuario del modo desarrollador",
+        "C. Es el superusuario",
+        "D. Es el usuario administrador"
+      ],
+      "respuesta_correcta": "C. Es el superusuario",
+      "explicacion": "System, mostrado como OdooBot, representa la cuenta raíz interna identificada como base.user_root. Esta cuenta se asocia al identificador de superusuario y se diferencia tanto del administrador normal como del modo desarrollador, que solo habilita herramientas técnicas de la interfaz."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 120,
+      "pregunta": "Si se quiere usar el correo corporativo con Odoo, ¿qué es necesario hacer?",
+      "opciones": [
+        "A. Usar servidores de correo compatibles con Odoo",
+        "B. Configurar los servidores de correo de Odoo",
+        "C. Instalar Odoo en un ISP",
+        "D. Todas son incorrectas"
+      ],
+      "respuesta_correcta": "B. Configurar los servidores de correo de Odoo",
+      "explicacion": "Para utilizar un servidor corporativo se configuran en Odoo los datos del servidor saliente y, cuando procede, del servidor entrante: dirección, puerto, cifrado y credenciales. Después se comprueba la conexión y se ajustan el dominio y los alias necesarios para enviar y recibir mensajes correctamente."
+    }
+  ]
+}

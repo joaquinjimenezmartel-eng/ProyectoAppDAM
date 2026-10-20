@@ -1,7 +1,7 @@
 const resumenAccesoDatos = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U7 · Persistencia, JDBC y modelos de objetos</span>
+    <span class="study-summary__eyebrow">U1–U8 · Persistencia, JDBC y aplicaciones empresariales</span>
     <h3 class="study-summary__title">Acceso a datos</h3>
     <p class="study-summary__lead">Acceder a datos implica decidir cómo se representan, dónde se conservan y qué garantías debe ofrecer el sistema cuando los consulta o modifica.</p>
   </header>
@@ -124,5 +124,25 @@ const resumenAccesoDatos = `
   <section class="study-summary__section">
     <h4>APIs y bases de datos nativas de XML</h4>
     <p><strong>XQJ</strong> ofrece una interfaz Java para ejecutar XQuery, mientras que <strong>XML:DB</strong> permite acceder a colecciones y recursos XML. Motores nativos como <strong>eXist-db</strong> proporcionan consulta, validación, indexación y APIs sin depender de SQL como lenguaje principal.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Componentes y JavaBeans</h4>
+    <p>Un componente encapsula una función concreta y ofrece una interfaz para utilizarla. Un <strong>JavaBean</strong> es una clase reutilizable de Java SE que sigue convenciones como disponer de constructor sin argumentos, mantener las propiedades privadas y exponer métodos de acceso. La serialización permite conservar y recuperar su estado.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Enterprise JavaBeans</h4>
+    <p>Los <strong>EJB</strong> son componentes empresariales gestionados por un contenedor que puede proporcionar transacciones, concurrencia, persistencia e integración con mensajería. La clasificación tradicional incluye beans de sesión, dirigidos por mensajes y de entidad; estos últimos han sido sustituidos en gran medida por entidades JPA.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Servlets, JSP y despliegue web</h4>
+    <p>Un <strong>servlet</strong> procesa peticiones en el servidor web. Una página <strong>JSP</strong> puede combinar etiquetas, directivas y elementos de scripting, aunque se recomienda separar la presentación de la lógica. El fichero <code>WEB-INF/web.xml</code> es el descriptor de despliegue tradicional para declarar y configurar componentes de la aplicación web.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Sintaxis básica de JSP</h4>
+    <p>Los scriptlets se delimitan con <code>&lt;% ... %&gt;</code>, las directivas comienzan con <code>&lt;%@</code> y las expresiones que escriben un resultado usan <code>&lt;%= ... %&gt;</code>. Estas formas pertenecen a la sintaxis JSP y son interpretadas por el contenedor al traducir la página.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Modelo, vista y controlador</h4>
+    <p>El patrón <strong>MVC</strong> separa el modelo que representa los datos, la vista que los presenta y el controlador que procesa la entrada y coordina la respuesta. Esta división reduce el acoplamiento y permite modificar la interfaz o la lógica con menor impacto en el resto de la aplicación.</p>
   </section>
 </article>`;

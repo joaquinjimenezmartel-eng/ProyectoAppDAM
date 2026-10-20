@@ -839,5 +839,125 @@ const preguntasAccesoDatos = [
     ],
     "respuesta_correcta": "A. eXist.",
     "explicacion": "eXist-db es una base de datos nativa de XML: conserva los documentos XML en colecciones y permite consultarlos con XQuery, además de ofrecer indexación y APIs de acceso."
+  },
+  {
+    "id": 111,
+    "pregunta": "¿Qué característica no es correcta para los EJB?",
+    "opciones": [
+      "A. Control de concurrencia.",
+      "B. Es igual que un JavaBean.",
+      "C. Uso de la API JPA para la persistencia de objetos.",
+      "D. Sistemas de mensajes con JMS."
+    ],
+    "respuesta_correcta": "B. Es igual que un JavaBean.",
+    "explicacion": "Un EJB es un componente empresarial gestionado por un contenedor, que puede proporcionar servicios como transacciones, concurrencia, persistencia mediante JPA e integración con mensajería. Un JavaBean es una clase Java reutilizable basada en convenciones de propiedades, por lo que ambos conceptos no son equivalentes."
+  },
+  {
+    "id": 112,
+    "pregunta": "¿Qué características debe cumplir un JavaBean?",
+    "opciones": [
+      "A. Implementar la interfaz Serializable.",
+      "B. Tener un constructor vacío.",
+      "C. Las propiedades son de ámbito privado.",
+      "D. Todas las opciones son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las opciones son correctas.",
+    "explicacion": "Un JavaBean convencional mantiene sus propiedades como estado privado, las expone mediante métodos de acceso y dispone de un constructor sin argumentos para que las herramientas puedan instanciarlo. Implementar Serializable permite guardar y recuperar su estado, de modo que las tres características forman el patrón esperado."
+  },
+  {
+    "id": 113,
+    "pregunta": "¿Qué es un componente?",
+    "opciones": [
+      "A. Es un elemento gráfico, como un botón.",
+      "B. Es un módulo o parte de una aplicación que hace una función global.",
+      "C. Es un módulo o parte que realiza una función concreta.",
+      "D. Es un módulo o parte que realiza una función concreta y ofrece una interfaz para acceder."
+    ],
+    "respuesta_correcta": "D. Es un módulo o parte que realiza una función concreta y ofrece una interfaz para acceder.",
+    "explicacion": "Un componente encapsula una responsabilidad concreta y define una interfaz mediante la que otros elementos pueden utilizar sus servicios. Esa separación permite sustituir, reutilizar o mantener el componente sin que sus consumidores necesiten conocer todos los detalles internos."
+  },
+  {
+    "id": 114,
+    "pregunta": "¿Qué tipos de EJB hay?",
+    "opciones": [
+      "A. Entidad, Sesión y Dirigidos por mensajes.",
+      "B. Entidad, Sesión y Relación.",
+      "C. Entidad, Relación y Dirigidos por mensajes.",
+      "D. Sesión, Relación y Dirigidos por mensajes."
+    ],
+    "respuesta_correcta": "A. Entidad, Sesión y Dirigidos por mensajes.",
+    "explicacion": "La clasificación tradicional de EJB distingue beans de sesión, beans dirigidos por mensajes y beans de entidad. En las versiones actuales, los beans de sesión y los dirigidos por mensajes forman el núcleo, mientras que los beans de entidad antiguos son opcionales y la persistencia se modela normalmente con entidades JPA."
+  },
+  {
+    "id": 115,
+    "pregunta": "¿En qué fichero se encuentra el descriptor de despliegue?",
+    "opciones": [
+      "A. MANIFEST.MF",
+      "B. web.xml",
+      "C. config.xml",
+      "D. descriptor.xml"
+    ],
+    "respuesta_correcta": "B. web.xml",
+    "explicacion": "web.xml es el descriptor de despliegue tradicional de una aplicación web Java. Se ubica dentro de WEB-INF y permite declarar y configurar elementos como servlets, filtros, listeners, parámetros y reglas de seguridad, aunque muchas configuraciones modernas también pueden expresarse mediante anotaciones."
+  },
+  {
+    "id": 116,
+    "pregunta": "Indica qué sintaxis de JSP no es correcta:",
+    "opciones": [
+      "A. <% String variable = null; %>",
+      "B. <%@ page import=\"java.util.Date\" %>",
+      "C. <%$ variable = 10 * 10; %>",
+      "D. <%= request.getParameter(\"nombre\") %>"
+    ],
+    "respuesta_correcta": "C. <%$ variable = 10 * 10; %>",
+    "explicacion": "En JSP, un scriptlet se delimita con <% y %>, una directiva comienza con <%@ y una expresión que escribe su resultado usa <%=. La construcción <%$ ... %> no corresponde a ninguno de esos elementos válidos, por lo que esa asignación tiene una sintaxis incorrecta."
+  },
+  {
+    "id": 117,
+    "pregunta": "Los JSP son ficheros de Java que pueden...",
+    "opciones": [
+      "A. Tener etiquetas",
+      "B. Directivas",
+      "C. Código del lenguaje Java",
+      "D. Todas las opciones son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las opciones son correctas.",
+    "explicacion": "Una página JSP puede combinar datos de plantilla y etiquetas con directivas que orientan al contenedor y elementos de scripting basados en Java. Aunque hoy se prefieren etiquetas y lenguaje de expresiones para separar la presentación de la lógica, las tres formas están contempladas por la tecnología JSP."
+  },
+  {
+    "id": 118,
+    "pregunta": "Los JavaBeans:",
+    "opciones": [
+      "A. Son un modelo de componentes para la versión Java SE.",
+      "B. Son un modelo de componentes para la versión Java EE.",
+      "C. Son clases que encapsulan un objeto concreto del modelo de datos.",
+      "D. Las opciones A y C son correctas."
+    ],
+    "respuesta_correcta": "D. Las opciones A y C son correctas.",
+    "explicacion": "JavaBeans es un modelo de componentes de Java SE basado en clases reutilizables que exponen propiedades mediante convenciones. Un bean puede encapsular un objeto del modelo de datos; no debe confundirse con Enterprise Beans, que pertenece a la plataforma empresarial y se ejecuta bajo los servicios de un contenedor."
+  },
+  {
+    "id": 119,
+    "pregunta": "Podemos decir de los servlets que:",
+    "opciones": [
+      "A. Son programas contenidos en un módulo para ejecutarlos en el lado del servidor web.",
+      "B. Son programas contenidos en un módulo para ejecutarlo en el lado del cliente.",
+      "C. Son programas contenidos en un módulo que pueden ser invocados usando el protocolo FTP.",
+      "D. Todas las opciones son correctas."
+    ],
+    "respuesta_correcta": "A. Son programas contenidos en un módulo para ejecutarlos en el lado del servidor web.",
+    "explicacion": "Un servlet es un componente Java que se ejecuta dentro de un contenedor en el servidor. Recibe peticiones, aplica la lógica correspondiente y genera respuestas, normalmente a través de HTTP; no se ejecuta en el cliente ni se define como un programa invocado mediante FTP."
+  },
+  {
+    "id": 120,
+    "pregunta": "¿Qué especifica el modelo de diseño MVC?",
+    "opciones": [
+      "A. El Mapa, la Vista y el Controlador.",
+      "B. El Mapa, la Vista y la Capa.",
+      "C. El Modelo, la Vista y la Capa.",
+      "D. El Modelo, la Vista y el Controlador."
+    ],
+    "respuesta_correcta": "D. El Modelo, la Vista y el Controlador.",
+    "explicacion": "MVC separa la aplicación en tres responsabilidades: el modelo representa los datos y el estado, la vista presenta la información y el controlador recibe la entrada y coordina la actualización del modelo y la respuesta. Esta separación facilita el mantenimiento y las pruebas."
   }
 ];
