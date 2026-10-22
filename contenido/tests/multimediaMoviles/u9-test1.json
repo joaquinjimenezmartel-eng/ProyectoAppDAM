@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "asignaturaId": "multimediaMoviles",
+  "testId": "u9-test1",
+  "fuente": "U9/U9 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "preguntasOriginales": [2, 3, 4, 5, 6, 8, 9],
+      "ids": [122, 123, 124, 125, 126, 128, 129],
+      "campo": "pregunta",
+      "correccion": "Se incorporan los signos de interrogación y se normaliza la puntuación de los enunciados.",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica las soluciones."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 124,
+      "campos": ["opciones.A", "opciones.B", "opciones.D", "respuesta_correcta"],
+      "correccion": "Post() → post(), retirada del punto unido al nombre runOnUiThread() y eliminación del punto duplicado en la opción D.",
+      "autorizacion": "Corrección de grafía técnica y puntuación autorizada por el propietario; se mantiene la opción D como solución."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 126,
+      "campos": ["opciones.C", "opciones.D", "respuesta_correcta"],
+      "correccion": "Se normalizan los separadores de Params, Progress y Result y se elimina la coma final.",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; se mantiene la opción D como solución."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 128,
+      "campos": ["opciones.A", "opciones.D"],
+      "correccion": "simultanea → simultánea; todas la demás → todas las demás.",
+      "autorizacion": "Corrección ortográfica y gramatical autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 129,
+      "campos": ["opciones.A", "opciones.B", "opciones.C", "respuesta_correcta"],
+      "correccion": "Se retiran los puntos añadidos a los nombres de los métodos.",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; se mantiene la opción C como solución."
+    }
+  ],
+  "notasRevision": [
+    {
+      "numeroOriginal": 7,
+      "id": 127,
+      "respuestaSeleccionadaIncorrecta": "C. El lanzamiento de DialogFragment se realiza a través de FragmentManager.",
+      "respuestaCorrectaIndicada": "D. Todas las opciones son correctas.",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 128,
+      "respuestaSeleccionadaIncorrecta": "B. Aquellos procesos que son independientes del resto de procesos.",
+      "respuestaCorrectaIndicada": "C. Es aquel proceso que necesita esperar resultados y/o pausa el proceso que lo invocó.",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    }
+  ],
+  "referenciasExplicaciones": [
+    "https://developer.android.com/reference/android/os/AsyncTask",
+    "https://developer.android.com/guide/fragments",
+    "https://developer.android.com/guide/fragments/lifecycle",
+    "https://developer.android.com/reference/androidx/fragment/app/DialogFragment",
+    "https://developer.android.com/develop/background-work/services/bound-services",
+    "https://developer.android.com/develop/background-work/background-tasks",
+    "https://developer.android.com/reference/android/content/Context#sendStickyBroadcast(android.content.Intent)"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 121,
+      "pregunta": "¿Qué método pasa la información al hilo principal en un AsyncTask?",
+      "opciones": [
+        "A. publishProgress",
+        "B. onPostExecute",
+        "C. onPreExecute",
+        "D. onProgressUpdate"
+      ],
+      "respuesta_correcta": "A. publishProgress",
+      "explicacion": "Dentro de doInBackground(), publishProgress() envía valores de progreso para que AsyncTask invoque onProgressUpdate() en el hilo principal. Así puede actualizarse la interfaz sin ejecutar el trabajo pesado en ese hilo. AsyncTask está obsoleto desde Android 11, pero esta relación entre ambos métodos sigue siendo la que describe la API."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 122,
+      "pregunta": "¿Cuál de las siguientes afirmaciones sobre los fragmentos es falsa?",
+      "opciones": [
+        "A. Los fragmentos nos permiten una gran flexibilidad de diseño de las interfaces.",
+        "B. Los fragmentos se declaran en el Manifest.",
+        "C. Los fragmentos tienen carácter modular.",
+        "D. Existen fragmentos especiales como ListFragment, PreferenceFragment y DialogFragment."
+      ],
+      "respuesta_correcta": "B. Los fragmentos se declaran en el Manifest.",
+      "explicacion": "Un Fragment es una parte modular y reutilizable de la interfaz que debe alojarse en una Activity u otro fragmento. Puede añadirse mediante el código o la disposición de la interfaz, pero no se registra como componente de la aplicación en AndroidManifest.xml; por eso la afirmación B es la falsa."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 123,
+      "pregunta": "¿Cuál de las siguientes es una forma de comunicación con un Bound Service?",
+      "opciones": [
+        "A. IBinder.",
+        "B. Messenger.",
+        "C. AIDL.",
+        "D. Todas son correctas."
+      ],
+      "respuesta_correcta": "D. Todas son correctas.",
+      "explicacion": "Un servicio enlazado entrega un IBinder a sus clientes. La comunicación puede realizarse mediante una implementación local de Binder, mediante Messenger para intercambiar mensajes entre procesos o mediante AIDL cuando se necesita una interfaz IPC más directa y capaz de atender solicitudes simultáneas."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 124,
+      "pregunta": "¿Cuál de los siguientes es un sistema de comunicación de los hilos secundarios?",
+      "opciones": [
+        "A. post()",
+        "B. runOnUiThread()",
+        "C. Handler.",
+        "D. Todos los anteriores."
+      ],
+      "respuesta_correcta": "D. Todos los anteriores.",
+      "explicacion": "Un hilo secundario no debe modificar directamente las vistas. Puede publicar una tarea con post(), solicitar su ejecución mediante runOnUiThread() o enviar trabajo a un Handler asociado al hilo principal. Los tres mecanismos permiten coordinar el trabajo en segundo plano con la interfaz."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 125,
+      "pregunta": "¿Cuál de los siguientes métodos no corresponde a los de un fragmento?",
+      "opciones": [
+        "A. onAttach",
+        "B. onActivityCreated",
+        "C. onDispatch",
+        "D. onDestroyView"
+      ],
+      "respuesta_correcta": "C. onDispatch",
+      "explicacion": "onAttach() y onDestroyView() forman parte del ciclo de vida de un Fragment. onActivityCreated() también existió como callback, aunque actualmente está obsoleto. onDispatch() no es un método del ciclo de vida de Fragment, por lo que es la opción que no corresponde."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 126,
+      "pregunta": "¿Cuáles son los tres métodos que necesita AsyncTask para crearse y cuál es su orden?",
+      "opciones": [
+        "A. Params, Data, Result.",
+        "B. Progress, Result, Data.",
+        "C. Data, Progress, Result.",
+        "D. Params, Progress, Result."
+      ],
+      "respuesta_correcta": "D. Params, Progress, Result.",
+      "explicacion": "La declaración AsyncTask<Params, Progress, Result> utiliza ese orden: Params representa los datos de entrada, Progress los valores de avance y Result el resultado final. Aunque el enunciado los denomina métodos, técnicamente son los tres tipos genéricos con los que se configura la tarea."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 127,
+      "pregunta": "Marca la opción correcta sobre un DialogFragment:",
+      "opciones": [
+        "A. Dentro del método newInstance() del fragmento, el título se pasa como argumento en un Bundle.",
+        "B. Está formado por título, descripción y puede tener hasta tres opciones.",
+        "C. El lanzamiento de DialogFragment se realiza a través de FragmentManager.",
+        "D. Todas las opciones son correctas."
+      ],
+      "respuesta_correcta": "D. Todas las opciones son correctas.",
+      "explicacion": "Un patrón habitual consiste en crear el DialogFragment mediante newInstance(), guardar sus argumentos en un Bundle y mostrarlo con FragmentManager. Cuando contiene un AlertDialog puede presentar título, contenido y hasta tres botones de acción. Por ello, dentro del planteamiento descrito, todas las opciones son correctas."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 128,
+      "pregunta": "¿Qué es una tarea síncrona?",
+      "opciones": [
+        "A. La que realiza varios procesos de forma simultánea.",
+        "B. Aquellos procesos que son independientes del resto de procesos.",
+        "C. Es aquel proceso que necesita esperar resultados y/o pausa el proceso que lo invocó.",
+        "D. Proceso que puede sincronizar todas las demás tareas o procesos."
+      ],
+      "respuesta_correcta": "C. Es aquel proceso que necesita esperar resultados y/o pausa el proceso que lo invocó.",
+      "explicacion": "En una ejecución síncrona, quien inicia una operación espera a que termine antes de continuar. Si una tarea lenta se ejecuta de esta forma en el hilo principal, la interfaz puede quedar bloqueada; por eso el trabajo costoso suele trasladarse a mecanismos asíncronos o a hilos secundarios."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 129,
+      "pregunta": "¿Qué método se utiliza en un Broadcast para que el Intent permanezca?",
+      "opciones": [
+        "A. sendBroadcast",
+        "B. sendOrderedBroadcast",
+        "C. sendStickyBroadcast",
+        "D. Ninguna es correcta."
+      ],
+      "respuesta_correcta": "C. sendStickyBroadcast",
+      "explicacion": "sendStickyBroadcast() hacía que el Intent permaneciera disponible después de finalizar la difusión para que un receptor registrado más tarde pudiera recuperar el último valor. Es la respuesta histórica correcta, aunque este método está obsoleto y no debe utilizarse en aplicaciones nuevas por sus problemas de seguridad."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 130,
+      "pregunta": "Utilizamos los threads o hilos secundarios para...",
+      "opciones": [
+        "A. Aliviar la carga del hilo principal para evitar ralentizaciones o bloqueos en este.",
+        "B. Realizar solamente tareas síncronas.",
+        "C. Ejecutar una copia del hilo principal para que este no se quede bloqueado.",
+        "D. Ninguna de las anteriores es correcta."
+      ],
+      "respuesta_correcta": "A. Aliviar la carga del hilo principal para evitar ralentizaciones o bloqueos en este.",
+      "explicacion": "El hilo principal gestiona la interfaz y debe permanecer disponible para responder a las acciones del usuario. Los cálculos, accesos a red u operaciones largas se trasladan a hilos secundarios para evitar pausas visibles y errores ANR; no son una copia del hilo principal."
+    }
+  ]
+}

@@ -337,3 +337,24 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre derechos de acceso, usuarios, `pg_dump`, workers, proxy inverso, configuración del servidor, superusuario, OdooBot y correo corporativo. El resumen se amplía de U1–U7 a U1–U8.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 1110 preguntas existentes antes de esta U8 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 22 de octubre de 2026 — Multimedia U9
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U9 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 121–130. JSON `contenido/tests/multimediaMoviles/u9-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 131.
+- En las preguntas originales 7 y 8, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: D («Todas las opciones son correctas») y C («Es aquel proceso que necesita esperar resultados y/o pausa el proceso que lo invocó»), respectivamente.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales, técnicas y de puntuación documentadas en el JSON. Incluyen signos de interrogación, `Post()` → `post()`, eliminación de puntos unidos a nombres de métodos o duplicados, `simultanea` → `simultánea` y `todas la demás` → `todas las demás`. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre AsyncTask, comunicación con el hilo principal, fragmentos, DialogFragment, Bound Service, sincronía, difusiones persistentes y trabajo en hilos secundarios. Las explicaciones advierten de que AsyncTask y `sendStickyBroadcast()` están obsoletos, sin alterar las respuestas históricas evaluadas. El resumen se amplía de U1–U8 a U1–U9.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1120 preguntas existentes antes de esta U9 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 22 de octubre de 2026 — Desarrollo de interfaces U9
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U9 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 121–130. JSON `contenido/tests/desarrolloInterfaces/u9-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 131.
+- En la pregunta original 7, la opción C fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: D («Nunca, dependen totalmente de los informes»).
+- Las únicas modificaciones textuales son correcciones ortográficas, técnicas y de puntuación documentadas en el JSON: retirada de los dos puntos situados tras una interrogación, incorporación de signos de interrogación, normalización de `Column Footer` y adición de un punto final omitido. Ninguna altera las soluciones.
+- Se conservan literalmente el sentido del enunciado de la pregunta 2 y la formulación de la pregunta 7, aunque resulten discutibles, porque corregirlas exigiría modificar contenido evaluable más allá de las erratas autorizadas. Las explicaciones aclaran los conceptos sin sustituir las respuestas del documento.
+- Cada pregunta incorpora una explicación didáctica sobre secciones de informes, buenas prácticas, gráficas, rutas de imágenes, consultas SQL, informes incrustados, subinformes y variables. El resumen se amplía de U1–U8 a U1–U9.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1130 preguntas existentes antes de esta U9 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.

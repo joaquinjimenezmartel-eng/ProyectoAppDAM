@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U8 · Diseño, componentes, usabilidad y documentación</span>
+    <span class="study-summary__eyebrow">U1–U9 · Diseño, componentes, usabilidad e informes</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -156,5 +156,21 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Documentación del proyecto</h4>
     <p>La documentación facilita la incorporación de nuevos miembros, conserva decisiones y aprendizajes y permite seguir la evolución del trabajo. La documentación técnica interna describe la arquitectura, los componentes, las interfaces, los datos, la configuración y las decisiones necesarias para desarrollar y mantener el sistema.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Estructura de un informe</h4>
+    <p>Jaspersoft Studio organiza el diseño en secciones o <em>bands</em>. <strong>Page Header</strong> aparece en la parte superior de las páginas y puede contener información identificativa; <strong>Column Header</strong> presenta los encabezados de las columnas; <strong>Detail</strong> se repite para cada registro; y <strong>Summary</strong> reúne información final, como totales o medias.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Consultas, imágenes y portabilidad</h4>
+    <p>Una consulta SQL básica comienza con <code>SELECT</code>, utiliza <code>FROM</code> para indicar el origen y puede añadir <code>WHERE</code> para filtrar registros. Las imágenes deben referenciarse de una forma que funcione también después del despliegue. Una ruta absoluta del sistema de archivos puede servir durante una prueba local, pero vincula el informe a un equipo concreto y reduce su portabilidad.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Informes incrustados y subinformes</h4>
+    <p>Un informe incrustado se genera o presenta dentro de la aplicación. Un <strong>subinforme</strong> se inserta en un informe maestro para reutilizar un diseño, combinar consultas o mostrar datos relacionados. El informe principal determina cuándo se ejecuta, le entrega parámetros o una fuente de datos y decide dónde aparece su contenido.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Gráficos y variables</h4>
+    <p>Las gráficas de líneas representan puntos sobre los ejes X e Y y permiten observar una evolución. Las gráficas circulares muestran cómo se reparte un total y son útiles cuando las categorías son pocas y sus porcentajes suman el 100 %. Las variables predefinidas son valores que el motor proporciona automáticamente, mientras que las variables creadas por el usuario calculan o conservan información definida en el diseño.</p>
   </section>
 </article>`;

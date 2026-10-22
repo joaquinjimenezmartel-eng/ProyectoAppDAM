@@ -5,7 +5,13 @@ const vm = require("node:vm");
 const { cargarContenido, calcularHuellaContenidoEvaluable } = require("./validate-content.js");
 const root = path.resolve(__dirname, "..");
 const { catalogo, bancoDePreguntas } = cargarContenido();
-const catalogoAntesGestionU8 = catalogo.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
+const catalogoAntesInterfacesU9 = catalogo.map((asignatura) => asignatura.id === "desarrolloInterfaces"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 120) }
+  : asignatura);
+const catalogoAntesMultimediaU9 = catalogoAntesInterfacesU9.map((asignatura) => asignatura.id === "multimediaMoviles"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 120) }
+  : asignatura);
+const catalogoAntesGestionU8 = catalogoAntesMultimediaU9.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
   ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 110) }
   : asignatura);
 const catalogoAntesAccesoU8 = catalogoAntesGestionU8.map((asignatura) => asignatura.id === "accesoDatos"
@@ -105,6 +111,12 @@ const catalogoAntesAccesoU2 = catalogoAntesMultimediaU3.map((asignatura) =>
 const catalogoAntesGestionU2 = catalogoAntesMultimediaU3.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
   ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 50) }
   : asignatura);
+// La U9 de Desarrollo de interfaces no puede modificar las 1130 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesInterfacesU9),
+  "c23d7c1015faeedc4bc6e516f8b12479f6727afce0803f084c951f49650a27ec");
+// La U9 de Multimedia no puede modificar las 1120 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesMultimediaU9),
+  "7c9066dd6d3a135f6f5938016309891d3b78f086bf1fddb8c3d8b4900a58235c");
 // La U8 de Sistemas de gestión empresarial no puede modificar las 1110 preguntas ya existentes.
 assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesGestionU8),
   "710548654c2738322ebc56dce4e9b33b6f89195dc10d0948243832cac9ff4fa9");
@@ -245,13 +257,13 @@ assert.equal(servicios.preguntas.find(p => p.id === 90).respuesta_correcta, "A. 
 const anteriores = ["sistemas", "bases", "entornos", "programacion", "empleabilidad", "lenguajeMarcas"];
 assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => anteriores.includes(a.id))),
   "339c3bcc2e35d4fad7909677446f215ccbd170151184424668498d091c933ba1");
-const testsMultimedia = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json"].flatMap((nombre) =>
+const testsMultimedia = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json", "u9-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/multimediaMoviles", nombre), "utf8")).preguntas);
 const nueva = catalogo.find(a => a.id === "multimediaMoviles");
 assert.deepEqual(nueva.preguntas, testsMultimedia.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(nueva.preguntas.map(p => p.id), Array.from({ length: 80 }, (_, i) => 41 + i));
+assert.deepEqual(nueva.preguntas.map(p => p.id), Array.from({ length: 90 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.multimediaMoviles.map(p => p.correcta),
-  [2, 3, 1, 1, 2, 2, 3, 0, 2, 0, 2, 2, 0, 0, 1, 1, 1, 3, 3, 2, 0, 2, 3, 0, 1, 0, 3, 2, 1, 2, 2, 3, 1, 2, 1, 2, 0, 3, 0, 3, 0, 2, 1, 3, 1, 3, 0, 2, 0, 2, 3, 1, 0, 0, 1, 1, 1, 2, 3, 2, 3, 0, 3, 0, 3, 1, 0, 3, 1, 3, 1, 3, 3, 1, 1, 2, 0, 0, 1, 3]);
+  [2, 3, 1, 1, 2, 2, 3, 0, 2, 0, 2, 2, 0, 0, 1, 1, 1, 3, 3, 2, 0, 2, 3, 0, 1, 0, 3, 2, 1, 2, 2, 3, 1, 2, 1, 2, 0, 3, 0, 3, 0, 2, 1, 3, 1, 3, 0, 2, 0, 2, 3, 1, 0, 0, 1, 1, 1, 2, 3, 2, 3, 0, 3, 0, 3, 1, 0, 3, 1, 3, 1, 3, 3, 1, 1, 2, 0, 0, 1, 3, 0, 1, 3, 3, 2, 3, 3, 2, 2, 0]);
 assert.ok(nueva.preguntas.find(p => p.id === 49).pregunta.includes("UMTS"));
 assert.equal(nueva.preguntas.find(p => p.id === 51).respuesta_correcta, "C. Marshmallow.");
 assert.equal(nueva.preguntas.find(p => p.id === 52).respuesta_correcta, "C. Carpeta res/Gradle.");
@@ -287,13 +299,23 @@ assert.equal(nueva.preguntas.find(p => p.id === 114).respuesta_correcta, "B. 3."
 assert.equal(nueva.preguntas.find(p => p.id === 117).respuesta_correcta, "A. Snackbar.");
 assert.equal(nueva.preguntas.find(p => p.id === 118).respuesta_correcta, "A. Que está por encima y puede ser más importante en ese momento.");
 assert.equal(nueva.preguntas.find(p => p.id === 120).respuesta_correcta, "D. Scrapped.");
-const testsInterfaces = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json"].flatMap((nombre) =>
+assert.equal(nueva.preguntas.find(p => p.id === 121).respuesta_correcta, "A. publishProgress");
+assert.equal(nueva.preguntas.find(p => p.id === 122).respuesta_correcta, "B. Los fragmentos se declaran en el Manifest.");
+assert.equal(nueva.preguntas.find(p => p.id === 123).respuesta_correcta, "D. Todas son correctas.");
+assert.equal(nueva.preguntas.find(p => p.id === 124).respuesta_correcta, "D. Todos los anteriores.");
+assert.equal(nueva.preguntas.find(p => p.id === 125).respuesta_correcta, "C. onDispatch");
+assert.equal(nueva.preguntas.find(p => p.id === 126).respuesta_correcta, "D. Params, Progress, Result.");
+assert.equal(nueva.preguntas.find(p => p.id === 127).respuesta_correcta, "D. Todas las opciones son correctas.");
+assert.equal(nueva.preguntas.find(p => p.id === 128).respuesta_correcta, "C. Es aquel proceso que necesita esperar resultados y/o pausa el proceso que lo invocó.");
+assert.equal(nueva.preguntas.find(p => p.id === 129).respuesta_correcta, "C. sendStickyBroadcast");
+assert.equal(nueva.preguntas.find(p => p.id === 130).respuesta_correcta, "A. Aliviar la carga del hilo principal para evitar ralentizaciones o bloqueos en este.");
+const testsInterfaces = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json", "u9-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/desarrolloInterfaces", nombre), "utf8")).preguntas);
 const interfaces = catalogo.find(a => a.id === "desarrolloInterfaces");
 assert.deepEqual(interfaces.preguntas, testsInterfaces.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 80 }, (_, i) => 41 + i));
+assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 90 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.desarrolloInterfaces.map(p => p.correcta),
-  [1, 2, 3, 1, 0, 2, 3, 3, 1, 0, 2, 1, 1, 3, 3, 2, 0, 2, 0, 2, 1, 2, 1, 3, 0, 0, 3, 2, 2, 3, 1, 2, 3, 3, 1, 3, 1, 0, 2, 3, 3, 1, 3, 0, 2, 3, 1, 1, 1, 3, 2, 1, 0, 1, 0, 3, 2, 1, 2, 3, 2, 2, 1, 2, 0, 3, 1, 1, 3, 0, 0, 0, 0, 3, 3, 2, 1, 2, 3, 3]);
+  [1, 2, 3, 1, 0, 2, 3, 3, 1, 0, 2, 1, 1, 3, 3, 2, 0, 2, 0, 2, 1, 2, 1, 3, 0, 0, 3, 2, 2, 3, 1, 2, 3, 3, 1, 3, 1, 0, 2, 3, 3, 1, 3, 0, 2, 3, 1, 1, 1, 3, 2, 1, 0, 1, 0, 3, 2, 1, 2, 3, 2, 2, 1, 2, 0, 3, 1, 1, 3, 0, 0, 0, 0, 3, 3, 2, 1, 2, 3, 3, 0, 3, 2, 1, 1, 2, 3, 3, 3, 3]);
 assert.equal(interfaces.preguntas[3].respuesta_correcta, interfaces.preguntas[3].opciones[1]);
 assert.equal(interfaces.preguntas[9].respuesta_correcta, "A. El prototipo");
 assert.equal(interfaces.preguntas.find(p => p.id === 58).respuesta_correcta, "C. Son elementos contenedores.");
@@ -317,6 +339,16 @@ assert.equal(interfaces.preguntas.find(p => p.id === 114).respuesta_correcta, "D
 assert.equal(interfaces.preguntas.find(p => p.id === 115).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
 assert.equal(interfaces.preguntas.find(p => p.id === 117).respuesta_correcta, "B. Documentación sobre un problema o proceso concreto.");
 assert.equal(interfaces.preguntas.find(p => p.id === 120).respuesta_correcta, "D. Todas las anteriores son incorrectas.");
+assert.equal(interfaces.preguntas.find(p => p.id === 121).respuesta_correcta, "A. Page Header.");
+assert.equal(interfaces.preguntas.find(p => p.id === 122).respuesta_correcta, "D. Todas las anteriores son correctas.");
+assert.equal(interfaces.preguntas.find(p => p.id === 123).respuesta_correcta, "C. Gráficas de líneas.");
+assert.equal(interfaces.preguntas.find(p => p.id === 124).respuesta_correcta, "B. Absolute Path in the filesystem.");
+assert.equal(interfaces.preguntas.find(p => p.id === 125).respuesta_correcta, "B. SELECT.");
+assert.equal(interfaces.preguntas.find(p => p.id === 126).respuesta_correcta, "C. Incrustados.");
+assert.equal(interfaces.preguntas.find(p => p.id === 127).respuesta_correcta, "D. Nunca, dependen totalmente de los informes.");
+assert.equal(interfaces.preguntas.find(p => p.id === 128).respuesta_correcta, "D. Gráficas circulares.");
+assert.equal(interfaces.preguntas.find(p => p.id === 129).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
+assert.equal(interfaces.preguntas.find(p => p.id === 130).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
 assert.equal(interfaces.preguntas.find(p => p.id === 63).respuesta_correcta, "B. MotionKeyListener.");
 assert.equal(interfaces.preguntas.find(p => p.id === 65).pregunta, "GIMP es un editor de imágenes:");
 assert.equal(interfaces.preguntas.find(p => p.id === 66).respuesta_correcta, "A. Permiten modificar funcionalidades estáticas en Java.");
@@ -461,17 +493,17 @@ context.abrirModalConfig("examen");
 context.iniciarTest("multimediaMoviles", "examen");
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 context.iniciarTest("multimediaMoviles", "estudio");
-assert.equal(vm.runInContext("preguntasActuales.length", context), 80);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 120)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 90);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 130)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 71;
-  config.rangoHasta = 80;
+  config.rangoDesde = 81;
+  config.rangoHasta = 90;
   config.mezclarPreguntas = false;
   iniciarTest("multimediaMoviles", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 111 && p.id <= 120)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 121 && p.id <= 130)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of nueva.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.multimediaMoviles.find(q => q.id === p.id));
@@ -491,7 +523,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("multimediaMoviles"), false);
 vm.runInContext('asignaturaPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("multimediaMoviles"), true);
-console.log("Multimedia: 80 preguntas, soluciones, estudio y bloqueo/reactivación del examen verificados. Bancos anteriores intactos.");
+console.log("Multimedia: 90 preguntas, soluciones, estudio y bloqueo/reactivación del examen verificados. Bancos anteriores intactos.");
 
 vm.runInContext(`
   preguntasActuales = [];
@@ -544,17 +576,17 @@ assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('config.usarRango = false; iniciarTest("desarrolloInterfaces", "estudio");', context);
-assert.equal(vm.runInContext("preguntasActuales.length", context), 80);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 120)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 90);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 130)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 71;
-  config.rangoHasta = 80;
+  config.rangoDesde = 81;
+  config.rangoHasta = 90;
   config.mezclarPreguntas = false;
   iniciarTest("desarrolloInterfaces", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 111 && p.id <= 120)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 121 && p.id <= 130)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of interfaces.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.desarrolloInterfaces.find(q => q.id === p.id));
@@ -567,7 +599,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), false);
 vm.runInContext('interfacesPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), true);
-console.log("Desarrollo de interfaces: 80 preguntas, soluciones, estudio y examen condicionado verificados.");
+console.log("Desarrollo de interfaces: 90 preguntas, soluciones, estudio y examen condicionado verificados.");
 
 vm.runInContext(`
   preguntasActuales = [];

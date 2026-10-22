@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U8 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U9 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -110,5 +110,24 @@ const resumenMultimediaMoviles = `
   <section class="study-summary__section">
     <h4>26. Campos de texto y reciclado de vistas</h4>
     <p><strong>TextInputLayout</strong> envuelve un campo de texto y aporta etiquetas flotantes animadas, ayuda, errores, contadores e iconos. En RecyclerView, una vista <em>scrapped</em> queda apartada temporalmente para poder retirarla o reutilizarla sin crear innecesariamente otra representación.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>27. Hilos y comunicación con la interfaz</h4>
+    <p>El hilo principal procesa la interfaz y debe mantenerse libre de operaciones largas. Desde un hilo secundario se puede solicitar trabajo en la interfaz mediante <code>View.post()</code>, <code>Activity.runOnUiThread()</code> o un <strong>Handler</strong> asociado al hilo principal. Así se evitan ralentizaciones, bloqueos y errores ANR.</p>
+    <p><strong>AsyncTask</strong> utilizaba los tipos genéricos <code>Params</code>, <code>Progress</code> y <code>Result</code>. Desde <code>doInBackground()</code>, <code>publishProgress()</code> enviaba valores que <code>onProgressUpdate()</code> recibía en el hilo principal. AsyncTask está obsoleto desde Android 11; en proyectos actuales se prefieren corrutinas de Kotlin, ejecutores o las APIs de trabajo adecuadas al ciclo de vida.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>28. Fragmentos y DialogFragment</h4>
+    <p>Un <strong>Fragment</strong> es una parte modular y reutilizable de la interfaz que debe alojarse en una Activity u otro fragmento. Mantiene su propio ciclo de vida con callbacks como <code>onAttach()</code> y <code>onDestroyView()</code>; <code>onActivityCreated()</code> existió en la API, aunque actualmente está obsoleto. Los fragmentos no se declaran como componentes de la aplicación en <code>AndroidManifest.xml</code>.</p>
+    <p><strong>DialogFragment</strong> integra un diálogo en el ciclo de vida de Fragment. Sus argumentos pueden entregarse mediante un Bundle y debe mostrarse utilizando <strong>FragmentManager</strong>, para que el sistema gestione correctamente su estado y su retirada.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>29. Comunicación con servicios enlazados</h4>
+    <p>Un <strong>Bound Service</strong> permite que otros componentes se enlacen, envíen solicitudes y reciban respuestas. El servicio devuelve un <strong>IBinder</strong>; para comunicación entre procesos pueden emplearse <strong>Messenger</strong>, que serializa mensajes, o <strong>AIDL</strong>, que define una interfaz IPC más directa y exige controlar la concurrencia.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>30. Sincronía y difusiones persistentes</h4>
+    <p>Una tarea <strong>síncrona</strong> obliga a esperar su resultado antes de continuar; una tarea asíncrona permite que el flujo principal siga atendiendo otras acciones. Esta diferencia es esencial en Android, donde bloquear el hilo de la interfaz degrada la respuesta de la aplicación.</p>
+    <p><code>sendStickyBroadcast()</code> conservaba el último Intent después de la difusión para que pudiera recuperarlo un receptor registrado posteriormente. Es el comportamiento histórico de una difusión <em>sticky</em>, pero la API está obsoleta por motivos de seguridad y no debe emplearse en desarrollos nuevos.</p>
   </section>
 </article>`;

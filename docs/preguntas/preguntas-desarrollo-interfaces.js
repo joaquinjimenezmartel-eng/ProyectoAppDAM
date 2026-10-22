@@ -959,5 +959,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "D. Todas las anteriores son incorrectas.",
     "explicacion": "La documentación técnica interna describe cómo está construido y mantenido el sistema: arquitectura, componentes, código, interfaces, datos, configuración y decisiones técnicas. Los resultados de pruebas, el histórico de otros proyectos y el presupuesto son documentos de gestión o control distintos, no la definición de esta documentación."
+  },
+  {
+    "id": 121,
+    "pregunta": "¿Cuál de estas secciones contiene los metadatos de un informe?",
+    "opciones": [
+      "A. Page Header.",
+      "B. Column Header.",
+      "C. Column Footer.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "A. Page Header.",
+    "explicacion": "Page Header se imprime en la parte superior de las páginas del informe y puede mostrar información identificativa, como el título, la fecha o datos de contexto. Column Header se reserva normalmente para los encabezados de las columnas y Column Footer aparece al final de cada columna."
+  },
+  {
+    "id": 122,
+    "pregunta": "¿Cuáles de estas pautas no se deben seguir para la realización de un buen informe?",
+    "opciones": [
+      "A. Organizar y expresar la información de modo que sea legible.",
+      "B. Mostrar diagramas, cálculos y gráficos útiles y relevantes.",
+      "C. Incluir solo o destacar la información importante.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "La legibilidad, la selección de información relevante y el uso justificado de gráficos y cálculos son buenas prácticas para comunicar datos. La opción D agrupa las tres pautas como correctas: un informe debe facilitar que la persona encuentre y comprenda lo importante sin elementos innecesarios."
+  },
+  {
+    "id": 123,
+    "pregunta": "¿Qué gráfica depende de los ejes X e Y?",
+    "opciones": [
+      "A. Gráficas de barras verticales.",
+      "B. Gráficas de barras horizontales.",
+      "C. Gráficas de líneas.",
+      "D. Gráficas circulares."
+    ],
+    "respuesta_correcta": "C. Gráficas de líneas.",
+    "explicacion": "Una gráfica de líneas representa puntos mediante coordenadas en los ejes X e Y y los conecta para mostrar su evolución o tendencia. El eje X suele expresar una secuencia, como el tiempo, y el eje Y la magnitud que se está comparando."
+  },
+  {
+    "id": 124,
+    "pregunta": "¿Cuál de los siguientes métodos para insertar imágenes es solo para pruebas, no para la creación del informe final?",
+    "opciones": [
+      "A. Workspace resource.",
+      "B. Absolute Path in the filesystem.",
+      "C. URL.",
+      "D. Ninguna, no existe una opción como la descrita."
+    ],
+    "respuesta_correcta": "B. Absolute Path in the filesystem.",
+    "explicacion": "Una ruta absoluta apunta a una ubicación concreta del equipo de desarrollo. Puede funcionar durante una prueba local, pero suele fallar al trasladar el informe a otro ordenador o servidor. Un recurso del proyecto o una ubicación configurable evita esa dependencia y mejora la portabilidad."
+  },
+  {
+    "id": 125,
+    "pregunta": "En SQL las búsquedas comienzan con la sentencia:",
+    "opciones": [
+      "A. FROM.",
+      "B. SELECT.",
+      "C. WHERE.",
+      "D. SEARCH."
+    ],
+    "respuesta_correcta": "B. SELECT.",
+    "explicacion": "En una consulta básica, SELECT indica qué datos se desean obtener. FROM señala su origen y WHERE aplica condiciones para filtrar filas. SEARCH no es la sentencia utilizada para iniciar una consulta de selección en SQL."
+  },
+  {
+    "id": 126,
+    "pregunta": "Los informes generados a través de la propia aplicación son llamados:",
+    "opciones": [
+      "A. Indexados.",
+      "B. No indexados.",
+      "C. Incrustados.",
+      "D. No incrustados."
+    ],
+    "respuesta_correcta": "C. Incrustados.",
+    "explicacion": "Un informe incrustado está integrado en la aplicación que lo genera o presenta. La persona puede consultarlo dentro del propio flujo del programa, sin tratarlo como una herramienta independiente separada de la interfaz principal."
+  },
+  {
+    "id": 127,
+    "pregunta": "Los informes pueden existir como elemento independiente:",
+    "opciones": [
+      "A. Cuando se generan con encabezado.",
+      "B. Cuando poseen otros subinformes.",
+      "C. Siempre, no dependen enteramente de los informes.",
+      "D. Nunca, dependen totalmente de los informes."
+    ],
+    "respuesta_correcta": "D. Nunca, dependen totalmente de los informes.",
+    "explicacion": "En este planteamiento se considera el informe incrustado o subinforme como un elemento dependiente del informe principal que lo contiene. El informe maestro determina cuándo se ejecuta, le proporciona parámetros o datos y decide dónde se integra su resultado; por eso no se trata como un elemento independiente."
+  },
+  {
+    "id": 128,
+    "pregunta": "¿Qué gráfico es adecuado para expresar porcentajes?",
+    "opciones": [
+      "A. Gráficas de barras verticales.",
+      "B. Gráficas de barras horizontales.",
+      "C. Gráficas de líneas.",
+      "D. Gráficas circulares."
+    ],
+    "respuesta_correcta": "D. Gráficas circulares.",
+    "explicacion": "Una gráfica circular representa cada categoría como una parte de un total y resulta adecuada cuando los porcentajes suman el 100 %. Funciona mejor con pocas categorías claramente diferenciadas; si hay muchas, una gráfica de barras suele facilitar la comparación."
+  },
+  {
+    "id": 129,
+    "pregunta": "Sección:",
+    "opciones": [
+      "A. Es el proceso de búsqueda por el que se extraen los datos deseados desde una base de datos.",
+      "B. Valores obtenidos mediante el cálculo de diversos valores incluidos en el informe, generalmente en forma de variables.",
+      "C. Variables creadas por el propio usuario, normalmente a partir de datos vinculados al informe.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Una sección de un informe es una zona estructural o banda con una función concreta, como Title, Page Header, Detail o Summary. Las opciones A, B y C describen otros conceptos relacionados con consultas o variables, no la organización del informe en secciones."
+  },
+  {
+    "id": 130,
+    "pregunta": "Variables predefinidas:",
+    "opciones": [
+      "A. Es el proceso de búsqueda por el que se extraen los datos deseados desde una base de datos.",
+      "B. Valores obtenidos mediante el cálculo de diversos valores incluidos en el informe, generalmente en forma de variables.",
+      "C. Variables creadas por el propio usuario, normalmente a partir de datos vinculados al informe.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Las variables predefinidas son valores que el motor del informe proporciona automáticamente, como el número de página o el recuento de registros. No son una consulta, un cálculo definido de forma genérica ni una variable creada por el usuario; por eso ninguna de las definiciones propuestas corresponde."
   }
 ];
