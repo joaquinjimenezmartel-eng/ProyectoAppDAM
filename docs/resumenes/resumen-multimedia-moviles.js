@@ -1,7 +1,7 @@
 const resumenMultimediaMoviles = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U9 · Fundamentos y Android</span>
+    <span class="study-summary__eyebrow">U1–U12 · Fundamentos y Android</span>
     <h3 class="study-summary__title">Programación multimedia y dispositivos móviles</h3>
     <p class="study-summary__lead">Para crear una aplicación móvil necesitas conocer el dispositivo, el sistema operativo y las herramientas de desarrollo. Estos fundamentos te ayudan a entender cómo una app utiliza los recursos del teléfono y se comunica con la persona que la usa.</p>
   </header>
@@ -129,5 +129,54 @@ const resumenMultimediaMoviles = `
     <h4>30. Sincronía y difusiones persistentes</h4>
     <p>Una tarea <strong>síncrona</strong> obliga a esperar su resultado antes de continuar; una tarea asíncrona permite que el flujo principal siga atendiendo otras acciones. Esta diferencia es esencial en Android, donde bloquear el hilo de la interfaz degrada la respuesta de la aplicación.</p>
     <p><code>sendStickyBroadcast()</code> conservaba el último Intent después de la difusión para que pudiera recuperarlo un receptor registrado posteriormente. Es el comportamiento histórico de una difusión <em>sticky</em>, pero la API está obsoleta por motivos de seguridad y no debe emplearse en desarrollos nuevos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>31. Bases de datos SQLite</h4>
+    <p><strong>SQLiteOpenHelper</strong> simplifica la creación, apertura y actualización de una base de datos local. Sus métodos <code>onCreate()</code> y <code>onUpgrade()</code> preparan la estructura y gestionan los cambios de versión. Una vez abierta, <strong>SQLiteDatabase</strong> permite consultar y modificar los datos.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>32. Compartir datos entre aplicaciones</h4>
+    <p>Un <strong>ContentProvider</strong> publica datos mediante una interfaz controlada. La aplicación cliente utiliza <strong>ContentResolver</strong> para consultar, insertar, actualizar o eliminar esos datos. Cuando una consulta devuelve varias filas, un <strong>Cursor</strong> permite recorrer el resultado.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>33. Sockets, HTTP y conexiones seguras</h4>
+    <p>En una conexión por sockets, <code>ServerSocket.accept()</code> espera la llegada de un cliente y devuelve el Socket con el que se realizará la comunicación. En HTTP, <code>setRequestProperty()</code> configura cabeceras como <code>User-Agent</code>. Cuando se utiliza HTTPS, TLS cifra y protege la comunicación entre el cliente y el servidor.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>34. Persistencia y almacenamiento</h4>
+    <p><strong>SharedPreferences</strong> almacena pequeñas cantidades de información como pares clave-valor. <code>MODE_PRIVATE</code> protege los archivos internos para que solo pueda acceder la propia aplicación. Antes de utilizar el almacenamiento externo conviene consultar su estado con <code>Environment.getExternalStorageState()</code>.</p>
+    <p>La persistencia mixta combina una fuente local, como archivos o SQLite, con almacenamiento en red. Este enfoque permite trabajar con datos disponibles en el dispositivo y sincronizarlos posteriormente con un servidor.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>35. Grabación, reproducción y eventos táctiles</h4>
+    <p><code>MediaRecorder.release()</code> libera los recursos de grabación cuando dejan de utilizarse. <strong>SoundPool</strong> es adecuado para efectos de audio cortos y de baja latencia, mientras que <strong>MediaPlayer</strong> se utiliza habitualmente para contenidos más largos. En los eventos táctiles, MotionEvent ofrece datos como el instante inicial, el momento del evento y la presión.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>36. Sensores y ubicación pasiva</h4>
+    <p>Los sensores de movimiento y orientación suelen devolver valores para varios ejes. El sensor de iluminación devuelve un único valor en lux. En geolocalización, <strong>PASSIVE_PROVIDER</strong> recibe ubicaciones generadas por las solicitudes de otras aplicaciones o servicios, sin iniciar por sí mismo una nueva búsqueda.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>37. Imágenes y transformaciones</h4>
+    <p><strong>ImageView</strong> muestra imágenes y puede declararse en XML para manipularse después desde el código. <strong>Matrix</strong> permite trasladar, escalar y rotar elementos gráficos. Los mapas de bits pueden obtenerse desde recursos, archivos, matrices de bytes o flujos de datos, incluidos los que proceden de una URL.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>38. Canvas, Paint y unidades de medida</h4>
+    <p><strong>Canvas</strong> proporciona la superficie y las operaciones de dibujo; <strong>Paint</strong> define el color, el estilo, el grosor y otras propiedades del trazo. Para dimensionar la interfaz se utilizan <strong>dp</strong>, píxeles independientes de densidad que ayudan a conservar un tamaño visual coherente entre pantallas distintas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>39. Motores y producción de videojuegos</h4>
+    <p>Un motor de juego actúa como framework y suele incluir un entorno visual para editar escenas, código, animaciones y recursos. Durante la producción se construyen y prueban los sistemas que forman la experiencia de usuario. Frente a una escena 2D basada en X e Y, el espacio 3D añade el eje Z para representar profundidad.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>40. Animaciones y límites de objetos</h4>
+    <p>Un <strong>bounding box</strong> delimita un objeto y facilita su selección, posicionamiento o detección aproximada de colisiones. En Android, <strong>AnimationDrawable</strong> reproduce una secuencia de drawables como una animación por fotogramas. <code>ViewAnimationUtils.createCircularReveal()</code> genera un efecto circular que revela u oculta una vista.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>41. Sombreado y primitivas de OpenGL</h4>
+    <p>El sombreado de <strong>Phong</strong> calcula la iluminación por fragmento y logra reflejos y transiciones suaves. En OpenGL, <code>GL_LINE_LOOP</code> une vértices consecutivos y cierra la figura conectando el último con el primero. Texturas, colisiones, luces y sombras deben equilibrarse con el rendimiento disponible en el dispositivo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>42. Ciclo de una SurfaceView</h4>
+    <p><strong>SurfaceHolder.Callback</strong> comunica cuándo la superficie se crea, cambia o se destruye mediante <code>surfaceCreated()</code>, <code>surfaceChanged()</code> y <code>surfaceDestroyed()</code>. No existe <code>surfaceResize()</code>; una modificación de tamaño se informa a través de <code>surfaceChanged()</code>.</p>
   </section>
 </article>`;

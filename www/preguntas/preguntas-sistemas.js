@@ -9,7 +9,7 @@ const preguntasSistemas = [
     "No se pueden administrar usuarios en Windows mediante consolas"
   ],
   correcta: 2,
-  explicacion: "Es como una llave mágica llamada 'Lusrmgr'. Si te fijas, el nombre es un truco: 'L' de Local, 'Usr' de Usuario y 'Mgr' de Manager (el que manda). ¡Es el botón para mandar sobre quién entra en el PC!"},
+  explicacion: "`Lusrmgr.msc` abre la consola Usuarios y grupos locales de Windows. Desde ella se pueden crear, modificar o deshabilitar cuentas locales y administrar su pertenencia a grupos. El nombre ayuda a recordarla: `lusrmgr` es la abreviatura de *Local User Manager*."},
 
 { id: 2,
   pregunta: "¿En qué fichero de Linux se almacenan las contraseñas encriptadas de los usuarios?",
@@ -20,7 +20,7 @@ const preguntasSistemas = [
     "/etc/users"
   ],
   correcta: 1,
-  explicacion: "Imagínate un cofre escondido en las sombras donde guardas tus secretos. Por eso se llama 'shadow' (sombra), porque en Linux ahí dentro las contraseñas están tan escondidas (encriptadas) que nadie puede leerlas."},
+  explicacion: "Linux guarda en `/etc/shadow` los hashes de las contraseñas y otros datos, como su fecha de caducidad. Un hash no es la contraseña cifrada para poder recuperarla: es un valor derivado que permite comprobarla sin almacenarla en texto claro. El archivo `/etc/passwd`, en cambio, conserva información pública de las cuentas."},
 
 { id: 3,
   pregunta: "¿Se puede instalar Debian de manera gráfica?",
@@ -31,7 +31,7 @@ const preguntasSistemas = [
     "Sí"
   ],
   correcta: 3,
-  explicacion: "¡Claro que sí! Es como ponerle dibujos a un libro. Puedes elegir ver solo letras (consola) o tener ratón y botones de colores (interfaz gráfica) para que sea mucho más fácil hacer clic."},
+  explicacion: "Sí. El instalador de Debian ofrece una modalidad gráfica que permite completar con ratón y ventanas las mismas decisiones esenciales de la instalación, como idioma, particionado, usuarios y paquetes. También existe un instalador en modo texto para equipos o situaciones donde resulte más adecuado."},
 
 { id: 4,
   pregunta: "¿Se pueden restaurar copias de seguridad incrementales y diferenciales al mismo tiempo?",
@@ -42,7 +42,7 @@ const preguntasSistemas = [
     "No se pueden restaurar este tipo de copias bajo ningún concepto"
   ],
   correcta: 1,
-  explicacion: "No se debe hacer porque es como intentar mezclar dos puzzles distintos. Si usas un método para guardar tus juguetes (incremental o diferencial), tienes que usar ese mismo método para volver a sacarlos, si no, se arma un lío y corrompes los datos."},
+  explicacion: "No se deben mezclar de forma arbitraria cadenas de restauración incrementales y diferenciales. Una copia incremental depende de la copia completa y de los incrementos anteriores; una diferencial depende de la última copia completa. Para recuperar los datos con fiabilidad se sigue la cadena correspondiente al método utilizado y al software de copias."},
 
 { id: 5,
   pregunta: "El comando cat hola > alumnos.txt añade contenido a un fichero y además…",
@@ -53,7 +53,7 @@ const preguntasSistemas = [
     "Lo añade a continuación si ya existe contenido en el fichero"
   ],
   correcta: 2,
-  explicacion: "Esa flechita sencilla '>' es como una goma de borrar gigante. Antes de escribir lo nuevo, borra todo lo que había en la hoja para que solo se vea lo que acabas de poner (reescribe)."},
+  explicacion: "El operador `>` redirige la salida al archivo indicado y, si ese archivo ya existe, sustituye su contenido. Para añadir la salida al final sin borrar lo anterior se utiliza `>>`. La diferencia entre ambos operadores es importante al automatizar comandos para no perder información."},
 
 { id: 6,
   pregunta: "El directorio C:\\system32 pertenece a:",
@@ -64,7 +64,7 @@ const preguntasSistemas = [
     "Todas las anteriores son correctas"
   ],
   correcta: 2,
-  explicacion: "Es la 'casita' principal de Windows. Siempre que veas la letra C: y cosas de Windows, es que estamos en el sistema operativo de Microsoft, donde se guardan sus archivos más importantes."},
+  explicacion: "`System32` es un directorio propio de Windows, normalmente ubicado en `C:\\Windows\\System32`. Contiene componentes esenciales del sistema, bibliotecas y herramientas administrativas. La letra de unidad y la barra inversa también corresponden a la sintaxis habitual de rutas de Windows."},
 
 { id: 7,
   pregunta: "El más dañino de todos los tipos de malware. Se usa para cifrar todo el sistema y quitarles el acceso a los usuarios:",
@@ -75,7 +75,7 @@ const preguntasSistemas = [
     "Adware"
   ],
   correcta: 2,
-  explicacion: "Es como un pirata malvado que le pone un candado a tu baúl de juguetes y no te da la llave a menos que le des dinero. Eso es un rescate (ransom), te roba el acceso a tus cosas."},
+  explicacion: "El ransomware bloquea el acceso al sistema o cifra los archivos de la víctima y exige un pago para intentar recuperarlos. El término procede de *ransom* (rescate). Su impacto puede afectar tanto a los datos como a la continuidad del servicio, por lo que las copias de seguridad aisladas y actualizadas son una medida de protección esencial."},
 
 { id: 8,
   pregunta: "El procesador se describe como:",
@@ -86,7 +86,7 @@ const preguntasSistemas = [
     "El facilitador de la gestión de los trabajos de impresión"
   ],
   correcta: 2,
-  explicacion: "Es el cerebro del ordenador. Como tiene varios 'núcleos', es como si tuviera muchas manitas para poder hacer muchas tareas distintas al mismo tiempo sin cansarse."},
+  explicacion: "Un procesador puede integrar varios núcleos, y cada núcleo ejecuta instrucciones de uno o más hilos. Esto permite trabajar realmente en paralelo cuando hay núcleos disponibles; si existen más tareas que recursos de ejecución, el sistema operativo reparte el tiempo del procesador entre ellas."},
 
 { id: 9,
   pregunta: "El protocolo POP3 es empleado en:",
@@ -97,7 +97,7 @@ const preguntasSistemas = [
     "Software antimalware"
   ],
   correcta: 1,
-  explicacion: "Es como el cartero que llega a tu casa, saca las cartas del buzón y te las da en la mano. Se usa para descargar tus correos electrónicos directos a tu ordenador."},
+  explicacion: "POP3 es un protocolo de aplicación utilizado para recuperar correo electrónico desde un servidor. El cliente descarga los mensajes y, según su configuración, puede conservar o eliminar la copia del servidor. IMAP también accede al correo, pero está orientado a sincronizar buzones entre varios dispositivos."},
 
 { id: 10,
   pregunta: "El SID es:",
@@ -108,7 +108,7 @@ const preguntasSistemas = [
     "Es lo mismo que el SAT"
   ],
   correcta: 2,
-  explicacion: "Es como tu DNI o tu nombre especial secreto. En Windows, aunque te llames 'Pepe', el sistema te da un número único e irrepetible (Security Identifier) para no confundirte con nadie más."},
+  explicacion: "Un SID (*Security Identifier*) es el identificador único que Windows asigna a un principal de seguridad, como un usuario o un grupo. Los permisos se vinculan al SID y no solo al nombre visible; por eso cambiar el nombre de una cuenta no cambia su identidad de seguridad."},
 
 { id: 11,
   pregunta: "El sistema de archivos estándar de Microsoft Windows:",
@@ -119,7 +119,7 @@ const preguntasSistemas = [
     "Todas las anteriores son correctas"
   ],
   correcta: 1,
-  explicacion: "Es la forma en la que Windows ordena los papeles en sus carpetas. NTFS es el sistema moderno que más le gusta a Windows porque permite poner seguridad y que nada se pierda."},
+  explicacion: "NTFS es el sistema de archivos habitual de las instalaciones modernas de Windows. Admite permisos mediante listas de control de acceso, registro de cambios (*journaling*), archivos de gran tamaño y otras funciones avanzadas. FAT y exFAT se usan también, sobre todo por compatibilidad en unidades extraíbles."},
 
 { id: 12,
   pregunta: "El tipo de red coaxial se basa en:",
@@ -130,7 +130,7 @@ const preguntasSistemas = [
     "El diseño"
   ],
   correcta: 2,
-  explicacion: "Se refiere puramente a los cables. Es como el cable gordito y redondo que se enchufa detrás de la tele para ver los dibujos. ¡Usa cableado de cobre para llevar la información!"},
+  explicacion: "Una red coaxial se define por el medio físico utilizado: el cable coaxial, formado por un conductor central, material aislante y una malla conductora. Por tanto, esta clasificación se basa en el cableado y no en la distribución lógica ni en el diseño de la red."},
 
 { id: 13,
   pregunta: "En Linux la opción -l del comando ls:",
@@ -141,7 +141,7 @@ const preguntasSistemas = [
     "Muestra el contenido oculto"
   ],
   correcta: 0,
-  explicacion: "La 'l' viene de 'long' (largo). Es como pedirle al ordenador que no solo te diga los nombres de tus juguetes, sino que te dé una lista larga diciendo cuánto pesan, de quién son y cuándo los guardaste."},
+  explicacion: "La opción `-l` muestra el listado en formato largo. Además del nombre, incluye los permisos, el número de enlaces, el propietario, el grupo, el tamaño y la fecha de modificación. Por ejemplo, `ls -l /var/log` permite revisar esos datos para cada entrada del directorio."},
 
 { id: 14,
   pregunta: "Es importante que un antivirus…",
@@ -152,7 +152,7 @@ const preguntasSistemas = [
     "Ocupe mucho espacio en disco"
   ],
   correcta: 2,
-  explicacion: "El antivirus tiene que ser como un superhéroe silencioso: debe vigilar que no vengan bichitos malos, pero sin gastar toda la energía (memoria) del ordenador para que tú puedas jugar o trabajar tranquilo."},
+  explicacion: "Un antivirus suele permanecer activo y analizar archivos, procesos y conexiones en segundo plano. Por eso debe consumir pocos recursos: si utiliza demasiada memoria o CPU, puede degradar el rendimiento del equipo aunque detecte correctamente las amenazas. La eficacia y el consumo deben estar equilibrados."},
 
 { id: 15,
   pregunta: "exFAT suele usarse en dispositivos:",
@@ -174,7 +174,7 @@ const preguntasSistemas = [
     "File Transfer Premium"
   ],
   correcta: 2,
-  explicacion: "Significa 'File Transfer Protocol' (Protocolo de Transferencia de Archivos). Imagina que es un camión de mudanzas oficial que lleva tus carpetas de un ordenador a otro por internet."},
+  explicacion: "FTP significa *File Transfer Protocol* o Protocolo de Transferencia de Archivos. Es un protocolo de la capa de aplicación diseñado para transferir archivos entre un cliente y un servidor. FTP clásico no cifra por sí mismo las credenciales ni los datos; FTPS y SFTP son alternativas seguras distintas."},
 
 { id: 17,
   pregunta: "Indica cuál de los siguientes es un dispositivo de interconexión de red:",
@@ -185,7 +185,7 @@ const preguntasSistemas = [
     "BIOS"
   ],
   correcta: 2,
-  explicacion: "Un Switch (conmutador) es como una regleta mágica donde enchufas muchos cables de internet. Sirve para que todos los ordenadores de una misma habitación se conecten e intercambien información."},
+  explicacion: "Un switch conecta dispositivos dentro de una red local y reenvía las tramas al puerto adecuado según la dirección MAC de destino. A diferencia de un hub, no replica normalmente todo el tráfico a todos los puertos, lo que reduce colisiones y aprovecha mejor el ancho de banda."},
 
 { id: 18,
   pregunta: "Indica qué tipo de software es VMware Workstation:",
@@ -196,7 +196,7 @@ const preguntasSistemas = [
     "Software incremental"
   ],
   correcta: 1,
-  explicacion: "Es de tipo 'propietario' porque tiene dueño. Es como un juguete de marca que alguien fabricó: te dejan usarlo si sigues sus reglas (y pagas), pero no puedes abrirlo para ver cómo está hecho por dentro."},
+  explicacion: "VMware Workstation es software propietario: su uso, distribución y modificación están sujetos a la licencia de su fabricante y su código fuente no se publica como software libre. Que una edición pueda utilizarse gratuitamente no cambia por sí solo el tipo de licencia."},
 
 { id: 19,
   pregunta: "La administración remota:",
@@ -207,7 +207,7 @@ const preguntasSistemas = [
     "Todas las anteriores son correctas"
   ],
   correcta: 1,
-  explicacion: "Es el poder de manejar el PC desde lejos. Windows ya trae de fábrica tres herramientas de 'mando a distancia' para que un informático pueda entrar y ayudarte sin tener que ir a tu casa."},
+  explicacion: "Windows incorpora herramientas para administrar o prestar asistencia a distancia, sin necesidad de instalar siempre una solución externa. Estas utilidades permiten acceder a una sesión, ofrecer soporte o ejecutar tareas de gestión, aunque deben configurarse con autenticación y permisos adecuados."},
 
 { id: 20,
   pregunta: "La cabecera en IPv6 posee:",
@@ -218,7 +218,7 @@ const preguntasSistemas = [
     "50 bytes"
   ],
   correcta: 2,
-  explicacion: "La cabecera es como la etiqueta que le pegas a un paquete de correos. En las direcciones modernas de internet (IPv6), esa etiqueta siempre mide 40 trocitos (bytes) fijos para que el cartero la lea muy rápido."},
+  explicacion: "La cabecera base de un paquete IPv6 tiene una longitud fija de 40 bytes. Incluye, entre otros campos, las direcciones de origen y destino de 128 bits. La información adicional se incorpora mediante cabeceras de extensión, por lo que no aumenta el tamaño de la cabecera base."},
 
 { id: 21,
   pregunta: "Las placas base se guían por los:",
@@ -229,7 +229,7 @@ const preguntasSistemas = [
     "Conectores externos"
   ],
   correcta: 0,
-  explicacion: "Es como la talla de la ropa. El 'Factor de forma' dice qué tamaño tiene la placa y dónde van a ir sus tornillos para que sepas si cabe dentro de la caja de metal de tu ordenador."},
+  explicacion: "El factor de forma establece dimensiones, puntos de montaje y disposición general de una placa base. Estándares como ATX o microATX permiten comprobar su compatibilidad física con la caja y condicionan aspectos como el número de ranuras de expansión disponibles."},
 
 { id: 22,
   pregunta: "Las redes P2P hacen referencia a…",
@@ -240,7 +240,7 @@ const preguntasSistemas = [
     "Poe to poe"
   ],
   correcta: 1,
-  explicacion: "Viene de 'Peer to Peer', que significa 'de igual a igual'. Es como un grupo de amigos en el patio donde nadie es el jefe; todos los ordenadores comparten archivos directamente entre ellos."},
+  explicacion: "P2P significa *peer to peer* o «entre iguales». En este modelo, cada equipo puede actuar como cliente y como servidor, compartiendo recursos directamente con otros nodos. Se diferencia del modelo cliente-servidor, donde un servidor central presta el servicio a los clientes."},
 
 { id: 23,
   pregunta: "Las tarjetas de red pueden ser:",
@@ -273,7 +273,7 @@ const preguntasSistemas = [
     "El número de usuarios"
   ],
   correcta: 1,
-  explicacion: "Se clasifican así por la forma en que trabajan. Varios ordenadores en diferentes lugares se unen para darte un servicio como si fueran uno solo, es decir, responde a 'cómo ofrecen' lo que necesitas."},
+  explicacion: "Los sistemas operativos distribuidos coordinan recursos y servicios de varios equipos conectados y procuran presentarlos de forma integrada. Por ello se clasifican según cómo ofrecen los servicios al usuario, no por el número de procesos o usuarios que ejecuta una máquina aislada."},
 
 { id: 26,
   pregunta: "Para crear un directorio alumnos en Linux en la ruta actual usamos el comando…",
@@ -284,7 +284,7 @@ const preguntasSistemas = [
     "rmdir -r alumnos"
   ],
   correcta: 1,
-  explicacion: "Viene del inglés 'Make Directory' (hacer directorio). Es como decirle al sistema: 'fabrícame una caja nueva aquí mismo y ponle la etiqueta alumnos'."},
+  explicacion: "`mkdir` procede de *make directory* y crea uno o varios directorios. El comando `mkdir alumnos` crea el directorio `alumnos` dentro de la ruta de trabajo actual. Si se necesita crear también directorios padre inexistentes, puede utilizarse la opción `-p`."},
 
 { id: 27,
   pregunta: "Pro, Player y Fusion son versiones del siguiente software privativo de virtualización:",
@@ -306,7 +306,7 @@ const preguntasSistemas = [
     "Instalación dual"
   ],
   correcta: 0,
-  explicacion: "Es como sacarle una foto a tu cuarto antes de pintarlo. Guardas tus cosas importantes en un disco aparte por si, durante la instalación nueva, algo sale mal y se borra todo."},
+  explicacion: "Antes de instalar o reinstalar un sistema operativo conviene realizar una copia de seguridad verificada de los datos importantes. El particionado, el formateo o un error durante la instalación pueden provocar pérdida de información; además, la copia debe guardarse en un medio distinto del que se va a modificar."},
 
 { id: 29,
   pregunta: "¿Qué tipo de aplicación es MySQL?",
@@ -317,7 +317,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas"
   ],
   correcta: 1,
-  explicacion: "Es un archivador gigante y súper ordenado. MySQL es un programa que se dedica a guardar y relacionar muchísima información (datos) para que puedas buscarla rapidísimo."},
+  explicacion: "MySQL se clasifica habitualmente como una aplicación de bases de datos, aunque el término técnico más preciso es sistema gestor de bases de datos relacionales. Permite crear bases, organizar la información en tablas, ejecutar consultas SQL y administrar usuarios, integridad y transacciones."},
 
 { id: 30,
   pregunta: "Si una BIOS enciende una luz LED para indicar un problema, es una señal…",
@@ -339,7 +339,7 @@ const preguntasSistemas = [
     "AES"
   ],
   correcta: 3,
-  explicacion: "Simétrico significa que usas la misma llave mágica para cerrar el cofre que para volver a abrirlo. El algoritmo AES es el estándar más famoso que usa este tipo de llave única."},
+  explicacion: "AES es un algoritmo de cifrado simétrico: emplea la misma clave secreta para cifrar y descifrar. Por ejemplo, si un archivo se cifra con una clave AES, el receptor necesita esa misma clave para recuperar el contenido. RSA, por contraste, utiliza un par de claves y pertenece a la criptografía asimétrica."},
 
 { id: 32,
   pregunta: "Un ejemplo de buen nombre para una máquina virtual es:",
@@ -361,7 +361,7 @@ const preguntasSistemas = [
     "VirtualBox"
   ],
   correcta: 1,
-  explicacion: "Hardware es todo lo físico, lo que te duele si te cae en el pie. El microprocesador es el chip real de silicio que hace de cerebro, mientras que el resto son conceptos o programas (software)."},
+  explicacion: "El hardware comprende los componentes físicos de un sistema informático. El microprocesador es uno de ellos: es el circuito integrado que interpreta y ejecuta instrucciones. VirtualBox es software y un *host* describe una función o equipo dentro de un entorno, por lo que no son componentes equivalentes."},
 
 { id: 34,
   pregunta: "Un servidor debe de cumplir con estos tres aspectos:",
@@ -383,7 +383,7 @@ const preguntasSistemas = [
     "No gestiona más de dos procesos al mismo tiempo"
   ],
   correcta: 2,
-  explicacion: "Como un pulpo tocando el piano, pintando y comiendo a la vez. El sistema permite que el procesador ejecute varios programas al mismo tiempo sin que se atasquen."},
+  explicacion: "Un sistema multitarea mantiene varios procesos en ejecución concurrente. En un único núcleo alterna rápidamente entre ellos mediante planificación; con varios núcleos también puede ejecutar tareas en paralelo. Así, por ejemplo, es posible reproducir audio mientras se edita un documento."},
 
 { id: 36,
   pregunta: "Una de las distribuciones que se emplean de manera específica en los sistemas Linux es:",
@@ -394,7 +394,7 @@ const preguntasSistemas = [
     "FreeBSD"
   ],
   correcta: 2,
-  explicacion: "Linux es la base y hay muchas versiones distintas (distribuciones). Ubuntu Desktop es la más famosa y amigable para usar en ordenadores de casa."},
+  explicacion: "Ubuntu Desktop es una distribución GNU/Linux orientada a equipos de escritorio. Integra el núcleo Linux con herramientas del sistema, gestor de paquetes, entorno gráfico y aplicaciones. No es una versión independiente del núcleo, sino una distribución completa construida alrededor de él."},
 
 { id: 37,
   pregunta: "Una NIC también se puede llamar:",
@@ -462,7 +462,7 @@ const preguntasSistemas = [
     "Darle un nombre a la máquina virtual."
   ],
   correcta: 1,
-  explicacion: "Una vez que has montado las piezas del 'ordenador de mentira' y le has metido el disco de instalación, el siguiente paso lógico es encenderlo e instalar el sistema operativo por dentro para que cobre vida."
+  explicacion: "Después de crear la máquina virtual y asociar el medio de instalación, se inicia el instalador de Windows 10. En esta fase se seleccionan los ajustes básicos solicitados —como idioma, disco y cuenta— para que el sistema operativo quede instalado dentro de la máquina virtual."
 },
 
 {
@@ -475,7 +475,7 @@ const preguntasSistemas = [
     "Comprobar los ajustes de las especificaciones del equipo."
   ],
   correcta: 2,
-  explicacion: "¡Antes de tocar nada, hay que leer las instrucciones! Es como montar un juguete complejo: primero miras el librito para saber dónde va cada cosa, evitar cortocircuitos y no romper el componente nuevo."
+  explicacion: "En una instalación realizada específicamente para un equipo o componente, el primer paso es consultar el manual del fabricante. Ahí se detallan requisitos, compatibilidades, conexiones, medidas de seguridad y secuencia de montaje; seguirlo evita daños y configuraciones incorrectas."
 },
 
 {
@@ -488,7 +488,7 @@ const preguntasSistemas = [
     "Conectores externos."
   ],
   correcta: 0,
-  explicacion: "El 'factor de forma' es como la talla de una camiseta. Nos dice exactamente cuánto mide la placa base y dónde van los agujeros de los tornillos para asegurarnos de que va a caber bien dentro de la torre metálica del PC."
+  explicacion: "El factor de forma define las dimensiones, la ubicación de los puntos de anclaje y la disposición general de una placa base. Estándares como ATX y microATX permiten determinar si la placa es físicamente compatible con una caja y qué posibilidades de expansión ofrece."
 },
 
 {
@@ -501,7 +501,7 @@ const preguntasSistemas = [
     "Ninguna es correcta."
   ],
   correcta: 2,
-  explicacion: "Son memorias súper rápidas que no tienen piezas mecánicas ni discos dando vueltas. Usan pequeños chips electrónicos para guardar tus fotos y archivos a la velocidad del rayo (como un pendrive o un disco SSD)."
+  explicacion: "El almacenamiento flash conserva los datos en chips de memoria no volátil y no necesita piezas mecánicas. Los SSD y las tarjetas de memoria utilizan esta tecnología; por ello suelen ofrecer menor latencia y mayor resistencia a golpes que un disco duro magnético, aunque su rendimiento depende del dispositivo concreto."
 },
 
 {
@@ -514,7 +514,7 @@ const preguntasSistemas = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "El ordenador es como una ciudad que necesita diferentes 'fuerzas' de electricidad. Usa 12 voltios (mucha fuerza) para mover los motores de los ventiladores, y 5 o 3.3 voltios (poca fuerza) para que los pequeños chips piensen sin quemarse."
+  explicacion: "Las fuentes de alimentación de los ordenadores suministran varias líneas de corriente continua, entre ellas 3,3 V, 5 V y 12 V. Cada línea alimenta componentes con necesidades distintas; por ejemplo, motores y ciertos circuitos usan 12 V, mientras que la electrónica digital utiliza tensiones menores."
 },
 
 {
@@ -527,7 +527,7 @@ const preguntasSistemas = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "Son las piezas que viven 'alrededor' de la caja principal del ordenador. Hay dispositivos para meter información (teclado), para sacarla o verla (monitor), y aparatos mágicos que hacen las dos cosas a la vez (pantalla táctil o pendrive)."
+  explicacion: "Los periféricos se clasifican según el flujo de información: de entrada, como el teclado; de salida, como el monitor; y de entrada/salida, como una pantalla táctil o una unidad de almacenamiento. Por eso, si las opciones recogen estas tres categorías, todas son correctas."
 },
 
 {
@@ -553,7 +553,7 @@ const preguntasSistemas = [
     "VirtualBox."
   ],
   correcta: 1,
-  explicacion: "El hardware es todo lo que puedes agarrar con las manos. El microprocesador es una pastillita metálica y física que hace de cerebro. Las otras opciones son programas (software) o caminos invisibles por donde viajan los datos."
+  explicacion: "El microprocesador es un componente físico y, por tanto, forma parte del hardware. Ejecuta las instrucciones de los programas y coordina operaciones con la memoria y otros dispositivos. VirtualBox es software; los demás términos de las opciones no identifican en este caso el componente solicitado."
 },
 
 {
@@ -566,7 +566,7 @@ const preguntasSistemas = [
     "Ninguna es correcta."
   ],
   correcta: 0,
-  explicacion: "El 'software de aplicación' son los programas que tú usas para hacer una tarea real. Es cuando 'aplicas' el ordenador para escribir una carta (Word), hacer un dibujo o jugar a un videojuego."
+  explicacion: "El software de aplicación reúne los programas diseñados para que el usuario realice tareas concretas, como redactar documentos, editar imágenes, comunicarse o gestionar información. Se diferencia del software de sistema, que administra el hardware y proporciona la base sobre la que se ejecutan esas aplicaciones."
 },
 
 {
@@ -579,7 +579,7 @@ const preguntasSistemas = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "El sistema operativo es como el director del colegio: organiza a los alumnos (gestor de procesos), les da sitio para sentarse en clase (gestor de memoria) y hace que se entiendan sin pelear (gestor de comunicación)."
+  explicacion: "El sistema operativo administra el hardware mediante distintos subsistemas: el gestor de procesos planifica la CPU, el gestor de memoria asigna y protege espacios de memoria y los mecanismos de comunicación permiten intercambiar datos entre procesos o equipos. Por eso las tres opciones describen funciones de gestión válidas."
 },
 
 {
@@ -592,7 +592,7 @@ const preguntasSistemas = [
     "El facilitador de la gestión de manera adecuada de los trabajos de impresión."
   ],
   correcta: 2,
-  explicacion: "Es el gran motor pensante del ordenador. Al tener varios 'núcleos', es como si tuviera varios cerebros pequeñitos trabajando en equipo, lo que le permite hacer varias tareas a la vez sin atascarse."
+  explicacion: "Un procesador multinúcleo dispone de varias unidades capaces de ejecutar instrucciones. Esto permite que distintos procesos o hilos avancen en paralelo cuando existen núcleos disponibles; además, el planificador del sistema operativo distribuye el trabajo y alterna las tareas cuando es necesario."
 },
 
 {
@@ -605,7 +605,7 @@ const preguntasSistemas = [
     "BIOS."
   ],
   correcta: 0,
-  explicacion: "Rufus es una herramienta genial que mete el instalador de un sistema operativo dentro de un pendrive. Así, puedes usar ese USB como si fuera una llave para arrancar e instalar un ordenador que está totalmente vacío."
+  explicacion: "Rufus crea unidades USB de arranque a partir de imágenes de disco, como una ISO de instalación. La herramienta prepara el esquema de particiones y copia el contenido necesario para que el firmware pueda iniciar el equipo desde el USB e instalar o ejecutar el sistema elegido."
 },
 
 {
@@ -618,7 +618,7 @@ const preguntasSistemas = [
     "Gráfico."
   ],
   correcta: 0,
-  explicacion: "'Mono' significa uno. Un sistema monoprogramado es como un niño que solo puede hacer una cosa a la vez: si está comiendo, no puede ver la tele hasta que termine su plato. Ejecuta un solo programa a la vez."
+  explicacion: "Un sistema monoprogramado mantiene un solo programa de usuario en ejecución cada vez. Hasta que ese programa termina o libera el recurso, no se inicia otro. Se diferencia de un sistema multiprogramado, que mantiene varios programas disponibles y alterna la CPU entre ellos."
 },
 
 {
@@ -631,7 +631,7 @@ const preguntasSistemas = [
     "Interfaz gráfico."
   ],
   correcta: 2,
-  explicacion: "Se llaman API (Interfaces de Programación de Aplicaciones). Son como los botones de un microondas: el programador no necesita saber cómo funciona el motor por dentro, solo pulsa el 'botón' correcto para que su programa use la cámara o el sonido."
+  explicacion: "Una API (*Application Programming Interface*) ofrece operaciones definidas para que un programa utilice funciones del sistema o de un dispositivo sin conocer su implementación interna. Por ejemplo, una aplicación invoca una API para solicitar acceso a la cámara, mientras el sistema y el controlador gestionan el hardware."
 },
 
 {
@@ -644,7 +644,7 @@ const preguntasSistemas = [
     "El número de usuarios."
   ],
   correcta: 1,
-  explicacion: "Es como un equipo de superhéroes repartidos por distintas ciudades. Aunque son muchos ordenadores diferentes, se unen y responden a ti ofreciéndote un único servicio gigante para que parezca un solo ordenador."
+  explicacion: "Un sistema operativo distribuido coordina recursos y servicios situados en varios equipos conectados, procurando presentarlos de forma integrada al usuario. Esta clasificación atiende a cómo se ofrecen los servicios, no al número de usuarios o de procesos que admite cada equipo."
 },
 
 {
@@ -670,7 +670,7 @@ const preguntasSistemas = [
     "Las interfaces de usuario."
   ],
   correcta: 1,
-  explicacion: "Los gestores de arranque (como GRUB) son el 'despertador' de la máquina. Si no estuvieran ahí, el ordenador encendería sus luces pero se quedaría totalmente paralizado porque no sabría cómo cargar Windows o Linux."
+  explicacion: "El gestor de arranque localiza y carga el núcleo del sistema operativo después de la inicialización del firmware. También puede ofrecer un menú para elegir entre varios sistemas o configuraciones. GRUB es un ejemplo habitual en GNU/Linux; Windows utiliza su propio gestor de arranque."
 },
 
 {
@@ -683,7 +683,7 @@ const preguntasSistemas = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "Son las distintas formas de fabricar el cerebro del sistema por dentro. Unos están hechos de un solo bloque gigante (monolítico), otros son como un edificio de pisos (capas), y otros tienen un centro muy pequeñito (microkernel)."
+  explicacion: "Monolítica, por capas y micronúcleo son arquitecturas válidas de sistemas operativos. Se diferencian en cómo distribuyen servicios como memoria, controladores y comunicación: un núcleo monolítico concentra más funciones, mientras que un micronúcleo mantiene en él solo las esenciales."
 },
 
 {
@@ -696,7 +696,7 @@ const preguntasSistemas = [
     "FreeBSD."
   ],
   correcta: 2,
-  explicacion: "Linux es la base y existen muchos 'sabores' (distribuciones) construidos sobre él. Ubuntu Desktop es uno de los sabores más amigables y pensados específicamente para que la gente normal lo use en su casa fácilmente."
+  explicacion: "Ubuntu Desktop es una distribución GNU/Linux preparada para equipos de escritorio. Combina el núcleo Linux con bibliotecas, herramientas, un gestor de paquetes, entorno gráfico y aplicaciones. Las distribuciones comparten componentes, pero pueden variar en configuración, paquetes y objetivos de uso."
 },
 
 {
@@ -722,7 +722,7 @@ const preguntasSistemas = [
     "Todas las anteriores son correctas."
   ],
   correcta: 1,
-  explicacion: "Es el idioma favorito de Windows para guardar papeles. NTFS es un sistema muy inteligente que permite poner contraseñas a las carpetas y gestionar archivos que pesan muchísimo."
+  explicacion: "NTFS es el sistema de archivos habitual de Windows y organiza cómo se almacenan y recuperan archivos y directorios. Ofrece permisos mediante listas de control de acceso, registro de cambios, cuotas y soporte para archivos grandes. Los permisos no equivalen simplemente a «poner contraseñas» a carpetas."
 },
 
 {
@@ -735,7 +735,7 @@ const preguntasSistemas = [
     "Muestra el contenido oculto."
   ],
   correcta: 0,
-  explicacion: "La letra 'l' es la inicial de 'Long' (largo). Es como decirle al ordenador: 'no me digas solo el nombre de los archivos, quiero una lista larga que me diga quién es el dueño, los permisos y cuánto pesan'."
+  explicacion: "La opción correcta es `-l`, de *long format*. `ls -l` muestra para cada entrada los permisos, número de enlaces, propietario, grupo, tamaño, fecha de modificación y nombre. No debe confundirse con `-a`, que incluye archivos ocultos, ni con opciones de ordenación."
 },
 
 {
@@ -761,7 +761,7 @@ const preguntasSistemas = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 0,
-  explicacion: "Es como si una persona tuviera dos nombres diferentes, pero es exactamente el mismo cuerpo (i-nodo). Si borras uno de sus nombres, el archivo original no desaparece porque sigue existiendo bajo el otro nombre."
+  explicacion: "Un enlace duro es otra entrada de directorio que apunta al mismo i-nodo y, por tanto, a los mismos datos que el nombre original. El contenido permanece mientras exista al menos un enlace duro. A diferencia de un enlace simbólico, no guarda una ruta hacia otro nombre."
 },
 
 {
@@ -774,7 +774,7 @@ const preguntasSistemas = [
     "Ninguna de las anteriores."
   ],
   correcta: 0,
-  explicacion: "Es como unir dos mochilas para poder correr muy rápido llevando más libros, pero sin fotocopiarlos. Como el RAID 0 no hace copias de seguridad (redundancia), si una de las mochilas se rompe, pierdes tus deberes."
+  explicacion: "RAID 0 reparte los bloques de datos entre dos o más unidades para aumentar el rendimiento y sumar capacidad, pero no guarda información redundante. Si falla una sola unidad, se pierde el conjunto completo. Por eso RAID 0 no aporta tolerancia a fallos ni sustituye a una copia de seguridad."
 },
 
 {
@@ -787,7 +787,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 3,
-  explicacion: "Un RAID anidado es como hacer la mezcla de dos RAIDs distintos (por ejemplo, RAID 10 o RAID 50). El 0, 1 y 5 son modelos básicos de un solo nivel, por lo tanto ninguna opción de la lista es correcta."
+  explicacion: "Un RAID anidado combina dos niveles, como RAID 10 (espejo y distribución) o RAID 50 (varios grupos RAID 5 distribuidos). RAID 0, RAID 1 y RAID 5 son niveles simples, no anidados. Por eso ninguno de los niveles ofrecidos individualmente cumple la condición."
 },
 
 {
@@ -800,7 +800,7 @@ const preguntasSistemas = [
     "Ninguna de las anteriores."
   ],
   correcta: 3,
-  explicacion: "La regla de oro de Linux es que 'todo es un archivo'. Por tanto, los ficheros normales de texto (regulares) existen, los accesos directos (enlaces) existen, e incluso el ratón se trata como un archivo (dispositivo). Todas existen."
+  explicacion: "Linux distingue varios tipos de archivo, entre ellos archivos regulares, enlaces y archivos de dispositivo. Los dispositivos se representan mediante entradas especiales, normalmente bajo `/dev`. Como todos los tipos enumerados existen, la opción correcta es que ninguna de las anteriores es inexistente."
 },
 
 {
@@ -813,7 +813,7 @@ const preguntasSistemas = [
     "Ruta absoluta."
   ],
   correcta: 1,
-  explicacion: "Es como indicarle a alguien cómo ir a la panadería diciendo 'gira a la derecha en la próxima esquina'. Te indica el camino para llegar al destino tomando como punto de inicio el lugar donde estás parado ahora mismo."
+  explicacion: "Una ruta relativa se interpreta a partir del directorio de trabajo actual. Por ejemplo, `documentos/informe.txt` busca `documentos` dentro de la ubicación actual. Una ruta absoluta, en cambio, comienza desde la raíz del sistema y no depende del directorio en el que se ejecuta el comando."
 },
 
 {
@@ -826,7 +826,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 1,
-  explicacion: "Reflejar algo es como ponerlo frente a un espejo para que haya dos copias exactas. En el mundo de Windows, al sistema que duplica tus datos idénticamente en dos discos duros (RAID 1) lo llaman 'volumen reflejado'."
+  explicacion: "Un volumen reflejado corresponde a RAID 1: los mismos datos se escriben en dos unidades. Si una falla, la otra conserva una copia operativa. Esta redundancia mejora la disponibilidad, pero no reemplaza una copia de seguridad porque replica también borrados o corrupción lógica."
 },
 
 {
@@ -904,7 +904,7 @@ const preguntasSistemas = [
     "Usuario avanzado."
   ],
   correcta: 0,
-  explicacion: "Cuando compras e instalas un sistema operativo, ya trae de fábrica grupos preparados como 'Administradores' o 'Usuarios'. Sin embargo, el grupo 'Gestor' te lo tendrías que crear tú mismo a mano."
+  explicacion: "Windows crea grupos locales predeterminados, como Administradores y Usuarios, con conjuntos de permisos ya definidos. «Gestor» no es uno de esos grupos estándar; si se necesitara un grupo con ese nombre y funciones, un administrador tendría que crearlo y asignarle miembros y permisos."
 },
 
 {
@@ -917,7 +917,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 2,
-  explicacion: "Puedes hacerlo a mano con 'passwd' (te pide que la escribas dos veces) o puedes decirle al ordenador que la guarde ya mezclada de forma súper secreta (encriptada) usando la herramienta 'openssl passwd'. Ambas sirven."
+  explicacion: "`passwd` asigna o cambia de forma interactiva la contraseña de una cuenta. `openssl passwd` genera un hash de contraseña que puede utilizarse en procesos de administración no interactivos junto con la herramienta que actualice la cuenta. Conviene distinguirlos: `openssl passwd` genera el hash, pero por sí solo no modifica al usuario."
 },
 
 {
@@ -930,7 +930,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "Viene de 'Change Mode' (cambiar el modo del archivo). Es tu varita mágica para decidir quién tiene permiso para leer tu dibujo, si alguien puede pintar encima de él, o si nadie más puede tocarlo."
+  explicacion: "`chmod` significa *change mode* y modifica los permisos de archivos y directorios en sistemas Unix. Permite conceder o retirar lectura (`r`), escritura (`w`) y ejecución (`x`) al propietario, al grupo y a otros usuarios; por ejemplo, `chmod u+x script.sh` añade permiso de ejecución al propietario."
 },
 
 {
@@ -956,7 +956,7 @@ const preguntasSistemas = [
     "Ninguno de los anteriores."
   ],
   correcta: 3,
-  explicacion: "A esta cuenta se le suele llamar cuenta de 'Invitado'. Es la que usas cuando viene un amigo a casa y le dejas mirar internet un rato, pero sin darle poderes ni permisos de un usuario real."
+  explicacion: "Una cuenta para uso ocasional y con permisos mínimos se denomina habitualmente Invitado. Como esa denominación no aparece entre las opciones propuestas, la respuesta válida es «Ninguno de los anteriores». La idea clave es aplicar el principio de mínimo privilegio a usuarios temporales."
 },
 
 {
@@ -969,7 +969,7 @@ const preguntasSistemas = [
     "Router."
   ],
   correcta: 3,
-  explicacion: "Es como el guardia de tráfico de tu ciudad que se sabe todos los caminos. El router (enrutador) es el aparato inteligente que conecta la red de tu casa con la red gigante de internet, decidiendo por dónde debe viajar cada mensaje."
+  explicacion: "Un router conecta redes diferentes y decide el siguiente salto de cada paquete consultando su tabla de enrutamiento. Por ejemplo, enlaza una red local con la red del proveedor de Internet. Un switch, en cambio, conecta principalmente dispositivos dentro de una misma red local."
 },
 
 {
@@ -982,7 +982,7 @@ const preguntasSistemas = [
     "Adware."
   ],
   correcta: 2,
-  explicacion: "Es un pirata malvado que se mete en tu cuarto, mete todos tus juguetes en un baúl con candado y te dice que o le das tus ahorros o nunca te dará la llave. Eso es un secuestro de datos (Ransomware)."
+  explicacion: "El ransomware cifra archivos o bloquea el sistema para impedir que el usuario acceda a sus datos y después exige un rescate. La víctima no dispone de la clave necesaria para descifrarlos. Pagar no garantiza la recuperación; la prevención, la segmentación y las copias desconectadas reducen el riesgo."
 },
 
 {
@@ -995,7 +995,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 1,
-  explicacion: "Es como echar una carta normal al buzón de correos: tú la envías, pero nadie te avisa de si ha llegado bien o se ha perdido por el camino. En informática, se dice que IP 'no es fiable' porque no garantiza la entrega; de eso ya se encarga el protocolo TCP."
+  explicacion: "IP ofrece un servicio de mejor esfuerzo: intenta transportar los paquetes, pero no garantiza entrega, orden ni ausencia de duplicados. Cuando una aplicación necesita fiabilidad, TCP añade confirmaciones, control de secuencia y retransmisiones. Por eso la falta de garantías se atribuye a IP, no a que el protocolo sea inútil."
 },
 
 {
@@ -1034,7 +1034,7 @@ const preguntasSistemas = [
     "lswd."
   ],
   correcta: 0,
-  explicacion: "Viene de 'LiSt HardWare' (Listar Hardware). Es como pedirle al ordenador que te haga una lista de todas las piezas físicas que tiene dentro, incluyendo las tarjetas de red, para saber qué estás usando."
+  explicacion: "`lshw` muestra información detallada del hardware detectado en Linux, incluidas interfaces de red, almacenamiento, memoria y procesador. Puede limitarse a una clase concreta; por ejemplo, `lshw -class network` centra la salida en los dispositivos de red."
 },
 
 {
@@ -1047,7 +1047,7 @@ const preguntasSistemas = [
     "50 bytes."
   ],
   correcta: 2,
-  explicacion: "Es como la etiqueta que le pones a una caja de mudanza para saber a dónde va. En el sistema moderno de internet (IPv6), esa etiqueta tiene un tamaño fijo de 40 trocitos (bytes) para que los ordenadores la lean muy rápido."
+  explicacion: "La cabecera base de IPv6 mide siempre 40 bytes. Contiene campos esenciales como versión, longitud de carga, siguiente cabecera, límite de saltos y las direcciones de origen y destino. Las opciones adicionales se incluyen en cabeceras de extensión separadas."
 },
 
 {
@@ -1060,7 +1060,7 @@ const preguntasSistemas = [
     "WPA."
   ],
   correcta: 2,
-  explicacion: "Es como hacer magia para que dos móviles hablen entre ellos por el aire sin necesitar un router de por medio. Wi-Fi Direct conecta los aparatos directamente de forma inalámbrica."
+  explicacion: "Wi-Fi Direct permite establecer una conexión inalámbrica directa entre dispositivos compatibles sin depender de un punto de acceso tradicional. Uno de los equipos coordina el grupo y los demás se conectan a él, lo que facilita compartir archivos, imprimir o proyectar contenido."
 },
 
 {
@@ -1099,7 +1099,7 @@ const preguntasSistemas = [
     "Es lo mismo que el SAT"
   ],
   correcta: 2,
-  explicacion: "Es como el DNI de una persona en el mundo real. En el ordenador, el SID (Security Identifier) es un número secreto y súper largo que sirve para no confundirte con nadie más, aunque otra persona se llame igual que tú."
+  explicacion: "Un SID (*Security Identifier*) identifica de forma única a un usuario, grupo u otro principal de seguridad en Windows. No es una contraseña ni necesita ser secreto: el sistema lo utiliza en los tokens de acceso y en las listas de permisos para reconocer al principal aunque cambie su nombre visible."
 },
 
 {
@@ -1112,7 +1112,7 @@ const preguntasSistemas = [
     "Ninguna es correcta."
   ],
   correcta: 0,
-  explicacion: "Su propio nombre te lo dice: 'remota' es desde lejos. Es como conducir un coche teledirigido. Consiste en que un técnico pueda controlar y arreglar tu ordenador desde su propia casa sin tener que ir a la tuya."
+  explicacion: "La administración remota consiste en gestionar, configurar y proteger un sistema desde otro equipo a través de una red. Puede incluir acceso al escritorio, ejecución de comandos, despliegue de cambios o supervisión. Debe protegerse con autenticación, cifrado y permisos limitados."
 },
 
 {
@@ -1125,7 +1125,7 @@ const preguntasSistemas = [
     "Todas las anteriores son correctas."
   ],
   correcta: 1,
-  explicacion: "Windows es tan listo que ya trae sus propios 'mandos a distancia' de fábrica. Tiene herramientas como el Escritorio Remoto o la Asistencia Rápida para que alguien te pueda ayudar desde otra pantalla."
+  explicacion: "Windows incorpora herramientas de acceso, asistencia y administración remota. Según la edición y la finalidad pueden utilizarse, por ejemplo, Escritorio remoto, Asistencia rápida o consolas de administración. Su disponibilidad no elimina la necesidad de habilitarlas y proteger el acceso correctamente."
 },
 
 {
@@ -1164,7 +1164,7 @@ const preguntasSistemas = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "El SAT (Security Access Token) es como tu mochila del colegio. Dentro llevas tu nombre (SID), la lista de tus amigos (grupos) y un papel que dice a qué aulas puedes entrar (derechos)."
+  explicacion: "El token de acceso de seguridad de Windows identifica el contexto de seguridad de una sesión o proceso. Incluye el SID del usuario, los SID de sus grupos y sus privilegios, entre otros datos. Windows lo compara con las listas de control de acceso para decidir si permite una operación sobre un recurso."
 },
 
 {
@@ -1177,7 +1177,7 @@ const preguntasSistemas = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "A diferencia del cofre de una sola llave, aquí usamos dos llaves: una pública que le das a todo el mundo y una privada que te quedas tú. RSA, DSA y ECC son diferentes marcas de candados muy famosos que funcionan así."
+  explicacion: "Los algoritmos de clave pública trabajan con un par relacionado: una clave pública que puede compartirse y una privada que debe mantenerse secreta. RSA, DSA y los algoritmos basados en curvas elípticas (ECC) pertenecen a la criptografía asimétrica, aunque no todos cumplen la misma función: DSA se utiliza específicamente para firmas digitales."
 },
 
 {
@@ -1203,7 +1203,7 @@ const preguntasSistemas = [
     "El permiso de control total"
   ],
   correcta: 0,
-  explicacion: "Es como ser el delegado de la clase: tienes derecho a hacer cosas especiales que los demás niños no pueden hacer, como apagar el ordenador general o cambiar la hora del reloj del sistema."
+  explicacion: "Un privilegio autoriza acciones administrativas que no se expresan mediante los permisos habituales de un archivo u objeto. En Windows, por ejemplo, existen privilegios para cambiar la hora del sistema o apagar el equipo. Se asignan a cuentas o grupos y forman parte de su contexto de seguridad."
 },
 
 {
@@ -1229,7 +1229,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "Es la regla de 'esto es mío y de nadie más'. El Copyright prohíbe copiar o usar un dibujo, una canción o un programa a menos que el creador te dé permiso expreso o le pagues."
+  explicacion: "El copyright o derecho de autor atribuye al titular derechos exclusivos sobre la reproducción, distribución, comunicación y transformación de la obra, dentro de los límites previstos por la ley. Por ello, que una obra sea accesible no significa que pueda copiarse o reutilizarse libremente: debe existir autorización, licencia o una excepción legal aplicable."
 },
 
 {
@@ -1242,7 +1242,7 @@ const preguntasSistemas = [
     "Software antimalware."
   ],
   correcta: 0,
-  explicacion: "Es como el buzón amarillo de tu calle. Sirve exclusivamente para recibir y descargar los correos electrónicos desde el servidor de internet hasta tu programa de correo."
+  explicacion: "POP3 se utiliza para recuperar mensajes de correo desde un servidor hacia un cliente. Normalmente descarga el contenido para consultarlo localmente y puede configurarse para dejar una copia en el servidor. El envío de correo utiliza protocolos distintos, como SMTP."
 },
 
 {
@@ -1255,7 +1255,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 2,
-  explicacion: "Clonar es hacer magia y crear un hermano gemelo. Puedes decirle a la máquina que haga un gemelo de toda la casa entera (el disco duro completo) o solo de una habitación (una partición)."
+  explicacion: "La clonación crea una copia de la estructura y los datos de una unidad o partición en otro destino. Puede abarcar el disco completo —incluidas sus particiones y zonas de arranque— o limitarse a una partición concreta, según la herramienta y el objetivo de la migración."
 },
 
 {
@@ -1294,7 +1294,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 2,
-  explicacion: "Hay herramientas de oficina que valen para todo, como Word para escribir lo que quieras (general), y hay herramientas que solo sirven para cosas muy raras, como un programa para gestionar una peluquería (específicas)."
+  explicacion: "Las herramientas ofimáticas pueden ser de propósito general, como un procesador de textos o una hoja de cálculo, o estar especializadas en una actividad concreta, como facturación o gestión documental. La diferencia está en la amplitud de tareas para las que se diseñan."
 },
 
 {
@@ -1333,7 +1333,7 @@ const preguntasSistemas = [
     "Recuperación de archivos dañados."
   ],
   correcta: 3,
-  explicacion: "El antivirus es como un vigilante de seguridad. Intenta que no entren ladrones (prevención) y los busca por si se han colado (detección). Pero si un virus ya ha roto o borrado un archivo, el antivirus no es mágico y no sabe arreglarlo; para eso sirven las copias de seguridad."
+  explicacion: "Un antivirus previene, detecta, bloquea y elimina código malicioso. Puede poner archivos en cuarentena o, en algunos casos, desinfectarlos, pero no garantiza reconstruir información que ya haya sido borrada o dañada. La recuperación fiable de esos archivos corresponde a una copia de seguridad válida."
 },
 
 {
@@ -1346,7 +1346,7 @@ const preguntasSistemas = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 1,
-  explicacion: "Es como un armario gigante con miles de cajoncitos perfectamente ordenados. MySQL es un programa de Base de Datos que usan los ordenadores para guardar muchísima información de manera que puedan encontrar cualquier cosa en un segundo."
+  explicacion: "MySQL es un sistema gestor de bases de datos relacionales. Permite definir tablas y relaciones, consultar y modificar datos mediante SQL y controlar usuarios, integridad y transacciones. No es solo un archivo de datos: es el software que administra la base de datos."
 }
 
 ];

@@ -8,9 +8,12 @@ const WEB_ROOT = path.join(PROJECT_ROOT, "www");
 const INDEX_PATH = path.join(WEB_ROOT, "index.html");
 const MANIFEST_PATH = path.join(WEB_ROOT, "manifest.webmanifest");
 // Actualizar únicamente cuando se autorice expresamente un cambio en el banco de test.
-// 2026-10-22: alta autorizada de desarrolloInterfaces, U9, IDs 121–130 y correcciones ortográficas aprobadas.
-// test-new-subject.js conserva además las huellas de las incorporaciones anteriores, incluidas las 1130 preguntas previas a esta U9.
-const HUELLA_CONTENIDO_EVALUABLE = "0734e38121daba61d25e5414b834a9335df6be0c2b9b8fa3befb226361b68f67";
+// 2026-10-27: alta autorizada de multimediaMoviles, U12, IDs 151–160 y correcciones ortográficas aprobadas.
+// test-new-subject.js conserva además las huellas de las incorporaciones anteriores, incluidas las 1170 preguntas previas a esta U12.
+const HUELLA_CONTENIDO_EVALUABLE = "ba8d3406d00e2ce5f301c55bbb5894250730c2e05424c0b39f13cb5a27ef4b5a";
+// Una explicación breve puede ser correcta, pero por debajo de este umbral no suele
+// haber espacio para justificar el concepto y diferenciarlo de alternativas próximas.
+const LONGITUD_MINIMA_EXPLICACION = 140;
 
 function normalizarTexto(texto) {
   return typeof texto === "string" ? texto.trim().replace(/\s+/g, " ") : "";
@@ -32,11 +35,22 @@ const PATRONES_EDITORIALES_NO_PUBLICABLES = [
   /^(?:Metáfora|Técnico|Explicación fácil):/i,
   /Por qué esa es la buena:/i,
   /Por qué las otras no:/i,
-  /Idea fácil para recordar:/i
+  /Idea fácil para recordar:/i,
+  /\b(?:el|este) (?:texto|documento) (?:indica|señala|especifica|describe|detalla|menciona|afirma)\b/i,
+  /\bla revisión (?:indica|identifica|señala|muestra|considera)\b/i
+];
+
+const PATRONES_EXPLICACIONES_INFANTILES = [
+  /\b(?:mágic[oa]s?|superhéroe?s?|bichitos?|manitas?|juguetes?|niñ(?:o|a)s?|cajitas?|colegio|cole|papá noel|soldaditos?|avioncitos?)\b/i
 ];
 
 function encontrarPatronEditorial(texto) {
   return PATRONES_EDITORIALES_NO_PUBLICABLES.find((patron) => patron.test(texto || ""));
+}
+
+function encontrarPatronExplicacion(texto) {
+  return encontrarPatronEditorial(texto) ||
+    PATRONES_EXPLICACIONES_INFANTILES.find((patron) => patron.test(texto || ""));
 }
 
 function calcularHuellaContenidoEvaluable(catalogo) {
@@ -205,10 +219,16 @@ function validar() {
         }
       }
 
-      if (!normalizarTexto(pregunta.explicacion)) {
+      const explicacionNormalizada = normalizarTexto(pregunta.explicacion);
+      if (!explicacionNormalizada) {
         errores.push(`${etiqueta}: falta la explicación.`);
+      } else if (explicacionNormalizada.length < LONGITUD_MINIMA_EXPLICACION) {
+        errores.push(
+          `${etiqueta}: la explicación es demasiado breve para justificar la respuesta ` +
+          `(${explicacionNormalizada.length}/${LONGITUD_MINIMA_EXPLICACION} caracteres).`
+        );
       }
-      const patronExplicacion = encontrarPatronEditorial(pregunta.explicacion);
+      const patronExplicacion = encontrarPatronExplicacion(pregunta.explicacion);
       if (patronExplicacion) {
         errores.push(`${etiqueta}: la explicación contiene lenguaje editorial no publicable (${patronExplicacion}).`);
       }

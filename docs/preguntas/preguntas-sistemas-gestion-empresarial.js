@@ -742,7 +742,7 @@ const preguntasSistemasGestionEmpresarial = [
       "D. Todos son tipos de vista en Odoo"
     ],
     "respuesta_correcta": "C. QWeb",
-    "explicacion": "QWeb es el sistema de plantillas XML de Odoo y permite definir vistas que generan contenido, especialmente para la interfaz web y los informes. La revisión identifica esta opción como la respuesta correcta."
+    "explicacion": "QWeb es el motor de plantillas basado en XML de Odoo. Permite combinar una estructura declarativa con directivas para insertar datos, repetir elementos o aplicar condiciones, y se utiliza especialmente para contenido web e informes. Por eso se considera un tipo de vista dentro de este contexto de Odoo."
   },
   {
     "id": 103,

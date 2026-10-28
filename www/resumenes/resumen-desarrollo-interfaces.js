@@ -1,7 +1,7 @@
 const resumenDesarrolloInterfaces = `
 <article class="study-summary">
   <header class="study-summary__hero">
-    <span class="study-summary__eyebrow">U1–U9 · Diseño, componentes, usabilidad e informes</span>
+    <span class="study-summary__eyebrow">U1–U10 · Diseño, componentes, usabilidad e informes</span>
     <h3 class="study-summary__title">Desarrollo de interfaces</h3>
     <p class="study-summary__lead">Una interfaz eficaz combina comunicación visual, comprensión del usuario y validación temprana. Su objetivo no es solo resultar atractiva, sino ayudar a completar tareas con claridad y confianza.</p>
   </header>
@@ -172,5 +172,21 @@ const resumenDesarrolloInterfaces = `
   <section class="study-summary__section">
     <h4>Gráficos y variables</h4>
     <p>Las gráficas de líneas representan puntos sobre los ejes X e Y y permiten observar una evolución. Las gráficas circulares muestran cómo se reparte un total y son útiles cuando las categorías son pocas y sus porcentajes suman el 100 %. Las variables predefinidas son valores que el motor proporciona automáticamente, mientras que las variables creadas por el usuario calculan o conservan información definida en el diseño.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Planificación, diseño e implementación</h4>
+    <p>La <strong>planificación</strong> define objetivos, alcance, tareas y recursos. El <strong>diseño</strong> transforma los requisitos en la estructura y la solución visual o interactiva que se construirá. La <strong>implementación</strong> materializa ese diseño mediante código y componentes ejecutables. El control acompaña todas las fases para detectar desviaciones y corregirlas a tiempo.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Pruebas funcionales y no funcionales</h4>
+    <p>Las pruebas funcionales comprueban qué hace el sistema y si sus funciones son adecuadas. Las pruebas no funcionales examinan cualidades como capacidad, rendimiento, estrés y comportamiento ante grandes volúmenes. Las pruebas de regresión se repiten después de un cambio para detectar efectos inesperados sobre funciones que ya estaban validadas.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Caja blanca e integración</h4>
+    <p>Las pruebas de <strong>caja blanca</strong> se apoyan en la estructura interna del código y estudian sentencias, decisiones y caminos. En la integración <strong>ascendente</strong> se unen primero los módulos inferiores; en la <strong>descendente</strong> se comienza por los módulos principales y se incorporan después sus dependencias.</p>
+  </section>
+  <section class="study-summary__section">
+    <h4>Automatización y versiones preliminares</h4>
+    <p><strong>Selenium</strong> automatiza navegadores y <strong>JUnit</strong> ejecuta pruebas en Java. <strong>Bugzilla</strong> ayuda a registrar y seguir defectos, mientras que <strong>Eclipse</strong> es principalmente un entorno de desarrollo. Una versión <strong>beta</strong> es una versión previa a la definitiva que se prueba con usuarios para localizar problemas en condiciones cercanas al uso real.</p>
   </section>
 </article>`;

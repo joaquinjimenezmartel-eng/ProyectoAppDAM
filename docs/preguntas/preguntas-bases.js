@@ -30,7 +30,7 @@ const preguntasBases = [
     "Define la clave primaria de una entidad"
   ],
   correcta: 1,
-  explicacion: "Un índice es una estructura de datos física (como un Árbol-B o Hash) asociada a una tabla que minimiza el número de accesos a disco necesarios para localizar un registro, optimizando drásticamente la complejidad computacional de las consultas."},
+  explicacion: "Un índice es una estructura auxiliar que organiza los valores de una o varias columnas para localizar filas con menos lecturas. Se parece al índice de un libro: permite ir al dato sin recorrer toda la tabla. Acelera muchas consultas, aunque ocupa espacio y añade trabajo a las inserciones y actualizaciones."},
 
 { id: 4,
   pregunta: "¿PL/SQL es compatible con todos los SGBD?",
@@ -63,7 +63,7 @@ const preguntasBases = [
     "Un software de diseño de base de datos"
   ],
   correcta: 1,
-  explicacion: "Un SGBD o DBMS es una suite de software de sistema que proporciona una interfaz entre los usuarios, aplicaciones y datos físicos, garantizando abstracción, concurrencia, integridad, seguridad y recuperación transaccional."},
+  explicacion: "Un SGBD es el software que permite crear, consultar, modificar, proteger y recuperar bases de datos. Actúa entre las aplicaciones y los datos almacenados y aporta herramientas para usuarios, permisos, integridad, concurrencia y copias de seguridad. MySQL y PostgreSQL son ejemplos de SGBD."},
 
 { id: 7,
   pregunta: "¿Qué instrucción necesitamos para ver la estructura de una tabla?",
@@ -151,7 +151,7 @@ const preguntasBases = [
     "SQL"
   ],
   correcta: 3,
-  explicacion: "SQL (Structured Query Language) es el lenguaje estándar ANSI/ISO para el paradigma relacional. Proporciona una sintaxis declarativa basada en álgebra relacional para la definición, manipulación y control transaccional de los datos."},
+  explicacion: "SQL es el lenguaje más utilizado para trabajar con bases de datos relacionales. Permite definir estructuras, consultar y modificar datos y administrar permisos. Es declarativo: se expresa qué resultado se necesita, por ejemplo con `SELECT`, y el gestor decide cómo ejecutar la consulta."},
 
 { id: 15,
   pregunta: "Es el lenguaje que usaremos para administrar la seguridad de los datos mediante permisos y usuarios.",
@@ -173,7 +173,7 @@ const preguntasBases = [
     "Existenciales"
   ],
   correcta: 1,
-  explicacion: "Un backup incremental (Incremental Backup) solo respalda los bloques de datos o ficheros transaccionales que han sido modificados desde la última copia de seguridad completa o incremental previa, optimizando drásticamente la ventana de backup y el almacenamiento."},
+  explicacion: "Una copia incremental guarda únicamente los datos modificados desde la última copia, ya sea completa o incremental. Reduce el tiempo y el espacio de cada copia, pero para restaurar suele necesitarse la copia completa inicial y la cadena de incrementales posteriores en el orden correcto."},
 
 { id: 17,
   pregunta: "Es un tipo de modelo de base de datos",
@@ -283,7 +283,7 @@ const preguntasBases = [
     "Ninguna de las anteriores es correcta"
   ],
   correcta: 2,
-  explicacion: "UPDATE es una instrucción DML transaccional que permite la mutación de datos persistentes en tuplas existentes. Requiere el uso de la cláusula SET para la reasignación de valores y debe ser controlada estrictamente mediante predicados WHERE para evitar sobreescrituras masivas."},
+  explicacion: "`UPDATE` modifica valores de filas existentes. La cláusula `SET` indica las columnas y los nuevos valores, mientras que `WHERE` limita las filas afectadas: `UPDATE clientes SET activo = false WHERE id = 7;`. Si se omite `WHERE`, se actualizan todas las filas de la tabla."},
 
 { id: 27,
   pregunta: "Lenguaje que se centra en la consulta de información:",
@@ -294,7 +294,7 @@ const preguntasBases = [
     "Ninguna de las anteriores"
   ],
   correcta: 1,
-  explicacion: "DML (Data Manipulation Language) concentra las sentencias transaccionales operativas sobre las tuplas de una base de datos. SELECT (a veces clasificado como DQL) es la instrucción estrella del DML para proyectar y restringir los datos almacenados bajo el álgebra relacional."},
+  explicacion: "DML agrupa sentencias que consultan o manipulan los datos de las tablas, como `SELECT`, `INSERT`, `UPDATE` y `DELETE`. Algunas clasificaciones separan `SELECT` en DQL, pero en la división empleada aquí se incluye en DML porque se centra en recuperar información almacenada."},
 
 { id: 28,
   pregunta: "Lo que en un modelo entidad/relación es una entidad, en un modelo físico es llamado:",
@@ -316,7 +316,7 @@ const preguntasBases = [
     "Todas son correctas"
   ],
   correcta: 0,
-  explicacion: "Un fallo lógico compromete la integridad y disponibilidad de la información a nivel de software transaccional, sin daño físico en los soportes. Derivan de bugs de aplicación, transacciones SGBD corruptas o borrados indebidos, y se resuelven mediante rollbacks o restauraciones PITR."},
+  explicacion: "Un fallo lógico altera los datos sin que exista una avería física del soporte. Puede deberse a un error de software, una sentencia incorrecta o un borrado accidental. Según el caso se corrige deshaciendo la transacción o restaurando una copia y aplicando registros hasta un punto anterior al error."},
 
 { id: 30,
   pregunta: "Los ficheros:",
@@ -338,7 +338,7 @@ const preguntasBases = [
     "Multidimensional"
   ],
   correcta: 1,
-  explicacion: "M:N representa la cardinalidad máxima en el diagrama Entidad-Relación. Identifica interrelaciones 'Muchos a Muchos', las cuales imponen semánticamente la generación de una tabla asociativa o puente al transformar el esquema conceptual en el modelo lógico relacional."},
+  explicacion: "M:N expresa una relación de muchos a muchos: una fila de la primera entidad puede relacionarse con varias de la segunda y viceversa. Al llevarla al modelo relacional se crea normalmente una tabla intermedia que contiene las claves foráneas de ambas entidades."},
 
 { id: 32,
   pregunta: "MySQL es:",
@@ -349,7 +349,7 @@ const preguntasBases = [
     "Ninguna de las anteriores"
   ],
   correcta: 2,
-  explicacion: "MySQL es un SGBD (Sistema Gestor de Bases de Datos) relacional, open source bajo licencia dual. Actúa como el daemon o motor servidor de fondo que procesa conexiones, optimiza consultas y persiste los datos físicos en sus motores transaccionales (como InnoDB)."},
+  explicacion: "MySQL es un sistema gestor de bases de datos relacionales. El servidor acepta conexiones, ejecuta sentencias SQL, controla usuarios y coordina el almacenamiento mediante motores como InnoDB. Una base de datos es el conjunto organizado de datos; MySQL es el software que lo administra."},
 
 { id: 33,
   pregunta: "Para buscar un patrón de una cadena de caracteres usaremos…",
@@ -462,7 +462,7 @@ const preguntasBases = [
     "Ninguna de la anteriores."
   ],
   correcta: 2,
-  explicacion: "En ciertos sistemas de ficheros históricos o estructuras físicas arcaicas, el índice no posee sincronización transaccional acoplada, derivando en un mantenimiento y rebalanceo de las estructuras de árbol sumamente costoso tras operaciones DML masivas."
+  explicacion: "El principal coste de un índice es mantenerlo coherente cuando cambian los datos. En los SGBD modernos la actualización suele ser automática, pero cada `INSERT`, `UPDATE` o `DELETE` puede exigir modificar y reorganizar el índice, lo que consume tiempo y espacio. En estructuras manuales, además, mantenerlo al día puede requerir trabajo explícito."
 },
 
 {
@@ -683,7 +683,7 @@ const preguntasBases = [
     "Multidimensional."
   ],
   correcta: 1,
-  explicacion: "La proporción 'Muchos a Muchos' o M:N explicita el tipo de correspondencia máxima dentro de la métrica de cardinalidad en un DER. En el plano algebraico denota que múltiples tuplas de la Relación A referencian a múltiples tuplas de la Relación B, lo cual fuerza de forma implícita la derivación de una Tabla Asociativa en el ecosistema puramente relacional."
+  explicacion: "M:N es la cardinalidad de una relación muchos a muchos. Por ejemplo, un estudiante puede cursar varias asignaturas y cada asignatura puede tener varios estudiantes. En el modelo relacional se resuelve normalmente con una tabla asociativa que almacena las claves de las dos tablas relacionadas."
 },
 
 {
@@ -735,7 +735,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 2,
-  explicacion: "El metavalor NULL no computa lógicamente como un string vacío o un entero de valor aritmético cero. Es un marcador algebraico estructural que indica explícitamente la ausencia absoluta de información, la inaplicabilidad de un estado o, en su caso de estudio relacional, pura indeterminación lógica trivaluada (UNKNOWN)."
+  explicacion: "`NULL` indica que no hay un valor conocido o aplicable. No equivale a cero ni a una cadena vacía. Por ejemplo, una fecha de baja puede ser `NULL` si la baja aún no se ha producido. Las comparaciones se realizan con `IS NULL` o `IS NOT NULL`, porque `= NULL` no produce un resultado verdadero."
 },
 
 {
@@ -761,7 +761,7 @@ const preguntasBases = [
     "Todas las anteriores son correctas."
   ],
   correcta: 3,
-  explicacion: "Las restricciones foráneas (Foreign Keys) preservan la consistencia ontológica mediante reglas de acción declarativa transaccional. Las especificaciones ON DELETE y ON UPDATE implementan lógicas de mitigación como RESTRICT (prohibir el aborto en un DML huérfano), CASCADE (propagar borrados recursivamente) o SET DEFAULT y SET NULL para amortiguar impactos asíncronos."
+  explicacion: "Las claves foráneas mantienen la integridad referencial y pueden definir qué ocurre al actualizar o borrar una fila referenciada. `RESTRICT` impide la operación si dejaría referencias huérfanas; `CASCADE` propaga el cambio; y `SET NULL` o `SET DEFAULT` asignan un valor permitido. Por eso todas las medidas indicadas son posibles."
 },
 
 {
@@ -826,7 +826,7 @@ const preguntasBases = [
     "Ninguna de las anteriores."
   ],
   correcta: 0,
-  explicacion: "La restricción arquitectónica UNIQUE Constraint implementa integridad referencial de dominio y clave candidata subyacente. Asegura matemáticamente, validando cada instrucción DML de Inserción, que toda tupla de la iteración alojará un valor diametralmente exclusivo con respecto al consolidado del Tablespace, apoyándose tácitamente en un índice."
+  explicacion: "La restricción `UNIQUE` impide que se repita la misma combinación de valores en la columna o columnas afectadas. Por ejemplo, puede garantizar que no existan dos usuarios con el mismo correo. El tratamiento de varios valores `NULL` depende del SGBD, por lo que no debe confundirse siempre con una clave primaria."
 },
 
 {
@@ -839,7 +839,7 @@ const preguntasBases = [
     "Ninguna de las anteriores."
   ],
   correcta: 2,
-  explicacion: "El Data Type abstracto Boolean subyuga su espectro a la lógica computacional axiomática dictaminada por el Álgebra de Boole. En motores RDBMS implementa flags restrictivas delimitadas a dicotomías semánticas puros lógicas de TRUE / FALSE y la ocasional contingencia algorítmica NULL trivaluada."
+  explicacion: "El tipo `BOOLEAN` representa valores lógicos, normalmente `TRUE` y `FALSE`; una columna que admita nulos también puede contener `NULL`, que significa valor desconocido o ausente. Se utiliza para estados como `activo`, no para almacenar texto o cantidades numéricas generales."
 },
 
 {
@@ -865,7 +865,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "CREATE DATABASE obedece como primitiva al estándar puramente estructural DDL (Data Definition Language). Opera en metanivel transaccional directo ordenando al SGBD físico el particionado de bloques, el montaje en directorio del diccionario interno y el empaque global para albergar un nuevo esquema lógico independiente."
+  explicacion: "`CREATE DATABASE nombre_bd;` crea una base de datos y, por tanto, modifica la estructura administrada por el gestor. Pertenece a DDL, el sublenguaje de definición de datos, junto con órdenes como `CREATE TABLE`, `ALTER` y `DROP`. DML se utiliza para los datos contenidos en esas estructuras."
 },
 
 {
@@ -878,7 +878,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 2,
-  explicacion: "El DCL (Data Control Language) actúa instrumentalizando el RBAC (Role-Based Access Control) y DAC bajo los paradigmas de bases de datos. Sus directivas base transaccionales, REVOKE y GRANT, interceden alterando la tabla de privilegios base para regular exhaustivamente la accesibilidad operativa a los objetos y vistas."
+  explicacion: "DCL es la parte de SQL dedicada al control de acceso. `GRANT` concede privilegios y `REVOKE` los retira a usuarios o roles, por ejemplo permiso de lectura sobre una tabla. DDL define estructuras y DML trabaja con datos; DCL administra quién puede realizar esas operaciones."
 },
 
 {
@@ -891,7 +891,7 @@ const preguntasBases = [
     "Todas las anteriores son correctas."
   ],
   correcta: 3,
-  explicacion: "El dialecto universal SQL no posee naturaleza monolítica per se; se halla estructural y sintácticamente ramificado en sublenguajes de control específico transaccional: el DML de recuperación de tuplas, el DDL estructural de persistencia estática, el DCL de privilegios de control algorítmico y el eventual TCL."
+  explicacion: "SQL suele dividirse por finalidad en varios sublenguajes: DDL define objetos como tablas; DML consulta y modifica datos; y DCL gestiona permisos. Algunos esquemas añaden TCL para controlar transacciones. Por ello DDL, DML y DCL son clasificaciones válidas dentro de SQL."
 },
 
 {
@@ -904,7 +904,7 @@ const preguntasBases = [
     "Ninguna de las anteriores."
   ],
   correcta: 2,
-  explicacion: "MySQL es la materialización en software de un SGBDR relacional monolítico multi-hilo, de código abierto en formato de licencias duales. Actúa como el daemon principal transaccional para provisionar aislamiento ACID, control concurrente e integridad en disco y memoria."
+  explicacion: "MySQL es un sistema gestor de bases de datos relacionales: proporciona un servidor que almacena y consulta datos organizados en tablas mediante SQL. También administra conexiones, usuarios, transacciones e integridad. No es una base de datos concreta, sino el software que permite gestionarlas."
 },
 
 {
@@ -956,7 +956,7 @@ const preguntasBases = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 0,
-  explicacion: "VARCHAR opera semánticamente como un subtipo lógico predefinido en SGBDs destinado a almacenar arreglos alfanuméricos limitados dinámicos. El Constraint estático de '(60)' impone el límite estructural de cardinalidad máxima permitida a persistir, consumiendo únicamente el peso bruto del string iterado empalmado y una cabecera menor transaccional."
+  explicacion: "`VARCHAR(60)` almacena texto de longitud variable con un máximo de 60 caracteres, según las reglas del gestor utilizado. Es apropiado para datos como nombres o correos que no ocupan siempre lo mismo. Se diferencia de `CHAR(60)`, que maneja una longitud fija."
 },
 
 {
@@ -969,7 +969,7 @@ const preguntasBases = [
     "Ninguna de las anteriores."
   ],
   correcta: 1,
-  explicacion: "SELECT pertenece al sublenguaje DML (Data Manipulation Language) y, aunque a veces se clasifica semánticamente como DQL (Data Query Language), su función principal es proyectar y restringir tuplas sin alterar el esquema físico del diccionario de datos."
+  explicacion: "`SELECT` recupera datos de una o varias tablas y puede elegir columnas, filtrar filas, agrupar y ordenar resultados. En esta clasificación pertenece a DML porque opera sobre la información almacenada, aunque otras fuentes separan las consultas en un sublenguaje llamado DQL."
 },
 
 {
@@ -982,7 +982,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "A nivel de administración de seguridad DCL, INSERT no solo opera funcionalmente como sentencia DML para añadir tuplas, sino que se categoriza como un privilegio explícito de objeto que el DBA concede (GRANT) a un usuario o rol particular."
+  explicacion: "`INSERT` es la operación SQL que añade filas y también el nombre del privilegio necesario para ejecutarla sobre una tabla. Un administrador puede concederlo con una instrucción como `GRANT INSERT ON clientes TO usuario;`, sin otorgar necesariamente permisos para consultar, modificar o borrar datos."
 },
 
 {
@@ -995,7 +995,7 @@ const preguntasBases = [
     "BLOB."
   ],
   correcta: 2,
-  explicacion: "IS NULL es un operador lógico relacional fundamental. Debido a que la lógica trivaluada de SQL impide evaluar un estado NULL utilizando operadores algebraicos de igualdad (=), se requiere estandarizadamente IS NULL para la validación booleana de ausencia de valor."
+  explicacion: "`IS NULL` comprueba si un campo carece de un valor conocido. Debe usarse en lugar de `= NULL`, porque cualquier comparación ordinaria con `NULL` produce un resultado desconocido. Por ejemplo, `WHERE fecha_baja IS NULL` selecciona registros sin fecha de baja."
 },
 
 {
@@ -1008,7 +1008,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "La función matemática escalar ABS() procesa un argumento numérico por valor y devuelve su magnitud absoluta neta en aritmética de punto flotante o entero, suprimiendo incondicionalmente la penalización de signo algebraico."
+  explicacion: "`ABS(numero)` devuelve el valor absoluto, es decir, la distancia respecto de cero sin conservar el signo. Así, `ABS(-7)` produce `7` y `ABS(7)` también produce `7`. Es una función numérica y no modifica permanentemente el dato almacenado salvo que se use en una actualización."
 },
 
 {
@@ -1047,7 +1047,7 @@ const preguntasBases = [
     "Ninguna de las anteriores."
   ],
   correcta: 1,
-  explicacion: "El ecosistema transaccional DML (Data Manipulation Language) concentra las acciones sobre los ejemplares físicos instanciados. La instrucción core, SELECT, gestiona la filtración ortogonal (algebraicamente, selecciones y proyecciones relacionales) logrando la extracción aislada requerida por la capa aplicacional."
+  explicacion: "DML reúne las operaciones que consultan o modifican la información almacenada. `SELECT` recupera filas y columnas mediante cláusulas como `FROM` y `WHERE`; `INSERT`, `UPDATE` y `DELETE` cambian los datos. Algunas clasificaciones llaman DQL específicamente a las consultas, pero aquí se integran en DML."
 },
 
 {
@@ -1060,7 +1060,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 2,
-  explicacion: "La palabra reservada ANSI AS interviene como un operador de aliasing sintáctico en tiempo de proyección. Permite el renombramiento en memoria de metadatos de tabla o campo devolviéndolos renombrados temporalmente en el header del Result Set para optimizar mapeos posteriores en el backend."
+  explicacion: "`AS` asigna un alias temporal a una columna o tabla dentro de una consulta. Por ejemplo, `SELECT precio AS importe FROM productos` muestra la columna `precio` con el encabezado `importe`, sin cambiar su nombre real en la base de datos."
 },
 
 {
@@ -1086,7 +1086,7 @@ const preguntasBases = [
     "Ninguna de las anteriores."
   ],
   correcta: 2,
-  explicacion: "A nivel de auditoría RBAC de base de datos, conceder un acceso WITH GRANT OPTION transfiere al 'Grantee' una potestad de administración discrecional. El usuario consume el permiso de objeto y se erige operativamente como un administrador proxy facultado para expandir la matriz del sistema a terceros."
+  explicacion: "`WITH GRANT OPTION` permite que quien recibe un privilegio pueda conceder ese mismo privilegio a otros usuarios. Por ejemplo, si Ana recibe `SELECT` sobre una tabla con esta opción, podrá autorizar a otra persona a consultarla. No le concede automáticamente privilegios diferentes."
 },
 
 {
@@ -1151,7 +1151,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "Pertenecen a la categoría puramente ramificadora de flujo algorítmico o condicional. La evaluación dicotómica estricta (IF) y el enrutamiento procedural paralelo de alternativas mutuamente excluyentes (CASE) son el cimiento de la selección del pathing transaccional en un script PL/SQL."
+  explicacion: "`IF` y `CASE` son estructuras de selección: evalúan una condición o un valor y ejecutan una rama entre varias alternativas. No repiten instrucciones por sí mismas, por lo que no son estructuras de iteración. En PL/SQL permiten adaptar el flujo del programa a los datos recibidos."
 },
 
 {
@@ -1203,7 +1203,7 @@ const preguntasBases = [
     "Todas las anteriores son incorrectas."
   ],
   correcta: 0,
-  explicacion: "En la etapa de pre-compilación y Early-Binding típica de procedimientos nativos PL/SQL estáticos, el intérprete repudia DDL explícito porque alteraría los punteros en tiempo real en los metadatos sobre los cuales el script asienta su validez y dependencias, requiriendo en su lugar la emulación mediante empaquetamiento de SQL dinámico transaccional explícito (EXECUTE IMMEDIATE)."
+  explicacion: "Las sentencias DDL no se escriben como SQL estático directo dentro de un bloque PL/SQL. Si se necesita ejecutar `CREATE`, `ALTER` o `DROP`, se recurre a SQL dinámico, por ejemplo `EXECUTE IMMEDIATE 'CREATE TABLE ...'`. DML sí puede aparecer de forma directa dentro del bloque."
 },
 
 {
@@ -1229,7 +1229,7 @@ const preguntasBases = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "En auditoría de escalabilidad de sistemas informáticos y planes DRP de contingencia real, toda disrupción que no se origine por vectores semánticos algorítmicos (software, codificación o tuplas corruptas) se engloba como un evento de contingencia 'Física/Hardware': abarcando la degradación o destrucción pura de infraestructuras críticas como centros de datos, PDU, HDD/SSD de Storage, robos perimetrales y desastres termodinámicos."
+  explicacion: "Un fallo físico afecta al hardware o a la infraestructura: puede ser la avería de un disco, un corte eléctrico, un incendio o el robo del equipo. Todos los ejemplos propuestos pueden impedir el acceso a la base de datos, por eso son correctos y deben contemplarse en las copias y planes de recuperación."
 },
 
 {
@@ -1255,7 +1255,7 @@ const preguntasBases = [
     "Es una técnica de inserción de datos."
   ],
   correcta: 1,
-  explicacion: "La fase crítica de Restore inmiscuye estrictamente la sobreescritura física extrayendo e inyectando un volcado previo validado desde las copias frías/calientes persistentes de seguridad (Backups RMAN). Seguidamente y con carácter imperativo requerirá aplicar la etapa de Recovery (re-instanciación de logs de Redo o transacciones en buffer) para sincronizar un estado de atomicidad final óptima asíncrona transaccionalmente."
+  explicacion: "Restaurar consiste en volver a copiar los datos desde una copia de seguridad al sistema. En algunos gestores existe además una fase de recuperación que aplica registros posteriores para llevar la base a un instante coherente. Por ejemplo, primero se restaura el backup y después se aplican los registros disponibles hasta el punto deseado."
 },
 
 {
@@ -1320,7 +1320,7 @@ const preguntasBases = [
     "Todas son correctas."
   ],
   correcta: 0,
-  explicacion: "Las primitivas de escalares difieren severamente derivado de dialectos y extensiones nativas en los engines (por ejemplo T-SQL vs PL/SQL). Un TIMESTAMP nativo PostgreSQL no opera internamente con los mismos offsets que el DATETIME transaccional de SQL Server de Microsoft, condicionando severamente las tareas y transformaciones integradas de un proceso híbrido de ETL."
+  explicacion: "Los SGBD comparten tipos generales, pero sus nombres, límites y comportamientos pueden variar. Por ejemplo, fecha y hora no se representan exactamente igual en PostgreSQL, MySQL y SQL Server. Al migrar datos hay que mapear tipos, rangos, precisión, zonas horarias y tratamiento de valores nulos."
 },
 
 {
@@ -1333,7 +1333,7 @@ const preguntasBases = [
     "Ninguna es correcta."
   ],
   correcta: 2,
-  explicacion: "El encadenamiento transaccional Media Recovery de RMAN instaura el RTO secuencial. La exigencia matemática algorítmica primordial demanda extraer obligatoriamente del repositorio e injertar primero el Bloque Completo inactivo Base (Last Full Backup Level 0). Exclusivamente a posteriori se tolerará aplicar y sincronizar parches incrementales o el hilo lineal de logs de redo generados asíncronamente."
+  explicacion: "La restauración comienza por la última copia completa válida, porque proporciona la base sobre la que se reconstruyen los datos. Después se aplican, en el orden requerido, las copias incrementales o registros posteriores. Sin la copia completa de referencia, los incrementos por sí solos no contienen todo el conjunto."
 },
 
 {
@@ -1372,7 +1372,7 @@ const preguntasBases = [
     "Ninguna es correcta."
   ],
   correcta: 0,
-  explicacion: "Encapsulado en motores que asimilan paradigmas OODBMS. Constituye internamente una estructura de puntero de persistencia lógica o dereference vector de OID (Object Identificator) univoco. Posibilita aislar al límite las redundancias severas esquivando la clonación innecesaria en campos de bases transaccionales al materializar solo el enlace físico unívoco a un tipo instanciado existente subyacente en el mapeo en otro bloque en memoria."
+  explicacion: "En una base de datos orientada a objetos, una referencia apunta a otro objeto mediante su identificador de objeto u OID. Así, un objeto puede relacionarse con otro sin duplicar todo su contenido. El gestor utiliza el OID para localizar la información referenciada, de forma parecida a una referencia entre objetos en memoria."
 },
 
 {
@@ -1385,7 +1385,7 @@ const preguntasBases = [
     "Comprende que los valores de un campo se puedan compartir con varias tablas."
   ],
   correcta: 3,
-  explicacion: "A este patrón de diseño relacional híbrido se le denota históricamente NF2 (Non-First Normal Form) o tabla Nested Relation. Es el concepto teórico algorítmico primigenio por el cual una intersección atómica pura tabular (celda) transmuta su esencia escalar hacia dominios complejos para abarcar matrices multidimensionales o incluso integradas colecciones puras relacionales al interior de su fila transaccional principal superior abriendo un puente de relaciones multi-tuplas compartidas cruzadas jerárquicamente integrales."
+  explicacion: "El modelo relacional anidado permite que un atributo contenga una colección o relación interna, en lugar de limitar cada celda a un único valor atómico. Esto representa estructuras jerárquicas dentro de una fila. La idea de «compartir valores con varias tablas» debe entenderse como relaciones anidadas, no como copiar sin control el mismo campo."
 },
 
 {
@@ -1398,7 +1398,7 @@ const preguntasBases = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "La explosión empírica formal de la metódica POO a gran escala cimentó sólidas y absolutas bases transaccionales y de software de calidad por encima de lo procedural imperativo preexistente estandarizando axiomas puristas: herencia polimorfismo o tipificación fuerte, catapultando eficiencias absolutas logrando la asimilación del modelaje en el diseño extendido posterior acoplado híbrido en los gestores modernos BDOR."
+  explicacion: "La orientación a objetos se consolidó ampliamente en la industria durante las décadas de 1980 y 1990. Sus principios de encapsulación, abstracción y polimorfismo pueden mejorar la modularidad y el mantenimiento, y también influyeron en modelos objeto-relacionales. En ese contexto, las tres afirmaciones recogen aspectos asociados a su expansión y uso."
 },
 
 {
@@ -1437,7 +1437,7 @@ const preguntasBases = [
     "Todas son incorrectas."
   ],
   correcta: 0,
-  explicacion: "El núcleo conceptual dogmático primigenio de la metodología de POO se instituye por su encapsulación de objetos tangibles o semánticos funcionales modulares. Su rigor de código arquitectónico trasciende los binarios sirviendo como un pilar en paradigmas colaterales de inyección y sobre todo siendo el axioma inspiracional esencial fundacional que cimenta y mapea el enrutamiento de diseño avanzado integrado de las arquitecturas SGBD y esquemas complejos Objeto-Relacional OODBMS."
+  explicacion: "La programación orientada a objetos organiza el software en objetos que reúnen estado y comportamiento. Ideas como encapsulación, abstracción, herencia y polimorfismo han influido en otros enfoques y diseños de software. Esa capacidad de servir como base conceptual para desarrollos posteriores es lo que recoge la respuesta indicada."
 },
 
 {

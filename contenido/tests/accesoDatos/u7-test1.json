@@ -127,7 +127,7 @@
         "D. Ninguna de las respuestas anteriores es correcta."
       ],
       "respuesta_correcta": "C. Las respuestas A y B son correctas.",
-      "explicacion": "XML es un lenguaje de marcas para representar datos estructurados. Además, sus documentos pueden utilizarse como soporte persistente de información y gestionarse mediante sistemas de bases de datos XML; en ese sentido didáctico, la revisión considera correctas las afirmaciones A y B."
+      "explicacion": "XML es un lenguaje de marcas para representar datos estructurados y sus documentos también pueden emplearse como soporte persistente de información. Existen bases de datos nativas XML y gestores con funciones para almacenar y consultar XML. Por tanto, las afirmaciones A y B describen usos compatibles y se seleccionan conjuntamente."
     },
     {
       "numeroOriginal": 3,

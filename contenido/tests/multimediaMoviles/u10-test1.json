@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "asignaturaId": "multimediaMoviles",
+  "testId": "u10-test1",
+  "fuente": "U10/U10 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "preguntasOriginales": [4, 5, 6, 9, 10],
+      "ids": [134, 135, 136, 139, 140],
+      "campo": "pregunta",
+      "correccion": "Se incorporan los signos de interrogación y se normaliza la puntuación de los enunciados.",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica las soluciones."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 136,
+      "campo": "pregunta",
+      "correccion": "HttpUrlConnection → HttpURLConnection.",
+      "autorizacion": "Corrección de grafía técnica autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 138,
+      "campos": ["opciones.A", "opciones.B", "opciones.C"],
+      "correccion": "Se corrigen las construcciones 'interna y en base de datos' y 'es en la combinación', y se añade el punto final omitido.",
+      "autorizacion": "Corrección gramatical y de puntuación autorizada por el propietario; se mantiene la opción C como solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 139,
+      "campos": ["opciones.A", "opciones.B", "opciones.C", "opciones.D", "respuesta_correcta"],
+      "correccion": "Enviroment → Environment y retirada del punto unido a los nombres de los métodos.",
+      "autorizacion": "Corrección de grafía técnica y puntuación autorizada por el propietario; se mantiene la opción D como solución."
+    }
+  ],
+  "notasRevision": [
+    {
+      "numeroOriginal": 1,
+      "id": 131,
+      "respuestaSeleccionadaIncorrecta": "C. SQLiteDatabase",
+      "respuestaCorrectaIndicada": "D. SQLiteOpenHelper.",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 132,
+      "respuestaSeleccionadaIncorrecta": "B. ContentProvider.",
+      "respuestaCorrectaIndicada": "C. ContentResolver.",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    }
+  ],
+  "referenciasExplicaciones": [
+    "https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper",
+    "https://developer.android.com/reference/android/content/ContentResolver",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/ServerSocket.html#accept()",
+    "https://developer.android.com/training/data-storage/sqlite",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/URLConnection.html#setRequestProperty(java.lang.String,java.lang.String)",
+    "https://developer.android.com/training/data-storage/shared-preferences",
+    "https://developer.android.com/reference/android/os/Environment#getExternalStorageState()",
+    "https://developer.android.com/reference/android/content/Context#MODE_PRIVATE"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 131,
+      "pregunta": "¿Cuál de las siguientes clases es la que gestiona la base de datos de SQLite?",
+      "opciones": [
+        "A. CursorFactory",
+        "B. SQLiteCursor.",
+        "C. SQLiteDatabase",
+        "D. SQLiteOpenHelper."
+      ],
+      "respuesta_correcta": "D. SQLiteOpenHelper.",
+      "explicacion": "SQLiteOpenHelper facilita la creación y apertura de una base de datos SQLite y administra sus cambios de versión mediante onCreate() y onUpgrade(). SQLiteDatabase representa la base de datos abierta y permite ejecutar operaciones, pero la clase auxiliar que gestiona su ciclo de vida es SQLiteOpenHelper."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 132,
+      "pregunta": "¿Qué componente utilizaremos cuando queramos acceder a datos de otra aplicación?",
+      "opciones": [
+        "A. Cursor.",
+        "B. ContentProvider.",
+        "C. ContentResolver.",
+        "D. ContentDrawer."
+      ],
+      "respuesta_correcta": "C. ContentResolver.",
+      "explicacion": "Una aplicación utiliza ContentResolver para enviar consultas y otras operaciones a un ContentProvider. El proveedor publica los datos de forma controlada y el resolver actúa como punto de acceso para la aplicación cliente; un Cursor puede contener el resultado de una consulta, pero no inicia ese acceso."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 133,
+      "pregunta": "¿Qué método deja a un servidor Socket en espera de la conexión de un cliente?",
+      "opciones": [
+        "A. elServer.Socket.wait()",
+        "B. elServer.Socket.standby()",
+        "C. elServer.Socket.accept()",
+        "D. elServer.Socket.client()"
+      ],
+      "respuesta_correcta": "C. elServer.Socket.accept()",
+      "explicacion": "El método accept() de un ServerSocket espera hasta que un cliente solicita una conexión. Cuando la conexión se establece, devuelve un Socket específico para comunicarse con ese cliente; el ServerSocket puede seguir aceptando otras conexiones."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 134,
+      "pregunta": "¿Cuál de las siguientes afirmaciones es correcta?",
+      "opciones": [
+        "A. Si el volumen de datos es muy grande utilizaremos una memoria externa.",
+        "B. Si el volumen de datos es muy grande utilizamos bases de datos con SQLite.",
+        "C. La persistencia mixta consiste en la combinación de memoria interna y externa.",
+        "D. Ninguna de las anteriores es correcta."
+      ],
+      "respuesta_correcta": "B. Si el volumen de datos es muy grande utilizamos bases de datos con SQLite.",
+      "explicacion": "SQLite organiza información estructurada en tablas y permite consultarla, filtrarla y relacionarla con eficiencia. Por eso resulta más adecuado que un archivo de preferencias cuando la aplicación necesita manejar un conjunto amplio o complejo de datos locales."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 135,
+      "pregunta": "¿Cuál de las siguientes afirmaciones sobre la conexión en red es correcta?",
+      "opciones": [
+        "A. El servidor de una conexión mediante Sockets trabaja solo con un objeto Socket.",
+        "B. En una conexión por Sockets el cliente espera la conexión del servidor.",
+        "C. La conexión HTTP sigue unas reglas complicadas de transferencia de información entre dispositivos de una red.",
+        "D. La variante HTTPS encripta la información para que esta no sea interceptada."
+      ],
+      "respuesta_correcta": "D. La variante HTTPS encripta la información para que esta no sea interceptada.",
+      "explicacion": "HTTPS protege la comunicación HTTP mediante TLS. La información viaja cifrada entre el cliente y el servidor, lo que dificulta que un tercero pueda leerla o modificarla durante el transporte."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 136,
+      "pregunta": "¿Cuál de los siguientes métodos de HttpURLConnection permite informar al servidor del cliente utilizado?",
+      "opciones": [
+        "A. setRequestProperty()",
+        "B. setDoOutput()",
+        "C. getResponseCode()",
+        "D. setRequestMethod()"
+      ],
+      "respuesta_correcta": "A. setRequestProperty()",
+      "explicacion": "setRequestProperty() añade o modifica una cabecera de la petición antes de establecer la conexión. Por ejemplo, la cabecera User-Agent puede identificar el cliente que realiza la solicitud; setRequestMethod() solo elige el método HTTP, como GET o POST."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 137,
+      "pregunta": "La clase SharedPreferences:",
+      "opciones": [
+        "A. Con el método getSharedPreferences() lo utilizamos cuando se necesita un archivo de preferencias.",
+        "B. Con el método getPreferences() lo utilizamos cuando se necesitan muchos archivos de preferencias.",
+        "C. Permite guardar y recuperar en formato de pares clave-valor.",
+        "D. Todas son correctas."
+      ],
+      "respuesta_correcta": "C. Permite guardar y recuperar en formato de pares clave-valor.",
+      "explicacion": "SharedPreferences conserva pequeñas cantidades de información como pares clave-valor, por ejemplo una opción activada o el nombre elegido por el usuario. getSharedPreferences() permite trabajar con archivos identificados por un nombre, mientras que getPreferences() accede al archivo privado asociado a una Activity."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 138,
+      "pregunta": "La persistencia mixta:",
+      "opciones": [
+        "A. Es la combinación de memoria interna y base de datos.",
+        "B. Es la combinación de memoria interna y externa.",
+        "C. Es la combinación de memoria o base de datos con almacenamiento en red.",
+        "D. Puede no utilizar almacenamiento en red."
+      ],
+      "respuesta_correcta": "C. Es la combinación de memoria o base de datos con almacenamiento en red.",
+      "explicacion": "La persistencia mixta combina almacenamiento local —como archivos internos o una base de datos— con almacenamiento remoto a través de la red. De esta forma la aplicación puede conservar información en el dispositivo y sincronizarla con un servidor."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 139,
+      "pregunta": "¿Qué método nos puede informar de la situación de la tarjeta externa de almacenamiento?",
+      "opciones": [
+        "A. Environment.getStorageState()",
+        "B. Environment.getExternalState()",
+        "C. Environment.getSDStorageState()",
+        "D. Environment.getExternalStorageState()"
+      ],
+      "respuesta_correcta": "D. Environment.getExternalStorageState()",
+      "explicacion": "Environment.getExternalStorageState() devuelve el estado del volumen principal de almacenamiento externo. El resultado permite saber, por ejemplo, si está montado y disponible para lectura y escritura antes de intentar utilizarlo."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 140,
+      "pregunta": "¿Qué modo de acceso utilizamos para almacenar en la memoria interna del dispositivo?",
+      "opciones": [
+        "A. MODE_PUBLIC",
+        "B. MODE_PRIVATE.",
+        "C. MODE_READABLE.",
+        "D. MODE_WRITEABLE."
+      ],
+      "respuesta_correcta": "B. MODE_PRIVATE.",
+      "explicacion": "MODE_PRIVATE crea o abre un archivo para que solo pueda acceder a él la propia aplicación. Es el modo habitual para guardar información en el almacenamiento interno privado; los demás nombres mostrados no representan el modo de acceso correcto en este caso."
+    }
+  ]
+}

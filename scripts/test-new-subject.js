@@ -5,7 +5,19 @@ const vm = require("node:vm");
 const { cargarContenido, calcularHuellaContenidoEvaluable } = require("./validate-content.js");
 const root = path.resolve(__dirname, "..");
 const { catalogo, bancoDePreguntas } = cargarContenido();
-const catalogoAntesInterfacesU9 = catalogo.map((asignatura) => asignatura.id === "desarrolloInterfaces"
+const catalogoAntesMultimediaU12 = catalogo.map((asignatura) => asignatura.id === "multimediaMoviles"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 150) }
+  : asignatura);
+const catalogoAntesMultimediaU11 = catalogoAntesMultimediaU12.map((asignatura) => asignatura.id === "multimediaMoviles"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 140) }
+  : asignatura);
+const catalogoAntesInterfacesU10 = catalogoAntesMultimediaU11.map((asignatura) => asignatura.id === "desarrolloInterfaces"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 130) }
+  : asignatura);
+const catalogoAntesMultimediaU10 = catalogoAntesInterfacesU10.map((asignatura) => asignatura.id === "multimediaMoviles"
+  ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 130) }
+  : asignatura);
+const catalogoAntesInterfacesU9 = catalogoAntesMultimediaU10.map((asignatura) => asignatura.id === "desarrolloInterfaces"
   ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 120) }
   : asignatura);
 const catalogoAntesMultimediaU9 = catalogoAntesInterfacesU9.map((asignatura) => asignatura.id === "multimediaMoviles"
@@ -111,6 +123,18 @@ const catalogoAntesAccesoU2 = catalogoAntesMultimediaU3.map((asignatura) =>
 const catalogoAntesGestionU2 = catalogoAntesMultimediaU3.map((asignatura) => asignatura.id === "sistemasGestionEmpresarial"
   ? { ...asignatura, preguntas: asignatura.preguntas.filter(pregunta => pregunta.id <= 50) }
   : asignatura);
+// La U12 de Multimedia no puede modificar las 1170 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesMultimediaU12),
+  "a39d26671030cbef0e8fb13e81a6db426e4fdf076face034b6750d8121bead62");
+// La U11 de Multimedia no puede modificar las 1160 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesMultimediaU11),
+  "3c87f1c8a7a300d9aeb04bbb586150662d1ae81bde555ab3f3888cf0329e314a");
+// La U10 de Desarrollo de interfaces no puede modificar las 1150 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesInterfacesU10),
+  "89e1392ca30580536e9b3f39f65f67873c5b419e27a34769cfbc736158767e07");
+// La U10 de Multimedia no puede modificar las 1140 preguntas ya existentes.
+assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesMultimediaU10),
+  "0734e38121daba61d25e5414b834a9335df6be0c2b9b8fa3befb226361b68f67");
 // La U9 de Desarrollo de interfaces no puede modificar las 1130 preguntas ya existentes.
 assert.equal(calcularHuellaContenidoEvaluable(catalogoAntesInterfacesU9),
   "c23d7c1015faeedc4bc6e516f8b12479f6727afce0803f084c951f49650a27ec");
@@ -257,13 +281,13 @@ assert.equal(servicios.preguntas.find(p => p.id === 90).respuesta_correcta, "A. 
 const anteriores = ["sistemas", "bases", "entornos", "programacion", "empleabilidad", "lenguajeMarcas"];
 assert.equal(calcularHuellaContenidoEvaluable(catalogo.filter(a => anteriores.includes(a.id))),
   "339c3bcc2e35d4fad7909677446f215ccbd170151184424668498d091c933ba1");
-const testsMultimedia = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json", "u9-test1.json"].flatMap((nombre) =>
+const testsMultimedia = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json", "u9-test1.json", "u10-test1.json", "u11-test1.json", "u12-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/multimediaMoviles", nombre), "utf8")).preguntas);
 const nueva = catalogo.find(a => a.id === "multimediaMoviles");
 assert.deepEqual(nueva.preguntas, testsMultimedia.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(nueva.preguntas.map(p => p.id), Array.from({ length: 90 }, (_, i) => 41 + i));
+assert.deepEqual(nueva.preguntas.map(p => p.id), Array.from({ length: 120 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.multimediaMoviles.map(p => p.correcta),
-  [2, 3, 1, 1, 2, 2, 3, 0, 2, 0, 2, 2, 0, 0, 1, 1, 1, 3, 3, 2, 0, 2, 3, 0, 1, 0, 3, 2, 1, 2, 2, 3, 1, 2, 1, 2, 0, 3, 0, 3, 0, 2, 1, 3, 1, 3, 0, 2, 0, 2, 3, 1, 0, 0, 1, 1, 1, 2, 3, 2, 3, 0, 3, 0, 3, 1, 0, 3, 1, 3, 1, 3, 3, 1, 1, 2, 0, 0, 1, 3, 0, 1, 3, 3, 2, 3, 3, 2, 2, 0]);
+  [2, 3, 1, 1, 2, 2, 3, 0, 2, 0, 2, 2, 0, 0, 1, 1, 1, 3, 3, 2, 0, 2, 3, 0, 1, 0, 3, 2, 1, 2, 2, 3, 1, 2, 1, 2, 0, 3, 0, 3, 0, 2, 1, 3, 1, 3, 0, 2, 0, 2, 3, 1, 0, 0, 1, 1, 1, 2, 3, 2, 3, 0, 3, 0, 3, 1, 0, 3, 1, 3, 1, 3, 3, 1, 1, 2, 0, 0, 1, 3, 0, 1, 3, 3, 2, 3, 3, 2, 2, 0, 3, 2, 2, 1, 3, 0, 2, 2, 3, 1, 2, 1, 3, 0, 3, 2, 2, 2, 0, 2, 2, 2, 3, 3, 1, 0, 0, 2, 2, 0]);
 assert.ok(nueva.preguntas.find(p => p.id === 49).pregunta.includes("UMTS"));
 assert.equal(nueva.preguntas.find(p => p.id === 51).respuesta_correcta, "C. Marshmallow.");
 assert.equal(nueva.preguntas.find(p => p.id === 52).respuesta_correcta, "C. Carpeta res/Gradle.");
@@ -309,13 +333,44 @@ assert.equal(nueva.preguntas.find(p => p.id === 127).respuesta_correcta, "D. Tod
 assert.equal(nueva.preguntas.find(p => p.id === 128).respuesta_correcta, "C. Es aquel proceso que necesita esperar resultados y/o pausa el proceso que lo invocó.");
 assert.equal(nueva.preguntas.find(p => p.id === 129).respuesta_correcta, "C. sendStickyBroadcast");
 assert.equal(nueva.preguntas.find(p => p.id === 130).respuesta_correcta, "A. Aliviar la carga del hilo principal para evitar ralentizaciones o bloqueos en este.");
-const testsInterfaces = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json", "u9-test1.json"].flatMap((nombre) =>
+assert.equal(nueva.preguntas.find(p => p.id === 131).respuesta_correcta, "D. SQLiteOpenHelper.");
+assert.equal(nueva.preguntas.find(p => p.id === 132).respuesta_correcta, "C. ContentResolver.");
+assert.equal(nueva.preguntas.find(p => p.id === 133).respuesta_correcta, "C. elServer.Socket.accept()");
+assert.equal(nueva.preguntas.find(p => p.id === 134).respuesta_correcta, "B. Si el volumen de datos es muy grande utilizamos bases de datos con SQLite.");
+assert.equal(nueva.preguntas.find(p => p.id === 135).respuesta_correcta, "D. La variante HTTPS encripta la información para que esta no sea interceptada.");
+assert.equal(nueva.preguntas.find(p => p.id === 136).respuesta_correcta, "A. setRequestProperty()");
+assert.equal(nueva.preguntas.find(p => p.id === 137).respuesta_correcta, "C. Permite guardar y recuperar en formato de pares clave-valor.");
+assert.equal(nueva.preguntas.find(p => p.id === 138).respuesta_correcta, "C. Es la combinación de memoria o base de datos con almacenamiento en red.");
+assert.equal(nueva.preguntas.find(p => p.id === 139).respuesta_correcta, "D. Environment.getExternalStorageState()");
+assert.equal(nueva.preguntas.find(p => p.id === 140).respuesta_correcta, "B. MODE_PRIVATE.");
+assert.equal(nueva.preguntas.find(p => p.id === 141).respuesta_correcta, "C. release()");
+assert.equal(nueva.preguntas.find(p => p.id === 142).respuesta_correcta, "B. getUpTime()");
+assert.equal(nueva.preguntas.find(p => p.id === 143).respuesta_correcta, "D. Iluminación.");
+assert.equal(nueva.preguntas.find(p => p.id === 144).respuesta_correcta, "A. El objeto se suele incluir en el fichero de la vista XML y se puede manipular desde Java.");
+assert.equal(nueva.preguntas.find(p => p.id === 145).respuesta_correcta, "D. Todas son verdaderas");
+assert.equal(nueva.preguntas.find(p => p.id === 146).respuesta_correcta, "C. PASSIVE");
+assert.equal(nueva.preguntas.find(p => p.id === 147).respuesta_correcta, "C. Canvas nos da la superficie para pintar y con Paint podemos definir un pincel para hacerlo");
+assert.equal(nueva.preguntas.find(p => p.id === 148).respuesta_correcta, "C. dp");
+assert.equal(nueva.preguntas.find(p => p.id === 149).respuesta_correcta, "A. Con Bitmap podemos cargar imágenes desde un recurso, fichero, buffer, URL o Array");
+assert.equal(nueva.preguntas.find(p => p.id === 150).respuesta_correcta, "C. Utilizaremos SoundPool para archivos de audio cortos y MediaPlayer para largos.");
+assert.equal(nueva.preguntas.find(p => p.id === 151).respuesta_correcta, "C. A y B son correctas");
+assert.equal(nueva.preguntas.find(p => p.id === 152).respuesta_correcta, "C. Producción");
+assert.equal(nueva.preguntas.find(p => p.id === 153).respuesta_correcta, "D. El eje Z");
+assert.equal(nueva.preguntas.find(p => p.id === 154).respuesta_correcta, "D. Un esquema temporal para el resalto de ciertos objetos");
+assert.equal(nueva.preguntas.find(p => p.id === 155).respuesta_correcta, "B. AnimationDrawable");
+assert.equal(nueva.preguntas.find(p => p.id === 156).respuesta_correcta, "A. Sombreado de Phong");
+assert.equal(nueva.preguntas.find(p => p.id === 157).respuesta_correcta, "A. GL_LINE_LOOP");
+assert.equal(nueva.preguntas.find(p => p.id === 158).opciones.length, 3);
+assert.equal(nueva.preguntas.find(p => p.id === 158).respuesta_correcta, "C. Todas se deben tener en cuenta");
+assert.equal(nueva.preguntas.find(p => p.id === 159).respuesta_correcta, "C. ViewAnimationUtils");
+assert.equal(nueva.preguntas.find(p => p.id === 160).respuesta_correcta, "A. surfaceResize()");
+const testsInterfaces = ["u1-test1.json", "u2-test1.json", "u3-test1.json", "u4-test1.json", "u5-test1.json", "u6-test1.json", "u7-test1.json", "u8-test1.json", "u9-test1.json", "u10-test1.json"].flatMap((nombre) =>
   JSON.parse(fs.readFileSync(path.join(root, "contenido/tests/desarrolloInterfaces", nombre), "utf8")).preguntas);
 const interfaces = catalogo.find(a => a.id === "desarrolloInterfaces");
 assert.deepEqual(interfaces.preguntas, testsInterfaces.map(({ numeroOriginal, ...p }) => p));
-assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 90 }, (_, i) => 41 + i));
+assert.deepEqual(interfaces.preguntas.map(p => p.id), Array.from({ length: 100 }, (_, i) => 41 + i));
 assert.deepEqual(bancoDePreguntas.desarrolloInterfaces.map(p => p.correcta),
-  [1, 2, 3, 1, 0, 2, 3, 3, 1, 0, 2, 1, 1, 3, 3, 2, 0, 2, 0, 2, 1, 2, 1, 3, 0, 0, 3, 2, 2, 3, 1, 2, 3, 3, 1, 3, 1, 0, 2, 3, 3, 1, 3, 0, 2, 3, 1, 1, 1, 3, 2, 1, 0, 1, 0, 3, 2, 1, 2, 3, 2, 2, 1, 2, 0, 3, 1, 1, 3, 0, 0, 0, 0, 3, 3, 2, 1, 2, 3, 3, 0, 3, 2, 1, 1, 2, 3, 3, 3, 3]);
+  [1, 2, 3, 1, 0, 2, 3, 3, 1, 0, 2, 1, 1, 3, 3, 2, 0, 2, 0, 2, 1, 2, 1, 3, 0, 0, 3, 2, 2, 3, 1, 2, 3, 3, 1, 3, 1, 0, 2, 3, 3, 1, 3, 0, 2, 3, 1, 1, 1, 3, 2, 1, 0, 1, 0, 3, 2, 1, 2, 3, 2, 2, 1, 2, 0, 3, 1, 1, 3, 0, 0, 0, 0, 3, 3, 2, 1, 2, 3, 3, 0, 3, 2, 1, 1, 2, 3, 3, 3, 3, 3, 3, 0, 3, 2, 1, 2, 2, 2, 3]);
 assert.equal(interfaces.preguntas[3].respuesta_correcta, interfaces.preguntas[3].opciones[1]);
 assert.equal(interfaces.preguntas[9].respuesta_correcta, "A. El prototipo");
 assert.equal(interfaces.preguntas.find(p => p.id === 58).respuesta_correcta, "C. Son elementos contenedores.");
@@ -349,6 +404,16 @@ assert.equal(interfaces.preguntas.find(p => p.id === 127).respuesta_correcta, "D
 assert.equal(interfaces.preguntas.find(p => p.id === 128).respuesta_correcta, "D. Gráficas circulares.");
 assert.equal(interfaces.preguntas.find(p => p.id === 129).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
 assert.equal(interfaces.preguntas.find(p => p.id === 130).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
+assert.equal(interfaces.preguntas.find(p => p.id === 131).respuesta_correcta, "D. Todas las anteriores son correctas.");
+assert.equal(interfaces.preguntas.find(p => p.id === 132).respuesta_correcta, "D. Eclipse.");
+assert.equal(interfaces.preguntas.find(p => p.id === 133).respuesta_correcta, "A. Idoneidad.");
+assert.equal(interfaces.preguntas.find(p => p.id === 134).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
+assert.equal(interfaces.preguntas.find(p => p.id === 135).respuesta_correcta, "C. Durante toda la creación del proyecto.");
+assert.equal(interfaces.preguntas.find(p => p.id === 136).respuesta_correcta, "B. La fase del proyecto donde se lleva a cabo el desarrollo propiamente dicho de la aplicación.");
+assert.equal(interfaces.preguntas.find(p => p.id === 137).respuesta_correcta, "C. La fase inicial del proyecto donde se lleva a cabo un análisis sobre qué tipo de aplicación se desea hacer y cómo se desarrollará.");
+assert.equal(interfaces.preguntas.find(p => p.id === 138).respuesta_correcta, "C. Pruebas que se llevan a cabo sobre el código.");
+assert.equal(interfaces.preguntas.find(p => p.id === 139).respuesta_correcta, "C. Ascendentes y descendentes.");
+assert.equal(interfaces.preguntas.find(p => p.id === 140).respuesta_correcta, "D. Ninguna de las anteriores es correcta.");
 assert.equal(interfaces.preguntas.find(p => p.id === 63).respuesta_correcta, "B. MotionKeyListener.");
 assert.equal(interfaces.preguntas.find(p => p.id === 65).pregunta, "GIMP es un editor de imágenes:");
 assert.equal(interfaces.preguntas.find(p => p.id === 66).respuesta_correcta, "A. Permiten modificar funcionalidades estáticas en Java.");
@@ -493,17 +558,17 @@ context.abrirModalConfig("examen");
 context.iniciarTest("multimediaMoviles", "examen");
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 context.iniciarTest("multimediaMoviles", "estudio");
-assert.equal(vm.runInContext("preguntasActuales.length", context), 90);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 130)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 120);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 160)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 81;
-  config.rangoHasta = 90;
+  config.rangoDesde = 111;
+  config.rangoHasta = 120;
   config.mezclarPreguntas = false;
   iniciarTest("multimediaMoviles", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 121 && p.id <= 130)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 151 && p.id <= 160)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of nueva.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.multimediaMoviles.find(q => q.id === p.id));
@@ -523,7 +588,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("multimediaMoviles"), false);
 vm.runInContext('asignaturaPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("multimediaMoviles"), true);
-console.log("Multimedia: 90 preguntas, soluciones, estudio y bloqueo/reactivación del examen verificados. Bancos anteriores intactos.");
+console.log("Multimedia: 120 preguntas, soluciones, estudio y bloqueo/reactivación del examen verificados. Bancos anteriores intactos.");
 
 vm.runInContext(`
   preguntasActuales = [];
@@ -576,17 +641,17 @@ assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('modoPendiente = "examen"; continuarSesionGuardada();', context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 0);
 vm.runInContext('config.usarRango = false; iniciarTest("desarrolloInterfaces", "estudio");', context);
-assert.equal(vm.runInContext("preguntasActuales.length", context), 90);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 130)", context));
+assert.equal(vm.runInContext("preguntasActuales.length", context), 100);
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 41 && p.id <= 140)", context));
 vm.runInContext(`
   config.usarRango = true;
-  config.rangoDesde = 81;
-  config.rangoHasta = 90;
+  config.rangoDesde = 91;
+  config.rangoHasta = 100;
   config.mezclarPreguntas = false;
   iniciarTest("desarrolloInterfaces", "estudio");
 `, context);
 assert.equal(vm.runInContext("preguntasActuales.length", context), 10);
-assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 121 && p.id <= 130)", context));
+assert.ok(vm.runInContext("preguntasActuales.every(p => p.id >= 131 && p.id <= 140)", context));
 vm.runInContext("config.usarRango = false", context);
 for (const p of interfaces.preguntas) {
   const shuffled = context.barajarOpcionesPregunta(bancoDePreguntas.desarrolloInterfaces.find(q => q.id === p.id));
@@ -599,7 +664,7 @@ vm.runInContext(`
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), false);
 vm.runInContext('interfacesPrueba.preguntas.push({id: 40});', context);
 assert.equal(context.estaExamenDisponible("desarrolloInterfaces"), true);
-console.log("Desarrollo de interfaces: 90 preguntas, soluciones, estudio y examen condicionado verificados.");
+console.log("Desarrollo de interfaces: 100 preguntas, soluciones, estudio y examen condicionado verificados.");
 
 vm.runInContext(`
   preguntasActuales = [];

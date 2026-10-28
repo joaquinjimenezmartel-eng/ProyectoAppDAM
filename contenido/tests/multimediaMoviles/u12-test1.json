@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "asignaturaId": "multimediaMoviles",
+  "testId": "u12-test1",
+  "fuente": "U12/U12 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "numeroOriginal": 3,
+      "id": 153,
+      "campo": "opciones.A",
+      "correccion": "Ambas de mueven → Ambas se mueven.",
+      "autorizacion": "Corrección gramatical autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 158,
+      "campos": ["pregunta", "opciones.C", "respuesta_correcta"],
+      "correccion": "Se normalizan las comas del enunciado y se elimina la preposición sobrante en 'debemos de tener' y 'se deben de tener'.",
+      "autorizacion": "Corrección gramatical y de puntuación autorizada por el propietario; se mantiene la opción C como solución."
+    }
+  ],
+  "notasRevision": [
+    {
+      "numeroOriginal": 2,
+      "id": 152,
+      "respuestaSeleccionadaIncorrecta": "D. Preproducción",
+      "respuestaCorrectaIndicada": "C. Producción",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 153,
+      "respuestaSeleccionadaIncorrecta": "B. El eje X",
+      "respuestaCorrectaIndicada": "D. El eje Z",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 158,
+      "estructuraOpciones": "El documento muestra tres opciones. La opción B contiene dos elementos en líneas separadas: las colisiones y el control de luces y sombras.",
+      "criterio": "Se conserva la estructura visible del documento y no se inventa una cuarta opción."
+    }
+  ],
+  "referenciasExplicaciones": [
+    "https://developer.android.com/games/guides/basics",
+    "https://developer.android.com/games/engines/engines-overview",
+    "https://developer.android.com/develop/ui/views/animations/drawable-animation",
+    "https://developer.android.com/reference/android/graphics/drawable/AnimationDrawable",
+    "https://wikis.khronos.org/opengl/Primitive",
+    "https://developer.android.com/games/optimize/lighting-for-mobile-games-with-unity",
+    "https://developer.android.com/reference/android/view/ViewAnimationUtils#createCircularReveal(android.view.View,int,int,float,float)",
+    "https://developer.android.com/reference/android/view/SurfaceHolder.Callback"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 151,
+      "pregunta": "¿Dónde se pueden alojar los motores de juego?",
+      "opciones": [
+        "A. En frameworks",
+        "B. En los entornos de desarrollo",
+        "C. A y B son correctas",
+        "D. Todas son incorrectas"
+      ],
+      "respuesta_correcta": "C. A y B son correctas",
+      "explicacion": "Un motor de juego reúne bibliotecas y herramientas que funcionan como un framework para construir el juego. Además, muchos motores incorporan un entorno de desarrollo visual con editores de escenas, código, animaciones y depuración. Por eso puede presentarse en ambas formas."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 152,
+      "pregunta": "¿En cuál de las siguientes fases de un juego se debe elaborar el UX o User Experience?",
+      "opciones": [
+        "A. Post mortem",
+        "B. Postproducción",
+        "C. Producción",
+        "D. Preproducción"
+      ],
+      "respuesta_correcta": "C. Producción",
+      "explicacion": "Durante la producción se construyen y prueban los sistemas con los que interactúa el jugador. En esta fase se desarrolla la experiencia de usuario mediante controles, menús, información visual, retroalimentación y pruebas iterativas que permiten ajustar el juego."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 153,
+      "pregunta": "¿En qué eje pueden moverse las animaciones 3D y las animaciones en 2D no pueden?",
+      "opciones": [
+        "A. Ambas se mueven en los mismos ejes",
+        "B. El eje X",
+        "C. El eje Y",
+        "D. El eje Z"
+      ],
+      "respuesta_correcta": "D. El eje Z",
+      "explicacion": "Una escena 2D utiliza los ejes X e Y para representar anchura y altura. Una escena 3D añade el eje Z, que representa la profundidad y permite mover objetos hacia delante o hacia atrás respecto a la cámara."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 154,
+      "pregunta": "¿Qué es un Bounding Box?",
+      "opciones": [
+        "A. Un efecto usado en animación para la simulación de dispersiones",
+        "B. El formato de los gráficos vectoriales",
+        "C. Una técnica de desarrollo basada en el uso de imágenes reales",
+        "D. Un esquema temporal para el resalto de ciertos objetos"
+      ],
+      "respuesta_correcta": "D. Un esquema temporal para el resalto de ciertos objetos",
+      "explicacion": "Un bounding box es un contorno o caja que delimita temporalmente un objeto. Se utiliza para visualizar sus límites y facilitar tareas como la selección, el posicionamiento, la detección aproximada de colisiones o el resaltado dentro de una escena."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 155,
+      "pregunta": "¿Qué herramienta permite en Android animar drawables basados en mapas de bits?",
+      "opciones": [
+        "A. AnimatedVectorDrawable",
+        "B. AnimationDrawable",
+        "C. AnimatedDrawable",
+        "D. Todas son incorrectas."
+      ],
+      "respuesta_correcta": "B. AnimationDrawable",
+      "explicacion": "AnimationDrawable crea una animación fotograma a fotograma mediante una secuencia de recursos drawable, como varias imágenes de mapa de bits. AnimatedVectorDrawable está diseñado para animar propiedades de gráficos vectoriales, no una lista de bitmaps."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 156,
+      "pregunta": "Indica cuál de las siguientes técnicas de sombreado que aquí se muestran es la usada para aumentar el nivel de realismo:",
+      "opciones": [
+        "A. Sombreado de Phong",
+        "B. Sombreado de Gouraud",
+        "C. Sombreado de proyección",
+        "D. Sombreado plano"
+      ],
+      "respuesta_correcta": "A. Sombreado de Phong",
+      "explicacion": "El sombreado de Phong interpola las normales a lo largo de la superficie y calcula la iluminación en cada fragmento. Esto produce transiciones y reflejos más suaves que el sombreado plano o el cálculo de iluminación únicamente en los vértices."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 157,
+      "pregunta": "Indica cuál de los siguientes es un modo de trazado de OpenGL:",
+      "opciones": [
+        "A. GL_LINE_LOOP",
+        "B. GL_LINE_FAN",
+        "C. GL_TRIANGLES_LOOP",
+        "D. GL_PRINT_STRIP"
+      ],
+      "respuesta_correcta": "A. GL_LINE_LOOP",
+      "explicacion": "GL_LINE_LOOP interpreta los vértices como una línea continua y añade un último segmento que conecta el vértice final con el primero. Las otras constantes mostradas no son modos de trazado válidos de OpenGL."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 158,
+      "pregunta": "Indica, de lo mostrado, qué debemos tener en cuenta para que el juego en Android sea de la mayor calidad posible:",
+      "opciones": [
+        "A. El uso de texturas",
+        "B. Las colisiones. El control de luces y sombras",
+        "C. Todas se deben tener en cuenta"
+      ],
+      "respuesta_correcta": "C. Todas se deben tener en cuenta",
+      "explicacion": "Las texturas determinan buena parte del aspecto de los objetos; las colisiones permiten que el mundo responda de forma coherente; y las luces y sombras aportan profundidad y legibilidad. Todos estos elementos influyen en la calidad visual y jugable, aunque deben ajustarse al rendimiento del dispositivo."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 159,
+      "pregunta": "Indica en cuál de las siguientes clases se encuentra incluido el método createCircularReveal:",
+      "opciones": [
+        "A. AnimationDrawable",
+        "B. TransitionManager",
+        "C. ViewAnimationUtils",
+        "D. AnimatedVectorDrawable"
+      ],
+      "respuesta_correcta": "C. ViewAnimationUtils",
+      "explicacion": "ViewAnimationUtils.createCircularReveal() crea un Animator que revela u oculta una vista mediante un círculo cuyo radio cambia. Se indican la vista, el centro del círculo y los radios inicial y final de la animación."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 160,
+      "pregunta": "Solo uno de los siguientes métodos no está asociado al Callback de un SurfaceView, ¿cuál?",
+      "opciones": [
+        "A. surfaceResize()",
+        "B. surfaceDestroyed()",
+        "C. surfaceChanged()",
+        "D. surfaceCreated()"
+      ],
+      "respuesta_correcta": "A. surfaceResize()",
+      "explicacion": "SurfaceHolder.Callback define surfaceCreated(), surfaceChanged() y surfaceDestroyed() para avisar de los cambios importantes de la superficie. No existe un callback llamado surfaceResize(); los cambios de tamaño se reciben mediante surfaceChanged()."
+    }
+  ]
+}

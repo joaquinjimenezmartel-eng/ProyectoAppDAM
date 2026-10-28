@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "asignaturaId": "multimediaMoviles",
+  "testId": "u11-test1",
+  "fuente": "U11/U11 AUTOEVALUACIÓN_ Revisión del intento _ UNIVERSAE360.pdf",
+  "tipo": "apoyo",
+  "correccionesAutorizadas": [
+    {
+      "preguntasOriginales": [6, 8],
+      "ids": [146, 148],
+      "campo": "pregunta",
+      "correccion": "Se incorporan los signos de interrogación y se corrige la concordancia de la pregunta 8.",
+      "autorizacion": "Corrección ortográfica y gramatical autorizada por el propietario; no modifica las soluciones."
+    },
+    {
+      "preguntasOriginales": [1, 2],
+      "ids": [141, 142],
+      "campo": "opciones",
+      "correccion": "Se retiran los puntos unidos a los nombres de los métodos.",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; no modifica las soluciones."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 143,
+      "campo": "opciones.B",
+      "correccion": "Se elimina el espacio situado antes del punto final.",
+      "autorizacion": "Corrección de puntuación autorizada por el propietario; no modifica la solución."
+    },
+    {
+      "preguntasOriginales": [4, 5, 10],
+      "ids": [144, 145, 150],
+      "campo": "pregunta",
+      "correccion": "Se eliminan los dos puntos situados tras una interrogación, se normalizan los puntos suspensivos y se retira el espacio anterior a los dos puntos.",
+      "autorizacion": "Corrección ortográfica y de puntuación autorizada por el propietario; no modifica las soluciones."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 147,
+      "campos": ["pregunta", "opciones.A", "opciones.C", "respuesta_correcta"],
+      "correccion": "Canva → Canvas y retirada de los paréntesis vacíos añadidos al final.",
+      "autorizacion": "Corrección de grafía técnica y puntuación autorizada por el propietario; se mantiene la opción C como solución."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 149,
+      "campos": ["opciones.A", "opciones.B", "opciones.C", "opciones.D", "respuesta_correcta"],
+      "correccion": "bitmap → Bitmap cuando se refiere a la clase de Android.",
+      "autorizacion": "Corrección de grafía técnica autorizada por el propietario; se mantiene la opción A como solución."
+    }
+  ],
+  "notasRevision": [
+    {
+      "numeroOriginal": 6,
+      "id": 146,
+      "respuestaSeleccionadaIncorrecta": "B. NETWORK",
+      "respuestaCorrectaIndicada": "C. PASSIVE",
+      "criterio": "Se conserva la solución explícita mostrada por la revisión del intento."
+    }
+  ],
+  "referenciasExplicaciones": [
+    "https://developer.android.com/reference/android/media/MediaRecorder#release()",
+    "https://developer.android.com/reference/android/view/MotionEvent",
+    "https://developer.android.com/develop/sensors-and-location/sensors/sensors_environment",
+    "https://developer.android.com/reference/android/widget/ImageView",
+    "https://developer.android.com/reference/android/graphics/Matrix",
+    "https://developer.android.com/reference/android/location/LocationManager#PASSIVE_PROVIDER",
+    "https://developer.android.com/reference/android/graphics/Canvas",
+    "https://developer.android.com/reference/android/graphics/Paint",
+    "https://developer.android.com/design/ui/mobile/guides/layout-and-content/grids-and-units",
+    "https://developer.android.com/reference/android/graphics/BitmapFactory",
+    "https://developer.android.com/reference/android/media/SoundPool",
+    "https://developer.android.com/reference/android/media/MediaPlayer"
+  ],
+  "preguntas": [
+    {
+      "numeroOriginal": 1,
+      "id": 141,
+      "pregunta": "¿Cómo se llama el método que libera el sistema de la instancia de MediaRecorder?",
+      "opciones": [
+        "A. resume()",
+        "B. destroy()",
+        "C. release()",
+        "D. reset()"
+      ],
+      "respuesta_correcta": "C. release()",
+      "explicacion": "release() libera la memoria, los códecs y los demás recursos asociados a la instancia de MediaRecorder cuando deja de ser necesaria. reset() solo devuelve el objeto a su estado inicial para poder configurarlo de nuevo, mientras que resume() continúa una grabación pausada."
+    },
+    {
+      "numeroOriginal": 2,
+      "id": 142,
+      "pregunta": "¿Cuál de estos métodos no pertenece a MotionEvent?",
+      "opciones": [
+        "A. getDownTime()",
+        "B. getUpTime()",
+        "C. getEventTime()",
+        "D. getPressure()"
+      ],
+      "respuesta_correcta": "B. getUpTime()",
+      "explicacion": "MotionEvent ofrece getDownTime() para conocer cuándo comenzó la secuencia de contacto, getEventTime() para saber cuándo ocurrió el evento actual y getPressure() para consultar la presión registrada. La clase no define un método llamado getUpTime()."
+    },
+    {
+      "numeroOriginal": 3,
+      "id": 143,
+      "pregunta": "¿Cuál de los siguientes sensores utiliza un solo canal de salida?",
+      "opciones": [
+        "A. Acelerómetro",
+        "B. Giroscopio.",
+        "C. Orientación.",
+        "D. Iluminación."
+      ],
+      "respuesta_correcta": "D. Iluminación.",
+      "explicacion": "El sensor de iluminación devuelve un único valor de iluminancia expresado en lux. El acelerómetro, el giroscopio y el sensor de orientación trabajan normalmente con varios valores relacionados con los ejes X, Y y Z."
+    },
+    {
+      "numeroOriginal": 4,
+      "id": 144,
+      "pregunta": "¿Qué afirmación es correcta con respecto a ImageView?",
+      "opciones": [
+        "A. El objeto se suele incluir en el fichero de la vista XML y se puede manipular desde Java.",
+        "B. El atributo android:scaleType hace referencia al archivo fuente de la imagen.",
+        "C. Los formatos gráficos soportados por Android son PNG, JPG y IMG",
+        "D. Todas son verdaderas."
+      ],
+      "respuesta_correcta": "A. El objeto se suele incluir en el fichero de la vista XML y se puede manipular desde Java.",
+      "explicacion": "ImageView puede declararse en el diseño XML y obtenerse desde el código para cambiar su imagen u otras propiedades. android:scaleType controla cómo se ajusta la imagen dentro de la vista, no cuál es el archivo de origen; además, IMG no es uno de los formatos gráficos indicados por Android."
+    },
+    {
+      "numeroOriginal": 5,
+      "id": 145,
+      "pregunta": "Con el objeto Matrix podemos...",
+      "opciones": [
+        "A. Trasladar una imagen o dibujos",
+        "B. Escalar una imagen o dibujos",
+        "C. Rotar una imagen o dibujos",
+        "D. Todas son verdaderas"
+      ],
+      "respuesta_correcta": "D. Todas son verdaderas",
+      "explicacion": "Matrix representa transformaciones geométricas que pueden aplicarse a imágenes y dibujos. Permite combinar traslaciones para cambiar la posición, escalados para modificar el tamaño y rotaciones para cambiar la orientación; por eso todas las opciones son verdaderas."
+    },
+    {
+      "numeroOriginal": 6,
+      "id": 146,
+      "pregunta": "¿Cuál de estos métodos de geolocalización nos permite actualizar nuestra posición mediante las llamadas de otras aplicaciones o proveedores?",
+      "opciones": [
+        "A. GPS",
+        "B. NETWORK",
+        "C. PASSIVE",
+        "D. TRACKING"
+      ],
+      "respuesta_correcta": "C. PASSIVE",
+      "explicacion": "PASSIVE_PROVIDER recibe ubicaciones generadas cuando otras aplicaciones o servicios solicitan actualizaciones a proveedores activos. De este modo puede observar cambios de posición sin iniciar por sí mismo una nueva búsqueda mediante GPS o redes."
+    },
+    {
+      "numeroOriginal": 7,
+      "id": 147,
+      "pregunta": "La clase Canvas define las propiedades de un pincel que nos permiten dibujar:",
+      "opciones": [
+        "A. La clase Canvas define las propiedades de un pincel que nos permiten dibujar.",
+        "B. La clase Paint define la superficie para pintar",
+        "C. Canvas nos da la superficie para pintar y con Paint podemos definir un pincel para hacerlo",
+        "D. Todas son falsas"
+      ],
+      "respuesta_correcta": "C. Canvas nos da la superficie para pintar y con Paint podemos definir un pincel para hacerlo",
+      "explicacion": "Canvas proporciona la superficie y las operaciones con las que se dibujan formas, texto o imágenes. Paint reúne las propiedades del trazo, como el color, el grosor, el estilo y la tipografía. Por tanto, Canvas es el soporte de dibujo y Paint actúa como el pincel."
+    },
+    {
+      "numeroOriginal": 8,
+      "id": 148,
+      "pregunta": "¿Qué unidad de medida en Android se basa en la densidad física de píxeles de la pantalla?",
+      "opciones": [
+        "A. px",
+        "B. pt",
+        "C. dp",
+        "D. sp"
+      ],
+      "respuesta_correcta": "C. dp",
+      "explicacion": "El píxel independiente de densidad o dp ajusta sus dimensiones según la densidad física de la pantalla. La referencia es una pantalla de 160 dpi, donde 1 dp equivale aproximadamente a 1 píxel; así los elementos mantienen un tamaño visual parecido en dispositivos distintos."
+    },
+    {
+      "numeroOriginal": 9,
+      "id": 149,
+      "pregunta": "Señala la opción correcta.",
+      "opciones": [
+        "A. Con Bitmap podemos cargar imágenes desde un recurso, fichero, buffer, URL o Array",
+        "B. Con Bitmap podemos cargar imágenes desde URL o Array solamente",
+        "C. La clase Bitmap no puede insertar imágenes desde un buffer",
+        "D. La clase Bitmap representa mapas de bits por lo que no puede cargar imágenes desde URL"
+      ],
+      "respuesta_correcta": "A. Con Bitmap podemos cargar imágenes desde un recurso, fichero, buffer, URL o Array",
+      "explicacion": "Las imágenes de mapa de bits pueden obtenerse desde recursos, archivos, matrices de bytes o flujos de datos. Una URL puede proporcionar un flujo que después se decodifica como Bitmap. Las demás opciones limitan incorrectamente los posibles orígenes de la imagen."
+    },
+    {
+      "numeroOriginal": 10,
+      "id": 150,
+      "pregunta": "Selecciona la opción correcta:",
+      "opciones": [
+        "A. SoundPool admite formatos de música grandes.",
+        "B. MediaPlayer permite reproducir varios sonidos simultáneamente y en bucle",
+        "C. Utilizaremos SoundPool para archivos de audio cortos y MediaPlayer para largos.",
+        "D. Con SoundPool no podemos reproducir archivos mediante Streaming."
+      ],
+      "respuesta_correcta": "C. Utilizaremos SoundPool para archivos de audio cortos y MediaPlayer para largos.",
+      "explicacion": "SoundPool está pensado para efectos breves que deben reproducirse con poca latencia y permite mantener varios sonidos cargados. MediaPlayer resulta más adecuado para contenidos largos, como música o vídeo, y puede reproducir medios desde archivos o transmisiones compatibles."
+    }
+  ]
+}

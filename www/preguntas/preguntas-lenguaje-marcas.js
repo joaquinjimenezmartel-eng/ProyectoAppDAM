@@ -57,7 +57,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrecta."
     ],
     "respuesta_correcta": "A. Lenguaje de consultas especializado en datos XML.",
-    "explicacion": "XQuery sirve para buscar y sacar información de documentos XML. Es como hacer preguntas dentro de un archivo XML para encontrar justo lo que necesitas.\n\nEjemplo:\nSi tienes un XML con libros, XQuery te puede ayudar a obtener solo los títulos o solo los autores.\n\nPor qué es correcta:\nPorque XQuery es un lenguaje pensado específicamente para hacer consultas sobre datos XML.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque esa descripción encaja mejor con otras tecnologías usadas para procesar o transformar XML.\n- C no es correcta porque DTD no usa XQuery como lenguaje de verificación.\n- D no es correcta porque A sí es correcta."
+    "explicacion": "XQuery es un lenguaje del W3C diseñado para consultar y transformar colecciones de datos XML. Permite seleccionar nodos, filtrar, ordenar y construir nuevos resultados; por ejemplo, extraer los títulos de todos los libros cuyo precio supere una cantidad. Una DTD valida estructura y XSLT se orienta principalmente a transformaciones mediante plantillas."
   },
   {
     "id": 6,
@@ -81,7 +81,7 @@ const preguntasLenguajeMarcas = [
       "D. Atributo."
     ],
     "respuesta_correcta": "D. Atributo.",
-    "explicacion": "Un atributo es un dato extra que se mete dentro de una etiqueta para completar su información. Es como ponerle una pegatina con detalles a una caja.\n\nEjemplo:\n<libro tipo=\"novela\">\nLa etiqueta es libro y el atributo es tipo=\"novela\".\n\nPor qué es correcta:\nPorque el atributo sirve precisamente para modificar o añadir información a una etiqueta.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque un elemento es algo más completo que puede incluir etiquetas y contenido.\n- B no es correcta porque gramática no es el nombre de esa parte.\n- C no es correcta porque la etiqueta es la propia marca, no la información adicional."
+    "explicacion": "Un atributo añade información a un elemento dentro de su etiqueta de apertura o de elemento vacío. En `<libro tipo=\"novela\">`, `tipo` es el nombre del atributo y `novela` su valor. El elemento comprende la etiqueta, su contenido y el cierre; por eso no debe confundirse el atributo con el elemento completo."
   },
   {
     "id": 8,
@@ -117,7 +117,7 @@ const preguntasLenguajeMarcas = [
       "D. :, Dos punto."
     ],
     "respuesta_correcta": "D. :, Dos punto.",
-    "explicacion": "En XSLT, muchas etiquetas usan un prefijo y luego el nombre separado por dos puntos. Es como si llevaran nombre y apellido unidos por ese símbolo.\n\nEjemplo:\n<xsl:value-of>\nAquí xsl es el prefijo y value-of es el nombre de la instrucción. Entre los dos va :\n\nPor qué es correcta:\nPorque la forma correcta de esa etiqueta es <xsl:value-of> y el símbolo que falta es :\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque el signo igual no se usa para separar el prefijo del nombre de la etiqueta.\n- B no es correcta porque la interrogación no corresponde a esa etiqueta.\n- C no es correcta porque la barra baja tampoco es el separador correcto."
+    "explicacion": "En XML, los dos puntos separan el prefijo de espacio de nombres del nombre local. La instrucción se escribe `<xsl:value-of>`: `xsl` es el prefijo asociado al espacio de nombres de XSLT y `value-of` es el nombre local. El signo igual se reserva para asignar valores a atributos, no para formar este nombre cualificado."
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@ const preguntasLenguajeMarcas = [
       "D. Ninguna de las anteriores es correcta."
     ],
     "respuesta_correcta": "A. DTD.",
-    "explicacion": "Una DTD es como una plantilla de reglas que le dice a un documento XML cómo debe estar hecho. Sirve para comprobar si ese XML está bien construido según unas normas.\n\nEjemplo:\nSi una DTD dice que un libro debe tener titulo y autor, el XML se revisa para ver si realmente tiene esas partes.\n\nPor qué es correcta:\nPorque la DTD se usa para validar un documento XML.\n\nPor qué se descartan las demás opciones:\n- B no es correcta porque OS/2 es un sistema operativo, no un sistema de validación de XML.\n- C no es correcta porque SASS es una herramienta relacionada con hojas de estilo, no con validación XML.\n- D no es correcta porque A sí es correcta."
+    "explicacion": "Una DTD define qué elementos y atributos puede contener un documento XML y cómo pueden organizarse. Al asociarla con un XML, un procesador validador comprueba si la estructura respeta esas declaraciones. Un documento puede estar bien formado sintácticamente y, aun así, no ser válido respecto de su DTD."
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@ const preguntasLenguajeMarcas = [
       "D. Un tipo de etiqueta."
     ],
     "respuesta_correcta": "C. Un documento de verificación.",
-    "explicacion": "DTD es un documento que contiene reglas para comprobar si un XML cumple la estructura que debería tener. Es como una hoja con instrucciones para revisar si todo está bien colocado.\n\nEjemplo:\nSi una DTD dice que un alumno debe tener nombre y edad, se puede revisar el XML para ver si esos datos aparecen correctamente.\n\nPor qué es correcta:\nPorque una DTD sirve para verificar o validar la estructura de un documento XML.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque una DTD no es un sistema numérico.\n- B no es correcta porque no es un tipo de atributo.\n- D no es correcta porque tampoco es un tipo de etiqueta."
+    "explicacion": "DTD significa *Document Type Definition* y actúa como una gramática de validación para XML. Declara elementos, atributos, entidades y modelos de contenido permitidos. Por ejemplo, puede exigir que cada elemento `alumno` contenga `nombre` y `edad`. No es un sistema numérico ni un tipo de etiqueta o atributo."
   },
   {
     "id": 13,
@@ -189,7 +189,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrectas."
     ],
     "respuesta_correcta": "B. El nodo raíz.",
-    "explicacion": "En XPath, la barra / sola representa el punto de inicio del documento, es decir, la raíz. Es como empezar a mirar un árbol desde su parte principal.\n\nEjemplo:\nSi escribes /libros/libro, empiezas desde la raíz y luego bajas hasta libros y libro.\n\nPor qué es correcta:\nPorque la expresión / se usa para señalar el nodo raíz del documento.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque un nodo con nombre específico sería algo como libro o autor.\n- C no es correcta porque el nodo actual se representa de otra forma.\n- D no es correcta porque B sí es correcta."
+    "explicacion": "En XPath, una ruta que comienza con `/` se evalúa desde el nodo raíz del documento. Por ejemplo, `/libros/libro` selecciona elementos `libro` hijos del elemento `libros` situado en la raíz. El nodo de contexto actual se representa con `.`, mientras que `//` busca descendientes a diferentes niveles."
   },
   {
     "id": 17,
@@ -213,7 +213,7 @@ const preguntasLenguajeMarcas = [
       "D. Estilos empleados."
     ],
     "respuesta_correcta": "C. Recursos externos, hojas de estilo.",
-    "explicacion": "La etiqueta <link> sirve para conectar el documento HTML con recursos que están fuera, sobre todo archivos CSS. Es como decirle a la página dónde está la ropa que se va a poner.\n\nEjemplo:\n<link rel=\"stylesheet\" href=\"estilos.css\">\nCon eso el HTML carga una hoja de estilo externa.\n\nPor qué es correcta:\nPorque la etiqueta <link> se usa para enlazar recursos externos, especialmente hojas de estilo.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque la versión del documento no la define esta etiqueta.\n- B no es correcta porque tampoco indica el estándar empleado.\n- D no es correcta porque no escribe los estilos dentro del HTML, sino que enlaza recursos externos."
+    "explicacion": "La etiqueta `<link>` declara la relación entre el documento HTML y un recurso externo. Su uso más habitual es cargar CSS con `<link rel=\"stylesheet\" href=\"estilos.css\">`. No contiene las reglas de estilo ni define la versión de HTML: proporciona la relación y la dirección del archivo que el navegador debe obtener."
   },
   {
     "id": 19,
@@ -249,7 +249,7 @@ const preguntasLenguajeMarcas = [
       "D. Acotarse con los símbolos \"<\" y \">\"."
     ],
     "respuesta_correcta": "B. Entrecomillarse.",
-    "explicacion": "En XML, cuando escribes un valor en un atributo, ese valor tiene que ir entre comillas. Es como poner una palabra dentro de una cajita para que el ordenador sepa exactamente dónde empieza y dónde termina.\n\nEjemplo:\n<persona nombre=\"Ana\">\nAquí el valor Ana va entre comillas.\n\nPor qué es correcta:\nPorque en XML los valores de los atributos deben escribirse entrecomillados.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque los valores no tienen por qué ser numéricos.\n- C no es correcta porque no van entre símbolos de igual, sino junto a un igual y entre comillas.\n- D no es correcta porque los símbolos < y > se usan para las etiquetas, no para los valores."
+    "explicacion": "En XML, el valor de un atributo debe ir entre comillas simples o dobles, por ejemplo `<persona nombre=\"Ana\">`. El signo `=` separa el nombre del atributo de su valor y las comillas delimitan ese valor. Los símbolos `<` y `>` delimitan etiquetas, no valores de atributos."
   },
   {
     "id": 22,
@@ -273,7 +273,7 @@ const preguntasLenguajeMarcas = [
       "D. Todas las anteriores son incorrectas."
     ],
     "respuesta_correcta": "C. Marca el tiempo de actualización en el caché.",
-    "explicacion": "El elemento ttl en un canal RSS sirve para indicar cuánto tiempo puede pasar antes de volver a comprobar si hay contenido nuevo. Es como decir cada cuánto rato conviene mirar si algo ha cambiado.\n\nEjemplo:\nSi un feed tiene un ttl de cierto tiempo, el lector no va a estar preguntando cada segundo, sino cuando toque volver a actualizar.\n\nPor qué es correcta:\nPorque ttl está relacionado con el tiempo de vida en caché y la actualización del canal.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque no marca la fecha de publicación.\n- B no es correcta porque no indica el tipo de licencia.\n- D no es correcta porque C sí es correcta."
+    "explicacion": "En RSS, `ttl` significa *time to live* e indica durante cuántos minutos un canal puede conservarse en caché antes de considerar una nueva consulta. Ayuda a los lectores a no solicitar actualizaciones continuamente. No representa la fecha de publicación ni una licencia del contenido."
   },
   {
     "id": 24,
@@ -321,7 +321,7 @@ const preguntasLenguajeMarcas = [
       "D. Es muy alta, pero, además, se recomienda que la empresa tome sus propias medidas de seguridad adicional"
     ],
     "respuesta_correcta": "D. Es muy alta, pero, además, se recomienda que la empresa tome sus propias medidas de seguridad adicional",
-    "explicacion": "Un ERP suele tener buenas medidas de seguridad, pero eso no significa que la empresa pueda olvidarse del tema. Es como tener una puerta fuerte en casa: sigue siendo buena idea cerrar con llave y poner alarma si hace falta.\n\nEjemplo:\nAunque el ERP tenga seguridad, la empresa debe controlar usuarios, contraseñas, permisos y copias de seguridad.\n\nPor qué es correcta:\nPorque reconoce dos cosas a la vez: que el ERP puede ser seguro y que la empresa debe añadir medidas propias.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque parte de que la seguridad del ERP no es muy alta.\n- B no es correcta porque además de decir que no es muy alta, minimiza demasiado la protección necesaria.\n- C no es correcta porque nunca es buena idea pensar que no hacen falta más medidas."
+    "explicacion": "Un ERP puede incorporar autenticación, permisos, registros y otras medidas, pero la seguridad depende también de la organización. Deben configurarse roles con mínimo privilegio, actualizaciones, copias, protección de credenciales y supervisión. La seguridad del producto no elimina la responsabilidad de aplicar controles propios y formar al personal."
   },
   {
     "id": 28,
@@ -357,7 +357,7 @@ const preguntasLenguajeMarcas = [
       "D. Se marcan con /."
     ],
     "respuesta_correcta": "D. Se marcan con /.",
-    "explicacion": "Cuando una etiqueta se cierra, se añade una barra para indicar que ya termina. Es como poner una señal de fin.\n\nEjemplo:\n<titulo>Hola</titulo>\nLa primera etiqueta abre y la segunda cierra porque lleva /.\n\nPor qué es correcta:\nPorque las marcas de cierre se identifican con la barra /.\n\nPor qué se descartan las demás opciones:\n- A no es correcta porque las de cierre no son iguales a las de apertura: llevan /.\n- B no es correcta porque ? no marca el cierre de una etiqueta normal.\n- C no es correcta porque = tampoco se usa para cerrar etiquetas."
+    "explicacion": "Una etiqueta de cierre coloca `/` inmediatamente después de `<`, como en `</titulo>`. Debe coincidir con el nombre de la etiqueta de apertura para que el elemento quede bien formado. Los elementos vacíos pueden utilizar la forma abreviada `<salto/>`; `?` y `=` no indican el cierre de una etiqueta ordinaria."
   },
   {
     "id": 31,
@@ -1126,7 +1126,7 @@ const preguntasLenguajeMarcas = [
                 "D. Todas las anteriores son incorrectas."
               ],
               "respuesta_correcta": "B. El penúltimo elemento.",
-              "explicacion": "En XPath, la función last() devuelve la posición del último nodo del conjunto que se está evaluando. Al restarle 1, matemáticamente estamos apuntando de forma exacta al elemento inmediatamente anterior, es decir, al penúltimo."
+                  "explicacion": "En XPath, `last()` devuelve la posición del último nodo del conjunto que se está evaluando. La expresión `last()-1` resta una posición y selecciona el nodo inmediatamente anterior, es decir, el penúltimo. Si el conjunto no contiene al menos dos nodos, no habrá un elemento que ocupe esa posición."
             },
             {
               "id": 95,
@@ -1438,6 +1438,6 @@ const preguntasLenguajeMarcas = [
                     "D. Ninguna de las anteriores."
                   ],
                   "respuesta_correcta": "D. Ninguna de las anteriores.",
-                  "explicacion": "Las siglas OLAP significan exactamente 'Online Analytical Processing' (Procesamiento Analítico en Línea). Como ninguna de las opciones A, B o C está escrita de forma 100% correcta (process en lugar de processing, analysis en lugar de analytical, u offline en lugar de online), la respuesta correcta es la D."
+                  "explicacion": "OLAP significa *Online Analytical Processing* o procesamiento analítico en línea. Ninguna de las tres denominaciones propuestas reproduce el acrónimo: `Process` sustituye a `Processing`, `Analysis` a `Analytical` y `Offline` cambia el significado de la primera letra. Por eso ninguna de las anteriores corresponde a OLAP."
                 }
 ];

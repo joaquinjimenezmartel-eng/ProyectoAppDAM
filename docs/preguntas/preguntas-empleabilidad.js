@@ -537,7 +537,7 @@ const preguntasEmpleabilidad = [
       "D. Nominal, intereses, comisiones y gastos."
     ],
     "respuesta_correcta": "D. Nominal, intereses, comisiones y gastos.",
-    "explicacion": "El coste real de un préstamo no es solo el dinero prestado. También hay que sumar los intereses, las comisiones y los demás gastos asociados."
+    "explicacion": "El coste total de un préstamo incluye el capital o nominal que debe devolverse, los intereses y las comisiones o gastos vinculados. Para comparar ofertas no basta con mirar la cuota: conviene revisar el importe total adeudado y la TAE, que incorpora el coste efectivo bajo condiciones normalizadas."
   },
   {
     "id": 46,
@@ -573,7 +573,7 @@ const preguntasEmpleabilidad = [
       "D. Toda la vida del individuo."
     ],
     "respuesta_correcta": "A. 6 meses.",
-    "explicacion": "El fondo de emergencia debería cubrir unos 6 meses de gastos básicos. Ese margen da seguridad ante imprevistos como quedarse sin empleo o afrontar una avería importante."
+    "explicacion": "Un fondo de emergencia mantiene dinero líquido y separado para afrontar imprevistos sin recurrir a deuda. En este caso se fija una cobertura de seis meses de gastos: si los gastos esenciales son 1.000 € al mes, el objetivo sería 6.000 €. La cifra personal puede ajustarse según estabilidad laboral, cargas y seguros."
   },
   {
     "id": 49,
@@ -585,7 +585,7 @@ const preguntasEmpleabilidad = [
       "D. Todas son correctas."
     ],
     "respuesta_correcta": "B. Se consideran una deuda eterna.",
-    "explicacion": "Se consideran una deuda eterna porque suelen tener intereses altos y cuotas pequeñas, lo que hace que la deuda tarde mucho en bajar y pueda alargarse durante años."
+    "explicacion": "Las tarjetas *revolving* permiten aplazar el saldo mediante cuotas periódicas, pero la deuda pendiente genera intereses. Si la cuota es baja, puede destinarse casi toda a intereses y amortizar muy poco capital, prolongando la deuda durante años. Para valorar su coste hay que revisar TAE, cuota y plazo estimado."
   },
   {
     "id": 50,
@@ -597,7 +597,7 @@ const preguntasEmpleabilidad = [
       "D. Ahorro."
     ],
     "respuesta_correcta": "D. Ahorro.",
-    "explicacion": "Eso es ahorrar: dejar de gastar una parte del dinero hoy para poder usarla más adelante con más seguridad o para un objetivo concreto."
+    "explicacion": "Ahorrar consiste en reservar parte de los ingresos en lugar de destinarla al consumo presente, con el fin de utilizarla más adelante. Por ejemplo, separar 100 € al mes para un fondo de emergencia supone renunciar hoy a ese gasto para disponer de mayor capacidad futura."
   },
   {
       "id": 51,
@@ -633,7 +633,7 @@ const preguntasEmpleabilidad = [
         "D. El pedido."
       ],
       "respuesta_correcta": "B. El presupuesto.",
-      "explicacion": "El presupuesto es el documento en el que el vendedor deja por escrito qué ofrece, cuánto cuesta y en qué condiciones lo entregará o lo realizará."
+      "explicacion": "El presupuesto recoge una oferta antes de aceptar la operación: identifica el bien o servicio, precio, impuestos, validez y condiciones de entrega o ejecución. Permite al cliente comparar y decidir. Se diferencia de la factura, que documenta una operación ya realizada o devengada."
     },
     {
       "id": 54,
@@ -645,7 +645,7 @@ const preguntasEmpleabilidad = [
         "D. Transferencia bancaria."
       ],
       "respuesta_correcta": "B. Letra de cambio.",
-      "explicacion": "La letra de cambio es una orden formal de pago con vencimiento. En ella se establece que una persona deberá pagar una cantidad concreta en la fecha indicada."
+      "explicacion": "La letra de cambio es un título formal por el que el librador ordena al librado pagar una cantidad al tenedor o beneficiario en un vencimiento determinado. Se diferencia del pagaré, donde quien firma promete directamente el pago, y del cheque, que normalmente es pagadero a la vista."
     },
     {
       "id": 55,
@@ -657,7 +657,7 @@ const preguntasEmpleabilidad = [
         "D. Sistema tributario."
       ],
       "respuesta_correcta": "B. Plan de tesorería.",
-      "explicacion": "El plan de tesorería sirve para prever el dinero que va a entrar y salir a corto plazo. Es clave para saber si la empresa podrá atender sus pagos cuando toque."
+      "explicacion": "El plan de tesorería ordena por fechas los cobros y pagos previstos y calcula el saldo disponible en cada periodo. Así permite anticipar faltas de liquidez aunque la empresa tenga beneficios contables. Por ejemplo, una venta a 60 días no aporta efectivo para un pago que vence mañana."
     },
     {
       "id": 56,
@@ -681,7 +681,7 @@ const preguntasEmpleabilidad = [
         "D. La declaración censal."
       ],
       "respuesta_correcta": "A. El IVA.",
-      "explicacion": "El IVA grava el consumo porque se aplica cuando compramos bienes o servicios. Es un impuesto indirecto que se paga a través del precio."
+      "explicacion": "El IVA es un impuesto indirecto que grava el consumo de bienes y servicios. El consumidor final lo soporta en el precio, mientras que empresas y profesionales repercuten el IVA de sus ventas y, cuando procede, deducen el soportado en sus compras antes de liquidarlo."
     },
     {
       "id": 58,
@@ -693,7 +693,7 @@ const preguntasEmpleabilidad = [
         "D. La declaración censal."
       ],
       "respuesta_correcta": "B. El IRPF.",
-      "explicacion": "El IRPF es el impuesto que grava la renta de las personas físicas, como sueldos, alquileres o determinados rendimientos. Por eso es el impuesto ligado a los ingresos personales."
+      "explicacion": "El IRPF grava la renta obtenida por las personas físicas, incluyendo rendimientos del trabajo, del capital y de actividades económicas, además de otras ganancias o pérdidas según la normativa. Es un impuesto directo y personal; no grava el consumo como el IVA."
     },
     {
       "id": 59,

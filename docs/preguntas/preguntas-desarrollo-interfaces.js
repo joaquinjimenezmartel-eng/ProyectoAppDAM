@@ -1079,5 +1079,125 @@ const preguntasDesarrolloInterfaces = [
     ],
     "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
     "explicacion": "Las variables predefinidas son valores que el motor del informe proporciona automáticamente, como el número de página o el recuento de registros. No son una consulta, un cálculo definido de forma genérica ni una variable creada por el usuario; por eso ninguna de las definiciones propuestas corresponde."
+  },
+  {
+    "id": 131,
+    "pregunta": "¿Cuál de estas es una prueba de regresión?",
+    "opciones": [
+      "A. Locales.",
+      "B. Desenmascaradas o al descubierto.",
+      "C. Remota o a distancia.",
+      "D. Todas las anteriores son correctas."
+    ],
+    "respuesta_correcta": "D. Todas las anteriores son correctas.",
+    "explicacion": "Las pruebas de regresión vuelven a ejecutar comprobaciones después de un cambio para detectar efectos no deseados en funciones que ya trabajaban correctamente. Pueden realizarse en un entorno local o remoto y con distintos grados de conocimiento o acceso al sistema; por eso todas las posibilidades planteadas son válidas."
+  },
+  {
+    "id": 132,
+    "pregunta": "¿Cuál de estas herramientas no es empleada en las pruebas automáticas?",
+    "opciones": [
+      "A. Selenium.",
+      "B. JUnit.",
+      "C. Bugzilla.",
+      "D. Eclipse."
+    ],
+    "respuesta_correcta": "D. Eclipse.",
+    "explicacion": "Eclipse es principalmente un entorno de desarrollo integrado, no una herramienta especializada en automatizar pruebas. Selenium automatiza la interacción con navegadores y JUnit permite definir y ejecutar pruebas en Java. Bugzilla se utiliza como apoyo para registrar y seguir los defectos descubiertos durante las pruebas."
+  },
+  {
+    "id": 133,
+    "pregunta": "¿Cuál de estas no es una prueba no funcional?",
+    "opciones": [
+      "A. Idoneidad.",
+      "B. Capacidad.",
+      "C. Estrés.",
+      "D. Volumen."
+    ],
+    "respuesta_correcta": "A. Idoneidad.",
+    "explicacion": "La idoneidad funcional valora si el sistema ofrece las funciones necesarias para cumplir los objetivos del usuario. En cambio, las pruebas de capacidad, estrés y volumen estudian cualidades no funcionales relacionadas con el rendimiento y los límites de carga del sistema."
+  },
+  {
+    "id": 134,
+    "pregunta": "El diseño es:",
+    "opciones": [
+      "A. La fase del proyecto donde se comprueba la funcionalidad y la consecución de los objetivos planteados.",
+      "B. La fase del proyecto donde se lleva a cabo el desarrollo propiamente dicho de la aplicación.",
+      "C. La fase inicial del proyecto donde se lleva a cabo un análisis sobre qué tipo de aplicación se desea hacer y cómo se desarrollará.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "La opción A describe la comprobación o evaluación, la B corresponde a la implementación y la C define la planificación inicial. El diseño transforma los requisitos en la estructura, la arquitectura y la solución visual o interactiva que se construirá, por lo que ninguna definición propuesta corresponde a esta fase."
+  },
+  {
+    "id": 135,
+    "pregunta": "El sistema de control se lleva a cabo en:",
+    "opciones": [
+      "A. Durante la implementación.",
+      "B. Tras la creación de todos los módulos.",
+      "C. Durante toda la creación del proyecto.",
+      "D. Tras la creación completa del proyecto."
+    ],
+    "respuesta_correcta": "C. Durante toda la creación del proyecto.",
+    "explicacion": "El control acompaña al proyecto desde su inicio hasta el cierre. Permite comparar el avance con la planificación, detectar desviaciones, revisar la calidad y corregir problemas antes de que se acumulen; no debe reservarse únicamente para la implementación o el final."
+  },
+  {
+    "id": 136,
+    "pregunta": "La implementación es:",
+    "opciones": [
+      "A. La fase del proyecto donde se comprueba la funcionalidad y la consecución de los objetivos planteados.",
+      "B. La fase del proyecto donde se lleva a cabo el desarrollo propiamente dicho de la aplicación.",
+      "C. La fase inicial del proyecto donde se lleva a cabo un análisis sobre qué tipo de aplicación se desea hacer y cómo se desarrollará.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. La fase del proyecto donde se lleva a cabo el desarrollo propiamente dicho de la aplicación.",
+    "explicacion": "Durante la implementación, el diseño se convierte en un producto ejecutable: se programa la lógica, se construye la interfaz y se integran los componentes. La planificación decide qué se hará y el diseño define cómo será la solución; la implementación la materializa."
+  },
+  {
+    "id": 137,
+    "pregunta": "La planificación es:",
+    "opciones": [
+      "A. La fase del proyecto donde se comprueba la funcionalidad y la consecución de los objetivos planteados.",
+      "B. La fase del proyecto donde se lleva a cabo el desarrollo propiamente dicho de la aplicación.",
+      "C. La fase inicial del proyecto donde se lleva a cabo un análisis sobre qué tipo de aplicación se desea hacer y cómo se desarrollará.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "C. La fase inicial del proyecto donde se lleva a cabo un análisis sobre qué tipo de aplicación se desea hacer y cómo se desarrollará.",
+    "explicacion": "La planificación define el alcance, los objetivos, las tareas, los recursos y la forma de abordar el proyecto antes de comenzar el desarrollo. Una buena planificación reduce incertidumbre y proporciona una referencia para controlar posteriormente el avance."
+  },
+  {
+    "id": 138,
+    "pregunta": "Las pruebas de caja blanca son:",
+    "opciones": [
+      "A. Pruebas llevadas a cabo por los usuarios.",
+      "B. Pruebas llevadas a cabo por herramientas.",
+      "C. Pruebas que se llevan a cabo sobre el código.",
+      "D. Todas las anteriores son incorrectas."
+    ],
+    "respuesta_correcta": "C. Pruebas que se llevan a cabo sobre el código.",
+    "explicacion": "Las pruebas de caja blanca se diseñan conociendo la estructura interna del programa. Analizan elementos como sentencias, decisiones, condiciones y caminos del código para comprobar qué partes se han ejecutado y detectar errores en la lógica interna."
+  },
+  {
+    "id": 139,
+    "pregunta": "Tipos de pruebas de integración:",
+    "opciones": [
+      "A. Internas y externas.",
+      "B. Locales y remotas.",
+      "C. Ascendentes y descendentes.",
+      "D. De rendimiento y de recursos."
+    ],
+    "respuesta_correcta": "C. Ascendentes y descendentes.",
+    "explicacion": "La integración ascendente comienza por los módulos de nivel inferior y avanza hacia los superiores. La integración descendente sigue el recorrido contrario: parte de los módulos principales y añade gradualmente los componentes subordinados. Ambas estrategias comprueban cómo colaboran las partes del sistema."
+  },
+  {
+    "id": 140,
+    "pregunta": "Una versión beta:",
+    "opciones": [
+      "A. Es una versión destinada a pruebas por parte de los desarrolladores.",
+      "B. Es la primera versión que se entrega al cliente.",
+      "C. Es la última versión del proyecto y se implementa como definitiva.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "D. Ninguna de las anteriores es correcta.",
+    "explicacion": "Una versión beta es una versión previa al lanzamiento definitivo que se entrega a un grupo de usuarios para detectar problemas en condiciones reales. Las pruebas internas de los desarrolladores se asocian normalmente a la fase alfa, y una beta no es necesariamente la primera entrega al cliente ni la versión final."
   }
 ];

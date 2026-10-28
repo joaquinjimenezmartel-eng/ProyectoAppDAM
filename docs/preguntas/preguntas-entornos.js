@@ -9,7 +9,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "El software es como una idea o un pensamiento: no se puede tocar con las manos, requiere tiempo para imaginarse y construirse paso a paso, y a veces se diseña como un traje a medida solo para ti. A nivel técnico, el software es un producto lógico (intangible), que no se fabrica sino que requiere un ciclo de vida de ingeniería para desarrollarse, y que puede comercializarse como un producto genérico o ser un desarrollo ad hoc para necesidades específicas de un cliente."},
+  explicacion: "El software es un producto lógico e intangible que se desarrolla mediante actividades de análisis, diseño, programación, pruebas y mantenimiento. Puede distribuirse como producto estándar para muchos clientes o construirse a medida de unas necesidades concretas. Por ello, las características enumeradas son compatibles entre sí."},
 
 { id: 2,
   pregunta: "Dentro de los modos de colaboración con los SCV (Sistemas de Control de Versiones) está:",
@@ -20,7 +20,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "Imagina la cocina de un restaurante: todos pueden meter mano en la misma olla (centralizado), puede haber un chef que revisa los platos antes de sacarlos (integrador), o un chef supremo con subjefes en los que confía (dictador y tenientes). En ingeniería de software, especialmente en sistemas distribuidos como Git, los equipos pueden usar un único repositorio central, trabajar con 'forks' y 'pull requests' validados por un integrador, o usar jerarquías de confianza (dictador y tenientes) típico de proyectos masivos como el kernel de Linux."},
+  explicacion: "Los sistemas de control de versiones admiten distintos modelos de colaboración. Un flujo centralizado concentra los cambios en un repositorio; el modelo con integrador revisa contribuciones antes de incorporarlas; y el modelo de dictador y tenientes delega revisiones por niveles. Todos son esquemas válidos según el tamaño y la organización del proyecto."},
 
 { id: 3,
   pregunta: "Durante la elaboración de diagramas de comportamiento de casos de uso, la relación de extensión es una situación donde dos casos de uso comparten funcionalidad y, además:",
@@ -31,7 +31,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores"
   ],
   correcta: 0,
-  explicacion: "Es como pedir una pizza margarita básica y decidir ponerle pepperoni extra; la pizza funciona sola, pero el extra le da un toque diferente si se cumplen ciertas condiciones. En UML, la relación '<<extend>>' indica que un caso de uso base puede ejecutarse de manera completamente independiente, pero bajo ciertas reglas de negocio (puntos de extensión), su comportamiento puede ser ampliado o alterado por un caso de uso de extensión."},
+  explicacion: "En UML, `<<extend>>` expresa que un caso de uso añade comportamiento opcional o condicionado a otro. El caso base tiene sentido y puede completarse por sí mismo; el caso de extensión interviene solo cuando se cumple una condición en un punto previsto. Se diferencia de `<<include>>`, que incorpora comportamiento necesario y reutilizable."},
 
 { id: 4,
   pregunta: "Ejecutando el comando \"javac -version\":",
@@ -42,7 +42,7 @@ const preguntasEntornos = [
     "Iniciamos el proceso de depuración de errores"
   ],
   correcta: 0,
-  explicacion: "Es como llamar a la puerta del taller del constructor para ver si está dentro y preguntarle qué edad tiene. El comando 'javac' invoca al compilador de Java. Puesto que el compilador es una herramienta de desarrollo, solo se encuentra incluido dentro del JDK (Java Development Kit), no en el JRE ni en la JVM. Si responde con su versión, confirmamos que el entorno de desarrollo base está instalado y mapeado en el PATH del sistema operativo."},
+  explicacion: "`javac -version` ejecuta el compilador de Java y muestra su versión. Como `javac` forma parte del JDK, una respuesta válida confirma que el kit de desarrollo está instalado y que el ejecutable puede localizarse desde la terminal, normalmente mediante `PATH`. No basta con disponer únicamente de un entorno de ejecución sin compilador."},
 
 { id: 5,
   pregunta: "El compilador de Java también se denomina:",
@@ -53,7 +53,7 @@ const preguntasEntornos = [
     "JDK"
   ],
   correcta: 0,
-  explicacion: "Es como el traductor oficial de la familia Java, cuyo nombre propio es 'Javac'. Técnicamente, 'javac' (Java Compiler) es el binario principal del JDK encargado de compilar el código fuente humano escrito en archivos '.java' y traducirlo a código intermedio o bytecode en archivos '.class', que posteriormente será interpretado por la JVM."},
+  explicacion: "`javac` es el compilador incluido en el JDK. Traduce los archivos fuente `.java` a archivos `.class` con *bytecode*, que después ejecuta la máquina virtual de Java. No debe confundirse con el comando `java`, que inicia la JVM para ejecutar una clase ya compilada."},
 
 { id: 6,
   pregunta: "El diagrama de casos de uso permite:",
@@ -64,7 +64,7 @@ const preguntasEntornos = [
     "Ninguna es correcta"
   ],
   correcta: 2,
-  explicacion: "Es como el póster de una obra de teatro donde ves quiénes son los actores y qué cosas pueden hacer en el escenario, sin importar en qué orden. Los diagramas de casos de uso de UML son herramientas de comportamiento que modelan funcionalmente los límites de un sistema, identificando a los actores (usuarios o sistemas externos) y los casos de uso (las funciones o servicios que el sistema les proporciona)."},
+  explicacion: "Un diagrama de casos de uso muestra los servicios que ofrece un sistema y los actores externos que participan en ellos. Representa el límite funcional y las relaciones entre actores y casos de uso, pero no el orden temporal de los pasos ni la implementación interna. Puede abarcar varias funciones o aplicaciones relacionadas del sistema."},
 
 { id: 7,
   pregunta: "El nivel de visibilidad designado con \"-\" es:",
@@ -75,7 +75,7 @@ const preguntasEntornos = [
     "El privado"
   ],
   correcta: 3,
-  explicacion: "Es como un diario cerrado con candado: solo su dueño puede leer lo que hay escrito dentro. En el estándar de modelado UML, el símbolo '-' denota el modificador de acceso 'private'. Esto garantiza el principio de encapsulamiento de la POO, indicando que el atributo o método solo es accesible desde la lógica interna de la propia clase en la que fue declarado."},
+  explicacion: "En un diagrama de clases UML, el signo `-` indica visibilidad privada. El atributo u operación solo es accesible desde la propia clase, lo que ayuda a encapsular su estado y controlar cómo se modifica. Como referencia, `+` significa público y `#` protegido."},
 
 { id: 8,
   pregunta: "El proceso de reestructuración interna del código, generalmente para optimizar el comportamiento del código sin modificarlo, se llama:",
@@ -86,7 +86,7 @@ const preguntasEntornos = [
     "Regeneración"
   ],
   correcta: 0,
-  explicacion: "Como ordenar tu habitación: sigues teniendo los mismos juguetes y muebles, no has comprado nada nuevo, pero ahora todo es mucho más fácil de encontrar. La refactorización es una técnica de ingeniería de software que consiste en alterar la estructura interna del código fuente (mejorando su mantenibilidad, legibilidad y reduciendo la complejidad ciclomática o la deuda técnica) garantizando que su comportamiento externo o funcionalidad permanezca inalterada."},
+  explicacion: "La refactorización modifica la estructura interna del código sin alterar su comportamiento observable. Puede consistir en extraer un método, eliminar duplicación o mejorar nombres. Su objetivo es facilitar la lectura, las pruebas y el mantenimiento; no añade una funcionalidad nueva, aunque prepara el código para cambios posteriores."},
 
 { id: 9,
   pregunta: "El software estándar o enlatado:",
@@ -108,7 +108,7 @@ const preguntasEntornos = [
     "Las dos primeras son correctas"
   ],
   correcta: 0,
-  explicacion: "Es como contar ovejas reales: puedes tener tres o cuatro ovejas, pero nunca podrás tener media oveja suelta por el prado. En lenguajes fuertemente tipados, 'int' es un tipo de dato primitivo reservado para almacenar valores numéricos enteros (sin coma flotante o parte fraccionaria), ocupando generalmente 32 bits de memoria y permitiendo valores negativos y positivos."},
+  explicacion: "`int` es un tipo de dato destinado a números enteros, sin parte decimal. En Java ocupa 32 bits y representa valores positivos, negativos y cero dentro de un rango definido. Para cantidades con fracción se utilizan tipos como `float` o `double`; por eso `int` no almacena valores como `3,5`."},
 
 { id: 11,
   pregunta: "En el lenguaje UML, los atributos de una clase se representan en:",
@@ -119,7 +119,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores"
   ],
   correcta: 1,
-  explicacion: "Imagina una cajonera de tres pisos: arriba pones el nombre de la ropa, en medio cómo es (su color o talla) y abajo qué puedes hacer con ella. En la notación gráfica estándar de UML, una clase se dibuja como un rectángulo dividido en tres compartimentos o celdas: la superior para el identificador de la clase, la intermedia (o segunda) para los atributos (estado), y la inferior para las operaciones o métodos."},
+  explicacion: "Una clase UML se representa normalmente mediante un rectángulo dividido en tres compartimentos: nombre en la parte superior, atributos en la segunda sección y operaciones o métodos en la tercera. Por tanto, los atributos se sitúan en el compartimento intermedio, no en una clase distinta."},
 
 { id: 12,
   pregunta: "En los diagramas de secuencia, dentro de la elaboración de diagramas de comportamiento, el envío de mensajes puede ser:",
@@ -141,7 +141,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "Para saber si un coche de juguete es bueno, miras si las piezas se encajan bien (modularidad), si usa pilas normales de las de siempre (estandarización) y si no se rompe al primer golpe (tolerancia). La calidad de la arquitectura de software (ISO/IEC 25010) se evalúa auditando métricas como la modularidad (baja dependencia entre componentes), la estandarización (uso de patrones consistentes) y la tolerancia a fallos (capacidad del sistema para mantener el servicio ante excepciones o inputs inválidos)."},
+  explicacion: "La modularidad evalúa si el sistema está dividido en componentes con responsabilidades claras; la estandarización comprueba el uso coherente de normas y convenciones; y la tolerancia a fallos mide si el servicio puede continuar ante errores. Como las tres aportan información sobre la calidad del software, todas son correctas."},
 
 { id: 14,
   pregunta: "Entre sus herramientas, un IDE puede contar con:",
@@ -152,7 +152,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "Es como la mochila mágica del cole: tiene el cuaderno para escribir (editor), la lupa por si te has equivocado en una letra (depurador) y la máquina que traduce tus deberes al idioma del profesor (compilador). Un Entorno de Desarrollo Integrado (IDE) es una suite de software que centraliza el ciclo de desarrollo en una única interfaz gráfica (GUI), agrupando típicamente un editor de código fuente inteligente, un compilador/intérprete automatizado y un depurador (debugger)."},
+  explicacion: "Un IDE reúne en una misma interfaz herramientas habituales del desarrollo: editor de código, compilador o intérprete y depurador. También puede integrar pruebas, control de versiones y gestión de dependencias. La integración permite escribir, ejecutar y diagnosticar el programa sin cambiar continuamente de aplicación."},
 
 { id: 15,
   pregunta: "Es muy recomendable que las pruebas:",
@@ -163,7 +163,7 @@ const preguntasEntornos = [
     "Todas son incorrectas"
   ],
   correcta: 2,
-  explicacion: "Como cuando haces una tarta: es mejor que la pruebe otra persona para saber si está rica, porque a ti siempre te va a parecer que has cocinado genial. En metodologías de QA (Quality Assurance), es crucial la separación de roles. Un programador sufre sesgo de confirmación y tiende a probar los 'caminos felices'. Un equipo externo asegura la objetividad de las pruebas y somete el sistema a los casos límite (edge cases) que el desarrollador no previó."},
+  explicacion: "Es recomendable que parte de las pruebas las realice personal distinto de quien programó la funcionalidad. Una mirada independiente suele explorar casos límite y usos no previstos y evalúa el resultado frente a los requisitos. Esto no elimina las pruebas del desarrollador: las complementa con una verificación menos condicionada por la implementación."},
 
 { id: 16,
   pregunta: "Es un elemento de los diagramas de uso:",
@@ -218,7 +218,7 @@ const preguntasEntornos = [
     "Círculo vacío"
   ],
   correcta: 1,
-  explicacion: "Es como un collar de cuentas con un cierre suelto (un rombo vacío). Si el collar se rompe, las cuentas siguen existiendo por separado, igual que las piezas de un coche si lo desmontas. En UML, la agregación representa una relación 'todo-parte' débil y se denota con una línea sólida que finaliza en un rombo sin rellenar apuntando a la clase contenedora. Esto indica que las partes encapsuladas pueden sobrevivir a la destrucción del contenedor."},
+  explicacion: "La agregación UML representa una relación todo-parte débil mediante un rombo vacío situado en el extremo del todo. Las partes pueden existir independientemente del objeto agregado. La composición utiliza un rombo relleno y expresa una dependencia de ciclo de vida más fuerte entre el todo y sus partes."},
 
 { id: 21,
   pregunta: "La UML es:",
@@ -240,7 +240,7 @@ const preguntasEntornos = [
     "Pruebas de validación"
   ],
   correcta: 2,
-  explicacion: "Es como el control de calidad de la fábrica de Lego: revisas cada bloque pequeño individualmente antes de intentar montar el castillo entero. Las pruebas unitarias ('Unit Testing') son el nivel más atómico del testing de software. Se ejecutan durante la propia codificación para aislar y validar que un componente específico (un método, una función o una clase aislada mediante mocks) retorna la salida esperada de forma independiente."},
+  explicacion: "Las pruebas unitarias verifican unidades pequeñas del código, como un método o una clase, y suelen escribirse desde las primeras fases del desarrollo. Permiten detectar defectos cerca de su origen y ejecutarse con rapidez. Pueden usar dobles de prueba para aislar dependencias, aunque no siempre es necesario."},
 
 { id: 23,
   pregunta: "Las pruebas que se deben realizar para comprobar que el software ofrece todo lo necesario y funciona son:",
@@ -262,7 +262,7 @@ const preguntasEntornos = [
     "Pruebas de regresión"
   ],
   correcta: 3,
-  explicacion: "Es como asegurar que tras cambiarle el volante al coche, el pedal del freno no ha dejado de funcionar misteriosamente. Las pruebas de regresión son conjuntos de tests preexistentes (habitualmente automatizados en pipelines de CI/CD) que se reejecutan después de una modificación de código o refactorización. Su objetivo es certificar que no se han reintroducido bugs antiguos ni provocado daños colaterales en funcionalidades estables."},
+  explicacion: "Las pruebas de regresión se vuelven a ejecutar después de modificar el software para comprobar que funciones antes correctas continúan funcionando. Detectan efectos secundarios y defectos reintroducidos. Su automatización en integración continua permite repetirlas con frecuencia, pero no garantiza por sí sola la ausencia total de errores."},
 
 { id: 25,
   pregunta: "Las pruebas se realizan con el fin de:",
@@ -273,7 +273,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "Es como pasar la ITV de un coche antes de conducirlo: quieres que funcione bien, ver si frena y estar seguro de que te llevará donde quieres. La disciplina de testing de software cubre tanto la validación (asegurar que se cumple la especificación de requisitos del cliente) como la verificación (descubrir defectos de forma temprana para minimizar su coste de reparación antes de que alcancen el entorno de producción o despliegue)."},
+  explicacion: "Las pruebas verifican que el producto se ha construido conforme a sus especificaciones, validan que satisface las necesidades y descubren defectos antes de llegar a producción. También aportan evidencia para mantener el software con seguridad. Como las finalidades enumeradas son complementarias, todas resultan correctas."},
 
 { id: 26,
   pregunta: "Las relaciones de inclusión:",
@@ -295,7 +295,7 @@ const preguntasEntornos = [
     "Todas las anteriores son correctas"
   ],
   correcta: 3,
-  explicacion: "Imagina una caja de herramientas del futuro: te guarda piezas para usarlas otro día, hace que lo que construyes encaje en cualquier parte y además te imprime las instrucciones perfectas para el usuario. Las herramientas CASE (Computer Aided Software Engineering) son plataformas que asisten en la ingeniería de software, automatizando la generación de código, facilitando el diseño arquitectónico multiplataforma, promoviendo la reusabilidad de componentes y auto-generando documentación en formatos estandarizados."},
+  explicacion: "Las herramientas CASE asisten tareas del ciclo de vida del software, como modelado, generación de código, documentación y mantenimiento de artefactos. Cuando utilizan modelos y formatos comunes favorecen la reutilización, la interoperabilidad y el trabajo multiplataforma. Por eso las capacidades propuestas pueden coexistir en este tipo de herramienta."},
 
 { id: 28,
   pregunta: "Los diagramas de estados poseen:",
@@ -306,7 +306,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores"
   ],
   correcta: 2,
-  explicacion: "Es como el ciclo de vida de una mariposa: nace de un huevo y muere (inicio y fin) y va pasando por fases de oruga a capullo igual que nosotros describimos a un objeto. En UML, un diagrama de máquina de estados incluye nodos especiales (pseudostados de inicio y fin). Se correlacionan íntimamente con los diagramas de clases porque describen de forma dinámica las transiciones de estado y comportamientos que sufre una instancia particular de una clase debido al disparo de eventos."},
+  explicacion: "Un diagrama de estados puede incluir un pseudestado inicial y uno o varios estados finales. Describe cómo una instancia cambia de estado en respuesta a eventos y condiciones, por lo que complementa la estructura definida por sus clases. Las dos características indicadas —inicio y fin, y relación con objetos de clases— son compatibles."},
 
 { id: 29,
   pregunta: "Los lenguajes de programación que se clasifican dependiendo de cómo se ejecutan son:",
@@ -317,7 +317,7 @@ const preguntasEntornos = [
     "Ninguna es correcta"
   ],
   correcta: 0,
-  explicacion: "Imagina que tienes un libro en alemán: puedes traducirlo entero a español y luego leerlo de golpe (compilado), o poner a alguien a tu lado que te traduzca en voz alta palabra por palabra sobre la marcha (interpretado). Atendiendo a su modelo de ejecución en el sistema, los lenguajes informáticos se taxonomizan en compilados (se transforman a binario de máquina objetivo), interpretados (se ejecutan sentencia a sentencia en tiempo real) e intermedios o híbridos (compilan a bytecode y se ejecutan sobre una Máquina Virtual como JRE o CLR)."},
+  explicacion: "Según su modelo de ejecución, un lenguaje puede compilarse a código nativo antes de ejecutarse, interpretarse durante la ejecución o traducirse a código intermedio para una máquina virtual. C++ es un ejemplo habitual de compilación nativa; Java genera *bytecode* para la JVM. En la práctica, algunos entornos combinan interpretación y compilación JIT."},
 
 { id: 30,
   pregunta: "Los métodos:",
@@ -339,7 +339,7 @@ const preguntasEntornos = [
     "Soluciones prefabricadas para problemas comunes"
   ],
   correcta: 3,
-  explicacion: "Es como usar el molde de hacer bizcochos de tu abuela que siempre funciona bien, en lugar de intentar inventar un molde nuevo y arriesgarte a quemar el bizcocho. En ingeniería de software (popularizado por el libro del 'Gang of Four'), los Design Patterns son modelos estandarizados y conceptuales que proveen de una arquitectura probada, robusta y reusable para solventar problemáticas recurrentes en el diseño de software orientado a objetos."},
+  explicacion: "Los patrones de diseño documentan soluciones generales que han resultado útiles ante problemas recurrentes de diseño. Describen contexto, participantes, relaciones y consecuencias; no son componentes terminados que deban copiarse sin adaptación. Patrones como *Observer* o *Factory Method* ofrecen un vocabulario compartido entre desarrolladores."},
 
 { id: 32,
   pregunta: "Los POO son:",
@@ -350,7 +350,7 @@ const preguntasEntornos = [
     "Objetos Ocultos"
   ],
   correcta: 1,
-  explicacion: "Es un tipo de programa construido no como una simple lista de tareas aburridas, sino juntando muñecos de Lego (objetos) que interactúan entre ellos para que todo funcione. Comúnmente llamado Programación Orientada a Objetos en la literatura hispana (o OOP en inglés), es el paradigma arquitectónico dominante fundamentado en el uso de clases y entidades o instancias reales (objetos) que encapsulan datos (estado) y lógica (comportamiento)."},
+  explicacion: "POO significa Programación Orientada a Objetos. Este paradigma estructura el software mediante objetos que reúnen estado —sus datos o atributos— y comportamiento —sus métodos—. Las clases definen las características comunes y los objetos son sus instancias concretas; esta organización favorece la encapsulación, la reutilización y el mantenimiento del código."},
 
 { id: 33,
   pregunta: "Los SCV (Sistemas de Control de Versiones) pueden ser:",
@@ -372,7 +372,7 @@ const preguntasEntornos = [
     "Tres grandes categorías"
   ],
   correcta: 1,
-  explicacion: "Es como ver un coche: puedes pararlo y mirar el capó para ver cómo encajan sus piezas (estructura) o verlo rodar por la carretera a toda velocidad (comportamiento). El estándar UML 2.x define una taxonomía de 14 diagramas principales, bifurcados jerárquicamente en dos ramas fundacionales: diagramas estructurales (arquitectura estática como Clases, Componentes y Despliegue) y diagramas de comportamiento o dinámicos (Estados, Secuencia, Actividades y Casos de Uso)."},
+  explicacion: "UML agrupa sus diagramas en dos grandes categorías: los estructurales muestran la organización estática, como clases, componentes o despliegue; los de comportamiento describen la dinámica, como actividades, estados, casos de uso e interacciones. Los diagramas de secuencia son una especialización de los diagramas de interacción."},
 
 { id: 35,
   pregunta: "Los tipos de documentación fundamentales en la creación de software en función de su naturaleza son:",
@@ -383,7 +383,7 @@ const preguntasEntornos = [
     "Creacionales y estructurales"
   ],
   correcta: 0,
-  explicacion: "Como cuando te compras una tele enorme: el manual pequeñito te explica cómo encenderla con el mando (funcional), y el libro gordo de atrás le sirve al electricista para no electrocutarse abriéndola (técnico). La ingeniería de requisitos documenta el SDLC (System Development Life Cycle) primordialmente en documentación orientada al usuario final (manuales, funcionales, centrados en el 'qué') y documentación orientada a equipos de ingeniería o mantenibilidad (arquitectura, APIs, código, diagramas, centrados en el 'cómo')."},
+  explicacion: "La documentación funcional explica qué debe hacer el sistema y cómo lo utiliza el usuario; la técnica describe arquitectura, interfaces, datos, despliegue y mantenimiento para el equipo especializado. Ambas son fundamentales, pero se dirigen a lectores y objetivos distintos, por lo que deben adaptar estructura y nivel de detalle."},
 
 { id: 36,
   pregunta: "Los tipos de lenguajes de programación son:",
@@ -394,7 +394,7 @@ const preguntasEntornos = [
     "Lenguaje máquina, lenguaje de medio nivel o ensamblador y lenguaje de alto nivel"
   ],
   correcta: 3,
-  explicacion: "Es como el alfabeto alienígena de ceros y unos que el ordenador entiende del tirón (máquina), palabras raras a medio camino (ensamblador), o directamente escribir en inglés casi humano (alto nivel). Atendiendo al grado de abstracción subyacente de la arquitectura del hardware y de gestión de memoria, clasificamos los lenguajes en bajo nivel (binario inteligible por CPU/ALU), nivel intermedio (nemónicos como Assembly) y de alto nivel (paradigma procedural o POO con tipado fuerte o inferido como C#, Java o Python)."},
+  explicacion: "Según su nivel de abstracción se distinguen lenguaje máquina, ensamblador o nivel intermedio y lenguajes de alto nivel. El código máquina contiene instrucciones ejecutables por una arquitectura concreta; el ensamblador utiliza mnemónicos próximos al hardware; y los lenguajes de alto nivel expresan operaciones con mayor independencia de la máquina."},
 
 { id: 37,
   pregunta: "NetBeans es un IDE:",
@@ -405,7 +405,7 @@ const preguntasEntornos = [
     "Ninguna es correcta"
   ],
   correcta: 2,
-  explicacion: "Es como una navaja suiza gigante, que no solo vale para arreglar juguetes Java de todo tipo, sino que le salen más herramientas para arreglar tus páginas web de HTML y hasta motos C++. NetBeans (ahora Apache NetBeans) es un Entorno de Desarrollo Integrado libre y de código abierto que, aunque es nativo para el ecosistema Java (SE, EE, ME), provee una arquitectura modular políglota capaz de integrar plugins de terceros para interpretar, compilar y depurar múltiples stacks tecnológicos multiplataforma."},
+  explicacion: "Apache NetBeans es un IDE de código abierto especialmente conocido por su soporte para Java. Su arquitectura modular permite trabajar también con otros lenguajes y tecnologías mediante módulos o complementos, como C/C++, HTML y PHP. La disponibilidad concreta de cada lenguaje depende de la versión y de los módulos instalados."},
 
 { id: 38,
   pregunta: "Un punto de interrupción al depurar un programa consiste en:",
@@ -416,7 +416,7 @@ const preguntasEntornos = [
     "Esperar un warning"
   ],
   correcta: 0,
-  explicacion: "Es como ver un vídeo y darle al botón de pausa justo cuando el asesino va a asomarse, para mirar detenidamente a todos los personajes sin que se mueva la película. Un 'breakpoint' es una directiva o marca en una línea del código fuente que instruye al depurador (debugger) para suspender la ejecución del hilo principal (thread), posibilitando la inspección secuencial del contexto de ejecución, el valor de las variables y el estado de la pila de llamadas o 'call stack'."},
+  explicacion: "Un punto de interrupción indica al depurador que suspenda la ejecución al alcanzar una línea o condición. Mientras el programa está detenido se pueden inspeccionar variables, pila de llamadas e hilos y avanzar paso a paso. No modifica la lógica funcional del programa; es una herramienta de diagnóstico del entorno de desarrollo."},
 
 { id: 39,
   pregunta: "Una de las características del lenguaje de modelado UML es:",
@@ -427,7 +427,7 @@ const preguntasEntornos = [
     "Todas son correctas"
   ],
   correcta: 3,
-  explicacion: "Es como el mapa perfecto de un tesoro que sirve para no perderte (documentación), que cualquier pirata del mundo sepa leerlo porque todos usan las mismas cruces (estandarizado) y que además pinta desde las montañas hasta las hormiguitas (diagramas). UML es una notación agnóstica estandarizada por la OMG (Object Management Group) que permite generar metamodelos, abstracciones visuales y documentación rigurosa e inequívoca durante la arquitectura y ciclo de vida de cualquier sistema informático OO."},
+  explicacion: "UML es un lenguaje de modelado estandarizado por el OMG que utiliza diagramas para visualizar, especificar y documentar sistemas. Su notación común facilita la comunicación entre perfiles técnicos. UML no garantiza por sí solo un modelo sin ambigüedades: la precisión depende también de elegir y elaborar correctamente cada diagrama."},
 
 { id: 40,
   pregunta: "Una instancia es:",
@@ -438,7 +438,7 @@ const preguntasEntornos = [
     "Todas son incorrectas"
   ],
   correcta: 2,
-  explicacion: "Si la clase es el molde con forma de estrella para hacer galletas y no se puede comer, la instancia es la galleta concreta de chocolate calentita que te acabas de meter en la boca. A nivel de arquitectura de la máquina virtual o del sistema, una instancia u objeto es la materialización semántica y volátil en memoria (Heap) de un tipo de dato abstracto o molde conceptual definido por una clase, adquiriendo una identidad en memoria (referencia) y un estado particular propio."},
+  explicacion: "Una instancia es un objeto concreto creado a partir de una clase. La clase declara qué atributos y métodos tendrán sus objetos, mientras que cada instancia posee identidad y estado propios en memoria. Por ejemplo, dos objetos de la clase `Cuenta` comparten la misma estructura, pero pueden almacenar titulares y saldos diferentes."},
 
 {
   id: 41,
@@ -463,7 +463,7 @@ const preguntasEntornos = [
     "Programador."
   ],
   correcta: 0,
-  explicacion: "Es como el jefe de obra que dibuja los planos de la casa y decide si se van a usar ladrillos o madera antes de que lleguen los obreros. En la ingeniería de software, el arquitecto es el perfil técnico de más alto nivel encargado de definir el stack tecnológico (lenguajes, frameworks, bases de datos) y los patrones estructurales que garantizarán la escalabilidad y seguridad del sistema."
+  explicacion: "El arquitecto de software toma decisiones técnicas de alto nivel: lenguajes, plataformas, bases de datos, integración y patrones estructurales. Debe relacionarlas con requisitos como seguridad, rendimiento, mantenibilidad y escalabilidad. La decisión suele coordinarse con el equipo, pero corresponde a su responsabilidad arquitectónica."
 },
 
 {
@@ -476,7 +476,7 @@ const preguntasEntornos = [
     "Ninguno."
   ],
   correcta: 1,
-  explicacion: "Es como una máquina mágica que coge todas las hojas sueltas que has escrito y las encuaderna para que tengas un libro de verdad listo para leer. En el ciclo clásico de desarrollo (como en C o C++), el proceso completo de compilación culmina cuando la subherramienta de montaje (linker) enlaza los distintos archivos objeto generados y las librerías dinámicas/estáticas para construir el fichero binario autoejecutable (.exe en Windows)."
+  explicacion: "En un proceso de compilación típico, el compilador traduce el código fuente a código objeto y el enlazador combina esos objetos con las bibliotecas necesarias para producir el ejecutable. Aunque el enlace puede realizarlo una herramienta específica, suele formar parte del proceso dirigido por el compilador. En Windows, el resultado puede ser un archivo `.exe`."
 },
 
 {
@@ -502,7 +502,7 @@ const preguntasEntornos = [
     "Software desarrollado."
   ],
   correcta: 2,
-  explicacion: "Es como ir al sastre para que te tome las medidas y te cosa un traje que solo te vale a ti, en lugar de comprar una camiseta en el supermercado. El software específico o desarrollo 'a medida' (ad hoc o custom software) se construye mediante el levantamiento de requisitos funcionales exclusivos de un cliente particular, optimizando sus procesos internos de manera única."
+  explicacion: "El software específico o a medida se diseña a partir de los requisitos particulares de una organización o usuario. Puede adaptarse estrechamente a sus procesos, pero suele exigir más análisis, coste y mantenimiento que un producto estándar destinado a muchos clientes."
 },
 
 {
@@ -515,7 +515,7 @@ const preguntasEntornos = [
     "Fase 4."
   ],
   correcta: 0,
-  explicacion: "Es como coger una lupa y revisar que todas las letras de una carta estén bien escritas en tu idioma antes de intentar entender qué dice la frase. La Fase 1 del proceso de compilación es el análisis léxico (scanner); aquí el texto plano se fragmenta en bloques con significado lógico llamados 'tokens' (palabras reservadas, identificadores, símbolos), detectando errores ortográficos básicos."
+  explicacion: "El análisis léxico es la primera etapa del análisis de un compilador. Lee la secuencia de caracteres y la agrupa en *tokens*, como palabras reservadas, identificadores, literales y operadores. En esta fase se detectan secuencias de caracteres no válidas; la estructura gramatical se comprueba después, durante el análisis sintáctico."
 },
 
 {
@@ -541,7 +541,7 @@ const preguntasEntornos = [
     "Ninguna es correcta."
   ],
   correcta: 0,
-  explicacion: "Es como traducir un libro entero de golpe (compilado), que te lo traduzcan al oído mientras vas caminando (interpretado) o usar un idioma comodín inventado que entiende tu móvil (virtual). En función del flujo de ejecución, los lenguajes generan binarios nativos procesables por la CPU (compilados como C++), se procesan línea a línea en tiempo real (interpretados como Python/JS) o usan un bytecode intermedio ejecutado por una VM (virtuales como Java/C#)."
+  explicacion: "Por su forma de ejecución, los lenguajes pueden traducirse previamente a código nativo, ejecutarse mediante un intérprete o generar un código intermedio para una máquina virtual. Java, por ejemplo, compila a *bytecode* y la JVM puede interpretarlo o compilarlo en tiempo de ejecución. Las implementaciones modernas pueden combinar varias técnicas."
 },
 
 {
@@ -554,7 +554,7 @@ const preguntasEntornos = [
     "Ninguna es correcta."
   ],
   correcta: 0,
-  explicacion: "Es como la receta paso a paso para hacer una tarta de chocolate: primero echa harina, luego dos huevos y bate. Un programa es la materialización de un algoritmo; a bajo nivel y conceptualmente, se estructura como una secuencia finita y ordenada de instrucciones, sentencias imperativas o declaraciones operativas que indican al procesador de la máquina qué tarea debe ejecutar."
+  explicacion: "Un programa está formado por instrucciones escritas en un lenguaje de programación y organizadas para realizar una tarea. Esas instrucciones pueden incluir declaraciones, decisiones, bucles y llamadas, y finalmente se traducen o interpretan para ejecutarse. Los datos por sí solos no constituyen el programa que los procesa."
 },
 
 {
@@ -567,7 +567,7 @@ const preguntasEntornos = [
     "Se suele programar el código fuente en la herramienta Microsoft Visual Studio."
   ],
   correcta: 1,
-  explicacion: "Hacer magia con JavaScript es como hacer un truco frente a un espejo sin mangas: cualquiera que esté mirando puede ver dónde escondes la carta. JS es el lenguaje nativo del Frontend web; al descargarse el archivo directamente en el navegador del usuario y ser interpretado localmente por su motor (como V8), su código fuente original (o minificado) queda siempre expuesto a través de las 'Developer Tools'."
+  explicacion: "El JavaScript del lado cliente se descarga en el navegador para poder ejecutarse, por lo que el usuario puede inspeccionar los archivos recibidos incluso si están minificados. La ofuscación dificulta la lectura, pero no convierte el código en secreto. Las claves y reglas de seguridad críticas deben permanecer en el servidor."
 },
 
 {
@@ -580,7 +580,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores es correcta"
   ],
   correcta: 0,
-  explicacion: "Cuando un juguete hace un ruido molesto, puedes apagar el interruptor para que se calle pero dejarlo ahí (desactivar), o directamente abrirlo y sacarle el altavoz para siempre (desinstalar). En arquitecturas de software modulares (como plugins en IDEs o CMS), la gestión de dependencias permite un borrado suave (desactivación que mantiene configuraciones y ficheros) o un borrado duro (desinstalación física del disco)."
+  explicacion: "Un módulo puede desactivarse para impedir que se cargue conservando sus archivos y, normalmente, su configuración; también puede desinstalarse para retirar sus componentes del sistema. La desactivación facilita volver a habilitarlo, mientras que la desinstalación es apropiada cuando ya no se necesita."
 },
 
 {
@@ -606,7 +606,7 @@ const preguntasEntornos = [
     "Ninguno de los anteriores."
   ],
   correcta: 1,
-  explicacion: "Es el abuelo súper fuerte de todos los programas para hacer otros programas; nos enseñó a escribir y probar súper rápido sin cambiar de ventana. Lanzado por Borland en la década de 1980, Turbo Pascal es un hito de la ingeniería de software al integrar por primera vez un editor de texto, un compilador ultrarrápido y un depurador en una sola interfaz cohesiva para el SO DOS."
+  explicacion: "Turbo Pascal destacó entre los primeros entornos de desarrollo por integrar editor y compilador en una misma herramienta y ofrecer tiempos de compilación muy rápidos para su época. Esa combinación acortó el ciclo de escribir, compilar y corregir código, anticipando características habituales de los IDE modernos."
 },
 
 {
@@ -619,7 +619,7 @@ const preguntasEntornos = [
     "Xcode."
   ],
   correcta: 2,
-  explicacion: "Es un taller mágico de hace muchos años donde la gente aprendió a dibujar ventanas y botones en la pantalla arrastrándolos con el ratón. Borland Delphi, lanzado en 1995 como sucesor de Turbo Pascal, fue pionero en establecer el estándar del Desarrollo Rápido de Aplicaciones (RAD) enfocado a eventos y programación visual basada en componentes sobre el entorno Windows."
+  explicacion: "Delphi fue uno de los primeros entornos de desarrollo visual ampliamente utilizados para crear aplicaciones de Windows. Popularizó un enfoque RAD (*Rapid Application Development*) basado en componentes, formularios y programación dirigida por eventos, permitiendo diseñar interfaces y asociarles código desde un único entorno."
 },
 
 {
@@ -632,7 +632,7 @@ const preguntasEntornos = [
     "Eliminar un programa."
   ],
   correcta: 0,
-  explicacion: "Igual que usar una lupa para buscar y quitar un bichito que ha caído en tu sopa. El 'debugging' es la fase crítica del ciclo de vida centrada en aislar y mitigar errores lógicos, comportamientos anómalos (bugs) o excepciones de ejecución (crashes), utilizando para ello inspecciones de memoria, trazas de pila y control de hilos."
+  explicacion: "Depurar consiste en localizar, comprender y corregir los defectos que provocan resultados incorrectos o fallos de ejecución. Un depurador permite detener el programa en puntos de ruptura, avanzar instrucción a instrucción e inspeccionar variables y la pila de llamadas para identificar la causa, no solo el síntoma."
 },
 
 {
@@ -645,7 +645,7 @@ const preguntasEntornos = [
     "Constructor de interfaces gráficos."
   ],
   correcta: 3,
-  explicacion: "Imagina una caja de pegatinas donde solo coges un botón, lo arrastras con el dedo y lo pegas en el dibujo de tu pantalla. Un GUI Builder (Constructor de interfaces) es el módulo del entorno de desarrollo (como WindowBuilder para Java o Scene Builder para JavaFX) que implementa un modelo WYSIWYG, autogenerando el código XML o las clases encargadas de pintar las ventanas."
+  explicacion: "Un constructor gráfico de interfaces permite colocar controles como campos de texto, botones y pestañas mediante una vista visual. La herramienta genera o actualiza la descripción de la interfaz, por ejemplo código o XML. WindowBuilder y Scene Builder son ejemplos, aunque el resultado debe revisarse y conectarse con la lógica de la aplicación."
 },
 
 {
@@ -658,7 +658,7 @@ const preguntasEntornos = [
     "Xcode."
   ],
   correcta: 3,
-  explicacion: "Es la fábrica exclusiva de la manzana mordida donde debes entrar obligatoriamente si quieres fabricar juguetes para el iPhone o el Mac. Xcode es el IDE propietario de Apple Inc., que provee los compiladores (LLVM, Clang), los SDKs y los simuladores necesarios de forma exclusiva para programar en Swift y Objective-C dentro de los entornos iOS, macOS y watchOS."
+  explicacion: "Xcode es el entorno de desarrollo de Apple para crear, probar, firmar y distribuir aplicaciones de sus plataformas. Incluye los SDK, compiladores, depurador, simuladores y herramientas de interfaz necesarios para iOS, macOS y otros sistemas de Apple. Otros editores pueden participar en el desarrollo, pero la cadena oficial se integra en Xcode."
 },
 
 {
@@ -671,7 +671,7 @@ const preguntasEntornos = [
     "Ctrl-F6"
   ],
   correcta: 2,
-  explicacion: "Como pulsar el botón rojo del mando a distancia que pone los dibujos a cámara lenta para que puedas ver por qué tropieza el personaje. En la parametrización clásica de atajos de teclado de varios entornos (especialmente en la familia Visual Studio y configuraciones C/C++ abordadas convencionalmente), esta combinación invoca la compilación y levanta el proceso atando el debugger al hilo de ejecución."
+  explicacion: "Iniciar la depuración ejecuta el proyecto bajo el control del depurador. Esto permite detener el programa en puntos de interrupción, avanzar instrucción a instrucción e inspeccionar variables y la pila de llamadas. El atajo exacto depende del entorno de desarrollo y de su configuración; en el contexto planteado, la combinación indicada inicia esa sesión."
 },
 
 {
@@ -697,7 +697,7 @@ const preguntasEntornos = [
     "Un lugar en el programa donde se eliminará la ejecución y se espera a que el depurador proceda."
   ],
   correcta: 0,
-  explicacion: "Igual que gritarle '¡Estatua!' a tu amigo cuando está corriendo para que se quede congelado y puedas mirarlo bien de cerca. Un breakpoint es una marca dinámica inyectada en una línea del código fuente que lanza una interrupción (trap) a la CPU virtual/real, congelando el thread (hilo) en ese instante de tiempo para auditar el stack trace y las variables en caliente."
+  explicacion: "Un *breakpoint* indica al depurador que detenga temporalmente la ejecución al alcanzar una línea o condición. Durante la pausa se inspeccionan variables, pila de llamadas e hilos y se puede continuar paso a paso. Su propósito es observar el estado del programa para localizar la causa de un comportamiento incorrecto."
 },
 
 {
@@ -710,7 +710,7 @@ const preguntasEntornos = [
     "A y B son correctas."
   ],
   correcta: 3,
-  explicacion: "Para saber si un profe corrige bien, miras cuántos fallos te ha marcado en un folio y cuántas veces te hace repetir los deberes. En QA (Aseguramiento de Calidad), las métricas estandarizadas evalúan el código fuente calculando la 'densidad de defectos' (bugs por KLOC o mil líneas de código) y el esfuerzo de revisión o 'code churn' (qué tanto fluctúa y debe repararse un módulo específico)."
+  explicacion: "La calidad puede medirse mediante indicadores complementarios. El número o la densidad de defectos informa sobre los fallos encontrados, mientras que la frecuencia y el esfuerzo de revisión muestran cuánto trabajo requiere comprobar y corregir el código. Ninguna métrica aislada describe toda la calidad, pero ambas aportan evidencia útil."
 },
 
 {
@@ -723,7 +723,7 @@ const preguntasEntornos = [
     "Recomendaciones del software."
   ],
   correcta: 1,
-  explicacion: "El juez de un concurso de repostería no puntúa la tarta porque le guste el chocolate, sino porque lee la receta original para ver si cumple todo lo pedido. Un ingeniero QA o Tester no diseña los casos de prueba basándose en intuiciones, sino mapeando exhaustivamente los requerimientos plasmados en los Documentos de Especificación Funcional y Técnica (Casos de Uso) trazados durante la fase de análisis."
+  explicacion: "El personal de pruebas diseña los casos a partir de los requisitos y las especificaciones del sistema. Cada prueba debe comprobar una conducta esperada y poder relacionarse con el requisito que valida, lo que aporta trazabilidad. Basarse únicamente en la intuición dejaría funciones sin cubrir y dificultaría demostrar que el producto cumple lo solicitado."
 },
 
 {
@@ -762,7 +762,7 @@ const preguntasEntornos = [
     "Pruebas de validación."
   ],
   correcta: 2,
-  explicacion: "En la fábrica de juguetes, primero prueban si la pequeña pata del muñeco se mueve bien antes de montar el cuerpo entero y vestirlo. A nivel metodológico (y en enfoques TDD), las Pruebas Unitarias son el estrato más bajo de la pirámide de testing; las codifica el propio programador paralelamente al desarrollo para certificar matemáticamente el comportamiento aislado de funciones o clases individuales mediante mocks."
+  explicacion: "Las pruebas unitarias verifican unidades pequeñas y aislables del código, como una función o una clase, y suelen ejecutarse desde las primeras fases del desarrollo. Por ejemplo, una prueba puede comprobar que un método calcula correctamente un descuento. Los dobles de prueba pueden aislar dependencias, pero no son obligatorios en todos los casos."
 },
 
 {
@@ -814,7 +814,7 @@ const preguntasEntornos = [
     "Todas son correctas."
   ],
   correcta: 3,
-  explicacion: "Como cuando los padres prueban los frenos, los cinturones y el motor de un cochecito de pedales antes de subir al niño, para que vaya feliz y súper seguro. El propósito holístico de las disciplinas de pruebas de software es validar los requisitos (demostrar la operatividad y cumplir objetivos), verificar su estado interno y descubrir sistemáticamente fallos tempranos en un entorno controlado (sandbox) previo al despliegue en producción."
+  explicacion: "Las pruebas permiten verificar que el software se comporta como se ha diseñado, validar que satisface las necesidades y descubrir defectos antes de que lleguen al usuario. También aportan confianza para realizar cambios. Como las opciones recogen finalidades compatibles —comprobar funcionamiento, detectar fallos y evaluar el estado—, todas son correctas."
 },
 
 {
@@ -840,7 +840,7 @@ const preguntasEntornos = [
     "Ninguna es correcta."
   ],
   correcta: 2,
-  explicacion: "Es como el libro donde salen las pegatinas: en el centro están los dibujos chulos para jugar, y las instrucciones aburridas de dónde se fabricaron van al final del todo donde no molestan. Las normativas de documentación técnica (como IEEE 830) indican que el cuerpo principal de un documento debe mantener la coherencia semántica para una lectura rápida. Los diagramas extremadamente complejos, logs de errores o glosarios secundarios se estructuran como anexos complementarios."
+  explicacion: "La documentación debe ordenar la información según su importancia para el lector. El cuerpo principal contiene lo necesario para comprender y utilizar el documento; los detalles extensos o secundarios, como listados, registros o diagramas auxiliares, pueden trasladarse a anexos y referenciarse desde el texto."
 },
 
 {
@@ -866,7 +866,7 @@ const preguntasEntornos = [
     "Ninguna es correcta."
   ],
   correcta: 2,
-  explicacion: "Ni intentar que una sola navaja suiza tenga 50 herramientas y pese como una piedra, ni llevar cien herramientas diferentes en los bolsillos. Este paradigma representa el equilibrio en el diseño de clases: condena los 'God Objects' (clases divinas antipatrón con demasiadas responsabilidades y bajo SRP de SOLID) y simultáneamente evita la proliferación de clases anémicas microscópicas que fragmenten exageradamente la semántica y llenen de referencias el Heap."
+  explicacion: "En orientación a objetos conviene equilibrar responsabilidades. Una clase con demasiadas funciones concentra dependencias y resulta difícil de probar y mantener; dividir cada detalle en clases sin una responsabilidad real también añade complejidad. El objetivo es crear objetos cohesionados, con una finalidad clara y colaboraciones justificadas."
 },
 
 {
@@ -879,7 +879,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 2,
-  explicacion: "Al bebé le dices 'el perrito hace guau' y al veterinario le dices 'el cánido tiene buena garganta'. Dependiendo de quién vaya a leer el texto, cambiaremos nuestras palabras. La documentación de un proyecto abarca múltiples perfiles (stakeholders): un Manual de Usuario exige un lenguaje natural y orientación a negocio (requisitos funcionales), mientras que una Especificación de API o modelo E/R debe ser completamente técnica y rigurosa para los programadores."
+  explicacion: "La documentación debe adaptarse a los conocimientos y objetivos de quien la consulta. Un manual de usuario explica tareas con lenguaje directo y ejemplos; una referencia de API necesita parámetros, tipos, errores y contratos técnicos. Adaptar el nivel no significa perder precisión, sino ofrecer la información necesaria de forma comprensible."
 },
 
 {
@@ -892,7 +892,7 @@ const preguntasEntornos = [
     "Todas son correctas."
   ],
   correcta: 1,
-  explicacion: "Como borrar tu dibujo de la pizarra que estaba un poco torcido y volverlo a hacer rectito y bonito usando una regla; es la misma casa, pero se ve mucho mejor. A nivel de ingeniería, el refactoring consiste en aplicar patrones de mejora continua al código fuente (como Extraer Método o renombrar variables) para maximizar la legibilidad, minimizar la deuda técnica y bajar la complejidad, asegurando invariablemente la semántica original mediante Test de Regresión."
+  explicacion: "La refactorización modifica la estructura interna del código sin cambiar su comportamiento observable. Operaciones como extraer un método, eliminar duplicación o renombrar elementos mejoran la legibilidad y reducen la complejidad. Las pruebas de regresión permiten comprobar que, tras esos cambios internos, el programa continúa ofreciendo los mismos resultados."
 },
 
 {
@@ -905,7 +905,7 @@ const preguntasEntornos = [
     "Ayudan en la creación de objetos fuera de los POO."
   ],
   correcta: 2,
-  explicacion: "Son moldes mágicos de hacer galletas que calculan ellos solos cuánta harina y azúcar echar para que la galleta salga perfecta y tú no te manches las manos. En la arquitectura Orientada a Objetos, los patrones de diseño creacionales (como el Factory Method, Singleton o Abstract Factory) son plantillas estructurales que encapsulan y gestionan la lógica de instanciación, ocultando las complejidades del operador 'new' y promoviendo el bajo acoplamiento."
+  explicacion: "Los patrones creacionales ofrecen soluciones reutilizables para decidir cómo se construyen los objetos. *Factory Method* o *Abstract Factory*, por ejemplo, separan al cliente de las clases concretas que instancia. Así se reduce el acoplamiento y se puede cambiar el proceso de creación sin modificar todo el código consumidor."
 },
 
 {
@@ -918,7 +918,7 @@ const preguntasEntornos = [
     "Soluciones prefabricadas para problemas comunes."
   ],
   correcta: 3,
-  explicacion: "Es la receta secreta súper famosa que usan todas las abuelas para arreglar cualquier sopa que sale sosa, porque saben que funciona siempre. Los Design Patterns (como los clasificados por el Gang of Four) proporcionan esquemas abstractos y plantillas arquitectónicas conceptuales que representan las mejores prácticas probadas de la industria para resolver de forma elegante y reutilizable las incidencias estándar del diseño orientado a objetos."
+  explicacion: "Un patrón de diseño describe una solución general y reutilizable para un problema de diseño que aparece con frecuencia. No es código terminado para copiar sin cambios: define participantes, relaciones y consecuencias que deben adaptarse al contexto. *Observer* y *Factory Method* son ejemplos conocidos."
 },
 
 {
@@ -970,7 +970,7 @@ const preguntasEntornos = [
     "A y B don correctas."
   ],
   correcta: 2,
-  explicacion: "Como hacer un dibujo de los niños jugando en el parque y los columpios que están usando para divertirse. A nivel técnico, modela los límites del sistema (frontieres), los actores externos y los servicios o funcionalidades que el sistema expone, abstrayéndose completamente de la secuenciación o de la arquitectura interna de la aplicación."
+  explicacion: "Un diagrama de casos de uso representa qué servicios ofrece un sistema y qué actores externos participan en ellos. Muestra el límite del sistema, los actores y sus relaciones con los casos de uso, pero no describe el orden temporal de los mensajes ni la implementación interna de cada función."
 },
 
 {
@@ -983,7 +983,7 @@ const preguntasEntornos = [
     "Ninguna en realidad es POO."
   ],
   correcta: 1,
-  explicacion: "Es como organizar el mundo de tus juguetes separándolos en cosas reales que puedes ver y tocar, como un coche o un perro. La Orientación a Objetos (OO) es un paradigma o modelo de diseño arquitectónico que abstrae el dominio del problema en entidades discretas llamadas objetos, los cuales encapsulan estado (datos) y comportamiento (lógica)."
+  explicacion: "OO significa orientación a objetos. Este paradigma modela el problema mediante objetos que combinan estado —sus datos— y comportamiento —las operaciones que pueden realizar—. Por ejemplo, un objeto `Cuenta` puede conservar un saldo y ofrecer métodos para ingresar o retirar una cantidad."
 },
 
 {
@@ -996,7 +996,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 2,
-  explicacion: "Es como dibujar un mapa del tesoro en un papel para que tus amigos sepan por dónde ir, en lugar de explicárselo todo de palabra y que se pierdan. En ingeniería de software, la diagramación es el proceso metodológico de abstraer y representar visualmente la arquitectura, estructura, comportamiento o flujos de un sistema mediante notaciones gráficas estandarizadas (como UML)."
+  explicacion: "La diagramación transforma información sobre un sistema en una representación visual. En ingeniería de software puede mostrar estructura, comportamiento, relaciones o flujos mediante una notación como UML. El diagrama selecciona una vista útil del sistema; no sustituye necesariamente toda su especificación textual."
 },
 
 {
@@ -1022,7 +1022,7 @@ const preguntasEntornos = [
     "Aún no se ha publicado."
   ],
   correcta: 3,
-  explicacion: "Es como la película de tus dibujos favoritos que el director todavía no ha terminado de inventar, así que no existe para verla en el cine. Históricamente, el estándar UML se encuentra consolidado en su familia 2.x (llegando a la versión 2.5.1). No existe formalmente una especificación mayor UML 3.1 ratificada o publicada por el Object Management Group (OMG) en el ecosistema actual."
+  explicacion: "El estándar formal publicado por el Object Management Group se mantiene en la familia UML 2.x, con UML 2.5.1 como especificación disponible. No existe una especificación oficial UML 3.1 publicada por el OMG. Conviene comprobar siempre el catálogo oficial, porque una numeración utilizada por una herramienta no equivale a una versión del estándar."
 },
 
 {
@@ -1048,7 +1048,7 @@ const preguntasEntornos = [
     "Todas las anteriores son correctas."
   ],
   correcta: 3,
-  explicacion: "Es como la mochila robótica de un superhéroe que le guarda los juguetes para otro día, le imprime manuales de instrucciones solos y hace que las piezas encajen en cualquier ordenador. Las herramientas Computer-Aided Software Engineering (CASE) automatizan el ciclo de vida del software, facilitando la reusabilidad de componentes, asegurando la interoperabilidad (portabilidad) a través de generación de código, y auto-generando documentación bajo formatos estandarizados."
+  explicacion: "Las herramientas CASE asisten en tareas del ciclo de vida del software, como modelado, generación de código, documentación y mantenimiento de artefactos. Estas funciones pueden favorecer la reutilización y la interoperabilidad cuando emplean modelos y formatos comunes. Por eso las capacidades enumeradas son compatibles entre sí."
 },
 
 {
@@ -1074,7 +1074,7 @@ const preguntasEntornos = [
     "Estructura y comportamiento."
   ],
   correcta: 3,
-  explicacion: "Como ver un muñeco quieto para saber de qué piezas de plástico está hecho y luego verlo caminar cuando le pones las pilas. La taxonomía canónica del estándar UML agrupa sus diagramas en dos grandes familias fundamentales: diagramas estructurales (modelan la arquitectura estática y relaciones invariables, como clases o componentes) y diagramas de comportamiento (modelan la dinámica funcional y el paso del tiempo, como secuencia o estados)."
+  explicacion: "UML agrupa sus diagramas en dos grandes categorías: los estructurales representan la organización estática del sistema, como clases, componentes o despliegue; los de comportamiento describen su funcionamiento y evolución, como actividades, estados o interacciones. Esta separación permite estudiar tanto qué elementos existen como qué hacen y cómo colaboran."
 },
 
 {
@@ -1087,7 +1087,7 @@ const preguntasEntornos = [
     "Nivel público de visibilidad"
   ],
   correcta: 0,
-  explicacion: "Es como tener reglas mágicas para dibujar caras: todos saben que va un círculo redondo y luego le pintas los ojos dentro. UML destaca por proveer un metamodelo unificado (estandarización avalada universalmente por el OMG) y una representación gráfica consistente (diagramación semántica) que permite eliminar la ambigüedad técnica entre los analistas, arquitectos y programadores."
+  explicacion: "UML es un lenguaje de modelado estandarizado que define elementos, relaciones y distintos tipos de diagramas para representar un sistema. La estandarización permite compartir los modelos con una notación común; la diagramación ofrece vistas estructurales y de comportamiento. UML reduce ambigüedades, aunque un diagrama aún debe estar bien elaborado."
 },
 
 {
@@ -1100,7 +1100,7 @@ const preguntasEntornos = [
     "Es un tipo de valor."
   ],
   correcta: 3,
-  explicacion: "Es como el botón de la luz de tu habitación: solo puede estar encendido o apagado, no hay una luz 'a medias'. En la teoría de lenguajes fuertemente tipados, un booleano es un tipo de dato primitivo o escalar que representa un valor lógico binario, limitando su dominio estrictamente a dos estados mutuamente excluyentes en memoria: 'true' (verdadero) o 'false' (falso)."
+  explicacion: "Un booleano es un tipo de valor lógico con dos estados: `true` y `false`. Se utiliza para condiciones y decisiones, por ejemplo para indicar si un usuario está activo. No representa una cantidad numérica ni una cadena, aunque su representación interna concreta depende del lenguaje y del entorno."
 },
 
 {
@@ -1113,7 +1113,7 @@ const preguntasEntornos = [
     "El privado."
   ],
   correcta: 1,
-  explicacion: "Es como una casita del árbol secreta: solo pueden entrar tú y tus hijos, pero no está permitido que entren los vecinos de fuera. En la notación UML, el símbolo '#' representa el modificador de acceso 'protected'. Esto expone el atributo o método a la propia clase contenedora y a toda su jerarquía de clases derivadas (subclases por herencia), pero lo mantiene encapsulado e inaccesible para entidades de otros paquetes."
+  explicacion: "En un diagrama de clases UML, `#` representa visibilidad protegida. El miembro puede utilizarse desde la clase que lo declara y sus especializaciones según las reglas del lenguaje de implementación. `+` indica público, `-` privado y `~` visibilidad de paquete; por eso no deben intercambiarse estos símbolos."
 },
 
 {
@@ -1126,7 +1126,7 @@ const preguntasEntornos = [
     "Las dos primeras son correctas."
   ],
   correcta: 0,
-  explicacion: "Es como contar los dedos de tu mano: tienes uno, dos o tres dedos enteros, no puedes tener 'un dedo y un cuartito'. A nivel de declaración, el tipo 'int' (integer) se reserva en memoria (típicamente 32 bits) para representar números enteros precisos (positivos y negativos) operados aritméticamente por la ALU, excluyendo expresamente el manejo de mantisas o arquitecturas de coma flotante."
+  explicacion: "El tipo `int` representa números enteros, sin parte fraccionaria. En Java utiliza 32 bits con signo y tiene un rango definido; en otros lenguajes el tamaño puede depender de la plataforma. Los valores decimales requieren tipos de coma flotante o clases numéricas específicas, según la precisión necesaria."
 },
 
 {
@@ -1152,7 +1152,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 3,
-  explicacion: "Es como el molde grande de un coche del que sacamos coches de carreras y coches de policía; todos son coches pero heredan su forma y le añaden luces. La herencia ('generalización' en UML) no es una asociación clásica estructural ni trabaja a nivel de 'instancias', sino que es una relación taxonómica a nivel de clases ('is-a') donde una subclase deriva y amplía la implementación y estado de una superclase padre. Ninguna opción propuesta es correcta."
+  explicacion: "La herencia se representa en UML como una generalización entre clasificadores: una subclase especializa a una superclase y puede heredar atributos y operaciones. No es una relación entre instancias ni una asociación ordinaria entre objetos. Como ninguna alternativa describe una generalización de tipo «es-un», ninguna resulta correcta."
 },
 
 {
@@ -1178,7 +1178,7 @@ const preguntasEntornos = [
     "Ninguna es correcta."
   ],
   correcta: 2,
-  explicacion: "Es como el gran taller mágico de Papá Noel que le ayuda a fabricar, pintar, ordenar e imprimir las pegatinas de todos los juguetes súper rápido sin equivocarse. Las Computer-Aided Software Engineering tools son ecosistemas de software orientados a proveer asistencia integral y transversal durante todas las fases del ciclo de vida del desarrollo de sistemas (SDLC), desde el análisis UML hasta el versionado de código."
+  explicacion: "CASE significa *Computer-Aided Software Engineering*. Son herramientas que apoyan la creación de software en actividades como análisis, modelado, diseño, generación de código, documentación o mantenimiento. Algunas cubren una fase concreta y otras integran varias; su finalidad común es asistir al proceso de ingeniería de software."
 },
 
 {
@@ -1191,7 +1191,7 @@ const preguntasEntornos = [
     "Ninguna es correcta."
   ],
   correcta: 3,
-  explicacion: "Son como los post-it que le pegas a tu libro de dibujos; puedes escribir letras, hacer un monigote o apuntar un secreto, y no hay un policía de post-its que te ponga multas. En la sintaxis de UML, una nota es un artefacto de anotación visual genérico que no posee ninguna restricción formal del OMG sobre el límite numérico de palabras que alberga. Sirve para inyectar OCL (restricciones lógicas), comentarios léxicos o enlaces a recursos no modelables."
+  explicacion: "Una nota de UML añade información aclaratoria a un elemento o a una relación del diagrama. Puede contener comentarios, restricciones —incluidas expresiones OCL— o referencias complementarias, y se conecta al elemento anotado mediante una línea discontinua. UML no establece un límite formal de palabras, aunque conviene mantenerla breve para conservar la legibilidad."
 },
 
 {
@@ -1230,7 +1230,7 @@ const preguntasEntornos = [
     "Los diagramas de secuencia."
   ],
   correcta: 2,
-  explicacion: "Es como cuando en la cocina tu madre bate los huevos y tu padre fríe las patatas exactamente a la misma vez para terminar antes. En la semántica dinámica de UML, el diagrama de actividades es el artefacto predilecto para modelar paralelismo (multithreading); utiliza nodos de sincronización especiales ('fork' para dividir el hilo principal en hilos concurrentes, y 'join' para volver a reunificarlos)."
+  explicacion: "Los diagramas de actividades pueden representar flujos concurrentes mediante nodos `fork`, que dividen un flujo en varias ramas, y `join`, que las sincronizan de nuevo. Por eso son adecuados para mostrar actividades que pueden avanzar en paralelo. No implican necesariamente hilos reales de programación: modelan concurrencia en el comportamiento."
 },
 
 {
@@ -1243,7 +1243,7 @@ const preguntasEntornos = [
     "Todas las anteriores son correctas."
   ],
   correcta: 3,
-  explicacion: "Es la cuerda larguísima de un globo que cuelga desde el cielo; cuanto más bajas la mirada por la cuerda, más tiempo del día ha pasado mientras los niños juegan con él. En un diagrama de secuencia UML, la línea de vida (lifeline) es un eje vertical discontinuo que fluye hacia abajo marcando la cronología temporal. Se trazan en paralelo para representar la convivencia y la interacción asíncrona o síncrona de múltiples objetos vivos."
+  explicacion: "En un diagrama de secuencia UML, una línea de vida representa la participación de un actor u objeto a lo largo de una interacción. El tiempo avanza de arriba hacia abajo y los mensajes se dibujan entre líneas de vida. Cada una ocupa una columna distinta, por lo que también se representan en paralelo."
 },
 
 {
@@ -1282,7 +1282,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 3,
-  explicacion: "No se parecen a relojes de arena midiendo el tiempo, sino más bien a un mapa que muestra dónde se sientan los niños en clase y quién le tira avioncitos de papel a quién. En la nomenclatura moderna de UML (Diagramas de Comunicación), son estructuralmente isomorfos a los diagramas de secuencia pero se abstraen de la cronología temporal vertical; su foco arquitectónico reside en la topología de la red de objetos y los enlaces (links) espaciales que canalizan los mensajes."
+  explicacion: "Los diagramas de colaboración, llamados diagramas de comunicación en UML actual, destacan los objetos, sus enlaces y los mensajes que intercambian. El orden suele indicarse numerando los mensajes, no mediante un eje temporal vertical como en un diagrama de secuencia. Por eso ninguna descripción incompatible de las opciones resulta correcta."
 },
 
 {
@@ -1295,7 +1295,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores es correcta."
   ],
   correcta: 2,
-  explicacion: "Es como observar a una oruguita nacer, hacerse crisálida y convertirse en mariposa (inicio y fin); y cada fase nos dice cómo está su cuerpo por dentro. Las máquinas de estados finitos en UML mapean dinámicamente el ciclo vital completo de un objeto mediante nodos especiales de transición (estado inicial explícito y finales). Guardan correlación con el diagrama de clases porque cada 'estado' es una derivación lógica de los valores discretos de los atributos de la instancia."
+  explicacion: "Un diagrama de estados muestra los estados de una instancia y las transiciones provocadas por eventos, e incluye pseudestados iniciales y finales cuando corresponde. Complementa al diagrama de clases: la clase define estructura y operaciones, mientras la máquina de estados explica cómo cambia el comportamiento de sus objetos a lo largo del tiempo."
 },
 
 {
@@ -1308,7 +1308,7 @@ const preguntasEntornos = [
     "No posee elementos fundamentales, ya que posee una amplia batería de elementos para elegir."
   ],
   correcta: 1,
-  explicacion: "Para jugar al teatro solo necesitas tres cosas súper importantes: el escenario (sistema), los actores disfrazados (actores) y el guion de qué tienen que decir (caso de uso). A nivel de sintaxis gráfica, el modelo fundacional de un Diagrama de Casos de Uso se sustenta rígidamente en la triada: los 'Actores' (roles de usuarios), los 'Casos de Uso' (elipses de funcionalidad) y las 'Asociaciones' o fronteras de comunicación que los interconectan lógicamente."
+  explicacion: "Un diagrama de casos de uso se construye con tres elementos básicos: actores, casos de uso y relaciones. Los actores representan roles externos; los casos de uso, servicios que el sistema ofrece; y las relaciones muestran cómo participan o se conectan. El límite del sistema ayuda además a situar qué funcionalidad pertenece a la aplicación."
 },
 
 {
@@ -1321,7 +1321,7 @@ const preguntasEntornos = [
     "Ninguna de las anteriores."
   ],
   correcta: 3,
-  explicacion: "No son los niños jugando, ni las videoconsolas enteras, sino un soldadito de plástico sacado de un molde que sirve para la batalla en ese momento concreto. En la vista dinámica de UML (como el diagrama de objetos o de secuencias), un objeto es estrictamente una materialización volátil en tiempo de ejecución (una 'instancia') clonada a partir del molde estático de su clase, abstrayendo a los actores biomecánicos u otros elementos estructurales ajenos a su dominio."
+  explicacion: "En orientación a objetos, un objeto es una instancia concreta de una clase. La clase define la estructura y el comportamiento común; el objeto posee su propia identidad y estado durante la ejecución. En UML puede aparecer, por ejemplo, como `pedido42:Pedido`. Si ninguna opción expresa esta idea, corresponde «Ninguna de las anteriores»."
 },
 
 {
@@ -1352,4 +1352,4 @@ const preguntasEntornos = [
 
 ];
 
- 
+

@@ -1079,5 +1079,364 @@ const preguntasMultimediaMoviles = [
     ],
     "respuesta_correcta": "A. Aliviar la carga del hilo principal para evitar ralentizaciones o bloqueos en este.",
     "explicacion": "El hilo principal gestiona la interfaz y debe permanecer disponible para responder a las acciones del usuario. Los cálculos, accesos a red u operaciones largas se trasladan a hilos secundarios para evitar pausas visibles y errores ANR; no son una copia del hilo principal."
+  },
+  {
+    "id": 131,
+    "pregunta": "¿Cuál de las siguientes clases es la que gestiona la base de datos de SQLite?",
+    "opciones": [
+      "A. CursorFactory",
+      "B. SQLiteCursor.",
+      "C. SQLiteDatabase",
+      "D. SQLiteOpenHelper."
+    ],
+    "respuesta_correcta": "D. SQLiteOpenHelper.",
+    "explicacion": "SQLiteOpenHelper facilita la creación y apertura de una base de datos SQLite y administra sus cambios de versión mediante onCreate() y onUpgrade(). SQLiteDatabase representa la base de datos abierta y permite ejecutar operaciones, pero la clase auxiliar que gestiona su ciclo de vida es SQLiteOpenHelper."
+  },
+  {
+    "id": 132,
+    "pregunta": "¿Qué componente utilizaremos cuando queramos acceder a datos de otra aplicación?",
+    "opciones": [
+      "A. Cursor.",
+      "B. ContentProvider.",
+      "C. ContentResolver.",
+      "D. ContentDrawer."
+    ],
+    "respuesta_correcta": "C. ContentResolver.",
+    "explicacion": "Una aplicación utiliza ContentResolver para enviar consultas y otras operaciones a un ContentProvider. El proveedor publica los datos de forma controlada y el resolver actúa como punto de acceso para la aplicación cliente; un Cursor puede contener el resultado de una consulta, pero no inicia ese acceso."
+  },
+  {
+    "id": 133,
+    "pregunta": "¿Qué método deja a un servidor Socket en espera de la conexión de un cliente?",
+    "opciones": [
+      "A. elServer.Socket.wait()",
+      "B. elServer.Socket.standby()",
+      "C. elServer.Socket.accept()",
+      "D. elServer.Socket.client()"
+    ],
+    "respuesta_correcta": "C. elServer.Socket.accept()",
+    "explicacion": "El método accept() de un ServerSocket espera hasta que un cliente solicita una conexión. Cuando la conexión se establece, devuelve un Socket específico para comunicarse con ese cliente; el ServerSocket puede seguir aceptando otras conexiones."
+  },
+  {
+    "id": 134,
+    "pregunta": "¿Cuál de las siguientes afirmaciones es correcta?",
+    "opciones": [
+      "A. Si el volumen de datos es muy grande utilizaremos una memoria externa.",
+      "B. Si el volumen de datos es muy grande utilizamos bases de datos con SQLite.",
+      "C. La persistencia mixta consiste en la combinación de memoria interna y externa.",
+      "D. Ninguna de las anteriores es correcta."
+    ],
+    "respuesta_correcta": "B. Si el volumen de datos es muy grande utilizamos bases de datos con SQLite.",
+    "explicacion": "SQLite organiza información estructurada en tablas y permite consultarla, filtrarla y relacionarla con eficiencia. Por eso resulta más adecuado que un archivo de preferencias cuando la aplicación necesita manejar un conjunto amplio o complejo de datos locales."
+  },
+  {
+    "id": 135,
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre la conexión en red es correcta?",
+    "opciones": [
+      "A. El servidor de una conexión mediante Sockets trabaja solo con un objeto Socket.",
+      "B. En una conexión por Sockets el cliente espera la conexión del servidor.",
+      "C. La conexión HTTP sigue unas reglas complicadas de transferencia de información entre dispositivos de una red.",
+      "D. La variante HTTPS encripta la información para que esta no sea interceptada."
+    ],
+    "respuesta_correcta": "D. La variante HTTPS encripta la información para que esta no sea interceptada.",
+    "explicacion": "HTTPS protege la comunicación HTTP mediante TLS. La información viaja cifrada entre el cliente y el servidor, lo que dificulta que un tercero pueda leerla o modificarla durante el transporte."
+  },
+  {
+    "id": 136,
+    "pregunta": "¿Cuál de los siguientes métodos de HttpURLConnection permite informar al servidor del cliente utilizado?",
+    "opciones": [
+      "A. setRequestProperty()",
+      "B. setDoOutput()",
+      "C. getResponseCode()",
+      "D. setRequestMethod()"
+    ],
+    "respuesta_correcta": "A. setRequestProperty()",
+    "explicacion": "setRequestProperty() añade o modifica una cabecera de la petición antes de establecer la conexión. Por ejemplo, la cabecera User-Agent puede identificar el cliente que realiza la solicitud; setRequestMethod() solo elige el método HTTP, como GET o POST."
+  },
+  {
+    "id": 137,
+    "pregunta": "La clase SharedPreferences:",
+    "opciones": [
+      "A. Con el método getSharedPreferences() lo utilizamos cuando se necesita un archivo de preferencias.",
+      "B. Con el método getPreferences() lo utilizamos cuando se necesitan muchos archivos de preferencias.",
+      "C. Permite guardar y recuperar en formato de pares clave-valor.",
+      "D. Todas son correctas."
+    ],
+    "respuesta_correcta": "C. Permite guardar y recuperar en formato de pares clave-valor.",
+    "explicacion": "SharedPreferences conserva pequeñas cantidades de información como pares clave-valor, por ejemplo una opción activada o el nombre elegido por el usuario. getSharedPreferences() permite trabajar con archivos identificados por un nombre, mientras que getPreferences() accede al archivo privado asociado a una Activity."
+  },
+  {
+    "id": 138,
+    "pregunta": "La persistencia mixta:",
+    "opciones": [
+      "A. Es la combinación de memoria interna y base de datos.",
+      "B. Es la combinación de memoria interna y externa.",
+      "C. Es la combinación de memoria o base de datos con almacenamiento en red.",
+      "D. Puede no utilizar almacenamiento en red."
+    ],
+    "respuesta_correcta": "C. Es la combinación de memoria o base de datos con almacenamiento en red.",
+    "explicacion": "La persistencia mixta combina almacenamiento local —como archivos internos o una base de datos— con almacenamiento remoto a través de la red. De esta forma la aplicación puede conservar información en el dispositivo y sincronizarla con un servidor."
+  },
+  {
+    "id": 139,
+    "pregunta": "¿Qué método nos puede informar de la situación de la tarjeta externa de almacenamiento?",
+    "opciones": [
+      "A. Environment.getStorageState()",
+      "B. Environment.getExternalState()",
+      "C. Environment.getSDStorageState()",
+      "D. Environment.getExternalStorageState()"
+    ],
+    "respuesta_correcta": "D. Environment.getExternalStorageState()",
+    "explicacion": "Environment.getExternalStorageState() devuelve el estado del volumen principal de almacenamiento externo. El resultado permite saber, por ejemplo, si está montado y disponible para lectura y escritura antes de intentar utilizarlo."
+  },
+  {
+    "id": 140,
+    "pregunta": "¿Qué modo de acceso utilizamos para almacenar en la memoria interna del dispositivo?",
+    "opciones": [
+      "A. MODE_PUBLIC",
+      "B. MODE_PRIVATE.",
+      "C. MODE_READABLE.",
+      "D. MODE_WRITEABLE."
+    ],
+    "respuesta_correcta": "B. MODE_PRIVATE.",
+    "explicacion": "MODE_PRIVATE crea o abre un archivo para que solo pueda acceder a él la propia aplicación. Es el modo habitual para guardar información en el almacenamiento interno privado; los demás nombres mostrados no representan el modo de acceso correcto en este caso."
+  },
+  {
+    "id": 141,
+    "pregunta": "¿Cómo se llama el método que libera el sistema de la instancia de MediaRecorder?",
+    "opciones": [
+      "A. resume()",
+      "B. destroy()",
+      "C. release()",
+      "D. reset()"
+    ],
+    "respuesta_correcta": "C. release()",
+    "explicacion": "release() libera la memoria, los códecs y los demás recursos asociados a la instancia de MediaRecorder cuando deja de ser necesaria. reset() solo devuelve el objeto a su estado inicial para poder configurarlo de nuevo, mientras que resume() continúa una grabación pausada."
+  },
+  {
+    "id": 142,
+    "pregunta": "¿Cuál de estos métodos no pertenece a MotionEvent?",
+    "opciones": [
+      "A. getDownTime()",
+      "B. getUpTime()",
+      "C. getEventTime()",
+      "D. getPressure()"
+    ],
+    "respuesta_correcta": "B. getUpTime()",
+    "explicacion": "MotionEvent ofrece getDownTime() para conocer cuándo comenzó la secuencia de contacto, getEventTime() para saber cuándo ocurrió el evento actual y getPressure() para consultar la presión registrada. La clase no define un método llamado getUpTime()."
+  },
+  {
+    "id": 143,
+    "pregunta": "¿Cuál de los siguientes sensores utiliza un solo canal de salida?",
+    "opciones": [
+      "A. Acelerómetro",
+      "B. Giroscopio.",
+      "C. Orientación.",
+      "D. Iluminación."
+    ],
+    "respuesta_correcta": "D. Iluminación.",
+    "explicacion": "El sensor de iluminación devuelve un único valor de iluminancia expresado en lux. El acelerómetro, el giroscopio y el sensor de orientación trabajan normalmente con varios valores relacionados con los ejes X, Y y Z."
+  },
+  {
+    "id": 144,
+    "pregunta": "¿Qué afirmación es correcta con respecto a ImageView?",
+    "opciones": [
+      "A. El objeto se suele incluir en el fichero de la vista XML y se puede manipular desde Java.",
+      "B. El atributo android:scaleType hace referencia al archivo fuente de la imagen.",
+      "C. Los formatos gráficos soportados por Android son PNG, JPG y IMG",
+      "D. Todas son verdaderas."
+    ],
+    "respuesta_correcta": "A. El objeto se suele incluir en el fichero de la vista XML y se puede manipular desde Java.",
+    "explicacion": "ImageView puede declararse en el diseño XML y obtenerse desde el código para cambiar su imagen u otras propiedades. android:scaleType controla cómo se ajusta la imagen dentro de la vista, no cuál es el archivo de origen; además, IMG no es uno de los formatos gráficos indicados por Android."
+  },
+  {
+    "id": 145,
+    "pregunta": "Con el objeto Matrix podemos...",
+    "opciones": [
+      "A. Trasladar una imagen o dibujos",
+      "B. Escalar una imagen o dibujos",
+      "C. Rotar una imagen o dibujos",
+      "D. Todas son verdaderas"
+    ],
+    "respuesta_correcta": "D. Todas son verdaderas",
+    "explicacion": "Matrix representa transformaciones geométricas que pueden aplicarse a imágenes y dibujos. Permite combinar traslaciones para cambiar la posición, escalados para modificar el tamaño y rotaciones para cambiar la orientación; por eso todas las opciones son verdaderas."
+  },
+  {
+    "id": 146,
+    "pregunta": "¿Cuál de estos métodos de geolocalización nos permite actualizar nuestra posición mediante las llamadas de otras aplicaciones o proveedores?",
+    "opciones": [
+      "A. GPS",
+      "B. NETWORK",
+      "C. PASSIVE",
+      "D. TRACKING"
+    ],
+    "respuesta_correcta": "C. PASSIVE",
+    "explicacion": "PASSIVE_PROVIDER recibe ubicaciones generadas cuando otras aplicaciones o servicios solicitan actualizaciones a proveedores activos. De este modo puede observar cambios de posición sin iniciar por sí mismo una nueva búsqueda mediante GPS o redes."
+  },
+  {
+    "id": 147,
+    "pregunta": "La clase Canvas define las propiedades de un pincel que nos permiten dibujar:",
+    "opciones": [
+      "A. La clase Canvas define las propiedades de un pincel que nos permiten dibujar.",
+      "B. La clase Paint define la superficie para pintar",
+      "C. Canvas nos da la superficie para pintar y con Paint podemos definir un pincel para hacerlo",
+      "D. Todas son falsas"
+    ],
+    "respuesta_correcta": "C. Canvas nos da la superficie para pintar y con Paint podemos definir un pincel para hacerlo",
+    "explicacion": "Canvas proporciona la superficie y las operaciones con las que se dibujan formas, texto o imágenes. Paint reúne las propiedades del trazo, como el color, el grosor, el estilo y la tipografía. Por tanto, Canvas es el soporte de dibujo y Paint actúa como el pincel."
+  },
+  {
+    "id": 148,
+    "pregunta": "¿Qué unidad de medida en Android se basa en la densidad física de píxeles de la pantalla?",
+    "opciones": [
+      "A. px",
+      "B. pt",
+      "C. dp",
+      "D. sp"
+    ],
+    "respuesta_correcta": "C. dp",
+    "explicacion": "El píxel independiente de densidad o dp ajusta sus dimensiones según la densidad física de la pantalla. La referencia es una pantalla de 160 dpi, donde 1 dp equivale aproximadamente a 1 píxel; así los elementos mantienen un tamaño visual parecido en dispositivos distintos."
+  },
+  {
+    "id": 149,
+    "pregunta": "Señala la opción correcta.",
+    "opciones": [
+      "A. Con Bitmap podemos cargar imágenes desde un recurso, fichero, buffer, URL o Array",
+      "B. Con Bitmap podemos cargar imágenes desde URL o Array solamente",
+      "C. La clase Bitmap no puede insertar imágenes desde un buffer",
+      "D. La clase Bitmap representa mapas de bits por lo que no puede cargar imágenes desde URL"
+    ],
+    "respuesta_correcta": "A. Con Bitmap podemos cargar imágenes desde un recurso, fichero, buffer, URL o Array",
+    "explicacion": "Las imágenes de mapa de bits pueden obtenerse desde recursos, archivos, matrices de bytes o flujos de datos. Una URL puede proporcionar un flujo que después se decodifica como Bitmap. Las demás opciones limitan incorrectamente los posibles orígenes de la imagen."
+  },
+  {
+    "id": 150,
+    "pregunta": "Selecciona la opción correcta:",
+    "opciones": [
+      "A. SoundPool admite formatos de música grandes.",
+      "B. MediaPlayer permite reproducir varios sonidos simultáneamente y en bucle",
+      "C. Utilizaremos SoundPool para archivos de audio cortos y MediaPlayer para largos.",
+      "D. Con SoundPool no podemos reproducir archivos mediante Streaming."
+    ],
+    "respuesta_correcta": "C. Utilizaremos SoundPool para archivos de audio cortos y MediaPlayer para largos.",
+    "explicacion": "SoundPool está pensado para efectos breves que deben reproducirse con poca latencia y permite mantener varios sonidos cargados. MediaPlayer resulta más adecuado para contenidos largos, como música o vídeo, y puede reproducir medios desde archivos o transmisiones compatibles."
+  },
+  {
+    "id": 151,
+    "pregunta": "¿Dónde se pueden alojar los motores de juego?",
+    "opciones": [
+      "A. En frameworks",
+      "B. En los entornos de desarrollo",
+      "C. A y B son correctas",
+      "D. Todas son incorrectas"
+    ],
+    "respuesta_correcta": "C. A y B son correctas",
+    "explicacion": "Un motor de juego reúne bibliotecas y herramientas que funcionan como un framework para construir el juego. Además, muchos motores incorporan un entorno de desarrollo visual con editores de escenas, código, animaciones y depuración. Por eso puede presentarse en ambas formas."
+  },
+  {
+    "id": 152,
+    "pregunta": "¿En cuál de las siguientes fases de un juego se debe elaborar el UX o User Experience?",
+    "opciones": [
+      "A. Post mortem",
+      "B. Postproducción",
+      "C. Producción",
+      "D. Preproducción"
+    ],
+    "respuesta_correcta": "C. Producción",
+    "explicacion": "Durante la producción se construyen y prueban los sistemas con los que interactúa el jugador. En esta fase se desarrolla la experiencia de usuario mediante controles, menús, información visual, retroalimentación y pruebas iterativas que permiten ajustar el juego."
+  },
+  {
+    "id": 153,
+    "pregunta": "¿En qué eje pueden moverse las animaciones 3D y las animaciones en 2D no pueden?",
+    "opciones": [
+      "A. Ambas se mueven en los mismos ejes",
+      "B. El eje X",
+      "C. El eje Y",
+      "D. El eje Z"
+    ],
+    "respuesta_correcta": "D. El eje Z",
+    "explicacion": "Una escena 2D utiliza los ejes X e Y para representar anchura y altura. Una escena 3D añade el eje Z, que representa la profundidad y permite mover objetos hacia delante o hacia atrás respecto a la cámara."
+  },
+  {
+    "id": 154,
+    "pregunta": "¿Qué es un Bounding Box?",
+    "opciones": [
+      "A. Un efecto usado en animación para la simulación de dispersiones",
+      "B. El formato de los gráficos vectoriales",
+      "C. Una técnica de desarrollo basada en el uso de imágenes reales",
+      "D. Un esquema temporal para el resalto de ciertos objetos"
+    ],
+    "respuesta_correcta": "D. Un esquema temporal para el resalto de ciertos objetos",
+    "explicacion": "Un bounding box es un contorno o caja que delimita temporalmente un objeto. Se utiliza para visualizar sus límites y facilitar tareas como la selección, el posicionamiento, la detección aproximada de colisiones o el resaltado dentro de una escena."
+  },
+  {
+    "id": 155,
+    "pregunta": "¿Qué herramienta permite en Android animar drawables basados en mapas de bits?",
+    "opciones": [
+      "A. AnimatedVectorDrawable",
+      "B. AnimationDrawable",
+      "C. AnimatedDrawable",
+      "D. Todas son incorrectas."
+    ],
+    "respuesta_correcta": "B. AnimationDrawable",
+    "explicacion": "AnimationDrawable crea una animación fotograma a fotograma mediante una secuencia de recursos drawable, como varias imágenes de mapa de bits. AnimatedVectorDrawable está diseñado para animar propiedades de gráficos vectoriales, no una lista de bitmaps."
+  },
+  {
+    "id": 156,
+    "pregunta": "Indica cuál de las siguientes técnicas de sombreado que aquí se muestran es la usada para aumentar el nivel de realismo:",
+    "opciones": [
+      "A. Sombreado de Phong",
+      "B. Sombreado de Gouraud",
+      "C. Sombreado de proyección",
+      "D. Sombreado plano"
+    ],
+    "respuesta_correcta": "A. Sombreado de Phong",
+    "explicacion": "El sombreado de Phong interpola las normales a lo largo de la superficie y calcula la iluminación en cada fragmento. Esto produce transiciones y reflejos más suaves que el sombreado plano o el cálculo de iluminación únicamente en los vértices."
+  },
+  {
+    "id": 157,
+    "pregunta": "Indica cuál de los siguientes es un modo de trazado de OpenGL:",
+    "opciones": [
+      "A. GL_LINE_LOOP",
+      "B. GL_LINE_FAN",
+      "C. GL_TRIANGLES_LOOP",
+      "D. GL_PRINT_STRIP"
+    ],
+    "respuesta_correcta": "A. GL_LINE_LOOP",
+    "explicacion": "GL_LINE_LOOP interpreta los vértices como una línea continua y añade un último segmento que conecta el vértice final con el primero. Las otras constantes mostradas no son modos de trazado válidos de OpenGL."
+  },
+  {
+    "id": 158,
+    "pregunta": "Indica, de lo mostrado, qué debemos tener en cuenta para que el juego en Android sea de la mayor calidad posible:",
+    "opciones": [
+      "A. El uso de texturas",
+      "B. Las colisiones. El control de luces y sombras",
+      "C. Todas se deben tener en cuenta"
+    ],
+    "respuesta_correcta": "C. Todas se deben tener en cuenta",
+    "explicacion": "Las texturas determinan buena parte del aspecto de los objetos; las colisiones permiten que el mundo responda de forma coherente; y las luces y sombras aportan profundidad y legibilidad. Todos estos elementos influyen en la calidad visual y jugable, aunque deben ajustarse al rendimiento del dispositivo."
+  },
+  {
+    "id": 159,
+    "pregunta": "Indica en cuál de las siguientes clases se encuentra incluido el método createCircularReveal:",
+    "opciones": [
+      "A. AnimationDrawable",
+      "B. TransitionManager",
+      "C. ViewAnimationUtils",
+      "D. AnimatedVectorDrawable"
+    ],
+    "respuesta_correcta": "C. ViewAnimationUtils",
+    "explicacion": "ViewAnimationUtils.createCircularReveal() crea un Animator que revela u oculta una vista mediante un círculo cuyo radio cambia. Se indican la vista, el centro del círculo y los radios inicial y final de la animación."
+  },
+  {
+    "id": 160,
+    "pregunta": "Solo uno de los siguientes métodos no está asociado al Callback de un SurfaceView, ¿cuál?",
+    "opciones": [
+      "A. surfaceResize()",
+      "B. surfaceDestroyed()",
+      "C. surfaceChanged()",
+      "D. surfaceCreated()"
+    ],
+    "respuesta_correcta": "A. surfaceResize()",
+    "explicacion": "SurfaceHolder.Callback define surfaceCreated(), surfaceChanged() y surfaceDestroyed() para avisar de los cambios importantes de la superficie. No existe un callback llamado surfaceResize(); los cambios de tamaño se reciben mediante surfaceChanged()."
   }
 ];

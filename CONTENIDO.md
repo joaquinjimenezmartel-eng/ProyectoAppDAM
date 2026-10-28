@@ -12,6 +12,9 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Un ID debe ser único dentro de su asignatura, pero puede repetirse en otra asignatura.
 - No renumerar IDs existentes ni modificar enunciados, opciones, respuestas correctas o imágenes existentes sin autorización expresa. Las sesiones y el progreso se vinculan a asignatura + ID.
 - Se pueden redactar y mejorar explicaciones para estudiantes. Evitar lenguaje como «según los PDF adjuntos», «parece que en los apuntes» o referencias al proceso de elaboración.
+- Cada explicación debe definir el concepto, justificar la solución y, cuando pueda existir confusión, diferenciarla de la alternativa más próxima o incluir un ejemplo breve. El tono debe ser académico, directo y adecuado para alumnado adulto; evitar metáforas infantiles y jerga que no se explique.
+- Contrastar los conceptos con documentación primaria y vigente cuando corresponda: especificaciones y manuales oficiales del lenguaje, plataforma, organismo público o fabricante. Las fuentes sirven para verificar la explicación, nunca para alterar silenciosamente la solución entregada por el propietario.
+- `scripts/validate-content.js` rechaza explicaciones vacías, de menos de 140 caracteres, con referencias editoriales al material de origen o con el vocabulario infantil detectado en bancos antiguos. Superar el control automático no sustituye la revisión técnica humana.
 - Si una respuesta del material parece incorrecta, es ilegible o falta la solución, señalarlo al propietario; no corregirla ni inventarla silenciosamente.
 
 ## Arquitectura actual comprobada
@@ -358,3 +361,44 @@ Reglas confirmadas por el propietario el 7 de septiembre de 2026. Leer antes de 
 - Cada pregunta incorpora una explicación didáctica sobre secciones de informes, buenas prácticas, gráficas, rutas de imágenes, consultas SQL, informes incrustados, subinformes y variables. El resumen se amplía de U1–U8 a U1–U9.
 - El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
 - Las 1130 preguntas existentes antes de esta U9 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 27 de octubre de 2026 — Multimedia U10
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U10 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 131–140. JSON `contenido/tests/multimediaMoviles/u10-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 141.
+- En las preguntas originales 1 y 2, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: D (`SQLiteOpenHelper`) y C (`ContentResolver`), respectivamente.
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales, técnicas y de puntuación documentadas en el JSON. Incluyen signos de interrogación, `HttpUrlConnection` → `HttpURLConnection`, `Enviroment` → `Environment` y dos construcciones gramaticales de la pregunta 8. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre SQLite, ContentResolver, sockets, HTTPS, cabeceras HTTP, SharedPreferences y almacenamiento interno, externo y en red. El resumen se amplía de U1–U9 a U1–U10.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1140 preguntas existentes antes de esta U10 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 27 de octubre de 2026 — Desarrollo de interfaces U10
+
+- Asignatura ampliada: **Desarrollo de interfaces**, ID técnico `desarrolloInterfaces`.
+- U10 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 131–140. JSON `contenido/tests/desarrolloInterfaces/u10-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 141.
+- En las preguntas originales 2, 4 y 10, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: D (`Eclipse`), D (`Ninguna de las anteriores es correcta`) y D (`Ninguna de las anteriores es correcta`), respectivamente.
+- Las únicas modificaciones textuales son la incorporación de signos de interrogación en las preguntas 1–3 y la normalización ortotipográfica de `BETA` a `beta`. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre regresión, automatización, pruebas funcionales y no funcionales, fases del proyecto, caja blanca, integración y versiones beta. El resumen se amplía de U1–U9 a U1–U10.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1150 preguntas existentes antes de esta U10 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 27 de octubre de 2026 — Multimedia U11
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U11 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 141–150. JSON `contenido/tests/multimediaMoviles/u11-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 151.
+- En la pregunta original 6, la opción `NETWORK` fue seleccionada incorrectamente. Se conserva la solución explícita de la revisión: C (`PASSIVE`).
+- Las únicas modificaciones textuales son correcciones ortográficas, gramaticales, técnicas y de puntuación documentadas en el JSON. Incluyen signos de interrogación, concordancia, retirada de puntos unidos a métodos, `Canva` → `Canvas` y normalización de `Bitmap`. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre MediaRecorder, MotionEvent, sensores, ImageView, Matrix, localización pasiva, Canvas, Paint, unidades de medida, mapas de bits y reproducción de audio. El resumen se amplía de U1–U10 a U1–U11.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1160 preguntas existentes antes de esta U11 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
+
+## Incorporación del 27 de octubre de 2026 — Multimedia U12
+
+- Asignatura ampliada: **Programación multimedia y dispositivos móviles**, ID técnico `multimediaMoviles`.
+- U12 autoevaluación: 10 preguntas de repaso/apoyo con soluciones, IDs 151–160. JSON `contenido/tests/multimediaMoviles/u12-test1.json`. El siguiente test de apoyo debe comenzar en el ID libre 161.
+- En las preguntas originales 2 y 3, las opciones seleccionadas en el intento son incorrectas. Se conservan las soluciones explícitas de la revisión: C (`Producción`) y D (`El eje Z`), respectivamente.
+- La pregunta 8 contiene tres opciones visibles y la opción B agrupa las colisiones y el control de luces y sombras. Se conserva esa estructura sin inventar una cuarta opción.
+- Las únicas modificaciones textuales son dos correcciones gramaticales documentadas en el JSON: `Ambas de mueven` → `Ambas se mueven` y la retirada de la preposición sobrante en `debemos de tener` y `se deben de tener`. Ninguna altera las soluciones.
+- Cada pregunta incorpora una explicación didáctica sobre motores de juego, UX, animación 3D, bounding boxes, AnimationDrawable, sombreado, OpenGL, calidad gráfica, revelado circular y SurfaceView. El resumen se amplía de U1–U11 a U1–U12.
+- El bloque de examen final continúa pendiente. Los IDs 1–40 permanecen libres y el modo examen sigue desactivado hasta que se incorporen completos.
+- Las 1170 preguntas existentes antes de esta U12 quedan protegidas por una huella específica en `scripts/test-new-subject.js`.
